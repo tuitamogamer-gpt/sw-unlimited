@@ -260,6 +260,7 @@ const copy: Array<[string, string, ...string[]]> = [
   ['ENEMY SECTOR', 'PROTIVNIČKI SEKTOR', 'PROTIVNIČKI SEKTOR'],
   ['YOUR SECTOR', 'TVOJ SEKTOR', 'TVOJ SEKTOR'],
   ['EXHAUSTED', 'ISCRPLJENO', 'ISCRPLJENO'], ['Exhausted', 'Iscrpljeno'], ['Ready', 'Spremno'],
+  ['Shield lost', 'Štit je izgubljen'], ['Defeated', 'Poraženo'], ['{card} defeated', 'Poražena karta: {card}'],
   ['captured', 'zarobljeno', 'zarobljeno'],
   ['Orders', 'Naredbe', 'Naredbe'],
   ['GAME OVER', 'KRAJ PARTIJE', 'KRAJ PARTIJE'],

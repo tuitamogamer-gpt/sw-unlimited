@@ -20,3 +20,4 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run test:ui
       - run: npm run test:custom-ui
+      - run: npm run test:motion-ui

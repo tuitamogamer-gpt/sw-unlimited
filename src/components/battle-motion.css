@@ -1,0 +1,127 @@
+/* Card faces and tabletop tokens. The status pocket uses the existing card
+   footprint, so exhaustion never covers artwork or changes an arena's height. */
+.game-card.has-status-pocket{--status-pocket-height:14px;--unit-stat-height:21px}
+.game-card.has-status-pocket>.game-card-click{height:100%;overflow:hidden}
+.game-card.has-status-pocket .card-face{position:absolute;inset:0 0 var(--status-pocket-height);display:block;overflow:hidden;border-radius:4px 4px 0 0;isolation:isolate}
+.game-card.has-status-pocket .card-face>img{height:100%;width:100%;object-fit:cover;object-position:center 34%}
+.game-card.has-status-pocket .card-face>.game-card-name{bottom:calc(var(--unit-stat-height) + 2px);font-size:12px;line-height:1.05}
+.game-card.has-status-pocket .card-face>.unit-stats{height:var(--unit-stat-height);bottom:0}
+.card-status-pocket{position:absolute;left:0;right:0;bottom:0;height:var(--status-pocket-height,14px);display:flex;align-items:center;justify-content:center;gap:2px;padding:0 2px;background:linear-gradient(#172533,#0b1520);border-top:1px solid #73879444;isolation:isolate}
+.card-exhausted-token{position:static;display:inline-flex;align-items:center;justify-content:center;gap:3px;max-width:100%;height:12px;padding:0 5px;border:1px solid #e6a4a485;border-radius:8px;background:linear-gradient(#983f4c,#702831) #702831;box-shadow:inset 0 1px 0 #ffffff20,0 1px 2px #0008;color:#fff0ed;font-family:var(--condensed,'Arial Narrow',sans-serif);font-size:9px;font-weight:600;font-style:normal;line-height:1;letter-spacing:.15px;text-transform:none;white-space:nowrap;text-shadow:0 1px 1px #421820;filter:none;opacity:1}
+.card-exhausted-token>svg{width:8px;height:8px;flex:0 0 auto;stroke-width:2}
+.game-card .card-status-pocket>.card-action-label{position:static;inset:auto;width:100%;height:12px;min-height:0;padding:0 2px;display:flex;align-items:center;justify-content:center;gap:3px;border:0;border-radius:2px;background:#23414c;color:#c4f3f3;font-family:var(--condensed,'Arial Narrow',sans-serif);font-size:9px;font-weight:600;line-height:1;letter-spacing:.25px;text-transform:none}
+.game-card .card-status-pocket>.card-action-label>svg{height:8px;width:8px}
+.game-card.is-target .card-status-pocket>.card-action-label,.game-card.is-selected .card-status-pocket>.card-action-label{background:#4c3f24;color:#ffe5a3}
+.game-card.has-status-pocket.is-exhausted{filter:none;transform:none;border-color:#73636a}
+.game-card.has-status-pocket .game-card-click:disabled,.battlefield .leader-mini>button:disabled{opacity:1}
+.game-card .game-card-click img,.battlefield .leader-mini img{transition:filter .36s ease-out}
+.game-card.is-exhausted .game-card-click img,.battlefield .leader-mini.is-exhausted img{filter:grayscale(1) brightness(.76) contrast(1.06)}
+.game-card.is-exhausted .game-card-name,.game-card.is-exhausted .unit-stats,.game-card.is-exhausted .card-status-pocket{filter:none;opacity:1}
+
+/* Damage remains on the card as a small red counter, like the physical tokens. */
+.game-card .stat-damage.damage-counter{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;width:auto;min-width:15px;height:15px;padding:0 3px;border:1px solid #e7a09a96;border-radius:50%;background:radial-gradient(circle at 37% 27%,#b45b52,#7a2f35 75%) #7a2f35;box-shadow:inset 0 1px 0 #ffc4ac26,0 1px 2px #0009;color:#fff5e8;font-size:10px;font-weight:700;line-height:1;font-family:var(--condensed,'Arial Narrow',sans-serif);text-shadow:0 1px 1px #632028}
+.game-card.has-status-pocket>.upgrade-badge,.game-card.has-status-pocket>.capture-badge{bottom:calc(var(--status-pocket-height) + var(--unit-stat-height) + 1px);top:auto;left:auto;right:-2px;z-index:6;max-width:calc(100% - 3px);font-size:6px;line-height:1;padding:2px 3px;border-radius:3px;pointer-events:none}
+.game-card.has-status-pocket>.capture-badge{right:auto;left:-2px}
+
+/* Feedback layers never intercept card actions. Each keyed event creates its
+   own short pulse and readable number, including consecutive hits. */
+.card-fx-layer{position:absolute;inset:0;z-index:8;pointer-events:none!important;user-select:none;border-radius:inherit;isolation:isolate;overflow:visible}
+.game-card.has-status-pocket>.card-fx-layer{bottom:var(--status-pocket-height)}
+.card-fx,.card-fx-layer>*{pointer-events:none!important}
+.card-fx{position:absolute;inset:0;display:block;border-radius:inherit;--fx-color:#f79d86;--fx-wash:#d959484c}
+.card-fx>.card-fx-ring,.card-fx:after{content:'';position:absolute;pointer-events:none;border-radius:inherit;opacity:0}
+.card-fx>.card-fx-ring{inset:0;border:2px solid var(--fx-color);box-shadow:inset 0 0 15px var(--fx-wash),0 0 10px var(--fx-wash)}
+.card-fx-value{position:absolute;top:35%;left:50%;display:inline-flex;align-items:center;justify-content:center;min-width:25px;min-height:25px;padding:3px 6px;border:1px solid #ffba9bce;border-radius:50%;background:radial-gradient(circle at 35% 25%,#ba574f,#692c31 90%) #692c31;box-shadow:0 3px 9px #000b,inset 0 1px 0 #ffffff2b;color:#fff3df;font-family:var(--condensed,'Arial Narrow',sans-serif);font-size:23px;font-weight:700;line-height:1;text-shadow:0 2px 2px #61212b;transform:translate(-50%,-50%);white-space:nowrap;animation:swu-token-rise 1.8s cubic-bezier(.2,.62,.25,1) both;opacity:0}
+.card-fx-label{position:absolute;left:2px;right:2px;top:calc(35% + 17px);color:#f9dec9;font-size:8px;font-weight:600;line-height:1.15;text-align:center;text-shadow:0 1px 3px #00121f,0 0 6px #00121f;animation:swu-label-show 1.8s ease-out both;opacity:0}
+.card-fx-icon{position:absolute;top:35%;left:50%;display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid #8ae4ffb0;border-radius:50%;background:#0c3553e6;color:#a6efff;box-shadow:0 2px 10px #001c34cc,inset 0 0 9px #73dafc26;transform:translate(-50%,-50%);animation:swu-token-rise 1.8s ease-out both;opacity:0}
+.card-fx-icon>svg{height:19px;width:19px;filter:drop-shadow(0 0 4px #74d8ed6e)}
+.card-fx-damage>.card-fx-ring{animation:swu-hit-ripple .48s ease-out}
+.card-fx-damage:after{inset:8%;border-radius:50%;background:radial-gradient(ellipse,#ffbda66b,transparent 67%);animation:swu-hit-flash .44s ease-out}
+.card-fx-heal{--fx-color:#97e5b4;--fx-wash:#5fd5993d}
+.card-fx-heal>.card-fx-ring{animation:swu-heal-frame .68s ease-out}
+.card-fx-heal .card-fx-value{border-color:#bcf1c69e;background:radial-gradient(circle at 35% 25%,#468b64,#1a523d 90%);color:#efffee;text-shadow:0 1px 2px #134a30}
+.card-fx-heal .card-fx-label{color:#c7f5d5}
+.card-fx-shieldBreak{--fx-color:#8edffa;--fx-wash:#7bcfeb59}
+.card-fx-shieldBreak>.card-fx-ring{clip-path:polygon(50% 0,96% 15%,96% 62%,73% 86%,50% 100%,27% 86%,4% 62%,4% 15%);border:2px solid #9de8ff;background:linear-gradient(135deg,#a1e7fc33,transparent 40%,#79cfee15);animation:swu-shield-break .62s ease-out}
+.card-fx-shieldBreak:after{inset:9%;border:1px dashed #b2ecffab;border-radius:50%;animation:swu-shield-spark .54s ease-out}
+.card-fx-shieldBreak .card-fx-label{color:#c4eeff}
+.card-fx-enter{--fx-color:#c8eddf;--fx-wash:#78c9c338}
+.card-fx-enter>.card-fx-ring{animation:swu-entry-rim .58s ease-out}
+.card-fx-enter:after{inset:0;background:linear-gradient(118deg,transparent 24%,#dff8ff3b 44%,transparent 61%);animation:swu-card-sheen .55s ease-out}
+.card-fx-attach{--fx-color:#bcacf0;--fx-wash:#957ddd40}
+.card-fx-attach>.card-fx-ring{animation:swu-entry-rim .54s ease-out}
+.card-fx-attach .card-fx-label{top:41%;color:#e4dbff;animation:swu-label-show 1.8s ease-out both}
+.card-fx-draw{--fx-color:#e9c982;--fx-wash:#e1bc6b30}
+.card-fx-draw>.card-fx-ring{animation:swu-entry-rim .46s ease-out}
+
+.battlefield .game-card{--entry-distance:8px;--entry-tilt:2deg;transform-origin:center 72%}
+.battlefield .game-card.enemy-card{--entry-distance:-8px;--entry-tilt:-2deg}
+.battlefield .game-card.is-new{animation:swu-card-enter .52s cubic-bezier(.18,.68,.22,1) both;z-index:4}
+.battlefield .game-card.is-damaged:not(.is-new){animation:swu-card-hit .44s ease-out;z-index:4}
+.battlefield .game-card.is-healed:not(.is-new):not(.is-damaged){animation:swu-card-heal .68s ease-out}
+.battlefield .game-card.is-shield-hit:not(.is-new):not(.is-damaged){animation:swu-card-shield .62s ease-out}
+.battlefield .hand-card.is-new{animation:swu-card-draw .38s cubic-bezier(.2,.65,.23,1) both}
+.battlefield .base-panel.is-damaged{animation:swu-base-hit .42s ease-out}
+.battlefield .base-panel.is-healed:not(.is-damaged){animation:swu-card-heal .68s ease-out}
+.base-panel .card-fx-value{top:57%;font-size:20px;min-height:23px;min-width:23px;padding:2px 5px}
+.card-fx-symbol{position:absolute;inset:0;pointer-events:none}
+.card-fx-attach>.card-fx-icon{color:#eadfff;border-color:#c8b0fc8a;background:#382749df}
+.battlefield .base-panel:is(.is-damaged,.is-healed) .health-track>i{transition:width .42s cubic-bezier(.22,.8,.24,1)}
+
+.arena-midline{position:relative;overflow:visible}
+.arena-defeat-token{position:absolute;top:50%;left:50%;max-width:calc(100% - 18px);display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:4px 9px;border:1px solid #bc727885;border-radius:12px;background:#491f2ae8;box-shadow:0 3px 12px #0008;color:#ffdddb;font-size:9px;line-height:1.15;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transform:translate(-50%,-50%);pointer-events:none;z-index:8;animation:swu-defeat-note 1.85s ease-out both}
+.arena-defeat-token>svg{height:11px;width:11px;flex:0 0 auto}
+.arena-defeat-token>span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+@keyframes swu-card-enter{0%{transform:translateY(var(--entry-distance)) rotate(var(--entry-tilt)) scale(.9);opacity:.3;box-shadow:0 8px 20px #0008}45%{transform:translateY(-1px) rotate(-.5deg) scale(1.015);opacity:1;box-shadow:0 9px 17px #0007}75%{transform:translateY(1px) rotate(0) scale(.996)}100%{transform:translateY(0) rotate(0) scale(1);opacity:1;box-shadow:0 3px 10px #0004}}
+@keyframes swu-card-draw{0%{transform:translate(9px,7px) rotate(3deg) scale(.9);opacity:.25}65%{transform:translate(0,-1px) rotate(-.4deg) scale(1.01);opacity:1}100%{transform:translate(0,0) rotate(0) scale(1);opacity:1}}
+@keyframes swu-card-hit{0%,100%{transform:translateX(0) rotate(0)}15%{transform:translateX(-2px) rotate(-1deg)}32%{transform:translateX(2px) rotate(.8deg)}52%{transform:translateX(-1px) rotate(-.4deg)}72%{transform:translateX(.5px) rotate(.2deg)}}
+@keyframes swu-base-hit{0%,100%{transform:translateX(0)}20%{transform:translateX(-2px)}40%{transform:translateX(2px)}65%{transform:translateX(-1px)}}
+@keyframes swu-hit-ripple{0%{opacity:0;transform:scale(.94);border-width:3px}18%{opacity:1;transform:scale(1);box-shadow:inset 0 0 20px #ee6b526b,0 0 9px #ef8d6f62}68%{opacity:.45;transform:scale(1.025)}100%{opacity:0;transform:scale(1.045);border-width:1px}}
+@keyframes swu-hit-flash{0%{opacity:0;transform:scale(.3)}18%{opacity:.9;transform:scale(.85)}100%{opacity:0;transform:scale(1.3)}}
+@keyframes swu-token-rise{0%{opacity:0;transform:translate(-50%,-35%) scale(.65)}12%{opacity:1;transform:translate(-50%,-55%) scale(1.14)}26%{transform:translate(-50%,-58%) scale(1);opacity:1}76%{opacity:1;transform:translate(-50%,-82%) scale(1)}100%{opacity:0;transform:translate(-50%,-122%) scale(.96)}}
+@keyframes swu-label-show{0%,8%{opacity:0;transform:translateY(4px)}18%,72%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-6px)}}
+@keyframes swu-heal-frame{0%{opacity:0;box-shadow:inset 0 0 0 #87dfad00}26%{opacity:1;box-shadow:inset 0 0 18px #7ee5a74d,0 0 12px #7ee5a761}100%{opacity:0;box-shadow:inset 0 0 25px #7ee5a700,0 0 20px #7ee5a700}}
+@keyframes swu-card-heal{0%,100%{box-shadow:0 3px 10px #0004}35%{box-shadow:0 0 0 1px #a9edc0,0 0 15px #7acc984f}}
+@keyframes swu-card-shield{0%,100%{box-shadow:0 3px 10px #0004}24%{box-shadow:0 0 0 2px #a2defd,0 0 17px #4fc1e575}}
+@keyframes swu-shield-break{0%{opacity:0;transform:scale(.94)}20%{opacity:1;transform:scale(1.02)}48%{opacity:.7;transform:scale(1.05)}100%{opacity:0;transform:scale(1.17)}}
+@keyframes swu-shield-spark{0%{opacity:0;transform:scale(.75) rotate(0)}24%{opacity:1}100%{opacity:0;transform:scale(1.45) rotate(18deg)}}
+@keyframes swu-entry-rim{0%{opacity:0;transform:scale(.92)}35%{opacity:.85;transform:scale(1)}100%{opacity:0;transform:scale(1.035)}}
+@keyframes swu-card-sheen{0%{opacity:0;transform:translateX(-30%)}30%{opacity:.75}100%{opacity:0;transform:translateX(30%)}}
+@keyframes swu-defeat-note{0%{opacity:0;transform:translate(-50%,-40%) scale(.94)}16%,76%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-68%) scale(.98)}}
+
+@media(max-width:720px){
+  .game-card.has-status-pocket{--unit-stat-height:18px}
+  .game-card.has-status-pocket .card-face>.game-card-name{font-size:11px;bottom:20px}
+  .card-exhausted-token{font-size:8px;gap:2px;padding:0 4px;letter-spacing:0}
+  .card-exhausted-token>svg{width:7px;height:7px}
+  .game-card .card-status-pocket>.card-action-label{font-size:8px;gap:2px}
+  .game-card .stat-damage.damage-counter{min-width:13px;height:13px;padding:0 2px;font-size:9px}
+  .card-fx-value{font-size:20px;min-height:22px;min-width:22px;padding:3px 5px}
+  .card-fx-icon{height:26px;width:26px}
+  .card-fx-icon>svg{height:17px;width:17px}
+  .card-fx-label{font-size:7px;top:calc(35% + 14px)}
+  .arena-defeat-token{font-size:8px;gap:4px;padding:3px 7px}
+}
+@media(min-width:721px) and (max-height:520px) and (max-width:1280px){
+  .game-card.has-status-pocket{--unit-stat-height:18px}
+  .game-card.has-status-pocket .card-face>.game-card-name{font-size:10px;bottom:20px}
+  .card-exhausted-token{font-size:7px;gap:2px;padding:0 3px;letter-spacing:0}
+  .card-exhausted-token>svg{height:7px;width:7px}
+  .game-card .card-status-pocket>.card-action-label{font-size:7px;letter-spacing:0;gap:2px}
+  .game-card .stat-damage.damage-counter{min-width:12px;height:12px;font-size:8px;padding:0 2px}
+  .card-fx-value{font-size:18px;min-height:21px;min-width:21px;padding:3px 4px}
+  .card-fx-icon{height:24px;width:24px}
+  .card-fx-icon>svg{height:15px;width:15px}
+  .card-fx-label{font-size:7px;top:calc(35% + 13px)}
+  .arena-defeat-token{font-size:7px;padding:3px 6px}
+}
+@media(prefers-reduced-motion:reduce){
+  .battlefield .game-card.is-new,.battlefield .game-card.is-damaged,.battlefield .game-card.is-healed,.battlefield .game-card.is-shield-hit,.battlefield .base-panel.is-damaged,.battlefield .base-panel.is-healed{animation:none;transform:none}
+  .card-fx,.card-fx>.card-fx-ring,.card-fx:after,.card-fx-value,.card-fx-label,.card-fx-icon,.arena-defeat-token{animation:none!important;transition:none!important}
+  .card-fx>.card-fx-ring,.card-fx:after{opacity:0}
+  .card-fx-value,.card-fx-icon{opacity:1;transform:translate(-50%,-50%)}
+  .card-fx-label{opacity:1;transform:none}
+  .arena-defeat-token{opacity:1;transform:translate(-50%,-50%)}
+  .game-card .game-card-click img,.battlefield .leader-mini img,.battlefield .base-panel:is(.is-damaged,.is-healed) .health-track>i{transition:none}
+}

@@ -45,7 +45,7 @@ type ClientOptions = {
   recoveryTimeoutMs?: number;
   recoveryDelayMs?: number;
 };
-export type GameUpdate = { view: GameView; notice?: string };
+export type GameUpdate = { view: GameView; restored: boolean; notice?: string };
 
 /** Checkpoints stay opaque. Only a monotonic public version is stored beside them. */
 export function createGameClient(options: ClientOptions = {}) {
@@ -208,13 +208,13 @@ export function createGameClient(options: ClientOptions = {}) {
     return withGameLock(view.id, async () => {
       const checkpoint = savedCheckpoint(view.id);
       if (needsRefresh.has(view.id) || checkpoint && checkpoint.version > view.version) {
-        try { return { view: await recover(view.id, requestOptions), notice: CLIENT_MESSAGES.refresh }; }
+        try { return { view: await recover(view.id, requestOptions), restored: true, notice: CLIENT_MESSAGES.refresh }; }
         catch { throw new GameClientError(CLIENT_MESSAGES.unrecovered, { requiresRefresh: true, code: 'RECOVERY_FAILED' }); }
       }
       try {
         const updated = await api<GameView>(`/api/games/${encodeURIComponent(view.id)}/${action === 'bot' ? 'bot' : 'actions'}`,
           action === 'bot' ? {} : { ...action, version: view.version }, 'POST', requestOptions);
-        return { view: updated, notice: checkpointNotice(view.id) };
+        return { view: updated, restored: false, notice: checkpointNotice(view.id) };
       } catch (error) {
         const failure = error as GameClientError;
         // A lost response does not prove that a mutation failed. Never replay it.
@@ -227,7 +227,7 @@ export function createGameClient(options: ClientOptions = {}) {
         }
         try {
           const restored = await recover(view.id, requestOptions);
-          return { view: restored, notice: failure.status === 409
+          return { view: restored, restored: true, notice: failure.status === 409
             ? restored.version > view.version ? CLIENT_MESSAGES.stale : CLIENT_MESSAGES.refresh
             : CLIENT_MESSAGES.recovered };
         } catch {

@@ -50,7 +50,7 @@ an action response after the HTTP server accepts it, verifies read-only
 recovery, and checks that exactly one mutation was sent. Reports and
 screenshots go to `/tmp/swu-ui-regression`, or `SWU_SCREENSHOTS` if set.
 
-`npm test` covers 130 engine, bot, metadata, privacy, legality, checkpoint, and
+`npm test` covers 143 engine, bot, metadata, privacy, legality, checkpoint, and
 browser-client cases, including four focused human-flow regressions. The
 Droid Deployment regression checks that its name does not cause its Play
 action to be misclassified as leader deployment. `scripts/browser-smoke.mjs`
@@ -63,3 +63,25 @@ imports, invalid counts, saved collections, both custom seats, a real card
 play, and resuming after removing both local deck lists and evicting the
 server's in-memory session. It also checks card-library search, filtering,
 inspection, and mobile modal bounds.
+
+Exhausted units keep upright grayscale artwork and a 12 px red token in a
+reserved footer below the card face. Only the art is desaturated; action labels,
+stats, and damage counters retain their colors. New units settle into the arena;
+damage uses a brief impact pulse and rising red number, healing uses green, and
+lost shields use blue. Defeated units leave a short note in the arena divider.
+The [physical reference notes](battle-visual-reference.md) document the sources
+behind the compact token treatment.
+
+Feedback derives from successive public board snapshots and the viewer's own
+hand. Damage uses changes to damage counters, so changing maximum HP does not
+produce a false hit. Each effect expires independently; repeated hits receive
+new animation identities. Resume and connection recovery suppress old effects.
+This is visual feedback for observed state changes, not a chronological replay
+of every intermediate rules event in a combined AI response.
+
+Run `npm run test:motion-ui` after the build for real HTTP gameplay through card
+entry, repeated unit damage, base damage, and shield loss. The check verifies
+that the exhausted token stays below the artwork, effects expire, and reduced
+motion keeps readable damage numbers without moving animations. It also checks
+375 × 667 and 844 × 390 bounds. Reports and frames go to
+`/tmp/swu-battle-motion`, or `SWU_MOTION_REPORT` if set.

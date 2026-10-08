@@ -87,6 +87,7 @@ test('stale or busy mutation recovery retries only state reads and never repeats
   const result = await c.mutateGame(game(), action);
   assert.equal(result.view.version, 3);
   assert.equal(result.notice, CLIENT_MESSAGES.stale);
+  assert.equal(result.restored, true);
   assert.deepEqual(paths, [`/api/games/${id}/actions`, `/api/games/${id}/state`, `/api/games/${id}/state`]);
 });
 
@@ -101,6 +102,7 @@ test('lost mutation responses recover a saved board with an explicit uncertainty
   const result = await c.mutateGame(game(), action);
   assert.equal(result.view.version, 2);
   assert.equal(result.notice, CLIENT_MESSAGES.recovered);
+  assert.equal(result.restored, true);
   assert.equal(paths.filter(url => url.endsWith('/actions')).length, 1);
 });
 
@@ -117,9 +119,11 @@ test('a failed recovery makes the next action click refresh only, without replay
   disconnected = false;
   const recovered = await c.mutateGame(game(), action);
   assert.equal(recovered.notice, CLIENT_MESSAGES.refresh);
+  assert.equal(recovered.restored, true);
   assert.equal(paths.filter(url => url.endsWith('/actions')).length, 1);
   const next = await c.mutateGame(recovered.view, action);
   assert.equal(next.view.version, 1);
+  assert.equal(next.restored, false);
   assert.equal(paths.filter(url => url.endsWith('/actions')).length, 2);
 });
 
@@ -135,6 +139,7 @@ test('a newer checkpoint from another tab replaces the memory token and refreshe
   second.rememberGame(game(4));
   const result = await first.mutateGame(game(), action);
   assert.equal(result.view.version, 4);
+  assert.equal(result.restored, true);
   assert.deepEqual(paths, [`/api/games/${id}/state`]);
 });
 
@@ -156,7 +161,9 @@ test('Web Locks prevent overlapping mutations from two browser tabs', async () =
   await assert.rejects(second.mutateGame(game(), action), error => error.code === 'BUSY');
   assert.equal(mutations, 1);
   delayed.resolve(response(game(1)));
-  assert.equal((await updating).view.version, 1);
+  const result = await updating;
+  assert.equal(result.view.version, 1);
+  assert.equal(result.restored, false);
 });
 
 test('malformed game responses cannot replace a checkpoint, while catalog JSON is left alone', async () => {
@@ -178,6 +185,7 @@ test('truncated JSON after a mutation is recovered without submitting the action
   const result = await c.mutateGame(game(), action);
   assert.equal(result.view.version, 1);
   assert.equal(result.notice, CLIENT_MESSAGES.recovered);
+  assert.equal(result.restored, true);
   assert.equal(mutations, 1);
 });
 
@@ -196,6 +204,7 @@ test('storage failures retain the latest memory token and warn against closing t
   const result = await c.mutateGame(game(2), action);
   assert.equal(result.view.version, 3);
   assert.equal(result.notice, CLIENT_MESSAGES.storage);
+  assert.equal(result.restored, false, 'A storage warning must not suppress feedback for a successful live action.');
   assert.equal(JSON.parse(disk.getItem(checkpointKey)).version, 0);
 });
 
@@ -260,5 +269,6 @@ test('cancelled mutations do not retry or save late responses, and require a rea
   assert.equal(JSON.parse(disk.getItem(checkpointKey)).version, 0);
   const result = await c.mutateGame(game(), action);
   assert.equal(result.view.version, 1);
+  assert.equal(result.restored, true);
   assert.equal(paths.filter(url => url.endsWith('/actions')).length, 1);
 });

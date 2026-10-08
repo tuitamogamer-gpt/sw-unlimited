@@ -59,8 +59,11 @@ optional; you can keep your entire hand.
 On a phone, Ground and Space are tabs within a single-screen battlefield. Your
 hand and current decision stay visible. Base and leader cards have artwork and
 inspection controls; the battle log and reference information open separately.
-Landscape phones use a side panel for the hand and commands. Damage, newly
-played units, and the latest move receive brief visual feedback. Crowded rows
+Landscape phones use a side panel for the hand and commands. Exhausted units
+keep grayscale artwork with a small red token beneath it. Cards settle into
+play; damage, healing, and lost shields have distinct brief effects. Red damage
+counters follow the [physical tabletop references](docs/battle-visual-reference.md).
+Reduced-motion preferences keep the numbers without movement. Crowded rows
 show when more cards are available by scrolling.
 
 Inspect a card to read its rules, zoom its artwork, view attachments, and use
@@ -122,6 +125,7 @@ npm run cards:check
 npm run build
 npm run test:ui
 npm run test:custom-ui
+npm run test:motion-ui
 node scripts/sync-card-catalog.cjs --check
 ```
 
@@ -131,6 +135,10 @@ manual card plays (including from the card inspector), artwork and zoom,
 searchable deck details, loaded base artwork, portrait and landscape viewport
 bounds, arena tabs, confirmation dialogs, language persistence, and game
 restoration after a lost action response.
+
+The motion check follows real engine actions through entry, repeated damage,
+and shield loss. It verifies exhaustion tokens, image-only grayscale, effect
+expiry, reduced motion, and portrait/landscape bounds.
 
 Tests exercise real games, manual human play from setup through regroup,
 information privacy, illegal action rejection, and restoration of encrypted

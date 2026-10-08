@@ -1,43 +1,40 @@
 import { createContext, useEffect, useRef, useState } from 'react';
-import type { Card, GameView } from './types';
+import type { GameView } from './types';
+import { captureBattleSnapshot, diffBattleSnapshots, latestBattleMessage, mergeBattleEvents, summarizeBattleEvents } from './battle-feedback-events';
+import type { BattleFeedback, BattleSnapshot } from './battle-feedback-events';
+export type { BattleEvent, BattleFeedback } from './battle-feedback-events';
 
-export type BattleFeedback = {
-  added: ReadonlySet<string>;
-  damaged: ReadonlySet<string>;
-  baseChanges: Record<string, number>;
-  message: string;
-};
-const empty: BattleFeedback = { added: new Set(), damaged: new Set(), baseChanges: {}, message: '' };
+const empty: BattleFeedback = summarizeBattleEvents([]);
 export const BattleFeedbackContext = createContext<BattleFeedback>(empty);
-const board = (view: GameView) => Object.values(view.players).flatMap(player => [player.base, ...player.ground, ...player.space]);
-const health = (card: Card) => card.remainingHp ?? (card.hp || 0) - (card.damage || 0);
 
 /** Feedback compares only the already redacted, visible boards. */
-export function useBattleFeedback(game: GameView): BattleFeedback {
-  const previous = useRef<GameView | null>(null);
+export function useBattleFeedback(game: GameView, { resetKey }: { resetKey?: unknown } = {}): BattleFeedback {
+  const previous = useRef<{ snapshot: BattleSnapshot; resetKey: unknown } | null>(null);
   const [feedback, setFeedback] = useState<BattleFeedback>(empty);
   useEffect(() => {
-    const before = previous.current;
-    previous.current = game;
-    if (!before || before.id !== game.id || before.version > game.version) { setFeedback(empty); return; }
-    if (before.version === game.version) return;
-    const old = new Map(board(before).map(card => [card.uuid, card]));
-    const added = new Set<string>(), damaged = new Set<string>();
-    for (const card of board(game)) {
-      const prior = old.get(card.uuid);
-      if (!prior) added.add(card.uuid);
-      else if ((card.damage || 0) > (prior.damage || 0) || health(card) < health(prior)) damaged.add(card.uuid);
+    const prior = previous.current;
+    const after = captureBattleSnapshot(game);
+    previous.current = { snapshot: after, resetKey };
+    if (!prior || prior.resetKey !== resetKey || prior.snapshot.id !== after.id
+      || prior.snapshot.viewerId !== after.viewerId || prior.snapshot.version > after.version) {
+      setFeedback(empty); return;
     }
-    const baseChanges = Object.fromEntries(Object.entries(game.players).map(([id, player]) => [id, health(player.base) - health(before.players[id as 'human' | 'bot'].base)]));
-    const messages = game.log.slice(before.log.length).map(entry => typeof entry === 'string' ? entry : entry.text || entry.message || '');
-    const recent = [...messages].reverse();
-    const important = /\b(?:plays|attacks|uses|deploys|captures|defeats|heals)\b/i;
-    const message = recent.find(entry => /^AI\b/.test(entry) && important.test(entry))
-      || recent.find(entry => important.test(entry)) || recent.find(entry => /claims initiative|has won|Round:/.test(entry)) || '';
-    setFeedback(current => ({ added, damaged, baseChanges, message: message || current.message }));
-    const timer = setTimeout(() => setFeedback(current => ({ ...current, added: new Set(), damaged: new Set(), baseChanges: {} })), 2600);
+    if (prior.snapshot.version === after.version) return;
+    const now = Date.now();
+    const events = diffBattleSnapshots(prior.snapshot, after, now);
+    const message = latestBattleMessage(prior.snapshot, after);
+    setFeedback(current => summarizeBattleEvents(mergeBattleEvents(current.events, events, now), message || current.message));
+  }, [game.id, game.version, game.viewerId, resetKey]);
+  // One timer for the earliest individual expiry. A later response reschedules
+  // the remaining duration; it never extends or clears unrelated events.
+  useEffect(() => {
+    if (!feedback.events.length) return;
+    const expiresAt = Math.min(...feedback.events.map(event => event.expiresAt));
+    const timer = setTimeout(() => setFeedback(current => summarizeBattleEvents(
+      mergeBattleEvents(current.events, [], Date.now()), current.message,
+    )), Math.max(0, expiresAt - Date.now()));
     return () => clearTimeout(timer);
-  }, [game.id, game.version]);
+  }, [feedback.events]);
   return feedback;
 }
 
