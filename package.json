@@ -12,6 +12,7 @@
     "start": "node server/index.cjs",
     "engine:setup": "node scripts/setup-engine.mjs",
     "test": "node --test tests/*.test.cjs",
+    "test:ui": "node scripts/ui-regression.mjs",
     "test:smoke": "node scripts/smoke.cjs",
     "cards:check": "node scripts/report-coverage.cjs"
   },

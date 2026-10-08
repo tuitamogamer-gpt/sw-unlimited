@@ -30,7 +30,7 @@ async function main() {
     try {
       while (!view.winnerIds.length && requests < 500) {
         assertPrivateView(view);
-        for (const decision of view.botHistory) assert.ok(['Odabir karte', 'Odluka', 'Raspodjela', 'Odabir učinka'].includes(decision.action), 'AI history must not expose private card labels');
+        for (const decision of view.botHistory) assert.ok(['Card selection', 'Decision', 'Distribution', 'Effect selection'].includes(decision.action), 'AI history must not expose private card labels');
         assert.equal(view.warnings.length, 0, view.warnings.join(';'));
         const decision = chooseAction(view, { difficulty, memory });
         assert.ok(decision?.action, `Missing human action at ${view.prompt.title}`);

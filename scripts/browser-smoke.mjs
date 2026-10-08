@@ -14,7 +14,7 @@ try {
   await page.goto(origin, { waitUntil: 'networkidle' });
   assert.equal(await page.locator('.deck-tile').count(), 18);
   await page.screenshot({ path: 'docs/screenshots/command.png' });
-  await page.getByRole('button', { name: 'Započni bitku', exact: true }).click();
+  await page.getByRole('button', { name: 'Start battle', exact: true }).click();
   await page.locator('.game-shell').waitFor();
   // Leaders are visible before the initiative choice; hands are dealt afterward.
   await page.locator('.leader-mini .icon-button').first().click();
@@ -36,15 +36,25 @@ try {
     const decision = chooseAction(view, { difficulty: 'normal', memory });
     const action = decision.action;
     assert.ok(action, `No legal choice at ${view.prompt.title}`);
+    while (await page.getByRole('dialog').count()) await page.keyboard.press('Escape');
+    const openChoices = async () => {
+      if (!await page.locator('.prompt-choice-body').count()) await page.locator('.prompt-more-button').click();
+    };
     const response = page.waitForResponse(res => res.url().endsWith(`/api/games/${id}/actions`) && res.request().method() === 'POST');
     response.catch(() => {});
     if (action.type === 'card') {
       let target = page.locator(`[data-card-id="${action.cardId}"]:visible`).first();
       if (!await target.count()) {
-        const fallback = page.locator('details.legal-action-fallback');
-        if (await fallback.count()) await fallback.evaluate(node => { node.open = true; });
-        else await page.getByText('Dostupni ciljevi i odabiri').click();
+        for (const arena of ['ground', 'space']) {
+          if (await page.locator(`.arena-${arena} [data-card-id="${action.cardId}"]`).count() && await page.locator(`#tab-${arena}`).isVisible()) {
+            await page.locator(`#tab-${arena}`).click();
+          }
+        }
         target = page.locator(`[data-card-id="${action.cardId}"]:visible`).first();
+        if (!await target.count()) {
+          await openChoices();
+          target = page.locator(`.prompt-choice-body [data-card-id="${action.cardId}"]:visible`).first();
+        }
       }
       await target.click();
     } else if (action.type === 'button') {
@@ -52,17 +62,31 @@ try {
         && !(view.prompt.number && /^\d+$/.test(button.arg)) && !view.prompt.dropdown?.includes(button.arg));
       const index = buttons.findIndex(button => String(button.arg) === String(action.arg));
       if (view.prompt.number && /^\d+$/.test(String(action.arg))) {
+        await openChoices();
         await page.locator('#prompt-number').fill(String(action.arg));
         await page.locator('.number-prompt button').click();
       } else if (view.prompt.dropdown?.includes(action.arg)) {
+        await openChoices();
         await page.locator('.number-prompt select').selectOption(action.arg);
         await page.locator('.number-prompt button').click();
       } else {
         assert.ok(index >= 0, `Browser smoke requires visible button ${action.arg}: ${JSON.stringify(view.prompt)}`);
         await page.locator('.prompt-buttons > button').nth(index).click();
+        if (/claim.*initiative/i.test(String(action.arg) + buttons[index].text)) {
+          await page.getByRole('dialog', { name: 'Claim initiative?', exact: true }).getByRole('button', { name: 'Claim initiative', exact: true }).click();
+        }
       }
+    } else if (action.type === 'perCard') {
+      await openChoices();
+      await page.locator(`.display-card-prompt > div:has([data-card-id="${action.cardId}"]) [data-action-arg="${action.arg}"]`).click();
+    } else if (action.type === 'stateful') {
+      await openChoices();
+      for (const target of action.result.valueDistribution) {
+        await page.locator(`.distribution-target[data-target-id="${target.uuid}"] input`).fill(String(target.amount));
+      }
+      await page.getByRole('button', { name: 'Confirm distribution', exact: true }).click();
     } else {
-      throw new Error(`Extend browser fixture for ${action.type}; engine suite covers this control.`);
+      throw new Error(`Unknown action type: ${action.type}`);
     }
     const res = await response;
     assert.equal(res.status(), 200, await res.text());
@@ -78,8 +102,10 @@ try {
   await page.screenshot({ path: 'docs/screenshots/battle-mobile.png', fullPage: true });
   const mobileOverflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth);
   assert.equal(mobileOverflow, false, 'Mobile game must not overflow horizontally');
+  const verticalOverflow = await page.evaluate(() => document.documentElement.scrollHeight > innerHeight + 1);
+  assert.equal(verticalOverflow, false, 'Mobile game must fit a single screen');
   await writeFile('docs/validation-browser.json', JSON.stringify({ passed: true, steps, rounds: view.round, winners: view.winnerIds,
-    pageErrors: errors, mobileOverflow }, null, 2) + '\n');
-  console.log({ passed: true, steps, rounds: view.round, winners: view.winnerIds, mobileOverflow });
+    pageErrors: errors, mobileOverflow, verticalOverflow }, null, 2) + '\n');
+  console.log({ passed: true, steps, rounds: view.round, winners: view.winnerIds, mobileOverflow, verticalOverflow });
 } catch (error) { console.error(error); process.exitCode = 1; }
 finally { await browser.close(); }

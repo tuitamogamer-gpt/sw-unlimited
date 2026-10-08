@@ -6,9 +6,9 @@
  * This module deliberately never imports the engine or receives a live Game object.
  */
 const DIFFICULTIES = Object.freeze({
-    easy: { name: 'Kadet', tactics: 0.65, planning: false, variance: 7 },
-    normal: { name: 'Vitez', tactics: 1, planning: false, variance: 0.5 },
-    hard: { name: 'Majstor', tactics: 1.25, planning: true, variance: 0 }
+    easy: { name: 'Cadet', tactics: 0.65, planning: false, variance: 7 },
+    normal: { name: 'Knight', tactics: 1, planning: false, variance: 0.5 },
+    hard: { name: 'Master', tactics: 1.25, planning: true, variance: 0 }
 });
 
 const CARD_FIELDS = ['uuid', 'id', 'code', 'name', 'subtitle', 'cost', 'power', 'hp', 'damage',
@@ -162,12 +162,12 @@ function evaluateAttack(attacker, target, state, config) {
     const enemyHp = remaining(state.enemy.base);
     const ownHp = remaining(state.me.base);
     if (isBase(target)) {
-        if (attackPower >= remaining(target)) return { score: 100000 + attackPower, reason: 'Završavam partiju napadom na bazu.' };
+        if (attackPower >= remaining(target)) return { score: 100000 + attackPower, reason: 'Finishing the game with a base attack.' };
         const race = potentialDamage(ownUnits, enemyUnits) >= enemyHp;
         const inDanger = potentialDamage(enemyUnits, ownUnits) >= ownHp;
         return {
             score: attackPower * (enemyHp <= 10 ? 5 : 3.2) + (race ? 22 : 0) - (inDanger && !race ? 12 : 0),
-            reason: race ? 'Otvaram niz napada koji može srušiti bazu.' : 'Pritišćem protivničku bazu.'
+            reason: race ? 'Starting a sequence of attacks that can defeat the base.' : 'Putting pressure on the enemy base.'
         };
     }
     const targetShield = shields(target) && !keyword(attacker, 'saboteur');
@@ -177,7 +177,7 @@ function evaluateAttack(attacker, target, state, config) {
     const kill = dealt >= remaining(target);
     const die = received >= remaining(attacker);
     const overrun = keyword(attacker, 'overwhelm') ? Math.max(0, dealt - remaining(target)) : 0;
-    if (overrun >= enemyHp && enemyHp > 0) return { score: 100000, reason: 'Overwhelm štetom završavam partiju.' };
+    if (overrun >= enemyHp && enemyHp > 0) return { score: 100000, reason: 'Finishing the game with Overwhelm damage.' };
     const futureDamage = potentialDamage(enemyUnits, ownUnits);
     const immediateLethal = !target.exhausted && canHitBase(target, ownUnits) && damageValue(target) >= ownHp;
     const stopsLethal = kill && !target.exhausted && futureDamage >= ownHp && futureDamage - damageValue(target) < ownHp;
@@ -195,12 +195,12 @@ function evaluateAttack(attacker, target, state, config) {
     }
     return {
         score,
-        reason: immediateLethal && kill ? 'Uklanjam jedinicu koja može odmah srušiti moju bazu.'
-            : stopsLethal ? 'Uklanjam prijetnju i prekidam protivnički završni napad.'
-                : kill && keyword(target, 'sentinel') ? 'Uklanjam Sentinel i otvaram arenu.'
-                    : kill && !die ? 'Dobivam razmjenu i zadržavam svoju jedinicu.'
-                        : kill ? 'Mijenjam jedinicu za važniju protivničku prijetnju.'
-                            : targetShield ? 'Skidam štit za sljedeći napad.' : 'Pripremam povoljnu razmjenu u areni.'
+        reason: immediateLethal && kill ? 'Removing a unit that could immediately defeat my base.'
+            : stopsLethal ? 'Removing a threat to stop a lethal attack.'
+                : kill && keyword(target, 'sentinel') ? 'Removing a Sentinel to open an attack lane.'
+                    : kill && !die ? 'Defeating an enemy unit while keeping mine alive.'
+                        : kill ? 'Trading a unit for a more valuable enemy threat.'
+                            : targetShield ? 'Removing a shield to prepare the next attack.' : 'Setting up a favorable trade in the arena.'
     };
 }
 
@@ -212,7 +212,7 @@ function bestAttack(card, ability, state, config, cards) {
         if (canHitBase(card, enemyUnits) && state.enemy.base) targets.push(state.enemy.base);
     }
     const scores = targets.map((target) => ({ ...evaluateAttack(card, target, state, config), targetId: target.uuid }));
-    return scores.sort((a, b) => b.score - a.score)[0] || { score: -20, reason: 'Tražim legalan napad.' };
+    return scores.sort((a, b) => b.score - a.score)[0] || { score: -20, reason: 'Looking for a legal attack.' };
 }
 
 function handValue(card, state) {
@@ -237,16 +237,16 @@ function resourceChoice(state, actions, cards) {
     const title = `${state.prompt.title} ${state.prompt.subtitle}`;
     const fixed = title.match(/select (\d+) cards? to resource/i);
     const desired = fixed ? num(fixed[1]) : 1;
-    if (selected.size >= desired && confirm) return { action: confirm, score: 0, reason: 'Potvrđujem odabrane resurse.' };
+    if (selected.size >= desired && confirm) return { action: confirm, score: 0, reason: 'Confirming the selected resources.' };
     const candidates = actions.filter((action) => action.type === 'card' && !selected.has(action.cardId));
     const maxUsefulCost = Math.max(0, ...state.me.hand.map((card) => num(card.cost)), ...state.me.leaders.map((card) => num(card.cost)));
     if (!fixed && confirm && selected.size === 0 && state.me.resourceCount >= Math.max(6, maxUsefulCost)
         && (state.me.hand.length <= 3 || state.me.resourceCount >= 9)) {
-        return { action: confirm, score: 0, reason: 'Imam dovoljno resursa; zadržavam karte u ruci.' };
+        return { action: confirm, score: 0, reason: 'Keeping cards in hand because there are enough resources.' };
     }
     candidates.sort((a, b) => handValue(cards.get(a.cardId) || {}, state) - handValue(cards.get(b.cardId) || {}, state));
-    if (candidates.length) return { action: candidates[0], score: 0, reason: 'Resursiram najmanje korisnu kartu i čuvam ranu krivulju.' };
-    return confirm ? { action: confirm, score: 0, reason: 'Završavam korak resursa.' } : null;
+    if (candidates.length) return { action: candidates[0], score: 0, reason: 'Resourcing the least useful card while keeping early plays.' };
+    return confirm ? { action: confirm, score: 0, reason: 'Finishing the resource step.' } : null;
 }
 
 function mulliganChoice(state, actions) {
@@ -257,7 +257,7 @@ function mulliganChoice(state, actions) {
     const desired = wantMulligan ? 'mulligan' : 'keep';
     const action = actions.find((entry) => lower(entry.arg) === desired || lower(entry.label) === desired);
     return action && { action, score: 0, reason: wantMulligan
-        ? 'Mijenjam ruku bez pouzdane rane krivulje jedinica.' : 'Zadržavam ruku s ranim jedinicama i nastavkom krivulje.' };
+        ? 'Taking a mulligan to find reliable early units.' : 'Keeping a hand with early units and follow-up plays.' };
 }
 
 function curveFollowup(excluded, state, budget) {
@@ -278,34 +278,34 @@ function playValue(card, ability, state, config) {
     const ownUnits = units(state.me);
     const text = lower(card.text);
     let score = 5 + num(card.cost) * 0.8;
-    let reason = 'Razvijam ploču i učinkovito koristim resurse.';
+    let reason = 'Building board presence and using resources efficiently.';
     if (isUnit(card)) {
         score = 6 + unitValue(card) * 0.8 + Math.min(cost, state.me.readyResources) * 0.7;
         const arena = /space/i.test(card.zone) || /space/i.test(card.type) || /space/i.test(card.arena) ? 'space' : 'ground';
         if (!ownUnits.some((entry) => lane(entry) === arena)) score += 2.5;
         if (keyword(card, 'ambush') || /\bambush\b/.test(text)) {
             score += 5;
-            reason = 'Uvodim Ambush jedinicu radi trenutačnog utjecaja na arenu.';
+            reason = 'Playing an Ambush unit for an immediate attack.';
         }
         if (keyword(card, 'sentinel') || /\bsentinel\b/.test(text)) {
             const danger = potentialDamage(enemyUnits, ownUnits) >= remaining(state.me.base);
-            if (danger) { score += 70; reason = 'Postavljam Sentinel da zaštitim bazu.'; }
+            if (danger) { score += 70; reason = 'Playing a Sentinel to protect the base.'; }
         }
     } else if (/upgrade/i.test(card.type)) {
         score += ownUnits.some((entry) => !entry.exhausted) ? 6 : -2;
         if (ownUnits.length === 0) score -= 25;
-        reason = 'Pojačavam jedinicu za bolji napad ili preživljavanje.';
+        reason = 'Upgrading a unit to improve its attack or survival.';
     } else {
         const damage = num(text.match(/deal (\d+) damage/)?.[1]);
         if (damage && /base/.test(text) && damage >= remaining(state.enemy.base)) {
-            score += 10000; reason = 'Koristim štetu koja može završiti partiju.';
+            score += 10000; reason = 'Using damage that can finish the game.';
         } else if (damage) {
             const kills = enemyUnits.filter((unit) => remaining(unit) <= damage);
             score += kills.length ? Math.max(...kills.map(unitValue)) * 0.9 : enemyUnits.length ? damage : -10;
-            reason = 'Koristim uklanjanje protiv važne prijetnje.';
+            reason = 'Using removal against a major threat.';
         }
         if (/defeat|capture|return.*hand/.test(text)) score += enemyUnits.length ? Math.max(...enemyUnits.map(unitValue)) * 0.6 : -8;
-        if (/draw/.test(text)) { score += state.me.hand.length <= 3 ? 9 : 3; reason = 'Obnavljam ruku za sljedeće akcije.'; }
+        if (/draw/.test(text)) { score += state.me.hand.length <= 3 ? 9 : 3; reason = 'Refilling my hand for the next actions.'; }
         if (/heal|restore/.test(text)) score += num(state.me.base?.damage) >= 10 ? 9 : -3;
     }
     if (config.planning) score += curveFollowup(card.uuid, state, state.me.readyResources - cost);
@@ -320,21 +320,21 @@ function abilityValue(card, ability, state, config, cards) {
         return {
             score: 19 + unitValue(card) * 0.45 + (damageValue(card) >= remaining(state.enemy.base) ? 120 : 0)
                 + (enemyThreat >= remaining(state.me.base) ? 5 : 0),
-            reason: 'Deployam vođu radi dodatne spremne jedinice i pritiska.'
+            reason: 'Deploying the leader for another ready unit and more pressure.'
         };
     }
     const text = lower(ability.title);
     let score = 8;
-    let reason = 'Koristim sposobnost za dodatnu vrijednost.';
+    let reason = 'Using an ability to gain an advantage.';
     if (/play.*(?:unit|card).*from your hand/.test(text)) {
         const trait = text.match(/\{trait:([^}]+)\}/)?.[1];
         const affordable = state.me.hand.filter((entry) => (!trait || list(entry.traits).some((value) => lower(value) === trait))
             && isUnit(entry) && num(entry.cost) <= state.me.readyResources + state.me.creditCount);
-        if (!affordable.length) return { score: -80, reason: 'Čuvam akciju jer nemam kartu koju mogu platiti.' };
+        if (!affordable.length) return { score: -80, reason: 'Saving the action because no card is affordable.' };
         score = Math.max(...affordable.map((entry) => playValue(entry, null, state, config).score)) + 2;
-        reason = 'Sposobnošću igram dostupnu jedinicu iz ruke.';
+        reason = 'Using an ability to play an affordable unit from hand.';
     }
-    if (/draw/.test(text)) { score += state.me.hand.length <= 3 ? 10 : 4; reason = 'Sposobnošću obnavljam ruku.'; }
+    if (/draw/.test(text)) { score += state.me.hand.length <= 3 ? 10 : 4; reason = 'Using an ability to refill my hand.'; }
     if (/shield|experience|ready/.test(text)) score += 5;
     if (/damage|defeat|attack/.test(text)) score += units(state.enemy).length ? 5 : 1;
     if (/heal/.test(text)) score += num(state.me.base?.damage) > 7 ? 8 : -4;
@@ -346,12 +346,12 @@ function actionWindowChoice(action, state, config, cards) {
     if (action.type !== 'card') {
         if (/claiminitiative|claim initiative/i.test(`${action.arg} ${action.label}`)) {
             const ready = units(state.me).filter((card) => !card.exhausted).length;
-            return { score: ready === 0 ? 2 : -3, reason: 'Uzimam inicijativu za prvi potez sljedeće runde.' };
+            return { score: ready === 0 ? 2 : -3, reason: 'Claiming initiative to act first next round.' };
         }
-        return { score: -30, reason: 'Prolazim jer nemam koristan legalan potez.' };
+        return { score: -30, reason: 'Passing because there is no useful legal action.' };
     }
     const card = cards.get(action.cardId);
-    if (!card) return { score: 1, reason: 'Koristim dostupnu legalnu akciju.' };
+    if (!card) return { score: 1, reason: 'Taking an available legal action.' };
     let abilities = action.abilities;
     if (!abilities.length) {
         const type = card.zone === 'hand' || card.zone === 'resource' ? 'play'
@@ -381,59 +381,59 @@ function targetValue(card, state, config, cards, memory) {
     if (attacker && !own) return evaluateAttack(attacker, card, state, config);
     if (own && card.zone === 'hand' && /play.*(?:unit|card).*from your hand/i.test(memory.plan?.ability?.title || '')) {
         return { score: num(card.cost) <= state.me.readyResources + state.me.creditCount ? handValue(card, state) + 20 : -80,
-            reason: 'Biram jedinicu koju mogu platiti i odmah razviti.' };
+            reason: 'Choosing a unit that can be paid for and played now.' };
     }
     if (/resource|discard.*(?:hand|card)|choose.*discard|sacrifice|defeat (?:a|one|another).*friendly/.test(promptText)) {
-        return { score: own ? -handValue(card, state) : unitValue(card), reason: 'Biram najmanji gubitak vrijednosti.' };
+        return { score: own ? -handValue(card, state) : unitValue(card), reason: 'Choosing the option that loses the least value.' };
     }
     if (/heal|remove.*damage/.test(promptText)) {
-        return { score: (own ? 1 : -1) * (num(card.damage) * 3 + (isBase(card) && remaining(card) <= 8 ? 50 : 0)), reason: 'Liječim najugroženiji vlastiti cilj.' };
+        return { score: (own ? 1 : -1) * (num(card.damage) * 3 + (isBase(card) && remaining(card) <= 8 ? 50 : 0)), reason: 'Healing the friendly target in the most danger.' };
     }
     if (/shield|experience|advantage|give.*(?:power|\+|token)|upgrade|attach|ready|friendly/.test(promptText)) {
         return { score: (own ? 1 : -1) * (unitValue(card) + (card.exhausted && /ready/.test(promptText) ? 10 : 0)
-            + (!card.exhausted ? 5 : 0)), reason: 'Pojačavam vlastiti cilj s najvećim utjecajem.' };
+            + (!card.exhausted ? 5 : 0)), reason: 'Strengthening the friendly target with the greatest impact.' };
     }
     if (/defeat|damage|capture|exhaust|return.*hand|enemy|opponent/.test(promptText)) {
         let score = own ? -unitValue(card) : unitValue(card);
         if (!own && !card.exhausted) score += damageValue(card) * 1.4;
         if (!own && !card.exhausted && damageValue(card) >= remaining(state.me.base)) score += 70;
         if (isBase(card)) score = own ? -100 : remaining(card) <= 5 ? 60 : 10;
-        return { score, reason: own ? 'Smanjujem gubitak pri obaveznom odabiru.' : 'Ciljam najveću protivničku prijetnju.' };
+        return { score, reason: own ? 'Minimizing the loss from a required choice.' : 'Targeting the greatest enemy threat.' };
     }
     if (/deck|search|look|reveal|draw|hand|choose.*card/.test(promptText) || state.prompt.displayCards.length) {
-        return { score: handValue(card, state), reason: 'Biram kartu koja najbolje dopunjuje ruku i krivulju.' };
+        return { score: handValue(card, state), reason: 'Choosing the card that best supports my hand and planned plays.' };
     }
-    return { score: own ? unitValue(card) : unitValue(card) * 0.7, reason: 'Biram najbolji dostupni legalni cilj.' };
+    return { score: own ? unitValue(card) : unitValue(card) * 0.7, reason: 'Choosing the best available legal target.' };
 }
 
 function buttonValue(action, state, config, cards, memory) {
     const text = lower(`${action.label} ${action.arg}`);
     const promptText = lower(`${state.prompt.title} ${state.prompt.subtitle}`);
     const selected = state.prompt.selectedCardIds.length;
-    if (/^(?:cancel|back|undo)|cancel ability|cancel prompt/.test(text)) return { score: -100, reason: 'Odustajem od neprovedive opcije.' };
-    if (/pass ability|choose nothing|no target|skip/.test(text)) return { score: -15, reason: 'Preskačem izbor bez korisnog cilja.' };
+    if (/^(?:cancel|back|undo)|cancel ability|cancel prompt/.test(text)) return { score: -100, reason: 'Canceling an option that cannot be completed.' };
+    if (/pass ability|choose nothing|no target|skip/.test(text)) return { score: -15, reason: 'Skipping a choice with no useful target.' };
     if (/\bdone\b|confirm|continue|ok\b/.test(text)) {
         const menuSelected = state.prompt.buttons.filter((button) => button.selected).length;
-        return { score: selected || menuSelected ? 1 : 0, reason: 'Potvrđujem dovršeni odabir.' };
+        return { score: selected || menuSelected ? 1 : 0, reason: 'Confirming the completed selection.' };
     }
     const card = cards.get(memory.plan?.cardId);
     const ability = memory.plan?.ability;
     if (ability && card && (lower(action.label) === lower(ability.title)
         || (ability.type === 'attack' && /attack/.test(text))
         || (ability.type === 'deploy' && /deploy/.test(text)))) {
-        return { score: 60, reason: 'Nastavljam odabranu taktičku akciju.' };
+        return { score: 60, reason: 'Continuing the planned tactical action.' };
     }
-    if (/resolve all/.test(text)) return { score: 25, reason: 'Razrješavam dostupne okidače.' };
-    if (/resolve|trigger|yes|use|pay|gain/.test(text)) return { score: 12, reason: 'Koristim korisni efekt karte.' };
-    if (/\bno\b/.test(text)) return { score: -3, reason: 'Odbijam nepotreban dodatni trošak.' };
-    if (/damage|defeat|attack/.test(text)) return { score: units(state.enemy).length ? 18 : 4, reason: 'Biram pritisak ili uklanjanje prijetnje.' };
-    if (/draw/.test(text)) return { score: state.me.hand.length <= 3 ? 20 : 11, reason: 'Biram dodatne karte.' };
-    if (/shield|experience|advantage|ready/.test(text)) return { score: units(state.me).length ? 17 : 1, reason: 'Biram razvoj vlastite ploče.' };
-    if (/heal/.test(text)) return { score: num(state.me.base?.damage) >= 10 ? 22 : 5, reason: 'Biram liječenje pod pritiskom.' };
-    if (/bottom/.test(text)) return { score: -1, reason: 'Manje korisnu kartu šaljem na dno špila.' };
-    if (/top|hand/.test(text)) return { score: 8, reason: 'Zadržavam korisnu kartu za sljedeći potez.' };
-    if (/initiative/.test(promptText)) return { score: /myself|yourself|me|bot|ai/.test(text) ? 25 : 3, reason: 'Biram prvi potez.' };
-    return { score: 5, reason: 'Razrješavam legalnu opciju efekta.' };
+    if (/resolve all/.test(text)) return { score: 25, reason: 'Resolving the available triggered abilities.' };
+    if (/resolve|trigger|yes|use|pay|gain/.test(text)) return { score: 12, reason: 'Using a beneficial card effect.' };
+    if (/\bno\b/.test(text)) return { score: -3, reason: 'Declining an unnecessary extra cost.' };
+    if (/damage|defeat|attack/.test(text)) return { score: units(state.enemy).length ? 18 : 4, reason: 'Choosing pressure or threat removal.' };
+    if (/draw/.test(text)) return { score: state.me.hand.length <= 3 ? 20 : 11, reason: 'Choosing to draw more cards.' };
+    if (/shield|experience|advantage|ready/.test(text)) return { score: units(state.me).length ? 17 : 1, reason: 'Choosing to develop my board.' };
+    if (/heal/.test(text)) return { score: num(state.me.base?.damage) >= 10 ? 22 : 5, reason: 'Choosing healing while under pressure.' };
+    if (/bottom/.test(text)) return { score: -1, reason: 'Sending a less useful card to the bottom of the deck.' };
+    if (/top|hand/.test(text)) return { score: 8, reason: 'Keeping a useful card for the next turn.' };
+    if (/initiative/.test(promptText)) return { score: /myself|yourself|me|bot|ai/.test(text) ? 25 : 3, reason: 'Choosing to act first.' };
+    return { score: 5, reason: 'Resolving a legal effect option.' };
 }
 
 function distributionChoice(action, state, cards) {
@@ -489,9 +489,9 @@ function distributionChoice(action, state, cards) {
     return {
         action: { ...action, result: { type: data.type, valueDistribution: [...allocation].map(([uuid, amount]) => ({ uuid, amount })) } },
         score: 0,
-        reason: healing ? 'Raspoređujem liječenje na ugrožene ciljeve.'
-            : tokens ? 'Raspoređujem pojačanja prema vrijednosti jedinica.'
-                : indirect ? 'Raspoređujem indirektnu štetu uz najmanji gubitak.' : 'Koncentriram štetu za uklanjanje važnih ciljeva.'
+        reason: healing ? 'Distributing healing among endangered targets.'
+            : tokens ? 'Distributing bonuses according to unit value.'
+                : indirect ? 'Distributing indirect damage to minimize losses.' : 'Concentrating damage to defeat important targets.'
     };
 }
 
@@ -520,7 +520,7 @@ function chooseAction(view, options = {}) {
     const difficulty = ({ cadet: 'easy', apprentice: 'easy', knight: 'normal', master: 'hard', expert: 'hard' })[requested] || requested;
     const config = DIFFICULTIES[difficulty] || DIFFICULTIES.normal;
     const actions = state.legalActions;
-    if (!actions.length) return { action: null, reason: 'Čekam protivnički potez.', difficulty, memory };
+    if (!actions.length) return { action: null, reason: 'Waiting for the opponent to act.', difficulty, memory };
     const cards = cardIndex(state);
     const title = lower(`${state.prompt.title} ${state.prompt.subtitle}`);
     const fp = fingerprint(state);
@@ -539,7 +539,7 @@ function chooseAction(view, options = {}) {
         const harmful = /pay|suffer|discard|damage to (?:your|a friendly)/.test(title);
         const desired = harmful ? state.prompt.number.min : state.prompt.number.max;
         const action = actions.find((entry) => num(entry.arg, NaN) === desired);
-        if (action) choice = { action, score: 0, reason: harmful ? 'Biram najmanji potreban trošak.' : 'Biram najveći legalni učinak.' };
+        if (action) choice = { action, score: 0, reason: harmful ? 'Choosing the lowest required cost.' : 'Choosing the largest legal effect.' };
     }
     if (!choice) {
         const ranked = actions.map((action, index) => {
@@ -569,7 +569,7 @@ function chooseAction(view, options = {}) {
         choice = ranked[0];
         choice.alternatives = ranked.slice(1, 4).map((entry) => ({ label: entry.action.label, score: Math.round(entry.score * 10) / 10 }));
     }
-    if (!choice?.action) return { action: null, reason: 'Nema valjanog rješenja za trenutačni izbor.', difficulty, memory };
+    if (!choice?.action) return { action: null, reason: 'There is no valid resolution for the current choice.', difficulty, memory };
     memory.attempts ||= {};
     const key = actionKey(choice.action);
     memory.attempts[key] = (memory.attempts[key] || 0) + 1;

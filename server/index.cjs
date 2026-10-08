@@ -39,13 +39,13 @@ function cacheSession(entry) {
 async function getSession(req, { allowStale = false } = {}) {
   await initialize();
   const token = req.body?.sessionToken || req.get('x-game-state');
-  if (typeof token !== 'string' || !token) fail(404, 'Nedostaje spremljena partija. Pokreni novu partiju.');
+  if (typeof token !== 'string' || !token) fail(404, 'No saved game was found. Start a new game.');
   const record = decodeRecord(token, { id: req.params.id });
-  if (record.id !== req.params.id) fail(404, 'Spremljena partija ne odgovara traženoj partiji.');
+  if (record.id !== req.params.id) fail(404, 'The saved game does not match the requested game.');
   let entry = sessions.get(record.id);
-  if (entry?.busy || restoring.has(record.id)) fail(409, 'Prethodna akcija se još obrađuje.');
+  if (entry?.busy || restoring.has(record.id)) fail(409, 'The previous action is still being processed.');
   if (entry && record.actions.length < entry.record.actions.length) {
-    if (!allowStale) fail(409, 'Stanje partije se promijenilo. Osvježi partiju prije sljedeće akcije.');
+    if (!allowStale) fail(409, 'The game state has changed. Refresh the game before your next action.');
   } else if (!entry || JSON.stringify(record.actions) !== JSON.stringify(entry.record.actions)) {
     // Instances are disposable: the encrypted browser checkpoint owns the game.
     // A newer checkpoint can arrive after another instance processed the last turn.
@@ -78,11 +78,11 @@ async function playBot(entry) {
       choice = chooseAction(observation, { difficulty: record.difficulty, memory: record.memory });
     } catch (error) {
       console.error('Bot decision failed:', error.code || error.name);
-      record.warning = 'AI odluka nije dovršena. Pokušaj nastaviti AI potez.';
+      record.warning = 'The AI could not complete its decision. Try continuing the AI turn.';
       return;
     }
     if (!choice?.action) {
-      record.warning = 'AI nije uspio odabrati legalnu akciju. Partija je sačuvana; pokušaj ponovno.';
+      record.warning = 'The AI could not choose a legal action. Your game is saved; try again.';
       return;
     }
     const before = observation.version;
@@ -95,15 +95,15 @@ async function playBot(entry) {
     }
     // Card labels can name a privately selected resource or a searched hand card.
     // Publish only the action category and the bot's generic explanation.
-    record.botHistory.push({ action: ({ card: 'Odabir karte', button: 'Odluka', stateful: 'Raspodjela', perCard: 'Odabir učinka' })[choice.action.type], reason: choice.reason,
+    record.botHistory.push({ action: ({ card: 'Card selection', button: 'Decision', stateful: 'Distribution', perCard: 'Effect selection' })[choice.action.type], reason: choice.reason,
       score: Number.isFinite(choice.score) ? choice.score : undefined });
     if (record.botHistory.length > 100) record.botHistory.shift();
     if (entry.game.botView().version === before) {
-      record.warning = 'AI akcija nije promijenila stanje igre. Pokušaj ponovno.';
+      record.warning = 'The AI action did not change the game state. Try again.';
       return;
     }
   }
-  record.warning = 'AI je dosegnuo granicu jednog niza odluka. Nastavi AI potez.';
+  record.warning = 'The AI reached its decision limit for this turn. Continue the AI turn.';
 }
 
 app.get('/api/health', (_req, res) => res.json({ ok: true, engine: 'Forceteki', ready: Boolean(deckCatalog), sessions: sessions.size }));
@@ -112,23 +112,23 @@ app.get('/api/decks', asyncRoute(async (_req, res) => {
   res.json({ decks: deckCatalog, engineVersion: '1f0e9783c4743acdc67df0c4ab3f3610a349c32a',
     rulesVersion: 'Forceteki pinned snapshot; official rules reference v9.0 (dated 2026-10-09)',
     sources: [
-      { title: 'Službena pravila i errata', url: 'https://starwarsunlimited.com/how-to-play?chapter=rules', description: 'Fantasy Flight Games · primarni izvor' },
-      { title: 'Comprehensive Rules v9.0', url: 'https://cdn.starwarsunlimited.com//SWH_Comp_Rules_v9_0_c4aa591948.pdf', description: 'Naslovnica datirana 9.10.2026.; verzijska napomena u dokumentaciji' },
-      { title: 'SWUDB API karata', url: 'https://api.swu-db.com/cards/sor', description: 'Javni JSON API; lokalni snapshot definicija za igru' },
-      { title: 'Forceteki · MIT', url: 'https://github.com/SWU-Karabast/forceteki', description: 'Skriptirani engine · fiksna verzija u projektu' },
-      { title: 'Reddit · Ambush i When Played', url: 'https://www.reddit.com/r/starwarsunlimited/comments/1bmwkpw/order_for_ambush_when_played/', description: 'Rasprava zajednice, povijesno tumačenje; službena pravila imaju prednost' },
-      { title: 'BoardGameGeek · Overwhelm i Shield', url: 'https://boardgamegeek.com/thread/3269976/overwhelm-vs-shielded-unit', description: 'Dostupan izvadak rasprave; nije autoritet za aktualno pravilo' }
+      { title: 'Official rules and errata', url: 'https://starwarsunlimited.com/how-to-play?chapter=rules', description: 'Fantasy Flight Games · primary source' },
+      { title: 'Comprehensive Rules v9.0', url: 'https://cdn.starwarsunlimited.com//SWH_Comp_Rules_v9_0_c4aa591948.pdf', description: 'Cover dated October 9, 2026; version note in the documentation' },
+      { title: 'SWUDB card API', url: 'https://api.swu-db.com/cards/sor', description: 'Public JSON API; local snapshot of game card definitions' },
+      { title: 'Forceteki · MIT', url: 'https://github.com/SWU-Karabast/forceteki', description: 'Scripted rules engine · pinned project version' },
+      { title: 'Reddit · Ambush and When Played', url: 'https://www.reddit.com/r/starwarsunlimited/comments/1bmwkpw/order_for_ambush_when_played/', description: 'Community discussion and historical interpretation; official rules take priority' },
+      { title: 'BoardGameGeek · Overwhelm and Shield', url: 'https://boardgamegeek.com/thread/3269976/overwhelm-vs-shielded-unit', description: 'Available discussion excerpt; not an authority on the current rule' }
     ] });
 }));
 app.post('/api/games', asyncRoute(async (req, res) => {
   await initialize();
   const { deckId, opponentDeckId, difficulty = 'normal' } = req.body || {};
-  if (!difficulties.has(difficulty)) fail(400, 'Nepoznata težina protivnika.');
+  if (!difficulties.has(difficulty)) fail(400, 'Unknown opponent difficulty.');
   const playerDeck = deckRecipes.find(deck => deck.id === deckId);
   const botDeck = deckRecipes.find(deck => deck.id === opponentDeckId);
-  if (!playerDeck || !botDeck) fail(400, 'Odaberi dva postojeća starter špila.');
+  if (!playerDeck || !botDeck) fail(400, 'Choose two available starter decks.');
   for (const deck of [playerDeck, botDeck]) {
-    if (deckCatalog.find(item => item.id === deck.id)?.supported === false) fail(400, `Špil ${deck.name} sadrži nepodržane karte.`);
+    if (deckCatalog.find(item => item.id === deck.id)?.supported === false) fail(400, `Deck ${deck.name} contains unsupported cards.`);
   }
   const created = await createRecord({ playerDeck, botDeck, difficulty });
   const entry = { ...created, lastAccess: Date.now(), busy: false };
@@ -138,15 +138,15 @@ app.post('/api/games', asyncRoute(async (req, res) => {
 }));
 const readGame = asyncRoute(async (req, res) => {
   const entry = await getSession(req, { allowStale: true });
-  if (entry.busy) fail(409, 'Prethodna akcija se još obrađuje.');
+  if (entry.busy) fail(409, 'The previous action is still being processed.');
   res.json(humanView(entry));
 });
 app.get('/api/games/:id', readGame);
 app.post('/api/games/:id/state', readGame);
 app.post('/api/games/:id/actions', asyncRoute(async (req, res) => {
   const entry = await getSession(req);
-  if (entry.busy) fail(409, 'Prethodna akcija se još obrađuje.');
-  if (!req.body || !['card', 'button', 'stateful', 'perCard'].includes(req.body.type)) fail(400, 'Nepoznata akcija.');
+  if (entry.busy) fail(409, 'The previous action is still being processed.');
+  if (!req.body || !['card', 'button', 'stateful', 'perCard'].includes(req.body.type)) fail(400, 'Unknown action.');
   entry.busy = true;
   try {
     const { sessionToken: _token, ...action } = req.body;
@@ -158,7 +158,7 @@ app.post('/api/games/:id/actions', asyncRoute(async (req, res) => {
 }));
 app.post('/api/games/:id/bot', asyncRoute(async (req, res) => {
   const entry = await getSession(req);
-  if (entry.busy) fail(409, 'AI već obrađuje potez.');
+  if (entry.busy) fail(409, 'The AI is already processing its turn.');
   entry.busy = true;
   try { await playBot(entry); res.json(humanView(entry)); }
   catch (error) { entry.game.close?.(); sessions.delete(req.params.id); throw error; }
@@ -166,23 +166,23 @@ app.post('/api/games/:id/bot', asyncRoute(async (req, res) => {
 }));
 app.delete('/api/games/:id', asyncRoute(async (req, res) => {
   const entry = await getSession(req);
-  if (entry.busy) fail(409, 'Akcija se još obrađuje.');
+  if (entry.busy) fail(409, 'The action is still being processed.');
   entry.game.close?.(); sessions.delete(req.params.id); res.status(204).end();
 }));
-app.use('/api', (_req, res) => res.status(404).json({ error: 'Nepoznata API ruta.' }));
+app.use('/api', (_req, res) => res.status(404).json({ error: 'Unknown API route.' }));
 app.use(express.static(path.join(root, 'dist')));
 app.get('*', (_req, res) => {
   const file = path.join(root, 'dist/index.html');
-  if (!fs.existsSync(file)) return res.status(503).send('Pokreni npm run build, ili koristi npm run dev za razvojno sučelje.');
+  if (!fs.existsSync(file)) return res.status(503).send('Run npm run build, or use npm run dev for the development interface.');
   res.sendFile(file);
 });
 app.use((error, _req, res, _next) => {
   const status = error.status || (error.type === 'entity.parse.failed' ? 400 : error.type === 'entity.too.large' ? 413 : 500);
-  const messages = { STALE_PROMPT: 'Odabir se promijenio. Osvježi partiju.', STALE_STATE: 'Stanje partije se promijenilo. Osvježi partiju.',
-    ILLEGAL_ACTION: 'Akcija nije dostupna u trenutačnom stanju partije.', GAME_ENDED: 'Partija je završila.',
-    INVALID_SESSION: 'Spremljena partija nije valjana. Pokreni novu partiju.', SESSION_EXPIRED: 'Spremljena partija je istekla. Pokreni novu partiju.' };
+  const messages = { STALE_PROMPT: 'The available choice has changed. Refresh the game.', STALE_STATE: 'The game state has changed. Refresh the game.',
+    ILLEGAL_ACTION: 'That action is not available in the current game state.', GAME_ENDED: 'The game has ended.',
+    INVALID_SESSION: 'The saved game is invalid. Start a new game.', SESSION_EXPIRED: 'The saved game has expired. Start a new game.' };
   console.error(`[${status}] ${error.code || error.type || error.name}`);
-  res.status(status).json({ error: error.publicMessage || messages[error.code] || 'Akcija nije uspjela. Pokušaj ponovno.' });
+  res.status(status).json({ error: error.publicMessage || messages[error.code] || 'The action failed. Try again.' });
 });
 const cleanup = setInterval(() => {
   for (const [id, entry] of sessions) if (!entry.busy && Date.now() - entry.lastAccess > SESSION_TTL) {

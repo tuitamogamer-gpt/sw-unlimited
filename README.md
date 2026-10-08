@@ -1,14 +1,18 @@
 # Star Wars Unlimited · Command
 
-Browser igra za jednog igrača protiv taktičkog AI protivnika, s automatiziranim
-Star Wars: Unlimited pravilima i službenim starter / Spotlight špilovima.
-Sučelje je na hrvatskom; nazivi karata i odluke enginea koriste izvorni engleski.
+Play Star Wars: Unlimited against a tactical AI with scripted card abilities and
+automated rules. English is the default interface language; Serbian (Latin) is
+available from the EN / SR language control. Card names and printed card text
+retain their official English wording.
 
-[Otvori igru](https://sw-unlimited-mu.vercel.app)
+**[Play online](https://sw-unlimited-mu.vercel.app)**
 
-Uvezeno je **18 špilova**, svaki s 50 glavnih karata, vođom i bazom:
+## Included decks
 
-| Proizvod | Vođe |
+18 verified starter and Spotlight decks, each with 50 main-deck cards, a leader,
+and a base:
+
+| Product | Leaders |
 | --- | --- |
 | Spark of Rebellion | Luke Skywalker, Darth Vader |
 | Shadows of the Galaxy | The Mandalorian, Moff Gideon |
@@ -18,11 +22,34 @@ Uvezeno je **18 špilova**, svaki s 50 glavnih karata, vođom i bazom:
 | Secrets of Power | Padmé Amidala, Chancellor Palpatine |
 | A Lawless Time | Leia Organa, Jabba the Hutt |
 | Ashes of Empire | Luke Skywalker, Emperor Palpatine |
-| Intro Battle: Hoth | Leia Organa, Darth Vader — baze 20 HP |
+| Intro Battle: Hoth | Leia Organa, Darth Vader — 20 HP bases |
 
-## Pokretanje
+## Playing
 
-Potreban je Node.js 24.
+Choose your deck, an opponent deck, and an AI difficulty. During setup, keep or
+mulligan your hand and select exactly two cards to become resources. During the
+action phase, play cards by paying their cost, attack with ready units, or use a
+leader or card ability. Actions alternate between you and the AI.
+
+The interface distinguishes resource selection from playing cards. Hand cards
+show their effective play cost and action status. A card that cannot currently
+be played explains why. Claiming initiative ends your actions for the round and
+gives you the first action next round. At regroup, adding one resource is
+optional; you can keep your entire hand.
+
+On a phone, Ground and Space are tabs within a single-screen battlefield. Your
+hand and current decision stay visible. Base and leader cards have artwork and
+inspection controls; the battle log and reference information open separately.
+
+The AI uses the same legal action system as the human. It evaluates lethal
+attacks, base defense, unit trades, Sentinel, shields, its resource curve,
+leader deployment, and initiative. It sees its own hand and public information,
+without access to your hidden hand, deck order, or shuffle seed.
+See [AI design](docs/ai.md).
+
+## Run locally
+
+Requires Node.js 24.
 
 ```sh
 npm ci
@@ -30,74 +57,68 @@ npm run engine:setup
 npm run dev
 ```
 
-Otvori `http://localhost:5173`. Vite prosljeđuje API zahtjeve Node poslužitelju
-na portu 3001. Za jedan produkcijski proces:
+Open `http://localhost:5173`. Vite forwards API requests to the Node server on
+port 3001. To serve a production build from one process:
 
 ```sh
 npm run build
 npm start
 ```
 
-Otvori `http://localhost:3001`. Varijable `PORT` i `HOST` mogu promijeniti adresu.
-Alternativno: `docker build -t swu-command .` pa
+Open `http://localhost:3001`. `PORT` and `HOST` configure the server address.
+Alternatively, use `docker build -t swu-command .` followed by
 `docker run --rm -p 3001:3001 swu-command`.
 
-## Igra
+## Rules and data
 
-Odaberi svoj špil, protivnički špil i težinu. Engine vodi mulligan, početna dva
-resursa, naizmjenične akcije, mete, okidanja, borbu u kopnenoj i svemirskoj areni,
-vođe, inicijativu i regroup. Označene karte i gumbi predstavljaju legalne izbore.
-Povećani prikaz omogućuje čitanje karata, a dnevnik prati razrješenje efekata.
+The MIT-licensed [Forceteki engine](https://github.com/SWU-Karabast/forceteki)
+executes rules and card abilities. Its source is vendored at a pinned commit.
+Decks with unsupported cards are rejected. Full script coverage is not a claim
+that every possible card interaction is free of bugs.
 
-AI koristi isti legalni sustav akcija. Procjenjuje završne napade, obranu baze,
-razmjenu jedinica, Sentinel, štitove, resursnu krivulju, deployment i inicijativu.
-Prima samo svoju ruku i javno stanje. Nema pristup protivničkoj ruci, redoslijedu
-špila ni shuffle seedu. Detalji: [docs/ai.md](docs/ai.md).
+Local correctness and hosting compatibility fixes are documented in
+[upstream patches](docs/upstream-patches.md), including the regression test for
+grouped Advantage triggers.
 
-## Pravila i podaci
+Card definitions use a local snapshot so playing does not depend on a live card
+API. Artwork loads from the card CDN. The official rulebook, errata, API sources,
+and separately identified Reddit / BoardGameGeek interpretations are documented
+in [rules and sources](docs/rules-and-sources.md). See
+[rules version](docs/rules-version.md) for the implementation's version boundary.
 
-Pravila i skripte karata izvršava MIT engine
-[Forceteki](https://github.com/SWU-Karabast/forceteki), uključen u repozitorij
-na fiksnom commitu. Aplikacija odbija špil ako ijedna njegova karta nema
-implementaciju u tom engineu. Provjera pokrivenosti nije tvrdnja da svi mogući
-međusobni efekti nemaju grešaka.
-
-Uključena je dokumentirana ispravka za grupno razrješenje Advantage okidača,
-s regresijskim testom: [docs/upstream-patches.md](docs/upstream-patches.md).
-
-Definicije karata su lokalni snapshot; partija ne ovisi o dostupnosti API-ja.
-Slike se učitavaju s CDN-a. Izvori, službeni pravilnik, errate i odvojeno označena
-Reddit / BoardGameGeek tumačenja: [docs/rules-and-sources.md](docs/rules-and-sources.md).
-Verzijska granica pravilnika i implementiranih ponašanja:
-[docs/rules-version.md](docs/rules-version.md).
-
-## Provjere
+## Validation
 
 ```sh
 npm test
 npm run test:smoke
 npm run cards:check
 npm run build
+npm run test:ui
 ```
 
-Testovi provjeravaju stvarne partije i granicu privatnih informacija te odbijanje
-nelegalnih akcija. Upstream također uključuje vlastite detaljne testove pravila
-u `vendor/forceteki/test`.
+The UI check requires Chromium (`npx playwright install chromium`) and uses a
+local HTTP server with a deterministic, encrypted game checkpoint. It checks
+manual card plays, loaded base artwork, mobile viewport bounds, arena tabs,
+initiative confirmation, language persistence, and game restoration.
 
-## Granice ove verzije
+Tests exercise real games, manual human play from setup through regroup,
+information privacy, illegal action rejection, and restoration of encrypted
+checkpoints. The upstream engine includes its own detailed rules tests under
+`vendor/forceteki/test`.
 
-Partije se šifrirano čuvaju u pregledniku do šest sati od početka. Hosting može
-obnoviti cijelu partiju i nakon zamjene poslužitelja, bez otkrivanja skrivenih
-karata. Koristi jednu karticu preglednika po partiji. Na lokalnom poslužitelju
-za obnovu nakon restarta postavi stabilan `SWU_SESSION_SECRET`; bez njega
-razvojni način koristi privremeni ključ.
+## Saved games and hosting
 
-Vercel deployment, build i postavke opisani su u
-[docs/deployment.md](docs/deployment.md).
-AI je lokalni taktički sustav, bez LLM poziva ili API ključa.
+Games are stored as encrypted browser checkpoints for six hours from creation.
+The host can restore a game after its server instance changes without exposing
+hidden cards. Use one browser tab per game. For local persistence across server
+restarts, configure a stable `SWU_SESSION_SECRET`; development otherwise uses a
+temporary key.
 
-Podržan je 1v1 Premier. Twin Suns koristi drugačiji multiplayer format.
-Detalji uključenih proizvoda i izvori popisa: [docs/deck-data.md](docs/deck-data.md).
+See [deployment](docs/deployment.md) for Vercel build and environment settings.
+The AI is a local tactical system and needs no LLM service or API key.
 
-Neslužbeni fan projekt. Licence i zasluge:
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+This application supports 1v1 Premier. Twin Suns is a different multiplayer
+format. Product details and deck-list sources are in
+[deck data](docs/deck-data.md).
+
+Unofficial fan project. See [licenses and credits](THIRD_PARTY_NOTICES.md).

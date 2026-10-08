@@ -231,7 +231,16 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
                         return { index, title, type: ability.isAttackAction?.() ? 'attack' : /deploy/i.test(title) ? 'deploy' : ability.isPlayCardAbility?.() ? 'play' : 'action', cost: ability.getAdjustedCost?.(context) ?? null };
                     }) : undefined;
                 const visible = card.getSummary(viewer).id;
-                actions.push({ type: 'card', cardId: card.uuid, promptId, label: visible ? card.title : 'Face-down card', abilities });
+                const label = visible ? card.title : 'Face-down card';
+                const abilityTypes = new Set((abilities || []).map((ability) => ability.type));
+                const intent = state.promptType === 'resource' ? 'resource'
+                    : abilityTypes.has('play') ? 'play'
+                    : abilityTypes.has('attack') ? 'attack'
+                    : abilityTypes.has('deploy') ? 'deploy'
+                    : abilities?.length ? 'ability' : 'select';
+                const verb = { resource: selected.has(card.uuid) ? 'Unselect resource' : 'Resource', play: 'Play',
+                    attack: 'Attack with', deploy: 'Deploy', ability: 'Use ability on', select: 'Select' }[intent];
+                actions.push({ type: 'card', cardId: card.uuid, promptId, label, abilities, intent, displayLabel: `${verb} ${label}` });
             }
         }
         for (const button of state.buttons || []) {
@@ -252,6 +261,41 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
         for (const option of state.dropdownListOptions || []) actions.push({ type: 'button', arg: option, method: 'menuButton', promptId, label: option });
         if (state.distributeAmongTargets) actions.push({ type: 'stateful', promptId, label: 'Distribute' });
         return actions;
+    }
+
+    function handPlayability(card, viewer, state, legalActions) {
+        const cardAction = legalActions.find((action) => action.type === 'card' && action.cardId === card.uuid);
+        const legalPlayTitles = new Set((cardAction?.abilities || []).filter((ability) => ability.type === 'play').map((ability) => ability.title));
+        const stageReason = game.isEnded ? 'gameEnded'
+            : state.promptType === 'resource' ? 'resourceStep'
+            : game.currentPhase !== 'action' ? 'phase'
+            : state.promptType !== 'actionWindow' ? 'notYourAction' : null;
+        const reasons = {
+            gameEnded: 'The game has ended.',
+            resourceStep: 'Choose resources now. Cards can be played during the action phase.',
+            phase: 'Cards can be played during the action phase.',
+            notYourAction: 'Wait for your next action before playing a card.',
+            cost: 'You cannot pay this card’s cost with the available resources and payment options.',
+            attachTarget: 'There is no legal unit to attach this card to.',
+            gameStateChange: 'This card has no legal effect right now.',
+            restriction: 'An active card effect prevents this card from being played.',
+            cannotTrigger: 'An active card effect prevents this card from being played.',
+            otherActionRequired: 'Resolve the current required action first.',
+        };
+        const playOptions = card.getActions().filter((ability) => ability.isPlayCardAbility?.()).map((ability) => {
+            const context = ability.createContext(viewer);
+            const title = ability.getTitle(context);
+            const cost = ability.getAdjustedCost(context);
+            const legal = legalPlayTitles.has(title);
+            const requirement = ability.meetsRequirements(context);
+            const reasonCode = legal ? null : stageReason || requirement || 'otherActionRequired';
+            return { title, cost, legal, reasonCode, reason: legal ? null : reasons[reasonCode] || 'This play option is not available right now.' };
+        });
+        const legalOptions = playOptions.filter((option) => option.legal);
+        const preferred = legalOptions.length ? legalOptions : playOptions;
+        const playCost = preferred.length ? Math.min(...preferred.map((option) => option.cost)) : card.cardData.cost ?? null;
+        return { playOptions, playCost, playable: legalOptions.length > 0,
+            playBlockedReason: legalOptions.length ? null : playOptions[0]?.reason || 'This card cannot be played from your hand right now.' };
     }
 
     function view(playerId = 'human') {
@@ -281,13 +325,34 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
                 credits: player.baseZone.credits.map(summarize),
             };
         }
+        // Hand affordability is public only to its owner. A card click has a
+        // different purpose in setup/regroup than in an action window, so keep
+        // the current play options explicit for the human UI.
+        players[playerId].hand = players[playerId].hand.map((summary, index) => ({
+            ...summary, ...handPlayability(viewer.hand[index], viewer, state, legalActions),
+        }));
         const displayCards = (state.displayCards || []).map((display) => {
             const card = game.findAnyCardInAnyList(display.cardUuid);
             return { ...(card ? summarizeCard(card, viewer, true) : {}), ...display, uuid: display.cardUuid };
         });
         const legalIds = new Set(legalActions.filter((action) => action.type === 'card').map((action) => action.cardId));
+        const openPrompt = game.getCurrentOpenPrompt();
+        const active = legalActions.length > 0;
+        const resourceSelection = active && state.promptType === 'resource' ? {
+            min: openPrompt.minCardsToResource ?? openPrompt.nCardsToResource,
+            max: openPrompt.maxCardsToResource ?? openPrompt.nCardsToResource,
+            selected: viewer.selectedCards.length,
+            canSkip: (openPrompt.minCardsToResource ?? openPrompt.nCardsToResource) === 0,
+        } : null;
+        const stage = game.isEnded ? 'finished' : !active ? 'waiting'
+            : state.promptType === 'resource' ? 'resource'
+            : state.promptType === 'actionWindow' ? 'action'
+            : state.promptType === 'initiative' ? 'initiative'
+            : /mulligan/i.test(state.menuTitle) ? 'mulligan'
+            : viewer.selectableCards.length > 0 ? 'target' : 'choice';
         const prompt = {
             id: promptId, title: state.menuTitle, subtitle: state.promptTitle, type: state.promptType || 'select',
+            stage, resourceSelection,
             selectMode: state.selectCardMode, selectOrder: state.selectOrder,
             selectedCardIds: viewer.selectedCards.map((card) => card.uuid),
             selectableCardIds: state.distributeAmongTargets ? viewer.selectableCards.map((card) => card.uuid) : [...legalIds],
@@ -296,7 +361,7 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
             number: state.selectNumber || null, dropdown: state.dropdownListOptions || [],
             distribution: state.distributeAmongTargets || null,
             attackerId: viewer.promptState.attackTargetingHighlightAttacker?.uuid || null,
-            active: legalActions.length > 0,
+            active,
         };
         return translateIds(JSON.parse(JSON.stringify({
             id, version, difficulty, phase: game.currentPhase, round: game.roundNumber,

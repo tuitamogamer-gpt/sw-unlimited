@@ -11,6 +11,6 @@ export default async function handler(req, res) {
     res.statusCode = 503;
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
     res.setHeader('Cache-Control', 'private, no-store');
-    res.end(JSON.stringify({ error: 'Poslužitelj igre trenutačno se ne može pokrenuti. Pokušaj ponovno.' }));
+    res.end(JSON.stringify({ error: 'The game server is currently unavailable. Try again.' }));
   }
 }

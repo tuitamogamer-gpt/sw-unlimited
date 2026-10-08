@@ -33,7 +33,7 @@ test('takes available lethal before playing another card', () => {
     const decision = decide(v);
     assert.equal(decision.action.cardId, 'attacker');
     assert.equal(decision.memory.plan.targetId, 'human-base');
-    assert.match(decision.reason, /Završavam/);
+    assert.match(decision.reason, /Finishing/);
 });
 
 test('removes an immediate lethal attacker ahead of base pressure', () => {
