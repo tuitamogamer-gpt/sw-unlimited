@@ -20,7 +20,8 @@ try {
   await page.getByRole('dialog').waitFor();
   await page.keyboard.press('Escape');
   const id = await page.evaluate(() => localStorage.getItem('swu-command-session'));
-  let view = await (await page.request.get(`${origin}/api/games/${id}`)).json();
+  const sessionToken = await page.evaluate(id => localStorage.getItem(`swu-command-state:${id}`), id);
+  let view = await (await page.request.post(`${origin}/api/games/${id}/state`, { data: { sessionToken } })).json();
   const memory = {};
   let steps = 0;
   while (!view.winnerIds.length && steps < 400) {

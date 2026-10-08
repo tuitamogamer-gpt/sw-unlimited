@@ -2,6 +2,7 @@ node_modules/
 dist/
 *.tsbuildinfo
 .env
+.vercel/
 coverage/
 playwright-report/
 test-results/

@@ -1,0 +1,13 @@
+.git
+node_modules
+dist
+docs/screenshots
+docs/sources
+vendor/forceteki/node_modules
+vendor/forceteki/build
+vendor/forceteki/test/server
+vendor/forceteki/test/scenarios
+vendor/forceteki/docs
+vendor/forceteki/.github
+vendor/forceteki/.claude
+*.log

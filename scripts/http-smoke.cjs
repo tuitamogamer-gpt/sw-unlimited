@@ -3,10 +3,18 @@ const fs = require('node:fs');
 const { chooseAction } = require('../server/bot.cjs');
 const { assertPrivateView } = require('./smoke.cjs');
 const origin = process.env.SWU_URL || 'http://localhost:3001';
+const tokens = new Map();
 async function request(path, method = 'GET', body) {
+  const id = path.match(/^\/api\/games\/([^/]+)/)?.[1];
+  if (id) {
+    if (method === 'GET') { path += '/state'; method = 'POST'; }
+    body = { ...body, sessionToken: tokens.get(id) };
+  }
   const res = await fetch(`${origin}${path}`, { method, headers: { 'Content-Type': 'application/json' },
     body: body === undefined ? undefined : JSON.stringify(body) });
-  return { status: res.status, data: res.status === 204 ? null : await res.json() };
+  const data = res.status === 204 ? null : await res.json();
+  if (data?.id && data?.sessionToken) tokens.set(data.id, data.sessionToken);
+  return { status: res.status, data };
 }
 async function main() {
   const report = [];

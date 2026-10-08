@@ -1,0 +1,18 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "installCommand": "npm ci",
+  "buildCommand": "npm run engine:setup && npm run build",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/index.js": {
+      "maxDuration": 60,
+      "includeFiles": "{server/**,data/**,vendor/forceteki/build/server/**,vendor/forceteki/test/json/**}",
+      "excludeFiles": "{docs/**,tests/**,scripts/**,vendor/forceteki/server/**,vendor/forceteki/test/{server,scenarios,helpers,gameSetups}/**,vendor/forceteki/build/test/**,vendor/forceteki/docs/**,vendor/forceteki/scripts/**,vendor/forceteki/.github/**,vendor/forceteki/.claude/**}"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/index" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ]
+}

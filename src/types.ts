@@ -35,7 +35,7 @@ export interface Prompt {
 export interface LogEntry { id?: string | number; message?: string; text?: string; round?: number; type?: string; player?: string }
 export interface BotThinking { action?: string; reason?: string; score?: number; alternatives?: { label?: string; score?: number }[] }
 export interface GameView {
-  id: string; version: number; phase: string; round: number; initiativePlayerId?: string; initiativeClaimed?: boolean;
+  id: string; sessionToken?: string; version: number; phase: string; round: number; initiativePlayerId?: string; initiativeClaimed?: boolean;
   winnerIds: string[]; viewerId: string; players: { human: Player; bot: Player }; prompt: Prompt;
   legalActions: GameAction[]; log: (LogEntry | string)[]; botReason?: string; botThinking?: BotThinking;
   ai?: { reason?: string; lastDecision?: BotThinking; decisions?: BotThinking[] }; difficulty?: string;

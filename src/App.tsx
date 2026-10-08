@@ -6,6 +6,8 @@ import type { Card, Deck, GameAction, GameView, Player, PromptButton } from './t
 type Source = { title?: string; name?: string; url: string; description?: string; kind?: string };
 type Drawer = 'rules' | 'sources' | 'settings' | null;
 const SESSION_KEY = 'swu-command-session';
+const SESSION_TOKEN_PREFIX = 'swu-command-state:';
+const sessionTokens = new Map<string, string>();
 const PREFERENCES_KEY = 'swu-command-preferences';
 const DIFFICULTIES = [{ id: 'easy', label: 'Kadet', detail: 'Prvi koraci i opuštena partija.' }, { id: 'normal', label: 'Zapovjednik', detail: 'Procjenjuje tempo, prijetnje i vrijednost karata.' }, { id: 'hard', label: 'Veliki admiral', detail: 'Prioriteti borbe, sinergije i planiranje resursa.' }];
 const DEFAULT_SOURCES: Source[] = [
@@ -16,8 +18,32 @@ const DEFAULT_SOURCES: Source[] = [
   { title: 'BoardGameGeek', url: 'https://boardgamegeek.com/boardgame/393040/star-wars-unlimited', description: 'Pitanja o pravilima i rasprave zajednice' },
 ];
 
-async function api<T>(path: string, body?: unknown): Promise<T> {
-  const response = await fetch(path, { method: body === undefined ? 'GET' : 'POST', headers: { 'Content-Type': 'application/json' }, ...(body !== undefined ? { body: JSON.stringify(body) } : {}) });
+function storedValue(key: string): string {
+  try { return localStorage.getItem(key) || ''; } catch { return ''; }
+}
+function sessionToken(id: string): string {
+  return sessionTokens.get(id) || storedValue(`${SESSION_TOKEN_PREFIX}${id}`) || '';
+}
+function rememberGame(view: GameView) {
+  if (view.sessionToken) {
+    sessionTokens.set(view.id, view.sessionToken);
+    try { localStorage.setItem(`${SESSION_TOKEN_PREFIX}${view.id}`, view.sessionToken); } catch { /* The current tab can continue when storage is unavailable. */ }
+  }
+  try { localStorage.setItem(SESSION_KEY, view.id); } catch { /* Saving between visits may be disabled by the browser. */ }
+}
+function forgetGame(id: string) {
+  sessionTokens.delete(id);
+  try { localStorage.removeItem(`${SESSION_TOKEN_PREFIX}${id}`); if (localStorage.getItem(SESSION_KEY) === id) localStorage.removeItem(SESSION_KEY); } catch { /* Storage can be unavailable. */ }
+}
+async function api<T>(path: string, body?: unknown, requestMethod?: string): Promise<T> {
+  let method = requestMethod || (body === undefined ? 'GET' : 'POST');
+  const gameId = path.match(/^\/api\/games\/([^/]+)(?:\/(?:actions|bot|state))?$/)?.[1];
+  if (gameId) {
+    // Checkpoints can grow beyond HTTP header limits during a long game.
+    if (method === 'GET') { path += '/state'; method = 'POST'; }
+    body = { ...(body && typeof body === 'object' ? body : {}), sessionToken: sessionToken(decodeURIComponent(gameId)) };
+  }
+  const response = await fetch(path, { method, headers: { 'Content-Type': 'application/json' }, ...(body !== undefined ? { body: JSON.stringify(body) } : {}) });
   const data = await response.json().catch(() => ({}));
   if (!response.ok) throw Object.assign(new Error(data.error || data.message || `Poslužitelj nije dostupan (${response.status}).`), { status: response.status });
   return data as T;
@@ -71,7 +97,8 @@ export default function App() {
   const [loading, setLoading] = useState(true); const [busy, setBusy] = useState(false); const [error, setError] = useState('');
   const [deckId, setDeckId] = useState(prefs.deckId || ''); const [opponentDeckId, setOpponentDeckId] = useState(prefs.opponentDeckId || '');
   const [difficulty, setDifficulty] = useState(prefs.difficulty || 'normal'); const [game, setGame] = useState<GameView | null>(null);
-  const [savedSession, setSavedSession] = useState(localStorage.getItem(SESSION_KEY) || '');
+  const [savedSession, setSavedSession] = useState(() => storedValue(SESSION_KEY));
+  const requestPending = useRef(false);
   const [drawer, setDrawer] = useState<Drawer>(null); const [inspect, setInspect] = useState<Card | null>(null);
   const [inspectDeck, setInspectDeck] = useState<Deck | null>(null); const [rulesVersion, setRulesVersion] = useState('');
   const [slot, setSlot] = useState<'human' | 'bot'>('human'); const [setFilter, setSetFilter] = useState('all'); const [search, setSearch] = useState('');
@@ -90,30 +117,34 @@ export default function App() {
     } catch (e) { setError((e as Error).message); } finally { setLoading(false); }
   }, []);
   useEffect(() => { void loadDecks(); }, [loadDecks]);
-  useEffect(() => { localStorage.setItem(PREFERENCES_KEY, JSON.stringify({ deckId, opponentDeckId, difficulty })); }, [deckId, opponentDeckId, difficulty]);
-  const acceptGame = (view: GameView) => { setGame(view); setSavedSession(view.id); localStorage.setItem(SESSION_KEY, view.id); };
+  useEffect(() => { try { localStorage.setItem(PREFERENCES_KEY, JSON.stringify({ deckId, opponentDeckId, difficulty })); } catch { /* Preferences are optional. */ } }, [deckId, opponentDeckId, difficulty]);
+  const acceptGame = (view: GameView) => { rememberGame(view); setGame(view); setSavedSession(view.id); };
   const startGame = async () => {
-    if (!deckId || !opponentDeckId || busy) return;
+    if (!deckId || !opponentDeckId || requestPending.current) return;
+    requestPending.current = true;
     setBusy(true); setError(''); setFinishedDismissed(false);
-    try { const previous = game?.id || savedSession; const next = await api<GameView>('/api/games', { deckId, opponentDeckId, difficulty }); acceptGame(next); if (previous && previous !== next.id) void fetch(`/api/games/${encodeURIComponent(previous)}`, { method: 'DELETE' }).catch(() => {}); window.scrollTo({ top: 0 }); }
-    catch (e) { setError((e as Error).message); } finally { setBusy(false); }
+    try { const previous = game?.id || savedSession; const next = await api<GameView>('/api/games', { deckId, opponentDeckId, difficulty }); acceptGame(next); if (previous && previous !== next.id) void api(`/api/games/${encodeURIComponent(previous)}`, {}, 'DELETE').catch(() => {}).finally(() => forgetGame(previous)); window.scrollTo({ top: 0 }); }
+    catch (e) { setError((e as Error).message); } finally { requestPending.current = false; setBusy(false); }
   };
   const resume = async () => {
+    if (requestPending.current) return;
+    requestPending.current = true;
     setBusy(true); setError('');
     try { acceptGame(await api<GameView>(`/api/games/${encodeURIComponent(savedSession)}`)); }
-    catch (e) { setError(`Spremljena sesija nije dostupna. ${(e as Error).message}`); localStorage.removeItem(SESSION_KEY); setSavedSession(''); }
-    finally { setBusy(false); }
+    catch (e) { setError(`Spremljena sesija nije dostupna. ${(e as Error).message}`); if ([400, 401, 403, 404, 410].includes((e as Error & { status?: number }).status || 0)) { forgetGame(savedSession); setSavedSession(''); } }
+    finally { requestPending.current = false; setBusy(false); }
   };
   const act = async (action: GameAction) => {
-    if (!game || busy) return;
+    if (!game || requestPending.current) return;
+    requestPending.current = true;
     setBusy(true); setError('');
     try { acceptGame(await api<GameView>(`/api/games/${encodeURIComponent(game.id)}/actions`, { ...action, version: game.version })); }
-    catch (e) { setError((e as Error).message); if ((e as Error & { status?: number }).status === 409) { try { acceptGame(await api<GameView>(`/api/games/${encodeURIComponent(game.id)}`)); } catch { /* Keep current table visible if reconnect fails. */ } } } finally { setBusy(false); }
+    catch (e) { setError((e as Error).message); if ((e as Error & { status?: number }).status === 409) { try { acceptGame(await api<GameView>(`/api/games/${encodeURIComponent(game.id)}`)); } catch { /* Keep current table visible if reconnect fails. */ } } } finally { requestPending.current = false; setBusy(false); }
   };
   const continueBot = async () => {
-    if (!game || busy) return; setBusy(true); setError('');
+    if (!game || requestPending.current) return; requestPending.current = true; setBusy(true); setError('');
     try { acceptGame(await api<GameView>(`/api/games/${encodeURIComponent(game.id)}/bot`, {})); }
-    catch (e) { setError((e as Error).message); } finally { setBusy(false); }
+    catch (e) { setError((e as Error).message); } finally { requestPending.current = false; setBusy(false); }
   };
   const sets = [...new Set(decks.map(deck => deck.set))];
   const filtered = decks.filter(deck => (setFilter === 'all' || deck.set === setFilter) && `${deck.name} ${deck.leader?.name} ${deck.setName || ''}`.toLowerCase().includes(search.toLowerCase()));
@@ -128,7 +159,7 @@ export default function App() {
       </section><section className="how-it-works"><div><span className="eyebrow">TAKTIČKA PREDNOST</span><h2>Jedna akcija. Bezbroj mogućnosti.</h2><p>Igrajte naizmjence, razvijajte resurse i napadajte u dvije arene. Uništi protivničku bazu prije nego što padne tvoja.</p></div><div className="how-item"><span>01</span><Crosshair /><h3>Preuzmi inicijativu</h3><p>Prvi potez sljedeće runde može promijeniti sve.</p></div><div className="how-item"><span>02</span><Orbit /><h3>Vladaj objema arenama</h3><p>Poveži kopnene snage i svemirsku flotu.</p></div><div className="how-item"><span>03</span><Crown /><h3>Rasporedi vođu</h3><p>U pravom trenutku pošalji zapovjednika u borbu.</p></div></section>
     </main>}
     {!game && <footer className="site-footer"><Brand small /><p>Neslužbeni projekt zajednice. Star Wars i pripadajući sadržaj © Lucasfilm / Fantasy Flight Games.</p><button className="text-button" onClick={() => setDrawer('sources')}>Podaci i izvori <ArrowUpRight size={14} /></button></footer>}
-    {drawer && <Modal title={drawer === 'rules' ? 'Priručnik zapovjednika' : drawer === 'sources' ? 'Izvori i podaci' : 'Postavke sustava'} close={closeDrawer} wide={drawer === 'rules'}>{drawer === 'rules' ? <RulesContent openSources={() => setDrawer('sources')} version={rulesVersion} /> : drawer === 'sources' ? <div className="modal-body sources-body"><p className="muted">Službena pravila imaju prednost pred tumačenjima zajednice. Izvori zajednice služe za pojašnjenja specifičnih situacija.</p>{sources.map((source, i) => <a key={i} className="source-link" href={source.url} target="_blank" rel="noreferrer"><span><strong>{source.title || source.name || new URL(source.url).hostname}</strong><small>{source.description || source.kind || source.url}</small></span><ExternalLink size={17} /></a>)}<div className="notice"><CircleHelp size={18} /><span>Projekt nije službeno povezan s Lucasfilmom, FFG-om ili Karabastom. Katalog prikazuje dostupnost skripti; posebna ograničenja navedena su uz špil.</span></div></div> : <div className="modal-body"><div className="setting-block"><h3>Razina AI protivnika</h3><p className="muted">Promjena vrijedi za sljedeću partiju.</p><div className="difficulty-options">{DIFFICULTIES.map(item => <button key={item.id} className={difficulty === item.id ? 'selected' : ''} onClick={() => setDifficulty(item.id)}><span><strong>{item.label}</strong><small>{item.detail}</small></span>{difficulty === item.id && <Check size={18} />}</button>)}</div></div><div className="setting-row"><span><strong>Kompaktne karte</strong><small>Više prostora za velike arene.</small></span><button className={`toggle ${compact ? 'on' : ''}`} role="switch" aria-checked={compact} aria-label="Kompaktne karte" onClick={() => setCompact(!compact)}><i /></button></div><div className="setting-row"><span><strong>Dnevnik partije</strong><small>Prikaži poteze uz bojište.</small></span><button className={`toggle ${showLog ? 'on' : ''}`} role="switch" aria-checked={showLog} aria-label="Dnevnik partije" onClick={() => setShowLog(!showLog)}><i /></button></div><div className="notice"><Radio size={17} /><span>Sesija se pamti u ovom pregledniku. Partija se može nastaviti dok je poslužitelj čuva; ponovno pokretanje poslužitelja može je završiti.</span></div></div>}</Modal>}
+    {drawer && <Modal title={drawer === 'rules' ? 'Priručnik zapovjednika' : drawer === 'sources' ? 'Izvori i podaci' : 'Postavke sustava'} close={closeDrawer} wide={drawer === 'rules'}>{drawer === 'rules' ? <RulesContent openSources={() => setDrawer('sources')} version={rulesVersion} /> : drawer === 'sources' ? <div className="modal-body sources-body"><p className="muted">Službena pravila imaju prednost pred tumačenjima zajednice. Izvori zajednice služe za pojašnjenja specifičnih situacija.</p>{sources.map((source, i) => <a key={i} className="source-link" href={source.url} target="_blank" rel="noreferrer"><span><strong>{source.title || source.name || new URL(source.url).hostname}</strong><small>{source.description || source.kind || source.url}</small></span><ExternalLink size={17} /></a>)}<div className="notice"><CircleHelp size={18} /><span>Projekt nije službeno povezan s Lucasfilmom, FFG-om ili Karabastom. Katalog prikazuje dostupnost skripti; posebna ograničenja navedena su uz špil.</span></div></div> : <div className="modal-body"><div className="setting-block"><h3>Razina AI protivnika</h3><p className="muted">Promjena vrijedi za sljedeću partiju.</p><div className="difficulty-options">{DIFFICULTIES.map(item => <button key={item.id} className={difficulty === item.id ? 'selected' : ''} onClick={() => setDifficulty(item.id)}><span><strong>{item.label}</strong><small>{item.detail}</small></span>{difficulty === item.id && <Check size={18} />}</button>)}</div></div><div className="setting-row"><span><strong>Kompaktne karte</strong><small>Više prostora za velike arene.</small></span><button className={`toggle ${compact ? 'on' : ''}`} role="switch" aria-checked={compact} aria-label="Kompaktne karte" onClick={() => setCompact(!compact)}><i /></button></div><div className="setting-row"><span><strong>Dnevnik partije</strong><small>Prikaži poteze uz bojište.</small></span><button className={`toggle ${showLog ? 'on' : ''}`} role="switch" aria-checked={showLog} aria-label="Dnevnik partije" onClick={() => setShowLog(!showLog)}><i /></button></div><div className="notice"><Radio size={17} /><span>Partija se šifrirano pamti u ovom pregledniku do šest sati od početka. Možeš je nastaviti nakon osvježavanja stranice. Koristi jednu karticu preglednika po partiji.</span></div></div>}</Modal>}
     {inspect && <Modal title={inspect.name || 'Detalji karte'} close={closeInspect} wide><div className="card-detail"><div className={`card-detail-art ${inspect.type?.includes('leader') || inspect.type?.includes('base') ? 'landscape' : ''}`}><CardImage card={reverseCard && inspect.backImage ? { ...inspect, image: inspect.deployed ? inspect.frontImage || inspect.image : inspect.backImage } : inspect} />{inspect.backImage && <button className="secondary-button small-button reverse-card" onClick={() => setReverseCard(!reverseCard)}><RotateCcw size={14} />{reverseCard ? 'Pokaži aktivnu stranu' : 'Okreni kartu'}</button>}</div><div className="card-detail-copy"><span className="eyebrow">{inspect.code || inspect.type || 'GALAKTIČKA ARHIVA'}</span><h2>{inspect.name}</h2>{inspect.subtitle && <h3>{inspect.subtitle}</h3>}<div className="card-detail-stats">{inspect.cost != null && <span><Zap size={15} /> {inspect.cost} <small>CIJENA</small></span>}{inspect.power != null && <span><Swords size={15} /> {inspect.power} <small>SNAGA</small></span>}{inspect.hp != null && <span><Shield size={15} /> {inspect.remainingHp ?? inspect.hp} / {inspect.hp} <small>ŽIVOT</small></span>}</div>{inspect.keywords?.length ? <div className="keyword-list">{inspect.keywords.map((keyword, i) => <span key={i}>{typeof keyword === 'string' ? keyword : `${keyword.name}${keyword.value != null ? ` ${keyword.value}` : ''}`}</span>)}</div> : null}<p className="rules-text">{(reverseCard ? inspect.deployed ? inspect.frontText : inspect.deployText : inspect.text) || 'Tekst sposobnosti prikazan je na slici karte.'}</p>{inspect.epicAction && <p className="rules-text"><strong>Epic Action</strong><br />{inspect.epicAction}</p>}{inspect.traits?.length ? <p className="traits">{inspect.traits.join(' · ')}</p> : null}{inspect.exhausted && <p className="status-note"><RotateCcw size={14} /> Iscrpljena karta</p>}{inspect.upgrades?.length ? <div className="attached-cards"><h4>Nadogradnje</h4>{inspect.upgrades.map(card => <button key={card.uuid} onClick={() => setInspect(card)}>{card.name}<Eye size={14} /></button>)}</div> : null}{inspect.captured?.length ? <div className="attached-cards"><h4>Zarobljene jedinice</h4>{inspect.captured.map(card => <button key={card.uuid} onClick={() => setInspect(card)}>{card.name}<Eye size={14} /></button>)}</div> : null}{inspect.unimplemented && <div className="notice">Skripta ove karte nije dostupna u ugrađenom sustavu.</div>}</div></div></Modal>}
     {inspectDeck && <Modal title={inspectDeck.name} close={closeDeck} wide><div className="deck-detail-header"><CardImage card={inspectDeck.leader} /><div><span className="eyebrow">{inspectDeck.setName || inspectDeck.set}</span><h2>{inspectDeck.leader.name}</h2><p>{inspectDeck.description || 'Službeni unaprijed složen špil.'}</p><AspectDots aspects={inspectDeck.aspects} />{inspectDeck.supported === false && <div className="notice">Špil sadrži karte bez dostupnih skripti i trenutačno nije moguće započeti partiju s njim.</div>}</div></div>{inspectDeck.cards?.length ? <div className="deck-list">{inspectDeck.cards.map(({ card, count }, i) => <button key={`${card.id}-${i}`} onClick={() => { setInspectDeck(null); setInspect(card); }}><span className="deck-list-quantity">{count}×</span><span className="deck-list-name">{card.name || card.code}</span><span className="deck-list-cost">{card.cost ?? '—'}</span><Eye size={14} /></button>)}</div> : <p className="modal-body muted">Sastav ovog špila dostupan je u uvezenim podacima na poslužitelju.</p>}<div className="modal-actions"><button className="primary-button" onClick={() => { slot === 'human' ? setDeckId(inspectDeck.id) : setOpponentDeckId(inspectDeck.id); setInspectDeck(null); }}>Odaberi špil <ArrowRight size={17} /></button></div></Modal>}
     {game && game.winnerIds?.length > 0 && !finishedDismissed && <Modal title={game.winnerIds.length > 1 ? 'Neriješen ishod' : game.winnerIds.includes('human') ? 'Misija uspješno završena' : 'Bitka je završena'} close={() => setFinishedDismissed(true)}><div className="victory-content"><div className={`victory-symbol ${game.winnerIds.includes('human') ? 'won' : ''}`}>{game.winnerIds.includes('human') ? <Crown size={48} /> : <Shield size={48} />}</div><span className="eyebrow">RUNDA {game.round}</span><h2>{game.winnerIds.length > 1 ? 'RAVNOTEŽA U GALAKSIJI.' : game.winnerIds.includes('human') ? 'POBJEDA JE TVOJA.' : 'GALAKSIJA PAMTI HRABRE.'}</h2><p>{game.winnerIds.length > 1 ? 'Obje baze pale su istodobno. Partija je završila neriješeno.' : game.winnerIds.includes('human') ? 'Protivnička baza je pala. Odličan posao, zapovjedniče.' : 'Ovaj put protivnik je bio uspješniji. Novi plan, nova prilika.'}</p><button className="primary-button" onClick={startGame} disabled={busy}><RotateCcw size={17} /> Nova partija</button><button className="text-button" onClick={() => setFinishedDismissed(true)}>Pregledaj završno stanje <ArrowRight size={15} /></button></div></Modal>}

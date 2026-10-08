@@ -84,10 +84,14 @@ u `vendor/forceteki/test`.
 
 ## Granice ove verzije
 
-Partije se čuvaju u memoriji Node procesa do šest sati neaktivnosti. Osvježavanje
-preglednika može nastaviti postojeću sesiju; restart poslužitelja je prekida.
-Ovaj poslužitelj namijenjen je osobnom/local hostingu, bez korisničkih računa.
-Za trajni javni servis potrebni su trajna pohrana i upravljanje korisničkim sesijama.
+Partije se šifrirano čuvaju u pregledniku do šest sati od početka. Hosting može
+obnoviti cijelu partiju i nakon zamjene poslužitelja, bez otkrivanja skrivenih
+karata. Koristi jednu karticu preglednika po partiji. Na lokalnom poslužitelju
+za obnovu nakon restarta postavi stabilan `SWU_SESSION_SECRET`; bez njega
+razvojni način koristi privremeni ključ.
+
+Vercel deployment, build i postavke opisani su u
+[docs/deployment.md](docs/deployment.md).
 AI je lokalni taktički sustav, bez LLM poziva ili API ključa.
 
 Podržan je 1v1 Premier. Twin Suns koristi drugačiji multiplayer format.

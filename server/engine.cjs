@@ -8,7 +8,6 @@ const { randomUUID, createHash } = require('node:crypto');
 const ROOT = path.resolve(__dirname, '../vendor/forceteki');
 const CARD_IMAGES = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/card-images.json'), 'utf8'));
 const CARD_BACK_IMAGES = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/card-back-images.json'), 'utf8'));
-const compiled = (name) => require(path.join(ROOT, 'build/server', name));
 let runtimePromise;
 
 class ActionError extends Error {
@@ -20,11 +19,21 @@ async function runtime() {
         if (!fs.existsSync(path.join(ROOT, 'build/server/game/core/Game.js'))) {
             throw new Error('Forceteki is not built. Run npm run engine:setup.');
         }
-        const { Game } = compiled('game/core/Game.js');
-        const { Deck } = compiled('utils/deck/Deck.js');
-        const { LocalFolderCardDataGetter } = compiled('utils/cardData/LocalFolderCardDataGetter.js');
-        const { getUserWithDefaultsSet } = compiled('Settings.js');
+        // Literal paths also let the deployment bundler trace engine dependencies.
+        const { Game } = require('../vendor/forceteki/build/server/game/core/Game.js');
+        const { Deck } = require('../vendor/forceteki/build/server/utils/deck/Deck.js');
+        const { LocalFolderCardDataGetter } = require('../vendor/forceteki/build/server/utils/cardData/LocalFolderCardDataGetter.js');
+        const { getUserWithDefaultsSet } = require('../vendor/forceteki/build/server/Settings.js');
         const getter = await LocalFolderCardDataGetter.createAsync(path.join(ROOT, 'test/json'));
+        // Card definitions are immutable input. Cache the JSON, returning a fresh
+        // copy to the engine; replay must not issue hundreds of filesystem reads.
+        const cardDefinitions = new Map();
+        getter.getCardInternalAsync = async (relativePath) => {
+            if (!cardDefinitions.has(relativePath)) {
+                cardDefinitions.set(relativePath, JSON.parse(fs.readFileSync(path.join(ROOT, 'test/json', relativePath), 'utf8')));
+            }
+            return structuredClone(cardDefinitions.get(relativePath));
+        };
         return { Game, Deck, getter, getUserWithDefaultsSet };
     })();
     return runtimePromise;
@@ -94,10 +103,9 @@ function normalizeDeck(deck) {
     return { ...deck, metadata: { ...deck.metadata, name: deck.metadata?.name || deck.name }, sideboard: deck.sideboard || [] };
 }
 
-async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficulty = 'tactical', allowUnsupported = false }) {
+async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficulty = 'tactical', allowUnsupported = false, id = randomUUID() }) {
     const { Game, Deck, getter, getUserWithDefaultsSet } = await runtime();
     const scheduler = new SessionScheduler();
-    const id = randomUUID();
     let version = 0;
     let closed = false;
     let engineError = null;
@@ -127,6 +135,44 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
     if (unsupported.length && !allowUnsupported) {
         scheduler.close();
         throw new ActionError(`Cards are not fully scripted in this engine: ${unsupported.map((card) => card.name).join(', ')}`, 'UNSUPPORTED_CARDS');
+    }
+
+    // Engine object IDs depend on asynchronous deck construction. Keep stable
+    // public references based on the ordered physical-card list instead. Tokens
+    // receive a new reference the first time an action leaves them in the game;
+    // retain removed references so bot memory and logs remain stable too.
+    const publicCardIds = new Map();
+    const engineCardIds = new Map();
+    function refreshCardIds() {
+        for (const card of game.allCards) if (!publicCardIds.has(card.uuid)) {
+            // The seed is private: an opaque identifier must not reveal the
+            // deck-list position (and identity) of a selectable facedown card.
+            const opaqueId = createHash('sha256').update(`${seed}:${id}:${publicCardIds.size}`).digest('hex').slice(0, 24);
+            const reference = `swucard_${opaqueId}`;
+            publicCardIds.set(card.uuid, reference);
+            engineCardIds.set(reference, card.uuid);
+        }
+    }
+    function translateIds(value, mapping, outward) {
+        if (typeof value === 'string') return value.replace(outward ? /\b[A-Za-z][A-Za-z0-9]*_\d+\b/g : /\bswucard_[a-f0-9]{24}\b/g,
+            (reference) => mapping.get(reference) || reference);
+        if (Array.isArray(value)) return value.map((item) => translateIds(item, mapping, outward));
+        if (!value || typeof value !== 'object') return value;
+        return Object.fromEntries(Object.entries(value).map(([key, item]) =>
+            [translateIds(key, mapping, outward), translateIds(item, mapping, outward)]));
+    }
+    refreshCardIds();
+    const promptIds = { human: new Map(), bot: new Map() };
+    function publicPromptId(playerId) {
+        // A prompt must retain its identity while cards are being selected.
+        // Refresh both seats in fixed order so observations by either caller
+        // produce the same prompt epochs during a subsequent replay.
+        for (const player of game.getPlayers()) {
+            const uuid = player.promptState.getState().promptUuid;
+            if (uuid && !promptIds[player.id].has(uuid)) promptIds[player.id].set(uuid, promptIds[player.id].size);
+        }
+        const uuid = game.getPlayerById(playerId).promptState.getState().promptUuid;
+        return uuid ? `${id}:${playerId}:${promptIds[playerId].get(uuid)}` : null;
     }
 
     function checkSession(playerId) {
@@ -210,8 +256,10 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
 
     function view(playerId = 'human') {
         const viewer = checkSession(playerId);
+        refreshCardIds();
         const state = viewer.promptState.getState();
-        const legalActions = legalActionsFor(viewer, state);
+        const promptId = publicPromptId(playerId);
+        const legalActions = legalActionsFor(viewer, state).map((action) => ({ ...action, promptId }));
         const players = {};
         for (const player of game.getPlayers()) {
             const summarize = (card) => summarizeCard(card, viewer);
@@ -239,7 +287,7 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
         });
         const legalIds = new Set(legalActions.filter((action) => action.type === 'card').map((action) => action.cardId));
         const prompt = {
-            id: state.promptUuid, title: state.menuTitle, subtitle: state.promptTitle, type: state.promptType || 'select',
+            id: promptId, title: state.menuTitle, subtitle: state.promptTitle, type: state.promptType || 'select',
             selectMode: state.selectCardMode, selectOrder: state.selectOrder,
             selectedCardIds: viewer.selectedCards.map((card) => card.uuid),
             selectableCardIds: state.distributeAmongTargets ? viewer.selectableCards.map((card) => card.uuid) : [...legalIds],
@@ -250,13 +298,13 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
             attackerId: viewer.promptState.attackTargetingHighlightAttacker?.uuid || null,
             active: legalActions.length > 0,
         };
-        return JSON.parse(JSON.stringify({
+        return translateIds(JSON.parse(JSON.stringify({
             id, version, difficulty, phase: game.currentPhase, round: game.roundNumber,
             initiativePlayerId: game.initiativePlayer?.id || null, initiativeClaimed: game.isInitiativeClaimed,
             winnerIds: game.getPlayers().filter((player) => game.winnerNames.includes(player.name)).map((player) => player.id),
             ended: game.isEnded, viewerId: playerId, players, prompt, legalActions,
             log: game.gameChat.messages.map((entry, index) => ({ id: index, at: entry.date, text: plainMessage(entry.message) })),
-        }));
+        })), publicCardIds, true);
     }
 
     function validateDistribution(action, player, state) {
@@ -283,8 +331,10 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
         if (!action || typeof action !== 'object') throw new ActionError('An action is required.');
         if (game.isEnded) throw new ActionError('This game has ended.', 'GAME_ENDED');
         const state = player.promptState.getState();
-        if (!action.promptId || action.promptId !== state.promptUuid) throw new ActionError('The prompt changed; refresh the game state.', 'STALE_PROMPT');
+        if (!action.promptId || action.promptId !== publicPromptId(playerId)) throw new ActionError('The prompt changed; refresh the game state.', 'STALE_PROMPT');
         if (action.version !== undefined && action.version !== version) throw new ActionError('The game state changed; refresh the game state.', 'STALE_STATE');
+        refreshCardIds();
+        action = { ...translateIds(action, engineCardIds, false), promptId: state.promptUuid };
         const actions = legalActionsFor(player, state);
         const match = actions.find((candidate) => candidate.type === action.type &&
             (candidate.type !== 'card' && candidate.type !== 'perCard' || candidate.cardId === action.cardId) &&
@@ -314,6 +364,11 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
 
     return {
         id, view, submit, botView: () => view('bot'), unsupported,
+        canonicalView(playerId = 'human') {
+            const result = view(playerId);
+            result.log = result.log.map(({ at, ...entry }) => entry);
+            return result;
+        },
         close() { closed = true; scheduler.close(); game.getPlayers().forEach((player) => player.actionTimer.stop()); game.removeAllListeners(); },
     };
 }
