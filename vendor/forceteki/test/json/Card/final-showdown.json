@@ -1,0 +1,37 @@
+{
+  "title": "Final Showdown",
+  "subtitle": "",
+  "cost": 6,
+  "hp": null,
+  "power": null,
+  "text": "Ready each unit you control. At the start of the regroup phase, you lose the game.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1910812527",
+  "aspects": [
+    "cunning",
+    "cunning"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 208
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 208
+    }
+  ],
+  "internalName": "final-showdown"
+}

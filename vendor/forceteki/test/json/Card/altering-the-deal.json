@@ -1,0 +1,36 @@
+{
+  "title": "Altering the Deal",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Discard a captured card guarded by a friendly unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6425029011",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 243
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 243
+    }
+  ],
+  "internalName": "altering-the-deal"
+}

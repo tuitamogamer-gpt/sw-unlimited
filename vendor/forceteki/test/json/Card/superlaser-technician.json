@@ -1,0 +1,42 @@
+{
+  "title": "Superlaser Technician",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 1,
+  "power": 2,
+  "text": "When Defeated: You may put this unit into play as a resource and ready it.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "(ERRATA) Templating update: “Put into play as a resource” becomes “resource”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8954587682",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 85
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 83
+    },
+    {
+      "set": "SHD",
+      "number": 85
+    }
+  ],
+  "internalName": "superlaser-technician"
+}

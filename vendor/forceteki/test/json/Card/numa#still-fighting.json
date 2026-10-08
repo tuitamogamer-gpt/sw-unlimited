@@ -1,0 +1,40 @@
+{
+  "title": "Numa",
+  "subtitle": "Still Fighting",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "Restore 1 (When this unit attacks, heal 1 damage from your base.)\nIf this unit would be dealt damage, prevent 1 of that damage.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9768257744",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "rebel",
+    "twi'lek"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 88
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 88
+    }
+  ],
+  "internalName": "numa#still-fighting"
+}

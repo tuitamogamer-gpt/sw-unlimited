@@ -1,0 +1,37 @@
+{
+  "title": "The Master Codebreaker",
+  "subtitle": "High Stakes",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "The first Gambit card you play each round costs 1 resource less.\nWhen Played: Search the top 8 cards of your deck for a Gambit card, reveal it, and draw it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4763371184",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 229
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 229
+    }
+  ],
+  "internalName": "the-master-codebreaker#high-stakes"
+}

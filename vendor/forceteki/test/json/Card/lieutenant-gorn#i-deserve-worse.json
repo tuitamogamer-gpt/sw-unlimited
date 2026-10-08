@@ -1,0 +1,39 @@
+{
+  "title": "Lieutenant Gorn",
+  "subtitle": "I Deserve Worse",
+  "cost": 3,
+  "hp": 4,
+  "power": 4,
+  "text": "On Attack: Take control of an enemy Credit token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8232418666",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "imperial",
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 221
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 221
+    }
+  ],
+  "internalName": "lieutenant-gorn#i-deserve-worse"
+}

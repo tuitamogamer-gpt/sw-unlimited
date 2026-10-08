@@ -1,0 +1,26 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import { EventCard } from '../../../core/card/EventCard';
+import type { IEventAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { Trait } from '../../../core/Constants';
+import { TextHelper } from '../../../core/utils/TextHelper';
+
+export default class PunchIt extends EventCard {
+    protected override getImplementationId () {
+        return {
+            id: '6413979593',
+            internalName: 'punch-it',
+        };
+    }
+
+    public override setupCardAbilities(registrar: IEventAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.setEventAbility({
+            title: `Attack with a ${TextHelper.Trait.Vehicle} unit. It gets +2/+0 for this attack`,
+            initiateAttack: {
+                attackerCondition: (card) => card.hasSomeTrait(Trait.Vehicle),
+                attackerLastingEffects: {
+                    effect: AbilityHelper.ongoingEffects.modifyStats({ power: 2, hp: 0 })
+                }
+            }
+        });
+    }
+}

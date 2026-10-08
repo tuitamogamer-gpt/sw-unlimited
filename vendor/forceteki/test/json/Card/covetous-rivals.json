@@ -1,0 +1,40 @@
+{
+  "title": "Covetous Rivals",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 5,
+  "power": 5,
+  "text": "Grit (This unit gets +1/+0 for each damage on it.)\nWhen Played/On Attack: You may deal 2 damage to a unit with a Bounty.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1304452249",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit",
+    "bounty"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 171
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 171
+    }
+  ],
+  "internalName": "covetous-rivals"
+}

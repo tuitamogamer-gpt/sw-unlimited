@@ -1,0 +1,40 @@
+{
+  "title": "Baylan Skoll",
+  "subtitle": "Power Beyond Dream",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "Action [1 resource, Exhaust]: Give a friendly unit +2/+2 for this phase if it's the only unit you control in its arena.",
+  "deployBox": "On Attack: You may give a friendly unit +2/+2 and Sentinel for this phase if it's the only non-leader unit you control in its arena. (Enemy units in its arena must attack a Sentinel when they attack you.)",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1629218824",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "force"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 3
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 3
+    }
+  ],
+  "internalName": "baylan-skoll#power-beyond-dream"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Liberated by Darkness",
+  "subtitle": "",
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "Use the Force (lose your Force token). If you do, take control of a non-leader unit. At the start of the regroup phase, its owner takes control of it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7691597101",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 189
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 189
+    }
+  ],
+  "internalName": "liberated-by-darkness"
+}

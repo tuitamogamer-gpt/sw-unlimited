@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "matches": [
+    {
+      "difficulty": "easy",
+      "requests": 103,
+      "rounds": 9,
+      "winners": [
+        "human"
+      ]
+    },
+    {
+      "difficulty": "normal",
+      "requests": 109,
+      "rounds": 11,
+      "winners": [
+        "human"
+      ]
+    },
+    {
+      "difficulty": "hard",
+      "requests": 106,
+      "rounds": 10,
+      "winners": [
+        "human"
+      ]
+    }
+  ]
+}

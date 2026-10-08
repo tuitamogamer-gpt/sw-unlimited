@@ -1,0 +1,41 @@
+{
+  "title": "Defense Fleet X-Wing",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 1,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7983965297",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "new republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 60
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 60
+    }
+  ],
+  "internalName": "defense-fleet-xwing"
+}

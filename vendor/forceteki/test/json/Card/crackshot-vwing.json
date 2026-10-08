@@ -1,0 +1,39 @@
+{
+  "title": "Crackshot V-Wing",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: If you control no other Fighter units, deal 1 damage to this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4159101997",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 158
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 158
+    }
+  ],
+  "internalName": "crackshot-vwing"
+}

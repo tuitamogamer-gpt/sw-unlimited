@@ -1,0 +1,36 @@
+{
+  "title": "Vanquish the Legion",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Give each enemy ground unit –2/–2 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5236803699",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 48
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 48
+    }
+  ],
+  "internalName": "vanquish-the-legion"
+}

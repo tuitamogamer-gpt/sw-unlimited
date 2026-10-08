@@ -1,0 +1,39 @@
+{
+  "title": "Sebulba's Podracer",
+  "subtitle": "Taking the Lead",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "When you discard a card from your deck: You may ready this unit. Use this ability only once each round.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9969121799",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "vehicle",
+    "speeder"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 176
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 176
+    }
+  ],
+  "internalName": "sebulbas-podracer#taking-the-lead"
+}

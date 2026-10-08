@@ -1,0 +1,157 @@
+import * as dotenv from 'dotenv';
+import { z } from 'zod';
+import { logger } from './logger';
+
+dotenv.config();
+
+const parsedEnv = z
+    .object({
+        ENVIRONMENT: z.string(),
+        GAME_NODE_HOST: z.string(),
+        GAME_NODE_NAME: z.string(),
+        GAME_NODE_SOCKET_IO_PORT: z.coerce.number().int(),
+        AWS_REGION: z.string().optional(),
+        AWS_ACCESS_KEY_ID: z.string().optional(),
+        AWS_SECRET_ACCESS_KEY: z.string().optional(),
+        NEXTAUTH_SECRET: z.string().optional(),
+        DISCORD_BUG_REPORT_WEBHOOK_URL: z.string().optional(),
+        DISCORD_PLAYER_REPORT_WEBHOOK_URL: z.string().optional(),
+        DISCORD_ERROR_REPORT_WEBHOOK_URL: z.string().optional(),
+        ADDITIONAL_CORS_ORIGINS: z.string().optional(),
+        SWUSTATS_API_KEY: z.string().optional(),
+        FORCE_ENABLE_STATS_LOGGING: z.string().optional(),
+        SWUSTATS_CLIENT_ID: z.string().optional(),
+        SWUSTATS_CLIENT_SECRET: z.string().optional(),
+        SWUBASE_CLIENT_ID: z.string().optional(),
+        SWUBASE_CLIENT_SECRET: z.string().optional(),
+        INTRASERVICE_SECRET: z.string().optional(),
+        PROFILE_CAPTURE_SECRET: z.string().optional(),
+        DEBUG_MOD_ACTION_CACHE: z.string().optional(),
+    })
+    .safeParse(process.env);
+
+/*
+    .object({
+    // CAPTCHA_KEY: z.string().optional(),
+    // COOKIE_LIFETIME: z.string().optional(),
+    // DB_PATH: z.string(),
+    // DOMAIN: z.string(),
+    // EMAIL_PATH: z.string().optional(),
+    ENVIRONMENT: z.string(),
+    // GAME_NODE_CERT_PATH: z.string().optional(),
+    GAME_NODE_HOST: z.string(),
+    // GAME_NODE_KEY_PATH: z.string().optional(),
+    GAME_NODE_NAME: z.string(),
+    // GAME_NODE_ORIGIN: z.string().optional(),
+    // GAME_NODE_PROXY_PORT: z.coerce.number().int().optional(),
+    GAME_NODE_SOCKET_IO_PORT: z.coerce.number().int(),
+    // HMAC_SECRET: z.string().optional(),
+    // HTTPS: z.string(),
+    // LOBBY_PORT: z.coerce.number().int(),
+    // MAX_GAMES: z.coerce.number().int().optional(),
+    // MQ_URL: z.string(),
+    SECRET: z.string()
+    // SENTRY_DSN: z.string().optional()
+
+*/
+
+if (!parsedEnv.success) {
+    throw Error(`Failed to initialize environment variables: ${(parsedEnv as any).error.message}`);
+}
+
+const defaultOrigins = ['http://localhost:3000', 'https://karabast.net', 'https://www.karabast.net'];
+
+export const corsOrigins = parsedEnv.data.ADDITIONAL_CORS_ORIGINS
+    ? [
+        ...defaultOrigins,
+        ...parsedEnv.data.ADDITIONAL_CORS_ORIGINS.split(',').filter((origin) => origin.trim() !== '')
+    ]
+    : defaultOrigins;
+
+// export const captchaKey = parsedEnv.data.CAPTCHA_KEY;
+// export const cookieLifetime = parsedEnv.data.COOKIE_LIFETIME;
+// export const dbPath = parsedEnv.data.DB_PATH;
+// export const domain = parsedEnv.data.DOMAIN;
+// export const emailPath = parsedEnv.data.EMAIL_PATH;
+export const environment = parsedEnv.data.ENVIRONMENT;
+// export const gameNodeCertPath = parsedEnv.data.GAME_NODE_CERT_PATH;
+export const gameNodeHost = parsedEnv.data.GAME_NODE_HOST;
+// export const gameNodeKeyPath = parsedEnv.data.GAME_NODE_KEY_PATH;
+export const gameNodeName = parsedEnv.data.GAME_NODE_NAME;
+// export const gameNodeOrigin = parsedEnv.data.GAME_NODE_ORIGIN;
+// export const gameNodeProxyPort = parsedEnv.data.GAME_NODE_PROXY_PORT;
+export const gameNodeSocketIoPort = parsedEnv.data.GAME_NODE_SOCKET_IO_PORT;
+// export const hmacSecret = parsedEnv.data.HMAC_SECRET;
+// export const https = parsedEnv.data.HTTPS;
+// export const lobbyPort = parsedEnv.data.LOBBY_PORT;
+// export const maxGames = parsedEnv.data.MAX_GAMES;
+// export const mqUrl = parsedEnv.data.MQ_URL;
+export const DISCORD_BUG_REPORT_WEBHOOK_URL = parsedEnv.data.DISCORD_BUG_REPORT_WEBHOOK_URL;
+export const DISCORD_PLAYER_REPORT_WEBHOOK_URL = parsedEnv.data.DISCORD_PLAYER_REPORT_WEBHOOK_URL;
+export const DISCORD_ERROR_REPORT_WEBHOOK_URL = parsedEnv.data.DISCORD_ERROR_REPORT_WEBHOOK_URL;
+// export const sentryDsn = parsedEnv.data.SENTRY_DSN;
+export const AWS_REGION = parsedEnv.data.AWS_REGION;
+export const AWS_ACCESS_KEY_ID = parsedEnv.data.AWS_ACCESS_KEY_ID;
+export const AWS_SECRET_ACCESS_KEY = parsedEnv.data.AWS_SECRET_ACCESS_KEY;
+export const NEXTAUTH_SECRET = parsedEnv.data.NEXTAUTH_SECRET;
+export const SWUSTATS_API_KEY = parsedEnv.data.SWUSTATS_API_KEY;
+export const FORCE_ENABLE_STATS_LOGGING = parsedEnv.data.FORCE_ENABLE_STATS_LOGGING;
+export const SWUSTATS_CLIENT_ID = parsedEnv.data.SWUSTATS_CLIENT_ID;
+export const SWUSTATS_CLIENT_SECRET = parsedEnv.data.SWUSTATS_CLIENT_SECRET;
+export const SWUBASE_CLIENT_ID = parsedEnv.data.SWUBASE_CLIENT_ID;
+export const SWUBASE_CLIENT_SECRET = parsedEnv.data.SWUBASE_CLIENT_SECRET;
+export const INTRASERVICE_SECRET = parsedEnv.data.INTRASERVICE_SECRET;
+export const PROFILE_CAPTURE_SECRET = parsedEnv.data.PROFILE_CAPTURE_SECRET;
+export const DEBUG_MOD_ACTION_CACHE = parsedEnv.data.DEBUG_MOD_ACTION_CACHE === 'true';
+
+type ParsedEnvData = typeof parsedEnv.data;
+
+/**
+ * Simple function to validate that required environment variables are available
+ * @param requiredInProd that need to be present
+ * @param alwaysRequired Array of environment variable names that can be present
+ * @param context Optional context name for error messages
+ * @returns Object containing only the required variables
+ * @throws Error if any required variables are missing or undefined
+ */
+export function requireEnvVars<K extends keyof ParsedEnvData>(
+    requiredInProd: K[],
+    context: string = 'Environment validation',
+    alwaysRequired?: K[]
+) {
+    const missingRequiredInProd: string[] = [];
+    const missingAlwaysRequired: string[] = [];
+    let throwError = false;
+    for (const varName of requiredInProd) {
+        const value = parsedEnv.data[varName];
+        if (!value) {
+            missingRequiredInProd.push(String(varName));
+            if (environment === 'production') {
+                throwError = true;
+            }
+        }
+    }
+
+    if (alwaysRequired) {
+        for (const varName of alwaysRequired) {
+            const value = parsedEnv.data[varName];
+            if (!value) {
+                throwError = true;
+                missingAlwaysRequired.push(String(varName));
+            }
+        }
+    }
+
+    if (missingAlwaysRequired.length > 0 || missingRequiredInProd.length > 0) {
+        const message = `(${context}): ${missingAlwaysRequired.length > 0
+            ? `Missing required environment variables: ${missingAlwaysRequired.join(', ')}` : ''}
+        ${(missingRequiredInProd.length <= 0 ? '' : `Missing environment variables ${missingRequiredInProd.join(', ')} ${environment === 'development'
+            ? 'some services might not work as intended.'
+            : ''}`)}`;
+        if (throwError) {
+            throw new Error(message);
+        } else {
+            logger.warn(message);
+        }
+    }
+}

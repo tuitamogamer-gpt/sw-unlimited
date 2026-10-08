@@ -1,0 +1,34 @@
+{
+  "title": "Evasive Maneuver",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Exhaust a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5038195777",
+  "aspects": [],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 262
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 262
+    }
+  ],
+  "internalName": "evasive-maneuver"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Ryyk Blademaster",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 5,
+  "text": "While you control 6 or more resources, this unit gains Ambush and Overwhelm.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\nShields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1784192148",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush",
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 118
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 118
+    }
+  ],
+  "internalName": "ryyk-blademaster"
+}

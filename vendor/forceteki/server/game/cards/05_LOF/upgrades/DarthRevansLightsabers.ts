@@ -1,0 +1,22 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { IUpgradeAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { UpgradeCard } from '../../../core/card/UpgradeCard';
+import { KeywordName, Trait } from '../../../core/Constants';
+
+export default class DarthRevansLightsabers extends UpgradeCard {
+    protected override getImplementationId() {
+        return {
+            id: '9566815036',
+            internalName: 'darth-revans-lightsabers',
+        };
+    }
+
+    public override setupCardAbilities(registrar: IUpgradeAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.setAttachCondition((context) => !context.attachTarget.hasSomeTrait(Trait.Vehicle));
+
+        registrar.addGainKeywordTargetingAttached({
+            gainCondition: (context) => context.source.parentCard?.hasSomeTrait(Trait.Sith),
+            keyword: KeywordName.Grit,
+        });
+    }
+}

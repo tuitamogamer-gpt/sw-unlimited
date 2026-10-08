@@ -1,0 +1,39 @@
+{
+  "title": "Bib Fortuna",
+  "subtitle": "Die Wanna Wanga?",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "When Played: If you control another Underworld unit, create a Credit token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2210391815",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "twi'lek"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 134
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 134
+    }
+  ],
+  "internalName": "bib-fortuna#die-wanna-wanga"
+}

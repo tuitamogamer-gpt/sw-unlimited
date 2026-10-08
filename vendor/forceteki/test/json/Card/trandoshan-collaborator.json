@@ -1,0 +1,40 @@
+{
+  "title": "Trandoshan Collaborator",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 1,
+  "text": "Raid 3 (This unit gets +3/+0 while attacking.)\nSaboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8043986246",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid",
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 245
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 245
+    }
+  ],
+  "internalName": "trandoshan-collaborator"
+}

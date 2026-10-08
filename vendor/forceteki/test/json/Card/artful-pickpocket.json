@@ -1,0 +1,40 @@
+{
+  "title": "Artful Pickpocket",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "Saboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7521267293",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 218
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 218
+    }
+  ],
+  "internalName": "artful-pickpocket"
+}

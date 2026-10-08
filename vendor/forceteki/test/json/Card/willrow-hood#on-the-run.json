@@ -1,0 +1,37 @@
+{
+  "title": "Willrow Hood",
+  "subtitle": "On the Run",
+  "cost": 3,
+  "hp": 5,
+  "power": 2,
+  "text": "While this unit has exactly 1 friendly upgrade on it, that upgrade can't be defeated or returned to hand by enemy card abilities.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1904193703",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 61
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 61
+    }
+  ],
+  "internalName": "willrow-hood#on-the-run"
+}

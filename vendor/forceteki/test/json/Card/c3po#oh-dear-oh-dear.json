@@ -1,0 +1,43 @@
+{
+  "title": "C-3PO",
+  "subtitle": "Oh Dear, Oh Dear",
+  "cost": 3,
+  "hp": 4,
+  "power": 1,
+  "text": "When Played: If you control a Cunning unit, draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2404973143",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 19
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 19
+    },
+    {
+      "set": "IBH",
+      "number": 41
+    }
+  ],
+  "internalName": "c3po#oh-dear-oh-dear"
+}

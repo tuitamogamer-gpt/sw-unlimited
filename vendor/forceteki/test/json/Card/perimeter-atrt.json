@@ -1,0 +1,41 @@
+{
+  "title": "Perimeter AT-RT",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 5,
+  "power": 3,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9056204789",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "walker"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 68
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 68
+    }
+  ],
+  "internalName": "perimeter-atrt"
+}

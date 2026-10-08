@@ -1,0 +1,37 @@
+{
+  "title": "Cripple Authority",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Draw a card. Each opponent who controls more resources than you discards a card from their hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3228620062",
+  "aspects": [
+    "heroism",
+    "aggression"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 156
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 156
+    }
+  ],
+  "internalName": "cripple-authority"
+}

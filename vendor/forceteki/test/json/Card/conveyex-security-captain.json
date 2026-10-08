@@ -1,0 +1,38 @@
+{
+  "title": "Conveyex Security Captain",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "Enemy Credit tokens lose all abilities.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7864585126",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 117
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 117
+    }
+  ],
+  "internalName": "conveyex-security-captain"
+}

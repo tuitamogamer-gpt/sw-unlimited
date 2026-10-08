@@ -1,0 +1,39 @@
+{
+  "title": "Imperial Occupier",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Defeated: Create a Spy token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0874389236",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 132
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 132
+    }
+  ],
+  "internalName": "imperial-occupier"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Political Bully",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 2,
+  "text": "When Played: If you control another Official unit, you may deal 2 damage to a ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5668757769",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "republic",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 241
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 241
+    }
+  ],
+  "internalName": "political-bully"
+}

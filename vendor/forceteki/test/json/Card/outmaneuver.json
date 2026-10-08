@@ -1,0 +1,36 @@
+{
+  "title": "Outmaneuver",
+  "subtitle": null,
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Choose an arena (ground or space). Exhaust each unit in that arena.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7366340487",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 221
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 221
+    }
+  ],
+  "internalName": "outmaneuver"
+}

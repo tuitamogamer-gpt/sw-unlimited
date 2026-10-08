@@ -1,0 +1,37 @@
+{
+  "title": "Oppression Breeds Rebellion",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "If a friendly unit was defeated while attacking this phase, draw 3 cards.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3208071698",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 158
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 158
+    }
+  ],
+  "internalName": "oppression-breeds-rebellion"
+}

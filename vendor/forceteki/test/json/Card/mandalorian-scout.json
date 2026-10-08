@@ -1,0 +1,37 @@
+{
+  "title": "Mandalorian Scout",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 3,
+  "text": "When Defeated: Exhaust a ready friendly resource.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6885821500",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 216
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 216
+    }
+  ],
+  "internalName": "mandalorian-scout"
+}

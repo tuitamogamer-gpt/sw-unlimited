@@ -1,0 +1,46 @@
+{
+  "title": "Bright Hope",
+  "subtitle": "Narrow Escape",
+  "cost": 6,
+  "hp": 6,
+  "power": 4,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5509338180",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 14
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 14
+    },
+    {
+      "set": "IBH",
+      "number": 26
+    }
+  ],
+  "internalName": "bright-hope#narrow-escape"
+}

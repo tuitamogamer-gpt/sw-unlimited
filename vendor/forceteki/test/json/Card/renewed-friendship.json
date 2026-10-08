@@ -1,0 +1,37 @@
+{
+  "title": "Renewed Friendship",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Return a unit from your discard pile to your hand.\nCreate 2 Spy tokens.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1744140192",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 105
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 105
+    }
+  ],
+  "internalName": "renewed-friendship"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "The Tree Remembers",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "An enemy unit loses all abilities for this phase. If it costs 3 or less, defeat it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nLosing all abilities means the chosen unit also can't gain abilities for this phase.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3767887103",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 132
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 132
+    }
+  ],
+  "internalName": "the-tree-remembers"
+}

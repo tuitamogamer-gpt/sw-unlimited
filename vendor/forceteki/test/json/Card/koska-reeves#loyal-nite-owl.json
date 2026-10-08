@@ -1,0 +1,39 @@
+{
+  "title": "Koska Reeves",
+  "subtitle": "Loyal Nite Owl",
+  "cost": 4,
+  "hp": 5,
+  "power": 4,
+  "text": "On Attack: If this unit is upgraded, you may deal 2 damage to a ground unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9951020952",
+  "aspects": [
+    "heroism",
+    "aggression"
+  ],
+  "traits": [
+    "mandalorian",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 150
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 150
+    }
+  ],
+  "internalName": "koska-reeves#loyal-nite-owl"
+}

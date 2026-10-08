@@ -1,0 +1,38 @@
+{
+  "title": "Swoop Down",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a space unit. It gains Saboteur and can attack ground units for this attack. If it attacks a ground unit, it gets +2/+0 and the defender gets –2/–0 for this attack.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "You must attack with a space unit, if able. Units must be ready in order to attack.\n(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4663781580",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 230
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 230
+    }
+  ],
+  "internalName": "swoop-down"
+}

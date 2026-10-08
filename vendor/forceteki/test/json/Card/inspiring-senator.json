@@ -1,0 +1,36 @@
+{
+  "title": "Inspiring Senator",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "When Defeated: The next Official unit you play this phase costs 1 resource less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3791081057",
+  "aspects": [],
+  "traits": [
+    "republic",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 261
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 261
+    }
+  ],
+  "internalName": "inspiring-senator"
+}

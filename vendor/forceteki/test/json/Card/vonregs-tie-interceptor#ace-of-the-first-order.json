@@ -1,0 +1,43 @@
+{
+  "title": "Vonreg's TIE Interceptor",
+  "subtitle": "Ace of the First Order",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "While this unit has 4 or more power, it gains Overwhelm. (When attacking an enemy unit, deal excess damage to the opponent's base.)\nWhile this unit has 6 or more power, it gains Raid 1. (It gets +1/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2948071304",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "first order",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "overwhelm",
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 137
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 137
+    }
+  ],
+  "internalName": "vonregs-tie-interceptor#ace-of-the-first-order"
+}

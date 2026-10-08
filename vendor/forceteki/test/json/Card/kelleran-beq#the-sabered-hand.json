@@ -1,0 +1,40 @@
+{
+  "title": "Kelleran Beq",
+  "subtitle": "The Sabered Hand",
+  "cost": 7,
+  "hp": 7,
+  "power": 7,
+  "text": "When Played: Search the top 7 cards of your deck for a unit, reveal it, and play it. It costs 3 resources less. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1553569317",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 100
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 100
+    }
+  ],
+  "internalName": "kelleran-beq#the-sabered-hand"
+}

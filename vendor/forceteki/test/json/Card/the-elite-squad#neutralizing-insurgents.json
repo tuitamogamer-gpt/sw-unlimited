@@ -1,0 +1,41 @@
+{
+  "title": "The Elite Squad",
+  "subtitle": "Neutralizing Insurgents",
+  "cost": 8,
+  "hp": 8,
+  "power": 6,
+  "text": "Grit\nWhen Played/When damage is dealt to this unit: You may deal 2 damage to another <uq> (unique) unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2221908324",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 143
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 143
+    }
+  ],
+  "internalName": "the-elite-squad#neutralizing-insurgents"
+}

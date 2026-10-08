@@ -1,0 +1,38 @@
+{
+  "title": "Purrgil Ultra",
+  "subtitle": "",
+  "cost": 8,
+  "hp": 10,
+  "power": 6,
+  "text": "When Played/When Defeated: You may return another friendly non-leader unit to its owner's hand. If you do, deal damage to a unit equal to the returned unit's cost.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that return a card to hand must choose a card in play unless otherwise specified.\nAbilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3984721556",
+  "aspects": [
+    "command",
+    "cunning"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 38
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 38
+    }
+  ],
+  "internalName": "purrgil-ultra"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Third Sister",
+  "subtitle": "Seething With Ambition",
+  "cost": 5,
+  "hp": 4,
+  "power": 5,
+  "text": "Action [Exhaust]: Play a unit from your hand. It gains Hidden for this phase. (It can't be attacked for this phase unless it has Sentinel.)",
+  "deployBox": "Hidden (This unit can't be attacked if she was deployed this phase.)\nOn Attack: The next unit you play this phase gains Hidden.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "(ERRATA) On Attack: The next unit you play this phase gains Hidden for this phase.\nAbilities that let you play a card require you to pay that card’s cost unless specified otherwise.\nIf a unit has Hidden and Sentinel at the same time, it can be attacked.\nOnce it triggers, Third Sister's \"On Attack\" ability gives the next unit you play this phase Hidden even if she is defeated.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3357344238",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "imperial",
+    "inquisitor"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 10
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 10
+    }
+  ],
+  "internalName": "third-sister#seething-with-ambition"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Opee Sea Killer",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 6,
+  "power": 5,
+  "text": "While you control a Naboo base, this unit gains Grit. (This unit gets +1/+0 for each damage on it.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9194949375",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 90
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 90
+    }
+  ],
+  "internalName": "opee-sea-killer"
+}

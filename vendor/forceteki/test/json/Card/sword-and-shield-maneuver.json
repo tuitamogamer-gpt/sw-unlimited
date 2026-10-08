@@ -1,0 +1,41 @@
+{
+  "title": "Sword and Shield Maneuver",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Give each friendly Trooper unit Raid 1 for this phase.\nGive each friendly Jedi unit Sentinel for this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8719468890",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "jedi",
+    "republic",
+    "tactic"
+  ],
+  "keywords": [
+    "raid",
+    "sentinel"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 250
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 250
+    }
+  ],
+  "internalName": "sword-and-shield-maneuver"
+}

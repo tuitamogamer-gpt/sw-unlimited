@@ -1,0 +1,40 @@
+{
+  "title": "Adelphi Patrol Wing",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "When Played: You may attack with a unit. If you have the initiative, it gets +2/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9757839764",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "new republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 101
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 101
+    }
+  ],
+  "internalName": "adelphi-patrol-wing"
+}

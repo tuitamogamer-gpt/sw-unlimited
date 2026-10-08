@@ -1,0 +1,36 @@
+{
+  "title": "Mislead",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Give a Shield token to a unit.\nGive a unit –3/–0 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7387838286",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 81
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 81
+    }
+  ],
+  "internalName": "mislead"
+}

@@ -1,0 +1,47 @@
+{
+  "title": "Snowtrooper Vanguard",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3768891856",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 57
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 57
+    },
+    {
+      "set": "IBH",
+      "number": 80
+    },
+    {
+      "set": "IBH",
+      "number": 96
+    }
+  ],
+  "internalName": "snowtrooper-vanguard"
+}

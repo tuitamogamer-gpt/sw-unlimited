@@ -1,0 +1,87 @@
+import type { AbilityContext } from '../core/ability/AbilityContext';
+import type { Card } from '../core/card/Card';
+import { GameStateChangeRequired, EventName, KeywordName } from '../core/Constants';
+import type { GameEvent } from '../core/event/GameEvent';
+import { PlayerTargetSystem, type IPlayerTargetSystemProperties } from '../core/gameSystem/PlayerTargetSystem';
+import type { Player } from '../core/Player';
+import { Contract } from '../core/utils/Contract';
+import { Helpers } from '../core/utils/Helpers';
+
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export interface ITakeControlOfResourceProperties extends IPlayerTargetSystemProperties {}
+
+/**
+ * Used for taking control of some resource from a player algorithmically, instead of specifying a specific card in advance.
+ * The selected resource is random, but always a ready resource if available.
+ *
+ * The `target` player is the player who will be _taking_ the resource, and their opponent will be losing it.
+ */
+export class TakeControlOfResourceSystem<TContext extends AbilityContext = AbilityContext> extends PlayerTargetSystem<TContext, ITakeControlOfResourceProperties> {
+    public override readonly name = 'takeControl';
+    public override readonly eventName = EventName.OnTakeControl;
+
+    public eventHandler(event): void {
+        const card = event.card as Card;
+        Contract.assertTrue(card.canBeExhausted() && card.canChangeController());
+
+        const gameEvent = event as GameEvent;
+        if (gameEvent.context && event.newController === gameEvent.context.player && card.controller !== event.newController) {
+            gameEvent.context.game.snapshotManager.setRequiresConfirmationToRollbackCurrentSnapshot(gameEvent.context.player.id);
+        }
+
+        const exhausted = card.exhausted;
+        card.takeControl(event.newController);
+
+        if (exhausted) {
+            card.exhaust();
+        } else {
+            card.ready();
+        }
+    }
+
+    public override canAffectInternal(player: Player | Player[], context: TContext, _additionalProperties: Partial<ITakeControlOfResourceProperties> = {}, mustChangeGameState = GameStateChangeRequired.None): boolean {
+        const takingResourcePlayer = this.playerFromArray(player);
+
+        if (mustChangeGameState !== GameStateChangeRequired.None && takingResourcePlayer.opponent.resources.length === 0) {
+            return false;
+        }
+
+        return super.canAffectInternal(takingResourcePlayer, context);
+    }
+
+    public override getEffectMessage(context: TContext): [string, any[]] {
+        const { target } = this.generatePropertiesFromContext(context);
+
+        const takingResourcePlayer = this.playerFromArray(target);
+
+        return ['take control of a resource from {0}', [this.getTargetMessage(takingResourcePlayer.opponent, context)]];
+    }
+
+    public override addPropertiesToEvent(event: any, player: Player, context: TContext, additionalProperties?: Partial<ITakeControlOfResourceProperties>): void {
+        super.addPropertiesToEvent(event, player, context, additionalProperties);
+
+        event.newController = player;
+
+        player.opponent.resourceZone.rearrangeResourceExhaustState(context, (card) => card.hasSomeKeyword(KeywordName.Smuggle));
+        const opponentReadyResources = player.opponent.resources.filter((resource) => !resource.exhausted);
+
+        if (opponentReadyResources.length === 1) {
+            event.card = opponentReadyResources[0];
+            return;
+        }
+
+        // randomly select a ready resource if possible; otherwise randomly select from all resources
+        const resourcesToChooseFrom = opponentReadyResources.length > 0 ? opponentReadyResources : player.opponent.resources;
+
+        event.card = Helpers.randomItem(resourcesToChooseFrom, context.game.randomGenerator);
+    }
+
+    private playerFromArray(player: Player | Player[]) {
+        if (!Array.isArray(player)) {
+            return player;
+        }
+
+        Contract.assertArraySize(player, 1, `TakeControlOfResourceSystem must have exactly one player target, instead found ${player.length}`);
+        return player[0];
+    }
+}

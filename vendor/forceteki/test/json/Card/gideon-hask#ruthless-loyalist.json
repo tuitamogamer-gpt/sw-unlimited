@@ -1,0 +1,39 @@
+{
+  "title": "Gideon Hask",
+  "subtitle": "Ruthless Loyalist",
+  "cost": 5,
+  "hp": 5,
+  "power": 5,
+  "text": "When an enemy unit is defeated: Give an Experience token to a friendly unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "If Gideon Hask is defeated simultaneously with other enemy units, you still get to give Experience.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1664771721",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 36
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 36
+    }
+  ],
+  "internalName": "gideon-hask#ruthless-loyalist"
+}

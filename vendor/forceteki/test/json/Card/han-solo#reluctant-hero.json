@@ -1,0 +1,40 @@
+{
+  "title": "Han Solo",
+  "subtitle": "Reluctant Hero",
+  "cost": 7,
+  "hp": 6,
+  "power": 6,
+  "text": "Ambush (After you play this unit, he may ready and attack an enemy unit.)\n\nWhile attacking, this unit deals combat damage before the defender.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "“Combat damage” is only the damage dealt during the “deal combat damage” step of an attack.\nAmbush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\nIf the defender is defeated by Han Solo’s combat damage, it does not deal combat damage back. If it survives and has Grit, it deals bonus damage from Grit when dealing combat damage back.\n(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9500514827",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 198
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 198
+    }
+  ],
+  "internalName": "han-solo#reluctant-hero"
+}

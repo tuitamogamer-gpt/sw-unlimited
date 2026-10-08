@@ -1,0 +1,38 @@
+{
+  "title": "Qimir",
+  "subtitle": "Everyone Has a Weakness",
+  "cost": 1,
+  "hp": 1,
+  "power": 3,
+  "text": "When Defeated: You may discard the top card of your deck. If it's not Villainy, give a Weakness token to an enemy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1460052687",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "force"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 196
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 196
+    }
+  ],
+  "internalName": "qimir#everyone-has-a-weakness"
+}

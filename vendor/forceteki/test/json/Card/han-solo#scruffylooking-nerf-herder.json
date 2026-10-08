@@ -1,0 +1,44 @@
+{
+  "title": "Han Solo",
+  "subtitle": "Scruffy-Looking Nerf Herder",
+  "cost": 6,
+  "hp": 6,
+  "power": 4,
+  "text": "Raid 2 (This unit gets +2/+0 while attacking.)\nOn Attack:The defender gets –2/–0 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4136801536",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 10
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 10
+    },
+    {
+      "set": "IBH",
+      "number": 42
+    }
+  ],
+  "internalName": "han-solo#scruffylooking-nerf-herder"
+}

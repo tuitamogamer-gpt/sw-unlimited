@@ -1,0 +1,36 @@
+{
+  "title": "Turning the Tide",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Choose a unit. Deal 1 damage to it for each friendly unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1886651714",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 138
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 138
+    }
+  ],
+  "internalName": "turning-the-tide"
+}

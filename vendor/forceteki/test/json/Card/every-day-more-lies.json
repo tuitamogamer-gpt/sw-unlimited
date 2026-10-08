@@ -1,0 +1,36 @@
+{
+  "title": "Every Day, More Lies",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Each player discards a card from their hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4380072341",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 204
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 204
+    }
+  ],
+  "internalName": "every-day-more-lies"
+}

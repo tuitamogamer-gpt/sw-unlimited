@@ -1,0 +1,35 @@
+{
+  "title": "Lady Proxima",
+  "subtitle": "White Worm Matriarch",
+  "cost": 1,
+  "hp": 4,
+  "power": 0,
+  "text": "When you play another Underworld card: You may deal 1 damage to a base.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0981852103",
+  "aspects": [],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 255
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 255
+    }
+  ],
+  "internalName": "lady-proxima#white-worm-matriarch"
+}

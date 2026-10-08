@@ -1,0 +1,41 @@
+{
+  "title": "Village Protectors",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 2,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)\nShielded (When you play this unit, give a Shield token to it.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1747533523",
+  "aspects": [
+    "heroism",
+    "vigilance"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel",
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 43
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 43
+    }
+  ],
+  "internalName": "village-protectors"
+}

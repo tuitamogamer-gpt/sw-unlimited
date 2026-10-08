@@ -1,0 +1,39 @@
+{
+  "title": "Separatist Harbinger",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 1,
+  "text": "When Played/On Attack: An opponent chooses a unit or base they control. You may deal 2 damage to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5001649174",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 244
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 244
+    }
+  ],
+  "internalName": "separatist-harbinger"
+}

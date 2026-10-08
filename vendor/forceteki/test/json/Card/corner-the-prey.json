@@ -1,0 +1,37 @@
+{
+  "title": "Corner the Prey",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a unit. It gets +1/+0 for this attack for each damage on the defender at the start of this attack.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "If you play Corner the Prey, you must attack with a unit, if able. Units must be ready in order to attack.\n(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6476609909",
+  "aspects": [
+    "villainy",
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 139
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 139
+    }
+  ],
+  "internalName": "corner-the-prey"
+}

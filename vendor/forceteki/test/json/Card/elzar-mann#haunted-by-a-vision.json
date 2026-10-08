@@ -1,0 +1,38 @@
+{
+  "title": "Elzar Mann",
+  "subtitle": "Haunted by a Vision",
+  "cost": 6,
+  "hp": 7,
+  "power": 3,
+  "text": "While you control a Force leader, this unit enters play ready.\nWhen Played: Distribute up to 5 Advantage tokens among other friendly units. Then, an opponent searches twice that many cards from the top of their deck for an event, reveals it, and draws it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "After searching, your opponent puts any cards not chosen on the bottom of their deck in a random order.\nIf there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4779843241",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "force",
+    "jedi"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 224
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 224
+    }
+  ],
+  "internalName": "elzar-mann#haunted-by-a-vision"
+}

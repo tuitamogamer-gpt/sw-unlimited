@@ -1,0 +1,41 @@
+{
+  "title": "Shuttle ST-149",
+  "subtitle": "Under Krennic's Authority",
+  "cost": 4,
+  "hp": 4,
+  "power": 3,
+  "text": "Shielded (When you play this unit, give a Shield token to it.)\nWhen Played/When Defeated: You may take control of a token upgrade on a unit and attach it to a different eligible unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "You can use Shuttle ST-149's ability to attach an upgrade to itself or attach its Shield to another unit.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1519837763",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 242
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 242
+    }
+  ],
+  "internalName": "shuttle-st149#under-krennics-authority"
+}

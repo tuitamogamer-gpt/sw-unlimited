@@ -1,0 +1,39 @@
+{
+  "title": "Leia Organa",
+  "subtitle": "These Are My Friends",
+  "cost": 1,
+  "hp": 3,
+  "power": 2,
+  "text": "When you play another unit that costs 3 or less: Heal 1 damage from your base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6907771214",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 115
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 115
+    }
+  ],
+  "internalName": "leia-organa#these-are-my-friends"
+}

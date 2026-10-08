@@ -1,0 +1,37 @@
+{
+  "title": "Warzone Lieutenant",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 2,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0336440515",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 110
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 110
+    }
+  ],
+  "internalName": "warzone-lieutenant"
+}

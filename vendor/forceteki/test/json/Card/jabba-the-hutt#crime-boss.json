@@ -1,0 +1,41 @@
+{
+  "title": "Jabba the Hutt",
+  "subtitle": "Crime Boss",
+  "cost": 6,
+  "hp": 9,
+  "power": 3,
+  "text": "Action [1 resource, Exhaust, return a friendly Underworld unit to its owner's hand]: Create a Credit token.",
+  "deployBox": "Action: Play an Underworld unit from your hand. If you defeated a Credit while paying its cost, that unit gains Ambush for this phase.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Abilities that let you play a card require you to pay that card’s cost unless specified otherwise.\nAbilities that return a card to hand must choose a card in play unless otherwise specified.\nJabba's action ability cannot be used as an action if you can't play a unit, as it would not change the game state.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2418476827",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "hutt"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 15
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 15
+    }
+  ],
+  "internalName": "jabba-the-hutt#crime-boss"
+}

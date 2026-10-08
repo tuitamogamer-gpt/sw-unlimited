@@ -1,0 +1,40 @@
+{
+  "title": "Acclamator Assault Ship",
+  "subtitle": "",
+  "cost": 7,
+  "hp": 8,
+  "power": 5,
+  "text": "On Attack: You may give another unit +5/+5 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1072330402",
+  "aspects": [
+    "command",
+    "command"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 106
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 106
+    }
+  ],
+  "internalName": "acclamator-assault-ship"
+}

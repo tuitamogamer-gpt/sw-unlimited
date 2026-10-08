@@ -1,0 +1,37 @@
+{
+  "title": "Headhunting",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Attack with up to 3 units (one at a time). They can't attack bases for these attacks. Each Bounty Hunter that attacks this way gets +2/+0 for its attack.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Units must be ready in order to attack.\nUnits that can’t attack bases can still damage bases through other abilities, like Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5896817672",
+  "aspects": [
+    "villainy",
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 145
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 145
+    }
+  ],
+  "internalName": "headhunting"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Cantina Bouncer",
+  "subtitle": null,
+  "cost": 5,
+  "hp": 5,
+  "power": 3,
+  "text": "When Played: You may return a non-leader unit to its owner's hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that return a card to hand must choose a card in play unless otherwise specified.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1021495802",
+  "aspects": [
+    "cunning",
+    "cunning"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 202
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 202
+    }
+  ],
+  "internalName": "cantina-bouncer"
+}

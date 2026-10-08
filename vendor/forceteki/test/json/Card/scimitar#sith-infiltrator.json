@@ -1,0 +1,39 @@
+{
+  "title": "Scimitar",
+  "subtitle": "Sith Infiltrator",
+  "cost": 4,
+  "hp": 4,
+  "power": 3,
+  "text": "While this unit is damaged, it gets +3/+0.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1540696516",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "sith",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 233
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 233
+    }
+  ],
+  "internalName": "scimitar#sith-infiltrator"
+}

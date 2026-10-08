@@ -1,0 +1,36 @@
+{
+  "title": "Galvanized Leap",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Ready a unit that was damaged this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9496039852",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 188
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 188
+    }
+  ],
+  "internalName": "galvanized-leap"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Superheavy Ion Cannon",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 0,
+  "text": "Attach to a Capital Ship or Transport unit.\nAttached unit gains: “On Attack: You may exhaust a non-leader unit the defending player controls. If you do, deal indirect damage equal to its power to that player.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "A player can't assign more indirect damage to a unit than it has remaining HP. Indirect damage is unpreventable and ignores Shields.\n",
+  "upgradePower": 0,
+  "upgradeHp": 3,
+  "id": "5016817239",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "modification",
+    "weapon"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 227
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 227
+    }
+  ],
+  "internalName": "superheavy-ion-cannon"
+}

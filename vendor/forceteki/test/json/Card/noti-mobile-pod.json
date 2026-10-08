@@ -1,0 +1,36 @@
+{
+  "title": "Noti Mobile Pod",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5556203656",
+  "aspects": [],
+  "traits": [
+    "vehicle",
+    "transport"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 261
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 261
+    }
+  ],
+  "internalName": "noti-mobile-pod"
+}

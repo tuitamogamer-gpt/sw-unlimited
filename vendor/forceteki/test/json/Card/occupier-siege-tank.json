@@ -1,0 +1,45 @@
+{
+  "title": "Occupier Siege Tank",
+  "subtitle": null,
+  "cost": 5,
+  "hp": 4,
+  "power": 5,
+  "text": "Grit (This unit gets +1/+0 for each damage on it.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8098293047",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "tank"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 167
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 165
+    },
+    {
+      "set": "JTL",
+      "number": 167
+    }
+  ],
+  "internalName": "occupier-siege-tank"
+}

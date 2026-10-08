@@ -1,0 +1,42 @@
+{
+  "title": "Hijacked AT-ST",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 7,
+  "power": 7,
+  "text": "Overwhelm (When attacking an enemy unit, deal excess damage to the opponent's base.)\nWhen Played: This unit doesn't ready during the next regroup phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8707440461",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "walker"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 121
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 121
+    }
+  ],
+  "internalName": "hijacked-atst"
+}

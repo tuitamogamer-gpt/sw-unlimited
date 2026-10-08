@@ -1,0 +1,42 @@
+{
+  "title": "Honorable Nite Owl",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "Support (When you play this unit, you may attack with another unit. It gains this unit's other abilities for this attack.)\nRaid 1 (This unit gets +1/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1789576883",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "support",
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 154
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 154
+    }
+  ],
+  "internalName": "honorable-nite-owl"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Landing Shuttle",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "When Defeated: You may draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0596500013",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 63
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 63
+    }
+  ],
+  "internalName": "landing-shuttle"
+}

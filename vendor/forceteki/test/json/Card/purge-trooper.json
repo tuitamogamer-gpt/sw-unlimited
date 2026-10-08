@@ -1,0 +1,39 @@
+{
+  "title": "Purge Trooper",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 4,
+  "text": "When Played: You may deal 2 damage to a Force unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3595375406",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 133
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 133
+    }
+  ],
+  "internalName": "purge-trooper"
+}

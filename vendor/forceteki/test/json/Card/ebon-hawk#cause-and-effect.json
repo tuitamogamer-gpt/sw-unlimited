@@ -1,0 +1,39 @@
+{
+  "title": "Ebon Hawk",
+  "subtitle": "Cause and Effect",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "On Attack: You may disclose Heroism and/or Villainy. If you disclosed Heroism, this unit gets +2/+0 for this attack. If you disclosed Villainy, give the defender –4/–0 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0309087588",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 219
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 219
+    }
+  ],
+  "internalName": "ebon-hawk#cause-and-effect"
+}

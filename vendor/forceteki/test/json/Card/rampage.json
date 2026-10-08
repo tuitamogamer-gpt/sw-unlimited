@@ -1,0 +1,36 @@
+{
+  "title": "Rampage",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Each friendly Creature unit gets +2/+2 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8241022502",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 127
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 127
+    }
+  ],
+  "internalName": "rampage"
+}

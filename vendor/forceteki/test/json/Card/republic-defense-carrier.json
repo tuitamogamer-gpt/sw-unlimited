@@ -1,0 +1,42 @@
+{
+  "title": "Republic Defense Carrier",
+  "subtitle": "",
+  "cost": 11,
+  "hp": 7,
+  "power": 6,
+  "text": "This unit costs 1 resource less to play for each unit controlled by the opponent who controls the most units.\nSentinel (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6238512843",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 98
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 98
+    }
+  ],
+  "internalName": "republic-defense-carrier"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Catch Unawares",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a unit. The defender gets –4/–0 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you play Catch Unawares, you must attack with a unit, if able. Units must be ready in order to attack.\n(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9742037939",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 229
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 229
+    }
+  ],
+  "internalName": "catch-unawares"
+}

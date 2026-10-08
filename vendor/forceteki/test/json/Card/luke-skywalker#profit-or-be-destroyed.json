@@ -1,0 +1,41 @@
+{
+  "title": "Luke Skywalker",
+  "subtitle": "Profit or Be Destroyed",
+  "cost": 7,
+  "hp": 7,
+  "power": 9,
+  "text": "When Played: An opponent chooses one:\nThey create a Credit token. Ready this unit.\nYou may deal 5 damage to a unit.\n",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "If there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9677099296",
+  "aspects": [
+    "aggression",
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 80
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 80
+    }
+  ],
+  "internalName": "luke-skywalker#profit-or-be-destroyed"
+}

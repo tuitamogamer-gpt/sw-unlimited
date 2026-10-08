@@ -1,0 +1,35 @@
+{
+  "title": "Porg",
+  "subtitle": "",
+  "cost": 0,
+  "hp": 1,
+  "power": 1,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2971660620",
+  "aspects": [],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 254
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 254
+    }
+  ],
+  "internalName": "porg"
+}

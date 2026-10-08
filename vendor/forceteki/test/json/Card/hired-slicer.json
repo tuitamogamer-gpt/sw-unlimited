@@ -1,0 +1,37 @@
+{
+  "title": "Hired Slicer",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "On Attack: Reveal the top 2 cards of a deck. If you do, you may exhaust a unit that shares a Trait with one of those cards. Put those cards on the bottom of that deck in a random order.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1504187296",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 220
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 220
+    }
+  ],
+  "internalName": "hired-slicer"
+}

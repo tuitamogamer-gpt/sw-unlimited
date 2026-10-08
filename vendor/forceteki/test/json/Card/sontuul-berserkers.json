@@ -1,0 +1,41 @@
+{
+  "title": "Son-tuul Berserkers",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 5,
+  "power": 8,
+  "text": "Overwhelm (When attacking an enemy unit, deal excess damage to the opponent's base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6553816355",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 177
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 177
+    }
+  ],
+  "internalName": "sontuul-berserkers"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Ohnaka Gang Starhopper",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "Saboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0061646521",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 230
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 230
+    }
+  ],
+  "internalName": "ohnaka-gang-starhopper"
+}

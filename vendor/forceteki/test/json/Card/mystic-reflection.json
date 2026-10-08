@@ -1,0 +1,37 @@
+{
+  "title": "Mystic Reflection",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Give an enemy unit –2/–0 for this phase. If you control a Force unit, give the enemy unit –2/–2 for this phase instead.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9999079491",
+  "aspects": [
+    "heroism",
+    "vigilance"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 51
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 51
+    }
+  ],
+  "internalName": "mystic-reflection"
+}

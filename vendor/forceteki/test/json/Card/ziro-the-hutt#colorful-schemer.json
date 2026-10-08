@@ -1,0 +1,39 @@
+{
+  "title": "Ziro the Hutt",
+  "subtitle": "Colorful Schemer",
+  "cost": 5,
+  "hp": 8,
+  "power": 2,
+  "text": "When Played: For each opponent, you may exhaust a unit that player controls.\nOn Attack: For each opponent, you may exhaust a resource that player controls.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4489623180",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "hutt"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 185
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 185
+    }
+  ],
+  "internalName": "ziro-the-hutt#colorful-schemer"
+}

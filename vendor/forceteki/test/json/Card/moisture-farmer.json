@@ -1,0 +1,39 @@
+{
+  "title": "Moisture Farmer",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 4,
+  "power": 0,
+  "text": "Restore 2 (When this unit attacks, heal 2 damage from your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4327133297",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 55
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 55
+    }
+  ],
+  "internalName": "moisture-farmer"
+}

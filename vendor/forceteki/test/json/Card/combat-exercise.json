@@ -1,0 +1,36 @@
+{
+  "title": "Combat Exercise",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Exhaust a friendly unit. If you do, give 2 Experience tokens to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0030257743",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 165
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 165
+    }
+  ],
+  "internalName": "combat-exercise"
+}

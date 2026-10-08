@@ -1,0 +1,38 @@
+{
+  "title": "Independent Senator",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 4,
+  "power": 0,
+  "text": "Action [2 resources, Exhaust]: Exhaust a unit with 4 or less power.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card's power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9262288850",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "separatist",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 206
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 206
+    }
+  ],
+  "internalName": "independent-senator"
+}

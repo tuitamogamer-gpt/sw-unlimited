@@ -1,0 +1,38 @@
+{
+  "title": "Defiant Scrapper",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "When Played: You may defeat an enemy Credit token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3108628614",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 106
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 106
+    }
+  ],
+  "internalName": "defiant-scrapper"
+}

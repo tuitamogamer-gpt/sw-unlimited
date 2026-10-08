@@ -1,0 +1,38 @@
+{
+  "title": "Shadow Cloaking",
+  "subtitle": "",
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "Ready a unit and give a Shield token to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6384323164",
+  "aspects": [
+    "vigilance",
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 43
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 43
+    }
+  ],
+  "internalName": "shadow-cloaking"
+}

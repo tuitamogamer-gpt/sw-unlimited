@@ -1,0 +1,36 @@
+{
+  "title": "Watchful",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 0,
+  "text": "Attached unit gains: “On Attack: Look at the top card of a deck. You may put it on the bottom of that deck. (Otherwise, leave it on top.)”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 2,
+  "id": "6533680901",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 125
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 125
+    }
+  ],
+  "internalName": "watchful"
+}

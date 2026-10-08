@@ -1,0 +1,40 @@
+{
+  "title": "Qi'ra",
+  "subtitle": "I Alone Survived",
+  "cost": 5,
+  "hp": 8,
+  "power": 0,
+  "text": "Action [1 resource, Exhaust]: Deal 2 damage to a friendly unit. Then, give a Shield token to it.",
+  "deployBox": "Grit (This unit gets +1/+0 for each damage on her.)\nWhen Deployed: Heal all damage from each unit. Then, deal damage to each unit equal to half its remaining HP, rounded down.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "All damage dealt by Qi’ra’s “When Deployed” ability is dealt simultaneously.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2432897157",
+  "aspects": [
+    "villainy",
+    "vigilance"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 2
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 2
+    }
+  ],
+  "internalName": "qira#i-alone-survived"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Directed by the Force",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "The Force is with you (create your Force token). You may play a unit from your hand (paying its cost).",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that let you play a card require you to pay that card’s cost unless specified otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7078597376",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 123
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 123
+    }
+  ],
+  "internalName": "directed-by-the-force"
+}

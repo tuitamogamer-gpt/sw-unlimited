@@ -1,0 +1,40 @@
+{
+  "title": "Luminara Unduli",
+  "subtitle": "Besieged General",
+  "cost": 7,
+  "hp": 7,
+  "power": 7,
+  "text": "When you play a unit (including this one): You may attack with a unit. It gets +2/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5858234021",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 124
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 124
+    }
+  ],
+  "internalName": "luminara-unduli#besieged-general"
+}

@@ -1,0 +1,47 @@
+{
+  "title": "Death Trooper",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "When Played: Deal 2 damage to a friendly ground unit and 2 damage to an enemy ground unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "If Death Trooper is the only friendly unit in play, it must be chosen by its “When Played” ability.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6458912354",
+  "aspects": [
+    "villainy",
+    "vigilance"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 30
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 33
+    },
+    {
+      "set": "SHD",
+      "number": 30
+    },
+    {
+      "set": "SEC",
+      "number": 30
+    }
+  ],
+  "internalName": "death-trooper"
+}

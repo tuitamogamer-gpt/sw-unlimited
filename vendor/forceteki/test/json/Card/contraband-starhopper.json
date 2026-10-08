@@ -1,0 +1,39 @@
+{
+  "title": "Contraband Starhopper",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4692448252",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 161
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 161
+    }
+  ],
+  "internalName": "contraband-starhopper"
+}

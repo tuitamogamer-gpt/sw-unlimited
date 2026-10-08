@@ -1,0 +1,39 @@
+{
+  "title": "The Invasion of Christophsis",
+  "subtitle": "",
+  "cost": 15,
+  "hp": null,
+  "power": null,
+  "text": "Exploit 4\nChoose an opponent. Defeat each unit that player controls.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2565830105",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "separatist",
+    "plan"
+  ],
+  "keywords": [
+    "exploit"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 78
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 78
+    }
+  ],
+  "internalName": "the-invasion-of-christophsis"
+}

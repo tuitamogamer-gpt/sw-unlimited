@@ -1,0 +1,39 @@
+{
+  "title": "Boss Lyonie",
+  "subtitle": "Hypnotized",
+  "cost": 5,
+  "hp": 5,
+  "power": 5,
+  "text": "When Played/On Attack: You may choose a token upgrade attached to another unit. Give another one of those tokens to that unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2305570577",
+  "aspects": [
+    "cunning",
+    "vigilance"
+  ],
+  "traits": [
+    "gungan",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 57
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 57
+    }
+  ],
+  "internalName": "boss-lyonie#hypnotized"
+}

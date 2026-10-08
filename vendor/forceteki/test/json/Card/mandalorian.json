@@ -1,0 +1,33 @@
+{
+  "title": "Mandalorian",
+  "subtitle": "",
+  "cost": 0,
+  "hp": 2,
+  "power": 2,
+  "text": "Shielded (When you create this token, give a Shield token to it.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8192010342",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "token",
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH"
+  },
+  "internalName": "mandalorian"
+}

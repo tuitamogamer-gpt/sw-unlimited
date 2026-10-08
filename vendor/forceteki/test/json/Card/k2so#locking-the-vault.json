@@ -1,0 +1,42 @@
+{
+  "title": "K-2SO",
+  "subtitle": "Locking the Vault",
+  "cost": 5,
+  "hp": 5,
+  "power": 3,
+  "text": "Ambush\nOn Attack: You may deal 3 damage to a damaged ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6386443776",
+  "aspects": [
+    "aggression",
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 79
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 79
+    }
+  ],
+  "internalName": "k2so#locking-the-vault"
+}

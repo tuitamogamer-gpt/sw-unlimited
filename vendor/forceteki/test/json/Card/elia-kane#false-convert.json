@@ -1,0 +1,40 @@
+{
+  "title": "Elia Kane",
+  "subtitle": "False Convert",
+  "cost": 4,
+  "hp": 6,
+  "power": 3,
+  "text": "Raid 1 (This unit gets +1/+0 while attacking.)\nWhen Played: Look at 3 enemy resources. You may defeat 1 of them. If you do, its controller puts the top card of their deck into play as a resource and readies it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9039562488",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "new republic"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 242
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 242
+    }
+  ],
+  "internalName": "elia-kane#false-convert"
+}

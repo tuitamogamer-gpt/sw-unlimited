@@ -1,0 +1,36 @@
+{
+  "title": "Disruptive Burst",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Give each enemy unit –1/–1 for this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3596811933",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 75
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 75
+    }
+  ],
+  "internalName": "disruptive-burst"
+}

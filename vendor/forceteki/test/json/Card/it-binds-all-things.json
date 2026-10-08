@@ -1,0 +1,36 @@
+{
+  "title": "It Binds All Things",
+  "subtitle": null,
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Heal up to 3 damage from a unit. If you control a FORCE unit, you may deal that much damage to another unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "You can only choose to deal damage equal to the amount of damage removed.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0867878280",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 75
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 75
+    }
+  ],
+  "internalName": "it-binds-all-things"
+}

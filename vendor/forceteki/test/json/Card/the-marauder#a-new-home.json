@@ -1,0 +1,39 @@
+{
+  "title": "The Marauder",
+  "subtitle": "A New Home",
+  "cost": 7,
+  "hp": 7,
+  "power": 5,
+  "text": "While playing this unit, you may choose any number of friendly units. Deal 1 damage to each of them. For each unit chosen this way, this unit costs 1 resource less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Choose how many units to damage when determining the cost of The Marauder.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9798324745",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 125
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 125
+    }
+  ],
+  "internalName": "the-marauder#a-new-home"
+}

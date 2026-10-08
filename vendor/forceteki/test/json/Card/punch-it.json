@@ -1,0 +1,36 @@
+{
+  "title": "Punch It",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a Vehicle unit. It gets +2/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you play Punch It, you must attack with a unit, if able. Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6413979593",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 231
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 231
+    }
+  ],
+  "internalName": "punch-it"
+}

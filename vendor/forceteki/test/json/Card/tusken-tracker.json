@@ -1,0 +1,40 @@
+{
+  "title": "Tusken Tracker",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "Raid 2 (This unit gets +2/+0 while attacking.)\nWhen Played: Each enemy unit loses Hidden for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If a unit has Hidden and Sentinel at the same time, it can be attacked.\nOnly units in play when Tusken Tracker's \"When Played\" ability resolves lose Hidden.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1548886844",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tusken"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid",
+    "hidden"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 209
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 209
+    }
+  ],
+  "internalName": "tusken-tracker"
+}

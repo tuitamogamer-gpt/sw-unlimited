@@ -1,0 +1,35 @@
+{
+  "title": "Hidden Hand Supplier",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 1,
+  "text": "When Played: You may pay 1 resource. If you do, give an Experience token to another unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1514592160",
+  "aspects": [],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 257
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 257
+    }
+  ],
+  "internalName": "hidden-hand-supplier"
+}

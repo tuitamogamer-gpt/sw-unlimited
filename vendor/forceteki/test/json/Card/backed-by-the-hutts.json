@@ -1,0 +1,36 @@
+{
+  "title": "Backed by the Hutts",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Create a Credit token. You may deal damage to a unit equal to the number of friendly Credit tokens.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0800992259",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 247
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 247
+    }
+  ],
+  "internalName": "backed-by-the-hutts"
+}

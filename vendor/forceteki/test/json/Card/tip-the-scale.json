@@ -1,0 +1,37 @@
+{
+  "title": "Tip the Scale",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Look at an opponent's hand and discard a non-unit card from it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6491675327",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "force",
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 226
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 226
+    }
+  ],
+  "internalName": "tip-the-scale"
+}

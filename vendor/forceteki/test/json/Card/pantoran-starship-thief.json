@@ -1,0 +1,39 @@
+{
+  "title": "Pantoran Starship Thief",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: You may pay 3 resources. If you do, attach this unit as an upgrade to a Fighter or Transport unit without a Pilot on it. Take control of that unit.",
+  "deployBox": null,
+  "epicAction": "When this upgrade detaches from a unit: That unit's owner takes control of it.",
+  "unique": false,
+  "rules": "Pilots are considered units while not in play. Pantoran Starship Thief doesn't have the Piloting keyword and can only attach to a unit as a Pilot through its \"When Played\" ability.\n",
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "6515230001",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "pilot"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 83
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 83
+    }
+  ],
+  "internalName": "pantoran-starship-thief"
+}

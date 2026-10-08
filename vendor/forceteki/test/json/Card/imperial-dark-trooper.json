@@ -1,0 +1,40 @@
+{
+  "title": "Imperial Dark Trooper",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 3,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2529211493",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "droid",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 80
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 80
+    }
+  ],
+  "internalName": "imperial-dark-trooper"
+}

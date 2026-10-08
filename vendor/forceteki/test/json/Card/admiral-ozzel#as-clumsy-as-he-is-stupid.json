@@ -1,0 +1,43 @@
+{
+  "title": "Admiral Ozzel",
+  "subtitle": "As Clumsy as He Is Stupid",
+  "cost": 3,
+  "hp": 1,
+  "power": 3,
+  "text": "When Defeated: Each opponent discards a card from their hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2022483509",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 82
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 82
+    },
+    {
+      "set": "IBH",
+      "number": 85
+    }
+  ],
+  "internalName": "admiral-ozzel#as-clumsy-as-he-is-stupid"
+}

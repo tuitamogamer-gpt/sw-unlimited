@@ -1,0 +1,40 @@
+{
+  "title": "Interrogation Droid",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 3,
+  "text": "When Played: Exhaust an enemy unit. If you do and that unit costs 3 or less, its controller discards a card from their hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9623555910",
+  "aspects": [
+    "aggression",
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 75
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 75
+    }
+  ],
+  "internalName": "interrogation-droid"
+}

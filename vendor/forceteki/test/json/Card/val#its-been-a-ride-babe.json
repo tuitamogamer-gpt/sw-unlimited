@@ -1,0 +1,38 @@
+{
+  "title": "Val",
+  "subtitle": "It's Been a Ride, Babe",
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "When Played: Give a Shield token to another friendly unit.\nWhen Defeated: Give a Shield token to an enemy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3075365866",
+  "aspects": [
+    "cunning",
+    "vigilance"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 91
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 91
+    }
+  ],
+  "internalName": "val#its-been-a-ride-babe"
+}

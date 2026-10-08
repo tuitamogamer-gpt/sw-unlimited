@@ -1,0 +1,47 @@
+{
+  "title": "Scouting TIE Fighter",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6867378216",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 75
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 75
+    },
+    {
+      "set": "IBH",
+      "number": 81
+    },
+    {
+      "set": "IBH",
+      "number": 97
+    }
+  ],
+  "internalName": "scouting-tie-fighter"
+}

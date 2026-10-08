@@ -1,0 +1,40 @@
+{
+  "title": "Vane's Snub Fighter",
+  "subtitle": "Brash and Proud",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "When a friendly unit's attack ends: If it dealt combat damage to a base, give an Advantage token to this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "When Attack Ends abilities trigger at the same time as units deal combat damage. The attacking unit doesn't need to survive in order to give an Advantage token, so long as it dealt combat damage to a base.\n“Combat damage” is only the damage dealt during the “End attack” step of an attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3024525867",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 144
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 144
+    }
+  ],
+  "internalName": "vanes-snub-fighter#brash-and-proud"
+}

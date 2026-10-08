@@ -1,0 +1,139 @@
+import type { Aspect } from '../../Constants';
+import { Contract } from '../../utils/Contract';
+import type { IPenaltyAspectFilters } from '../CostInterfaces';
+
+interface IPenaltyAspect {
+    aspect: Aspect;
+    penaltyDisabled: boolean;
+}
+
+/**
+ * A simple tracking object for adjusted cost values that supports applying increases and decreases.
+ * This mostly exists to serve as a parent class for {@link AdjustedCostEvaluator}, so that there is a consistent
+ * interface for applying cost adjustments between the evaluation and the trigger stages.
+ */
+export class SimpleAdjustedCost {
+    private _penaltyAspects: IPenaltyAspect[] = [];
+    private _reservedResources = 0;
+    private _totalResourceCost: number;
+    private _value: number;
+
+    public penaltyAspects(filter?: IPenaltyAspectFilters): Aspect[] {
+        const filterFunction = (entry: IPenaltyAspect): boolean => {
+            if (!filter) {
+                return true;
+            }
+
+            return (!filter.isIgnored || entry.penaltyDisabled === filter.isIgnored) &&
+              (!filter.aspect || entry.aspect === filter.aspect);
+        };
+
+        return this._penaltyAspects
+            .filter(filterFunction)
+            .map((entry) => entry.aspect);
+    }
+
+    public get value(): number {
+        return this.computeLowestPossibleCost();
+    }
+
+    /**
+     * Number of ready resources that will be consumed by cost adjustments themselves (e.g. defeated to reduce the cost),
+     * and therefore will not be available to pay the remaining cost
+     */
+    public get reservedResources(): number {
+        return this._reservedResources;
+    }
+
+    /** Total number of ready resources required to pay: the remaining cost plus any resources reserved by adjustments */
+    public get requiredReadyResources(): number {
+        return this.value + this._reservedResources;
+    }
+
+    public constructor(initialCost: number, penaltyAspects?: Aspect[]) {
+        Contract.assertNonNegative(initialCost, `Initial cost must be non-negative, instead got ${initialCost}`);
+
+        this._value = initialCost;
+        this._totalResourceCost = initialCost;
+
+        if (penaltyAspects) {
+            this._penaltyAspects = penaltyAspects.map((aspect) => ({ aspect, penaltyDisabled: false }));
+            this.applyStaticIncrease(penaltyAspects.length * 2);
+        }
+    }
+
+    public applyStaticIncrease(increaseAmount: number) {
+        Contract.assertNonNegative(increaseAmount, `Increase amount must be non-negative, instead got ${increaseAmount}`);
+        this._value += increaseAmount;
+        this._totalResourceCost += increaseAmount;
+    }
+
+    public applyStaticDecrease(decreaseAmount: number) {
+        Contract.assertNonNegative(decreaseAmount, `Decrease amount must be non-negative, instead got ${decreaseAmount}`);
+        this._value -= decreaseAmount;
+        if (this._value < 0) {
+            this._value = 0;
+        }
+    }
+
+    /** Marks ready resources as consumed by a cost adjustment, so they cannot also be exhausted to pay the remaining cost */
+    public reserveResources(amount: number) {
+        Contract.assertNonNegative(amount, `Reserved resource amount must be non-negative, instead got ${amount}`);
+        this._reservedResources += amount;
+    }
+
+    public setRemainingToDiscountedValue(value: number) {
+        this._value = value;
+    }
+
+    /**
+     * Disables the penalty for the specified aspect, optionally matching multiple instances.
+     *
+     * @param aspect The aspect whose penalty is to be disabled
+     * @param matchMultiple Whether to disable all instances of the aspect, or only
+     * the first instance found
+     */
+    public disableAspectPenalty(aspect: Aspect, matchMultiple: boolean) {
+        const matchingEnabledPenalties = this._penaltyAspects.filter(
+            (entry) => entry.aspect === aspect && !entry.penaltyDisabled
+        );
+
+        for (const penaltyEntry of matchingEnabledPenalties) {
+            penaltyEntry.penaltyDisabled = true;
+            this.applyStaticDecrease(2);
+
+            if (!matchMultiple) {
+                break;
+            }
+        }
+    }
+
+    public disableAllAspectPenalties() {
+        const enabledPenalties = this._penaltyAspects.filter((entry) => !entry.penaltyDisabled);
+
+        for (const penaltyEntry of enabledPenalties) {
+            penaltyEntry.penaltyDisabled = true;
+            this.applyStaticDecrease(2);
+        }
+    }
+
+    public copy(): SimpleAdjustedCost {
+        const copy = this.createCopy();
+        return copy;
+    }
+
+    public getTotalResourceCost(includeAspectPenalties = true): number {
+        return this._totalResourceCost - (includeAspectPenalties ? 0 : this.penaltyAspects().length * 2);
+    }
+
+    protected createCopy(): SimpleAdjustedCost {
+        const copy = new SimpleAdjustedCost(this._value);
+        copy._penaltyAspects = this._penaltyAspects.map((entry) => ({ ...entry }));
+        copy._reservedResources = this._reservedResources;
+        return copy;
+    }
+
+    protected computeLowestPossibleCost(): number {
+        return this._value;
+    }
+}

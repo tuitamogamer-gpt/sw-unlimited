@@ -1,0 +1,42 @@
+{
+  "title": "Academy Defense Walker",
+  "subtitle": null,
+  "cost": 6,
+  "hp": 5,
+  "power": 5,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)\n\nWhen Played: Give an Experience token to each friendly damaged unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7596515127",
+  "aspects": [
+    "villainy",
+    "vigilance"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "walker"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 37
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 37
+    }
+  ],
+  "internalName": "academy-defense-walker"
+}

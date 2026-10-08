@@ -1,0 +1,37 @@
+{
+  "title": "No Disintegrations",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Deal damage to a non-leader unit equal to 1 less than its remaining HP.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4033634907",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 144
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 144
+    }
+  ],
+  "internalName": "no-disintegrations"
+}

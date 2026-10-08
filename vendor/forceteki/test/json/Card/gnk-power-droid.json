@@ -1,0 +1,37 @@
+{
+  "title": "GNK Power Droid",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "On Attack: The next unit you play this phase costs 1 resource less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "The cost discount from CNK Power Droid's “On Attack” ability remains active even if it is defeated before you play another unit.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3989459429",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 110
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 110
+    }
+  ],
+  "internalName": "gnk-power-droid"
+}

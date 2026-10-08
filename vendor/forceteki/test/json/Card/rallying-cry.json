@@ -1,0 +1,39 @@
+{
+  "title": "Rallying Cry",
+  "subtitle": null,
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Each friendly unit gains Raid 2 this phase. (They get +2/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1208707254",
+  "aspects": [
+    "aggression",
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 154
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 154
+    }
+  ],
+  "internalName": "rallying-cry"
+}

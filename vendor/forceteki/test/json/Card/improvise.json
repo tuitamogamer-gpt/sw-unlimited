@@ -1,0 +1,36 @@
+{
+  "title": "Improvise",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Look at the top card of your deck. You may play it. It costs 1 resource less. If you don't, you may discard it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1925903426",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 242
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 242
+    }
+  ],
+  "internalName": "improvise"
+}

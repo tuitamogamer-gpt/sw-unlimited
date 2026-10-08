@@ -1,0 +1,38 @@
+{
+  "title": "Enraged",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 1,
+  "text": "Attached unit gains Raid 2. (It gets +2/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "6999486511",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 190
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 190
+    }
+  ],
+  "internalName": "enraged"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Shien Flurry",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Play a Force unit from your hand (paying its cost). It gains Ambush for this phase. The next time it would be dealt damage this phase, prevent 2 of that damage.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that let you play a card require you to pay that card’s cost unless specified otherwise.\nAmbush is an ability that triggers at the same time as \"When Played\" abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7981459508",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 220
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 220
+    }
+  ],
+  "internalName": "shien-flurry"
+}

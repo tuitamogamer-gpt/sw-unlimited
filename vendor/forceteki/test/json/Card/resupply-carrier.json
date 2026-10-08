@@ -1,0 +1,39 @@
+{
+  "title": "Resupply Carrier",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 5,
+  "power": 4,
+  "text": "When Played: You may put the top card of your deck into play as a resource.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "A card put into play as a resource enters play exhausted.\n(ERRATA) Templating update: “Put into play as a resource” becomes “resource”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0926549684",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 119
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 119
+    }
+  ],
+  "internalName": "resupply-carrier"
+}

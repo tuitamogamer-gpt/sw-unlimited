@@ -1,0 +1,41 @@
+{
+  "title": "Heavy Missile Gunship",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 4,
+  "text": "Action [Exhaust]: Deal 2 damage to a ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3433996932",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "droid",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 134
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 134
+    }
+  ],
+  "internalName": "heavy-missile-gunship"
+}

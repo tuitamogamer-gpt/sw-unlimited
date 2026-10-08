@@ -1,0 +1,38 @@
+{
+  "title": "Jar Jar Binks",
+  "subtitle": "Foolish Gungan",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "On Attack: Deal 2 damage to a random unit or base.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "When choosing randomly from a set of options, any method agreed upon by both players is acceptable, so long as each option has an equal likelihood of being chosen.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9216621233",
+  "aspects": [
+    "cunning",
+    "cunning"
+  ],
+  "traits": [
+    "gungan"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 202
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 202
+    }
+  ],
+  "internalName": "jar-jar-binks#foolish-gungan"
+}

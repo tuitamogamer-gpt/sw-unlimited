@@ -1,0 +1,39 @@
+{
+  "title": "0-0-0",
+  "subtitle": "Translation and Torture",
+  "cost": 3,
+  "hp": 4,
+  "power": 4,
+  "text": "On Attack: You may put a Aggression card from your discard pile on the bottom of your deck. If you do, deal 1 damage to each enemy base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7641310547",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 174
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 174
+    }
+  ],
+  "internalName": "000#translation-and-torture"
+}

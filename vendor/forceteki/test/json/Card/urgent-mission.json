@@ -1,0 +1,37 @@
+{
+  "title": "Urgent Mission",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Deal 2 damage to your base.\nDraw 2 cards.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9066758387",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 64
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 64
+    }
+  ],
+  "internalName": "urgent-mission"
+}

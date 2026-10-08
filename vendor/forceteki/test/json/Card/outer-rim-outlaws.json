@@ -1,0 +1,40 @@
+{
+  "title": "Outer Rim Outlaws",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "Shielded (When you play this unit, give a Shield token to it.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3770706835",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 65
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 65
+    }
+  ],
+  "internalName": "outer-rim-outlaws"
+}

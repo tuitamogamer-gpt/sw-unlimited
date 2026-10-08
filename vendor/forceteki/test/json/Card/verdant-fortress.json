@@ -1,0 +1,40 @@
+{
+  "title": "Verdant Fortress",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 0,
+  "power": 0,
+  "text": "Fortify (Attach this to your base, not a unit.)\nAttached base gains: “Friendly units gain Raid 1. (They get +1/+0 while attacking.)”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "5665291544",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "fortification"
+  ],
+  "keywords": [
+    "fortify",
+    "raid"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 126
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 126
+    }
+  ],
+  "internalName": "verdant-fortress"
+}

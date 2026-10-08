@@ -1,0 +1,39 @@
+{
+  "title": "Super Battle Droid",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 4,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3246242155",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "droid",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 230
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 230
+    }
+  ],
+  "internalName": "super-battle-droid"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Mystic Monastery",
+  "subtitle": "",
+  "cost": null,
+  "hp": 25,
+  "power": null,
+  "text": "Action: The Force is with you (create your Force token). Use this ability no more than 3 times each game.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9434212852",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "mortis"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 22
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 22
+    }
+  ],
+  "internalName": "mystic-monastery"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Reveal Intentions",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Each player reveals their hand.\nIn player order, each player discards a card from the hand of the player to their right. Then, each player draws a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Player order begins with the player to the active player's left and continues clockwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0706465142",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 80
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 80
+    }
+  ],
+  "internalName": "reveal-intentions"
+}

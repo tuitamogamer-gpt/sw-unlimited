@@ -1,0 +1,41 @@
+{
+  "title": "Tribubble Bongo Sub",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 1,
+  "text": "Shielded (When you play this unit, give a Shield token to it.)\nRaid 3 (This unit gets +3/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5153918340",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "vehicle"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded",
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 213
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 213
+    }
+  ],
+  "internalName": "tribubble-bongo-sub"
+}

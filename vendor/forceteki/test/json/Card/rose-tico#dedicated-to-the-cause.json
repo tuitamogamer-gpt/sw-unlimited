@@ -1,0 +1,40 @@
+{
+  "title": "Rose Tico",
+  "subtitle": "Dedicated to the Cause",
+  "cost": 4,
+  "hp": 6,
+  "power": 2,
+  "text": "Shielded (When you play this unit, give a Shield token to her.)\nOn Attack: You may defeat a Shield token on a friendly unit. If you do, give 2 Experience tokens to that unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5080989992",
+  "aspects": [
+    "heroism",
+    "vigilance"
+  ],
+  "traits": [
+    "resistance"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 45
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 45
+    }
+  ],
+  "internalName": "rose-tico#dedicated-to-the-cause"
+}

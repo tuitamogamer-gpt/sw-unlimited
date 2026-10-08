@@ -1,0 +1,36 @@
+{
+  "title": "Republic City",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7790300585",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "hosnian prime"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 21
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 21
+    }
+  ],
+  "internalName": "republic-city"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Corpo Thugs",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 5,
+  "text": "Raid 2 (This unit gets +2/+0 while attacking.)\nSaboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2072423003",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid",
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 157
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 157
+    }
+  ],
+  "internalName": "corpo-thugs"
+}

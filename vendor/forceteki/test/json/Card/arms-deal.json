@@ -1,0 +1,36 @@
+{
+  "title": "Arms Deal",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "You and an opponent each draw 2 cards.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7870233603",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 68
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 68
+    }
+  ],
+  "internalName": "arms-deal"
+}

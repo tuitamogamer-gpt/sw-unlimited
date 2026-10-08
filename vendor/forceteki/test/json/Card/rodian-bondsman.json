@@ -1,0 +1,37 @@
+{
+  "title": "Rodian Bondsman",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "When Defeated: Each player creates a Credit token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3754002046",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 116
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 116
+    }
+  ],
+  "internalName": "rodian-bondsman"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Guardian of the Whills",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "The first upgrade you play on this unit each round costs [1 resource] less.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that give token upgrades are not discounted. Token upgrades are not “played.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4166047484",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "force",
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 58
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 61
+    },
+    {
+      "set": "LOF",
+      "number": 58
+    }
+  ],
+  "internalName": "guardian-of-the-whills"
+}

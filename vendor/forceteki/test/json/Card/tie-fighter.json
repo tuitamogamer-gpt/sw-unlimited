@@ -1,0 +1,32 @@
+{
+  "title": "TIE Fighter",
+  "subtitle": "",
+  "cost": 0,
+  "hp": 1,
+  "power": 1,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7268926664",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "token",
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL"
+  },
+  "internalName": "tie-fighter"
+}

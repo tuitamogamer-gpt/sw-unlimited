@@ -1,0 +1,39 @@
+{
+  "title": "Timely Intervention",
+  "subtitle": null,
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Play a unit from your hand. Give it Ambush for this phase. (When you play it, it may ready and attack an enemy unit.)\n\nSmuggle [2 resources, command] (If this card is a resource, you may play it for its smuggle cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that let you play a card require you to pay that card’s cost unless specified otherwise.\nAmbush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does boba not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6847268098",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [
+    "ambush",
+    "smuggle"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 129
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 129
+    }
+  ],
+  "internalName": "timely-intervention"
+}

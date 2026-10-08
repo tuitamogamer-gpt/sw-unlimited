@@ -1,0 +1,42 @@
+{
+  "title": "Wookiee Guerilla",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "Hidden (This unit can't be attacked if it was played this phase.)\nRaid 2 (This unit gets +2/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If a unit has Hidden and Sentinel at the same time, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3546778759",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "wookiee",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "hidden",
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 220
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 220
+    }
+  ],
+  "internalName": "wookiee-guerilla"
+}

@@ -1,0 +1,35 @@
+{
+  "title": "Peli Motto",
+  "subtitle": "I Should Charge You More",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "On Attack: Give an Experience token to a friendly Vehicle or Droid unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3527836283",
+  "aspects": [],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 258
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 258
+    }
+  ],
+  "internalName": "peli-motto#i-should-charge-you-more"
+}

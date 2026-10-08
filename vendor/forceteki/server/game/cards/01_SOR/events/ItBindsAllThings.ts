@@ -1,0 +1,38 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import { EventCard } from '../../../core/card/EventCard';
+import type { IEventAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { Trait, WildcardCardType, WildcardRelativePlayer } from '../../../core/Constants';
+import { TextHelper } from '../../../core/utils/TextHelper';
+
+export default class ItBindsAllThings extends EventCard {
+    protected override getImplementationId () {
+        return {
+            id: '0867878280',
+            internalName: 'it-binds-all-things',
+        };
+    }
+
+    public override setupCardAbilities(registrar: IEventAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.setEventAbility({
+            title: 'Heal up to 3 damage from a unit.',
+            immediateEffect: AbilityHelper.immediateEffects.distributeHealingAmong({
+                amountToDistribute: 3,
+                controller: WildcardRelativePlayer.Any,
+                canChooseNoTargets: true,
+                cardTypeFilter: WildcardCardType.Unit,
+                maxTargets: 1,
+            }),
+            then: (thenContext) => ({
+                title: `If you control a ${TextHelper.Trait.Force} unit, you may deal that much damage to another unit.`,
+                optional: true,
+                thenCondition: () => thenContext.player.isTraitInPlay(Trait.Force) &&
+                  thenContext.events[0].totalDistributed > 0,
+                targetResolver: {
+                    cardTypeFilter: WildcardCardType.Unit,
+                    cardCondition: (card) => card !== thenContext.events[0].card,
+                    immediateEffect: AbilityHelper.immediateEffects.damage({ amount: thenContext.events[0].totalDistributed }),
+                }
+            })
+        });
+    }
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Canyon Frontrunner",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "On Attack: If no other units have attacked this phase (including enemy units), you may give a unit –2/–0 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9069708911",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "vehicle",
+    "speeder"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 228
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 228
+    }
+  ],
+  "internalName": "canyon-frontrunner"
+}

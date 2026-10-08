@@ -1,0 +1,39 @@
+{
+  "title": "Guerilla Soldier",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 2,
+  "text": "When Played: Deal 3 indirect damage to a player. If a base is damaged this way, ready this unit. (That player assigns 3 unpreventable damage among their base and units.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "A player can't assign more indirect damage to a unit than it has remaining HP. Indirect damage is unpreventable and ignores Shields.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2711104544",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "fringe",
+    "twi'lek",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 218
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 218
+    }
+  ],
+  "internalName": "guerilla-soldier"
+}

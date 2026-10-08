@@ -1,0 +1,39 @@
+{
+  "title": "Vernestra Rwoh",
+  "subtitle": "Precocious Knight",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "When Played: You may use the Force (lose your Force token). If you do, ready this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2940037100",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 195
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 195
+    }
+  ],
+  "internalName": "vernestra-rwoh#precocious-knight"
+}

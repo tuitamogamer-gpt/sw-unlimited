@@ -1,0 +1,38 @@
+{
+  "title": "Chaotic Diversion",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Ready an enemy unit. If you do, it can't attack your base or units you control for this phase.\nGive a Shield token to a friendly unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9572287182",
+  "aspects": [
+    "aggression",
+    "cunning"
+  ],
+  "traits": [
+    "tactic",
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 31
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 31
+    }
+  ],
+  "internalName": "chaotic-diversion"
+}

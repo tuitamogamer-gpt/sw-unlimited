@@ -1,0 +1,37 @@
+{
+  "title": "The Eye of Aldhani",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "At the start of the next action phase, for each enemy unit, its controller must pay 1 resource or exhaust that unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3828763910",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "innate",
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 73
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 73
+    }
+  ],
+  "internalName": "the-eye-of-aldhani"
+}

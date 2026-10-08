@@ -1,0 +1,40 @@
+{
+  "title": "Anakin Skywalker",
+  "subtitle": "Destined For Darkness",
+  "cost": 5,
+  "hp": 4,
+  "power": 7,
+  "text": "mock ability text",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "anakin-skywalker#destined-for-darkness-id",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 78
+  },
+  "internalName": "anakin-skywalker#destined-for-darkness",
+  "arena": "ground",
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 78
+    }
+  ]
+}

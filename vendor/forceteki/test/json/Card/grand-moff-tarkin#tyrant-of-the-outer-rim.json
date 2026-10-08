@@ -1,0 +1,48 @@
+{
+  "title": "Grand Moff Tarkin",
+  "backSideTitle": "The Death Star",
+  "subtitle": "Tyrant of the Outer Rim",
+  "cost": 9,
+  "hp": 12,
+  "power": 2,
+  "text": "Ignore the aspect penalties on upgrades with Fortify you play.",
+  "deployBox": "Ignore the aspect penalties on upgrades with Fortify you play.\nWhen the regroup phase starts: You may defeat a base with 10 or less remaining HP.",
+  "epicAction": "Epic Action: If you control 9 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "1535458352",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "space",
+  "keywords": [
+    "fortify"
+  ],
+  "backSideSubtitle": "Icon of Tyranny",
+  "backSideTraits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 4
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 4
+    }
+  ],
+  "internalName": "grand-moff-tarkin#tyrant-of-the-outer-rim"
+}

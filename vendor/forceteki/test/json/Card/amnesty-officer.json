@@ -1,0 +1,38 @@
+{
+  "title": "Amnesty Officer",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: You may exhaust a unit with one or more keywords.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0978988682",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "new republic",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 214
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 214
+    }
+  ],
+  "internalName": "amnesty-officer"
+}

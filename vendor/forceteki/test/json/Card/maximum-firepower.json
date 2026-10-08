@@ -1,0 +1,37 @@
+{
+  "title": "Maximum Firepower",
+  "subtitle": null,
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "A friendly Imperial unit deals damage equal to its power to a unit.\n\nThen, another friendly Imperial unit deals damage equal to its power to the same unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2758597010",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 234
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 234
+    }
+  ],
+  "internalName": "maximum-firepower"
+}

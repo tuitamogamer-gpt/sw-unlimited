@@ -1,0 +1,38 @@
+{
+  "title": "R2-D2",
+  "subtitle": "Ignoring Protocol",
+  "cost": 1,
+  "hp": 4,
+  "power": 1,
+  "text": "When Played/On Attack: Look at the top card of your deck. You may put it on the bottom of your deck. (Otherwise, leave it on top of your deck.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9568000754",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 236
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 236
+    }
+  ],
+  "internalName": "r2d2#ignoring-protocol"
+}

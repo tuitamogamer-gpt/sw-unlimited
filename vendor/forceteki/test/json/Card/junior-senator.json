@@ -1,0 +1,39 @@
+{
+  "title": "Junior Senator",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "When Played: You may return an upgrade that costs 3 or less to its owner's hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nAbilities that return a card to hand must choose a card in play unless otherwise specified.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1213577854",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 200
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 200
+    }
+  ],
+  "internalName": "junior-senator"
+}

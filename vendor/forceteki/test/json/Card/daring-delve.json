@@ -1,0 +1,36 @@
+{
+  "title": "Daring Delve",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Discard 2 cards from your deck. You may return a Aggression card discarded this way to your hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Always discard from the top of a deck, unless an ability specifies otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9273364323",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 203
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 203
+    }
+  ],
+  "internalName": "daring-delve"
+}

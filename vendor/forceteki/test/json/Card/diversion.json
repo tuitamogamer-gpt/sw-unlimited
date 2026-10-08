@@ -1,0 +1,38 @@
+{
+  "title": "Diversion",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Give a unit Sentinel for this phase. (Units in its arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7214707216",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 229
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 229
+    }
+  ],
+  "internalName": "diversion"
+}

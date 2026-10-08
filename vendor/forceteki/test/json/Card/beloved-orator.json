@@ -1,0 +1,39 @@
+{
+  "title": "Beloved Orator",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 2,
+  "text": "When Played: Create a Spy token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9315383504",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "new republic",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 97
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 97
+    }
+  ],
+  "internalName": "beloved-orator"
+}

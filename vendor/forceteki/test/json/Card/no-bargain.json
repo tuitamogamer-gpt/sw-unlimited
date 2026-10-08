@@ -1,0 +1,36 @@
+{
+  "title": "No Bargain",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Each opponent discards a card from their hand. Draw a card.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7354795397",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 244
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 244
+    }
+  ],
+  "internalName": "no-bargain"
+}

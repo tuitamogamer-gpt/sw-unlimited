@@ -1,0 +1,36 @@
+{
+  "title": "Jump to Lightspeed",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Return a friendly space unit and any number of non-leader upgrades on it to their owners' hands. The next time you play a copy of that unit this phase, you may play it for free.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Any upgrades on the unit not returned to their owners' hands are defeated.\n“Play for free” ignores all resource costs, including the aspect penalty, but not other additional costs.\nAbilities that return a card to hand must choose a card in play unless otherwise specified.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5329736697",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 232
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 232
+    }
+  ],
+  "internalName": "jump-to-lightspeed"
+}

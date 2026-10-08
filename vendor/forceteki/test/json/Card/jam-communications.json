@@ -1,0 +1,37 @@
+{
+  "title": "Jam Communications",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Look at an opponent's hand and discard an event from it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0391050270",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 207
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 207
+    }
+  ],
+  "internalName": "jam-communications"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Dathomiri Rancor",
+  "subtitle": "",
+  "cost": 7,
+  "hp": 6,
+  "power": 9,
+  "text": "Hidden (This unit can't be attacked if it was played this phase.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If a unit has Hidden and Sentinel at the same time, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9899705034",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 187
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 187
+    }
+  ],
+  "internalName": "dathomiri-rancor"
+}

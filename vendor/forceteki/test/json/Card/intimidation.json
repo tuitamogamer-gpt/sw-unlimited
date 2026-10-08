@@ -1,0 +1,36 @@
+{
+  "title": "Intimidation",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "If you control a unit with 4 or more power, draw 2 cards.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8761713385",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 185
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 185
+    }
+  ],
+  "internalName": "intimidation"
+}

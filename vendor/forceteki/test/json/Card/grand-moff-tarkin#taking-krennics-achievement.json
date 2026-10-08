@@ -1,0 +1,39 @@
+{
+  "title": "Grand Moff Tarkin",
+  "subtitle": "Taking Krennic's Achievement",
+  "cost": 6,
+  "hp": 6,
+  "power": 2,
+  "text": "When Played: Take control of an enemy non-leader Vehicle unit. When this unit leaves play, that unit's owner takes control of that unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "If Tarkin has already left play when you resolve his \"When Played\" ability, immediately return the stolen unit to its owner's control.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4893108887",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 192
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 192
+    }
+  ],
+  "internalName": "grand-moff-tarkin#taking-krennics-achievement"
+}

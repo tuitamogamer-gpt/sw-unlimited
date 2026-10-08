@@ -1,0 +1,37 @@
+{
+  "title": "Headhunter Squadron",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2574847177",
+  "aspects": [],
+  "traits": [
+    "republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 253
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 253
+    }
+  ],
+  "internalName": "headhunter-squadron"
+}

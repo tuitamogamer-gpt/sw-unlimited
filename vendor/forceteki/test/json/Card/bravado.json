@@ -1,0 +1,36 @@
+{
+  "title": "Bravado",
+  "subtitle": "",
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "If you've defeated an enemy unit this phase, this event costs 2 resources less to play.\nReady a unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Any card you control or ability you resolve that defeats a unit is considered you defeating that unit.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7212445649",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 182
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 182
+    }
+  ],
+  "internalName": "bravado"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Snowspeeder",
+  "subtitle": null,
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "Ambush (After you play this unit, it may ready and attack an enemy unit.)\n\nOn Attack: Exhaust an enemy Vehicle ground unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1862616109",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "speeder"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 244
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 244
+    }
+  ],
+  "internalName": "snowspeeder"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Jedi Consular",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "Action [Exhaust, use the Force (lose your Force token)]: Play a unit from your hand. It costs 2 resources less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5482818255",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 94
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 94
+    }
+  ],
+  "internalName": "jedi-consular"
+}

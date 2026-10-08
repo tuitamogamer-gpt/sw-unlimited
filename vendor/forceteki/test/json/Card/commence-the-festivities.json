@@ -1,0 +1,38 @@
+{
+  "title": "Commence the Festivities",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a unit. It gains Saboteur for this attack. If you control fewer resources than an opponent, it gets +2/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "You must attack with a unit, if able. Units must be ready in order to attack.\nIf there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6225072830",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 202
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 202
+    }
+  ],
+  "internalName": "commence-the-festivities"
+}

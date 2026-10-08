@@ -1,0 +1,36 @@
+{
+  "title": "Merciless Contest",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Each player chooses a non-leader unit they control. Defeat those units.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4412828936",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 238
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 238
+    }
+  ],
+  "internalName": "merciless-contest"
+}

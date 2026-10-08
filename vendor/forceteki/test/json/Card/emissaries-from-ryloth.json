@@ -1,0 +1,40 @@
+{
+  "title": "Emissaries from Ryloth",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "When Played: You may give a unit –3/–0 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1918275190",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "twi'lek",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 206
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 206
+    }
+  ],
+  "internalName": "emissaries-from-ryloth"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Recovery",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Heal 5 damage from a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0375794695",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 13
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 13
+    }
+  ],
+  "internalName": "recovery"
+}

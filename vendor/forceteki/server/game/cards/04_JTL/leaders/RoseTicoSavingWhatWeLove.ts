@@ -1,0 +1,49 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { ILeaderUnitAbilityRegistrar, ILeaderUnitLeaderSideAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { LeaderUnitCard } from '../../../core/card/LeaderUnitCard';
+import { Trait, WildcardCardType } from '../../../core/Constants';
+import { TextHelper } from '../../../core/utils/TextHelper';
+import type { StateWatcherRegistrar } from '../../../core/stateWatcher/StateWatcherRegistrar';
+import type { AttacksThisPhaseWatcher } from '../../../stateWatchers/AttacksThisPhaseWatcher';
+
+export default class RoseTicoSavingWhatWeLove extends LeaderUnitCard {
+    private attacksThisPhaseWatcher: AttacksThisPhaseWatcher;
+
+    protected override getImplementationId() {
+        return {
+            id: '3933322003',
+            internalName: 'rose-tico#saving-what-we-love',
+        };
+    }
+
+    protected override setupStateWatchers(registrar: StateWatcherRegistrar, AbilityHelper: IAbilityHelper) {
+        this.attacksThisPhaseWatcher = AbilityHelper.stateWatchers.attacksThisPhase();
+    }
+
+    protected override setupLeaderSideAbilities(registrar: ILeaderUnitLeaderSideAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.addActionAbility({
+            title: `Heal 2 damage from a ${TextHelper.Trait.Vehicle} unit that attacked this phase`,
+            cost: AbilityHelper.costs.exhaustSelf(),
+            targetResolver: {
+                cardTypeFilter: WildcardCardType.Unit,
+                immediateEffect: AbilityHelper.immediateEffects.heal({ amount: 2 }),
+                cardCondition: (card, context) => {
+                    const vehicleUnitsAttackedThisPhase = this.attacksThisPhaseWatcher.getAttackersInPlay((attack) => attack.attacker.hasSomeTrait(Trait.Vehicle));
+                    return vehicleUnitsAttackedThisPhase.includes(card);
+                }
+            }
+        });
+    }
+
+    protected override setupLeaderUnitSideAbilities(registrar: ILeaderUnitAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.addOnAttackAbility({
+            title: `Heal 2 damage from a ${TextHelper.Trait.Vehicle} unit`,
+            optional: true,
+            targetResolver: {
+                cardTypeFilter: WildcardCardType.Unit,
+                cardCondition: (card) => card.isUnit() && card.hasSomeTrait(Trait.Vehicle),
+                immediateEffect: AbilityHelper.immediateEffects.heal({ amount: 2 })
+            }
+        });
+    }
+}

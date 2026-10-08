@@ -1,0 +1,37 @@
+{
+  "title": "Force Speed",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a unit. For this attack, it gains: “On Attack: Return any number of non-<uq> (non-unique) upgrades attached to the defender to their owners' hands.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you play Forse Speed, you must attack with a unit, if able. Units must be ready in order to attack.\n(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6551214763",
+  "aspects": [
+    "cunning",
+    "cunning"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 205
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 205
+    }
+  ],
+  "internalName": "force-speed"
+}

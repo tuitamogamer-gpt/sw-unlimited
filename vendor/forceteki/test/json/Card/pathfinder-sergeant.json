@@ -1,0 +1,42 @@
+{
+  "title": "Pathfinder Sergeant",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "Ambush (When you play this unit, it may attack an enemy unit.)\nRestore 1 (When this unit attacks, heal 1 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6032443673",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush",
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 106
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 106
+    }
+  ],
+  "internalName": "pathfinder-sergeant"
+}

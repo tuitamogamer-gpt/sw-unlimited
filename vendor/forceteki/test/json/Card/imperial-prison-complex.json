@@ -1,0 +1,36 @@
+{
+  "title": "Imperial Prison Complex",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4286542404",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "narkina 5"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 23
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 23
+    }
+  ],
+  "internalName": "imperial-prison-complex"
+}

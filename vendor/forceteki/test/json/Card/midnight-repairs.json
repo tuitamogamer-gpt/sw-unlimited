@@ -1,0 +1,37 @@
+{
+  "title": "Midnight Repairs",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Heal up to 8 total damage from any number of units.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8818201543",
+  "aspects": [
+    "vigilance",
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 54
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 54
+    }
+  ],
+  "internalName": "midnight-repairs"
+}

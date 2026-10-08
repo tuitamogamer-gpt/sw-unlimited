@@ -1,0 +1,38 @@
+{
+  "title": "Nameless Terror",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "When Played: You may exhaust a Force unit.\nOn Attack: Each enemy unit loses the Force trait for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Units affected by Nameless Terror's \"On Attack\" ability can't gain the Force trait for this phase.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9702812601",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 33
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 33
+    }
+  ],
+  "internalName": "nameless-terror"
+}

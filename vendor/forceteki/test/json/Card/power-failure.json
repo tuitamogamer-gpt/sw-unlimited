@@ -1,0 +1,36 @@
+{
+  "title": "Power Failure",
+  "subtitle": null,
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Defeat any number of upgrades on a unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4323691274",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 170
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 170
+    }
+  ],
+  "internalName": "power-failure"
+}

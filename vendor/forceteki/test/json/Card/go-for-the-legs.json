@@ -1,0 +1,40 @@
+{
+  "title": "Go for the Legs",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Exhaust an enemy ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2859074789",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 18
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 18
+    },
+    {
+      "set": "IBH",
+      "number": 45
+    }
+  ],
+  "internalName": "go-for-the-legs"
+}

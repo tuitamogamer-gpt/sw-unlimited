@@ -1,0 +1,37 @@
+{
+  "title": "Greef Karga",
+  "subtitle": "Introductions are in Order",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "Action [1 resource, Exhaust]: If your base was attacked this phase, create a Mandalorian token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4885389871",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 119
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 119
+    }
+  ],
+  "internalName": "greef-karga#introductions-are-in-order"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Backed by Black Sun",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Deal 1 damage to an enemy unit.\nYou may deal damage to a unit equal to the number of damaged enemy units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Back by Black Sun deals 2 instances of damage. If both instances of damage are dealt to a unit with a Shield token, the Shield will only prevent the first damage.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5951272870",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 70
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 70
+    }
+  ],
+  "internalName": "backed-by-black-sun"
+}

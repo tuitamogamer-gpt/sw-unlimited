@@ -1,0 +1,38 @@
+{
+  "title": "Remnant Lookouts",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "When Played: Look at an opponent's hand. You may discard a card from it. If you do, they draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1969872404",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 220
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 220
+    }
+  ],
+  "internalName": "remnant-lookouts"
+}

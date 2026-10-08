@@ -1,0 +1,38 @@
+{
+  "title": "Unveiled Might",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 2,
+  "text": "Plot (When you deploy a leader, you may play this card from your resources, paying its cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 2,
+  "upgradeHp": 3,
+  "id": "2877797132",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [
+    "plot"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 123
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 123
+    }
+  ],
+  "internalName": "unveiled-might"
+}

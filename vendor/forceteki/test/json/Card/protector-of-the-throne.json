@@ -1,0 +1,39 @@
+{
+  "title": "Protector of the Throne",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "While this unit is upgraded, it gains Sentinel. (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9405733493",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 247
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 247
+    }
+  ],
+  "internalName": "protector-of-the-throne"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Remnant Trooper Corps",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 6,
+  "text": "Hidden (This unit can't be attacked if it was played this phase.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If a unit has Hidden and Sentinel at the same time, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7753920715",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 244
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 244
+    }
+  ],
+  "internalName": "remnant-trooper-corps"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "CR90 Relief Runner",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 6,
+  "power": 4,
+  "text": "Restore 2 (When this unit attacks, heal 2 damage from your base.)\nWhen Defeated: Heal up to 3 damage from a unit or base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7610382003",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 71
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 71
+    }
+  ],
+  "internalName": "cr90-relief-runner"
+}

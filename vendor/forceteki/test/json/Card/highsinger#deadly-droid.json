@@ -1,0 +1,40 @@
+{
+  "title": "Highsinger",
+  "subtitle": "Deadly Droid",
+  "cost": 3,
+  "hp": 2,
+  "power": 4,
+  "text": "When Played: Give an Experience token to another friendly Command unit.\nWhen Defeated: Give an Experience token to a friendly Aggression unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3224839175",
+  "aspects": [
+    "command",
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "droid",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 59
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 59
+    }
+  ],
+  "internalName": "highsinger#deadly-droid"
+}

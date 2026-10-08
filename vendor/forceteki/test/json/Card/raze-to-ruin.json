@@ -1,0 +1,38 @@
+{
+  "title": "Raze to Ruin",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Each player discards all but 3 cards from their hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5648482517",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "disaster",
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 161
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 161
+    }
+  ],
+  "internalName": "raze-to-ruin"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Republic Y-Wing",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 3,
+  "power": 1,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3923779254",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 212
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 212
+    }
+  ],
+  "internalName": "republic-ywing"
+}

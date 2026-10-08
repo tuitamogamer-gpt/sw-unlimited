@@ -1,0 +1,39 @@
+{
+  "title": "Hotshot V-Wing",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8549156761",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 209
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 209
+    }
+  ],
+  "internalName": "hotshot-vwing"
+}

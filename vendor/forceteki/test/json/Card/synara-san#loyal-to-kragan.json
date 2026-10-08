@@ -1,0 +1,41 @@
+{
+  "title": "Synara San",
+  "subtitle": "Loyal to Kragan",
+  "cost": 4,
+  "hp": 6,
+  "power": 3,
+  "text": "Grit\nWhile this unit is exhausted, she gains, “Bounty — Deal 5 damage to a base.” (When this unit is defeated or captured, your opponent collects its bounty.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0252207505",
+  "aspects": [
+    "villainy",
+    "vigilance"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit",
+    "bounty"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 33
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 33
+    }
+  ],
+  "internalName": "synara-san#loyal-to-kragan"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Clone X Assassin",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "When Defeated: You may give a Weakness token to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9805871839",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "clone",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 59
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 59
+    }
+  ],
+  "internalName": "clone-x-assassin"
+}

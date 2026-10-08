@@ -1,0 +1,1233 @@
+import { InitiateAttackAction } from '../../../actions/InitiateAttackAction';
+import type { Attack } from '../../attack/Attack';
+import type { Arena, MoveZoneDestination } from '../../Constants';
+import { AbilityRestriction, AbilityType, CardType, EffectName, EventName, KeywordName, PlayType, StandardTriggeredAbilityType, StatType, Trait, WildcardRelativePlayer, ZoneName } from '../../Constants';
+import StatsModifierWrapper from '../../ongoingEffect/effectImpl/StatsModifierWrapper';
+import { Contract } from '../../utils/Contract';
+import type { IInPlayCard, InPlayCardConstructor } from '../baseClasses/InPlayCard';
+import { InPlayCard } from '../baseClasses/InPlayCard';
+import type { ICardWithDamageProperty } from './Damage';
+import { WithDamage } from './Damage';
+import type { ICardWithPrintedPowerProperty } from './PrintedPower';
+import { WithPrintedPower } from './PrintedPower';
+import { EnumHelpers } from '../../utils/EnumHelpers';
+import type { Card } from '../Card';
+import { InitializeCardStateOption } from '../Card';
+import type { IAbilityPropsWithType, IConstantAbilityProps, IGainCondition, IKeywordPropertiesWithGainCondition, ITriggeredAbilityBaseProps, ITriggeredAbilityProps, ITriggeredAbilityPropsWithGainCondition, IWhenAttackEndsAbilityProps, WhenTypeOrStandard } from '../../../Interfaces';
+import type { BountyKeywordInstance } from '../../ability/KeywordInstance';
+import { KeywordWithAbilityDefinition } from '../../ability/KeywordInstance';
+import { TriggeredAbilityBase } from '../../ability/TriggeredAbility';
+import { RestoreAbility } from '../../../abilities/keyword/RestoreAbility';
+import { ShieldedAbility } from '../../../abilities/keyword/ShieldedAbility';
+import { SaboteurDefeatShieldsAbility } from '../../../abilities/keyword/SaboteurDefeatShieldsAbility';
+import { AmbushAbility } from '../../../abilities/keyword/AmbushAbility';
+import { SupportAbility } from '../../../abilities/keyword/SupportAbility';
+import type { Game } from '../../Game';
+import type { GameEvent } from '../../event/GameEvent';
+import type { IDamageSource } from '../../../IDamageOrDefeatSource';
+import { DefeatSourceType } from '../../../IDamageOrDefeatSource';
+import { FrameworkDefeatCardSystem } from '../../../gameSystems/FrameworkDefeatCardSystem';
+import type { ICaptorCard, ICardWithCaptureZone } from '../../zone/CaptureZone';
+import { CaptureZone } from '../../zone/CaptureZone';
+import OngoingEffectLibrary from '../../../ongoingEffects/OngoingEffectLibrary';
+import { giveAbilityToAttachedUnitTitle, giveKeywordToAttachedUnitTitle } from '../../ongoingEffect/effectImpl/GainAbilityDescription';
+import type { Player } from '../../Player';
+import { BountyAbility } from '../../../abilities/keyword/BountyAbility';
+import type { ICardWithUpgrades, IUpgradeCard } from '../CardInterfaces';
+import type { ActionAbilityBase } from '../../ability/ActionAbility';
+import type { ILeaderCard } from './LeaderProperties';
+import type { ILeaderUnitCard } from '../LeaderUnitCard';
+import type { PilotLimitModifier } from '../../ongoingEffect/effectImpl/PilotLimitModifier';
+import type { AbilityContext } from '../../ability/AbilityContext';
+import type { PlayUpgradeAction } from '../../../actions/PlayUpgradeAction';
+import type { CardsPlayedThisPhaseWatcher } from '../../../stateWatchers/CardsPlayedThisPhaseWatcher';
+import type { LeadersDeployedThisPhaseWatcher } from '../../../stateWatchers/LeadersDeployedThisPhaseWatcher';
+import type { ConstantAbility } from '../../ability/ConstantAbility';
+import type { OngoingCardEffect } from '../../ongoingEffect/OngoingCardEffect';
+import { getPrintedAttributesOverride } from '../../ongoingEffect/effectImpl/PrintedAttributesOverride';
+import { TextHelper } from '../../utils/TextHelper';
+import type { IInPlayCardAbilityRegistrar } from '../AbilityRegistrationInterfaces';
+import type { ITriggeredAbilityRegistrar } from './TriggeredAbilityRegistration';
+import type Clone from '../../../cards/03_TWI/units/Clone';
+import { stateRefArray, stateRef, statePrimitive, registerStateBase } from '../../GameObjectUtils';
+import type { TokensCreatedThisPhaseWatcher } from '../../../stateWatchers/TokensCreatedThisPhaseWatcher';
+import type { CardsDefeatedThisPhaseWatcher } from '../../../stateWatchers/CardsDefeatedThisPhaseWatcher';
+
+export const UnitPropertiesCard = WithUnitProperties(InPlayCard);
+
+type IAbilityPropsWithGainCondition<TSource extends IUpgradeCard, TTarget extends Card> = IAbilityPropsWithType<TTarget> & IGainCondition<TSource>;
+
+export interface IUnitAbilityRegistrar<T extends IUnitCard> extends IInPlayCardAbilityRegistrar<T> {
+    addOnAttackAbility(properties: Omit<ITriggeredAbilityProps<T>, 'when' | 'aggregateWhen'>): void;
+    addOnDefenseAbility(properties: Omit<ITriggeredAbilityProps<T>, 'when' | 'aggregateWhen'>): void;
+    addBountyAbility(properties: Omit<ITriggeredAbilityBaseProps<T>, 'canBeTriggeredBy'>): void;
+    addCoordinateAbility(properties: IAbilityPropsWithType<T>): void;
+    addPilotingAbility(properties: IAbilityPropsWithType<T>): void;
+    addPilotingConstantAbilityTargetingAttached(properties: Pick<IConstantAbilityProps<T>, 'title' | 'condition' | 'ongoingEffect'>): void;
+    addPilotingGainKeywordTargetingAttached(properties: IKeywordPropertiesWithGainCondition<T>): void;
+    addPilotingGainAbilityTargetingAttached(properties: IAbilityPropsWithGainCondition<T, IUnitCard>): void;
+    addPilotingGainTriggeredAbilityTargetingAttached(properties: ITriggeredAbilityPropsWithGainCondition<T, IUnitCard>): void;
+    addWhenAttackEndsAbility(properties: Omit<IWhenAttackEndsAbilityProps<T>, 'when' | 'aggregateWhen'>): void;
+}
+
+export interface IUnitCard extends IInPlayCard, ICardWithDamageProperty, ICardWithPrintedPowerProperty, ICardWithCaptureZone, ICardWithUpgrades {
+    get defaultArena(): Arena;
+    get lastPlayerToModifyHp(): Player;
+    get isClonedUnit(): boolean;
+    isClone(): this is Clone;
+    getCaptor(): ICaptorCard | null;
+    isAttacking(): boolean;
+    isCaptured(): boolean;
+    hasExperience(): boolean;
+    hasWeakness(): boolean;
+    hasShield(): boolean;
+    effectsPreventAttack(target: Card, context?: AbilityContext): boolean;
+    moveToCaptureZone(targetZone: CaptureZone);
+    checkRegisterWhenPlayedKeywordAbilities(event: GameEvent);
+    checkRegisterOnAttackKeywordAbilities(event: GameEvent);
+    checkRegisterWhenDefeatedKeywordAbilities(event: GameEvent);
+    checkRegisterWhenCapturedKeywordAbilities(event: GameEvent);
+    unregisterWhenPlayedKeywords();
+    unregisterAttackKeywords();
+    unregisterWhenDefeatedKeywords();
+    unregisterWhenCapturedKeywords();
+    checkDefeatedByOngoingEffect();
+    refreshWhileInPlayKeywordAbilityEffects();
+    canAttachPilot(pilot: IUnitCard): boolean;
+    getNumericKeywordTotal(keywordName: KeywordName.Exploit | KeywordName.Restore | KeywordName.Raid): number | null;
+    getMaxUnitAttackLimit(): number;
+}
+
+/**
+ * Mixin function that adds the standard properties for a unit (leader or non-leader) to a base class.
+ * Specifically it gains:
+ * - hp, damage, and power (from the corresponding mixins {@link WithPrintedHp}, {@link WithDamage}, and {@link WithPrintedPower})
+ * - the ability for hp and power to be modified by effects
+ * - the {@link InitiateAttackAction} ability so that the card can attack
+ * - the ability to have attached upgrades
+ */
+export function WithUnitProperties<TBaseClass extends InPlayCardConstructor>(BaseClass: TBaseClass) {
+    // create a "base" class that has the damage, hp, and power properties from other mixins
+    const StatsAndDamageClass = WithDamage(WithPrintedPower(BaseClass));
+
+    @registerStateBase()
+    class AsUnit extends StatsAndDamageClass implements IUnitCard {
+        public static registerRulesListeners(game: Game) {
+            // register listeners for when-played keyword abilities (see comment in EventWindow.ts for explanation of 'postResolve')
+            game.on(EventName.OnUnitEntersPlay + ':postResolve', (event) => {
+                const card = event.card as Card;
+                if (card.isUnit()) {
+                    card.checkRegisterWhenPlayedKeywordAbilities(event);
+                }
+            });
+
+            // register listeners for on-attack keyword abilities
+            game.on(EventName.OnAttackDeclared, (event) => {
+                const card = event.attack.attacker as Card;
+                if (card.isUnit()) {
+                    card.checkRegisterOnAttackKeywordAbilities(event);
+                }
+            });
+
+            // register listeners for on-defeat keyword abilities
+            game.on(EventName.OnCardDefeated + ':preResolve', (event) => {
+                const card = event.card as Card;
+                if (card.zoneName !== ZoneName.Resource && card.isUnit()) {
+                    card.checkRegisterWhenDefeatedKeywordAbilities(event);
+                }
+            });
+
+            // register listeners for on-capture keyword abilities
+            game.on(EventName.OnCardCaptured, (event) => {
+                const card = event.card as Card;
+                Contract.assertTrue(card.isNonLeaderUnit());
+                card.checkRegisterWhenCapturedKeywordAbilities(event);
+            });
+
+            // register listeners for "when attack/defense ends" abilities on upgrades of the involved units (e.g. the
+            // Advantage token), see comment in EventWindow.ts for explanation of 'postResolve'
+            game.on(EventName.OnAttackEnd + ':postResolve', (event) => {
+                const attack = event.attack as Attack;
+                const involvedUnits = [attack.attacker, ...attack.getAllTargets()].filter((card) => card.isUnit());
+
+                for (const unit of involvedUnits) {
+                    if (!unit.isInPlay()) {
+                        continue;
+                    }
+
+                    for (const upgrade of unit.upgrades) {
+                        upgrade.checkRegisterWhenAttackOrDefenseEndsAbilities(event);
+                    }
+                }
+            });
+        }
+
+        // ************************************* FIELDS AND PROPERTIES *************************************
+        private readonly _defaultArena: Arena;
+        private readonly defaultAttackAction: InitiateAttackAction;
+
+        @stateRef()
+        private accessor _lastPlayerToModifyHp: Player | null = null;
+
+        public get lastPlayerToModifyHp(): Player {
+            Contract.assertTrue(this.isInPlay());
+            return this._lastPlayerToModifyHp;
+        }
+
+        @stateRefArray()
+        private accessor _attackKeywordAbilities: (readonly (TriggeredAbilityBase | ConstantAbility)[] | null) = null;
+
+        @stateRefArray()
+        private accessor _whenCapturedKeywordAbilities: readonly TriggeredAbilityBase[] | null = null;
+
+        @stateRefArray()
+        private accessor _whenDefeatedKeywordAbilities: (readonly TriggeredAbilityBase[]) | null = null;
+
+        @stateRefArray()
+        private accessor _whenPlayedKeywordAbilities: (readonly TriggeredAbilityBase[]) | null = null;
+
+        @stateRefArray()
+        private accessor _whileInPlayKeywordAbilities: (readonly ConstantAbility[]) | null = null;
+
+        @stateRefArray()
+        protected accessor pilotingActionAbilities: readonly ActionAbilityBase[] = [];
+
+        @stateRefArray()
+        protected accessor pilotingTriggeredAbilities: readonly TriggeredAbilityBase[] = [];
+
+        @stateRefArray()
+        private accessor _pilotingConstantAbilities: readonly ConstantAbility[] = [];
+
+        private _tokensCreatedThisPhaseWatcher: TokensCreatedThisPhaseWatcher;
+        private _cardsPlayedThisWatcher: CardsPlayedThisPhaseWatcher;
+        private _leadersDeployedThisPhaseWatcher: LeadersDeployedThisPhaseWatcher;
+        private _cardsDefeatedThisPhaseWatcher: CardsDefeatedThisPhaseWatcher;
+
+        public get capturedUnits() {
+            this.assertPropertyEnabledForZone(this._captureZone, 'capturedUnits');
+            return this.captureZone.cards;
+        }
+
+        @stateRef()
+        private accessor _captureZone: CaptureZone | null = null;
+
+        public get captureZone() {
+            this.assertPropertyEnabledForZone(this._captureZone, 'captureZone');
+            return this._captureZone;
+        }
+
+        @stateRefArray()
+        private accessor _upgrades: readonly IUpgradeCard[] = null;
+
+        @statePrimitive()
+        private accessor _expiredLastingEffectChangedRemainingHp: boolean = false;
+
+        public get upgrades(): IUpgradeCard[] {
+            this.assertPropertyEnabledForZone(this._upgrades, 'upgrades');
+            return this._upgrades as IUpgradeCard[];
+        }
+
+        public get defaultArena(): Arena {
+            if (this.hasOngoingEffect(EffectName.PrintedAttributesOverride)) {
+                const override = getPrintedAttributesOverride('defaultArena', this.getOngoingEffectValues(EffectName.PrintedAttributesOverride));
+                if (override != null) {
+                    return override;
+                }
+            }
+            return this._defaultArena;
+        }
+
+        public get isClonedUnit(): boolean {
+            return this.hasOngoingEffect(EffectName.CloneUnit);
+        }
+
+        public isClone(): this is Clone {
+            return false;
+        }
+
+        public getCaptor(): ICaptorCard | null {
+            if (this.zone.name !== ZoneName.Capture) {
+                return null;
+            }
+
+            return this.zone.captor;
+        }
+
+        public isAttacking(): boolean {
+            return this === this.activeAttack?.attacker;
+        }
+
+        public isCaptured(): boolean {
+            return this.zoneName === ZoneName.Capture;
+        }
+
+        public isUpgraded(): boolean {
+            return this._upgrades.length > 0;
+        }
+
+        public hasExperience(): boolean {
+            return this.upgrades.some((card) => card.isExperience());
+        }
+
+        public hasWeakness(): boolean {
+            return this.upgrades.some((card) => card.isWeakness());
+        }
+
+        public hasShield(): boolean {
+            return this.upgrades.some((card) => card.isShield());
+        }
+
+        public hasSentinel(): boolean {
+            return this.hasSomeKeyword(KeywordName.Sentinel);
+        }
+
+        public override isLeader(): this is ILeaderCard {
+            return this.isLeaderAttachedToThis();
+        }
+
+        public override isLeaderUnit(): this is ILeaderUnitCard {
+            return this.isLeaderAttachedToThis();
+        }
+
+        protected isLeaderAttachedToThis(): boolean {
+            return this.hasOngoingEffect(EffectName.IsLeader);
+        }
+
+        public override isUpgrade(): this is IUpgradeCard {
+            return this._parentCard != null;
+        }
+
+        // ****************************************** CONSTRUCTOR ******************************************
+        // see Card constructor for list of expected args
+        public constructor(...args: any[]) {
+            super(...args);
+            const [Player, cardData] = this.unpackConstructorArgs(...args);
+
+            Contract.assertTrue(EnumHelpers.isUnit(this.printedType) || this.printedType === CardType.Leader);
+
+            Contract.assertNotNullLike(cardData.arena);
+            switch (cardData.arena) {
+                case 'space':
+                    this._defaultArena = ZoneName.SpaceArena;
+                    break;
+                case 'ground':
+                    this._defaultArena = ZoneName.GroundArena;
+                    break;
+                default:
+                    Contract.fail(`Unknown arena type in card data: ${cardData.arena}`);
+            }
+
+            // if (this.hasSomeKeyword(KeywordName.Piloting)) {
+            //     Contract.assertNotNullLike(cardData.upgradeHp, `Card ${this.internalName} is missing upgradeHp`);
+            //     Contract.assertNotNullLike(cardData.upgradePower, `Card ${this.internalName} is missing upgradePower`);
+
+            //     this.validateCardAbilities(this.pilotingTriggeredAbilities as TriggeredAbility[], cardData.pilotText);
+            // }
+
+            this._tokensCreatedThisPhaseWatcher = this.game.abilityHelper.stateWatchers.tokensCreatedThisPhase();
+            this._cardsPlayedThisWatcher = this.game.abilityHelper.stateWatchers.cardsPlayedThisPhase();
+            this._leadersDeployedThisPhaseWatcher = this.game.abilityHelper.stateWatchers.leadersDeployedThisPhase();
+            this._cardsDefeatedThisPhaseWatcher = this.game.abilityHelper.stateWatchers.cardsDefeatedThisPhase();
+
+            this.defaultAttackAction = new InitiateAttackAction(this.game, this);
+        }
+
+        protected override onInitialize(): void {
+            super.onInitialize();
+
+            if (this.hasSomeKeyword(KeywordName.Piloting)) {
+                Contract.assertNotNullLike(this.cardData.upgradeHp, `Card ${this.internalName} is missing upgradeHp`);
+                Contract.assertNotNullLike(this.cardData.upgradePower, `Card ${this.internalName} is missing upgradePower`);
+
+                this.validateCardAbilities(this.pilotingTriggeredAbilities as TriggeredAbilityBase[], this.cardData.pilotText);
+            }
+        }
+
+        protected override initializeStateForAbilitySetup() {
+            super.initializeStateForAbilitySetup();
+        }
+
+        // ****************************************** PROPERTY HELPERS ******************************************
+        public override getHp(): number {
+            return this.getModifiedStatValue(StatType.Hp);
+        }
+
+        public override getPower(): number {
+            return this.getModifiedStatValue(StatType.Power);
+        }
+
+        public override isUnit(): this is IUnitCard {
+            return this._parentCard == null;
+        }
+
+        protected override getType(): CardType {
+            if (this.isLeaderAttachedToThis()) {
+                return CardType.NonTokenLeaderUnit;
+            }
+            return super.getType();
+        }
+
+        protected setCaptureZoneEnabled(enabledStatus: boolean) {
+            // STATE TODO: Is this a leak? It's a GO but it can be thrown out.
+            const zone = enabledStatus ? new CaptureZone(this.game, this.owner, this) : null;
+            this._captureZone = zone;
+        }
+
+        protected override setDamageEnabled(enabledStatus: boolean): void {
+            super.setDamageEnabled(enabledStatus);
+        }
+
+        protected setUpgradesEnabled(enabledStatus: boolean) {
+            this._upgrades = enabledStatus ? [] : null;
+        }
+
+        // ***************************************** MISC HELPERS *****************************************
+        /**
+         * Check if there are any effect restrictions preventing this unit from attacking the passed target.
+         * Returns true if so.
+         */
+        public effectsPreventAttack(target: Card, context?: AbilityContext): boolean {
+            if (this.hasRestriction(AbilityRestriction.Attack, context)) {
+                return true;
+            }
+            if (this.hasOngoingEffect(EffectName.CannotAttackBase) && target.isBase()) {
+                return true;
+            }
+
+            if (this.hasOngoingEffect(EffectName.CannotAttack)) {
+                return true;
+            }
+
+            return false;
+        }
+
+        public moveToCaptureZone(targetZone: CaptureZone) {
+            Contract.assertNotNullLike(this.zone, `Attempting to capture card ${this.internalName} before initializing zone`);
+
+            const prevZone = this.zoneName;
+            this.removeFromCurrentZone();
+
+            Contract.assertTrue(this.isUnit());
+            targetZone.addCard(this);
+            this.zone = targetZone;
+
+            this.postMoveSteps(prevZone);
+        }
+
+        public override moveTo(targetZoneName: MoveZoneDestination, initializeCardState: InitializeCardStateOption = InitializeCardStateOption.Initialize) {
+            const preMoveZone = this.zoneName;
+
+            super.moveTo(targetZoneName, initializeCardState);
+
+            if (this.zoneName === preMoveZone && EnumHelpers.isArena(this.zoneName)) {
+                this.updateStateOnDetach();
+            }
+        }
+
+        protected updateStateOnDetach() {
+            return;
+        }
+
+        // ***************************************** ABILITY HELPERS *****************************************
+        protected override getAbilityRegistrar(): IUnitAbilityRegistrar<this> {
+            const registrar = super.getAbilityRegistrar() as IInPlayCardAbilityRegistrar<this>;
+
+            return {
+                ...registrar,
+                addOnAttackAbility: (properties) => this.addOnAttackAbility(properties, registrar),
+                addOnDefenseAbility: (properties) => this.addOnDefenseAbility(properties, registrar),
+                addWhenAttackEndsAbility: (properties) => this.addWhenAttackEndsAbility(properties, registrar),
+                addBountyAbility: (properties) => this.addBountyAbility(properties),
+                addCoordinateAbility: (properties) => this.addCoordinateAbility(properties),
+                addPilotingAbility: (properties) => this.addPilotingAbility(properties),
+                addPilotingConstantAbilityTargetingAttached: (properties) => this.addPilotingConstantAbilityTargetingAttached(properties),
+                addPilotingGainKeywordTargetingAttached: (properties) => this.addPilotingGainKeywordTargetingAttached(properties),
+                addPilotingGainAbilityTargetingAttached: (properties) => this.addPilotingGainAbilityTargetingAttached(properties),
+                addPilotingGainTriggeredAbilityTargetingAttached: (properties) => this.addPilotingGainTriggeredAbilityTargetingAttached(properties),
+            };
+        }
+
+        public override getActions() {
+            if (EnumHelpers.isUnitUpgrade(this.getType())) {
+                return this.pilotingActionAbilities as ActionAbilityBase[];
+            }
+
+            const actions = super.getActions().concat(this.defaultAttackAction);
+
+            // If this unit must attack and an attack action is available, return just that action.
+            // This is used by cards such as Give In to Your Anger
+            if (this.hasOngoingEffect(EffectName.MustAttack) && actions.some((action) => action.isAttackAction() && action.meetsRequirements() === '')) {
+                return actions.filter((action) => action.isAttackAction());
+            }
+
+            return actions;
+        }
+
+        private addOnAttackAbility(properties: Omit<ITriggeredAbilityProps<this>, 'when' | 'aggregateWhen'>, registar: ITriggeredAbilityRegistrar<this>): void {
+            const when: WhenTypeOrStandard = { [StandardTriggeredAbilityType.OnAttack]: true };
+            registar.addTriggeredAbility({ ...properties, when });
+        }
+
+        private addOnDefenseAbility(properties: Omit<ITriggeredAbilityProps<this>, 'when' | 'aggregateWhen'>, registar: ITriggeredAbilityRegistrar<this>): void {
+            const when: WhenTypeOrStandard = { [StandardTriggeredAbilityType.OnDefense]: true };
+            registar.addTriggeredAbility({ ...properties, when });
+        }
+
+        private addWhenAttackEndsAbility(properties: Omit<IWhenAttackEndsAbilityProps<this>, 'when' | 'aggregateWhen'>, registar: ITriggeredAbilityRegistrar<this>): void {
+            const when: WhenTypeOrStandard = { [EventName.OnAttackEnd]: (event, context) => event.attack.attacker === context.source };
+            registar.addTriggeredAbility({ ...properties, when });
+        }
+
+        private addBountyAbility(properties: Omit<ITriggeredAbilityBaseProps<this>, 'canBeTriggeredBy'>): void {
+            const bountyKeywords = this.printedKeywords.filter((keyword) => keyword.name === KeywordName.Bounty);
+            const bountyKeywordsWithoutImpl = bountyKeywords.filter((keyword) => !keyword.isFullyImplemented);
+
+            if (bountyKeywordsWithoutImpl.length === 0) {
+                const bountyKeywordsWithImpl = bountyKeywords.filter((keyword) => keyword.isFullyImplemented);
+
+                if (bountyKeywordsWithImpl.length > 0) {
+                    Contract.fail(`Attempting to add a bounty ability '${properties.title}' to ${this.internalName} but all instances of the Bounty keyword already have a definition`);
+                }
+
+                Contract.fail(`Attempting to add a bounty ability '${properties.title}' to ${this.internalName} but it has no printed instances of the Bounty keyword`);
+            }
+
+            const bountyAbilityToAssign = bountyKeywordsWithoutImpl[0];
+
+            // TODO: see if there's a better way using discriminating unions to avoid needing a cast when getting keyword instances
+            Contract.assertTrue(bountyAbilityToAssign.isBounty());
+            bountyAbilityToAssign.setAbilityProps(properties);
+        }
+
+        protected createCoordinateAbilityProps(properties: IAbilityPropsWithType<this>): IAbilityPropsWithType<this> {
+            return properties;
+        }
+
+        private addCoordinateAbility(properties: IAbilityPropsWithType<this>): void {
+            const coordinateKeywords = this.printedKeywords.filter((keyword) => keyword.name === KeywordName.Coordinate);
+            Contract.assertTrue(
+                coordinateKeywords.length > 0,
+                `Attempting to add a coordinate ability '${properties.title}' to ${this.internalName} but it has no printed instances of the Coordinate keyword`
+            );
+
+            const coordinateKeywordsWithoutImpl = coordinateKeywords.filter((keyword) => !keyword.isFullyImplemented);
+            Contract.assertTrue(
+                coordinateKeywordsWithoutImpl.length > 0,
+                `Attempting to add a coordinate ability '${properties.title}' to ${this.internalName} but all instances of the Coordinate keyword already have a definition`
+            );
+
+            const coordinateAbilityToAssign = coordinateKeywordsWithoutImpl[0];
+
+            // TODO: see if there's a better way using discriminating unions to avoid needing a cast when getting keyword instances
+            Contract.assertTrue(coordinateAbilityToAssign instanceof KeywordWithAbilityDefinition);
+            coordinateAbilityToAssign.setAbilityProps(this.createCoordinateAbilityProps(properties));
+        }
+
+        private addPilotingAbility(properties: IAbilityPropsWithType<this>): void {
+            this.checkIsAttachable();
+
+            switch (properties.type) {
+                case AbilityType.Action:
+                    this.pilotingActionAbilities = [...this.pilotingActionAbilities, this.createActionAbility(properties)];
+                    break;
+                case AbilityType.Constant:
+                    this._pilotingConstantAbilities = [...this._pilotingConstantAbilities, this.createConstantAbility(properties)];
+                    break;
+                case AbilityType.Triggered:
+                    this.pilotingTriggeredAbilities = [...this.pilotingTriggeredAbilities, this.createTriggeredAbility(properties)];
+                    break;
+                case AbilityType.ReplacementEffect:
+                    this.pilotingTriggeredAbilities = [...this.pilotingTriggeredAbilities, this.createReplacementEffectAbility(properties)];
+                    break;
+                default:
+                    Contract.fail(`Unsupported ability type ${(properties as any).type}`);
+            }
+        }
+
+        public override takeControl(newController: Player, moveTo: ZoneName.SpaceArena | ZoneName.GroundArena | ZoneName.Resource = null) {
+            const changedController = super.takeControl(newController, moveTo);
+
+            if (changedController && this.isInPlay() && this.canHaveActiveAttack() && this.activeAttack) {
+                this.activeAttack.unitChangedController(this);
+            }
+
+            return changedController;
+        }
+
+        private addPilotingConstantAbilityTargetingAttached(properties: Pick<IConstantAbilityProps<this>, 'title' | 'condition' | 'ongoingEffect'>) {
+            this.addPilotingAbility({
+                type: AbilityType.Constant,
+                title: properties.title,
+                matchTarget: (card, context) => card === context.source.parentCard,
+                targetController: WildcardRelativePlayer.Any,   // this means that the effect continues to work even if the other player gains control of the upgrade
+                condition: this.addZoneCheckToGainCondition(properties.condition),
+                ongoingEffect: properties.ongoingEffect
+            });
+        }
+
+        private addPilotingGainKeywordTargetingAttached(properties: IKeywordPropertiesWithGainCondition<this>) {
+            const { gainCondition, ...gainedKeywordProperties } = properties;
+
+            this.addPilotingConstantAbilityTargetingAttached({
+                title: giveKeywordToAttachedUnitTitle(gainedKeywordProperties),
+                condition: this.addZoneCheckToGainCondition(gainCondition),
+                ongoingEffect: OngoingEffectLibrary.gainKeyword(gainedKeywordProperties)
+            });
+        }
+
+        private addPilotingGainAbilityTargetingAttached(properties: IAbilityPropsWithGainCondition<this, IUnitCard>) {
+            const { gainCondition, ...gainedAbilityProperties } = properties;
+
+            this.addPilotingConstantAbilityTargetingAttached({
+                title: giveAbilityToAttachedUnitTitle(gainedAbilityProperties),
+                condition: this.addZoneCheckToGainCondition(gainCondition),
+                ongoingEffect: OngoingEffectLibrary.gainAbility(gainedAbilityProperties)
+            });
+        }
+
+        private addPilotingGainTriggeredAbilityTargetingAttached(properties: ITriggeredAbilityPropsWithGainCondition<this, IUnitCard>) {
+            this.addPilotingGainAbilityTargetingAttached({
+                type: AbilityType.Triggered,
+                title: 'Give triggered ability to the attached card',
+                ...properties
+            });
+        }
+
+        public override getTriggeredAbilities(): TriggeredAbilityBase[] {
+            if (this.isFullyBlanked() || this.hasOngoingEffect(EffectName.BlankExceptKeyword)) {
+                return [];
+            }
+
+            if (EnumHelpers.isUnitUpgrade(this.getType())) {
+                return this.pilotingTriggeredAbilities as TriggeredAbilityBase[];
+            }
+
+            let triggeredAbilities = super.getTriggeredAbilities();
+
+            if (this.hasOngoingEffect(EffectName.BlankExceptFromSourceCard)) {
+                // Only return triggered abilities gained from the source of the blanking effect
+                return triggeredAbilities.filter((ability) => this.canGainAbilityFromSource(ability.gainAbilitySource)) as TriggeredAbilityBase[];
+            }
+
+            // add any temporarily registered attack abilities from keywords
+            if (this._attackKeywordAbilities != null) {
+                triggeredAbilities = triggeredAbilities.concat(this._attackKeywordAbilities.filter((ability) => ability instanceof TriggeredAbilityBase));
+            }
+            if (this._whenCapturedKeywordAbilities != null) {
+                triggeredAbilities = triggeredAbilities.concat(this._whenCapturedKeywordAbilities);
+            }
+            if (this._whenDefeatedKeywordAbilities != null) {
+                triggeredAbilities = triggeredAbilities.concat(this._whenDefeatedKeywordAbilities);
+            }
+            if (this._whenPlayedKeywordAbilities != null) {
+                triggeredAbilities = triggeredAbilities.concat(this._whenPlayedKeywordAbilities);
+            }
+
+            return triggeredAbilities as TriggeredAbilityBase[];
+        }
+
+        public override getConstantAbilities(): ConstantAbility[] {
+            if (this.isBlank()) {
+                return [];
+            }
+
+            if (EnumHelpers.isUnitUpgrade(this.getType())) {
+                return this._pilotingConstantAbilities as ConstantAbility[];
+            }
+
+            let constantAbilities = EnumHelpers.isUnitUpgrade(this.getType()) ? this._pilotingConstantAbilities : super.getConstantAbilities();
+
+            // add any temporarily registered attack abilities from keywords
+            if (this._attackKeywordAbilities != null) {
+                constantAbilities = constantAbilities.concat(
+                    this._attackKeywordAbilities.filter((ability) => !(ability instanceof TriggeredAbilityBase))
+                        .map((ability) => ability as ConstantAbility)
+                );
+            }
+
+            // add any registered abilities from keywords effective while in play
+            if (this._whileInPlayKeywordAbilities != null) {
+                constantAbilities = constantAbilities.concat(this._whileInPlayKeywordAbilities);
+            }
+
+            return constantAbilities as ConstantAbility[];
+        }
+
+        protected override updateTriggeredAbilitiesForZone(from: ZoneName, to: ZoneName) {
+            super.updateTriggeredAbilityEventsInternal(this.pilotingTriggeredAbilities.concat(this.triggeredAbilities), from, to);
+        }
+
+        protected override updateConstantAbilityEffects(from: ZoneName, to: ZoneName): void {
+            super.updateConstantAbilityEffectsInternal(this._pilotingConstantAbilities.concat(this.constantAbilities), from, to, true);
+        }
+
+        /** Register / un-register the effects for any abilities from keywords */
+        protected override updateKeywordAbilityEffects(from: ZoneName, to: ZoneName) {
+            // Unregister all effects when moving a card from an arena to a non-arena zone
+            // or from a base to an arena
+            if ((EnumHelpers.isArena(from) && !EnumHelpers.isArena(to)) || (from === ZoneName.Base && EnumHelpers.isArena(to))) {
+                this.unregisterWhileInPlayKeywordAbilityEffects();
+            }
+
+            // Register all effects when moving a card to a base or from a non-arena zone to an arena,
+            // this is to support leaders with the Coordinate keyword
+            if ((!EnumHelpers.isArena(from) && EnumHelpers.isArena(to)) || to === ZoneName.Base) {
+                this.registerWhileInPlayKeywordAbilityEffects();
+            }
+        }
+
+        public refreshWhileInPlayKeywordAbilityEffects() {
+            this.unregisterWhileInPlayKeywordAbilityEffects();
+            this.registerWhileInPlayKeywordAbilityEffects();
+        }
+
+        private unregisterWhileInPlayKeywordAbilityEffects() {
+            Contract.assertTrue(Array.isArray(this._whileInPlayKeywordAbilities), 'Keyword ability while in play registration was skipped');
+
+            for (const keywordAbility of this._whileInPlayKeywordAbilities) {
+                this.removeEffectFromEngine(keywordAbility.registeredEffects);
+                keywordAbility.registeredEffects = [];
+            }
+
+            this._whileInPlayKeywordAbilities = null;
+        }
+
+        private registerWhileInPlayKeywordAbilityEffects() {
+            Contract.assertIsNullLike(
+                this._whileInPlayKeywordAbilities,
+                () => `Failed to unregister when played abilities from previous play: ${this._whileInPlayKeywordAbilities?.map((ability) => ability.title).join(', ')}`
+            );
+
+            this._whileInPlayKeywordAbilities = [];
+
+            for (const keywordInstance of this.getCoordinateAbilities()) {
+                const gainedAbilityProps = keywordInstance.abilityProps;
+
+                const coordinateKeywordAbilityProps: IConstantAbilityProps = {
+                    title: `${TextHelper.Coordinate}: ${gainedAbilityProps.title}`,
+                    condition: (context) => context.player.getArenaUnits().length >= 3 && !keywordInstance.isBlank,
+                    ongoingEffect: OngoingEffectLibrary.gainAbility(gainedAbilityProps)
+                };
+
+                const coordinateKeywordAbility = this.createConstantAbility(coordinateKeywordAbilityProps);
+                coordinateKeywordAbility.registeredEffects = this.addEffectToEngine(coordinateKeywordAbility.buildEffectFactoryProps());
+
+                this._whileInPlayKeywordAbilities = [...this._whileInPlayKeywordAbilities, coordinateKeywordAbility];
+            }
+
+            // Hidden is a unit-side keyword; the isUnit() guard keeps it off an undeployed leader, which
+            // also runs this block from the base zone (for leader-side Coordinate). See issue #2880.
+            if (this.hasSomeKeyword(KeywordName.Hidden) && this.isUnit()) {
+                const hiddenKeywordAbilityProps: IConstantAbilityProps<this> = {
+                    title: `${TextHelper.Hidden}`,
+                    condition: (context) =>
+                        context.source.hasSomeKeyword(KeywordName.Hidden) &&
+                        context.source.isInPlay() &&
+                        this.wasPlayedDeployedOrCreatedThisPhase(context.source),
+                    ongoingEffect: this.game.abilityHelper.ongoingEffects.cardCannot(AbilityRestriction.BeAttacked)
+                };
+
+                const hiddenKeywordAbility = this.createConstantAbility(hiddenKeywordAbilityProps);
+                hiddenKeywordAbility.registeredEffects = this.addEffectToEngine(hiddenKeywordAbility.buildEffectFactoryProps());
+
+                this._whileInPlayKeywordAbilities = [...this._whileInPlayKeywordAbilities, hiddenKeywordAbility];
+            }
+        }
+
+        private wasPlayedDeployedOrCreatedThisPhase(card: this = this): boolean {
+            try {
+                return this._cardsPlayedThisWatcher.someCardPlayed((entry) => entry.card === card && entry.inPlayId === card.inPlayId) ||
+                  this._leadersDeployedThisPhaseWatcher.someLeaderDeployed((entry) => entry.card === card) ||
+                  this._tokensCreatedThisPhaseWatcher.someTokenCreated((entry) => entry.token === card && entry.token.isTokenUnit());
+            } catch (err) {
+                return false;
+            }
+        }
+
+        // *************************************** KEYWORD HELPERS ***************************************
+        /**
+         * Checks if the unit currently has any keywords with a "when played" effect and registers them if so.
+         * Also adds a listener to remove the registered abilities after the effect resolves.
+         */
+        public checkRegisterWhenPlayedKeywordAbilities(event: GameEvent) {
+            const hasAmbush = this.hasSomeKeyword(KeywordName.Ambush);
+            const hasShielded = this.hasSomeKeyword(KeywordName.Shielded);
+            const hasSupport = this.hasSomeKeyword(KeywordName.Support);
+
+            if (!hasAmbush && !hasShielded && !hasSupport) {
+                return;
+            }
+
+            Contract.assertIsNullLike(
+                this._whenPlayedKeywordAbilities,
+                `Failed to unregister when played abilities from previous play: ${this._whenPlayedKeywordAbilities?.map((ability) => ability.getTitle()).join(', ')}`
+            );
+
+            this._whenPlayedKeywordAbilities = [];
+
+            if (hasAmbush) {
+                const ambushProps = Object.assign(this.buildGeneralAbilityProps('keyword_ambush'), AmbushAbility.buildAmbushAbilityProperties());
+                const ambushAbility = this.createTriggeredAbility(ambushProps);
+                ambushAbility.registerEvents();
+                this._whenPlayedKeywordAbilities = [...this._whenPlayedKeywordAbilities, ambushAbility];
+            }
+
+            if (hasShielded) {
+                const shieldedProps = Object.assign(this.buildGeneralAbilityProps('keyword_shielded'), ShieldedAbility.buildShieldedAbilityProperties());
+                const shieldedAbility = this.createTriggeredAbility(shieldedProps);
+                shieldedAbility.registerEvents();
+                this._whenPlayedKeywordAbilities = [...this._whenPlayedKeywordAbilities, shieldedAbility];
+            }
+
+            if (hasSupport) {
+                const supportProps = Object.assign(this.buildGeneralAbilityProps('keyword_support'), SupportAbility.buildSupportAbilityProperties(this));
+                const supportAbility = this.createTriggeredAbility(supportProps);
+                supportAbility.registerEvents();
+                this._whenPlayedKeywordAbilities = [...this._whenPlayedKeywordAbilities, supportAbility];
+            }
+
+            event.addCleanupHandler(() => this.unregisterWhenPlayedKeywords());
+        }
+
+        /**
+         * Registers any keywords which need to be explicitly registered for the attack process.
+         * These should be unregistered after the end of the attack.
+         *
+         * Note: Check rule 7.5 to see if a keyword should be here. Only keywords that are
+         *      "On Attack" keywords should go here. As of Set 2 (SHD) this is only Restore
+         *      and the defeat all shields portion of Saboteur.
+         */
+        public checkRegisterOnAttackKeywordAbilities(event: GameEvent) {
+            const hasRestore = this.hasSomeKeyword(KeywordName.Restore);
+            const hasSaboteur = this.hasSomeKeyword(KeywordName.Saboteur);
+
+            if (!hasRestore && !hasSaboteur) {
+                return;
+            }
+
+            Contract.assertIsNullLike(
+                this._attackKeywordAbilities,
+                () => `Failed to unregister on attack abilities from previous attack: ${this._attackKeywordAbilities?.map((ability) => ability.getTitle()).join(', ')}`
+            );
+
+            this._attackKeywordAbilities = [];
+
+            if (hasRestore) {
+                const restoreAmount = this.getNumericKeywordTotal(KeywordName.Restore);
+                const restoreProps = Object.assign(this.buildGeneralAbilityProps('keyword_restore'), RestoreAbility.buildRestoreAbilityProperties(restoreAmount));
+                const restoreAbility = this.createTriggeredAbility(restoreProps);
+                restoreAbility.registerEvents();
+                this._attackKeywordAbilities = [...this._attackKeywordAbilities, restoreAbility];
+            }
+
+            if (hasSaboteur) {
+                const saboteurProps = Object.assign(this.buildGeneralAbilityProps('keyword_saboteur'), SaboteurDefeatShieldsAbility.buildSaboteurAbilityProperties());
+                const saboteurAbility = this.createTriggeredAbility(saboteurProps);
+                saboteurAbility.registerEvents();
+                this._attackKeywordAbilities = [...this._attackKeywordAbilities, saboteurAbility];
+            }
+
+            event.addCleanupHandler(() => this.unregisterAttackKeywords());
+        }
+
+        /**
+         * Checks if the unit currently has any keywords with a "when defeated" effect and registers them if so.
+         * Also adds a listener to remove the registered abilities after the effect resolves.
+         */
+        public checkRegisterWhenDefeatedKeywordAbilities(event: GameEvent) {
+            const bountyKeywords = this.getBountyKeywords();
+            if (bountyKeywords.length === 0) {
+                return;
+            }
+
+            Contract.assertIsNullLike(
+                this._whenDefeatedKeywordAbilities,
+                `Failed to unregister when defeated abilities from previous defeat: ${this._whenDefeatedKeywordAbilities?.map((ability) => ability.getTitle()).join(', ')}`
+            );
+
+            this._whenDefeatedKeywordAbilities = this.registerBountyKeywords(bountyKeywords);
+
+            event.addCleanupHandler(() => this.unregisterWhenDefeatedKeywords());
+        }
+
+        /**
+         * Checks if the unit currently has any keywords with a "when captured" effect and registers them if so.
+         * Also adds a listener to remove the registered abilities after the effect resolves.
+         */
+        public checkRegisterWhenCapturedKeywordAbilities(event: GameEvent) {
+            const bountyKeywords = this.getBountyKeywords();
+            if (bountyKeywords.length === 0) {
+                return;
+            }
+
+            Contract.assertIsNullLike(
+                this._whenCapturedKeywordAbilities,
+                () => `Failed to unregister when captured abilities from previous capture: ${this._whenCapturedKeywordAbilities?.map((ability) => ability.getTitle()).join(', ')}`
+            );
+
+            this._whenCapturedKeywordAbilities = this.registerBountyKeywords(bountyKeywords);
+
+            event.addCleanupHandler(() => this.unregisterWhenCapturedKeywords());
+        }
+
+        private registerBountyKeywords(bountyKeywords: BountyKeywordInstance[]): TriggeredAbilityBase[] {
+            const registeredAbilities: TriggeredAbilityBase[] = [];
+
+            for (const bountyKeyword of bountyKeywords) {
+                const abilityProps = bountyKeyword.abilityProps;
+
+                const bountyAbility = new BountyAbility(this.game, this, { ...this.buildGeneralAbilityProps('triggered'), ...abilityProps });
+
+                bountyAbility.registerEvents();
+                registeredAbilities.push(bountyAbility);
+            }
+
+            return registeredAbilities;
+        }
+
+        private getBountyKeywords() {
+            return this.getKeywords().filter((keyword) => keyword.name === KeywordName.Bounty)
+                .map((keyword) => keyword as BountyKeywordInstance)
+                .filter((keyword) => keyword.isFullyImplemented);
+        }
+
+        private getCoordinateAbilities() {
+            return this.getKeywords().filter((keyword) => keyword.name === KeywordName.Coordinate)
+                .map((keyword) => keyword as KeywordWithAbilityDefinition)
+                .filter((keyword) => keyword.isFullyImplemented);
+        }
+
+        public unregisterWhenPlayedKeywords() {
+            Contract.assertTrue(Array.isArray(this._whenPlayedKeywordAbilities), 'Keyword ability when played registration was skipped');
+
+            for (const ability of this._whenPlayedKeywordAbilities) {
+                if (ability instanceof TriggeredAbilityBase) {
+                    ability.unregisterEvents();
+                }
+            }
+
+            this._whenPlayedKeywordAbilities = null;
+        }
+
+        /**
+         * Unregisters any keywords which need to be explicitly registered for the attack process.
+         * These should be unregistered after the end of the attack.
+         */
+        public unregisterAttackKeywords() {
+            Contract.assertTrue(Array.isArray(this._attackKeywordAbilities), 'Keyword ability attack registration was skipped');
+
+            for (const ability of this._attackKeywordAbilities) {
+                if (ability instanceof TriggeredAbilityBase) {
+                    ability.unregisterEvents();
+                } else {
+                    this.removeEffectFromEngine(ability.registeredEffects[0]);
+                }
+            }
+
+            this._attackKeywordAbilities = null;
+        }
+
+        public unregisterWhenDefeatedKeywords() {
+            Contract.assertTrue(Array.isArray(this._whenDefeatedKeywordAbilities), 'Keyword ability when defeated registration was skipped');
+
+            for (const ability of this._whenDefeatedKeywordAbilities) {
+                if (ability instanceof TriggeredAbilityBase) {
+                    ability.unregisterEvents();
+                }
+            }
+
+            this._whenDefeatedKeywordAbilities = null;
+        }
+
+        public unregisterWhenCapturedKeywords() {
+            Contract.assertTrue(Array.isArray(this._whenCapturedKeywordAbilities), 'Keyword ability when captured registration was skipped');
+
+            for (const ability of this._whenCapturedKeywordAbilities) {
+                if (ability instanceof TriggeredAbilityBase) {
+                    ability.unregisterEvents();
+                }
+            }
+
+            this._whenCapturedKeywordAbilities = null;
+        }
+
+        // ***************************************** STAT HELPERS *****************************************
+        public override addDamage(amount: number, source: IDamageSource): number {
+            const damageAdded = super.addDamage(amount, source);
+
+            if (damageAdded > 0) {
+                this._expiredLastingEffectChangedRemainingHp = false;
+            }
+
+            // Defer the defeat check so simultaneous effects in the same event window (e.g. an
+            // HP-buffing upgrade being attached at the same time) can resolve first. Running the
+            // check inline would set _pendingDefeat mid-window, which CardTargetSystem treats as
+            // an untargetable card — cancelling the very upgrade attachment that would have saved
+            // the unit. The check is invoked at the end of the window's resolveEvents step.
+            if (damageAdded > 0 && this.game.currentEventWindow) {
+                this.game.currentEventWindow.addPostEventResolutionCallback(() => this.checkDefeated(source));
+            } else {
+                this.checkDefeated(source);
+            }
+
+            return damageAdded;
+        }
+
+        // TODO: FFG has yet to release detailed rules about how effects are used to determine which player defeated a unit,
+        // specifically for complex cases like "what if Dodonna effect is keeping a Rebel unit alive and Dodonna is defeated."
+        // Need to come through and implement that in the methods below once rules 3.0 comes out.
+
+        /** Checks if the unit has been defeated due to an ongoing effect such as hp reduction */
+        public checkDefeatedByOngoingEffect() {
+            this.checkDefeated(DefeatSourceType.FrameworkEffect);
+        }
+
+        protected checkDefeated(source: IDamageSource | DefeatSourceType.FrameworkEffect) {
+            // if this card can't be defeated by damage (e.g. Chirrut), skip the check
+            if (this.hasOngoingEffect(EffectName.CannotBeDefeatedByDamage)) {
+                return;
+            }
+
+            if (this.damage >= this.getHp() && !this.pendingDefeat) {
+                const defeatEvent = new FrameworkDefeatCardSystem({
+                    target: this,
+                    defeatSource: source,
+                    defeatedByExpiringLastingEffect: this._expiredLastingEffectChangedRemainingHp,
+                }).generateEvent(
+                    this.game.getFrameworkContext(typeof source === 'object' ? source.player : null)
+                );
+
+                // add defeat event to window
+                this.game.addSubwindowEvents(defeatEvent);
+
+                this.game.queueSimpleStep(() => {
+                    const responsiblePlayer = (defeatEvent as any).defeatSource?.player;
+                    if (responsiblePlayer) {
+                        this.game.addMessage('{0}\'s {1} is defeated by {2} due to having no remaining HP', this.controller, this, responsiblePlayer);
+                    } else {
+                        this.game.addMessage('{0}\'s {1} is defeated due to having no remaining HP', this.controller, this);
+                    }
+                }, `Log defeat message for ${this.internalName}`);
+
+                // mark that this unit has a defeat pending so that other effects targeting it will not resolve
+                this._pendingDefeat = true;
+            }
+
+            // Reset the flag becuase at this point we already know if the unit was defeated or not
+            this._expiredLastingEffectChangedRemainingHp = false;
+        }
+
+        private getModifiedStatValue(statType: StatType, floor = true, excludeModifiers: string[] = []) {
+            const wrappedModifiers = this.getStatModifiers(excludeModifiers);
+
+            const baseStatValue = StatsModifierWrapper.fromPrintedValues(this);
+
+            const stat = wrappedModifiers.reduce((total, wrappedModifier) => total + wrappedModifier.modifier[statType], baseStatValue.modifier[statType]);
+
+            return floor ? Math.max(0, stat) : stat;
+        }
+
+        // TODO: add a summary method that logs these modifiers (i.e., the names, amounts, etc.)
+        private getStatModifiers(exclusions: (string[] | ((effect: OngoingCardEffect) => boolean)) = []): StatsModifierWrapper[] {
+            let rawEffects: OngoingCardEffect[];
+            if (typeof exclusions === 'function') {
+                rawEffects = this.getOngoingEffects().filter((effect) => !exclusions(effect));
+            } else {
+                rawEffects = this.getOngoingEffects().filter((effect) => !exclusions.includes(effect.type));
+            }
+
+            const modifierEffects: OngoingCardEffect[] = rawEffects.filter((effect) => effect.type === EffectName.ModifyStats);
+            const wrappedStatsModifiers = modifierEffects.map((modifierEffect) => StatsModifierWrapper.fromEffect(modifierEffect, this));
+
+            if (!this.isAttached()) {
+                // add stat bonuses from attached upgrades
+                this.upgrades.forEach((upgrade) => wrappedStatsModifiers.push(StatsModifierWrapper.fromPrintedValues(upgrade)));
+
+                if (this.hasSomeKeyword(KeywordName.Grit)) {
+                    const gritModifier = { power: this.damage, hp: 0 };
+                    // eslint-disable-next-line forceteki/no-raw-token-text -- internal stat-modifier provenance label, not player-facing ability text (cf. the sibling 'Raid' label below)
+                    wrappedStatsModifiers.push(new StatsModifierWrapper(gritModifier, 'Grit', false, this.type));
+                }
+
+                const raidAmount = this.getNumericKeywordTotal(KeywordName.Raid);
+                if (this.isAttacking() && raidAmount > 0) {
+                    const raidModifier = { power: raidAmount, hp: 0 };
+                    wrappedStatsModifiers.push(new StatsModifierWrapper(raidModifier, 'Raid', false, this.type));
+                }
+            }
+
+            return wrappedStatsModifiers;
+        }
+
+        public override checkIsAttachable(): void {
+            throw new Error('Should not call this - call overriding methods');
+        }
+
+        /**
+         *  This should only be called if a unit is a Pilot or has some other ability that lets it attach as an upgrade
+         * @param {Card} targetCard The card that this would be attached to
+         * @param {AbilityContext} context The ability context
+         * @param {Player} controller The controller of this card
+         * @returns True if this is allowed to attach to the targetCard; false otherwise
+         */
+        public override canAttach(targetCard: Card, context: AbilityContext, controller: Player = this.controller): boolean {
+            if (!targetCard.isUnit()) {
+                return false;
+            }
+            if (context.playType === PlayType.Piloting && this.hasSomeKeyword(KeywordName.Piloting)) {
+                // This is needed for abilities that let you play Pilots from the opponent's discard
+                const canPlayFromAnyZone = (context.ability as PlayUpgradeAction).canPlayFromAnyZone;
+                return targetCard.canAttachPilot(this) && (targetCard.controller === controller || canPlayFromAnyZone);
+            }
+            if (this.hasSomeTrait(Trait.Pilot) && this.isAttached()) {
+                // A pilot upgrade being moved by an ability (e.g. Survivors' Gauntlet) retains the
+                // "friendly Vehicle without a Pilot upgrade" restriction it acquired when first attached.
+                return targetCard.canAttachPilot(this);
+            }
+
+            // A unit without the Pilot trait or Piloting keyword may still be attached as an upgrade
+            // when driven by an ability that supplies its own attachment restriction — e.g. a non-Pilot
+            // unit that has gained L3-37's "would be defeated: attach to a friendly Vehicle without a
+            // Pilot" ability via Improvised Identity. The ability's target resolver is responsible for
+            // enforcing the restriction; this method just permits the attach to proceed.
+            // TODO: Handle Phantom II and Sidon Ithano (these have card-specific attachment patterns).
+            return true;
+        }
+
+        /**
+         * Checks if a pilot can be attached to this unit
+         * @param {IUnitCard} pilot The pilot card that would be attached to this unit
+         * @returns True if a Pilot can be attached to this unit; false otherwise
+         */
+        public canAttachPilot(pilot: IUnitCard): boolean {
+            if (!this.hasSomeTrait(Trait.Vehicle)) {
+                return false;
+            }
+
+            if (pilot.isAttached() && pilot.hasSomeKeyword(KeywordName.Piloting) && pilot.controller !== this.controller) {
+                return false;
+            }
+
+            // Check if the card can be played with Piloting ignoring the pilot limit,
+            // for example "R2-D2, Artooooooooo"
+            if (pilot.hasOngoingEffect(EffectName.CanBePlayedWithPilotingIgnoringPilotLimit)) {
+                return true;
+            }
+
+            // Calculate the pilot limit of the card applying all the modifiers
+            const pilotCount = this.upgrades
+                .reduce((count, upgrade) => (upgrade.hasSomeTrait(Trait.Pilot) ? count + 1 : count), 0);
+            const pilotLimit = this.getOngoingEffectValues<PilotLimitModifier>(EffectName.ModifyPilotLimit)
+                .reduce((limit, modifier) => limit + modifier.amount, 1);
+
+            // Ensure that the card doesn't already have the maximum number of pilots
+            return pilotCount < pilotLimit;
+        }
+
+        /**
+         * Removes an upgrade from this card's upgrade list
+         * @param upgrade
+         */
+        public unattachUpgrade(upgrade: IUpgradeCard, event = null) {
+            this.assertPropertyEnabledForZone(this._upgrades, 'upgrades');
+            this._upgrades = this._upgrades.filter((card) => card.uuid !== upgrade.uuid);
+            if (upgrade.getPrintedHp() !== 0) {
+                this._lastPlayerToModifyHp = event?.context?.ability ? event.context.ability.controller : upgrade.owner;
+            }
+        }
+
+        /**
+         * Add the passed card to this card's upgrade list. Upgrade must already be moved to the correct arena.
+         */
+        public attachUpgrade(upgrade: IUpgradeCard) {
+            this.assertPropertyEnabledForZone(this._upgrades, 'upgrades');
+            Contract.assertEqual(upgrade.zoneName, this.zoneName);
+            Contract.assertTrue(this.zone.hasCard(upgrade));
+
+            this._upgrades = [...this._upgrades, upgrade];
+
+            if (upgrade.getPrintedHp() !== 0) {
+                this._lastPlayerToModifyHp = upgrade.controller;
+            }
+        }
+
+        protected override updateStateOnAttach() {
+            this.setActiveAttackEnabled(false);
+            this.setDamageEnabled(false);
+            this.setExhaustEnabled(false);
+            this.setUpgradesEnabled(false);
+            this.setCaptureZoneEnabled(false);
+        }
+
+        public getMaxUnitAttackLimit(): number {
+            let attackLimit = 1;
+            if (this.hasOngoingEffect(EffectName.CanAttackMultipleUnitsSimultaneously)) {
+                for (const ongoingEffect of this.getOngoingEffectValues(EffectName.CanAttackMultipleUnitsSimultaneously)) {
+                    if (ongoingEffect.amount > attackLimit) {
+                        attackLimit = ongoingEffect.amount;
+                    }
+                }
+            }
+            return attackLimit;
+        }
+
+        public override getSummary(activePlayer: Player, overrideHidden: boolean = false) {
+            if (this.isInPlay()) {
+                const hasSentinel = this.hasSomeKeyword(KeywordName.Sentinel);
+                const cannotBeAttacked = (this.hasRestriction(AbilityRestriction.BeAttacked) && !hasSentinel);
+
+                const clonedCards = this.getOngoingEffectValues<Card>(EffectName.CloneUnit);
+                const clonedCard = clonedCards.length > 0 ? clonedCards[0] : null;
+
+                return {
+                    ...super.getSummary(activePlayer, overrideHidden),
+                    power: this.getPower(),
+                    hp: this.getHp(),
+                    sentinel: hasSentinel,
+                    cannotBeAttacked: cannotBeAttacked,
+                    isAttacker: this.isUnit() && (this.isAttacking() || this.controller.getAttackerHighlightingState(this)),
+                    isDefender: this.isUnit() && this.isDefending(),
+                    clonedCardId: clonedCard?.setId ?? null,
+                    clonedCardName: clonedCard?.title ?? null
+                };
+            }
+
+            return {
+                ...super.getSummary(activePlayer, overrideHidden),
+                parentCardId: this.getCaptor()?.uuid,
+            };
+        }
+
+        public override getCardState(): any {
+            if (this.isInPlay()) {
+                return {
+                    ...super.getCardState(),
+                    upgrades: this.upgrades,
+                    capturedUnits: this.capturedUnits
+                };
+            }
+        }
+
+        public override addOngoingEffect(ongoingEffect: OngoingCardEffect): void {
+            if (ongoingEffect.type === EffectName.ModifyStats && ongoingEffect?.getValue(this)?.hp !== 0) {
+                this._lastPlayerToModifyHp = ongoingEffect.context.source.controller;
+                this._expiredLastingEffectChangedRemainingHp = false;
+            }
+            super.addOngoingEffect(ongoingEffect);
+        }
+
+        public override removeOngoingEffect(ongoingEffect: OngoingCardEffect): void {
+            if (ongoingEffect.type === EffectName.ModifyStats && ongoingEffect?.getValue(this)?.hp !== 0) {
+                if (this.game.currentAbilityResolver?.context?.player) {
+                    this._lastPlayerToModifyHp = this.game.currentAbilityResolver.context.player;
+                }
+
+                this._expiredLastingEffectChangedRemainingHp = ongoingEffect.context.ongoingEffect?.isLastingEffect ?? false;
+            }
+            super.removeOngoingEffect(ongoingEffect);
+        }
+    }
+
+    return AsUnit;
+}
+

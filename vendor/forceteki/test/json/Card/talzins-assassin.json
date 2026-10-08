@@ -1,0 +1,39 @@
+{
+  "title": "Talzin's Assassin",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "When Played: You may use the Force (lose your Force token). If you do, give a unit –3/–3 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2410965424",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "night"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 35
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 35
+    }
+  ],
+  "internalName": "talzins-assassin"
+}

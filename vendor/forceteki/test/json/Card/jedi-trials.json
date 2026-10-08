@@ -1,0 +1,38 @@
+{
+  "title": "Jedi Trials",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 0,
+  "power": 0,
+  "text": "Attach to a Force unit.\nAttached unit gains: “On Attack: Give an Experience token to this unit.”\nWhile attached unit has 4 or more upgrades on it, it gains the Jedi trait.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "0545149763",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "jedi",
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 52
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 52
+    }
+  ],
+  "internalName": "jedi-trials"
+}

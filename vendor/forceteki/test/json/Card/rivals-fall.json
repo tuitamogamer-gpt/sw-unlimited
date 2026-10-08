@@ -1,0 +1,36 @@
+{
+  "title": "Rival's Fall",
+  "subtitle": "",
+  "cost": 6,
+  "hp": null,
+  "power": null,
+  "text": "Defeat a unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5303936245",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 79
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 79
+    }
+  ],
+  "internalName": "rivals-fall"
+}

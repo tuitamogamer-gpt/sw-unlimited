@@ -1,0 +1,344 @@
+/* global jasmine */
+
+const { Game } = require('../../server/game/core/Game.js');
+const PlayerInteractionWrapper = require('./PlayerInteractionWrapper.js');
+const Settings = require('../../server/Settings.js');
+const TestSetupError = require('./TestSetupError.js');
+const allNonLeaderCardTitles = require('../json/_allNonLeaderCardTitles.json');
+const playableCardTitles = require('../json/_playableCardTitles.json');
+const Util = require('./Util.js');
+const { UndoMode } = require('../../server/game/core/snapshot/SnapshotManager.js');
+const { NoopScheduler } = require('./NoopScheduler.js');
+
+class GameFlowWrapper {
+    /**
+     * @param {any} router
+     * @param {PlayerInfo} player1Info
+     * @param {PlayerInfo} player2Info
+     * @param {UndoMode} undoMode
+     * @param {boolean} enableConfirmationToUndo
+     * @param {ReadonlySet<string>} [legalCardTitles] restricts "name a card" options; all titles when omitted
+     */
+    constructor(cardDataGetter, router, player1Info, player2Info, undoMode = UndoMode.Free, legalCardTitles = undefined) {
+        /** @type {import('../../server/game/core/GameInterfaces.js').GameConfiguration} */
+        var details = {
+            name: `${player1Info.username}'s game`,
+            id: 12345,
+            owner: player1Info.username,
+            saveGameId: 12345,
+            players: [
+                Settings.getUserWithDefaultsSet(player1Info),
+                Settings.getUserWithDefaultsSet(player2Info),
+            ],
+            cardDataGetter,
+            legalCardTitles,
+            pushUpdate: () => true,
+            scheduler: new NoopScheduler(),
+            userTimeoutDisconnect: () => undefined,
+            undoMode
+        };
+
+        this.game = new Game(details, { router });
+
+        this.player1Id = player1Info.id;
+        this.player2Id = player2Info.id;
+
+        this.player1 = new PlayerInteractionWrapper(this.game, this.game.getPlayerById(this.player1Id), this);
+        this.player2 = new PlayerInteractionWrapper(this.game, this.game.getPlayerById(this.player2Id), this);
+        this.allPlayers = [this.player1, this.player2];
+
+        this.snapshotManager = this.game.snapshotManager;
+    }
+
+    getAllNonLeaderCardTitles() {
+        return allNonLeaderCardTitles;
+    }
+
+    getPlayableCardTitles() {
+        return playableCardTitles;
+    }
+
+    getTraitNames() {
+        return this.game.traitNames;
+    }
+
+    allPlayersInInitiativeOrder() {
+        return [...this.allPlayers].sort((playerWrapper) => (this.game.initiativePlayer.id === playerWrapper.player.id ? -1 : 1));
+    }
+
+    /**
+     * Executes a function for each player, starting with the one prompted for action
+     * @param {Function} handler - function of a player to be executed
+     */
+    eachPlayerStartingWithPrompted(handler) {
+        const playerPromptStateToSortOrder = (player) => {
+            return player.hasPrompt('Waiting for opponent to take an action or pass') ? 1 : 0;
+        };
+
+        var playersInPromptedOrder = [...this.allPlayers].sort((playerA, playerB) =>
+            playerPromptStateToSortOrder(playerA) - playerPromptStateToSortOrder(playerB)
+        );
+        playersInPromptedOrder.forEach((player) => handler(player));
+    }
+
+    /**
+     * Resource any two cards in hand for each player
+     */
+    resourceAnyTwo() {
+        this.guardCurrentPhase('setup');
+        for (const player of this.allPlayersInInitiativeOrder()) {
+            player.clickAnyOfSelectableCards(2);
+            player.clickDone();
+        }
+
+        this.game.continue();
+    }
+
+    startGameAsync() {
+        return this.game.initialiseAsync();
+    }
+
+    /**
+     * Keeps hand during prompt for conflict mulligan
+     */
+    keepStartingHand() {
+        this.guardCurrentPhase('setup');
+        this.allPlayersInInitiativeOrder().forEach((player) => player.clickPrompt('Keep'));
+    }
+
+
+    /**
+     * Skips setup phase with defaults
+     */
+    skipSetupPhase() {
+        const startingPlayer = (!!this.game.initiativePlayer ? this.allPlayers.find((playerWrapper) => playerWrapper.player.id === this.game.initiativePlayer.id) : this.player1) || this.player1;
+        this.selectInitiativePlayer(startingPlayer);
+        this.keepStartingHand();
+        this.resourceAnyTwo();
+    }
+
+    /**
+     * Both players pass for the rest of the action window.
+     * In Twin Suns format, all unclaimed tokens are claimed first (in order: Plan, Blast, Initiative),
+     * including handling the Plan token's put-to-bottom-of-deck sub-prompt.
+     */
+    noMoreActions() {
+        if (this.game.format === 'fauxSuns') {
+            // Claim Initiative first so player1 (who usually goes first) retains initiative into the next round.
+            // Plan and Blast follow; with permanent-exit semantics the active player stays active until
+            // all tokens are claimed, so the second player will end up claiming both Plan and Blast.
+            const tokenButtons = ['Claim Initiative', 'Claim Plan', 'Claim Blast'];
+            const maxIterations = 10; // safety valve against infinite loops
+
+            for (let i = 0; i < maxIterations; i++) {
+                if (this.game.currentPhase !== 'action') {
+                    return; // phase ended naturally while claiming tokens
+                }
+
+                const activePlayer = [this.player1, this.player2].find((p) => p.canAct);
+                if (!activePlayer) {
+                    break;
+                }
+
+                const tokenBtn = tokenButtons.find((b) => activePlayer.currentButtons.includes(b));
+                if (!tokenBtn) {
+                    break; // no more tokens to claim; fall through to regular pass logic
+                }
+
+                activePlayer.clickPrompt(tokenBtn);
+
+                // The Plan token prompts the claiming player to put a hand card on the bottom of their deck
+                if (tokenBtn === 'Claim Plan') {
+                    const planPlayer = [this.player1, this.player2].find((p) =>
+                        p.hasPrompt('Choose a card from your hand to put on the bottom of your deck')
+                    );
+                    if (planPlayer) {
+                        const card = planPlayer.player.hand[0];
+                        if (card) {
+                            planPlayer.clickCard(card);
+                        }
+                    }
+                }
+            }
+
+            if (this.game.currentPhase !== 'action') {
+                return; // phase ended naturally after the last token claim
+            }
+        }
+
+        this.eachPlayerStartingWithPrompted((player) => {
+            if (player.player.passedActionPhase === false) {
+                player.clickPrompt('Pass');
+            }
+        });
+    }
+
+    /**
+     * Pass any remaining player actions
+     */
+    moveToRegroupPhase() {
+        this.guardCurrentPhase('action');
+        this.noMoreActions();
+        this.guardCurrentPhase('regroup');
+    }
+
+    moveToNextActionPhase() {
+        this.moveToRegroupPhase();
+        this.skipRegroupPhase();
+    }
+
+    /**
+     * Completes the regroup phase
+     */
+    skipRegroupPhase() {
+        this.guardCurrentPhase('regroup');
+        var playersInPromptedOrder = [...this.allPlayers].sort((player) => player.hasPrompt('Waiting for opponent to choose cards to resource'));
+        playersInPromptedOrder.forEach((player) => player.clickDone());
+        this.guardCurrentPhase('action');
+    }
+
+    /**
+     * Moves to the next phase of the game
+     */
+    nextPhase(transitionHandler = () => undefined) {
+        switch (this.game.currentPhase) {
+            case 'setup':
+                this.skipSetupPhase();
+                break;
+            case 'action':
+                this.moveToRegroupPhase();
+                break;
+            case 'regroup':
+                this.skipRegroupPhase();
+                break;
+            default:
+                throw new TestSetupError(`Unknown current phase: ${this.game.currentPhase}`);
+        }
+
+        transitionHandler(this.game.currentPhase);
+    }
+
+    /**
+     * Moves through phases, until a certain one is reached
+     * @param {String} endphase - phase in which to end
+     */
+    advancePhases(endphase, transitionHandler = () => undefined) {
+        if (!endphase) {
+            return;
+        }
+
+        while (this.game.currentPhase !== endphase) {
+            this.nextPhase(transitionHandler);
+        }
+    }
+
+    /**
+     * Asserts that the game is in the expected phase
+     */
+    guardCurrentPhase(phase) {
+        if (this.game.currentPhase !== phase) {
+            throw new TestSetupError(`Expected to be in the ${phase} phase but actually was ${this.game.currentPhase}`);
+        }
+    }
+
+    getPromptedPlayer(title) {
+        var promptedPlayer = this.allPlayers.find((p) => p.hasPrompt(title));
+
+        if (!promptedPlayer) {
+            var promptString = this.allPlayers.map((player) => player.name + ': ' + Util.formatPrompt(player.currentPrompt(), player.currentActionTargets)).join('\n\n');
+            throw new TestSetupError(`No players are being prompted with '${title}'. Current prompts are:\n\n${promptString}`);
+        }
+
+        return promptedPlayer;
+    }
+
+    selectInitiativePlayer(player) {
+        var promptedPlayer = this.getPromptedPlayer('You won the flip. Choose the player to start with initiative:');
+        if (player === promptedPlayer) {
+            promptedPlayer.clickPrompt('Yourself');
+        } else {
+            promptedPlayer.clickPrompt('Opponent');
+        }
+    }
+
+    setDamage(card, damage) {
+        if (card == null) {
+            throw new TestSetupError('Null unit passed to helper');
+        }
+
+        if (typeof card === 'string') {
+            throw new TestSetupError('Must pass card object, not string name');
+        }
+
+        if (card.damage === damage) {
+            return;
+        }
+
+        const damageDiff = damage - card.damage;
+
+        // pass in an empty object as the "damage source"
+        if (damageDiff > 0) {
+            card.addDamage(damageDiff, {});
+        } else if (damageDiff < 0) {
+            card.removeDamage(-damageDiff, {});
+        }
+
+        Util.refreshGameState(this.game);
+    }
+
+    exhaustCard(card) {
+        card.exhaust();
+        Util.refreshGameState(this.game);
+    }
+
+    readyCard(card) {
+        card.ready();
+        Util.refreshGameState(this.game);
+    }
+
+    /**
+     * Get an array of the latest chat messages
+     * @param {Number} numBack - number of messages back from the latest to retrieve
+     * @param {Boolean} inOrder - reverse the retrieved elements so the array is displayed in the order the messages occurred.
+     */
+    getChatLogs(numBack = 1, inOrder = true) {
+        let results = [];
+        for (let i = 0; i < this.game.messages.length && i < numBack; i++) {
+            let result = '';
+            let chatMessage = this.game.messages[this.game.messages.length - i - 1];
+
+            const actualMessages = chatMessage.message?.alert ? chatMessage.message.alert.message : chatMessage.message;
+
+            for (let j = 0; j < actualMessages.length; j++) {
+                result += getChatString(actualMessages[j]);
+            }
+            results.push(result);
+        }
+
+        return inOrder ? results.reverse() : results;
+
+        function getChatString(item) {
+            if (Array.isArray(item)) {
+                return item.map((arrItem) => getChatString(arrItem)).join('');
+            } else if (item instanceof Object) {
+                if (item.name) {
+                    return item.name;
+                } else if (item.message) {
+                    return getChatString(item.message);
+                }
+            }
+            return item;
+        }
+    }
+
+    /**
+     * Get specified chat message or nothing
+     * @param {Number} numBack - How far back you want to get a message, defaults to the latest chat message
+     */
+    getChatLog(numBack = 0) {
+        let messages = this.getChatLogs(numBack + 1, false);
+        return messages.length && messages[numBack] ? messages[numBack] : '<No Message Found>';
+    }
+}
+
+module.exports = GameFlowWrapper;

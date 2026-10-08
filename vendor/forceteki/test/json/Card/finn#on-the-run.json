@@ -1,0 +1,39 @@
+{
+  "title": "Finn",
+  "subtitle": "On the Run",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "When this unit completes an attack: Choose a unique unit. For this phase, if damage would be dealt to that unit, prevent 1 of that damage.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "A unit must survive an attack to trigger its “when this unit completes an attack” abilities.\nWhen Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve.\n(ERRATA) Templating update: “Unique” becomes “<uq>”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7244268162",
+  "aspects": [
+    "vigilance",
+    "vigilance"
+  ],
+  "traits": [
+    "fringe",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 53
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 53
+    }
+  ],
+  "internalName": "finn#on-the-run"
+}

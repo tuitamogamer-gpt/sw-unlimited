@@ -1,0 +1,42 @@
+{
+  "title": "Bo-Katan Kryze",
+  "subtitle": "Death Watch Lieutenant",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "While you control another Mandalorian unit, this unit gains Overwhelm and Saboteur.\nWhile you control another Trooper unit, this unit gets +1/+0.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8139901441",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "mandalorian",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm",
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 130
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 130
+    }
+  ],
+  "internalName": "bokatan-kryze#death-watch-lieutenant"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Rush Clovis",
+  "subtitle": "Trapped by Authority",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "Ambush (When you play this unit, he may attack an enemy unit.)\nRestore 2 (When this unit attacks, heal 2 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2023138764",
+  "aspects": [
+    "vigilance",
+    "command"
+  ],
+  "traits": [
+    "separatist",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush",
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 17
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 17
+    }
+  ],
+  "internalName": "rush-clovis#trapped-by-authority"
+}

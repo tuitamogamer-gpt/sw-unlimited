@@ -1,0 +1,41 @@
+{
+  "title": "Admiral Trench",
+  "subtitle": "Holding the Line",
+  "cost": 7,
+  "hp": 5,
+  "power": 5,
+  "text": "Exploit 1 \nWhen Played: Return up to 3 units that were defeated this phase from your discard pile to your hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7013591351",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "exploit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 86
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 86
+    }
+  ],
+  "internalName": "admiral-trench#holding-the-line"
+}

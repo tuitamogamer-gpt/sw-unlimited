@@ -1,0 +1,37 @@
+{
+  "title": "Power from Pain",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Give a unit +1/+0 for this phase for each damage on it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "The unit gets +1/+0 only for the damage on it when this event is played.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3858069945",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 42
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 42
+    }
+  ],
+  "internalName": "power-from-pain"
+}

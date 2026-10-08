@@ -1,0 +1,36 @@
+{
+  "title": "All Wings Report In",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Exhaust up to 2 friendly space units. For each unit exhausted this way, create an X-Wing token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6588309727",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 122
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 122
+    }
+  ],
+  "internalName": "all-wings-report-in"
+}

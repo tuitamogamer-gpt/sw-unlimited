@@ -1,0 +1,40 @@
+{
+  "title": "Jar Jar Binks",
+  "subtitle": "Bombad General",
+  "cost": 6,
+  "hp": 5,
+  "power": 4,
+  "text": "Action [1 resource, Exhaust]: If you gave a token upgrade to a unit this phase, deal 1 damage to a unit and heal 1 damage from a base.",
+  "deployBox": "Shielded (When you deploy this leader, give a Shield token to him.)\nOn Attack: If you gave a token upgrade to a unit this phase, you may deal 1 damage to a unit and heal 1 damage from a base.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Any ability that you control that creates a token upgrade on a unit satisfies the condition of Jar Jar's ability, including Shielded.\nJar Jar’s leader ability still can be used as an action even if you didn't give a token upgrade to a unit this phase (but you don't deal or heal any damage).\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5606867456",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "gungan"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 5
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 5
+    }
+  ],
+  "internalName": "jar-jar-binks#bombad-general"
+}

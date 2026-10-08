@@ -1,0 +1,39 @@
+{
+  "title": "Public Enemy",
+  "subtitle": "",
+  "cost": 0,
+  "hp": 0,
+  "power": 0,
+  "text": "Attached unit gains: “Bounty — Give a Shield token to a unit.” (When this unit is defeated or captured, its opponent collects its bounty.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "1780014071",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "bounty",
+    "condition"
+  ],
+  "keywords": [
+    "bounty"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 68
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 68
+    }
+  ],
+  "internalName": "public-enemy"
+}

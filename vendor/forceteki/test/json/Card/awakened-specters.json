@@ -1,0 +1,38 @@
+{
+  "title": "Awakened Specters",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 5,
+  "power": 4,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7865009723",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "night",
+    "undead"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 66
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 66
+    }
+  ],
+  "internalName": "awakened-specters"
+}

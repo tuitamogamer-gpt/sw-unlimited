@@ -1,0 +1,36 @@
+{
+  "title": "Psychometry",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Choose another card in your discard pile. Search the top 5 cards of your deck for a card that shares a trait with the chosen card, reveal it, and draw it. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0978531185",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 219
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 219
+    }
+  ],
+  "internalName": "psychometry"
+}

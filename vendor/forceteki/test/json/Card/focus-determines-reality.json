@@ -1,0 +1,40 @@
+{
+  "title": "Focus Determines Reality",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Each friendly Force unit gains Raid 1 and Saboteur for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8743459187",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [
+    "raid",
+    "saboteur"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 152
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 152
+    }
+  ],
+  "internalName": "focus-determines-reality"
+}

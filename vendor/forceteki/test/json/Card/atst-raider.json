@@ -1,0 +1,41 @@
+{
+  "title": "AT-ST Raider",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 5,
+  "power": 4,
+  "text": "While you control another non-<uq> unit, this unit gains Ambush. (When you play this unit, it may attack an enemy unit.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2614961429",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "vehicle",
+    "walker"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 98
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 98
+    }
+  ],
+  "internalName": "atst-raider"
+}

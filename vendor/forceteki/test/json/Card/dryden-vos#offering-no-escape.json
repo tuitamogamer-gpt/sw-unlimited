@@ -1,0 +1,40 @@
+{
+  "title": "Dryden Vos",
+  "subtitle": "Offering No Escape",
+  "cost": 7,
+  "hp": 7,
+  "power": 5,
+  "text": "Shielded\nWhen Played: Choose a captured card guarded by a unit you control. You may play it for free under your control.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "“Play for free” ignores all resource costs, including the aspect penalty, but not other additional costs.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0598830553",
+  "aspects": [
+    "villainy",
+    "cunning"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 192
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 192
+    }
+  ],
+  "internalName": "dryden-vos#offering-no-escape"
+}

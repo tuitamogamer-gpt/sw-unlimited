@@ -1,0 +1,37 @@
+{
+  "title": "Cat and Mouse",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Exhaust an enemy unit. If you do, ready a friendly unit in the same arena with power equal to or less than that enemy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3658858659",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 195
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 195
+    }
+  ],
+  "internalName": "cat-and-mouse"
+}

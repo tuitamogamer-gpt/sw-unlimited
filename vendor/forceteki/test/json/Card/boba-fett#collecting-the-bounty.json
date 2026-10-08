@@ -1,0 +1,39 @@
+{
+  "title": "Boba Fett",
+  "subtitle": "Collecting the Bounty",
+  "cost": 5,
+  "hp": 7,
+  "power": 4,
+  "text": "When an enemy unit leaves play: You may exhaust this leader. If you do, ready a resource.",
+  "deployBox": "When this unit completes an attack: If an enemy unit left play this phase, ready up to 2 resources.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "A unit must survive an attack to trigger its “when this unit completes an attack” abilities.\nWhen Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4626028465",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 15
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 15
+    }
+  ],
+  "internalName": "boba-fett#collecting-the-bounty"
+}

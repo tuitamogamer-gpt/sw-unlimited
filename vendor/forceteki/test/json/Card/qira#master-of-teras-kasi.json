@@ -1,0 +1,37 @@
+{
+  "title": "Qi'ra",
+  "subtitle": "Master of Teräs Käsi",
+  "cost": 7,
+  "hp": 7,
+  "power": 9,
+  "text": "This unit gets –1/–0 for each card in your hand.\nWhen Played: You may discard a card from your hand. If you do, deal 3 damage to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7886747371",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 226
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 226
+    }
+  ],
+  "internalName": "qira#master-of-teras-kasi"
+}

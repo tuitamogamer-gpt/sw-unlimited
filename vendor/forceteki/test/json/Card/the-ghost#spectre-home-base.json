@@ -1,0 +1,43 @@
+{
+  "title": "The Ghost",
+  "subtitle": "Spectre Home Base",
+  "cost": 6,
+  "hp": 5,
+  "power": 5,
+  "text": "Shielded (When you play this unit, give a Shield token to it.)\n\nWhen Played/On Attack: You may give a Shield token to another SPECTRE unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6931439330",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "transport",
+    "spectre"
+  ],
+  "arena": "space",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 50
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 50
+    }
+  ],
+  "internalName": "the-ghost#spectre-home-base"
+}

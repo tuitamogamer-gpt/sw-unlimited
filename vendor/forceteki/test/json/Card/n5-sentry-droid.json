@@ -1,0 +1,40 @@
+{
+  "title": "N5 Sentry Droid",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 4,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1501081173",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "new republic",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 252
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 252
+    }
+  ],
+  "internalName": "n5-sentry-droid"
+}

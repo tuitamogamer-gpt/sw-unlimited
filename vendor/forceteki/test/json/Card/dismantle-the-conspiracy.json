@@ -1,0 +1,37 @@
+{
+  "title": "Dismantle the Conspiracy",
+  "subtitle": "",
+  "cost": 6,
+  "hp": null,
+  "power": null,
+  "text": "A friendly unit captures any number of enemy non-leader units with a total of 7 or less remaining HP.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8062787049",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 106
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 106
+    }
+  ],
+  "internalName": "dismantle-the-conspiracy"
+}

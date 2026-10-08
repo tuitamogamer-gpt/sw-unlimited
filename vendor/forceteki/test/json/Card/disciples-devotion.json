@@ -1,0 +1,38 @@
+{
+  "title": "Disciples' Devotion",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 1,
+  "text": "While attached unit is exhausted, it gains Sentinel. (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 3,
+  "id": "0217687208",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 71
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 71
+    }
+  ],
+  "internalName": "disciples-devotion"
+}

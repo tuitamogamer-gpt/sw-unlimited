@@ -1,0 +1,35 @@
+{
+  "title": "Mos Espa Watermonger",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "When Played: You may draw a card. If you do, discard a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7582205705",
+  "aspects": [],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 260
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 260
+    }
+  ],
+  "internalName": "mos-espa-watermonger"
+}

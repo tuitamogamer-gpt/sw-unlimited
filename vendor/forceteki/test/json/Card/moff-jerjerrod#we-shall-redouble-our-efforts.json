@@ -1,0 +1,39 @@
+{
+  "title": "Moff Jerjerrod",
+  "subtitle": "We Shall Redouble Our Efforts",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "If you would create a number of tokens, you may defeat this unit. If you do, create twice that number of tokens instead.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9995040018",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 94
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 94
+    }
+  ],
+  "internalName": "moff-jerjerrod#we-shall-redouble-our-efforts"
+}

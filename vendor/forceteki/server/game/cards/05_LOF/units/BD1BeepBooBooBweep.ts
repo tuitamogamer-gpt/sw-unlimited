@@ -1,0 +1,32 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { INonLeaderUnitAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { NonLeaderUnitCard } from '../../../core/card/NonLeaderUnitCard';
+import { KeywordName, RelativePlayer, WildcardCardType } from '../../../core/Constants';
+import { TextHelper } from '../../../core/utils/TextHelper';
+
+export default class BD1BeepBooBooBweep extends NonLeaderUnitCard {
+    protected override getImplementationId() {
+        return {
+            id: '0024409893',
+            internalName: 'bd1#beep-boo-boo-bweep'
+        };
+    }
+
+    public override setupCardAbilities(registrar: INonLeaderUnitAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.addWhenPlayedAbility({
+            title: `Choose another friendly unit. While this unit is in play, the chosen unit gets +1/+0 and gains ${TextHelper.Saboteur}.`,
+            targetResolver: {
+                controller: RelativePlayer.Self,
+                cardTypeFilter: WildcardCardType.Unit,
+                cardCondition: (card, context) => card !== context.source,
+                immediateEffect: AbilityHelper.immediateEffects.whileSourceInPlayCardEffect({
+                    title: `Gets +1/+0 and gains ${TextHelper.Saboteur} while this unit is in play`,
+                    effect: [
+                        AbilityHelper.ongoingEffects.modifyStats({ power: 1, hp: 0 }),
+                        AbilityHelper.ongoingEffects.gainKeyword(KeywordName.Saboteur)
+                    ]
+                })
+            }
+        });
+    }
+}

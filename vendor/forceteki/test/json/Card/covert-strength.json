@@ -1,0 +1,38 @@
+{
+  "title": "Covert Strength",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Heal 2 damage from a unit and give an Experience token to it.\nSmuggle [3 resources Vigilance] (If this card is a resource, you may play it for its smuggle cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8645125292",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [
+    "smuggle"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 75
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 75
+    }
+  ],
+  "internalName": "covert-strength"
+}

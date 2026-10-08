@@ -1,0 +1,25 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { INonLeaderUnitAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { NonLeaderUnitCard } from '../../../core/card/NonLeaderUnitCard';
+import { WildcardCardType } from '../../../core/Constants';
+
+export default class DevastatorInescapable extends NonLeaderUnitCard {
+    protected override getImplementationId () {
+        return {
+            id: '4631297392',
+            internalName: 'devastator#inescapable'
+        };
+    }
+
+    public override setupCardAbilities(registrar: INonLeaderUnitAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.addWhenPlayedAbility({
+            title: 'You may deal damage to a unit equal to the number of resources you control',
+            contextTitle: (context) => `Deal ${context.player.resources.length} damage to a unit`,
+            optional: true,
+            targetResolver: {
+                cardTypeFilter: WildcardCardType.Unit,
+                immediateEffect: AbilityHelper.immediateEffects.damage((context) => ({ amount: context.player.resources.length }))
+            },
+        });
+    }
+}

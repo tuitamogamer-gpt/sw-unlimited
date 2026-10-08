@@ -1,0 +1,36 @@
+{
+  "title": "Unleash Rage",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Use the Force (lose your Force token). If you do, give a friendly unit +3/+0 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8421586325",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 173
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 173
+    }
+  ],
+  "internalName": "unleash-rage"
+}

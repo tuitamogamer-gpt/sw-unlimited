@@ -1,0 +1,40 @@
+{
+  "title": "Soaring Can-Cell",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "Raid 1\nWhile you control a Kashyyyk base, this unit gains Ambush.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2209630427",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid",
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 131
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 131
+    }
+  ],
+  "internalName": "soaring-cancell"
+}

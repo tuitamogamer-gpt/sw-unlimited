@@ -1,0 +1,37 @@
+{
+  "title": "Consolidation of Power",
+  "subtitle": "",
+  "cost": 6,
+  "hp": null,
+  "power": null,
+  "text": "Choose any number of friendly units. You may play a unit from your hand if its cost is less than or equal to the combined power of the chosen units for free. Then, defeat the chosen units.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card's cost always refer to its printed cost, regardless of modifiers.\nAbilities that refer to a card's power include temporary modifiers.\n“Play for free” ignores all resource costs, including the aspect penalty, but not other additional costs.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4895747419",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 89
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 89
+    }
+  ],
+  "internalName": "consolidation-of-power"
+}

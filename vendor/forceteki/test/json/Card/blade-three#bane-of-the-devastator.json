@@ -1,0 +1,40 @@
+{
+  "title": "Blade Three",
+  "subtitle": "Bane of the Devastator",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "When your base is dealt damage: Give an Advantage token to this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7634552408",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 204
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 204
+    }
+  ],
+  "internalName": "blade-three#bane-of-the-devastator"
+}

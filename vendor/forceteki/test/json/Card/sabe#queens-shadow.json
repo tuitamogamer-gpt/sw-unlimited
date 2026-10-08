@@ -1,0 +1,40 @@
+{
+  "title": "Sabé",
+  "subtitle": "Queen's Shadow",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "When a friendly unit deals combat damage to a base: You may exhaust this leader. If you do, look at the top 2 cards of the defending player's deck. Discard 1 of those cards. (Put the other back on top.)",
+  "deployBox": "Raid 1\nWhen this unit deals combat damage to a base: Look at the defending player's hand. You may discard a card from it. If you do, that player draws a card.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "“Combat damage” is only the damage dealt during the “deal combat damage” step of an attack.\nWhen Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0316612761",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "naboo"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 17
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 17
+    }
+  ],
+  "internalName": "sabe#queens-shadow"
+}

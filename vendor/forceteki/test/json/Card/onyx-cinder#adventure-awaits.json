@@ -1,0 +1,40 @@
+{
+  "title": "Onyx Cinder",
+  "subtitle": "Adventure Awaits",
+  "cost": 6,
+  "hp": 6,
+  "power": 6,
+  "text": "Hidden\nOther friendly units gain Hidden.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "If a unit has Hidden and Sentinel at the same time, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0792086629",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 177
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 177
+    }
+  ],
+  "internalName": "onyx-cinder#adventure-awaits"
+}

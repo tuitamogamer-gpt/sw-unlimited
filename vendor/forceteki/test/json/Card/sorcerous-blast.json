@@ -1,0 +1,36 @@
+{
+  "title": "Sorcerous Blast",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Use the Force (lose your Force token). If you do, deal 3 damage to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6001143439",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 172
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 172
+    }
+  ],
+  "internalName": "sorcerous-blast"
+}

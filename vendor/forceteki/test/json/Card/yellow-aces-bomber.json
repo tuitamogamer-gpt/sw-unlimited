@@ -1,0 +1,41 @@
+{
+  "title": "Yellow Aces Bomber",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "Support (When you play this unit, you may attack with another unit. It gains this unit's other abilities for this attack.)\nOn Attack: If this unit is upgraded, deal 2 damage to a base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Yellow Aces Bomber's \"\"On Attack\"\" ability deals 2 damage to the a base if the attacking unit is upgraded.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6234240452",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "new republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "support"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 253
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 253
+    }
+  ],
+  "internalName": "yellow-aces-bomber"
+}

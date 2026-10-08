@@ -1,0 +1,34 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import { EventCard } from '../../../core/card/EventCard';
+import type { IEventAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { Aspect } from '../../../core/Constants';
+import { TextHelper } from '../../../core/utils/TextHelper';
+
+export default class FaithInYourFriends extends EventCard {
+    protected override getImplementationId() {
+        return {
+            id: '3851348876',
+            internalName: 'faith-in-your-friends',
+        };
+    }
+
+    public override setupCardAbilities(registrar: IEventAbilityRegistrar, abilityHelper: IAbilityHelper) {
+        const aspects = [Aspect.Cunning, Aspect.Cunning, Aspect.Cunning, Aspect.Heroism, Aspect.Heroism];
+        registrar.setEventAbility({
+            title: 'Search the top 3 cards of your deck for a card and draw it',
+            immediateEffect: abilityHelper.immediateEffects.deckSearch({
+                searchCount: 3,
+                selectCount: 1,
+                selectedCardsImmediateEffect: abilityHelper.immediateEffects.drawSpecificCard()
+            }),
+            then: {
+                title: `Disclose ${TextHelper.aspectList(aspects)} to create 2 Spy tokens`,
+                immediateEffect: abilityHelper.immediateEffects.disclose({ aspects }),
+                ifYouDo: {
+                    title: 'Create 2 Spy tokens',
+                    immediateEffect: abilityHelper.immediateEffects.createSpy({ amount: 2 })
+                }
+            }
+        });
+    }
+}

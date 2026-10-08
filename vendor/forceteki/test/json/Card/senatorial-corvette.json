@@ -1,0 +1,42 @@
+{
+  "title": "Senatorial Corvette",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 4,
+  "power": 5,
+  "text": "Saboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)\nWhen Defeated: Each opponent discards a card from their hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6404471739",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 148
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 148
+    }
+  ],
+  "internalName": "senatorial-corvette"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Talzin's Shuttle",
+  "subtitle": "Mysterious Arrival",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "Raid 1 (This unit gets +1/+0 while attacking.)\nWhen Played: If an opponent played 2 or more cards this phase, you may give 2 Weakness tokens to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7755474526",
+  "aspects": [
+    "vigilance",
+    "aggression"
+  ],
+  "traits": [
+    "night",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 40
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 40
+    }
+  ],
+  "internalName": "talzins-shuttle#mysterious-arrival"
+}

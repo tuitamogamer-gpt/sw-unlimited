@@ -1,0 +1,107 @@
+import type { Card } from '../card/Card';
+import { Contract } from '../utils/Contract';
+import type { Aspect, CardTypeFilter, KeywordName, ZoneName, MoveZoneDestination, Trait, WildcardZoneName, RelativePlayerFilter } from '../Constants';
+import type { Player } from '../Player';
+import type { Game } from '../Game';
+import { EnumHelpers } from '../utils/EnumHelpers';
+import { GameObjectBase } from '../GameObjectBase';
+import { registerStateBase } from '../GameObjectUtils';
+
+/**
+ * Collection of filters for searching cards in a zone.
+ * If a list of values is provided, cards are matched with OR logic (just have to match one).
+ * If multiple filter properties are provided, cards are matched with AND logic (must match each filter).
+ *
+ * For example, `{ aspect: Aspect.Cunning, trait: [Trait.Rebel, Trait.Jedi] }` will match all Cunning cards
+ * that are Rebel and / or Jedi.
+ */
+export interface IZoneCardFilterProperties {
+    aspect?: Aspect | Aspect[];
+    condition?: (card: Card) => boolean;
+    keyword?: KeywordName | KeywordName[];
+    trait?: Trait | Trait[];
+    type?: CardTypeFilter | CardTypeFilter[];
+    otherThan?: Card;
+}
+
+/** Interface for zones that use a basic add card / remove card API */
+export interface IAddRemoveZone {
+    addCard(card: Card, zone?: MoveZoneDestination): void;
+    removeCard(card: Card): void;
+}
+
+/**
+ * Base class for all Zone types. Defines some common properties and methods.
+ */
+@registerStateBase()
+export abstract class ZoneAbstract<TCard extends Card = Card> extends GameObjectBase {
+    public readonly owner: Player | Game;
+
+    /** Set of players that this zone is hidden for. If `null`, not hidden for any player. */
+    public abstract readonly hiddenForPlayers: RelativePlayerFilter | null;
+    public abstract readonly name: ZoneName | WildcardZoneName;
+
+    /** Number of cards in the zone */
+    public abstract get count(): number;
+
+    public get cards(): readonly TCard[] {
+        return this.getCards();
+    }
+
+    // eslint-disable-next-line @typescript-eslint/class-literal-property-style
+    public override get alwaysTrackState(): boolean {
+        return true;
+    }
+
+    public constructor(game: Game, owner?: Player) {
+        super(game);
+        this.owner = owner ?? game;
+    }
+
+    /** Get the cards from this zone with an optional filter */
+    public getCards(filter?: IZoneCardFilterProperties): TCard[] {
+        return this.cards.filter(this.buildFilterFn(filter)) as TCard[];
+    }
+
+    /** Returns true if the zone has any cards that match the provided filter */
+    public hasSomeCard(filter: IZoneCardFilterProperties): boolean {
+        return this.cards.some(this.buildFilterFn(filter));
+    }
+
+    /** Returns true if the zone includes the specific card provided */
+    public hasCard(card: Card): boolean {
+        const cardCount = this.cards.filter((zoneCard: TCard) => zoneCard === card).length;
+
+        Contract.assertFalse(cardCount > 1, `Found ${cardCount} duplicates of ${card.internalName} in ${this.name}`);
+
+        return cardCount === 1;
+    }
+
+    /** Constructs a filtering handler based on the provided filter properties */
+    protected buildFilterFn(filter?: IZoneCardFilterProperties): (card: Card) => boolean {
+        if (!filter) {
+            return () => true;
+        }
+
+        return (card: Card) =>
+            (!filter.aspect || card.hasSomeAspect(filter.aspect)) &&
+            (!filter.keyword || card.hasSomeKeyword(filter.keyword)) &&
+            (!filter.trait || card.hasSomeTrait(filter.trait)) &&
+            (!filter.type || EnumHelpers.cardTypeMatches(card.type, filter.type)) &&
+            (!filter.otherThan || card !== filter.otherThan) &&
+            (!filter.condition || filter.condition(card));
+    }
+
+    protected checkZoneMatches(card: Card, zone: MoveZoneDestination | null) {
+        Contract.assertTrue(!zone || zone === this.name, `Attempting to move ${card.internalName} to ${this} with incorrect zone parameter: ${zone}`);
+    }
+
+    public override getGameObjectName(): string {
+        return 'Zone';
+    }
+
+    public override toString() {
+        return ('game' in this.owner ? `${this.owner.name}:` : '') + this.name;
+    }
+}
+

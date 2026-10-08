@@ -1,0 +1,43 @@
+{
+  "title": "Alliance X-Wing",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": null,
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0494601180",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 253
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 237
+    },
+    {
+      "set": "LAW",
+      "number": 253
+    }
+  ],
+  "internalName": "alliance-xwing"
+}

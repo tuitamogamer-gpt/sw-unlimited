@@ -1,0 +1,37 @@
+{
+  "title": "Search Your Feelings",
+  "subtitle": null,
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Search your deck for a card and draw it. (Then, shuffle your deck.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "After searching your deck, shuffle it.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7485151088",
+  "aspects": [
+    "villainy",
+    "vigilance"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 42
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 42
+    }
+  ],
+  "internalName": "search-your-feelings"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Privateer Scyk",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "While you control another Cunning unit, this unit gains Shielded. (When you play this unit, give a Shield token to it.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0088477218",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 212
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 212
+    }
+  ],
+  "internalName": "privateer-scyk"
+}

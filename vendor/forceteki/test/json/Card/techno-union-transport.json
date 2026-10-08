@@ -1,0 +1,42 @@
+{
+  "title": "Techno Union Transport",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "Shielded (When you play this unit, give a Shield token to it.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7385763727",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 190
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 190
+    }
+  ],
+  "internalName": "techno-union-transport"
+}

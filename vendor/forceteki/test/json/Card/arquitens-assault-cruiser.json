@@ -1,0 +1,40 @@
+{
+  "title": "Arquitens Assault Cruiser",
+  "subtitle": "",
+  "cost": 8,
+  "hp": 8,
+  "power": 7,
+  "text": "Ambush\nWhen this unit attacks and defeats a non-leader unit: Put the defeated unit into play as a resource under your control.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\nA unit “attacks and defeats a unit” if it defeats the defender at any point during the attack.\nA card put into play as a resource enters play exhausted.\nWhen Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve.\n(ERRATA) Templating update: “Defender” becomes “defending unit”.\n(ERRATA) Templating update: “Put into play as a resource” becomes “resource”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1086021299",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 122
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 122
+    }
+  ],
+  "internalName": "arquitens-assault-cruiser"
+}

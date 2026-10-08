@@ -1,0 +1,36 @@
+{
+  "title": "Droid Manufactory",
+  "subtitle": "",
+  "cost": null,
+  "hp": 24,
+  "power": null,
+  "text": "When you deploy a leader: Create 2 Battle Droid tokens.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8589863038",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "geonosis"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 22
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 22
+    }
+  ],
+  "internalName": "droid-manufactory"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Unruly Astromech",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 3,
+  "text": "Hidden (This unit can't be attacked if it was played this phase.)\nWhen Defeated: Exhaust an enemy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1521329961",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 221
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 221
+    }
+  ],
+  "internalName": "unruly-astromech"
+}

@@ -1,0 +1,47 @@
+{
+  "title": "Trench Defender",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6699126595",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 8
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 8
+    },
+    {
+      "set": "IBH",
+      "number": 29
+    },
+    {
+      "set": "IBH",
+      "number": 50
+    }
+  ],
+  "internalName": "trench-defender"
+}

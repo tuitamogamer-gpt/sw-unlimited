@@ -1,0 +1,37 @@
+{
+  "title": "Ant Droid",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 1,
+  "text": "When Defeated: Draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4461332466",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 116
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 116
+    }
+  ],
+  "internalName": "ant-droid"
+}

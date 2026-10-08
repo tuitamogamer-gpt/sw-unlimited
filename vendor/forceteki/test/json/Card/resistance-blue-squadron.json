@@ -1,0 +1,40 @@
+{
+  "title": "Resistance Blue Squadron",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 3,
+  "text": "When Played: You may deal damage to a unit equal to the number of friendly space units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5941636047",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "resistance",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 102
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 102
+    }
+  ],
+  "internalName": "resistance-blue-squadron"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Preparation",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 2,
+  "text": "When Played: Exhaust attached unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 2,
+  "upgradeHp": 1,
+  "id": "8752784897",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 228
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 228
+    }
+  ],
+  "internalName": "preparation"
+}

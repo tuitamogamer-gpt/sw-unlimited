@@ -1,0 +1,37 @@
+{
+  "title": "Targeting Computer",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 1,
+  "text": "Attached unit gains: “You assign all indirect damage dealt by this unit.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "A player can't assign more indirect damage to a unit than it has remaining HP. Indirect damage is unpreventable and ignores Shields.\n",
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "7021680131",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "item",
+    "modification"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 171
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 171
+    }
+  ],
+  "internalName": "targeting-computer"
+}

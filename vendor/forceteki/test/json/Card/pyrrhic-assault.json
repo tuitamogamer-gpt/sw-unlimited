@@ -1,0 +1,37 @@
+{
+  "title": "Pyrrhic Assault",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "For this phase, each friendly unit gains: “When Defeated: Deal 2 damage to an enemy unit.”",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9415708584",
+  "aspects": [
+    "command",
+    "command"
+  ],
+  "traits": [
+    "disaster"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 103
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 103
+    }
+  ],
+  "internalName": "pyrrhic-assault"
+}

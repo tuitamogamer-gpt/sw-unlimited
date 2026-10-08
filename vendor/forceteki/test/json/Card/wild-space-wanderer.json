@@ -1,0 +1,37 @@
+{
+  "title": "Wild Space Wanderer",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 3,
+  "text": "When Played: You may defeat an upgrade on a base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7403509677",
+  "aspects": [],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 270
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 270
+    }
+  ],
+  "internalName": "wild-space-wanderer"
+}

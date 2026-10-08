@@ -1,0 +1,36 @@
+{
+  "title": "Backed by the Pykes",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Give an Experience token to a friendly unit.\nYou may deal damage to a unit equal to the number of Experience tokens on friendly units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6707130129",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 58
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 58
+    }
+  ],
+  "internalName": "backed-by-the-pykes"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Close the Shield Gate",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Choose a base. The next time damage would be dealt to it this phase, prevent that damage.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8736422150",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 74
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 74
+    }
+  ],
+  "internalName": "close-the-shield-gate"
+}

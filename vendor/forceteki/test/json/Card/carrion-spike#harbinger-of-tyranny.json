@@ -1,0 +1,43 @@
+{
+  "title": "Carrion Spike",
+  "subtitle": "Harbinger of Tyranny",
+  "cost": 5,
+  "hp": 5,
+  "power": 3,
+  "text": "Shielded\nFor each upgrade on your base, this unit gets +1/+0 and gains Restore 1.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0973986542",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "shielded",
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 66
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 66
+    }
+  ],
+  "internalName": "carrion-spike#harbinger-of-tyranny"
+}

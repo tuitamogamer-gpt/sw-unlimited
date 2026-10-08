@@ -1,0 +1,40 @@
+{
+  "title": "Gungi",
+  "subtitle": "Finding Himself",
+  "cost": 2,
+  "hp": 5,
+  "power": 2,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4581577866",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 93
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 93
+    }
+  ],
+  "internalName": "gungi#finding-himself"
+}

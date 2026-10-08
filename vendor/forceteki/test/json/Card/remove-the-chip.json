@@ -1,0 +1,36 @@
+{
+  "title": "Remove the Chip",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Deal 2 damage to a unit. If it's a Clone, ready it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3750822861",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "modification"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 69
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 69
+    }
+  ],
+  "internalName": "remove-the-chip"
+}

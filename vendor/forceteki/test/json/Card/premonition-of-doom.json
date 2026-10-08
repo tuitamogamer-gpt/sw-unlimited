@@ -1,0 +1,37 @@
+{
+  "title": "Premonition of Doom",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "The next time you take the initiative this phase, exhaust all units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9129337737",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 203
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 203
+    }
+  ],
+  "internalName": "premonition-of-doom"
+}

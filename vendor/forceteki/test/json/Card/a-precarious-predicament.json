@@ -1,0 +1,36 @@
+{
+  "title": "A Precarious Predicament",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Return an enemy non-leader unit to its owner's hand unless its controller says, “It could be worse.” If they do, you may play a card named It's Worse from your hand or resources for free.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "\"Play for free\" ignores all resource costs, including the aspect penalty, but not other additional costs.\nAbilities that return a card to hand must choose a card in play unless otherwise specified.\nYou must choose a unit to return before your opponent chooses whether to say \"it could be worse.\"\nYour opponent may opt to use another method instead of saying \"it could be worse\" as long as they clearly indicate which option they are choosing.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5562351003",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 222
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 222
+    }
+  ],
+  "internalName": "a-precarious-predicament"
+}

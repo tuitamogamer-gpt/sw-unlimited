@@ -1,0 +1,40 @@
+{
+  "title": "Han Solo",
+  "subtitle": "I Got a Really Good Feeling",
+  "cost": 5,
+  "hp": 5,
+  "power": 4,
+  "text": "Action [Exhaust, defeat a friendly token]: Deal 1 damage to a unit.",
+  "deployBox": "Saboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)\nOn Attack: Defeat any number of friendly tokens. Deal damage to a unit equal to the number of tokens defeated this way.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9738208208",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 17
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 17
+    }
+  ],
+  "internalName": "han-solo#i-got-a-really-good-feeling"
+}

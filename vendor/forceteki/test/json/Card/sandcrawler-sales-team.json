@@ -1,0 +1,39 @@
+{
+  "title": "Sandcrawler Sales Team",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "Saboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)\nWhen Played: If you control a Tatooine base, you may return an upgrade that costs 3 or less to its owner's hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers. A pilot's cost is the card's printed cost, not the cost in the Piloting ability.\nAbilities that return a card to hand must choose a card in play unless otherwise specified.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8471541200",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "jawa"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 222
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 222
+    }
+  ],
+  "internalName": "sandcrawler-sales-team"
+}

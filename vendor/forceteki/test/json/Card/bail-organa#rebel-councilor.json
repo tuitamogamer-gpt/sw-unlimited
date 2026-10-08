@@ -1,0 +1,39 @@
+{
+  "title": "Bail Organa",
+  "subtitle": "Rebel Councilor",
+  "cost": 1,
+  "hp": 2,
+  "power": 1,
+  "text": "Action [Exhaust]: Give an Experience token to another friendly unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2554951775",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 94
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 94
+    }
+  ],
+  "internalName": "bail-organa#rebel-councilor"
+}

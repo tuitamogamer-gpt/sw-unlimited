@@ -1,0 +1,37 @@
+{
+  "title": "Occupation Officer",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "When Played: If you control 6 or more resources, you may give a Weakness token to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8778272573",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 242
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 242
+    }
+  ],
+  "internalName": "occupation-officer"
+}

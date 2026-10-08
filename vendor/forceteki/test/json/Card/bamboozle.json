@@ -1,0 +1,37 @@
+{
+  "title": "Bamboozle",
+  "subtitle": null,
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "You may discard a [Cunning] card from your hand instead of paying this event's cost. \nExhaust a unit and return each upgrade on it to its owner's hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Each upgrade is returned to the upgrade’s owner’s hand.\nIf you discard a card instead of paying this event’s cost, you ignore all costs, including all additional costs.\nIf Bamboozle is played using Smuggle (for example, when a player has Tech in play), a player cannot discard a Y card from hand instead of paying the Smuggle cost, as Bamboozle's ability only can replace the event's printed cost.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9644107128",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 199
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 199
+    }
+  ],
+  "internalName": "bamboozle"
+}

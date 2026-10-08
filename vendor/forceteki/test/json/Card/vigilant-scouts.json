@@ -1,0 +1,40 @@
+{
+  "title": "Vigilant Scouts",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 5,
+  "power": 3,
+  "text": "Restore 2 (When this unit attacks, heal 2 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0106886067",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 120
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 120
+    }
+  ],
+  "internalName": "vigilant-scouts"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Strategic Acumen",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 0,
+  "text": "Attached unit gains: “Action [Exhaust]: Play a unit from your hand. It costs 1 resource less.”",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 2,
+  "id": "2397845395",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 120
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 120
+    }
+  ],
+  "internalName": "strategic-acumen"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Noti Nomad",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 1,
+  "text": "Shielded (When you play this unit, give a Shield token to it.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3444968285",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 69
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 69
+    }
+  ],
+  "internalName": "noti-nomad"
+}

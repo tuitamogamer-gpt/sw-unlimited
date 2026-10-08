@@ -1,0 +1,36 @@
+{
+  "title": "Sundari Palace",
+  "subtitle": "",
+  "cost": null,
+  "hp": 27,
+  "power": null,
+  "text": "Epic Action: For each friendly leader unit, you may resource a card from your hand and ready it. If you do, defeat that many friendly resources at the start of the regroup phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "At the start of the regroup phase, defeat a number of friendly resources equal to the number of cards resourced when you used the ability.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0344986336",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "mandalore"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 12
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 12
+    }
+  ],
+  "internalName": "sundari-palace"
+}

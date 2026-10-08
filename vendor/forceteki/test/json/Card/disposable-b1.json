@@ -1,0 +1,40 @@
+{
+  "title": "Disposable B1",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 2,
+  "text": "When Played: If another friendly unit entered play this phase (including leader and token units), draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0054868207",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "droid",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 103
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 103
+    }
+  ],
+  "internalName": "disposable-b1"
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Inspired Recruit",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 3,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2932674143",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 180
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 180
+    },
+    {
+      "set": "ASH",
+      "number": 152
+    }
+  ],
+  "internalName": "inspired-recruit"
+}

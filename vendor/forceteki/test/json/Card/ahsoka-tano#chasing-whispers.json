@@ -1,0 +1,39 @@
+{
+  "title": "Ahsoka Tano",
+  "subtitle": "Chasing Whispers",
+  "cost": 4,
+  "hp": 5,
+  "power": 3,
+  "text": "When Played: An opponent discards a card from their hand. If it's a unit, you may exhaust a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "If there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3388566378",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "fringe",
+    "force"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 201
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 201
+    }
+  ],
+  "internalName": "ahsoka-tano#chasing-whispers"
+}

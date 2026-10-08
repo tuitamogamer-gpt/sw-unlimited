@@ -1,0 +1,39 @@
+{
+  "title": "Peli Motto",
+  "subtitle": "You Bring the Cash?",
+  "cost": 1,
+  "hp": 1,
+  "power": 1,
+  "text": "Shielded\nIgnore the aspect penalties of the first non‑unit card you play each phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3336239464",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 212
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 212
+    }
+  ],
+  "internalName": "peli-motto#you-bring-the-cash"
+}

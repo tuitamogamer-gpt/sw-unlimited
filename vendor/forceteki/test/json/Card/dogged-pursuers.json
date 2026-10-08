@@ -1,0 +1,38 @@
+{
+  "title": "Dogged Pursuers",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 5,
+  "text": "When Played: You may pay 1 resource. If you do, deal 2 damage to a ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8976669004",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 198
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 198
+    }
+  ],
+  "internalName": "dogged-pursuers"
+}

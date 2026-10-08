@@ -1,0 +1,36 @@
+{
+  "title": "Strike True",
+  "subtitle": null,
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "A friendly unit deals damage equal to its power to an enemy unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1349057156",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 127
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 127
+    }
+  ],
+  "internalName": "strike-true"
+}

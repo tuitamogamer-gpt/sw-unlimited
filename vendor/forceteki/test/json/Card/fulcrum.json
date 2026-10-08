@@ -1,0 +1,37 @@
+{
+  "title": "Fulcrum",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 2,
+  "power": 2,
+  "text": "Attach to a non-Vehicle unit.\nAttached unit gains the Rebel trait and “Each other friendly Rebel unit gets +2/+2.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": 2,
+  "upgradeHp": 2,
+  "id": "4894267161",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 150
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 150
+    }
+  ],
+  "internalName": "fulcrum"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Obi-Wan's Interceptor",
+  "subtitle": "Nothing Too Fancy",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "mock ability text",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "obiwans-interceptor#nothing-too-fancy-id",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "jedi",
+    "republic",
+    "vehicle",
+    "fighter"
+  ],
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 34
+  },
+  "internalName": "obiwans-interceptor#nothing-too-fancy",
+  "arena": "space",
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 34
+    }
+  ]
+}

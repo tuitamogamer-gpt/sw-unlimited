@@ -1,0 +1,39 @@
+{
+  "title": "Admiral Motti",
+  "subtitle": "Chain of Command",
+  "cost": 5,
+  "hp": 5,
+  "power": 4,
+  "text": "Friendly leader units get +2/+2.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0007562874",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 139
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 139
+    }
+  ],
+  "internalName": "admiral-motti#chain-of-command"
+}

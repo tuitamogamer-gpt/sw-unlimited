@@ -1,0 +1,39 @@
+{
+  "title": "Anakin Skywalker",
+  "subtitle": "Prescient Podracer",
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "When a friendly unit's attack ends: If no other units have attacked this phase, you may return it to its owner's hand. If you do, heal 2 damage from your base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "\"No other units have attacked this phase\" means that no player has made an attack with a unit this phase.\n\"When Attack Ends\" abilities trigger at the same time the attacking unit deals combat damage. If the attacking unit is defeated, it cannot be returned to hand by Anakin's ability.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3261109271",
+  "aspects": [
+    "cunning",
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "force"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 88
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 88
+    }
+  ],
+  "internalName": "anakin-skywalker#prescient-podracer"
+}

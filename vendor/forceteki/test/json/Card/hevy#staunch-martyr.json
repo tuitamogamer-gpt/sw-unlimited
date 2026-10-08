@@ -1,0 +1,42 @@
+{
+  "title": "Hevy",
+  "subtitle": "Staunch Martyr",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "Coordinate — Raid 2 (Gain this keyword while you control 3 or more units. This unit gets +2/+0 while attacking.)\nWhen Defeated: Deal 1 damage to each enemy ground unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0683052393",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "republic",
+    "clone",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "coordinate",
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 164
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 164
+    }
+  ],
+  "internalName": "hevy#staunch-martyr"
+}

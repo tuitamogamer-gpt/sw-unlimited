@@ -1,0 +1,39 @@
+{
+  "title": "Death Mark",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 0,
+  "power": 0,
+  "text": "Attached unit gains: “Bounty — Draw 2 cards.” (When this unit is defeated or captured, its opponent collects its bounty.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "0807120264",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "bounty",
+    "condition"
+  ],
+  "keywords": [
+    "bounty"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 176
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 176
+    }
+  ],
+  "internalName": "death-mark"
+}

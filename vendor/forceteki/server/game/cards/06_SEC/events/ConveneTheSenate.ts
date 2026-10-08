@@ -1,0 +1,33 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import { EventCard } from '../../../core/card/EventCard';
+import type { IEventAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { RelativePlayer, TargetMode, Trait } from '../../../core/Constants';
+import { TextHelper } from '../../../core/utils/TextHelper';
+
+export default class ConveneTheSenate extends EventCard {
+    protected override getImplementationId () {
+        return {
+            id: '5001969384',
+            internalName: 'convene-the-senate',
+        };
+    }
+
+    public override setupCardAbilities (registrar: IEventAbilityRegistrar, abilityHelper: IAbilityHelper) {
+        registrar.setEventAbility({
+            title: `Search the top 8 cards of your deck for up to 2 ${TextHelper.Trait.Official} units, reveal them, and draw them. Create a Spy token`,
+            immediateEffect: abilityHelper.immediateEffects.simultaneous([
+                abilityHelper.immediateEffects.createSpy(),
+                abilityHelper.immediateEffects.deckSearch({
+                    targetMode: TargetMode.UpTo,
+                    selectCount: 2,
+                    searchCount: 8,
+                    cardCondition: (card) => card.hasSomeTrait(Trait.Official),
+                    selectedCardsImmediateEffect: abilityHelper.immediateEffects.revealAndDraw({
+                        useDisplayPrompt: true,
+                        promptedPlayer: RelativePlayer.Opponent
+                    })
+                })
+            ])
+        });
+    }
+}

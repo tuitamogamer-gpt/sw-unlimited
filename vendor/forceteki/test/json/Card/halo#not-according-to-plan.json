@@ -1,0 +1,41 @@
+{
+  "title": "Halo",
+  "subtitle": "Not According to Plan",
+  "cost": 5,
+  "hp": 4,
+  "power": 4,
+  "text": "Support (When you play this unit, you may attack with another unit. It gains this unit's other abilities for this attack.)\nWhen Attack Ends: If the defending unit was defeated, give a Shield token to this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "When Attack Ends abilities trigger at the same time as units deal combat damage. If the defending unit was defeated, give a Shield token to the attacking unit.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8632988996",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "support"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 223
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 223
+    }
+  ],
+  "internalName": "halo#not-according-to-plan"
+}

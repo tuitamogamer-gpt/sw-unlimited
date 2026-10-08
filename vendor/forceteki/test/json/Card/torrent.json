@@ -1,0 +1,36 @@
+{
+  "title": "Torrent",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Give a Weakness token to a unit. If you control a Naboo base, give 2 Weakness tokens to that unit instead.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0404309004",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "disaster"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 100
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 100
+    }
+  ],
+  "internalName": "torrent"
+}

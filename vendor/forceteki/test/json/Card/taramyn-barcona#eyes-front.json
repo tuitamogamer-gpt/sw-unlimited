@@ -1,0 +1,39 @@
+{
+  "title": "Taramyn Barcona",
+  "subtitle": "Eyes Front!",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "When Played: You may defeat a Credit token (belonging to any player). If you do, give an Experience token to this unit and another friendly unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Taramyn's ability can defeat any Credit token in play, not just ones you control.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8701330334",
+  "aspects": [
+    "vigilance",
+    "command"
+  ],
+  "traits": [
+    "rebel",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 40
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 40
+    }
+  ],
+  "internalName": "taramyn-barcona#eyes-front"
+}

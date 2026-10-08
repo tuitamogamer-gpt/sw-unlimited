@@ -1,0 +1,37 @@
+{
+  "title": "Warrior of Clan Ordo",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 3,
+  "text": "On Attack: You may disclose Aggression (reveal a card from your hand with this aspect icon). If you don't, deal 2 damage to your base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3906840057",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 164
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 164
+    }
+  ],
+  "internalName": "warrior-of-clan-ordo"
+}

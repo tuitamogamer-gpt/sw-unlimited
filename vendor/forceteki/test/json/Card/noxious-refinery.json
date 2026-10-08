@@ -1,0 +1,39 @@
+{
+  "title": "Noxious Refinery",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 0,
+  "power": 0,
+  "text": "Fortify (Attach this to your base, not a unit.)\nAttached base gains: “When the regroup phase starts: Reveal the top card of your deck. If it's Aggression, deal 1 damage to an enemy unit.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "8389246625",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "fortification"
+  ],
+  "keywords": [
+    "fortify"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 160
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 160
+    }
+  ],
+  "internalName": "noxious-refinery"
+}

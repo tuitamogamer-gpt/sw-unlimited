@@ -1,0 +1,39 @@
+{
+  "title": "Jedi Guardian",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 8,
+  "power": 4,
+  "text": "While this unit is defending, it gets +2/+0.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8069951120",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 49
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 49
+    }
+  ],
+  "internalName": "jedi-guardian"
+}

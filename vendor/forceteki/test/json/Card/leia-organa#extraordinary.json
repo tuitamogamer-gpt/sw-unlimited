@@ -1,0 +1,40 @@
+{
+  "title": "Leia Organa",
+  "subtitle": "Extraordinary",
+  "cost": 5,
+  "hp": 5,
+  "power": 5,
+  "text": "While this unit is in the space arena, she can't ready and gains: “Action [use the Force]: Move this unit to the ground arena and give each friendly Heroism unit +2/+2 for this phase.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2236831712",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "resistance",
+    "official"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 98
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 98
+    }
+  ],
+  "internalName": "leia-organa#extraordinary"
+}

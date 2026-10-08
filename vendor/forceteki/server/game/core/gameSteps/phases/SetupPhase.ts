@@ -1,0 +1,108 @@
+import { Helpers } from '../../utils/Helpers';
+import type { Game } from '../../Game';
+import { Phase, PhaseInitializeMode } from './Phase';
+import { SimpleStep } from '../SimpleStep';
+import { ResourcePrompt } from '../prompts/ResourcePrompt';
+import { MulliganPrompt } from '../prompts/MulliganPrompt';
+import { PhaseName, SnapshotType } from '../../Constants';
+import { PromptType } from '../PromptInterfaces';
+import type { SnapshotManager } from '../../snapshot/SnapshotManager';
+import { SnapshotTimepoint } from '../../snapshot/SnapshotInterfaces';
+import type { IStep } from '../IStep';
+import { TriggerHandlingMode } from '../../event/EventWindow';
+import { DrawSystem } from '../../../gameSystems/DrawSystem';
+import type { Player } from '../../Player';
+import { ShuffleDeckSystem } from '../../../gameSystems/ShuffleDeckSystem';
+
+export class SetupPhase extends Phase {
+    public constructor(game: Game, snapshotManager: SnapshotManager, initializeMode: PhaseInitializeMode = PhaseInitializeMode.Normal) {
+        super(game, PhaseName.Setup, snapshotManager);
+
+        const setupStep: IStep[] = [];
+        if (initializeMode !== PhaseInitializeMode.RollbackToWithinPhase) {
+            setupStep.push(
+                new SimpleStep(game, () => this.chooseFirstPlayer(), 'chooseFirstPlayer'),
+                new SimpleStep(game, () => this.drawStartingHands(), 'drawStartingHands'),
+                new SimpleStep(game, () => this.takeSnapshot(SnapshotTimepoint.Mulligan), 'takeSnapshotBeforeMulligan'),
+            );
+        }
+
+        const mulliganStep: IStep[] = [];
+        if (initializeMode !== PhaseInitializeMode.RollbackToWithinPhase || snapshotManager.currentSnapshottedTimepointType === SnapshotTimepoint.Mulligan) {
+            mulliganStep.push(
+                new MulliganPrompt(game),
+                new SimpleStep(game, () => this.takeSnapshot(SnapshotTimepoint.SetupResource), 'takeSnapshotBeforeResource'),
+            );
+        }
+
+        this.initialise(
+            [
+                ...setupStep,
+                ...mulliganStep,
+                new ResourcePrompt(game, 2, true)
+            ],
+            initializeMode
+        );
+    }
+
+    private takeSnapshot(timepoint: SnapshotTimepoint.Mulligan | SnapshotTimepoint.SetupResource) {
+        this.snapshotManager.moveToNextTimepoint(timepoint);
+        this.game.getPlayers().forEach((player) => {
+            this.snapshotManager.takeSnapshot({
+                type: SnapshotType.Action,
+                playerId: player.id
+            });
+        });
+    }
+
+    private chooseFirstPlayer() {
+        let firstPlayer: Player;
+        let activePromptTitle;
+
+        if (this.game.preselectedFirstPlayerId) {
+            // Loser of previous game gets to choose
+            firstPlayer = this.game.getPlayerById(this.game.preselectedFirstPlayerId);
+            activePromptTitle = 'You lost the previous game. Choose the player to start with initiative:';
+        } else {
+            // Random selection (coin flip)
+            firstPlayer = Helpers.randomItem(this.game.getPlayers(), this.game.randomGenerator);
+            activePromptTitle = 'You won the flip. Choose the player to start with initiative:';
+        }
+
+        this.game.promptWithHandlerMenu(firstPlayer, {
+            promptType: PromptType.Initiative,
+            activePromptTitle,
+            source: 'choose initiative player',
+            choices: ['Yourself', 'Opponent'],
+            resetActionTimerOnComplete: true,
+            handlers: [
+                () => {
+                    this.game.initiativePlayer = firstPlayer;
+                },
+                () => {
+                    this.game.initiativePlayer = firstPlayer.opponent;
+                }
+            ]
+        });
+    }
+
+    private drawStartingHands() {
+        for (const player of this.game.getPlayers()) {
+            this.game.addMessage('{0} is shuffling their deck', player);
+            new ShuffleDeckSystem({ target: player })
+                .resolve(
+                    player,
+                    this.game.getFrameworkContext(player),
+                    TriggerHandlingMode.ResolvesTriggers
+                );
+
+            this.game.addMessage('{0} draws {1} cards in their starting hand', player, player.getStartingHandSize());
+            new DrawSystem({ amount: player.getStartingHandSize() })
+                .resolve(
+                    player,
+                    this.game.getFrameworkContext(player),
+                    TriggerHandlingMode.ResolvesTriggers
+                );
+        }
+    }
+}

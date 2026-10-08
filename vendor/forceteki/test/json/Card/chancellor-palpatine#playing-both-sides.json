@@ -1,0 +1,48 @@
+{
+  "title": "Chancellor Palpatine",
+  "backSideTitle": "Darth Sidious",
+  "subtitle": "Playing Both Sides",
+  "cost": null,
+  "hp": null,
+  "power": null,
+  "text": "This leader starts the game with this side faceup.\nAction [Exhaust]: If a friendly Heroism unit was defeated this phase, draw a card, heal 2 damage from your base, then flip this leader.",
+  "deployBox": "Action [Exhaust]: If you played a Villainy card this phase, create a Clone Trooper token, deal 2 damage to each enemy base, then flip this leader.",
+  "epicAction": null,
+  "unique": true,
+  "rules": "Palpatine's leader ability still can be used as an action even if no friendly Heroism unit was defeated this phase (but you don't resolve any of the listed effects). The same applies to Sidious's leader ability.\nWhen Chancellor Palpatine or Darth Sidious flip due to their leader ability, they remain exhausted.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0026166404",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "official"
+  ],
+  "keywords": [],
+  "backSideAspects": [
+    "cunning",
+    "villainy"
+  ],
+  "backSideTraits": [
+    "force",
+    "separatist",
+    "sith"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 17
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 17
+    }
+  ],
+  "internalName": "chancellor-palpatine#playing-both-sides"
+}

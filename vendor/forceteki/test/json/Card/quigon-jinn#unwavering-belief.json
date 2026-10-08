@@ -1,0 +1,42 @@
+{
+  "title": "Qui-Gon Jinn",
+  "subtitle": "Unwavering Belief",
+  "cost": 5,
+  "hp": 5,
+  "power": 5,
+  "text": "Sentinel\nmock ability text",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "quigon-jinn#unwavering-belief-id",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "force",
+    "jedi"
+  ],
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 79
+  },
+  "internalName": "quigon-jinn#unwavering-belief",
+  "arena": "ground",
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 79
+    }
+  ]
+}

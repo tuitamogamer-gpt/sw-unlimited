@@ -1,0 +1,41 @@
+{
+  "title": "Hylobon Enforcer",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 4,
+  "power": 1,
+  "text": "Grit (This unit gets +1/+0 for each damage on it.)\nBounty — Draw a card. (When this unit is defeated or captured, your opponent collects its bounty.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6878039039",
+  "aspects": [
+    "villainy",
+    "vigilance"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit",
+    "bounty"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 27
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 27
+    }
+  ],
+  "internalName": "hylobon-enforcer"
+}

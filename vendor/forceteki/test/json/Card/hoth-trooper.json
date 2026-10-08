@@ -1,0 +1,47 @@
+{
+  "title": "Hoth Trooper",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4808981574",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 37
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 37
+    },
+    {
+      "set": "IBH",
+      "number": 38
+    },
+    {
+      "set": "IBH",
+      "number": 48
+    }
+  ],
+  "internalName": "hoth-trooper"
+}

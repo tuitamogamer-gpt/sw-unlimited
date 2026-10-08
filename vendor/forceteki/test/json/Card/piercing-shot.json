@@ -1,0 +1,36 @@
+{
+  "title": "Piercing Shot",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Defeat all Shield tokens on a unit. Deal 3 damage to that unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6938023363",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 180
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 180
+    }
+  ],
+  "internalName": "piercing-shot"
+}

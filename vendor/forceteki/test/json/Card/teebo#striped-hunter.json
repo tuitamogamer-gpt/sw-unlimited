@@ -1,0 +1,40 @@
+{
+  "title": "Teebo",
+  "subtitle": "Striped Hunter",
+  "cost": 1,
+  "hp": 1,
+  "power": 3,
+  "text": "Hidden (This unit can't be attacked if he was played this phase.)\nOther friendly Ewok units gain Hidden.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "If a unit has Hidden and Sentinel at the same time, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9629078251",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "ewok"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 162
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 162
+    }
+  ],
+  "internalName": "teebo#striped-hunter"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Cartel Turncoat",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 3,
+  "power": 2,
+  "text": "Bounty — Draw a card. (When this unit is defeated or captured, your opponent collects its bounty.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9108611319",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "bounty"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 195
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 195
+    }
+  ],
+  "internalName": "cartel-turncoat"
+}

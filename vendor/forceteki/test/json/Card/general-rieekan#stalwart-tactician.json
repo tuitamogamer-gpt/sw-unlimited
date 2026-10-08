@@ -1,0 +1,43 @@
+{
+  "title": "General Rieekan",
+  "subtitle": "Stalwart Tactician",
+  "cost": 4,
+  "hp": 6,
+  "power": 2,
+  "text": "Action [Exhaust]: Attack with another Heroism unit. It gets +2/+0 for this attack.  (You can only attack with a ready friendly unit.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8709200009",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 23
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 23
+    },
+    {
+      "set": "IBH",
+      "number": 36
+    }
+  ],
+  "internalName": "general-rieekan#stalwart-tactician"
+}

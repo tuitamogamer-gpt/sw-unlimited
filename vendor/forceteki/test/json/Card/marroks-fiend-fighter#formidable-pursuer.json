@@ -1,0 +1,41 @@
+{
+  "title": "Marrok's Fiend Fighter",
+  "subtitle": "Formidable Pursuer",
+  "cost": 3,
+  "hp": 2,
+  "power": 3,
+  "text": "Support\nOverwhelm\nThis unit gets +2/+0 while attacking a damaged unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2817799723",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "support",
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 241
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 241
+    }
+  ],
+  "internalName": "marroks-fiend-fighter#formidable-pursuer"
+}

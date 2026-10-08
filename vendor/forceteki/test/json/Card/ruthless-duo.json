@@ -1,0 +1,39 @@
+{
+  "title": "Ruthless Duo",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 5,
+  "power": 3,
+  "text": "When Played: If you control another Villainy unit, you may deal 2 damage to a ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8509242087",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 137
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 137
+    }
+  ],
+  "internalName": "ruthless-duo"
+}

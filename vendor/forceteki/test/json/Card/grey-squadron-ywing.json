@@ -1,0 +1,39 @@
+{
+  "title": "Grey Squadron Y-Wing",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "On Attack: An opponent chooses a unit or base they control. You may deal 2 damage to it.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "If there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9472541076",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 246
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 246
+    }
+  ],
+  "internalName": "grey-squadron-ywing"
+}

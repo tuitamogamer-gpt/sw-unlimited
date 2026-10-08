@@ -1,0 +1,39 @@
+{
+  "title": "Covert Veteran",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "Hidden (This unit can't be attacked if it was played this phase.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If a unit has Hidden and Sentinel at the same time, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4005041069",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 249
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 249
+    }
+  ],
+  "internalName": "covert-veteran"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Desperate Commando",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Defeated: You may give a unit –1/–1 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1397553238",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "resistance",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 60
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 60
+    }
+  ],
+  "internalName": "desperate-commando"
+}

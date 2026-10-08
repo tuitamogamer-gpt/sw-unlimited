@@ -1,0 +1,35 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { INonLeaderUnitAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { NonLeaderUnitCard } from '../../../core/card/NonLeaderUnitCard';
+import { KeywordName, RelativePlayer, WildcardCardType } from '../../../core/Constants';
+import { TextHelper } from '../../../core/utils/TextHelper';
+
+export default class GeneralRieekanDefensiveStrategist extends NonLeaderUnitCard {
+    protected override getImplementationId() {
+        return {
+            id: '3468546373',
+            internalName: 'general-rieekan#defensive-strategist'
+        };
+    }
+
+    public override setupCardAbilities(registrar: INonLeaderUnitAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.addTriggeredAbility({
+            title: `Choose a friendly unit. If it has ${TextHelper.Sentinel}, give an Experience token to it. Otherwise, it gains ${TextHelper.Sentinel} for this phase`,
+            when: {
+                onAttack: true,
+                whenPlayed: true,
+            },
+            targetResolver: {
+                cardTypeFilter: WildcardCardType.Unit,
+                controller: RelativePlayer.Self,
+                immediateEffect: AbilityHelper.immediateEffects.conditional({
+                    condition: (context) => context.target.isUnit() && context.target.hasSomeKeyword(KeywordName.Sentinel),
+                    onTrue: AbilityHelper.immediateEffects.giveExperience(),
+                    onFalse: AbilityHelper.immediateEffects.forThisPhaseCardEffect({
+                        effect: AbilityHelper.ongoingEffects.gainKeyword(KeywordName.Sentinel)
+                    })
+                })
+            }
+        });
+    }
+}

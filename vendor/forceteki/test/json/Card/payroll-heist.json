@@ -1,0 +1,36 @@
+{
+  "title": "Payroll Heist",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "For this phase, each friendly unit gains: “On Attack: Create a Credit token.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2585003236",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 169
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 169
+    }
+  ],
+  "internalName": "payroll-heist"
+}

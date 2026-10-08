@@ -1,0 +1,39 @@
+{
+  "title": "Distant Patroller",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 1,
+  "power": 2,
+  "text": "When Defeated: You may give a Shield token to a [Vigilance] unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8333567388",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 60
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 60
+    }
+  ],
+  "internalName": "distant-patroller"
+}

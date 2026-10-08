@@ -1,0 +1,42 @@
+{
+  "title": "Blue Ace",
+  "subtitle": "Colorful Racer",
+  "cost": 4,
+  "hp": 5,
+  "power": 4,
+  "text": "Ambush\nOn Attack: Ready an exhausted enemy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6889697488",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "resistance",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 204
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 204
+    }
+  ],
+  "internalName": "blue-ace#colorful-racer"
+}

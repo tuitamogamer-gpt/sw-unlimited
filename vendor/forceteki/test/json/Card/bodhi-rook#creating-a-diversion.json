@@ -1,0 +1,40 @@
+{
+  "title": "Bodhi Rook",
+  "subtitle": "Creating a Diversion",
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "On Attack: You may give a friendly Rebel unit Sentinel for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8677314485",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 104
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 104
+    }
+  ],
+  "internalName": "bodhi-rook#creating-a-diversion"
+}

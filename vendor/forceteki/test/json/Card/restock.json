@@ -1,0 +1,34 @@
+{
+  "title": "Restock",
+  "subtitle": null,
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Choose up to 4 cards in a discard pile. Put them on the bottom of their owner's deck in a random order.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6087834273",
+  "aspects": [],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 252
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 252
+    }
+  ],
+  "internalName": "restock"
+}

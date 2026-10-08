@@ -1,0 +1,38 @@
+{
+  "title": "Grim Resolve",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a non-leader unit. It gains Grit for this attack. (It gets +1/+0 for each damage on it.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "If you play Grim Resolve, you must attack with a unit, if able. Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6669050232",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 172
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 172
+    }
+  ],
+  "internalName": "grim-resolve"
+}

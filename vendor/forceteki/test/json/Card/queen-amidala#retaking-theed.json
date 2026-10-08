@@ -1,0 +1,40 @@
+{
+  "title": "Queen Amidala",
+  "subtitle": "Retaking Theed",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "If you control an upgraded base, this unit costs 2 resources less to play.\nRestore 2",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8690895626",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "naboo",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 260
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 260
+    }
+  ],
+  "internalName": "queen-amidala#retaking-theed"
+}

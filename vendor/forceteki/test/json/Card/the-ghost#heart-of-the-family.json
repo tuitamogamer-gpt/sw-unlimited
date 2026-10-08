@@ -1,0 +1,43 @@
+{
+  "title": "The Ghost",
+  "subtitle": "Heart of the Family",
+  "cost": 5,
+  "hp": 6,
+  "power": 5,
+  "text": "Each other friendly Spectre unit gains this unit's keywords.\nWhile this unit is upgraded, it gains Sentinel.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5763330426",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "transport",
+    "spectre"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 53
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 53
+    }
+  ],
+  "internalName": "the-ghost#heart-of-the-family"
+}

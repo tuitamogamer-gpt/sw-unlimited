@@ -1,0 +1,41 @@
+{
+  "title": "Outland Protector",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 1,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7969469465",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 117
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 117
+    }
+  ],
+  "internalName": "outland-protector"
+}

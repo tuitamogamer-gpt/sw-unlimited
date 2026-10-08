@@ -1,0 +1,38 @@
+{
+  "title": "General's Blade",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "Attach to a non-Vehicle unit.\nIf attached unit is a Jedi, it gains: “On Attack: The next unit you play this phase costs 2 resources less.”",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "The cost reduction from General Blade's gained “On Attack” ability remains active even if General's Blade or the attached unit is defeated.\n",
+  "upgradePower": 3,
+  "upgradeHp": 3,
+  "id": "0414253215",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "item",
+    "weapon",
+    "lightsaber"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 121
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 121
+    }
+  ],
+  "internalName": "generals-blade"
+}

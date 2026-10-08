@@ -1,0 +1,36 @@
+{
+  "title": "Command Center",
+  "subtitle": null,
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": null,
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0507674993",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "death star"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 23
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 23
+    }
+  ],
+  "internalName": "command-center"
+}

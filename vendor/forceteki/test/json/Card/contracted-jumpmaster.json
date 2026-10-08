@@ -1,0 +1,42 @@
+{
+  "title": "Contracted Jumpmaster",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9014161111",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 184
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 184
+    }
+  ],
+  "internalName": "contracted-jumpmaster"
+}

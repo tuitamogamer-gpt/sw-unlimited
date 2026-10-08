@@ -1,0 +1,36 @@
+{
+  "title": "Tarkintown",
+  "subtitle": null,
+  "cost": null,
+  "hp": 25,
+  "power": null,
+  "text": "Epic Action: Deal 3 damage to a damaged non-leader unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1393827469",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "lothal"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 25
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 25
+    }
+  ],
+  "internalName": "tarkintown"
+}

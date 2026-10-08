@@ -1,0 +1,37 @@
+{
+  "title": "Remnant Reserves",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Search the top 5 cards of your deck for up to 3 units, reveal them, and draw them. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1565760222",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 93
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 93
+    }
+  ],
+  "internalName": "remnant-reserves"
+}

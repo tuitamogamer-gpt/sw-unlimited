@@ -1,0 +1,36 @@
+{
+  "title": "Turbolaser Salvo",
+  "subtitle": "",
+  "cost": 7,
+  "hp": null,
+  "power": null,
+  "text": "Choose an arena. A friendly space unit deals damage equal to its power to each enemy unit in that arena.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "All damage dealt by Turbolaser Salvo is dealt simultaneously.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8174214418",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 131
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 131
+    }
+  ],
+  "internalName": "turbolaser-salvo"
+}

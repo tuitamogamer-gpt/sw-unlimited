@@ -1,0 +1,39 @@
+{
+  "title": "Top Target",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 0,
+  "power": 0,
+  "text": "Attached unit gains: “Bounty — Heal 4 damage from a unit or base. If this unit is unique, heal 6 damage instead.” (When this unit is defeated or captured, its opponent collects its bounty.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "(ERRATA) Templating update: “Unique” becomes “<uq>”.\n",
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "4282425335",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "bounty",
+    "condition"
+  ],
+  "keywords": [
+    "bounty"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 71
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 71
+    }
+  ],
+  "internalName": "top-target"
+}

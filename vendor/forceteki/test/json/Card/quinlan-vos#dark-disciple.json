@@ -1,0 +1,39 @@
+{
+  "title": "Quinlan Vos",
+  "subtitle": "Dark Disciple",
+  "cost": 4,
+  "hp": 5,
+  "power": 4,
+  "text": "On Attack: If this unit has 6 or more power, you may deal 2 damage to an enemy base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7008431159",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 163
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 163
+    }
+  ],
+  "internalName": "quinlan-vos#dark-disciple"
+}

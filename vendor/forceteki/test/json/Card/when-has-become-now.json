@@ -1,0 +1,38 @@
+{
+  "title": "When Has Become Now",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Play a card with Plot from your resources (paying its cost). Put the top card of your deck into play as a resource.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "(ERRATA) Play a card with Plot from your resources (paying its cost). If you do, put the top card of your deck into play as a resource.\nAbilities that let you play a card require you to pay that card’s cost unless specified otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8210990735",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [
+    "plot"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 245
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 245
+    }
+  ],
+  "internalName": "when-has-become-now"
+}

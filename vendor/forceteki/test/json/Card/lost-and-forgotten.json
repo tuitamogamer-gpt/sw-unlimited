@@ -1,0 +1,36 @@
+{
+  "title": "Lost and Forgotten",
+  "subtitle": "",
+  "cost": 6,
+  "hp": null,
+  "power": null,
+  "text": "Defeat a non-leader unit. If you do, heal 3 damage from your base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4922949566",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 133
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 133
+    }
+  ],
+  "internalName": "lost-and-forgotten"
+}

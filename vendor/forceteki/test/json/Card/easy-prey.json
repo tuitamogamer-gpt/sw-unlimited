@@ -1,0 +1,36 @@
+{
+  "title": "Easy Prey",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Create a Beast token.\nAn opponent creates a Beast token. Give a Weakness token to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4168307965",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 237
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 237
+    }
+  ],
+  "internalName": "easy-prey"
+}

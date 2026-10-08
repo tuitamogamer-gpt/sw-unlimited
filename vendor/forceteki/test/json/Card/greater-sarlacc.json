@@ -1,0 +1,40 @@
+{
+  "title": "Greater Sarlacc",
+  "subtitle": "",
+  "cost": 9,
+  "hp": 8,
+  "power": 9,
+  "text": "Overwhelm\nWhile playing this unit, you may defeat any number of ready resources you control. For each resource defeated this way, this unit costs 3 resources less to play.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2124614099",
+  "aspects": [
+    "command",
+    "cunning"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 49
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 49
+    }
+  ],
+  "internalName": "greater-sarlacc"
+}

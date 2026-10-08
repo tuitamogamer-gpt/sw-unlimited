@@ -1,0 +1,37 @@
+{
+  "title": "The Mandalorian's Rifle",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 0,
+  "power": 3,
+  "text": "Attach to a friendly non-VEHICLE unit.\n\nWhen Played: If attached unit is The Mandalorian, he captures an exhausted enemy non-leader unit. (Put the captured card facedown under him until he leaves play.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": 3,
+  "upgradeHp": 0,
+  "id": "0754286363",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "item",
+    "weapon"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 251
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 251
+    }
+  ],
+  "internalName": "the-mandalorians-rifle"
+}

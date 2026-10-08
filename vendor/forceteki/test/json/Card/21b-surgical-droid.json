@@ -1,0 +1,37 @@
+{
+  "title": "2-1B Surgical Droid",
+  "subtitle": null,
+  "cost": 1,
+  "hp": 3,
+  "power": 1,
+  "text": "On Attack: You may heal 2 damage from another unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5449704164",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 59
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 59
+    }
+  ],
+  "internalName": "21b-surgical-droid"
+}

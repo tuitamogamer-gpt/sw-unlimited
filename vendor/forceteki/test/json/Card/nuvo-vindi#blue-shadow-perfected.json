@@ -1,0 +1,38 @@
+{
+  "title": "Nuvo Vindi",
+  "subtitle": "Blue Shadow Perfected",
+  "cost": 3,
+  "hp": 4,
+  "power": 1,
+  "text": "When Played: You may give a Weakness token to a unit.\nWhen an enemy unit with a Weakness token on it is defeated: You may give a Weakness token to a unit. Use this ability only once each round.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9689400738",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "separatist"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 62
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 62
+    }
+  ],
+  "internalName": "nuvo-vindi#blue-shadow-perfected"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Crix Madine",
+  "subtitle": "Strike Team Strategist",
+  "cost": 3,
+  "hp": 2,
+  "power": 3,
+  "text": "When Played: You may play a Heroism unit from your hand. It costs 2 resources less for each arena in which you control the most units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "(ERRATA) When Played: You may play a Heroism unit from your hand. It costs 2 less for each arena in which you control more units than each opponent.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1334131376",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 108
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 108
+    }
+  ],
+  "internalName": "crix-madine#strike-team-strategist"
+}

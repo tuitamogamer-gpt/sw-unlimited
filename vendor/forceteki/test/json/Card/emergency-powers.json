@@ -1,0 +1,37 @@
+{
+  "title": "Emergency Powers",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Choose a non-leader unit and pay any number of resources. For each resource paid this way, give an Experience token to the chosen unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6782724617",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "law"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 40
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 40
+    }
+  ],
+  "internalName": "emergency-powers"
+}

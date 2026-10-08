@@ -1,0 +1,36 @@
+{
+  "title": "Fervor",
+  "subtitle": "",
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "Ready a unit.\nDeal 3 damage to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3800728779",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 72
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 72
+    }
+  ],
+  "internalName": "fervor"
+}

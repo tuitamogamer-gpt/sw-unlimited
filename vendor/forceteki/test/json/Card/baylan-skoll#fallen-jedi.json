@@ -1,0 +1,41 @@
+{
+  "title": "Baylan Skoll",
+  "subtitle": "Fallen Jedi",
+  "cost": 6,
+  "hp": 6,
+  "power": 6,
+  "text": "Overwhelm\nWhen Played/When Attack Ends: If an enemy base was damaged this phase, give an Advantage token to a unit. If a friendly upgrade was defeated this phase, you may exhaust a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\nWhen Attack Ends abilities trigger at the same time as units deal combat damage. Baylan does not need to survive the attack in order to resolve his ability, so long as the other conditions are met.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8242761292",
+  "aspects": [
+    "aggression",
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "force"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 39
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 39
+    }
+  ],
+  "internalName": "baylan-skoll#fallen-jedi"
+}

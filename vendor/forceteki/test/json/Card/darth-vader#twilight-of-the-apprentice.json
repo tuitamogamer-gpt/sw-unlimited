@@ -1,0 +1,40 @@
+{
+  "title": "Darth Vader",
+  "subtitle": "Twilight of the Apprentice",
+  "cost": 6,
+  "hp": 6,
+  "power": 5,
+  "text": "When Played: Give a Shield token to a friendly unit and to an enemy unit.\nOn Attack: Defeat an enemy unit with a Shield token on it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2277278592",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "imperial",
+    "sith"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 37
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 37
+    }
+  ],
+  "internalName": "darth-vader#twilight-of-the-apprentice"
+}

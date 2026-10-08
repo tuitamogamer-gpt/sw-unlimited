@@ -1,0 +1,39 @@
+{
+  "title": "Ritual Dragon",
+  "subtitle": "",
+  "cost": 8,
+  "hp": 9,
+  "power": 6,
+  "text": "Saboteur\nWhile you control a Tatooine base, friendly units enter play ready (including this one).",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5585718423",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 234
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 234
+    }
+  ],
+  "internalName": "ritual-dragon"
+}

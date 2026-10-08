@@ -1,0 +1,37 @@
+{
+  "title": "Neebray Manta",
+  "subtitle": "",
+  "cost": 8,
+  "hp": 6,
+  "power": 7,
+  "text": "When Played: Draw 3 cards.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8362464276",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 189
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 189
+    }
+  ],
+  "internalName": "neebray-manta"
+}

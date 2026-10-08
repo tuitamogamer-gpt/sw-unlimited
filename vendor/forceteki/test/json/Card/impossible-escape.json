@@ -1,0 +1,36 @@
+{
+  "title": "Impossible Escape",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "You may either exhaust a friendly unit or use the Force (lose your Force token). If you do either, exhaust an enemy unit and draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9069308523",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 218
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 218
+    }
+  ],
+  "internalName": "impossible-escape"
+}

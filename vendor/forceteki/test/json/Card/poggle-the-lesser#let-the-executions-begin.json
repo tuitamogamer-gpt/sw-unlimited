@@ -1,0 +1,39 @@
+{
+  "title": "Poggle the Lesser",
+  "subtitle": "Let the Executions Begin",
+  "cost": 5,
+  "hp": 6,
+  "power": 1,
+  "text": "Action [1 resource, Exhaust]: Ready a friendly Creature unit and deal 1 damage to it.",
+  "deployBox": "When Deployed: Create a Beast token.\nOn Attack: You may ready a friendly Creature unit and deal 1 damage to it.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6595435691",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 12
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 12
+    }
+  ],
+  "internalName": "poggle-the-lesser#let-the-executions-begin"
+}

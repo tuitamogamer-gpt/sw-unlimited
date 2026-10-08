@@ -1,0 +1,37 @@
+{
+  "title": "Hyperspace Wayfarer",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 10,
+  "power": 4,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9664995294",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 119
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 119
+    }
+  ],
+  "internalName": "hyperspace-wayfarer"
+}

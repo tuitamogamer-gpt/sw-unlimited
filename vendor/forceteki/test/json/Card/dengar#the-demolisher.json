@@ -1,0 +1,39 @@
+{
+  "title": "Dengar",
+  "subtitle": "The Demolisher",
+  "cost": 1,
+  "hp": 2,
+  "power": 2,
+  "text": "When you play an upgrade on a unit: You may deal 1 damage to that unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8031540027",
+  "aspects": [
+    "villainy",
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 133
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 133
+    }
+  ],
+  "internalName": "dengar#the-demolisher"
+}

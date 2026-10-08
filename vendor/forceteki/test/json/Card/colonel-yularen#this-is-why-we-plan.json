@@ -1,0 +1,39 @@
+{
+  "title": "Colonel Yularen",
+  "subtitle": "This Is Why We Plan",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "Action [Exhaust]: Attack with a unit. Then, you may attack with another unit that costs less than it.",
+  "deployBox": "When this unit completes an attack (and survives): You may attack with another unit that costs 4 or less.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nIf you use Yularen’s leader ability, you must attack with a unit, if able. Units must be ready in order to attack.\nFully resolve the first attack, including all triggers, before beginning the second attack.\nA unit must survive an attack to trigger its “when this unit completes an attack” abilities.\nWhen Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2334944054",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 6
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 6
+    }
+  ],
+  "internalName": "colonel-yularen#this-is-why-we-plan"
+}

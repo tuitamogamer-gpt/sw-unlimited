@@ -1,0 +1,37 @@
+{
+  "title": "Never Tell Me the Odds",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Discard 3 cards from an opponent's deck and 3 cards from your deck. Deal damage to a unit equal to the number of cards with an odd cost discarded this way.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nAlways discard from the top of a deck, unless an ability specifies otherwise.\nZero is an even number.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8833191722",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 208
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 208
+    }
+  ],
+  "internalName": "never-tell-me-the-odds"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Pre Vizsla",
+  "subtitle": "Strong-Willed Ruler",
+  "cost": 8,
+  "hp": 6,
+  "power": 6,
+  "text": "When Played: Defeat any number of non‑leader units with a total of 6 or less remaining HP. Create a Mandalorian token for each unit defeated this way.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8508289226",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "mandalorian",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 53
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 53
+    }
+  ],
+  "internalName": "pre-vizsla#strongwilled-ruler"
+}

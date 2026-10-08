@@ -1,0 +1,37 @@
+{
+  "title": "Rafa Martez",
+  "subtitle": "Shrewd Sister",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "When Played/On Attack: Deal 1 damage to a friendly unit and ready a resource.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3278986026",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 219
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 219
+    }
+  ],
+  "internalName": "rafa-martez#shrewd-sister"
+}

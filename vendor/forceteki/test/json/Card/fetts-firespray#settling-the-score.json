@@ -1,0 +1,42 @@
+{
+  "title": "Fett's Firespray",
+  "subtitle": "Settling the Score",
+  "cost": 6,
+  "hp": 6,
+  "power": 6,
+  "text": "Friendly units can attack bases while using Ambush.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0941615068",
+  "aspects": [
+    "aggression",
+    "cunning"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 53
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 53
+    }
+  ],
+  "internalName": "fetts-firespray#settling-the-score"
+}

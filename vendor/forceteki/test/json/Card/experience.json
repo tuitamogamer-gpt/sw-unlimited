@@ -1,0 +1,28 @@
+{
+  "title": "Experience",
+  "subtitle": null,
+  "cost": 0,
+  "hp": 1,
+  "power": 1,
+  "text": null,
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "2007868442",
+  "aspects": [],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "token",
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SOR"
+  },
+  "internalName": "experience"
+}

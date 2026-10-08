@@ -1,0 +1,39 @@
+{
+  "title": "Vuutun Palaa",
+  "subtitle": "Droid Control Ship",
+  "cost": 9,
+  "hp": 7,
+  "power": 7,
+  "text": "This unit costs 1 resource less to play for each friendly Droid unit.\nEach friendly Droid unit may be exhausted to pay costs as if it were a resource.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Vuutun Palaa's second ability is only in effect once Vuutun Palaa is in play. Friendly Droid units can't be exhausted to pay for Vuutun Palaa.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9831248752",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 122
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 122
+    }
+  ],
+  "internalName": "vuutun-palaa#droid-control-ship"
+}

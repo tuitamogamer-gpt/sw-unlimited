@@ -1,0 +1,40 @@
+{
+  "title": "Hyena Bomber",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: If you control another Aggression unit, you may deal 2 damage to a ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1022691467",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "separatist",
+    "droid",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 158
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 158
+    }
+  ],
+  "internalName": "hyena-bomber"
+}

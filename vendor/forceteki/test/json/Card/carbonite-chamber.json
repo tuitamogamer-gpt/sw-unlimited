@@ -1,0 +1,38 @@
+{
+  "title": "Carbonite Chamber",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 0,
+  "power": 0,
+  "text": "Fortify (Attach this to your base, not a unit.)\nAction [defeat this upgrade]: Choose a non‑Vehicle unit. It doesn't ready during the next regroup phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "2657420918",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "fortification"
+  ],
+  "keywords": [
+    "fortify"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 95
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 95
+    }
+  ],
+  "internalName": "carbonite-chamber"
+}

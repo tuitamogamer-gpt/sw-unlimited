@@ -1,0 +1,39 @@
+{
+  "title": "StarFortress Heavy Bomber",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 3,
+  "power": 3,
+  "text": "When Played: You may deal 6 damage to a non-<uq> ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6004226019",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "resistance",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 174
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 174
+    }
+  ],
+  "internalName": "starfortress-heavy-bomber"
+}

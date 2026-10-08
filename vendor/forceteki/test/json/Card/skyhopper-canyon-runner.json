@@ -1,0 +1,39 @@
+{
+  "title": "Skyhopper Canyon Runner",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 4,
+  "power": 1,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1162729042",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "speeder"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 214
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 214
+    }
+  ],
+  "internalName": "skyhopper-canyon-runner"
+}

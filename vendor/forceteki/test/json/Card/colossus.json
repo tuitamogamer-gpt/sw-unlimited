@@ -1,0 +1,36 @@
+{
+  "title": "Colossus",
+  "subtitle": "",
+  "cost": null,
+  "hp": 35,
+  "power": null,
+  "text": "Draw 1 less card in your starting hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you choose to mulligan your hand, you still draw 1 less card in your mulligan hand.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1029978899",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "castilon"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 21
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 21
+    }
+  ],
+  "internalName": "colossus"
+}

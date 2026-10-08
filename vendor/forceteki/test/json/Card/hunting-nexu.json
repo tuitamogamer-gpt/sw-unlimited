@@ -1,0 +1,43 @@
+{
+  "title": "Hunting Nexu",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "While you control another Aggression unit, this unit gains Raid 2. (It gets +2/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8991513192",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 162
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 168
+    },
+    {
+      "set": "LOF",
+      "number": 162
+    }
+  ],
+  "internalName": "hunting-nexu"
+}

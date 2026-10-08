@@ -1,0 +1,39 @@
+{
+  "title": "General Grievous",
+  "subtitle": "Trophy Collector",
+  "cost": 3,
+  "hp": 4,
+  "power": 4,
+  "text": "Ignore the aspect penalty on each Lightsaber upgrade you play on this unit.\nOn Attack: If this unit has 4 or more Lightsaber upgrades attached to him, defeat 4 enemy units.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "(ERRATA) Templating update: \"Aspect penalty\" becomes \"aspect penalties\" when referring to multiple.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4776553531",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 34
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 34
+    }
+  ],
+  "internalName": "general-grievous#trophy-collector"
+}

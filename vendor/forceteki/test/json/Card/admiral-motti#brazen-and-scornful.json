@@ -1,0 +1,38 @@
+{
+  "title": "Admiral Motti",
+  "subtitle": "Brazen and Scornful",
+  "cost": 2,
+  "hp": 1,
+  "power": 1,
+  "text": "When Defeated: You may ready a [Villainy] unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9996676854",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 226
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 226
+    }
+  ],
+  "internalName": "admiral-motti#brazen-and-scornful"
+}

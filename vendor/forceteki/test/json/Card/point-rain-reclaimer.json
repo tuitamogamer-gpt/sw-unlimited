@@ -1,0 +1,40 @@
+{
+  "title": "Point Rain Reclaimer",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 1,
+  "text": "When Played: If you control a Jedi unit, you may give an Experience token to this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8496220683",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "clone",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 92
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 92
+    }
+  ],
+  "internalName": "point-rain-reclaimer"
+}

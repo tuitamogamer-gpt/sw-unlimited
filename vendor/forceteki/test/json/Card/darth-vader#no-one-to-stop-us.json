@@ -1,0 +1,40 @@
+{
+  "title": "Darth Vader",
+  "subtitle": "No One to Stop Us",
+  "cost": 7,
+  "hp": 7,
+  "power": 5,
+  "text": "",
+  "deployBox": "mock ability text",
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "darth-vader#no-one-to-stop-us-id",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "imperial",
+    "sith"
+  ],
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 1
+  },
+  "internalName": "darth-vader#no-one-to-stop-us",
+  "arena": "ground",
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 1
+    }
+  ]
+}

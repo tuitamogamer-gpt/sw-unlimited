@@ -1,0 +1,39 @@
+{
+  "title": "Twin Pod Cloud Car",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 2,
+  "text": "Restore 2 (When this unit attacks, heal 2 damage from your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6870437193",
+  "aspects": [],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 259
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 259
+    }
+  ],
+  "internalName": "twin-pod-cloud-car"
+}

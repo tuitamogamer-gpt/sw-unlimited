@@ -1,0 +1,42 @@
+{
+  "title": "Darth Vader",
+  "subtitle": "Useless to Resist",
+  "cost": 8,
+  "hp": 8,
+  "power": 8,
+  "text": "Ambush\nmock ability text",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "darth-vader#useless-to-resist-id",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "imperial",
+    "sith"
+  ],
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 67
+  },
+  "internalName": "darth-vader#useless-to-resist",
+  "arena": "ground",
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 67
+    }
+  ]
+}

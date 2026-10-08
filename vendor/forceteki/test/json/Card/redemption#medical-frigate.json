@@ -1,0 +1,42 @@
+{
+  "title": "Redemption",
+  "subtitle": "Medical Frigate",
+  "cost": 8,
+  "hp": 9,
+  "power": 6,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)\n\nWhen Played: Heal up to 8 total damage from any number of units and/or bases. Deal that much damage to this unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3896582249",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 52
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 52
+    }
+  ],
+  "internalName": "redemption#medical-frigate"
+}

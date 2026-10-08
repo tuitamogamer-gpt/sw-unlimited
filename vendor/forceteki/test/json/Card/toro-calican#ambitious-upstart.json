@@ -1,0 +1,37 @@
+{
+  "title": "Toro Calican",
+  "subtitle": "Ambitious Upstart",
+  "cost": 3,
+  "hp": 5,
+  "power": 3,
+  "text": "When you play another Bounty Hunter unit: You may deal 1 damage to it. If you do, ready this unit. Use this ability only once each round.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3952758746",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 239
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 239
+    }
+  ],
+  "internalName": "toro-calican#ambitious-upstart"
+}

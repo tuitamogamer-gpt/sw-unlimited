@@ -1,0 +1,38 @@
+{
+  "title": "Take Aim",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "This event costs 1 resource less to play for each friendly leader unit.\nAttack with a unit. It gets +2/+0 and gains Saboteur for this attack. (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "You must attack with a unit, if able. Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6349103776",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 83
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 83
+    }
+  ],
+  "internalName": "take-aim"
+}

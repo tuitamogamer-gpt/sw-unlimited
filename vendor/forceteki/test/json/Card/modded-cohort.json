@@ -1,0 +1,41 @@
+{
+  "title": "Modded Cohort",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 2,
+  "text": "Ambush (When you play this unit, it may ready and attack an enemy unit.)\nRaid 2 (This unit gets +2/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1805986989",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush",
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 100
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 100
+    }
+  ],
+  "internalName": "modded-cohort"
+}

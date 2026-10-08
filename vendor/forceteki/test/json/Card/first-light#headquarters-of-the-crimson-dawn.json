@@ -1,0 +1,43 @@
+{
+  "title": "First Light",
+  "subtitle": "Headquarters of the Crimson Dawn",
+  "cost": 7,
+  "hp": 7,
+  "power": 4,
+  "text": "Grit\nEach other friendly non-leader unit gains Grit.\nSmuggle [7 resources Vigilance Villainy, deal 4 damage to a friendly unit]",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "First Light’s cannot damage itself to pay for its own Smuggle ability, since the ability’s cost must be paid before it enters play.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4783554451",
+  "aspects": [
+    "villainy",
+    "vigilance"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "grit",
+    "smuggle"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 36
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 36
+    }
+  ],
+  "internalName": "first-light#headquarters-of-the-crimson-dawn"
+}

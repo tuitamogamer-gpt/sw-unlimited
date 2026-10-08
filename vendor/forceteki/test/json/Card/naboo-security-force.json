@@ -1,0 +1,40 @@
+{
+  "title": "Naboo Security Force",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 7,
+  "power": 5,
+  "text": "When Played/When Defeated: You may disclose Command (reveal a card from your hand with this aspect icon). If you do, give a friendly unit Sentinel for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1002827363",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "naboo",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 120
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 120
+    }
+  ],
+  "internalName": "naboo-security-force"
+}

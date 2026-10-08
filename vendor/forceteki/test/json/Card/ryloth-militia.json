@@ -1,0 +1,40 @@
+{
+  "title": "Ryloth Militia",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "Raid 1 (This unit gets +1/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8426882030",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "twi'lek",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 108
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 108
+    }
+  ],
+  "internalName": "ryloth-militia"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Rex",
+  "subtitle": "Outserved His Purpose",
+  "cost": 5,
+  "hp": 6,
+  "power": 5,
+  "text": "Friendly units with no abilities get +1/+1.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Rex gives +1/+1 to friendly units with no text in their ability box or who have lost their abilities. Rex does not give +1/+1 to units with conditional abilities that aren't active.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5024073529",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "fringe",
+    "clone"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 141
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 141
+    }
+  ],
+  "internalName": "rex#outserved-his-purpose"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Attack From All Sides",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Deal 3 damage to a unit. If there are 4 or more different aspects among friendly units, you may deal 5 damage to that unit instead.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4615709188",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 207
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 207
+    }
+  ],
+  "internalName": "attack-from-all-sides"
+}

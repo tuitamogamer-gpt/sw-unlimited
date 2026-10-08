@@ -1,0 +1,40 @@
+{
+  "title": "Prepare for Takeoff",
+  "subtitle": null,
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Search the top 8 cards of your deck for up to 2 Vehicle units, reveal them, and draw them. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3974134277",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 128
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 125
+    },
+    {
+      "set": "JTL",
+      "number": 128
+    }
+  ],
+  "internalName": "prepare-for-takeoff"
+}

@@ -1,0 +1,269 @@
+describe('Let\'s Talk', function () {
+    integration(function (contextRef) {
+        it('Let\'s Talk costs 3 less when a friendly unit left play this phase', async function () {
+            await contextRef.setupTestAsync({
+                phase: 'action',
+                player1: {
+                    leader: 'fennec-shand#honoring-the-deal',
+                    base: 'data-vault',
+                    groundArena: ['battlefield-marine', 'wampa'],
+                    hand: ['waylay', 'lets-talk']
+                },
+                player2: {
+                    groundArena: ['rebel-pathfinder']
+                }
+            });
+
+            const { context } = contextRef;
+
+            context.player1.clickCard(context.waylay);
+            context.player1.clickCard(context.battlefieldMarine);
+
+            context.player2.passAction();
+
+            context.player1.clickCard(context.letsTalk);
+            context.player1.clickCard(context.wampa);
+
+            context.player1.clickCard(context.rebelPathfinder);
+
+            // reduced cost (6) + waylay (3)
+            expect(context.player1.exhaustedResourceCount).toBe(9);
+        });
+
+        it('Let\'s Talk costs 3 less when an enemy unit was taken and defeated with No Glory, Only Results', async function () {
+            await contextRef.setupTestAsync({
+                phase: 'action',
+                player1: {
+                    groundArena: ['battlefield-marine'],
+                    hand: ['no-glory-only-results', 'lets-talk']
+                },
+                player2: {
+                    groundArena: ['wampa', 'atst']
+                }
+            });
+
+            const { context } = contextRef;
+
+            // AT-ST leaves play while player1 controls it, so it counts as a friendly unit
+            context.player1.clickCard(context.noGloryOnlyResults);
+            context.player1.clickCard(context.atst);
+            expect(context.atst).toBeInZone('discard', context.player2);
+
+            context.player2.passAction();
+            context.player1.readyResources(20);
+
+            context.player1.clickCard(context.letsTalk);
+            context.player1.clickCard(context.battlefieldMarine);
+            context.player1.clickCard(context.wampa);
+
+            expect(context.wampa).toBeCapturedBy(context.battlefieldMarine);
+            // 9 + 2 aspect penalty - 3 reduction
+            expect(context.player1.exhaustedResourceCount).toBe(8);
+            expect(context.player2).toBeActivePlayer();
+        });
+
+        it('Let\'s Talk selection order matches capture order', async function () {
+            await contextRef.setupTestAsync({
+                phase: 'action',
+                player1: {
+                    base: 'data-vault',
+                    groundArena: ['battlefield-marine', 'wampa'],
+                    hand: ['lets-talk']
+                },
+                player2: {
+                    groundArena: ['rebel-pathfinder', 'atst']
+                }
+            });
+
+            const { context } = contextRef;
+
+            context.player1.clickCard(context.letsTalk);
+            context.player1.clickCard(context.wampa);
+            context.player1.clickCard(context.battlefieldMarine);
+            context.player1.clickDone();
+
+            context.player1.clickCard(context.atst);
+            context.player1.clickCard(context.rebelPathfinder);
+
+            expect(context.atst).toBeCapturedBy(context.wampa);
+            expect(context.rebelPathfinder).toBeCapturedBy(context.battlefieldMarine);
+        });
+
+        it('Let\'s Talk selection order is changeable and maintains capture order', async function () {
+            await contextRef.setupTestAsync({
+                phase: 'action',
+                player1: {
+                    base: 'data-vault',
+                    groundArena: ['battlefield-marine', 'wampa'],
+                    hand: ['lets-talk']
+                },
+                player2: {
+                    groundArena: ['rebel-pathfinder', 'atst']
+                }
+            });
+
+            const { context } = contextRef;
+
+            context.player1.clickCard(context.letsTalk);
+            context.player1.clickCard(context.wampa);
+            context.player1.clickCard(context.battlefieldMarine);
+
+            // Undo selection
+            context.player1.clickCard(context.wampa);
+
+            // Redo selection, behind battlefieldMarine
+            context.player1.clickCard(context.wampa);
+
+            context.player1.clickDone();
+
+            expect(context.player1).toBeAbleToSelectExactly([context.atst, context.rebelPathfinder]);
+            context.player1.clickCard(context.atst);
+            context.player1.clickCard(context.rebelPathfinder);
+
+            expect(context.atst).toBeCapturedBy(context.battlefieldMarine);
+            expect(context.rebelPathfinder).toBeCapturedBy(context.wampa);
+        });
+
+        it('Let\'s Talk skips captures with no valid targets', async function () {
+            await contextRef.setupTestAsync({
+                phase: 'action',
+                player1: {
+                    base: 'data-vault',
+                    groundArena: ['battlefield-marine', 'wampa', 'tauntaun'],
+                    spaceArena: ['awing', 'xwing'],
+                    hand: ['lets-talk']
+                },
+                player2: {
+                    leader: { card: 'admiral-ackbar#its-a-trap', deployed: true },
+                    groundArena: ['rebel-pathfinder', 'atst'],
+                    spaceArena: ['republic-ywing']
+                }
+            });
+
+            const { context } = contextRef;
+
+            context.player1.clickCard(context.letsTalk);
+
+            context.player1.clickCard(context.awing);
+            // unable to select xwing as captor because only 1 valid space capture target
+            expect(context.player1).toBeAbleToSelectExactly([context.awing, context.wampa, context.battlefieldMarine, context.tauntaun]);
+            context.player1.clickCard(context.wampa);
+            context.player1.clickCard(context.battlefieldMarine);
+            // unable to select tauntaun as captor because only 2 valid ground capture targets (leader is excluded)
+            expect(context.player1).toBeAbleToSelectExactly([context.awing, context.wampa, context.battlefieldMarine]);
+            context.player1.clickDone();
+
+            expect(context.player1).toBeAbleToSelectExactly(context.republicYwing);
+            context.player1.clickCard(context.republicYwing);
+
+            expect(context.player1).toBeAbleToSelectExactly([context.atst, context.rebelPathfinder]);
+            context.player1.clickCard(context.atst);
+            context.player1.clickCard(context.rebelPathfinder);
+
+            expect(context.atst).toBeCapturedBy(context.wampa);
+            expect(context.rebelPathfinder).toBeCapturedBy(context.battlefieldMarine);
+        });
+
+        it('Let\'s Talk works with fewer units than opponent', async function () {
+            await contextRef.setupTestAsync({
+                phase: 'action',
+                player1: {
+                    base: 'data-vault',
+                    groundArena: ['wampa'],
+                    hand: ['lets-talk']
+                },
+                player2: {
+                    leader: { card: 'admiral-ackbar#its-a-trap', deployed: true },
+                    groundArena: ['rebel-pathfinder', 'atst']
+                }
+            });
+
+            const { context } = contextRef;
+
+            context.player1.clickCard(context.letsTalk);
+
+            context.player1.clickCard(context.wampa);
+
+            expect(context.player1).toBeAbleToSelectExactly([context.atst, context.rebelPathfinder]);
+            context.player1.clickCard(context.atst);
+
+            expect(context.atst).toBeCapturedBy(context.wampa);
+        });
+
+        it('Let\'s Talk does not error when the active player owns a unit captured by the opponent', async function () {
+            await contextRef.setupTestAsync({
+                phase: 'action',
+                player1: {
+                    base: 'data-vault',
+                    groundArena: ['wampa'],
+                    hand: ['lets-talk']
+                },
+                player2: {
+                    groundArena: [
+                        'rebel-pathfinder',
+                        {
+                            card: 'atst',
+                            capturedUnits: [
+                                { card: 'battlefield-marine', owner: 'player1' }
+                            ]
+                        },
+                    ]
+                }
+            });
+
+            const { context } = contextRef;
+
+            // The captured Battlefield Marine (owned by player1, in the capture zone)
+            // must not be offered as a captor and must not cause a crash during target resolution.
+            context.player1.clickCard(context.letsTalk);
+            expect(context.player1).toBeAbleToSelectExactly([context.wampa]);
+            context.player1.clickCard(context.wampa);
+
+            expect(context.player1).toBeAbleToSelectExactly([context.atst, context.rebelPathfinder]);
+            context.player1.clickCard(context.rebelPathfinder);
+
+            expect(context.rebelPathfinder).toBeCapturedBy(context.wampa);
+            expect(context.battlefieldMarine).toBeCapturedBy(context.atst);
+        });
+
+        it('Let\'s Talk claims bounties simultaneously, allowing for collect order', async function () {
+            await contextRef.setupTestAsync({
+                phase: 'action',
+                player1: {
+                    base: 'data-vault',
+                    groundArena: ['wampa', 'tauntaun'],
+                    hand: ['lets-talk']
+                },
+                player2: {
+                    leader: { card: 'admiral-ackbar#its-a-trap', deployed: true },
+                    groundArena: ['hylobon-enforcer', 'wanted-insurgents']
+                }
+            });
+
+            const { context } = contextRef;
+
+            context.player1.clickCard(context.letsTalk);
+            context.player1.clickCard(context.wampa);
+            context.player1.clickCard(context.tauntaun);
+            context.player1.clickDone();
+
+            expect(context.player1).toBeAbleToSelectExactly([context.hylobonEnforcer, context.wantedInsurgents]);
+            context.player1.clickCard(context.wantedInsurgents);
+            context.player1.clickCard(context.hylobonEnforcer);
+
+            expect(context.wantedInsurgents).toBeCapturedBy(context.wampa);
+            expect(context.hylobonEnforcer).toBeCapturedBy(context.tauntaun);
+
+            expect(context.player1).toHaveExactPromptButtons([
+                'Collect Bounty: Deal 2 damage to a unit',
+                'Collect Bounty: Draw a card'
+            ]);
+
+            context.player1.clickPrompt('Collect Bounty: Draw a card');
+            context.player1.clickPrompt('Trigger');
+
+            expect(context.player1).toBeAbleToSelectAllOf([context.wampa, context.tauntaun, context.admiralAckbar]);
+            context.player1.clickCard(context.admiralAckbar);
+        });
+    });
+});

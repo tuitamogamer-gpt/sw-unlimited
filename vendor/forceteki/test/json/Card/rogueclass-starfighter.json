@@ -1,0 +1,41 @@
+{
+  "title": "Rogue-class Starfighter",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 4,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1036605983",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 241
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 241
+    }
+  ],
+  "internalName": "rogueclass-starfighter"
+}

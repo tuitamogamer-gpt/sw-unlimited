@@ -1,0 +1,41 @@
+{
+  "title": "Punishing One",
+  "subtitle": "Takes No Prisoners",
+  "cost": 5,
+  "hp": 5,
+  "power": 3,
+  "text": "This unit gains Raid 1 for each damaged enemy unit.\nWhen Played/On Attack: You may deal 1 damage to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "If Punishing One damages an undamaged unit with its \"On Attack\" ability during an attack, it immediately gains Raid 1 for that attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6096782465",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 171
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 171
+    }
+  ],
+  "internalName": "punishing-one#takes-no-prisoners"
+}

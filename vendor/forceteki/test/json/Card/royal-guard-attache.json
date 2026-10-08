@@ -1,0 +1,38 @@
+{
+  "title": "Royal Guard Attaché",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 5,
+  "power": 2,
+  "text": "When Played: Deal 2 damage to this unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0598115741",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "naboo",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 59
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 59
+    }
+  ],
+  "internalName": "royal-guard-attache"
+}

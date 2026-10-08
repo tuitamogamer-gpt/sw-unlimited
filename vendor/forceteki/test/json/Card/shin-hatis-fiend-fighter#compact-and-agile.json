@@ -1,0 +1,39 @@
+{
+  "title": "Shin Hati's Fiend Fighter",
+  "subtitle": "Compact and Agile",
+  "cost": 2,
+  "hp": 1,
+  "power": 3,
+  "text": "When Defeated: You may give 2 Advantage tokens to a unit. If this unit wasn't defeated by combat damage, you may give 3 Advantage tokens to that unit instead.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "“Combat damage” is only the damage dealt during the “End attack” step of an attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0834554190",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 191
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 191
+    }
+  ],
+  "internalName": "shin-hatis-fiend-fighter#compact-and-agile"
+}

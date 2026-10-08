@@ -1,0 +1,37 @@
+{
+  "title": "Maz Kanata",
+  "subtitle": "The Light Guides",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "When Played: You may attack with a Force unit. It gets +2/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8834515285",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 111
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 111
+    }
+  ],
+  "internalName": "maz-kanata#the-light-guides"
+}

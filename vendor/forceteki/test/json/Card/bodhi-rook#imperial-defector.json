@@ -1,0 +1,39 @@
+{
+  "title": "Bodhi Rook",
+  "subtitle": "Imperial Defector",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "When Played: Look at an opponent's hand and discard a non-unit card from it.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7257556541",
+  "aspects": [
+    "cunning",
+    "cunning"
+  ],
+  "traits": [
+    "imperial",
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 201
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 201
+    }
+  ],
+  "internalName": "bodhi-rook#imperial-defector"
+}

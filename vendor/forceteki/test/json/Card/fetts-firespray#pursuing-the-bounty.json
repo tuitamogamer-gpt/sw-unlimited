@@ -1,0 +1,40 @@
+{
+  "title": "Fett's Firespray",
+  "subtitle": "Pursuing the Bounty",
+  "cost": 6,
+  "hp": 6,
+  "power": 5,
+  "text": "When Played: If you control Boba Fett or Jango Fett (as a leader or unit), ready this unit.\n\nAction [2 resources]: Exhaust a non-unique unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "(ERRATA) Templating update: “Unique” becomes “<uq>”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4300219753",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 184
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 184
+    }
+  ],
+  "internalName": "fetts-firespray#pursuing-the-bounty"
+}

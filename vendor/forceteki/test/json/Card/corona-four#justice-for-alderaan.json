@@ -1,0 +1,41 @@
+{
+  "title": "Corona Four",
+  "subtitle": "Justice for Alderaan",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "On Attack: You may give a unit –2/–0 for this phase.\nWhen Defeated: You may defeat a non‑leader unit with 0 power.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers. Power cannot be reduced below 0.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5376014521",
+  "aspects": [
+    "cunning",
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 43
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 43
+    }
+  ],
+  "internalName": "corona-four#justice-for-alderaan"
+}

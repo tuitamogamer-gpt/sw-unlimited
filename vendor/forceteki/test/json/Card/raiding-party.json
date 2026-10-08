@@ -1,0 +1,39 @@
+{
+  "title": "Raiding Party",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 6,
+  "power": 0,
+  "text": "Raid 6 (This unit gets +6/+0 while attacking.)\nWhen Played: If you control another Tusken unit or a Tatooine base, you may exhaust a ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7196274802",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tusken"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 230
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 230
+    }
+  ],
+  "internalName": "raiding-party"
+}

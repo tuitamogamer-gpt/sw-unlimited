@@ -1,0 +1,42 @@
+{
+  "title": "T-6 Shuttle 1974",
+  "subtitle": "With a Mentor's Dedication",
+  "cost": 4,
+  "hp": 6,
+  "power": 2,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)\nAction [Exhaust]: Give another unit +2/+2 for this phase. You may attack with that unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8889715574",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "jedi",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 109
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 109
+    }
+  ],
+  "internalName": "t6-shuttle-1974#with-a-mentors-dedication"
+}

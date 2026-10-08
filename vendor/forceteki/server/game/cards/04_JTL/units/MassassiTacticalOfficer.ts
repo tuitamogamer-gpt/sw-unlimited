@@ -1,0 +1,27 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { INonLeaderUnitAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { NonLeaderUnitCard } from '../../../core/card/NonLeaderUnitCard';
+import { Trait } from '../../../core/Constants';
+import { TextHelper } from '../../../core/utils/TextHelper';
+
+export default class MassassiTacticalOfficer extends NonLeaderUnitCard {
+    protected override getImplementationId () {
+        return {
+            id: '6600603122',
+            internalName: 'massassi-tactical-officer',
+        };
+    }
+
+    public override setupCardAbilities(registrar: INonLeaderUnitAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.addActionAbility({
+            title: `Attack with a ${TextHelper.Trait.Fighter} unit. It get +2/+0 for this attack`,
+            cost: AbilityHelper.costs.exhaustSelf(),
+            initiateAttack: {
+                attackerCondition: (card) => card.hasSomeTrait(Trait.Fighter),
+                attackerLastingEffects: {
+                    effect: AbilityHelper.ongoingEffects.modifyStats({ power: 2, hp: 0 }),
+                }
+            }
+        });
+    }
+}

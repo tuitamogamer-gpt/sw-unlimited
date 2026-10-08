@@ -1,0 +1,37 @@
+{
+  "title": "The Force Is With Me",
+  "subtitle": null,
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Choose a friendly unit and give 2 Experience tokens to it. If you control a FORCE unit, also give a Shield token to the chosen unit. You may attack with the chosen unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7861932582",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 55
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 55
+    }
+  ],
+  "internalName": "the-force-is-with-me"
+}

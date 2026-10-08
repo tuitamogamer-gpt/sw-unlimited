@@ -1,0 +1,3437 @@
+{
+  "schemaVersion": 1,
+  "retrievedAt": "2026-10-08",
+  "api": "https://api.swu-db.com/cards/{set}",
+  "sets": [
+    "sor",
+    "shd",
+    "twi",
+    "jtl",
+    "lof",
+    "sec",
+    "law",
+    "ash",
+    "ibh"
+  ],
+  "decks": [
+    {
+      "id": "sor-luke-skywalker",
+      "name": "Luke Skywalker · Spark of Rebellion",
+      "set": "SOR",
+      "setName": "Spark of Rebellion",
+      "product": "Two-Player Starter",
+      "format": "Premier",
+      "leader": {
+        "id": "SOR_005",
+        "cid": "2579145458",
+        "name": "Luke Skywalker"
+      },
+      "base": {
+        "id": "SOR_029",
+        "cid": "8129465864",
+        "name": "Administrator's Tower"
+      },
+      "deck": [
+        {
+          "id": "SOR_236",
+          "cid": "9568000754",
+          "name": "R2-D2",
+          "count": 3
+        },
+        {
+          "id": "SOR_059",
+          "cid": "5449704164",
+          "name": "2-1B Surgical Droid",
+          "count": 1
+        },
+        {
+          "id": "SOR_189",
+          "cid": "9680213078",
+          "name": "Leia Organa",
+          "count": 3
+        },
+        {
+          "id": "SOR_239",
+          "cid": "0046930738",
+          "name": "Rebel Pathfinder",
+          "count": 1
+        },
+        {
+          "id": "SOR_238",
+          "cid": "8009713136",
+          "name": "C-3P0",
+          "count": 3
+        },
+        {
+          "id": "SOR_063",
+          "cid": "9702250295",
+          "name": "Cloud City Wing Guard",
+          "count": 1
+        },
+        {
+          "id": "SOR_045",
+          "cid": "4405415770",
+          "name": "Yoda",
+          "count": 1
+        },
+        {
+          "id": "SOR_240",
+          "cid": "3038238423",
+          "name": "Fleet Lieutenant",
+          "count": 3
+        },
+        {
+          "id": "SOR_194",
+          "cid": "1017822723",
+          "name": "Rogue Operative",
+          "count": 1
+        },
+        {
+          "id": "SOR_046",
+          "cid": "8184790799",
+          "name": "Consular Security Force",
+          "count": 3
+        },
+        {
+          "id": "SOR_242",
+          "cid": "9799982630",
+          "name": "General Dodonna",
+          "count": 1
+        },
+        {
+          "id": "SOR_048",
+          "cid": "7622279662",
+          "name": "Vigilant Honor Guards",
+          "count": 1
+        },
+        {
+          "id": "SOR_196",
+          "cid": "8918765832",
+          "name": "Chewbacca",
+          "count": 1
+        },
+        {
+          "id": "SOR_244",
+          "cid": "1862616109",
+          "name": "Snowspeeder",
+          "count": 1
+        },
+        {
+          "id": "SOR_049",
+          "cid": "4786320542",
+          "name": "Obi-Wan Kenobi",
+          "count": 1
+        },
+        {
+          "id": "SOR_198",
+          "cid": "9500514827",
+          "name": "Han Solo",
+          "count": 1
+        },
+        {
+          "id": "SOR_237",
+          "cid": "0494601180",
+          "name": "Alliance X-Wing",
+          "count": 3
+        },
+        {
+          "id": "SOR_044",
+          "cid": "0074718689",
+          "name": "Restored ARC-170",
+          "count": 2
+        },
+        {
+          "id": "SOR_241",
+          "cid": "3443737404",
+          "name": "Wing Leader",
+          "count": 1
+        },
+        {
+          "id": "SOR_066",
+          "cid": "7751685516",
+          "name": "System Patrol Craft",
+          "count": 1
+        },
+        {
+          "id": "SOR_195",
+          "cid": "7285270931",
+          "name": "Auzituck Liberator Gunship",
+          "count": 1
+        },
+        {
+          "id": "SOR_074",
+          "cid": "8679831560",
+          "name": "Repair",
+          "count": 2
+        },
+        {
+          "id": "SOR_217",
+          "cid": "8297630396",
+          "name": "Shoot First",
+          "count": 1
+        },
+        {
+          "id": "SOR_220",
+          "cid": "3809048641",
+          "name": "Surprise Strike",
+          "count": 2
+        },
+        {
+          "id": "SOR_218",
+          "cid": "6901817734",
+          "name": "Asteroid Sanctuary",
+          "count": 2
+        },
+        {
+          "id": "SOR_222",
+          "cid": "7202133736",
+          "name": "Waylay",
+          "count": 2
+        },
+        {
+          "id": "SOR_078",
+          "cid": "6472095064",
+          "name": "Vanquish",
+          "count": 3
+        },
+        {
+          "id": "SOR_069",
+          "cid": "9059202647",
+          "name": "Resilient",
+          "count": 1
+        },
+        {
+          "id": "SOR_053",
+          "cid": "6903722220",
+          "name": "Luke's Lightsaber",
+          "count": 3
+        }
+      ],
+      "sideboard": [],
+      "metadata": {
+        "name": "Luke Skywalker · Spark of Rebellion",
+        "author": "Fantasy Flight Games"
+      },
+      "source": "https://starwarsunlimited.com/articles/launch-sequence",
+      "sources": [
+        "https://starwarsunlimited.com/articles/launch-sequence",
+        "https://api.swu-db.com/cards/sor",
+        "https://sw-unlimited-db.com/decks/3080",
+        "https://sw-unlimited-db.com/decks/59911"
+      ],
+      "verified": true,
+      "cardCount": 50,
+      "playstyle": "Shielded Rebels · protect units and win efficient trades",
+      "sourceArchive": "docs/sources/sor-luke.md",
+      "provenance": "Official product + independently listed starter inventory."
+    },
+    {
+      "id": "sor-darth-vader",
+      "name": "Darth Vader · Spark of Rebellion",
+      "set": "SOR",
+      "setName": "Spark of Rebellion",
+      "product": "Two-Player Starter",
+      "format": "Premier",
+      "leader": {
+        "id": "SOR_010",
+        "cid": "6088773439",
+        "name": "Darth Vader"
+      },
+      "base": {
+        "id": "SOR_023",
+        "cid": "0507674993",
+        "name": "Command Center"
+      },
+      "deck": [
+        {
+          "id": "SOR_128",
+          "cid": "2383321298",
+          "name": "Death Star Stormtrooper",
+          "count": 3
+        },
+        {
+          "id": "SOR_226",
+          "cid": "9996676854",
+          "name": "Admiral Motti",
+          "count": 3
+        },
+        {
+          "id": "SOR_129",
+          "cid": "8117080217",
+          "name": "Admiral Ozzel",
+          "count": 1
+        },
+        {
+          "id": "SOR_079",
+          "cid": "4566580942",
+          "name": "Admiral Piett",
+          "count": 1
+        },
+        {
+          "id": "SOR_130",
+          "cid": "4619930426",
+          "name": "First Legion Snowtrooper",
+          "count": 2
+        },
+        {
+          "id": "SOR_227",
+          "cid": "9097690846",
+          "name": "Snowtrooper Lieutenant",
+          "count": 2
+        },
+        {
+          "id": "SOR_228",
+          "cid": "8986035098",
+          "name": "Viper Probe Droid",
+          "count": 2
+        },
+        {
+          "id": "SOR_229",
+          "cid": "2524528997",
+          "name": "Cell Block Guard",
+          "count": 3
+        },
+        {
+          "id": "SOR_230",
+          "cid": "1557302740",
+          "name": "General Veers",
+          "count": 1
+        },
+        {
+          "id": "SOR_083",
+          "cid": "8954587682",
+          "name": "Superlaser Technician",
+          "count": 3
+        },
+        {
+          "id": "SOR_084",
+          "cid": "9266336818",
+          "name": "Grand Moff Tarkin",
+          "count": 3
+        },
+        {
+          "id": "SOR_232",
+          "cid": "6072239164",
+          "name": "AT-ST",
+          "count": 2
+        },
+        {
+          "id": "SOR_088",
+          "cid": "3830969722",
+          "name": "Blizzard Assault AT-AT",
+          "count": 1
+        },
+        {
+          "id": "SOR_135",
+          "cid": "9097316363",
+          "name": "Emperor Palpatine",
+          "count": 1
+        },
+        {
+          "id": "SOR_225",
+          "cid": "5562575456",
+          "name": "TIE/ln Fighter",
+          "count": 2
+        },
+        {
+          "id": "SOR_132",
+          "cid": "9002021213",
+          "name": "Imperial Interceptor",
+          "count": 3
+        },
+        {
+          "id": "SOR_231",
+          "cid": "4092697474",
+          "name": "TIE Advanced",
+          "count": 1
+        },
+        {
+          "id": "SOR_086",
+          "cid": "8294130780",
+          "name": "Gladiator Star Destroyer",
+          "count": 1
+        },
+        {
+          "id": "SOR_089",
+          "cid": "3401690666",
+          "name": "Relentless",
+          "count": 1
+        },
+        {
+          "id": "SOR_123",
+          "cid": "3407775126",
+          "name": "Recruit",
+          "count": 1
+        },
+        {
+          "id": "SOR_139",
+          "cid": "1446471743",
+          "name": "Force Choke",
+          "count": 1
+        },
+        {
+          "id": "SOR_233",
+          "cid": "0523973552",
+          "name": "I Am Your Father",
+          "count": 3
+        },
+        {
+          "id": "SOR_172",
+          "cid": "8148673131",
+          "name": "Open Fire",
+          "count": 3
+        },
+        {
+          "id": "SOR_126",
+          "cid": "2703877689",
+          "name": "Resupply",
+          "count": 1
+        },
+        {
+          "id": "SOR_234",
+          "cid": "2758597010",
+          "name": "Maximum Firepower",
+          "count": 1
+        },
+        {
+          "id": "SOR_092",
+          "cid": "1900571801",
+          "name": "Overwhelming Barrage",
+          "count": 1
+        },
+        {
+          "id": "SOR_136",
+          "cid": "0705773109",
+          "name": "Vader's Lightsaber",
+          "count": 3
+        }
+      ],
+      "sideboard": [],
+      "metadata": {
+        "name": "Darth Vader · Spark of Rebellion",
+        "author": "Fantasy Flight Games"
+      },
+      "source": "https://starwarsunlimited.com/articles/launch-sequence",
+      "sources": [
+        "https://starwarsunlimited.com/articles/launch-sequence",
+        "https://api.swu-db.com/cards/sor",
+        "https://sw-unlimited-db.com/decks/3081"
+      ],
+      "verified": true,
+      "cardCount": 50,
+      "playstyle": "Imperial midrange · resource ramp, removal, and heavy hitters",
+      "sourceArchive": "docs/sources/sor-vader.md",
+      "provenance": "Official product + independently listed starter inventory."
+    },
+    {
+      "id": "shd-moff-gideon",
+      "name": "Moff Gideon · Shadows of the Galaxy",
+      "set": "SHD",
+      "setName": "Shadows of the Galaxy",
+      "product": "Two-Player Starter",
+      "format": "Premier",
+      "leader": {
+        "id": "SHD_007",
+        "cid": "2503039837",
+        "name": "Moff Gideon"
+      },
+      "base": {
+        "id": "SHD_019",
+        "cid": "3488958204",
+        "name": "Remnant Science Facility"
+      },
+      "deck": [
+        {
+          "id": "SHD_110",
+          "cid": "0336440515",
+          "name": "Warzone Lieutenant",
+          "count": 2
+        },
+        {
+          "id": "SHD_028",
+          "cid": "6722700037",
+          "name": "Doctor Pershing",
+          "count": 1
+        },
+        {
+          "id": "SHD_081",
+          "cid": "7936091758",
+          "name": "General Tagge",
+          "count": 1
+        },
+        {
+          "id": "SHD_234",
+          "cid": "4328408486",
+          "name": "Incinerator Trooper",
+          "count": 3
+        },
+        {
+          "id": "SHD_082",
+          "cid": "8712779685",
+          "name": "Outland TIE Vanguard",
+          "count": 3
+        },
+        {
+          "id": "SHD_113",
+          "cid": "2288926269",
+          "name": "Privateer Crew",
+          "count": 1
+        },
+        {
+          "id": "SHD_083",
+          "cid": "9462361238",
+          "name": "Seasoned Shoretrooper",
+          "count": 3
+        },
+        {
+          "id": "SHD_236",
+          "cid": "6416685228",
+          "name": "Snowtrooper Lieutenant",
+          "count": 2
+        },
+        {
+          "id": "SHD_238",
+          "cid": "1575743055",
+          "name": "Cell Block Guard",
+          "count": 2
+        },
+        {
+          "id": "SHD_030",
+          "cid": "9336505300",
+          "name": "Death Trooper",
+          "count": 3
+        },
+        {
+          "id": "SHD_084",
+          "cid": "4843225228",
+          "name": "Phase-III Dark Trooper",
+          "count": 3
+        },
+        {
+          "id": "SHD_085",
+          "cid": "1994773472",
+          "name": "Superlaser Technician",
+          "count": 3
+        },
+        {
+          "id": "SHD_031",
+          "cid": "1090660242",
+          "name": "The Client",
+          "count": 1
+        },
+        {
+          "id": "SHD_118",
+          "cid": "4721657243",
+          "name": "Kihrazx Heavy Fighter",
+          "count": 1
+        },
+        {
+          "id": "SHD_063",
+          "cid": "8639184906",
+          "name": "System Patrol Craft",
+          "count": 2
+        },
+        {
+          "id": "SHD_120",
+          "cid": "9765804063",
+          "name": "Discerning Veteran",
+          "count": 1
+        },
+        {
+          "id": "SHD_089",
+          "cid": "8552719712",
+          "name": "Pirate Battle Tank",
+          "count": 2
+        },
+        {
+          "id": "SHD_242",
+          "cid": "5351496853",
+          "name": "Gideon's Light Cruiser",
+          "count": 3
+        },
+        {
+          "id": "SHD_071",
+          "cid": "4282425335",
+          "name": "Top Target",
+          "count": 1
+        },
+        {
+          "id": "SHD_124",
+          "cid": "8877249477",
+          "name": "Legal Authority",
+          "count": 1
+        },
+        {
+          "id": "SHD_125",
+          "cid": "2178538979",
+          "name": "Price on Your Head",
+          "count": 2
+        },
+        {
+          "id": "SHD_128",
+          "cid": "0802973415",
+          "name": "Outflank",
+          "count": 1
+        },
+        {
+          "id": "SHD_129",
+          "cid": "6847268098",
+          "name": "Timely Intervention",
+          "count": 1
+        },
+        {
+          "id": "SHD_262",
+          "cid": "1630144142",
+          "name": "Confiscate",
+          "count": 2
+        },
+        {
+          "id": "SHD_130",
+          "cid": "1701265931",
+          "name": "Moment of Glory",
+          "count": 1
+        },
+        {
+          "id": "SHD_039",
+          "cid": "0302968596",
+          "name": "Calculated Lethality",
+          "count": 3
+        },
+        {
+          "id": "SHD_093",
+          "cid": "1565760222",
+          "name": "Remnant Reserves",
+          "count": 1
+        }
+      ],
+      "sideboard": [],
+      "metadata": {
+        "name": "Moff Gideon · Shadows of the Galaxy",
+        "author": "Fantasy Flight Games"
+      },
+      "source": "https://starwarsunlimited.com/articles/heated-rivals",
+      "sources": [
+        "https://starwarsunlimited.com/articles/heated-rivals",
+        "https://api.swu-db.com/cards/shd",
+        "https://cdn.starwarsunlimited.com//SWH_02_Two_Player_Starter_Deep_Dive_Moff_Gideon_Deck_List_v02_f6119134de.png"
+      ],
+      "verified": true,
+      "cardCount": 50,
+      "playstyle": "Imperial tempo · efficient trades and resource ramp",
+      "sourceImage": "https://cdn.starwarsunlimited.com//SWH_02_Two_Player_Starter_Deep_Dive_Moff_Gideon_Deck_List_v02_f6119134de.png",
+      "sourceArchive": "docs/sources/shd-decklists.png",
+      "provenance": "Official FFG decklist image; card names matched against API."
+    },
+    {
+      "id": "shd-the-mandalorian",
+      "name": "The Mandalorian · Shadows of the Galaxy",
+      "set": "SHD",
+      "setName": "Shadows of the Galaxy",
+      "product": "Two-Player Starter",
+      "format": "Premier",
+      "leader": {
+        "id": "SHD_018",
+        "cid": "9005139831",
+        "name": "The Mandalorian"
+      },
+      "base": {
+        "id": "SHD_020",
+        "cid": "2403450809",
+        "name": "Remote Village"
+      },
+      "deck": [
+        {
+          "id": "SHD_040",
+          "cid": "0282219568",
+          "name": "Clan Wren Rescuer",
+          "count": 2
+        },
+        {
+          "id": "SHD_056",
+          "cid": "4511413808",
+          "name": "Follower of The Way",
+          "count": 3
+        },
+        {
+          "id": "SHD_245",
+          "cid": "6884078296",
+          "name": "Greef Karga",
+          "count": 3
+        },
+        {
+          "id": "SHD_196",
+          "cid": "6536128825",
+          "name": "Grogu",
+          "count": 3
+        },
+        {
+          "id": "SHD_041",
+          "cid": "5511838014",
+          "name": "Kuiil",
+          "count": 1
+        },
+        {
+          "id": "SHD_060",
+          "cid": "5636691221",
+          "name": "HWK-290 Freighter",
+          "count": 3
+        },
+        {
+          "id": "SHD_258",
+          "cid": "1081897816",
+          "name": "Mandalorian Warrior",
+          "count": 1
+        },
+        {
+          "id": "SHD_247",
+          "cid": "9405733493",
+          "name": "Protector of the Throne",
+          "count": 2
+        },
+        {
+          "id": "SHD_043",
+          "cid": "1747533523",
+          "name": "Village Protectors",
+          "count": 3
+        },
+        {
+          "id": "SHD_216",
+          "cid": "7171636330",
+          "name": "Chain Code Collector",
+          "count": 2
+        },
+        {
+          "id": "SHD_044",
+          "cid": "8142386948",
+          "name": "Razor Crest",
+          "count": 3
+        },
+        {
+          "id": "SHD_064",
+          "cid": "1503633301",
+          "name": "Survivors' Gauntlet",
+          "count": 1
+        },
+        {
+          "id": "SHD_047",
+          "cid": "2560835268",
+          "name": "The Armorer",
+          "count": 1
+        },
+        {
+          "id": "SHD_066",
+          "cid": "3770196734",
+          "name": "Cargo Juggernaut",
+          "count": 1
+        },
+        {
+          "id": "SHD_220",
+          "cid": "7982524453",
+          "name": "Fennec Shand",
+          "count": 1
+        },
+        {
+          "id": "SHD_068",
+          "cid": "1780014071",
+          "name": "Public Enemy",
+          "count": 1
+        },
+        {
+          "id": "SHD_221",
+          "cid": "4117365450",
+          "name": "Wanted",
+          "count": 2
+        },
+        {
+          "id": "SHD_069",
+          "cid": "7687006104",
+          "name": "Foundling",
+          "count": 2
+        },
+        {
+          "id": "SHD_070",
+          "cid": "7277605274",
+          "name": "Resilient",
+          "count": 2
+        },
+        {
+          "id": "SHD_261",
+          "cid": "3074091930",
+          "name": "Rich Reward",
+          "count": 2
+        },
+        {
+          "id": "SHD_223",
+          "cid": "2011561919",
+          "name": "Snapshot Reflexes",
+          "count": 2
+        },
+        {
+          "id": "SHD_074",
+          "cid": "3525325147",
+          "name": "Vambrace Grappleshot",
+          "count": 1
+        },
+        {
+          "id": "SHD_073",
+          "cid": "3514010297",
+          "name": "Mandalorian Armor",
+          "count": 1
+        },
+        {
+          "id": "SHD_251",
+          "cid": "0754286363",
+          "name": "The Mandalorian's Rifle",
+          "count": 3
+        },
+        {
+          "id": "SHD_231",
+          "cid": "8750826002",
+          "name": "Surprise Strike",
+          "count": 1
+        },
+        {
+          "id": "SHD_253",
+          "cid": "9845101935",
+          "name": "This Is The Way",
+          "count": 1
+        },
+        {
+          "id": "SHD_206",
+          "cid": "5283722046",
+          "name": "Spare the Target",
+          "count": 1
+        },
+        {
+          "id": "SHD_078",
+          "cid": "3329959260",
+          "name": "Fell the Dragon",
+          "count": 1
+        }
+      ],
+      "sideboard": [],
+      "metadata": {
+        "name": "The Mandalorian · Shadows of the Galaxy",
+        "author": "Fantasy Flight Games"
+      },
+      "source": "https://starwarsunlimited.com/articles/heated-rivals",
+      "sources": [
+        "https://starwarsunlimited.com/articles/heated-rivals",
+        "https://api.swu-db.com/cards/shd",
+        "https://cdn.starwarsunlimited.com//SWH_02_Two_Player_Starter_Deep_Dive_Moff_Gideon_Deck_List_v02_f6119134de.png"
+      ],
+      "verified": true,
+      "cardCount": 50,
+      "playstyle": "Upgrade tempo · exhaust threats and protect key units",
+      "sourceImage": "https://cdn.starwarsunlimited.com//SWH_02_Two_Player_Starter_Deep_Dive_Moff_Gideon_Deck_List_v02_f6119134de.png",
+      "sourceArchive": "docs/sources/shd-decklists.png",
+      "provenance": "Official FFG decklist image; card names matched against API."
+    },
+    {
+      "id": "twi-ahsoka-tano",
+      "name": "Ahsoka Tano · Twilight of the Republic",
+      "set": "TWI",
+      "setName": "Twilight of the Republic",
+      "product": "Two-Player Starter",
+      "format": "Premier",
+      "leader": {
+        "id": "TWI_011",
+        "cid": "2155351882",
+        "name": "Ahsoka Tano"
+      },
+      "base": {
+        "id": "TWI_024",
+        "cid": "0348855629",
+        "name": "Tipoca City"
+      },
+      "deck": [
+        {
+          "id": "TWI_240",
+          "cid": "1209133362",
+          "name": "332nd Stalwart",
+          "count": 3
+        },
+        {
+          "id": "TWI_141",
+          "cid": "2800918480",
+          "name": "Soldier of the 501st",
+          "count": 1
+        },
+        {
+          "id": "TWI_142",
+          "cid": "4551109857",
+          "name": "Anakin's Interceptor",
+          "count": 1
+        },
+        {
+          "id": "TWI_158",
+          "cid": "9227411088",
+          "name": "Clone Heavy Gunner",
+          "count": 2
+        },
+        {
+          "id": "TWI_106",
+          "cid": "7380773849",
+          "name": "Coruscant Guard",
+          "count": 1
+        },
+        {
+          "id": "TWI_159",
+          "cid": "8084593619",
+          "name": "Dendup's Loyalist",
+          "count": 2
+        },
+        {
+          "id": "TWI_090",
+          "cid": "2265363405",
+          "name": "Echo",
+          "count": 1
+        },
+        {
+          "id": "TWI_107",
+          "cid": "6534973905",
+          "name": "Patrolling V-Wing",
+          "count": 2
+        },
+        {
+          "id": "TWI_241",
+          "cid": "9209567613",
+          "name": "Phase I Clone Trooper",
+          "count": 3
+        },
+        {
+          "id": "TWI_091",
+          "cid": "2395430106",
+          "name": "Republic Tactical Officer",
+          "count": 1
+        },
+        {
+          "id": "TWI_092",
+          "cid": "0268657344",
+          "name": "Admiral Yularen",
+          "count": 1
+        },
+        {
+          "id": "TWI_109",
+          "cid": "7252148824",
+          "name": "501st Liberator",
+          "count": 1
+        },
+        {
+          "id": "TWI_144",
+          "cid": "6969421569",
+          "name": "Batch Brothers",
+          "count": 1
+        },
+        {
+          "id": "TWI_111",
+          "cid": "9176356859",
+          "name": "Republic ARC-170",
+          "count": 2
+        },
+        {
+          "id": "TWI_243",
+          "cid": "8187818742",
+          "name": "Republic Commando",
+          "count": 2
+        },
+        {
+          "id": "TWI_251",
+          "cid": "5074877594",
+          "name": "Drop In",
+          "count": 2
+        },
+        {
+          "id": "TWI_164",
+          "cid": "0683052393",
+          "name": "Hevy",
+          "count": 1
+        },
+        {
+          "id": "TWI_094",
+          "cid": "1314547987",
+          "name": "Shaak Ti",
+          "count": 1
+        },
+        {
+          "id": "TWI_147",
+          "cid": "2282198576",
+          "name": "Anakin Skywalker",
+          "count": 3
+        },
+        {
+          "id": "TWI_114",
+          "cid": "9017877021",
+          "name": "Clone Commander Cody",
+          "count": 1
+        },
+        {
+          "id": "TWI_244",
+          "cid": "9185282472",
+          "name": "Eta-2 Light Interceptor",
+          "count": 1
+        },
+        {
+          "id": "TWI_097",
+          "cid": "0511508627",
+          "name": "Captain Rex",
+          "count": 3
+        },
+        {
+          "id": "TWI_246",
+          "cid": "6570091935",
+          "name": "Tranquility",
+          "count": 1
+        },
+        {
+          "id": "TWI_248",
+          "cid": "0741296536",
+          "name": "Ahsoka's Padawan Lightsaber",
+          "count": 3
+        },
+        {
+          "id": "TWI_123",
+          "cid": "7344129644",
+          "name": "Outflank",
+          "count": 2
+        },
+        {
+          "id": "TWI_171",
+          "cid": "4042866439",
+          "name": "Grenade Strike",
+          "count": 2
+        },
+        {
+          "id": "TWI_099",
+          "cid": "0633620454",
+          "name": "Synchronized Strike",
+          "count": 1
+        },
+        {
+          "id": "TWI_126",
+          "cid": "4916334670",
+          "name": "Encouraging Leadership",
+          "count": 2
+        },
+        {
+          "id": "TWI_174",
+          "cid": "5807228000",
+          "name": "Open Fire",
+          "count": 3
+        }
+      ],
+      "sideboard": [],
+      "metadata": {
+        "name": "Ahsoka Tano · Twilight of the Republic",
+        "author": "Fantasy Flight Games"
+      },
+      "source": "https://starwarsunlimited.com/articles/clash-of-ideals",
+      "sources": [
+        "https://starwarsunlimited.com/articles/clash-of-ideals",
+        "https://api.swu-db.com/cards/twi",
+        "https://cdn.starwarsunlimited.com//SWH_03_SWH_03_Article_2_Player_Starter_Decklist_v02_8942a20061.jpg"
+      ],
+      "verified": true,
+      "cardCount": 50,
+      "playstyle": "Republic swarm · coordinate and clone tokens",
+      "sourceImage": "https://cdn.starwarsunlimited.com//SWH_03_SWH_03_Article_2_Player_Starter_Decklist_v02_8942a20061.jpg",
+      "sourceArchive": "docs/sources/twi-decklists.jpg",
+      "provenance": "Official FFG decklist image; card names matched against API."
+    },
+    {
+      "id": "twi-general-grievous",
+      "name": "General Grievous · Twilight of the Republic",
+      "set": "TWI",
+      "setName": "Twilight of the Republic",
+      "product": "Two-Player Starter",
+      "format": "Premier",
+      "leader": {
+        "id": "TWI_015",
+        "cid": "2872203891",
+        "name": "General Grievous"
+      },
+      "base": {
+        "id": "TWI_023",
+        "cid": "7827173440",
+        "name": "Lair of Grievous"
+      },
+      "deck": [
+        {
+          "id": "TWI_228",
+          "cid": "4050810437",
+          "name": "Droid Starfighter",
+          "count": 2
+        },
+        {
+          "id": "TWI_206",
+          "cid": "9262288850",
+          "name": "Independent Senator",
+          "count": 1
+        },
+        {
+          "id": "TWI_104",
+          "cid": "0249398533",
+          "name": "Obedient Vanguard",
+          "count": 3
+        },
+        {
+          "id": "TWI_179",
+          "cid": "6406254252",
+          "name": "Soulless One",
+          "count": 1
+        },
+        {
+          "id": "TWI_207",
+          "cid": "6257858302",
+          "name": "B1 Security Team",
+          "count": 1
+        },
+        {
+          "id": "TWI_079",
+          "cid": "3680942691",
+          "name": "Confederate Courier",
+          "count": 2
+        },
+        {
+          "id": "TWI_237",
+          "cid": "6826668370",
+          "name": "Droid Deployment",
+          "count": 2
+        },
+        {
+          "id": "TWI_080",
+          "cid": "9610332938",
+          "name": "Poggle the Lesser",
+          "count": 1
+        },
+        {
+          "id": "TWI_180",
+          "cid": "5027991609",
+          "name": "Separatist Commando",
+          "count": 3
+        },
+        {
+          "id": "TWI_229",
+          "cid": "5584601885",
+          "name": "Battle Droid Escort",
+          "count": 3
+        },
+        {
+          "id": "TWI_082",
+          "cid": "5630404651",
+          "name": "MagnaGuard Wing Leader",
+          "count": 1
+        },
+        {
+          "id": "TWI_230",
+          "cid": "3246242155",
+          "name": "Super Battle Droid",
+          "count": 2
+        },
+        {
+          "id": "TWI_083",
+          "cid": "3876951742",
+          "name": "General's Guardian",
+          "count": 3
+        },
+        {
+          "id": "TWI_190",
+          "cid": "2483302291",
+          "name": "On the Doorstep",
+          "count": 1
+        },
+        {
+          "id": "TWI_112",
+          "cid": "4824842849",
+          "name": "Subjugating Starfighter",
+          "count": 1
+        },
+        {
+          "id": "TWI_084",
+          "cid": "7979348081",
+          "name": "Kraken",
+          "count": 1
+        },
+        {
+          "id": "TWI_184",
+          "cid": "3589814405",
+          "name": "Tactical Droid Commander",
+          "count": 1
+        },
+        {
+          "id": "TWI_086",
+          "cid": "7013591351",
+          "name": "Admiral Trench",
+          "count": 1
+        },
+        {
+          "id": "TWI_217",
+          "cid": "6700679522",
+          "name": "Tri-Droid Suppressor",
+          "count": 1
+        },
+        {
+          "id": "TWI_233",
+          "cid": "6772128891",
+          "name": "Hailfire Tank",
+          "count": 2
+        },
+        {
+          "id": "TWI_234",
+          "cid": "0398102006",
+          "name": "The Invisible Hand",
+          "count": 1
+        },
+        {
+          "id": "TWI_087",
+          "cid": "9283787549",
+          "name": "Separatist Super Tank",
+          "count": 1
+        },
+        {
+          "id": "TWI_221",
+          "cid": "6401761275",
+          "name": "In Pursuit",
+          "count": 2
+        },
+        {
+          "id": "TWI_218",
+          "cid": "7547538214",
+          "name": "Droid Cohort",
+          "count": 1
+        },
+        {
+          "id": "TWI_222",
+          "cid": "3357486161",
+          "name": "Political Pressure",
+          "count": 1
+        },
+        {
+          "id": "TWI_124",
+          "cid": "6830921347",
+          "name": "Tactical Advantage",
+          "count": 2
+        },
+        {
+          "id": "TWI_257",
+          "cid": "2483520485",
+          "name": "Private Manufacturing",
+          "count": 1
+        },
+        {
+          "id": "TWI_238",
+          "cid": "4412828936",
+          "name": "Merciless Contest",
+          "count": 3
+        },
+        {
+          "id": "TWI_226",
+          "cid": "5190917242",
+          "name": "Waylay",
+          "count": 2
+        },
+        {
+          "id": "TWI_236",
+          "cid": "0875550518",
+          "name": "Grievous's Wheel Bike",
+          "count": 3
+        }
+      ],
+      "sideboard": [],
+      "metadata": {
+        "name": "General Grievous · Twilight of the Republic",
+        "author": "Fantasy Flight Games"
+      },
+      "source": "https://starwarsunlimited.com/articles/clash-of-ideals",
+      "sources": [
+        "https://starwarsunlimited.com/articles/clash-of-ideals",
+        "https://api.swu-db.com/cards/twi",
+        "https://cdn.starwarsunlimited.com//SWH_03_SWH_03_Article_2_Player_Starter_Decklist_v02_8942a20061.jpg"
+      ],
+      "verified": true,
+      "cardCount": 50,
+      "playstyle": "Droid swarm · exploit and sacrifice synergies",
+      "sourceImage": "https://cdn.starwarsunlimited.com//SWH_03_SWH_03_Article_2_Player_Starter_Decklist_v02_8942a20061.jpg",
+      "sourceArchive": "docs/sources/twi-decklists.jpg",
+      "provenance": "Official FFG decklist image; card names matched against API."
+    },
+    {
+      "id": "jtl-boba-fett",
+      "name": "Boba Fett · Jump to Lightspeed",
+      "set": "JTL",
+      "setName": "Jump to Lightspeed",
+      "product": "Spotlight Deck",
+      "format": "Premier",
+      "leader": {
+        "id": "JTL_009",
+        "cid": "9831674351",
+        "name": "Boba Fett"
+      },
+      "base": {
+        "id": "SHD_026",
+        "cid": "9617095664",
+        "name": "Jabba's Palace"
+      },
+      "deck": [
+        {
+          "id": "JTL_132",
+          "cid": "6861397107",
+          "name": "First Order Stormtrooper",
+          "count": 3
+        },
+        {
+          "id": "JTL_133",
+          "cid": "9611596703",
+          "name": "Allegiant General Pryde",
+          "count": 1
+        },
+        {
+          "id": "SOR_130",
+          "cid": "4619930426",
+          "name": "First Legion Snowtrooper",
+          "count": 3
+        },
+        {
+          "id": "JTL_183",
+          "cid": "7389195577",
+          "name": "Zygerrian Starhopper",
+          "count": 3
+        },
+        {
+          "id": "JTL_237",
+          "cid": "3504944818",
+          "name": "TIE Bomber",
+          "count": 3
+        },
+        {
+          "id": "SOR_131",
+          "cid": "8395007579",
+          "name": "Fifth Brother",
+          "count": 2
+        },
+        {
+          "id": "TWI_181",
+          "cid": "0036920495",
+          "name": "Elite P-38 Starfighter",
+          "count": 2
+        },
+        {
+          "id": "JTL_185",
+          "cid": "3876470102",
+          "name": "Hound's Tooth",
+          "count": 3
+        },
+        {
+          "id": "JTL_187",
+          "cid": "4573745395",
+          "name": "Bossk",
+          "count": 3
+        },
+        {
+          "id": "JTL_139",
+          "cid": "3282713547",
+          "name": "Dengar",
+          "count": 2
+        },
+        {
+          "id": "JTL_240",
+          "cid": "6648978613",
+          "name": "Fett's Firespray",
+          "count": 3
+        },
+        {
+          "id": "JTL_140",
+          "cid": "3722493191",
+          "name": "IG-2000",
+          "count": 1
+        },
+        {
+          "id": "JTL_165",
+          "cid": "4560739921",
+          "name": "Hunting Aggressor",
+          "count": 2
+        },
+        {
+          "id": "SOR_132",
+          "cid": "9002021213",
+          "name": "Imperial Interceptor",
+          "count": 2
+        },
+        {
+          "id": "JTL_141",
+          "cid": "1463418669",
+          "name": "IG-88",
+          "count": 1
+        },
+        {
+          "id": "JTL_189",
+          "cid": "7700932371",
+          "name": "Boba Fett",
+          "count": 1
+        },
+        {
+          "id": "SOR_184",
+          "cid": "4300219753",
+          "name": "Fett's Firespray",
+          "count": 1
+        },
+        {
+          "id": "JTL_230",
+          "cid": "4819196588",
+          "name": "Electromagnetic Pulse",
+          "count": 1
+        },
+        {
+          "id": "SHD_178",
+          "cid": "7826408293",
+          "name": "Daring Raid",
+          "count": 3
+        },
+        {
+          "id": "TWI_171",
+          "cid": "4042866439",
+          "name": "Grenade Strike",
+          "count": 1
+        },
+        {
+          "id": "SOR_186",
+          "cid": "8800836530",
+          "name": "No Good to Me Dead",
+          "count": 3
+        },
+        {
+          "id": "SOR_139",
+          "cid": "1446471743",
+          "name": "Force Choke",
+          "count": 3
+        },
+        {
+          "id": "JTL_144",
+          "cid": "4033634907",
+          "name": "No Disintegrations",
+          "count": 3
+        }
+      ],
+      "sideboard": [],
+      "metadata": {
+        "name": "Boba Fett · Jump to Lightspeed",
+        "author": "Fantasy Flight Games"
+      },
+      "source": "https://starwarsunlimited.com/articles/disintegrating-the-odds",
+      "sources": [
+        "https://starwarsunlimited.com/articles/disintegrating-the-odds",
+        "https://api.swu-db.com/cards/jtl",
+        "https://cdn.starwarsunlimited.com//SWH_04_Article_Spotlight_Decks_Decklist_v02_1f4852aef7.jpg"
+      ],
+      "verified": true,
+      "cardCount": 50,
+      "playstyle": "Indirect damage · bounty hunters and aggressive piloting",
+      "sourceImage": "https://cdn.starwarsunlimited.com//SWH_04_Article_Spotlight_Decks_Decklist_v02_1f4852aef7.jpg",
+      "sourceArchive": "docs/sources/jtl-decklists.jpg",
+      "provenance": "Official FFG decklist image; card names matched against API."
+    },
+    {
+      "id": "jtl-han-solo",
+      "name": "Han Solo · Jump to Lightspeed",
+      "set": "JTL",
+      "setName": "Jump to Lightspeed",
+      "product": "Spotlight Deck",
+      "format": "Premier",
+      "leader": {
+        "id": "JTL_017",
+        "cid": "0616724418",
+        "name": "Han Solo"
+      },
+      "base": {
+        "id": "SOR_024",
+        "cid": "2055904747",
+        "name": "Echo Base"
+      },
+      "deck": [
+        {
+          "id": "SHD_095",
+          "cid": "9503028597",
+          "name": "Clone Deserter",
+          "count": 3
+        },
+        {
+          "id": "SOR_204",
+          "cid": "0949648290",
+          "name": "Greedo",
+          "count": 2
+        },
+        {
+          "id": "JTL_093",
+          "cid": "6610553087",
+          "name": "Nien Nunb",
+          "count": 1
+        },
+        {
+          "id": "JTL_245",
+          "cid": "5375722883",
+          "name": "R2-D2",
+          "count": 2
+        },
+        {
+          "id": "JTL_196",
+          "cid": "7420426716",
+          "name": "Dagger Squadron Pilot",
+          "count": 3
+        },
+        {
+          "id": "SHD_195",
+          "cid": "9108611319",
+          "name": "Cartel Turncoat",
+          "count": 3
+        },
+        {
+          "id": "TWI_191",
+          "cid": "1882027961",
+          "name": "Wolf Pack Escort",
+          "count": 3
+        },
+        {
+          "id": "SOR_097",
+          "cid": "0827076106",
+          "name": "Admiral Ackbar",
+          "count": 1
+        },
+        {
+          "id": "TWI_110",
+          "cid": "8418001763",
+          "name": "Huyang",
+          "count": 1
+        },
+        {
+          "id": "JTL_097",
+          "cid": "7924461681",
+          "name": "Leia Organa",
+          "count": 2
+        },
+        {
+          "id": "SOR_192",
+          "cid": "9560139036",
+          "name": "Ezra Bridger",
+          "count": 2
+        },
+        {
+          "id": "JTL_215",
+          "cid": "5673100759",
+          "name": "BoShek",
+          "count": 2
+        },
+        {
+          "id": "JTL_096",
+          "cid": "2388374331",
+          "name": "Blue Leader",
+          "count": 2
+        },
+        {
+          "id": "JTL_200",
+          "cid": "1990020761",
+          "name": "Shuttle Tydirium",
+          "count": 3
+        },
+        {
+          "id": "JTL_217",
+          "cid": "1303370295",
+          "name": "Death Space Skirmisher",
+          "count": 1
+        },
+        {
+          "id": "JTL_249",
+          "cid": "8845408332",
+          "name": "Millennium Falcon",
+          "count": 3
+        },
+        {
+          "id": "JTL_103",
+          "cid": "7208848194",
+          "name": "Chewbacca",
+          "count": 3
+        },
+        {
+          "id": "TWI_114",
+          "cid": "9017877021",
+          "name": "Clone Commander Cody",
+          "count": 1
+        },
+        {
+          "id": "JTL_210",
+          "cid": "6421006753",
+          "name": "The Mandalorian",
+          "count": 1
+        },
+        {
+          "id": "JTL_124",
+          "cid": "4334684518",
+          "name": "Tandem Assault",
+          "count": 2
+        },
+        {
+          "id": "SOR_217",
+          "cid": "8297630396",
+          "name": "Shoot First",
+          "count": 1
+        },
+        {
+          "id": "SOR_222",
+          "cid": "7202133736",
+          "name": "Waylay",
+          "count": 3
+        },
+        {
+          "id": "JTL_208",
+          "cid": "8833191722",
+          "name": "Never Tell Me the Odds",
+          "count": 3
+        },
+        {
+          "id": "JTL_209",
+          "cid": "0964312065",
+          "name": "It's a Trap",
+          "count": 1
+        },
+        {
+          "id": "JTL_235",
+          "cid": "8105698374",
+          "name": "Commandeer",
+          "count": 1
+        }
+      ],
+      "sideboard": [],
+      "metadata": {
+        "name": "Han Solo · Jump to Lightspeed",
+        "author": "Fantasy Flight Games"
+      },
+      "source": "https://starwarsunlimited.com/articles/disintegrating-the-odds",
+      "sources": [
+        "https://starwarsunlimited.com/articles/disintegrating-the-odds",
+        "https://api.swu-db.com/cards/jtl",
+        "https://cdn.starwarsunlimited.com//SWH_04_Article_Spotlight_Decks_Decklist_v02_1f4852aef7.jpg"
+      ],
+      "verified": true,
+      "cardCount": 50,
+      "playstyle": "Space tempo · pilots, vehicles, and surprise attacks",
+      "sourceImage": "https://cdn.starwarsunlimited.com//SWH_04_Article_Spotlight_Decks_Decklist_v02_1f4852aef7.jpg",
+      "sourceArchive": "docs/sources/jtl-decklists.jpg",
+      "provenance": "Official FFG decklist image; card names matched against API."
+    },
+    {
+      "id": "lof-qui-gon-jinn",
+      "name": "Qui-Gon Jinn · Legends of the Force",
+      "set": "LOF",
+      "setName": "Legends of the Force",
+      "product": "Spotlight Deck",
+      "format": "Premier",
+      "leader": {
+        "id": "LOF_016",
+        "cid": "2580909557",
+        "name": "Qui-Gon Jinn"
+      },
+      "base": {
+        "id": "LOF_023",
+        "cid": "0450346170",
+        "name": "Jedi Temple"
+      },
+      "deck": [
+        {
+          "id": "SHD_096",
+          "cid": "9850906885",
+          "name": "Maz Kanata",
+          "count": 1
+        },
+        {
+          "id": "JTL_201",
+          "cid": "3388566378",
+          "name": "Ahsoka Tano",
+          "count": 1
+        },
+        {
+          "id": "LOF_249",
+          "cid": "7338701361",
+          "name": "Luke Skywalker",
+          "count": 1
+        },
+        {
+          "id": "LOF_104",
+          "cid": "6801641285",
+          "name": "Luminous Beings",
+          "count": 1
+        },
+        {
+          "id": "SOR_219",
+          "cid": "3426168686",
+          "name": "Sneak Attack",
+          "count": 1
+        },
+        {
+          "id": "LOF_190",
+          "cid": "3967581160",
+          "name": "Anakin Skywalker",
+          "count": 3
+        },
+        {
+          "id": "LOF_242",
+          "cid": "0102737248",
+          "name": "Refugee of The Path",
+          "count": 3
+        },
+        {
+          "id": "LOF_255",
+          "cid": "4974236883",
+          "name": "Curious Flock",
+          "count": 3
+        },
+        {
+          "id": "TWI_193",
+          "cid": "5616678900",
+          "name": "R2-D2",
+          "count": 2
+        },
+        {
+          "id": "LOF_193",
+          "cid": "0612354523",
+          "name": "Youngling Padawan",
+          "count": 3
+        },
+        {
+          "id": "LOF_096",
+          "cid": "6059510270",
+          "name": "Obi-Wan Kenobi",
+          "count": 3
+        },
+        {
+          "id": "LOF_111",
+          "cid": "8834515285",
+          "name": "Maz Kanata",
+          "count": 2
+        },
+        {
+          "id": "LOF_194",
+          "cid": "7074896971",
+          "name": "J-Type Nubian Starship",
+          "count": 2
+        },
+        {
+          "id": "LOF_196",
+          "cid": "5573238875",
+          "name": "Jedi Sentinel",
+          "count": 3
+        },
+        {
+          "id": "LOF_099",
+          "cid": "7012130030",
+          "name": "Paladin Training Corvette",
+          "count": 2
+        },
+        {
+          "id": "LOF_197",
+          "cid": "0661066339",
+          "name": "Qui-Gon Jinn's Aethersprite",
+          "count": 3
+        },
+        {
+          "id": "LOF_198",
+          "cid": "1545515980",
+          "name": "Stinger Mantis",
+          "count": 2
+        },
+        {
+          "id": "LOF_199",
+          "cid": "7529152088",
+          "name": "Depa Billaba",
+          "count": 2
+        },
+        {
+          "id": "LOF_100",
+          "cid": "1553569317",
+          "name": "Kelleran Beq",
+          "count": 2
+        },
+        {
+          "id": "TWI_217",
+          "cid": "6700679522",
+          "name": "Tri-Droid Suppressor",
+          "count": 2
+        },
+        {
+          "id": "LOF_201",
+          "cid": "3445044882",
+          "name": "Qui-Gon Jinn's Lightsaber",
+          "count": 3
+        },
+        {
+          "id": "LOF_218",
+          "cid": "9069308523",
+          "name": "Impossible Escape",
+          "count": 2
+        },
+        {
+          "id": "LOF_227",
+          "cid": "9021149512",
+          "name": "The Will of the Force",
+          "count": 3
+        }
+      ],
+      "sideboard": [],
+      "metadata": {
+        "name": "Qui-Gon Jinn · Legends of the Force",
+        "author": "Fantasy Flight Games"
+      },
+      "source": "https://starwarsunlimited.com/articles/a-fated-duel",
+      "sources": [
+        "https://starwarsunlimited.com/articles/a-fated-duel",
+        "https://api.swu-db.com/cards/lof",
+        "https://cdn.starwarsunlimited.com//SWH_05_Article_Spotlight_Decks_Decklist_v02_871f321615.png"
+      ],
+      "verified": true,
+      "cardCount": 50,
+      "playstyle": "Force tempo · bounce, replay, and Jedi synergies",
+      "sourceImage": "https://cdn.starwarsunlimited.com//SWH_05_Article_Spotlight_Decks_Decklist_v02_871f321615.png",
+      "sourceArchive": "docs/sources/lof-decklists.png",
+      "provenance": "Official FFG decklist image; card names matched against API."
+    },
+    {
+      "id": "lof-darth-maul",
+      "name": "Darth Maul · Legends of the Force",
+      "set": "LOF",
+      "setName": "Legends of the Force",
+      "product": "Spotlight Deck",
+      "format": "Premier",
+      "leader": {
+        "id": "LOF_009",
+        "cid": "0024560758",
+        "name": "Darth Maul"
+      },
+      "base": {
+        "id": "LOF_021",
+        "cid": "0119018087",
+        "name": "Shadowed Undercity"
+      },
+      "deck": [
+        {
+          "id": "LOF_063",
+          "cid": "2508430135",
+          "name": "Oggdo Bogdo",
+          "count": 1
+        },
+        {
+          "id": "LOF_038",
+          "cid": "8633377277",
+          "name": "Pong Krell",
+          "count": 1
+        },
+        {
+          "id": "TWI_138",
+          "cid": "8655450523",
+          "name": "Count Dooku",
+          "count": 1
+        },
+        {
+          "id": "LOF_138",
+          "cid": "0412810079",
+          "name": "Sith Holocron",
+          "count": 1
+        },
+        {
+          "id": "SOR_137",
+          "cid": "0160548661",
+          "name": "Fallen Lightsaber",
+          "count": 1
+        },
+        {
+          "id": "LOF_154",
+          "cid": "2897264390",
+          "name": "Witch of the Mist",
+          "count": 3
+        },
+        {
+          "id": "LOF_031",
+          "cid": "1991532931",
+          "name": "Karis",
+          "count": 2
+        },
+        {
+          "id": "LOF_059",
+          "cid": "6772792435",
+          "name": "Nightsister Warrior",
+          "count": 3
+        },
+        {
+          "id": "LOF_129",
+          "cid": "0958021533",
+          "name": "Acolyte of the Beyond",
+          "count": 2
+        },
+        {
+          "id": "LOF_131",
+          "cid": "4043787241",
+          "name": "Strikeship",
+          "count": 3
+        },
+        {
+          "id": "LOF_156",
+          "cid": "5390030381",
+          "name": "Infused Brawler ",
+          "count": 2
+        },
+        {
+          "id": "LOF_229",
+          "cid": "4145147486",
+          "name": "Kylo Ren",
+          "count": 2
+        },
+        {
+          "id": "LOF_160",
+          "cid": "5856307533",
+          "name": "Merrin",
+          "count": 2
+        },
+        {
+          "id": "LOF_035",
+          "cid": "2410965424",
+          "name": "Talzin's Assassin",
+          "count": 3
+        },
+        {
+          "id": "LOF_067",
+          "cid": "0775347605",
+          "name": "Chirrut Îmwe",
+          "count": 2
+        },
+        {
+          "id": "LOF_231",
+          "cid": "4347039495",
+          "name": "Darth Tyranus",
+          "count": 3
+        },
+        {
+          "id": "LOF_233",
+          "cid": "1540696516",
+          "name": "Scimitar",
+          "count": 3
+        },
+        {
+          "id": "LOF_136",
+          "cid": "2290426901",
+          "name": "Thralls of the Coven",
+          "count": 2
+        },
+        {
+          "id": "LOF_137",
+          "cid": "1636013021",
+          "name": "Savage Opress",
+          "count": 2
+        },
+        {
+          "id": "LOF_039",
+          "cid": "6797297267",
+          "name": "Darth Sidious",
+          "count": 3
+        },
+        {
+          "id": "LOF_140",
+          "cid": "2167393423",
+          "name": "Darth Maul's Lightsaber",
+          "count": 3
+        },
+        {
+          "id": "LOF_041",
+          "cid": "5083905745",
+          "name": "Drain Essence",
+          "count": 3
+        },
+        {
+          "id": "SOR_139",
+          "cid": "1446471743",
+          "name": "Force Choke",
+          "count": 2
+        }
+      ],
+      "sideboard": [],
+      "metadata": {
+        "name": "Darth Maul · Legends of the Force",
+        "author": "Fantasy Flight Games"
+      },
+      "source": "https://starwarsunlimited.com/articles/a-fated-duel",
+      "sources": [
+        "https://starwarsunlimited.com/articles/a-fated-duel",
+        "https://api.swu-db.com/cards/lof",
+        "https://cdn.starwarsunlimited.com//SWH_05_Article_Spotlight_Decks_Decklist_v02_871f321615.png"
+      ],
+      "verified": true,
+      "cardCount": 50,
+      "playstyle": "Sith aggression · damage, drain, and Force units",
+      "sourceImage": "https://cdn.starwarsunlimited.com//SWH_05_Article_Spotlight_Decks_Decklist_v02_871f321615.png",
+      "sourceArchive": "docs/sources/lof-decklists.png",
+      "provenance": "Official FFG decklist image; card names matched against API."
+    },
+    {
+      "id": "sec-padme-amidala",
+      "name": "Padmé Amidala · Secrets of Power",
+      "set": "SEC",
+      "setName": "Secrets of Power",
+      "product": "Spotlight Deck",
+      "format": "Premier",
+      "leader": {
+        "id": "SEC_016",
+        "cid": "3399415368",
+        "name": "Padmé Amidala"
+      },
+      "base": {
+        "id": "SEC_022",
+        "cid": "7504537867",
+        "name": "Senate Rotunda"
+      },
+      "deck": [
+        {
+          "id": "SEC_248",
+          "cid": "5030756090",
+          "name": "B2EM0",
+          "count": 1
+        },
+        {
+          "id": "SEC_093",
+          "cid": "7588883291",
+          "name": "C-3P0",
+          "count": 1
+        },
+        {
+          "id": "SEC_197",
+          "cid": "7125768467",
+          "name": "Furtive Handmaiden",
+          "count": 3
+        },
+        {
+          "id": "SEC_198",
+          "cid": "9280012856",
+          "name": "Bail Organa",
+          "count": 2
+        },
+        {
+          "id": "SEC_199",
+          "cid": "5195040705",
+          "name": "Bravo Squadron Fighter",
+          "count": 2
+        },
+        {
+          "id": "SEC_111",
+          "cid": "9985741271",
+          "name": "Jar Jar Binks",
+          "count": 1
+        },
+        {
+          "id": "SEC_094",
+          "cid": "9378249305",
+          "name": "Mina Bonteri",
+          "count": 2
+        },
+        {
+          "id": "LOF_192",
+          "cid": "9035255842",
+          "name": "N-1 Starfighter",
+          "count": 2
+        },
+        {
+          "id": "JTL_111",
+          "cid": "8247495024",
+          "name": "Seasoned Fleet Admiral",
+          "count": 1
+        },
+        {
+          "id": "SEC_096",
+          "cid": "7352167785",
+          "name": "Ahsoka Tano",
+          "count": 3
+        },
+        {
+          "id": "SEC_201",
+          "cid": "3103445211",
+          "name": "Anakin Skywalker",
+          "count": 3
+        },
+        {
+          "id": "LOF_194",
+          "cid": "7074896971",
+          "name": "J-Type Nubian Starship",
+          "count": 3
+        },
+        {
+          "id": "SEC_115",
+          "cid": "4832242481",
+          "name": "Taylander Shuttle",
+          "count": 1
+        },
+        {
+          "id": "SEC_098",
+          "cid": "8088607505",
+          "name": "Captain Typho",
+          "count": 3
+        },
+        {
+          "id": "SEC_116",
+          "cid": "7241924417",
+          "name": "Nubian Star Skiff",
+          "count": 2
+        },
+        {
+          "id": "SEC_099",
+          "cid": "2919204327",
+          "name": "Naboo Royal Starship",
+          "count": 1
+        },
+        {
+          "id": "LOF_198",
+          "cid": "1545515980",
+          "name": "Stinger Mantis",
+          "count": 2
+        },
+        {
+          "id": "SEC_208",
+          "cid": "7027608849",
+          "name": "Hunter",
+          "count": 1
+        },
+        {
+          "id": "SEC_120",
+          "cid": "1002827363",
+          "name": "Naboo Security Force",
+          "count": 2
+        },
+        {
+          "id": "LOF_100",
+          "cid": "1553569317",
+          "name": "Kelleran Beq",
+          "count": 1
+        },
+        {
+          "id": "SEC_103",
+          "cid": "1347170274",
+          "name": "Mon Mothma",
+          "count": 1
+        },
+        {
+          "id": "JTL_123",
+          "cid": "3436482269",
+          "name": "Dogfight",
+          "count": 2
+        },
+        {
+          "id": "SEC_226",
+          "cid": "6015383018",
+          "name": "Sneaking Suspicion",
+          "count": 3
+        },
+        {
+          "id": "SEC_234",
+          "cid": "9326222198",
+          "name": "Bog Down in Procedure",
+          "count": 2
+        },
+        {
+          "id": "SEC_127",
+          "cid": "3414562805",
+          "name": "Charged with Corruption",
+          "count": 1
+        },
+        {
+          "id": "SEC_256",
+          "cid": "0475605203",
+          "name": "Moral Authority",
+          "count": 1
+        },
+        {
+          "id": "SEC_129",
+          "cid": "1156033141",
+          "name": "With Thunderous Applause",
+          "count": 2
+        },
+        {
+          "id": "SEC_106",
+          "cid": "8062787049",
+          "name": "Dismantle the Conspiracy",
+          "count": 1
+        }
+      ],
+      "sideboard": [],
+      "metadata": {
+        "name": "Padmé Amidala · Secrets of Power",
+        "author": "Fantasy Flight Games"
+      },
+      "source": "https://starwarsunlimited.com/articles/disclosing-plots",
+      "sources": [
+        "https://starwarsunlimited.com/articles/disclosing-plots",
+        "https://api.swu-db.com/cards/sec",
+        "https://cdn.starwarsunlimited.com//SWH_06_Article_Spotlight_Decks_Decklist_v02_042aa34e35.png"
+      ],
+      "verified": true,
+      "cardCount": 50,
+      "playstyle": "Political control · reveal information and outlast opponents",
+      "sourceImage": "https://cdn.starwarsunlimited.com//SWH_06_Article_Spotlight_Decks_Decklist_v02_042aa34e35.png",
+      "sourceArchive": "docs/sources/sec-decklists.png",
+      "provenance": "Official FFG decklist image; card names matched against API."
+    },
+    {
+      "id": "sec-chancellor-palpatine",
+      "name": "Chancellor Palpatine · Secrets of Power",
+      "set": "SEC",
+      "setName": "Secrets of Power",
+      "product": "Spotlight Deck",
+      "format": "Premier",
+      "leader": {
+        "id": "SEC_001",
+        "cid": "1020365882",
+        "name": "Chancellor Palpatine"
+      },
+      "base": {
+        "id": "SEC_022",
+        "cid": "7504537867",
+        "name": "Senate Rotunda"
+      },
+      "deck": [
+        {
+          "id": "SEC_079",
+          "cid": "8854921497",
+          "name": "Corrupt Politician",
+          "count": 3
+        },
+        {
+          "id": "SEC_055",
+          "cid": "9394156877",
+          "name": "Dhani Pilgrim",
+          "count": 2
+        },
+        {
+          "id": "SEC_111",
+          "cid": "9985741271",
+          "name": "Jar Jar Binks",
+          "count": 1
+        },
+        {
+          "id": "SEC_081",
+          "cid": "2183727633",
+          "name": "Major Partagaz",
+          "count": 1
+        },
+        {
+          "id": "JTL_033",
+          "cid": "1164297413",
+          "name": "Onyx Squadron Brute",
+          "count": 3
+        },
+        {
+          "id": "SEC_027",
+          "cid": "3052170248",
+          "name": "The Chancellor's Shuttle",
+          "count": 3
+        },
+        {
+          "id": "LOF_082",
+          "cid": "0398004943",
+          "name": "Vaneé",
+          "count": 2
+        },
+        {
+          "id": "SEC_082",
+          "cid": "7936097828",
+          "name": "Chancellor Palpatine",
+          "count": 1
+        },
+        {
+          "id": "SEC_031",
+          "cid": "0296782712",
+          "name": "Nute Gunray",
+          "count": 1
+        },
+        {
+          "id": "SEC_083",
+          "cid": "7227136692",
+          "name": "ISB Shuttle",
+          "count": 3
+        },
+        {
+          "id": "SEC_241",
+          "cid": "5668757769",
+          "name": "Political Bully",
+          "count": 3
+        },
+        {
+          "id": "SEC_084",
+          "cid": "7365023470",
+          "name": "Mas Amedda",
+          "count": 2
+        },
+        {
+          "id": "SEC_033",
+          "cid": "7069246970",
+          "name": "Sly Moore",
+          "count": 2
+        },
+        {
+          "id": "SEC_085",
+          "cid": "6496365934",
+          "name": "Vice Admiral Rampart",
+          "count": 1
+        },
+        {
+          "id": "SEC_034",
+          "cid": "8365930807",
+          "name": "Cad Bane",
+          "count": 3
+        },
+        {
+          "id": "SEC_087",
+          "cid": "8167114067",
+          "name": "Dedra Meero",
+          "count": 1
+        },
+        {
+          "id": "SEC_036",
+          "cid": "3796991604",
+          "name": "Dogmatic Shock Squad",
+          "count": 3
+        },
+        {
+          "id": "SEC_092",
+          "cid": "6814804824",
+          "name": "I Am the Senate",
+          "count": 3
+        },
+        {
+          "id": "SEC_037",
+          "cid": "5577542957",
+          "name": "Cantwell Arrestor Cruiser",
+          "count": 1
+        },
+        {
+          "id": "SEC_245",
+          "cid": "8210990735",
+          "name": "When Has Become Now",
+          "count": 1
+        },
+        {
+          "id": "SEC_070",
+          "cid": "0024944513",
+          "name": "Armor of Fortune",
+          "count": 2
+        },
+        {
+          "id": "SEC_124",
+          "cid": "3489636326",
+          "name": "Budget Scheming",
+          "count": 2
+        },
+        {
+          "id": "SEC_123",
+          "cid": "2877797132",
+          "name": "Unveiled Might",
+          "count": 2
+        },
+        {
+          "id": "SEC_076",
+          "cid": "7930132943",
+          "name": "Charged with Murder",
+          "count": 1
+        },
+        {
+          "id": "SEC_077",
+          "cid": "1095143323",
+          "name": "Retaliation",
+          "count": 2
+        },
+        {
+          "id": "LOF_043",
+          "cid": "9242267986",
+          "name": "The Tragedy of Plagueis",
+          "count": 1
+        }
+      ],
+      "sideboard": [],
+      "metadata": {
+        "name": "Chancellor Palpatine · Secrets of Power",
+        "author": "Fantasy Flight Games"
+      },
+      "source": "https://starwarsunlimited.com/articles/disclosing-plots",
+      "sources": [
+        "https://starwarsunlimited.com/articles/disclosing-plots",
+        "https://api.swu-db.com/cards/sec",
+        "https://cdn.starwarsunlimited.com//SWH_06_Article_Spotlight_Decks_Decklist_v02_042aa34e35.png"
+      ],
+      "verified": true,
+      "cardCount": 50,
+      "playstyle": "Conspiracy control · discard, politics, and durable units",
+      "sourceImage": "https://cdn.starwarsunlimited.com//SWH_06_Article_Spotlight_Decks_Decklist_v02_042aa34e35.png",
+      "sourceArchive": "docs/sources/sec-decklists.png",
+      "provenance": "Official FFG decklist image; card names matched against API."
+    },
+    {
+      "id": "law-leia-organa",
+      "name": "Leia Organa · A Lawless Time",
+      "set": "LAW",
+      "setName": "A Lawless Time",
+      "product": "Spotlight Deck",
+      "format": "Premier",
+      "leader": {
+        "id": "LAW_010",
+        "cid": "3859010573",
+        "name": "Leia Organa"
+      },
+      "base": {
+        "id": "LAW_020",
+        "cid": "5043366366",
+        "name": "Daimyo's Palace"
+      },
+      "deck": [
+        {
+          "id": "LAW_037",
+          "cid": "3470070405",
+          "name": "Han Solo",
+          "count": 3
+        },
+        {
+          "id": "LAW_142",
+          "cid": "7681849188",
+          "name": "Scarif Lieutenant",
+          "count": 2
+        },
+        {
+          "id": "SEC_093",
+          "cid": "7588883291",
+          "name": "C-3P0",
+          "count": 2
+        },
+        {
+          "id": "LAW_067",
+          "cid": "4111009479",
+          "name": "Jyn Erso",
+          "count": 1
+        },
+        {
+          "id": "LAW_038",
+          "cid": "2679690589",
+          "name": "Lepi Lookout",
+          "count": 3
+        },
+        {
+          "id": "LAW_104",
+          "cid": "8677314485",
+          "name": "Bodhi Rook",
+          "count": 1
+        },
+        {
+          "id": "JTL_095",
+          "cid": "7653629848",
+          "name": "Phoenix Squadron A-Wing",
+          "count": 3
+        },
+        {
+          "id": "LAW_145",
+          "cid": "8106453944",
+          "name": "R2-D2",
+          "count": 3
+        },
+        {
+          "id": "LAW_152",
+          "cid": "4459586752",
+          "name": "C-3P0",
+          "count": 2
+        },
+        {
+          "id": "LAW_105",
+          "cid": "1274375037",
+          "name": "Cinta Kaz",
+          "count": 2
+        },
+        {
+          "id": "LAW_119",
+          "cid": "6685110508",
+          "name": "Rogue One",
+          "count": 1
+        },
+        {
+          "id": "LAW_146",
+          "cid": "2124574639",
+          "name": "Massassi Group Marines",
+          "count": 3
+        },
+        {
+          "id": "JTL_250",
+          "cid": "7325248681",
+          "name": "Sabine's Masterpiece",
+          "count": 1
+        },
+        {
+          "id": "SEC_252",
+          "cid": "0390492118",
+          "name": "Maarva Andor",
+          "count": 2
+        },
+        {
+          "id": "LAW_035",
+          "cid": "8944855119",
+          "name": "Ezra Bridger",
+          "count": 2
+        },
+        {
+          "id": "LAW_147",
+          "cid": "1925389607",
+          "name": "Jaunty Light Freighter",
+          "count": 3
+        },
+        {
+          "id": "LAW_045",
+          "cid": "6658095148",
+          "name": "Zeb Orellios",
+          "count": 2
+        },
+        {
+          "id": "LAW_108",
+          "cid": "2254545413",
+          "name": "Lando Calrissian",
+          "count": 3
+        },
+        {
+          "id": "SEC_103",
+          "cid": "1347170274",
+          "name": "Mon Mothma",
+          "count": 1
+        },
+        {
+          "id": "LAW_111",
+          "cid": "5334583399",
+          "name": "Leia's Disguise",
+          "count": 3
+        },
+        {
+          "id": "LAW_166",
+          "cid": "4634587022",
+          "name": "Putting a Team Together",
+          "count": 2
+        },
+        {
+          "id": "LAW_167",
+          "cid": "4006503809",
+          "name": "Common Cause",
+          "count": 3
+        },
+        {
+          "id": "LAW_041",
+          "cid": "0080292869",
+          "name": "Nothing Left to Fear",
+          "count": 2
+        }
+      ],
+      "sideboard": [],
+      "metadata": {
+        "name": "Leia Organa · A Lawless Time",
+        "author": "Fantasy Flight Games"
+      },
+      "source": "https://starwarsunlimited.com/articles/aspects-and-credits",
+      "sources": [
+        "https://starwarsunlimited.com/articles/aspects-and-credits",
+        "https://api.swu-db.com/cards/law",
+        "https://cdn.starwarsunlimited.com//SWH_07_P2_Spotlight_Deck_Breakdown_Article_Splash_Decklist_ed3fe4b9be.png"
+      ],
+      "verified": true,
+      "cardCount": 50,
+      "playstyle": "Multi-aspect Rebels · build a board and coordinate attacks",
+      "sourceImage": "https://cdn.starwarsunlimited.com//SWH_07_P2_Spotlight_Deck_Breakdown_Article_Splash_Decklist_ed3fe4b9be.png",
+      "sourceArchive": "docs/sources/law-decklists.png",
+      "provenance": "Official FFG decklist image; card names matched against API."
+    },
+    {
+      "id": "law-jabba-the-hutt",
+      "name": "Jabba the Hutt · A Lawless Time",
+      "set": "LAW",
+      "setName": "A Lawless Time",
+      "product": "Spotlight Deck",
+      "format": "Premier",
+      "leader": {
+        "id": "LAW_015",
+        "cid": "2418476827",
+        "name": "Jabba the Hutt"
+      },
+      "base": {
+        "id": "LAW_023",
+        "cid": "7897278827",
+        "name": "Great Pit of Carkoon"
+      },
+      "deck": [
+        {
+          "id": "LAW_210",
+          "cid": "2443700984",
+          "name": "Salacious Crumb",
+          "count": 3
+        },
+        {
+          "id": "LAW_134",
+          "cid": "2210391815",
+          "name": "Bib Fortuna",
+          "count": 1
+        },
+        {
+          "id": "LAW_136",
+          "cid": "1895232319",
+          "name": "Syndicate Spice Runner",
+          "count": 2
+        },
+        {
+          "id": "LAW_152",
+          "cid": "4459586752",
+          "name": "C-3P0",
+          "count": 2
+        },
+        {
+          "id": "LAW_212",
+          "cid": "2947761350",
+          "name": "Malakili",
+          "count": 3
+        },
+        {
+          "id": "SEC_186",
+          "cid": "2276001210",
+          "name": "Garindan",
+          "count": 2
+        },
+        {
+          "id": "LAW_211",
+          "cid": "9337828045",
+          "name": "Black Sun Patroller",
+          "count": 3
+        },
+        {
+          "id": "LAW_231",
+          "cid": "1606988687",
+          "name": "Weequay Pirate",
+          "count": 3
+        },
+        {
+          "id": "LAW_249",
+          "cid": "3080000065",
+          "name": "Black Sun Cabalist",
+          "count": 3
+        },
+        {
+          "id": "LAW_158",
+          "cid": "0240338988",
+          "name": "Khetanna",
+          "count": 2
+        },
+        {
+          "id": "SEC_189",
+          "cid": "9755584844",
+          "name": "Lurking Snub Fighter",
+          "count": 2
+        },
+        {
+          "id": "JTL_184",
+          "cid": "9014161111",
+          "name": "Contracted Jumpmaster",
+          "count": 3
+        },
+        {
+          "id": "JTL_216",
+          "cid": "7489502985",
+          "name": "Contracted Hunter",
+          "count": 2
+        },
+        {
+          "id": "LAW_065",
+          "cid": "8950998844",
+          "name": "4-LOM",
+          "count": 2
+        },
+        {
+          "id": "LAW_214",
+          "cid": "2562671677",
+          "name": "Boba Fett",
+          "count": 1
+        },
+        {
+          "id": "LAW_215",
+          "cid": "8437499257",
+          "name": "Vermillion",
+          "count": 1
+        },
+        {
+          "id": "LAW_252",
+          "cid": "9215774796",
+          "name": "Fett's Firespray",
+          "count": 1
+        },
+        {
+          "id": "LAW_216",
+          "cid": "4308878136",
+          "name": "Jabba's Rancor",
+          "count": 2
+        },
+        {
+          "id": "LAW_163",
+          "cid": "6089627415",
+          "name": "The Sarlacc of Carkoon",
+          "count": 3
+        },
+        {
+          "id": "LAW_244",
+          "cid": "7477598198",
+          "name": "Unmarked Credits",
+          "count": 3
+        },
+        {
+          "id": "LAW_246",
+          "cid": "2505117809",
+          "name": "The Axe Forgets",
+          "count": 2
+        },
+        {
+          "id": "LAW_168",
+          "cid": "6417951289",
+          "name": "Haymaker",
+          "count": 3
+        },
+        {
+          "id": "LAW_170",
+          "cid": "3933327047",
+          "name": "Double-Cross",
+          "count": 1
+        }
+      ],
+      "sideboard": [],
+      "metadata": {
+        "name": "Jabba the Hutt · A Lawless Time",
+        "author": "Fantasy Flight Games"
+      },
+      "source": "https://starwarsunlimited.com/articles/aspects-and-credits",
+      "sources": [
+        "https://starwarsunlimited.com/articles/aspects-and-credits",
+        "https://api.swu-db.com/cards/law",
+        "https://cdn.starwarsunlimited.com//SWH_07_P2_Spotlight_Deck_Breakdown_Article_Splash_Decklist_ed3fe4b9be.png"
+      ],
+      "verified": true,
+      "cardCount": 50,
+      "playstyle": "Underworld economy · credits, large threats, and value",
+      "sourceImage": "https://cdn.starwarsunlimited.com//SWH_07_P2_Spotlight_Deck_Breakdown_Article_Splash_Decklist_ed3fe4b9be.png",
+      "sourceArchive": "docs/sources/law-decklists.png",
+      "provenance": "Official FFG decklist image; card names matched against API."
+    },
+    {
+      "id": "ash-emperor-palpatine",
+      "name": "Emperor Palpatine · Ashes of the Empire",
+      "set": "ASH",
+      "setName": "Ashes of the Empire",
+      "product": "Spotlight Deck",
+      "format": "Premier",
+      "leader": {
+        "id": "ASH_015",
+        "cid": "9261531867",
+        "name": "Emperor Palpatine"
+      },
+      "base": {
+        "id": "ASH_021",
+        "cid": "2012318453",
+        "name": "Emperor's Throne Room"
+      },
+      "deck": [
+        {
+          "id": "ASH_118",
+          "cid": "8909316129",
+          "name": "8D8",
+          "count": 1
+        },
+        {
+          "id": "ASH_036",
+          "cid": "5334076199",
+          "name": "Rukh",
+          "count": 1
+        },
+        {
+          "id": "ASH_128",
+          "cid": "8459332679",
+          "name": "Bothan-5",
+          "count": 1
+        },
+        {
+          "id": "ASH_101",
+          "cid": "5392982470",
+          "name": "The Great Mothers",
+          "count": 1
+        },
+        {
+          "id": "LOF_091",
+          "cid": "3848295601",
+          "name": "Craving Power",
+          "count": 1
+        },
+        {
+          "id": "ASH_116",
+          "cid": "4461332466",
+          "name": "Ant Droid",
+          "count": 3
+        },
+        {
+          "id": "ASH_189",
+          "cid": "6725068449",
+          "name": "Emperor's Messenger",
+          "count": 3
+        },
+        {
+          "id": "SEC_185",
+          "cid": "1332323952",
+          "name": "Screeching TIE Fighter",
+          "count": 2
+        },
+        {
+          "id": "ASH_215",
+          "cid": "8239713162",
+          "name": "Flanking TIE Interceptor",
+          "count": 3
+        },
+        {
+          "id": "ASH_094",
+          "cid": "9995040018",
+          "name": "Moff Jerjerrod",
+          "count": 3
+        },
+        {
+          "id": "ASH_191",
+          "cid": "0834554190",
+          "name": "Shin Hati's Fiend Fighter",
+          "count": 2
+        },
+        {
+          "id": "ASH_218",
+          "cid": "5271028285",
+          "name": "Ferry Droid",
+          "count": 2
+        },
+        {
+          "id": "ASH_096",
+          "cid": "0538592539",
+          "name": "Forest Patroller",
+          "count": 3
+        },
+        {
+          "id": "ASH_097",
+          "cid": "4641653534",
+          "name": "Moff Gideon",
+          "count": 2
+        },
+        {
+          "id": "ASH_193",
+          "cid": "7066493287",
+          "name": "Emperor's Champion",
+          "count": 3
+        },
+        {
+          "id": "ASH_221",
+          "cid": "4212933603",
+          "name": "Helix Starfighter",
+          "count": 2
+        },
+        {
+          "id": "ASH_243",
+          "cid": "2759135991",
+          "name": "Darth Vader",
+          "count": 3
+        },
+        {
+          "id": "ASH_099",
+          "cid": "8244257655",
+          "name": "Gozanti Assault Carrier",
+          "count": 2
+        },
+        {
+          "id": "ASH_197",
+          "cid": "6139617442",
+          "name": "Executor",
+          "count": 3
+        },
+        {
+          "id": "ASH_198",
+          "cid": "9653971462",
+          "name": "Nowhere to Hide",
+          "count": 2
+        },
+        {
+          "id": "ASH_199",
+          "cid": "8773190295",
+          "name": "There Is No Conflict",
+          "count": 3
+        },
+        {
+          "id": "ASH_103",
+          "cid": "9020748123",
+          "name": "Long Live the Empire",
+          "count": 2
+        },
+        {
+          "id": "ASH_139",
+          "cid": "0912750156",
+          "name": "Hold Them Off",
+          "count": 2
+        }
+      ],
+      "sideboard": [],
+      "metadata": {
+        "name": "Emperor Palpatine · Ashes of the Empire",
+        "author": "Fantasy Flight Games"
+      },
+      "source": "https://starwarsunlimited.com/articles/a-fated-confrontation",
+      "sources": [
+        "https://starwarsunlimited.com/articles/a-fated-confrontation",
+        "https://api.swu-db.com/cards/ash",
+        "https://cdn.starwarsunlimited.com//SWH_08_Article_Spotlight_Decks_Splash_Decklist_37eb158bdd.png"
+      ],
+      "verified": true,
+      "cardCount": 50,
+      "playstyle": "Advantage swarm · support attacks and Imperial reinforcements",
+      "sourceImage": "https://cdn.starwarsunlimited.com//SWH_08_Article_Spotlight_Decks_Splash_Decklist_37eb158bdd.png",
+      "sourceArchive": "docs/sources/ash-decklists.png",
+      "provenance": "Official FFG decklist image; card names matched against API."
+    },
+    {
+      "id": "ash-luke-skywalker",
+      "name": "Luke Skywalker · Ashes of the Empire",
+      "set": "ASH",
+      "setName": "Ashes of the Empire",
+      "product": "Spotlight Deck",
+      "format": "Premier",
+      "leader": {
+        "id": "ASH_005",
+        "cid": "6397550626",
+        "name": "Luke Skywalker"
+      },
+      "base": {
+        "id": "ASH_024",
+        "cid": "9756609647",
+        "name": "Dragonsnake Bog"
+      },
+      "deck": [
+        {
+          "id": "ASH_153",
+          "cid": "7688684269",
+          "name": "Green Leader",
+          "count": 1
+        },
+        {
+          "id": "ASH_031",
+          "cid": "5557320306",
+          "name": "Hera Syndulla",
+          "count": 1
+        },
+        {
+          "id": "ASH_060",
+          "cid": "2100091585",
+          "name": "Cobb Vanth",
+          "count": 1
+        },
+        {
+          "id": "LAW_047",
+          "cid": "9992505137",
+          "name": "Baze Malbus",
+          "count": 1
+        },
+        {
+          "id": "ASH_163",
+          "cid": "8814113279",
+          "name": "Reckless Sacrifice",
+          "count": 1
+        },
+        {
+          "id": "ASH_071",
+          "cid": "3515403989",
+          "name": "Battered Haulcraft",
+          "count": 3
+        },
+        {
+          "id": "ASH_072",
+          "cid": "2812074334",
+          "name": "Doctor Pershing",
+          "count": 2
+        },
+        {
+          "id": "ASH_166",
+          "cid": "0973431077",
+          "name": "Ewok Warrior",
+          "count": 3
+        },
+        {
+          "id": "JTL_062",
+          "cid": "8352777268",
+          "name": "Silver Angel",
+          "count": 2
+        },
+        {
+          "id": "ASH_059",
+          "cid": "8288798287",
+          "name": "Leia Organa",
+          "count": 3
+        },
+        {
+          "id": "ASH_156",
+          "cid": "3708951358",
+          "name": "R5-D4",
+          "count": 2
+        },
+        {
+          "id": "JTL_051",
+          "cid": "5751831621",
+          "name": "Red Squadron X-Wing",
+          "count": 3
+        },
+        {
+          "id": "LAW_254",
+          "cid": "4055046222",
+          "name": "Stalwart Fleet Trooper",
+          "count": 3
+        },
+        {
+          "id": "ASH_078",
+          "cid": "6295199019",
+          "name": "B-Wing Rearguard",
+          "count": 2
+        },
+        {
+          "id": "ASH_158",
+          "cid": "8474739433",
+          "name": "Han Solo",
+          "count": 3
+        },
+        {
+          "id": "ASH_061",
+          "cid": "1029172801",
+          "name": "Strike Team Vanguard",
+          "count": 3
+        },
+        {
+          "id": "ASH_159",
+          "cid": "5203773671",
+          "name": "Alphabet Squadron U-Wing",
+          "count": 2
+        },
+        {
+          "id": "ASH_255",
+          "cid": "6510578496",
+          "name": "Anakin Skywalker",
+          "count": 3
+        },
+        {
+          "id": "ASH_065",
+          "cid": "0334778925",
+          "name": "Home One",
+          "count": 2
+        },
+        {
+          "id": "ASH_066",
+          "cid": "4924242543",
+          "name": "Luke's Jedi Lightsaber",
+          "count": 3
+        },
+        {
+          "id": "ASH_088",
+          "cid": "0336845028",
+          "name": "The Conflict Within",
+          "count": 2
+        },
+        {
+          "id": "ASH_184",
+          "cid": "4388494523",
+          "name": "Follow Me",
+          "count": 2
+        },
+        {
+          "id": "ASH_162",
+          "cid": "7252605094",
+          "name": "Rash Action",
+          "count": 2
+        }
+      ],
+      "sideboard": [],
+      "metadata": {
+        "name": "Luke Skywalker · Ashes of the Empire",
+        "author": "Fantasy Flight Games"
+      },
+      "source": "https://starwarsunlimited.com/articles/a-fated-confrontation",
+      "sources": [
+        "https://starwarsunlimited.com/articles/a-fated-confrontation",
+        "https://api.swu-db.com/cards/ash",
+        "https://cdn.starwarsunlimited.com//SWH_08_Article_Spotlight_Decks_Splash_Decklist_37eb158bdd.png"
+      ],
+      "verified": true,
+      "cardCount": 50,
+      "playstyle": "Healing midrange · support attacks and lasting board presence",
+      "sourceImage": "https://cdn.starwarsunlimited.com//SWH_08_Article_Spotlight_Decks_Splash_Decklist_37eb158bdd.png",
+      "sourceArchive": "docs/sources/ash-decklists.png",
+      "provenance": "Official FFG decklist image; card names matched against API."
+    },
+    {
+      "id": "ibh-leia-organa",
+      "name": "Leia Organa · Intro Battle: Hoth",
+      "set": "IBH",
+      "setName": "Intro Battle: Hoth",
+      "product": "Intro Battle: Hoth",
+      "format": "Intro Battle (20 HP)",
+      "leader": {
+        "id": "IBH_001",
+        "cid": "9970912404",
+        "name": "Leia Organa"
+      },
+      "base": {
+        "id": "IBH_002",
+        "cid": "1049149674",
+        "name": "Echo Caverns"
+      },
+      "deck": [
+        {
+          "id": "IBH_003",
+          "cid": "1112130807",
+          "name": "Chewbacca",
+          "count": 2
+        },
+        {
+          "id": "IBH_004",
+          "cid": "8332320550",
+          "name": "Rogue Squadron Speeder",
+          "count": 3
+        },
+        {
+          "id": "IBH_005",
+          "cid": "1941072965",
+          "name": "I'll Cover For You",
+          "count": 2
+        },
+        {
+          "id": "IBH_006",
+          "cid": "9863058946",
+          "name": "Rebellion Y-Wing",
+          "count": 3
+        },
+        {
+          "id": "IBH_007",
+          "cid": "8073149642",
+          "name": "Echo Coordinator",
+          "count": 3
+        },
+        {
+          "id": "IBH_008",
+          "cid": "6699126595",
+          "name": "Trench Defender",
+          "count": 3
+        },
+        {
+          "id": "IBH_009",
+          "cid": "6605408513",
+          "name": "I've Found Them",
+          "count": 2
+        },
+        {
+          "id": "IBH_010",
+          "cid": "4136801536",
+          "name": "Han Solo",
+          "count": 2
+        },
+        {
+          "id": "IBH_011",
+          "cid": "3366353612",
+          "name": "R2-D2",
+          "count": 2
+        },
+        {
+          "id": "IBH_012",
+          "cid": "9489761564",
+          "name": "Evacuation Escort",
+          "count": 3
+        },
+        {
+          "id": "IBH_013",
+          "cid": "0375794695",
+          "name": "Recovery",
+          "count": 1
+        },
+        {
+          "id": "IBH_014",
+          "cid": "5509338180",
+          "name": "Bright Hope",
+          "count": 2
+        },
+        {
+          "id": "IBH_015",
+          "cid": "2798571364",
+          "name": "Tauntaun Mount",
+          "count": 3
+        },
+        {
+          "id": "IBH_016",
+          "cid": "9782761594",
+          "name": "Ion Cannon",
+          "count": 2
+        },
+        {
+          "id": "IBH_018",
+          "cid": "2859074789",
+          "name": "Go for the Legs",
+          "count": 2
+        },
+        {
+          "id": "IBH_019",
+          "cid": "2404973143",
+          "name": "C-3P0",
+          "count": 2
+        },
+        {
+          "id": "IBH_020",
+          "cid": "1174196426",
+          "name": "Luke Skywalker",
+          "count": 1
+        },
+        {
+          "id": "IBH_021",
+          "cid": "1758639231",
+          "name": "Improvised Detonation",
+          "count": 2
+        },
+        {
+          "id": "IBH_022",
+          "cid": "0446985285",
+          "name": "GR-75 Medium Transport",
+          "count": 3
+        },
+        {
+          "id": "IBH_023",
+          "cid": "8709200009",
+          "name": "General Rieekan",
+          "count": 2
+        },
+        {
+          "id": "IBH_031",
+          "cid": "6270777752",
+          "name": "Millennium Falcon",
+          "count": 1
+        },
+        {
+          "id": "IBH_037",
+          "cid": "4808981574",
+          "name": "Hoth Trooper",
+          "count": 3
+        },
+        {
+          "id": "IBH_052",
+          "cid": "8765982385",
+          "name": "Watch This",
+          "count": 1
+        }
+      ],
+      "sideboard": [],
+      "metadata": {
+        "name": "Leia Organa · Intro Battle: Hoth",
+        "author": "Fantasy Flight Games"
+      },
+      "source": "https://starwarsunlimited.com/products/intro-battle-hoth",
+      "sources": [
+        "https://starwarsunlimited.com/products/intro-battle-hoth",
+        "https://api.swu-db.com/cards/ibh",
+        "https://lasergamingshop.com/2025/10/26/learn-to-play-star-wars-unlimited-with-intro-battle-hoth/"
+      ],
+      "verified": true,
+      "cardCount": 50,
+      "playstyle": "Intro Battle · 20 HP base, full shuffled 50-card deck",
+      "baseHealth": 20,
+      "sourceArchive": null,
+      "provenance": "Official numbered card inventory IBH 1–52 / 53–104; quantities independently cross-checked.",
+      "description": "Intro Battle: Hoth — 50 karata, baza 20 HP. Igra se s uobičajenim miješanjem špila."
+    },
+    {
+      "id": "ibh-darth-vader",
+      "name": "Darth Vader · Intro Battle: Hoth",
+      "set": "IBH",
+      "setName": "Intro Battle: Hoth",
+      "product": "Intro Battle: Hoth",
+      "format": "Intro Battle (20 HP)",
+      "leader": {
+        "id": "IBH_053",
+        "cid": "9389694773",
+        "name": "Darth Vader"
+      },
+      "base": {
+        "id": "IBH_054",
+        "cid": "0479107180",
+        "name": "Forward Command Post"
+      },
+      "deck": [
+        {
+          "id": "IBH_055",
+          "cid": "0875657287",
+          "name": "First Legion Trooper",
+          "count": 3
+        },
+        {
+          "id": "IBH_056",
+          "cid": "9655836052",
+          "name": "Ground Assault AT-AT",
+          "count": 2
+        },
+        {
+          "id": "IBH_057",
+          "cid": "3768891856",
+          "name": "Snowtrooper Vanguard",
+          "count": 3
+        },
+        {
+          "id": "IBH_058",
+          "cid": "0008529481",
+          "name": "Lambda Shuttle",
+          "count": 3
+        },
+        {
+          "id": "IBH_059",
+          "cid": "8290455967",
+          "name": "Target the Main Generator",
+          "count": 2
+        },
+        {
+          "id": "IBH_060",
+          "cid": "0274964861",
+          "name": "Admiral Piett",
+          "count": 2
+        },
+        {
+          "id": "IBH_061",
+          "cid": "7524197668",
+          "name": "We're In Trouble",
+          "count": 2
+        },
+        {
+          "id": "IBH_062",
+          "cid": "9508246309",
+          "name": "Imperial Deck Officer",
+          "count": 2
+        },
+        {
+          "id": "IBH_063",
+          "cid": "0581968676",
+          "name": "Snowtrooper",
+          "count": 3
+        },
+        {
+          "id": "IBH_064",
+          "cid": "4512477799",
+          "name": "Hoth Lieutenant",
+          "count": 2
+        },
+        {
+          "id": "IBH_066",
+          "cid": "7014669428",
+          "name": "Too Strong for Blasters",
+          "count": 2
+        },
+        {
+          "id": "IBH_068",
+          "cid": "6776733024",
+          "name": "General Veers",
+          "count": 2
+        },
+        {
+          "id": "IBH_069",
+          "cid": "6815960456",
+          "name": "E-Web Gunner",
+          "count": 2
+        },
+        {
+          "id": "IBH_070",
+          "cid": "6199578966",
+          "name": "Blizzard Force AT-ST",
+          "count": 3
+        },
+        {
+          "id": "IBH_072",
+          "cid": "4184803715",
+          "name": "Avenger",
+          "count": 1
+        },
+        {
+          "id": "IBH_074",
+          "cid": "2796502553",
+          "name": "I Want Proof, Not Leads",
+          "count": 2
+        },
+        {
+          "id": "IBH_075",
+          "cid": "6867378216",
+          "name": "Scouting TIE Fighter",
+          "count": 3
+        },
+        {
+          "id": "IBH_076",
+          "cid": "5599665266",
+          "name": "Rampaging Wampa",
+          "count": 1
+        },
+        {
+          "id": "IBH_078",
+          "cid": "9127322562",
+          "name": "Surface Assault Bomber",
+          "count": 3
+        },
+        {
+          "id": "IBH_079",
+          "cid": "0162722840",
+          "name": "Death Squadron Star Destroyer",
+          "count": 2
+        },
+        {
+          "id": "IBH_082",
+          "cid": "2022483509",
+          "name": "Admiral Ozzel",
+          "count": 2
+        },
+        {
+          "id": "IBH_095",
+          "cid": "4187779775",
+          "name": "You Have Failed Me",
+          "count": 1
+        },
+        {
+          "id": "IBH_099",
+          "cid": "5480486728",
+          "name": "Blizzard One",
+          "count": 1
+        },
+        {
+          "id": "IBH_104",
+          "cid": "4087028261",
+          "name": "The Desolation of Hoth",
+          "count": 1
+        }
+      ],
+      "sideboard": [],
+      "metadata": {
+        "name": "Darth Vader · Intro Battle: Hoth",
+        "author": "Fantasy Flight Games"
+      },
+      "source": "https://starwarsunlimited.com/products/intro-battle-hoth",
+      "sources": [
+        "https://starwarsunlimited.com/products/intro-battle-hoth",
+        "https://api.swu-db.com/cards/ibh",
+        "https://lasergamingshop.com/2025/10/26/learn-to-play-star-wars-unlimited-with-intro-battle-hoth/"
+      ],
+      "verified": true,
+      "cardCount": 50,
+      "playstyle": "Intro Battle · 20 HP base, full shuffled 50-card deck",
+      "baseHealth": 20,
+      "sourceArchive": null,
+      "provenance": "Official numbered card inventory IBH 1–52 / 53–104; quantities independently cross-checked.",
+      "description": "Intro Battle: Hoth — 50 karata, baza 20 HP. Igra se s uobičajenim miješanjem špila."
+    }
+  ],
+  "excluded": [
+    {
+      "product": "Twin Suns Decks",
+      "reason": "Multiplayer two-leader format, incompatible with requested 1v1 game."
+    },
+    {
+      "product": "Homeworlds",
+      "reason": "Preview set at research date; not mixed into released starter inventory."
+    }
+  ]
+}

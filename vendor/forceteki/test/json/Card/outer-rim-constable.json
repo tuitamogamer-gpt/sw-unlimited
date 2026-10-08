@@ -1,0 +1,38 @@
+{
+  "title": "Outer Rim Constable",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 3,
+  "text": "When Played: You may defeat an upgrade.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6387581059",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "fringe",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 163
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 163
+    }
+  ],
+  "internalName": "outer-rim-constable"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Wedge Antilles",
+  "subtitle": "Star of the Rebellion",
+  "cost": 5,
+  "hp": 5,
+  "power": 5,
+  "text": "Each friendly VEHICLE unit gets +1/+1 and gains Ambush. (After you play that unit, it may ready and attack an enemy unit.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4339330745",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 100
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 100
+    }
+  ],
+  "internalName": "wedge-antilles#star-of-the-rebellion"
+}

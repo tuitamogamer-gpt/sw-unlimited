@@ -1,0 +1,38 @@
+{
+  "title": "Darth Nihilus",
+  "subtitle": "Lord of Hunger",
+  "cost": 7,
+  "hp": 6,
+  "power": 6,
+  "text": "When Played/On Attack: Deal 3 damage to the unit with the least remaining HP among other units. (If multiple units are tied, choose one.). If it's a non-Vehicle unit, give an Experience token to this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6372477584",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "sith"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 244
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 244
+    }
+  ],
+  "internalName": "darth-nihilus#lord-of-hunger"
+}

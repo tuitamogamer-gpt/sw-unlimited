@@ -1,0 +1,38 @@
+{
+  "title": "Logray",
+  "subtitle": "Bright Tree Shaman",
+  "cost": 2,
+  "hp": 5,
+  "power": 1,
+  "text": "When another friendly unit that costs 3 or less is dealt damage: You may deal 1 damage to an enemy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3470983758",
+  "aspects": [
+    "command",
+    "aggression"
+  ],
+  "traits": [
+    "ewok"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 45
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 45
+    }
+  ],
+  "internalName": "logray#bright-tree-shaman"
+}

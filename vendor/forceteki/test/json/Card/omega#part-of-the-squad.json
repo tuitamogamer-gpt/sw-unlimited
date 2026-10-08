@@ -1,0 +1,39 @@
+{
+  "title": "Omega",
+  "subtitle": "Part of the Squad",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "Ignore the aspect penalty on the first Clone unit you play each round.\nWhen Played: Search the top 5 cards of your deck for a Clone card, reveal it, and draw it. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n(ERRATA) Templating update: \"Aspect penalty\" becomes \"aspect penalties\" when referring to multiple.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1386874723",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "fringe",
+    "clone"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 198
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 198
+    }
+  ],
+  "internalName": "omega#part-of-the-squad"
+}

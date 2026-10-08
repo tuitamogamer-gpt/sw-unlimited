@@ -1,0 +1,36 @@
+{
+  "title": "Champion",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 4,
+  "power": 4,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 4,
+  "upgradeHp": 4,
+  "id": "7640352104",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 45
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 45
+    }
+  ],
+  "internalName": "champion"
+}

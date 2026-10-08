@@ -1,0 +1,42 @@
+{
+  "title": "IGV-55 Listener",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 6,
+  "power": 5,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7899641092",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 100
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 100
+    }
+  ],
+  "internalName": "igv55-listener"
+}

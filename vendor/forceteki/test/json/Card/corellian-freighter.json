@@ -1,0 +1,42 @@
+{
+  "title": "Corellian Freighter",
+  "subtitle": null,
+  "cost": 5,
+  "hp": 4,
+  "power": 4,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6385228745",
+  "aspects": [],
+  "traits": [
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 258
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 250
+    },
+    {
+      "set": "JTL",
+      "number": 258
+    }
+  ],
+  "internalName": "corellian-freighter"
+}

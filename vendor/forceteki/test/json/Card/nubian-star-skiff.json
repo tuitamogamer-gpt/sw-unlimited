@@ -1,0 +1,41 @@
+{
+  "title": "Nubian Star Skiff",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "While you control an Official unit, this unit gains Restore 2. (When this unit attacks, heal 2 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7241924417",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "naboo",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 116
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 116
+    }
+  ],
+  "internalName": "nubian-star-skiff"
+}

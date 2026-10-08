@@ -1,0 +1,41 @@
+{
+  "title": "Rey",
+  "subtitle": "More Than a Scavenger",
+  "cost": 6,
+  "hp": 6,
+  "power": 2,
+  "text": "Action [1 resource, Exhaust]: Give an Experience token to a unit with 2 or less power.",
+  "deployBox": "Restore 3 (When this unit attacks, heal 3 damage from your base.)\nOn Attack: You may give an Experience token to a unit with 2 or less power.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s power include all modifiers, including upgrades and temporary effects.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4352150438",
+  "aspects": [
+    "heroism",
+    "vigilance"
+  ],
+  "traits": [
+    "force",
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 4
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 4
+    }
+  ],
+  "internalName": "rey#more-than-a-scavenger"
+}

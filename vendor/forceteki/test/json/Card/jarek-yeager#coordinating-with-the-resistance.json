@@ -1,0 +1,42 @@
+{
+  "title": "Jarek Yeager",
+  "subtitle": "Coordinating With The Resistance",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Pilots are considered units while not in play. If you use a \"play a unit\" ability, you may only play a Pilot as a unit. If you use a \"play an upgrade\" ability, you may only play a Pilot as an upgrade. If you use a \"play a card\" ability, you may do either.\n",
+  "upgradePower": 2,
+  "upgradeHp": 2,
+  "id": "9706341387",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "resistance",
+    "pilot"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "piloting",
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 109
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 109
+    }
+  ],
+  "pilotText": "Piloting [2 resources Command] (You may play this as an upgrade on a friendly Vehicle without a Pilot.)\nWhile you control a ground unit and a space unit, attached unit gains Sentinel.",
+  "internalName": "jarek-yeager#coordinating-with-the-resistance"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Sandtrooper Cavalry",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 6,
+  "power": 2,
+  "text": "Grit (This unit gets +1/+0 for each damage on it.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3612941171",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "creature",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 232
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 232
+    }
+  ],
+  "internalName": "sandtrooper-cavalry"
+}

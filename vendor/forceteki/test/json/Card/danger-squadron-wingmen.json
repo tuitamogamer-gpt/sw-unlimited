@@ -1,0 +1,40 @@
+{
+  "title": "Danger Squadron Wingmen",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 5,
+  "power": 4,
+  "text": "On Attack: You may give an Advantage token to another unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0767161530",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 157
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 157
+    }
+  ],
+  "internalName": "danger-squadron-wingmen"
+}

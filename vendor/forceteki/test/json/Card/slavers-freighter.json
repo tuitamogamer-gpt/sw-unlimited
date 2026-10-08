@@ -1,0 +1,40 @@
+{
+  "title": "Slaver's Freighter",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 4,
+  "text": "When Played: You may ready another unit with power equal to or less than the number of upgrades on enemy units.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6853970496",
+  "aspects": [
+    "villainy",
+    "cunning"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 189
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 189
+    }
+  ],
+  "internalName": "slavers-freighter"
+}

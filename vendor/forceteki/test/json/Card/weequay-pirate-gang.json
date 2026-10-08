@@ -1,0 +1,40 @@
+{
+  "title": "Weequay Pirate Gang",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 3,
+  "text": "Ambush (When you play this unit, it may ready and attack an enemy unit.)\nSmuggle [5 resources Command] (If this card is a resource, you may play it for its smuggle cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9483244696",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush",
+    "smuggle"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 119
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 119
+    }
+  ],
+  "internalName": "weequay-pirate-gang"
+}

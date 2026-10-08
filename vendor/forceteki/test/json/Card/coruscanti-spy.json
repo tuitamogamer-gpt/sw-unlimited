@@ -1,0 +1,39 @@
+{
+  "title": "Coruscanti Spy",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 0,
+  "text": "Raid 2 (This unit gets +2/+0 while attacking.)\nWhen Played: Heal 2 damage from each of any number of bases.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0012426111",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 53
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 53
+    }
+  ],
+  "internalName": "coruscanti-spy"
+}

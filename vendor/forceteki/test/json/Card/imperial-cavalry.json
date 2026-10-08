@@ -1,0 +1,38 @@
+{
+  "title": "Imperial Cavalry",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 4,
+  "power": 4,
+  "text": "When Played: Create a Beast token and deal 1 damage to an enemy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1175708178",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 250
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 250
+    }
+  ],
+  "internalName": "imperial-cavalry"
+}

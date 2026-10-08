@@ -1,0 +1,36 @@
+{
+  "title": "Soresu Stance",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Play a Force unit from your hand (paying its cost) and give a Shield token to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that let you play a card require you to pay that card’s cost unless specified otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8032269906",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 76
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 76
+    }
+  ],
+  "internalName": "soresu-stance"
+}

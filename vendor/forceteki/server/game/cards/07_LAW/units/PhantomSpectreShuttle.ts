@@ -1,0 +1,29 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { INonLeaderUnitAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { NonLeaderUnitCard } from '../../../core/card/NonLeaderUnitCard';
+import { Aspect, WildcardCardType, ZoneName } from '../../../core/Constants';
+import { TextHelper } from '../../../core/utils/TextHelper';
+
+export default class PhantomSpectreShuttle extends NonLeaderUnitCard {
+    protected override getImplementationId() {
+        return {
+            id: '1739891839',
+            internalName: 'phantom#spectre-shuttle',
+        };
+    }
+
+    public override setupCardAbilities(registrar: INonLeaderUnitAbilityRegistrar, abilityHelper: IAbilityHelper) {
+        registrar.addWhenPlayedAbility({
+            title: `Play a ${TextHelper.Heroism} unit from your hand and give an Experience token to it`,
+            optional: true,
+            targetResolver: {
+                cardCondition: (card) => card.isUnit() && card.hasSomeAspect(Aspect.Heroism),
+                zoneFilter: ZoneName.Hand,
+                immediateEffect: abilityHelper.immediateEffects.playCardFromHand({
+                    playAsType: WildcardCardType.Unit,
+                    enterPlayEffect: abilityHelper.immediateEffects.giveExperience(),
+                }),
+            }
+        });
+    }
+}

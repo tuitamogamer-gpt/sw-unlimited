@@ -1,0 +1,40 @@
+{
+  "title": "Praetorian Guard",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 5,
+  "power": 2,
+  "text": "While you control a unit with 4 or more power, this unit gains Sentinel. (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5841324811",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "first order"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 85
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 85
+    }
+  ],
+  "internalName": "praetorian-guard"
+}

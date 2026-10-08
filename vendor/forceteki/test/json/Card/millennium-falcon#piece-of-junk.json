@@ -1,0 +1,40 @@
+{
+  "title": "Millennium Falcon",
+  "subtitle": "Piece of Junk",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "This unit enters play ready.\n\nWhen you ready cards during the regroup phase: Either pay [1 resource] or return this unit to her owner's hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Abilities that return a card to hand must choose a card in play unless otherwise specified.\nYou may choose whether to pay 1 or return the Millennium Falcon to its owner’s hand.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1785627279",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 193
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 193
+    }
+  ],
+  "internalName": "millennium-falcon#piece-of-junk"
+}

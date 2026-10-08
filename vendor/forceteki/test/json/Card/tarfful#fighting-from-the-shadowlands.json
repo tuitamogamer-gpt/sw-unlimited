@@ -1,0 +1,41 @@
+{
+  "title": "Tarfful",
+  "subtitle": "Fighting from the Shadowlands",
+  "cost": 6,
+  "hp": 7,
+  "power": 3,
+  "text": "Action [2 resources, Exhaust, discard a card from your hand]: Create a Beast token.",
+  "deployBox": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)\nOn Attack: You may pay 1 resource. If you do, create a Beast token.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8831574910",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 10
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 10
+    }
+  ],
+  "internalName": "tarfful#fighting-from-the-shadowlands"
+}

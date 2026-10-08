@@ -1,0 +1,37 @@
+{
+  "title": "Rash Action",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a unit. For this attack, it gets +1/+0 and gains: “When Attack Ends: If this unit dealt combat damage to an opponent's base, that opponent discards a card.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "You must attack with a unit, if able. Units must be ready in order to attack.\n“Combat damage” is only the damage dealt during the “End attack” step of an attack.\nWhen Attack Ends abilities trigger at the same timeas units deal combat damage. The attacking unit does not need to survive the attack in order to make your opponent discard, so long as it dealt combat damage to that opponent's base.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7252605094",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 162
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 162
+    }
+  ],
+  "internalName": "rash-action"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Muckraker Crab Droid",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 4,
+  "text": "While this unit is ready, it can't be attacked.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If a unit that can't be attacked gains Sentinel, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3833614149",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 135
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 135
+    }
+  ],
+  "internalName": "muckraker-crab-droid"
+}

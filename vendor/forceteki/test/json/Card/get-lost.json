@@ -1,0 +1,37 @@
+{
+  "title": "Get Lost",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Defeat an upgraded non-leader unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3646952605",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 67
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 67
+    }
+  ],
+  "internalName": "get-lost"
+}

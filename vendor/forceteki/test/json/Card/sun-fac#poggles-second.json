@@ -1,0 +1,39 @@
+{
+  "title": "Sun Fac",
+  "subtitle": "Poggle's Second",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "When Played: Give a unit Grit for this phase. (It gets +1/+0 for each damage on it.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5305208112",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "separatist"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 243
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 243
+    }
+  ],
+  "internalName": "sun-fac#poggles-second"
+}

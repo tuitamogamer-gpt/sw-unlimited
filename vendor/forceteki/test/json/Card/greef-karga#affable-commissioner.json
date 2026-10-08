@@ -1,0 +1,38 @@
+{
+  "title": "Greef Karga",
+  "subtitle": "Affable Commissioner",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: Search the top 5 cards of your deck for an upgrade, reveal it, and draw it. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6884078296",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "fringe",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 245
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 245
+    }
+  ],
+  "internalName": "greef-karga#affable-commissioner"
+}

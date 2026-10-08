@@ -1,0 +1,38 @@
+{
+  "title": "Rancor Keeper",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "When a friendly unit is dealt damage and survives: Deal 1 damage to any number of bases. Use this ability only once each round.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "All damage dealt by Rancor Keeper's ability is dealt simultaneously.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1069133190",
+  "aspects": [
+    "vigilance",
+    "aggression"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 32
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 32
+    }
+  ],
+  "internalName": "rancor-keeper"
+}

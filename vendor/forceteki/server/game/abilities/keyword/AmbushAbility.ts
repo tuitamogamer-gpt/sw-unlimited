@@ -1,0 +1,64 @@
+import { TriggeredAbilityBase } from '../../core/ability/TriggeredAbility';
+import type { TriggeredAbilityContext } from '../../core/ability/TriggeredAbilityContext';
+import type { Card } from '../../core/card/Card';
+import { EffectName, KeywordName, WildcardZoneName } from '../../core/Constants';
+import type { Game } from '../../core/Game';
+import { Contract } from '../../core/utils/Contract';
+import { TextHelper } from '../../core/utils/TextHelper';
+import { ConditionalSystem } from '../../gameSystems/ConditionalSystem';
+import { InitiateAttackSystem } from '../../gameSystems/InitiateAttackSystem';
+import { NoActionSystem } from '../../gameSystems/NoActionSystem';
+import type { ITriggeredAbilityProps } from '../../Interfaces';
+
+import { registerState } from '../../core/GameObjectUtils';
+
+@registerState()
+export class AmbushAbility extends TriggeredAbilityBase {
+    public readonly keyword: KeywordName = KeywordName.Ambush;
+
+    public static buildAmbushAbilityProperties<TSource extends Card = Card>(): ITriggeredAbilityProps<TSource> {
+        return {
+            title: `${TextHelper.Ambush}`,
+            optional: true,
+            when: {
+                onCardPlayed: (event, context) => event.card === context.source,
+                onLeaderDeployed: (event, context) => event.card === context.source,
+                onUnitEntersPlay: (event, context) => event.card === context.source && context.source.isToken()
+            },
+            zoneFilter: WildcardZoneName.AnyArena,
+            immediateEffect: new ConditionalSystem({
+                condition: AmbushAbility.unitWouldHaveAmbushTarget<TSource>,
+                onTrue: new InitiateAttackSystem((context) => ({
+                    isAmbush: true,
+                    allowExhaustedAttacker: true,
+                    attacker: context.source,
+                    targetCondition: (card) =>
+                        !card.isBase() ||
+                        context.source.hasOngoingEffect(EffectName.CanAttackBaseWhileUsingAmbush),
+                    optional: false     // override the default optional behavior - once we've triggered ambush, the attack is no longer optional
+                })),
+                onFalse: new NoActionSystem({})
+            })
+        };
+    }
+
+    private static unitWouldHaveAmbushTarget<TSource extends Card = Card>(context: TriggeredAbilityContext<TSource>): boolean {
+        // generate an attack action that won't check zone or cost so that we can see if there would be a hypothetical attack target.
+        // bases are excluded unless the attacker can attack bases while using Ambush (e.g. via Fett's Firespray)
+        const attackAction = new InitiateAttackSystem({
+            attacker: context.source,
+            targetCondition: (card) => !card.isBase() || context.source.hasOngoingEffect(EffectName.CanAttackBaseWhileUsingAmbush),
+            ignoredRequirements: ['zone', 'cost']
+        });
+
+        return attackAction.hasLegalTarget(context);
+    }
+
+    public constructor(game: Game, card: Card) {
+        Contract.assertTrue(card.isUnit());
+
+        const properties = AmbushAbility.buildAmbushAbilityProperties();
+
+        super(game, card, properties);
+    }
+}

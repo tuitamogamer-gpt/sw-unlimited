@@ -1,0 +1,36 @@
+{
+  "title": "Kestro City",
+  "subtitle": null,
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": null,
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0461841375",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "vardos"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 27
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 27
+    }
+  ],
+  "internalName": "kestro-city"
+}

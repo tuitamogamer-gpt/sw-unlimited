@@ -1,0 +1,39 @@
+{
+  "title": "Hutt's Henchmen",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 3,
+  "text": "Shielded (When you play this unit, give a Shield token to it.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6635692731",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 240
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 240
+    }
+  ],
+  "internalName": "hutts-henchmen"
+}

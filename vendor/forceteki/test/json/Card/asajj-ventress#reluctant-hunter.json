@@ -1,0 +1,40 @@
+{
+  "title": "Asajj Ventress",
+  "subtitle": "Reluctant Hunter",
+  "cost": 5,
+  "hp": 3,
+  "power": 3,
+  "text": "When Played: You may ready another Bounty Hunter unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2967567348",
+  "aspects": [
+    "command",
+    "aggression"
+  ],
+  "traits": [
+    "force",
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 61
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 61
+    }
+  ],
+  "internalName": "asajj-ventress#reluctant-hunter"
+}

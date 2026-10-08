@@ -1,0 +1,38 @@
+{
+  "title": "Queen Soruna",
+  "subtitle": "Willing to Fight",
+  "cost": 6,
+  "hp": 7,
+  "power": 5,
+  "text": "When Played/On Attack: You may reveal a unit from your hand. If you do, deal 3 damage to a unit with the same cost as the revealed unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2299349302",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "naboo",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 132
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 132
+    }
+  ],
+  "internalName": "queen-soruna#willing-to-fight"
+}

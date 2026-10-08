@@ -1,0 +1,39 @@
+{
+  "title": "The First Legion",
+  "subtitle": "Vader's Fist",
+  "cost": 4,
+  "hp": 5,
+  "power": 5,
+  "text": "On Attack: Name a trait. Enemy cards, including those not in play, lose that trait for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Losing the trait means enemy cards also can't gain that trait for this phase.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8227671129",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 108
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 108
+    }
+  ],
+  "internalName": "the-first-legion#vaders-fist"
+}

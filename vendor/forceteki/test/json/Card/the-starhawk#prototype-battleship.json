@@ -1,0 +1,42 @@
+{
+  "title": "The Starhawk",
+  "subtitle": "Prototype Battleship",
+  "cost": 9,
+  "hp": 9,
+  "power": 6,
+  "text": "Ambush\nWhile paying costs, you pay half as many resources, rounded up.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "The Starhawk's ability applies to both the costs of cards and the costs of abilities.\nWhen paying a cost, you only need to pay resources up to half of the determined cost (rounded up) in order to consider the cost paid. This ability does not affect any non-resource costs.\nAmbush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0728753133",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "new republic",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 105
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 105
+    }
+  ],
+  "internalName": "the-starhawk#prototype-battleship"
+}

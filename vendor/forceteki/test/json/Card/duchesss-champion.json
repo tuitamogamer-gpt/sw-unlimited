@@ -1,0 +1,40 @@
+{
+  "title": "Duchess's Champion",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 8,
+  "power": 1,
+  "text": "While an opponent controls 3 or more units, this unit gains Sentinel. (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7289764651",
+  "aspects": [
+    "vigilance",
+    "vigilance"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 54
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 54
+    }
+  ],
+  "internalName": "duchesss-champion"
+}

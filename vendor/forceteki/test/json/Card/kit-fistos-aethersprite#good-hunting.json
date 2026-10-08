@@ -1,0 +1,43 @@
+{
+  "title": "Kit Fisto's Aethersprite",
+  "subtitle": "Good Hunting",
+  "cost": 5,
+  "hp": 5,
+  "power": 4,
+  "text": "Saboteur\nWhen Played: You may defeat any number of upgrades on a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1028870559",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "jedi",
+    "republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 147
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 147
+    }
+  ],
+  "internalName": "kit-fistos-aethersprite#good-hunting"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Chewbacca",
+  "subtitle": "Hero of Kessel",
+  "cost": 4,
+  "hp": 6,
+  "power": 5,
+  "text": "Action [1 resource, Exhaust, defeat a friendly resource]: Deal 2 damage to a unit and create a Credit token.",
+  "deployBox": "On Attack: You may defeat a friendly resource. If you do, deal 2 damage to a unit and create a Credit token.",
+  "epicAction": "Epic Action [4 resources]: Deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9839386296",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "underworld",
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 13
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 13
+    }
+  ],
+  "internalName": "chewbacca#hero-of-kessel"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Cid Scaleback",
+  "subtitle": "Can't Be Trusted",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: An opponent chooses a unit they control. Give a Weakness token to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "If there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4318148716",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 197
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 197
+    }
+  ],
+  "internalName": "cid-scaleback#cant-be-trusted"
+}

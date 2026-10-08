@@ -1,0 +1,39 @@
+{
+  "title": "Jabba's Rancor",
+  "subtitle": "Pateesa",
+  "cost": 8,
+  "hp": 9,
+  "power": 9,
+  "text": "If you control Jabba the Hutt (as a leader or unit), this unit costs 1 resource less to play.\nWhen Played/On Attack: Deal 3 damage to another friendly ground unit and 3 damage to an enemy ground unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8380936981",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 91
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 91
+    }
+  ],
+  "internalName": "jabbas-rancor#pateesa"
+}

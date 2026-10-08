@@ -1,0 +1,34 @@
+{
+  "title": "Private Manufacturing",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Draw 2 cards. If you control no token units, put 2 cards from your hand on the bottom of your deck in any order.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2483520485",
+  "aspects": [],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 257
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 257
+    }
+  ],
+  "internalName": "private-manufacturing"
+}

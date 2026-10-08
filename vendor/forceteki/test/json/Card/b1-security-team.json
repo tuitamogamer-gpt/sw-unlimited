@@ -1,0 +1,41 @@
+{
+  "title": "B1 Security Team",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 3,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6257858302",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "separatist",
+    "droid",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 207
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 207
+    }
+  ],
+  "internalName": "b1-security-team"
+}

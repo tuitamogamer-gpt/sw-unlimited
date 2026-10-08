@@ -1,0 +1,35 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { INonLeaderUnitAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { NonLeaderUnitCard } from '../../../core/card/NonLeaderUnitCard';
+import { ZoneName, RelativePlayer, WildcardCardType } from '../../../core/Constants';
+
+export default class DeathTrooper extends NonLeaderUnitCard {
+    protected override getImplementationId() {
+        return {
+            id: '6458912354',
+            internalName: 'death-trooper'
+        };
+    }
+
+    public override setupCardAbilities(registrar: INonLeaderUnitAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.addWhenPlayedAbility({
+            title: 'Deal 2 damage to a friendly ground unit and an enemy ground unit',
+            targetResolvers: {
+                myGroundUnit: {
+                    cardTypeFilter: WildcardCardType.Unit,
+                    controller: RelativePlayer.Self,
+                    zoneFilter: ZoneName.GroundArena,
+                    immediateEffect: AbilityHelper.immediateEffects.damage({ amount: 2 }),
+                },
+                theirGroundUnit: {
+                    cardTypeFilter: WildcardCardType.Unit,
+                    controller: RelativePlayer.Opponent,
+                    zoneFilter: ZoneName.GroundArena,
+                    immediateEffect: AbilityHelper.immediateEffects.damage({ amount: 2 }),
+                }
+            },
+            effect: 'deal 2 damage to {1} and {2}',
+            effectArgs: (context) => [context.targets.myGroundUnit, context.targets.theirGroundUnit]
+        });
+    }
+}

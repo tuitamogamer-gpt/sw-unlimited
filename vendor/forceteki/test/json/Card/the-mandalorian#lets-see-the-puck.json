@@ -1,0 +1,39 @@
+{
+  "title": "The Mandalorian",
+  "subtitle": "Let's See the Puck",
+  "cost": 6,
+  "hp": 5,
+  "power": 6,
+  "text": "When Played: Draw a card.\nWhen you draw 1 or more cards during the action phase: Give a Shield token to this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7505293719",
+  "aspects": [
+    "vigilance",
+    "aggression"
+  ],
+  "traits": [
+    "mandalorian",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 52
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 52
+    }
+  ],
+  "internalName": "the-mandalorian#lets-see-the-puck"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Admiral Holdo",
+  "subtitle": "We Are The Spark",
+  "cost": 5,
+  "hp": 7,
+  "power": 3,
+  "text": "mock ability text",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "admiral-holdo#we-are-the-spark-id",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "resistance",
+    "official"
+  ],
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 38
+  },
+  "internalName": "admiral-holdo#we-are-the-spark",
+  "arena": "ground",
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 38
+    }
+  ]
+}

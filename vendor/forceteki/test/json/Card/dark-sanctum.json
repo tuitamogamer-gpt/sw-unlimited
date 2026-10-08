@@ -1,0 +1,39 @@
+{
+  "title": "Dark Sanctum",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 0,
+  "power": 0,
+  "text": "Fortify (Attach this to your base, not a unit.)\nAttached base gains: “When the regroup phase starts: Draw a card and deal 2 damage to this base.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "8622909461",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "fortification"
+  ],
+  "keywords": [
+    "fortify"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 70
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 70
+    }
+  ],
+  "internalName": "dark-sanctum"
+}

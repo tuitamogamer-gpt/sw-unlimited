@@ -1,0 +1,36 @@
+{
+  "title": "Fell the Dragon",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Defeat a non-leader unit with 5 or more power.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3329959260",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 78
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 78
+    }
+  ],
+  "internalName": "fell-the-dragon"
+}

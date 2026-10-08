@@ -1,0 +1,36 @@
+{
+  "title": "Arcana Star Map",
+  "subtitle": "Path to Peridea",
+  "cost": 1,
+  "hp": 3,
+  "power": 0,
+  "text": "Attached unit gains: “If you would search a number of cards from your deck, search twice that number of cards instead.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 3,
+  "id": "2674341776",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "item"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 84
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 84
+    }
+  ],
+  "internalName": "arcana-star-map#path-to-peridea"
+}

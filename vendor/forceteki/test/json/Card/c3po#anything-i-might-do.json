@@ -1,0 +1,39 @@
+{
+  "title": "C-3PO",
+  "subtitle": "Anything I Might Do?",
+  "cost": 1,
+  "hp": 3,
+  "power": 1,
+  "text": "Action [Exhaust, return this unit to its owner's hand]: Give a unit +2/+2 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7588883291",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 93
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 93
+    }
+  ],
+  "internalName": "c3po#anything-i-might-do"
+}

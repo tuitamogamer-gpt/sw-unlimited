@@ -1,0 +1,42 @@
+{
+  "title": "Captain Rex",
+  "subtitle": "Into the Firefight",
+  "cost": 6,
+  "hp": 7,
+  "power": 7,
+  "text": "When Played/When this unit completes an attack: Give this unit and an enemy unit Sentinel for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "A unit must survive an attack to trigger its “when this unit completes an attack” abilities.\nWhen Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1768040578",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "clone",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 48
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 48
+    }
+  ],
+  "internalName": "captain-rex#into-the-firefight"
+}

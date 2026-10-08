@@ -1,0 +1,41 @@
+{
+  "title": "Boba Fett",
+  "subtitle": "Family Found",
+  "cost": 3,
+  "hp": 5,
+  "power": 1,
+  "text": "Ambush\nWhen a friendly unit with Ambush enters play: Give it Raid 1 and Saboteur for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9784392862",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tusken"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush",
+    "raid",
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 225
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 225
+    }
+  ],
+  "internalName": "boba-fett#family-found"
+}

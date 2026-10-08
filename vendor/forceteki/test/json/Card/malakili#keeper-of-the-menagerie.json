@@ -1,0 +1,38 @@
+{
+  "title": "Malakili",
+  "subtitle": "Keeper of the Menagerie",
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "Each friendly Creature unit and each Creature unit you own that isn't in play gains the Underworld trait.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2947761350",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 212
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 212
+    }
+  ],
+  "internalName": "malakili#keeper-of-the-menagerie"
+}

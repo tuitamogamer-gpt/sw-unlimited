@@ -1,0 +1,41 @@
+{
+  "title": "Banking Clan Warship",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 5,
+  "power": 6,
+  "text": "Ambush (When you play this unit, it may attack an enemy unit.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4373011733",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 143
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 143
+    }
+  ],
+  "internalName": "banking-clan-warship"
+}

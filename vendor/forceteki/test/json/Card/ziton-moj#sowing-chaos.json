@@ -1,0 +1,41 @@
+{
+  "title": "Ziton Moj",
+  "subtitle": "Sowing Chaos",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "Ambush (When you play this unit, he may attack an enemy unit.)\nOn Attack: For each player, deal 1 damage to a unit that player controls.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\nAll damage dealt by Ziton's \"On Attack\" ability is dealt simultaneously.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4124659733",
+  "aspects": [
+    "aggression",
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 29
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 29
+    }
+  ],
+  "internalName": "ziton-moj#sowing-chaos"
+}

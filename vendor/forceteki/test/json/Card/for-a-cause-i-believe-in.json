@@ -1,0 +1,37 @@
+{
+  "title": "For a Cause I Believe In",
+  "subtitle": null,
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Reveal the top 4 cards of your deck. For each [Heroism] card revealed this way, deal 1 damage to an enemy base. You may discard any of the revealed cards and put the rest back on top of your deck in any order.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5767546527",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 152
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 152
+    }
+  ],
+  "internalName": "for-a-cause-i-believe-in"
+}

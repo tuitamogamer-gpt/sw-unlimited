@@ -1,0 +1,36 @@
+{
+  "title": "You're My Only Hope",
+  "subtitle": null,
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Look at the top card of your deck. You may play it. It costs [5 resources] less. If your base has 5 or less remaining HP, you may play it for free instead.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "“Play for free” ignores all resource costs, including the aspect penalty, but not other additional costs.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3509161777",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 246
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 246
+    }
+  ],
+  "internalName": "youre-my-only-hope"
+}

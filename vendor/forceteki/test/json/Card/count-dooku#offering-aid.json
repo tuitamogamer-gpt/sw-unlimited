@@ -1,0 +1,43 @@
+{
+  "title": "Count Dooku",
+  "subtitle": "Offering Aid",
+  "cost": 7,
+  "hp": 7,
+  "power": 6,
+  "text": "Action [Exhaust]: Choose 2 players. They each heal 1 damage from their base and create a Battle Droid token.",
+  "deployBox": "Restore 2 (When this unit attacks, heal 2 damage from your base.)\nOn Attack: Create 2 Battle Droid tokens.",
+  "epicAction": "Epic Action: If you control 7 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7416439679",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "separatist",
+    "sith",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 1
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 1
+    }
+  ],
+  "internalName": "count-dooku#offering-aid"
+}

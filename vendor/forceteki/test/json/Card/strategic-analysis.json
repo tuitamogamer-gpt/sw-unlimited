@@ -1,0 +1,36 @@
+{
+  "title": "Strategic Analysis",
+  "subtitle": "",
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "Draw 3 cards.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1417180295",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 175
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 175
+    }
+  ],
+  "internalName": "strategic-analysis"
+}

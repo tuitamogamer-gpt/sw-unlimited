@@ -1,0 +1,36 @@
+{
+  "title": "Nebula Ignition",
+  "subtitle": "",
+  "cost": 9,
+  "hp": null,
+  "power": null,
+  "text": "Defeat each unit that isn't upgraded.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6196035152",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "disaster"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 80
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 80
+    }
+  ],
+  "internalName": "nebula-ignition"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "I'll Cover For You",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Deal 1 damage to an enemy unit and 1 damage to another enemy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1941072965",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 5
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 5
+    },
+    {
+      "set": "IBH",
+      "number": 39
+    }
+  ],
+  "internalName": "ill-cover-for-you"
+}

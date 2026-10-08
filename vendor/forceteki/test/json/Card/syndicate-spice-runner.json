@@ -1,0 +1,38 @@
+{
+  "title": "Syndicate Spice Runner",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: Search the top 3 cards of your deck for an Underworld unit, reveal it, and draw it. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1895232319",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 136
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 136
+    }
+  ],
+  "internalName": "syndicate-spice-runner"
+}

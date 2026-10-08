@@ -1,0 +1,40 @@
+{
+  "title": "Vigilant Honor Guards",
+  "subtitle": null,
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "While this unit is undamaged, it gains Sentinel. (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7622279662",
+  "aspects": [
+    "heroism",
+    "vigilance"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 48
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 48
+    }
+  ],
+  "internalName": "vigilant-honor-guards"
+}

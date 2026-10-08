@@ -1,0 +1,35 @@
+{
+  "title": "Ravening Gundark",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 4,
+  "power": 5,
+  "text": "When Played: Deal 1 damage to a ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6918152447",
+  "aspects": [],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 259
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 259
+    }
+  ],
+  "internalName": "ravening-gundark"
+}

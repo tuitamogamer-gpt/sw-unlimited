@@ -1,0 +1,41 @@
+{
+  "title": "Zam Wesell",
+  "subtitle": "Inconspicuous Assassin",
+  "cost": 2,
+  "hp": 5,
+  "power": 1,
+  "text": "While this unit is upgraded, she gains Grit. (She gets +1/+0 for each damage on her.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4825308717",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 29
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 29
+    }
+  ],
+  "internalName": "zam-wesell#inconspicuous-assassin"
+}

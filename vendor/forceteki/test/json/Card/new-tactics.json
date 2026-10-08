@@ -1,0 +1,38 @@
+{
+  "title": "New Tactics",
+  "subtitle": "",
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "Choose a non-leader unit. Its owner puts it on the top or bottom of their deck. (It isn't defeated.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "The chosen unit's owner decides whether to put it on the top or bottom of their deck.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6543905001",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "learned",
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 218
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 218
+    }
+  ],
+  "internalName": "new-tactics"
+}

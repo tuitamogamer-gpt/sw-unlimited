@@ -1,0 +1,38 @@
+{
+  "title": "Imperial Defector",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "When Played: Look at an opponent's hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7534349651",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "imperial",
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 250
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 250
+    }
+  ],
+  "internalName": "imperial-defector"
+}

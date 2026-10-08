@@ -1,0 +1,39 @@
+{
+  "title": "Val",
+  "subtitle": "Loyal to the End",
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "Bounty — Deal 3 damage to a unit.\nWhen Defeated: Give 2 Experience tokens to a friendly unit. (The active player chooses the order of Val's abilities.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0474909987",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "bounty"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 58
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 58
+    }
+  ],
+  "internalName": "val#loyal-to-the-end"
+}

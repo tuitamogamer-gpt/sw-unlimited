@@ -1,0 +1,43 @@
+{
+  "title": "Remnant Interceptor",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "Support (When you play this unit, you may attack with another unit. It gains this unit's other abilities for this attack.)\nRestore 1 (When this unit attacks, heal 1 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8785481268",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "support",
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 95
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 95
+    }
+  ],
+  "internalName": "remnant-interceptor"
+}

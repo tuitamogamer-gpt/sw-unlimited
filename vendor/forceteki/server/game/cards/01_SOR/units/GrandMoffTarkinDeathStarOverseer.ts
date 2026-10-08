@@ -1,0 +1,29 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { INonLeaderUnitAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { NonLeaderUnitCard } from '../../../core/card/NonLeaderUnitCard';
+import { RelativePlayer, Trait } from '../../../core/Constants';
+import { TextHelper } from '../../../core/utils/TextHelper';
+
+export default class GrandMoffTarkinDeathStarOverseer extends NonLeaderUnitCard {
+    protected override getImplementationId() {
+        return {
+            id: '9266336818',
+            internalName: 'grand-moff-tarkin#death-star-overseer'
+        };
+    }
+
+    public override setupCardAbilities(registrar: INonLeaderUnitAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.addWhenPlayedAbility({
+            title: `Search the top 5 cards of your deck for up to 2 ${TextHelper.Trait.Imperial} cards, then reveal and draw it.`,
+            immediateEffect: AbilityHelper.immediateEffects.deckSearch({
+                selectCount: 2,
+                searchCount: 5,
+                cardCondition: (card) => card.hasSomeTrait(Trait.Imperial),
+                selectedCardsImmediateEffect: AbilityHelper.immediateEffects.revealAndDraw({
+                    useDisplayPrompt: true,
+                    promptedPlayer: RelativePlayer.Opponent
+                })
+            })
+        });
+    }
+}

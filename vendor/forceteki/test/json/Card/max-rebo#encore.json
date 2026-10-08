@@ -1,0 +1,39 @@
+{
+  "title": "Max Rebo",
+  "subtitle": "Encore!",
+  "cost": 4,
+  "hp": 7,
+  "power": 2,
+  "text": "There is an additional regroup phase after the first regroup phase each round.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "The additional regroup phase includes drawing 2 cards, resourcing a card, and readying exhausted cards. Any abilities that trigger during the regroup phase trigger an additional time.\nIf there are multiple Max Rebos in play, each Max Rebo causes its own additional regroup phase.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5320092651",
+  "aspects": [
+    "command",
+    "cunning"
+  ],
+  "traits": [
+    "underworld",
+    "musician"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 72
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 72
+    }
+  ],
+  "internalName": "max-rebo#encore"
+}

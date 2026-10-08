@@ -1,0 +1,34 @@
+{
+  "title": "Go Into Hiding",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Choose a unit. It can't be attacked this phase (unless it has Sentinel).",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If a unit that can't be attacked gains Sentinel, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5787840677",
+  "aspects": [],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 262
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 262
+    }
+  ],
+  "internalName": "go-into-hiding"
+}

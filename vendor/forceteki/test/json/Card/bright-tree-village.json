@@ -1,0 +1,36 @@
+{
+  "title": "Bright Tree Village",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2826528227",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "endor"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 23
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 23
+    }
+  ],
+  "internalName": "bright-tree-village"
+}

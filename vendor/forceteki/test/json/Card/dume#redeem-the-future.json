@@ -1,0 +1,39 @@
+{
+  "title": "Dume",
+  "subtitle": "Redeem the Future",
+  "cost": 4,
+  "hp": 7,
+  "power": 2,
+  "text": "When the regroup phase starts: Give an Experience token to each other friendly non-Vehicle unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6523135540",
+  "aspects": [
+    "vigilance",
+    "vigilance"
+  ],
+  "traits": [
+    "force",
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 55
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 55
+    }
+  ],
+  "internalName": "dume#redeem-the-future"
+}

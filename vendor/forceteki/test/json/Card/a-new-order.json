@@ -1,0 +1,34 @@
+{
+  "title": "A New Order",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Give an Advantage token to each of up to 2 units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0522959604",
+  "aspects": [],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 264
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 264
+    }
+  ],
+  "internalName": "a-new-order"
+}

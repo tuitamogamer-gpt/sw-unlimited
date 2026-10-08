@@ -1,0 +1,39 @@
+{
+  "title": "Trade Federation Delegates",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 4,
+  "power": 3,
+  "text": "When Played: Create 2 Spy tokens.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2466259309",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "republic",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 191
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 191
+    }
+  ],
+  "internalName": "trade-federation-delegates"
+}

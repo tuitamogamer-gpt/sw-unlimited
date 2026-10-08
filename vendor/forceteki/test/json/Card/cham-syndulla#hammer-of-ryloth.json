@@ -1,0 +1,38 @@
+{
+  "title": "Cham Syndulla",
+  "subtitle": "Hammer of Ryloth",
+  "cost": 6,
+  "hp": 8,
+  "power": 3,
+  "text": "When non-combat damage is dealt to a friendly unit or base: You may exhaust this leader. If you do, deal 1 damage to an enemy unit or base.",
+  "deployBox": "When non-combat damage is dealt to a friendly unit or base: You may deal 1 damage to an enemy unit or base.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "“Combat damage” is only the damage dealt during the “End attack” step of an attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2026544379",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "twi'lek"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 13
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 13
+    }
+  ],
+  "internalName": "cham-syndulla#hammer-of-ryloth"
+}

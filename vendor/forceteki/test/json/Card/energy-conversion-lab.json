@@ -1,0 +1,38 @@
+{
+  "title": "Energy Conversion Lab",
+  "subtitle": null,
+  "cost": null,
+  "hp": 25,
+  "power": null,
+  "text": "Epic Action: Play a unit that costs 6 resources or less from your hand. Give it AMBUSH for this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nAbilities that let you play a card require you to pay that card’s cost unless specified otherwise.\nAmbush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8327910265",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "eadu"
+  ],
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 22
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 22
+    }
+  ],
+  "internalName": "energy-conversion-lab"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Price on Your Head",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 0,
+  "power": 0,
+  "text": "Attached unit gains: “Bounty — Put the top card of your deck into play as a resource.” (When this unit is defeated or captured, its opponent collects its bounty.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "A card put into play as a resource enters play exhausted.\n(ERRATA) Templating update: “Put into play as a resource” becomes “resource”.\n",
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "2178538979",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "bounty",
+    "condition"
+  ],
+  "keywords": [
+    "bounty"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 125
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 125
+    }
+  ],
+  "internalName": "price-on-your-head"
+}

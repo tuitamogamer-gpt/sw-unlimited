@@ -1,0 +1,40 @@
+{
+  "title": "Invincible",
+  "subtitle": "Naval Adversary",
+  "cost": 6,
+  "hp": 6,
+  "power": 6,
+  "text": "If you control a unique Separatist card, this unit costs 1 resource less to play.\nWhen you deploy a leader: You may return a non-leader unit that costs 3 or less to its owner's hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nAbilities that return a card to hand must choose a card in play unless otherwise specified.\n(ERRATA) Templating update: “Unique” becomes “<uq>”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9958088138",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 191
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 191
+    }
+  ],
+  "internalName": "invincible#naval-adversary"
+}

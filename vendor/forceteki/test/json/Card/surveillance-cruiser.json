@@ -1,0 +1,39 @@
+{
+  "title": "Surveillance Cruiser",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "When Played: If an opponent controls an Endor, Kashyyyk, Naboo, or Tatooine base, draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1309692840",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 247
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 247
+    }
+  ],
+  "internalName": "surveillance-cruiser"
+}

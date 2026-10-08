@@ -1,0 +1,40 @@
+{
+  "title": "B-Wing Skirmisher",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "When Played: Deal 1 damage to each of up to 2 space units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4407141375",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 183
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 183
+    }
+  ],
+  "internalName": "bwing-skirmisher"
+}

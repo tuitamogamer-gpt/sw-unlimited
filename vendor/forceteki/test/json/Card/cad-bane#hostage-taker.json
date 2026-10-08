@@ -1,0 +1,39 @@
+{
+  "title": "Cad Bane",
+  "subtitle": "Hostage Taker",
+  "cost": 7,
+  "hp": 7,
+  "power": 7,
+  "text": "When Played: This unit captures up to 3 enemy non-leader units with a total of 8 or less remaining HP.\nOn Attack: The defending player may rescue a card they own guarded by this unit. If they do, draw 2 cards.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0693815329",
+  "aspects": [
+    "villainy",
+    "cunning"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 187
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 187
+    }
+  ],
+  "internalName": "cad-bane#hostage-taker"
+}

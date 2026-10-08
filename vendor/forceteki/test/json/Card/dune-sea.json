@@ -1,0 +1,36 @@
+{
+  "title": "Dune Sea",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3333690969",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tatooine"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 19
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 19
+    }
+  ],
+  "internalName": "dune-sea"
+}

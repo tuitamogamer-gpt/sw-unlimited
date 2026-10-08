@@ -1,0 +1,40 @@
+{
+  "title": "Special Forces TIE Fighter",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "When Played: If an opponent controls more space units than you, ready this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9595057518",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "first order",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 135
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 135
+    }
+  ],
+  "internalName": "special-forces-tie-fighter"
+}

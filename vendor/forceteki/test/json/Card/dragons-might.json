@@ -1,0 +1,36 @@
+{
+  "title": "Dragon's Might",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Defeat a non-leader unit with 4 or less power.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0357262273",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 102
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 102
+    }
+  ],
+  "internalName": "dragons-might"
+}

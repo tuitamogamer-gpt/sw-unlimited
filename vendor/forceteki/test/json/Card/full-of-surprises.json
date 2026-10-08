@@ -1,0 +1,36 @@
+{
+  "title": "Full of Surprises",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Return an upgrade that costs 2 or less to its owner's hand.\nGive a Shield token to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that return a card to hand must choose a card in play unless otherwise specified.\nAbilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4547747622",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 232
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 232
+    }
+  ],
+  "internalName": "full-of-surprises"
+}

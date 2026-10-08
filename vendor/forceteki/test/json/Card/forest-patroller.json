@@ -1,0 +1,42 @@
+{
+  "title": "Forest Patroller",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "Overwhelm (When attacking an enemy unit, deal excess damage to the opponent's base.)\nRestore 1 (When this unit attacks, heal 1 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0538592539",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm",
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 96
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 96
+    }
+  ],
+  "internalName": "forest-patroller"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Jabba's Palace",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9617095664",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tatooine"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 26
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 26
+    }
+  ],
+  "internalName": "jabbas-palace"
+}

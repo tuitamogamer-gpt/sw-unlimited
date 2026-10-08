@@ -1,0 +1,43 @@
+{
+  "title": "Disabling Fang Fighter",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 2,
+  "power": 3,
+  "text": "When Played: You may defeat an upgrade.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2668056720",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "mandalorian",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 166
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 162
+    },
+    {
+      "set": "SHD",
+      "number": 166
+    }
+  ],
+  "internalName": "disabling-fang-fighter"
+}

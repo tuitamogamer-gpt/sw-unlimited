@@ -1,0 +1,37 @@
+{
+  "title": "A New Adventure",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Return a non-leader unit that costs 6 or less to its owner's hand. Then, its owner may play it for free.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n“Play for free” ignores all resource costs, including the aspect penalty, but not other additional costs.\nAbilities that return a card to hand must choose a card in play unless otherwise specified.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4717189843",
+  "aspects": [
+    "cunning",
+    "cunning"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 207
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 207
+    }
+  ],
+  "internalName": "a-new-adventure"
+}

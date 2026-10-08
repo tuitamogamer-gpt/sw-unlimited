@@ -1,0 +1,41 @@
+{
+  "title": "Liberated Slaves",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 5,
+  "power": 3,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8656645362",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "fringe",
+    "droid",
+    "twi'lek",
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 200
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 200
+    }
+  ],
+  "internalName": "liberated-slaves"
+}

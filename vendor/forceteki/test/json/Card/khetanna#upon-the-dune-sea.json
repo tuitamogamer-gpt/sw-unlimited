@@ -1,0 +1,39 @@
+{
+  "title": "Khetanna",
+  "subtitle": "Upon the Dune Sea",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "When Played/On Attack: The next Underworld unit you play this phase costs 1 resource less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "The cost discount remains active even if Khetanna is defeated.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0240338988",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "speeder"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 158
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 158
+    }
+  ],
+  "internalName": "khetanna#upon-the-dune-sea"
+}

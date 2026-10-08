@@ -1,0 +1,40 @@
+{
+  "title": "Vulture Interceptor Wing",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 3,
+  "text": "On Attack: Give an enemy unit –1/–1 for this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7000286964",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "separatist",
+    "droid",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 63
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 63
+    }
+  ],
+  "internalName": "vulture-interceptor-wing"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Give In to Your Anger",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Deal 1 damage to an enemy unit. Its controller's next action this phase must be an attack action with that unit, if able. It must attack a unit, if able.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Units must be ready in order to attack.\nYour opponent can’t play a card from hand or activate an ability to attack with that unit, they must take the “Attack With a Unit” action.\nAbilities that affect what a unit can attack, including abilities that prevent a unit from being attacked, still apply to the Give In to Your Anger attack.\nIf the chosen unit can’t attack a unit, it must attack a base. If the chosen unit can’t legally attack, your opponent may take a different action.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3012322434",
+  "aspects": [
+    "villainy",
+    "aggression"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 144
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 144
+    }
+  ],
+  "internalName": "give-in-to-your-anger"
+}

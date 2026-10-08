@@ -1,0 +1,40 @@
+{
+  "title": "Relentless Firespray",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 6,
+  "power": 4,
+  "text": "On Attack: Ready this unit. Use this ability only once each round.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4147863169",
+  "aspects": [
+    "aggression",
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 157
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 157
+    }
+  ],
+  "internalName": "relentless-firespray"
+}

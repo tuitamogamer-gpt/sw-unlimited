@@ -1,0 +1,41 @@
+{
+  "title": "Kanan Jarrus",
+  "subtitle": "Revealed Jedi",
+  "cost": 4,
+  "hp": 5,
+  "power": 4,
+  "text": "On Attack: You may discard 1 card from the defending player's deck for each friendly SPECTRE unit. Heal 1 damage from your base for each different aspect among the discarded cards.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Always discard from the top of a deck, unless an ability specifies otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1662196707",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "rebel",
+    "spectre"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 47
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 47
+    }
+  ],
+  "internalName": "kanan-jarrus#revealed-jedi"
+}

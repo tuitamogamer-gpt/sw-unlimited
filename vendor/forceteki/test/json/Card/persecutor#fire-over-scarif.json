@@ -1,0 +1,40 @@
+{
+  "title": "Persecutor",
+  "subtitle": "Fire Over Scarif",
+  "cost": 9,
+  "hp": 7,
+  "power": 9,
+  "text": "When Played/On Attack: Choose an arena. You may deal 3 damage to each unit in that arena.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5725363168",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 178
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 178
+    }
+  ],
+  "internalName": "persecutor#fire-over-scarif"
+}

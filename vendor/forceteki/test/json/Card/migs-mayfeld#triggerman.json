@@ -1,0 +1,37 @@
+{
+  "title": "Migs Mayfeld",
+  "subtitle": "Triggerman",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When a player discards a card from their hand: You may deal 2 damage to a unit or base. Use this ability only once each round.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "(ERRATA) When a player discards a card from a hand: You may deal 2 damage to a unit or base. Use this ability only once each round.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6910883839",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 163
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 163
+    }
+  ],
+  "internalName": "migs-mayfeld#triggerman"
+}

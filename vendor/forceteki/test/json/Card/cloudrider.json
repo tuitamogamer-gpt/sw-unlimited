@@ -1,0 +1,39 @@
+{
+  "title": "Cloud-Rider",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 3,
+  "text": "Ambush (When you play this unit, it may ready and attack an enemy unit.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2121724481",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 210
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 210
+    }
+  ],
+  "internalName": "cloudrider"
+}

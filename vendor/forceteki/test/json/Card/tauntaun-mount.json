@@ -1,0 +1,45 @@
+{
+  "title": "Tauntaun Mount",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Defeated: Heal 2 damage from your base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2798571364",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 15
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 15
+    },
+    {
+      "set": "IBH",
+      "number": 28
+    },
+    {
+      "set": "IBH",
+      "number": 51
+    }
+  ],
+  "internalName": "tauntaun-mount"
+}

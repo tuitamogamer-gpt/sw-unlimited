@@ -1,0 +1,40 @@
+{
+  "title": "Grand Inquisitor",
+  "subtitle": "Hunting the Jedi",
+  "cost": 6,
+  "hp": 6,
+  "power": 3,
+  "text": "Action [exhaust]: Deal 2 damage to a friendly unit with 3 or less power and ready it.",
+  "deployBox": "On Attack: You may deal 1 damage to another friendly unit with 3 or less power and ready it.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\nThe unit chosen by Grand Inquisitor’s ability can exceed 3 power after the damage is dealt (for example, if the unit has Grit).\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7911083239",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "imperial",
+    "inquisitor"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 11
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 11
+    }
+  ],
+  "internalName": "grand-inquisitor#hunting-the-jedi"
+}

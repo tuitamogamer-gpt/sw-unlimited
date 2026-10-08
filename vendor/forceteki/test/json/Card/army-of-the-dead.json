@@ -1,0 +1,38 @@
+{
+  "title": "Army of the Dead",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 6,
+  "power": 7,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0400517008",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "night",
+    "undead"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 236
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 236
+    }
+  ],
+  "internalName": "army-of-the-dead"
+}

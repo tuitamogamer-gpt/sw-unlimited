@@ -1,0 +1,40 @@
+{
+  "title": "Assault Lander LAAT",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 5,
+  "power": 3,
+  "text": "When Played: Create 2 Clone Trooper tokens.\nWhen the regroup phase starts: Deal 4 damage to this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4687650543",
+  "aspects": [
+    "command",
+    "aggression"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 23
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 23
+    }
+  ],
+  "internalName": "assault-lander-laat"
+}

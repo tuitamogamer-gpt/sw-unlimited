@@ -1,0 +1,41 @@
+{
+  "title": "Leia Organa",
+  "subtitle": "Alliance General",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "Action [exhaust]: Attack with a Rebel unit. Then, you may attack with another Rebel unit.",
+  "deployBox": "Raid 1 (This unit gets +1/+0 while attacking.)\n\nWhen this unit completes an attack: You may attack with another Rebel unit. ",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "If you use Leia’s leader ability, you must attack with a Rebel unit, if able. Units must be ready in order to attack.\nFor abilities that encompass multiple actions, resolve each action (and any resulting triggers) sequentially.\nA unit must survive an attack to trigger its “when this unit completes an attack” abilities.\nWhen Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6514927936",
+  "aspects": [
+    "heroism",
+    "command"
+  ],
+  "traits": [
+    "rebel",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 9
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 9
+    }
+  ],
+  "internalName": "leia-organa#alliance-general"
+}

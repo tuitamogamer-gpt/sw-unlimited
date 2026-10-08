@@ -1,0 +1,39 @@
+{
+  "title": "Coruscant Dissident",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "On Attack: You may ready a resource.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9115773123",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "underworld",
+    "twi'lek"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 199
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 199
+    }
+  ],
+  "internalName": "coruscant-dissident"
+}

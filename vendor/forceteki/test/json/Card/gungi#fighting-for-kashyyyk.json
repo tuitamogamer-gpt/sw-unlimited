@@ -1,0 +1,42 @@
+{
+  "title": "Gungi",
+  "subtitle": "Fighting for Kashyyyk",
+  "cost": 3,
+  "hp": 5,
+  "power": 2,
+  "text": "Grit (This unit gets +1/+0 for each damage on him.)\nWhen this unit is dealt damage and survives: You may discard a card from your hand. If you do, ready this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2319392742",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 166
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 166
+    }
+  ],
+  "internalName": "gungi#fighting-for-kashyyyk"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "The Client",
+  "subtitle": "Dictated by Discretion",
+  "cost": 3,
+  "hp": 5,
+  "power": 2,
+  "text": "Shielded\nAction [Exhaust]: Choose a unit. For this phase, it gains: “Bounty — Heal 5 damage from a base.” (When that unit is defeated or captured, its opponent collects its bounty.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1090660242",
+  "aspects": [
+    "villainy",
+    "vigilance"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded",
+    "bounty"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 31
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 31
+    }
+  ],
+  "internalName": "the-client#dictated-by-discretion"
+}

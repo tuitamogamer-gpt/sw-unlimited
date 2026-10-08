@@ -1,0 +1,42 @@
+{
+  "title": "Bo-Katan's Gauntlet",
+  "subtitle": "Reinforce from Above",
+  "cost": 5,
+  "hp": 5,
+  "power": 4,
+  "text": "Restore 1\nEach other friendly non-token unit gains: “When Defeated: Create a Mandalorian token.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "If Bo-Katan's Gauntlet is defeated simultaneously with other friendly units, all “When Defeated” abilities still trigger.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7898172309",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 63
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 63
+    }
+  ],
+  "internalName": "bokatans-gauntlet#reinforce-from-above"
+}

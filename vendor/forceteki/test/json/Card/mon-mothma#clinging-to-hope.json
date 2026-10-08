@@ -1,0 +1,41 @@
+{
+  "title": "Mon Mothma",
+  "subtitle": "Clinging to Hope",
+  "cost": 7,
+  "hp": 8,
+  "power": 5,
+  "text": "Restore 3\nWhen Played: You may attack with any number of other units (one at a time), even if those units are exhausted. They can't attack bases for these attacks.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Fully resolve the each attack, including all triggers, before beginning the next attack.\nYou can't use Mon Mothma's \"When Played\" ability to attack with the same unit multiple times.\nUnits that can’t attack bases can still damage bases through other abilities, like Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1347170274",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 103
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 103
+    }
+  ],
+  "internalName": "mon-mothma#clinging-to-hope"
+}

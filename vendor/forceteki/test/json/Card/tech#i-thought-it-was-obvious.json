@@ -1,0 +1,38 @@
+{
+  "title": "Tech",
+  "subtitle": "I Thought It Was Obvious",
+  "cost": 3,
+  "hp": 5,
+  "power": 3,
+  "text": "When this unit is dealt damage and survives: You may exhaust a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5564622530",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "clone"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 211
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 211
+    }
+  ],
+  "internalName": "tech#i-thought-it-was-obvious"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Intimidator",
+  "subtitle": "Citadel Overwatch",
+  "cost": 11,
+  "hp": 11,
+  "power": 11,
+  "text": "When Played: Return any number of friendly resources to their owners' hands. For each resource returned this way, create a Credit token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2038476769",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 140
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 140
+    }
+  ],
+  "internalName": "intimidator#citadel-overwatch"
+}

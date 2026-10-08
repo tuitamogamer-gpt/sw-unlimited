@@ -1,0 +1,38 @@
+{
+  "title": "Hunter's Instinct",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 1,
+  "power": 2,
+  "text": "If attached unit is a Creature, it gains Grit. (It gets +1/+0 for each damage on it.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 2,
+  "upgradeHp": 1,
+  "id": "7386366914",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 191
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 191
+    }
+  ],
+  "internalName": "hunters-instinct"
+}

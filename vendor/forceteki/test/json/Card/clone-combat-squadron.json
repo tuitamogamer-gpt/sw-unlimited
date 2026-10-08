@@ -1,0 +1,39 @@
+{
+  "title": "Clone Combat Squadron",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 3,
+  "text": "This unit gets +1/+1 for each other friendly space unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3213928129",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 115
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 115
+    }
+  ],
+  "internalName": "clone-combat-squadron"
+}

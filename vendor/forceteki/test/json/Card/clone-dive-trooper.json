@@ -1,0 +1,41 @@
+{
+  "title": "Clone Dive Trooper",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 2,
+  "text": "Coordinate — While this unit is attacking, the defender gets –2/–0. (Gain this ability while you control 3 or more units.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5445166624",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "republic",
+    "clone",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "coordinate"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 205
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 205
+    }
+  ],
+  "internalName": "clone-dive-trooper"
+}

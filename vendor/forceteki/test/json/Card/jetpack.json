@@ -1,0 +1,39 @@
+{
+  "title": "Jetpack",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 0,
+  "power": 2,
+  "text": "Attach to a non-Vehicle unit.\nWhen Played: Give a Shield token to attached unit. At the start of the regroup phase, defeat that token.\nSmuggle [4 resources Cunning]",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Jetpack’s ability’s requirement to defeat the Shield token remains active even if the Jetpack is defeated or changes zones before the start of the next regroup phase.\n",
+  "upgradePower": 2,
+  "upgradeHp": 0,
+  "id": "6117103324",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "item",
+    "armor"
+  ],
+  "keywords": [
+    "smuggle"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 225
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 225
+    }
+  ],
+  "internalName": "jetpack"
+}

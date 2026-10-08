@@ -1,0 +1,39 @@
+{
+  "title": "Admiral Holdo",
+  "subtitle": "We're Not Alone",
+  "cost": 6,
+  "hp": 8,
+  "power": 3,
+  "text": "Action [1 resource, Exhaust]: Give a Resistance unit or a unit with a Resistance upgrade on it +2/+2 for this phase.",
+  "deployBox": "On Attack: You may give another Resistance unit or a unit with a Resistance upgrade on it +2/+2 for this phase.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8943696478",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "resistance",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 7
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 7
+    }
+  ],
+  "internalName": "admiral-holdo#were-not-alone"
+}

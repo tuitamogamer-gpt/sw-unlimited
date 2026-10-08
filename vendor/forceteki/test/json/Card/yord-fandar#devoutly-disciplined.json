@@ -1,0 +1,41 @@
+{
+  "title": "Yord Fandar",
+  "subtitle": "Devoutly Disciplined",
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "While a base has 15 or more damage on it, this unit gains Sentinel.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3492052595",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 74
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 74
+    }
+  ],
+  "internalName": "yord-fandar#devoutly-disciplined"
+}

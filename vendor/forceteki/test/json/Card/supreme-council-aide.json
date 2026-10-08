@@ -1,0 +1,38 @@
+{
+  "title": "Supreme Council Aide",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 2,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3984102937",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "first order",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 237
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 237
+    }
+  ],
+  "internalName": "supreme-council-aide"
+}

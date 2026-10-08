@@ -1,0 +1,41 @@
+{
+  "title": "First Legion Snowtrooper",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "While attacking a damaged unit, this unit gets +2/+0 and gains Overwhelm. (Deal excess damage to the opponent's base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4619930426",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 130
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 130
+    }
+  ],
+  "internalName": "first-legion-snowtrooper"
+}

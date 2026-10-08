@@ -1,0 +1,36 @@
+{
+  "title": "Contempt for Culture",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Deal 2 damage to a non-Vehicle unit.\nCreate a Spy token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8056594889",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 246
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 246
+    }
+  ],
+  "internalName": "contempt-for-culture"
+}

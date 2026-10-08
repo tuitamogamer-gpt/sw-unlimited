@@ -1,0 +1,38 @@
+{
+  "title": "Zealous Soldier",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "When Played: Give an Advantage token to this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4169022992",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 251
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 251
+    }
+  ],
+  "internalName": "zealous-soldier"
+}

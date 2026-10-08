@@ -1,0 +1,36 @@
+{
+  "title": "Mission Briefing",
+  "subtitle": null,
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Choose a player. They draw 2 cards.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7262314209",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 171
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 171
+    }
+  ],
+  "internalName": "mission-briefing"
+}

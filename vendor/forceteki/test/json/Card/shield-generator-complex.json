@@ -1,0 +1,40 @@
+{
+  "title": "Shield Generator Complex",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9014930596",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "endor"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 22
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 20
+    },
+    {
+      "set": "HMW",
+      "number": 22
+    }
+  ],
+  "internalName": "shield-generator-complex"
+}

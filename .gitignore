@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.env
+coverage/
+playwright-report/
+test-results/
+vendor/forceteki/node_modules/
+vendor/forceteki/build/
+vendor/forceteki/logs/
+vendor/forceteki/.env
+vendor/forceteki/.git/

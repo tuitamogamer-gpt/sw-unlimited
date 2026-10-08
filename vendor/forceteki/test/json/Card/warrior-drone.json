@@ -1,0 +1,37 @@
+{
+  "title": "Warrior Drone",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 4,
+  "power": 1,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3504029875",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "separatist"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 57
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 57
+    }
+  ],
+  "internalName": "warrior-drone"
+}

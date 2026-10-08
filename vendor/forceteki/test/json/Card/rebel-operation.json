@@ -1,0 +1,38 @@
+{
+  "title": "Rebel Operation",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "This card costs 1 resource less to play for each friendly Rebel unit and leader.\nDraw 2 cards.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5533325371",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 173
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 173
+    }
+  ],
+  "internalName": "rebel-operation"
+}

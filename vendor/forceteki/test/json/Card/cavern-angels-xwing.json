@@ -1,0 +1,39 @@
+{
+  "title": "Cavern Angels X-Wing",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 2,
+  "text": "When Defeated: Deal 2 damage to a base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5606781252",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 189
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 189
+    }
+  ],
+  "internalName": "cavern-angels-xwing"
+}

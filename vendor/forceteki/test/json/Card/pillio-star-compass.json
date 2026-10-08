@@ -1,0 +1,36 @@
+{
+  "title": "Pillio Star Compass",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 1,
+  "text": "Attach to a non-Vehicle unit.\nWhen Played: Search the top 3 cards of your deck for a unit, reveal it, and draw it. (Put the other cards on the bottom of your deck in a random order).",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "8580514429",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "item"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 122
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 122
+    }
+  ],
+  "internalName": "pillio-star-compass"
+}

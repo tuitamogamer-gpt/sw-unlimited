@@ -1,0 +1,36 @@
+{
+  "title": "Level 1313",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1023625185",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "coruscant"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 29
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 29
+    }
+  ],
+  "internalName": "level-1313"
+}

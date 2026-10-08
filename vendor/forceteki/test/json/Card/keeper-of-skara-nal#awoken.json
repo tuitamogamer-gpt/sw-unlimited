@@ -1,0 +1,43 @@
+{
+  "title": "Keeper of Skara Nal",
+  "subtitle": "Awoken",
+  "cost": 6,
+  "hp": 8,
+  "power": 5,
+  "text": "Restore 2\nOn Attack: You may discard 2 cards named Keeper of Skara Nal from your hand. If you do, this unit gets +15/+0 and gains Overwhelm for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4533738134",
+  "aspects": [
+    "vigilance",
+    "aggression"
+  ],
+  "traits": [
+    "droid",
+    "vehicle",
+    "walker"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore",
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 41
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 41
+    }
+  ],
+  "internalName": "keeper-of-skara-nal#awoken"
+}

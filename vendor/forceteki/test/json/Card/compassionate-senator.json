@@ -1,0 +1,38 @@
+{
+  "title": "Compassionate Senator",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 4,
+  "power": 0,
+  "text": "Action [2 resources, Exhaust]: Heal 2 damage from a unit or base.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5157630261",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "republic",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 56
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 56
+    }
+  ],
+  "internalName": "compassionate-senator"
+}

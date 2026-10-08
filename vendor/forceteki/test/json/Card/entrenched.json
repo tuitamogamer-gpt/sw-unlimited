@@ -1,0 +1,36 @@
+{
+  "title": "Entrenched",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 3,
+  "power": 3,
+  "text": "Attached unit can't attack bases.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Units that can’t attack bases can still damage bases through other abilities, like Overwhelm.\n",
+  "upgradePower": 3,
+  "upgradeHp": 3,
+  "id": "3099663280",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "condition"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 72
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 72
+    }
+  ],
+  "internalName": "entrenched"
+}

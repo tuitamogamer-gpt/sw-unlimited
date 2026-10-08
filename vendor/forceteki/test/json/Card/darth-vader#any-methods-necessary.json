@@ -1,0 +1,43 @@
+{
+  "title": "Darth Vader",
+  "subtitle": "Any Methods Necessary",
+  "cost": 9,
+  "hp": 8,
+  "power": 9,
+  "text": "Saboteur\nWhen Played: Search the top 8 cards of your deck for up to 2 units that each cost 4 or less, play them for free, and deal 2 damage to each of them.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n“Play for free” ignores all resource costs, including the aspect penalty, but not other additional costs.\nAfter searching, put any cards not chosen on the bottom of your deck in a random order.\nDeal 2 damage to the played units after triggering but before resolving any of their \"When Played\" abilities.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5451605535",
+  "aspects": [
+    "command",
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "imperial",
+    "sith"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 43
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 43
+    }
+  ],
+  "internalName": "darth-vader#any-methods-necessary"
+}

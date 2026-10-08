@@ -1,0 +1,201 @@
+describe('Fett\'s Firespray, Feared Silhouette', function () {
+    integration(function (contextRef) {
+        it('Fett\'s Firespray\'s ability should deal 1 indirect damage to opponent when played', async function () {
+            await contextRef.setupTestAsync({
+                phase: 'action',
+                player1: {
+                    hand: ['fetts-firespray#feared-silhouette'],
+                    leader: 'rio-durant#wisecracking-wheelman'
+                },
+                player2: {
+                    groundArena: ['battlefield-marine']
+                }
+            });
+
+            const { context } = contextRef;
+
+            context.player1.clickCard(context.fettsFirespray);
+            expect(context.player1).toHavePrompt('Choose a player to target for ability \'Deal 1 indirect damage to a player\'');
+            context.player1.clickPrompt('Deal indirect damage to opponent');
+            context.player2.setDistributeIndirectDamagePromptState(new Map([
+                [context.p2Base, 1],
+            ]));
+            expect(context.p2Base.damage).toBe(1);
+        });
+
+        it('Fett\'s Firespray\'s ability should deal 2 indirect damage to opponent when played as we control Boba1 as leader', async function () {
+            await contextRef.setupTestAsync({
+                phase: 'action',
+                player1: {
+                    hand: ['fetts-firespray#feared-silhouette'],
+                    leader: 'boba-fett#collecting-the-bounty'
+                },
+                player2: {
+                    groundArena: ['battlefield-marine']
+                }
+            });
+
+            const { context } = contextRef;
+
+            context.player1.clickCard(context.fettsFirespray);
+            expect(context.player1).toHavePrompt('Choose a player to target for ability \'Deal 2 indirect damage to a player\'');
+            context.player1.clickPrompt('Deal indirect damage to opponent');
+            context.player2.setDistributeIndirectDamagePromptState(new Map([
+                [context.p2Base, 2],
+            ]));
+            expect(context.p2Base.damage).toBe(2);
+        });
+
+        it('Fett\'s Firespray\'s ability should deal 2 indirect damage to opponent when played as we control Boba2 as leader', async function () {
+            await contextRef.setupTestAsync({
+                phase: 'action',
+                player1: {
+                    hand: ['fetts-firespray#feared-silhouette'],
+                    leader: 'boba-fett#daimyo'
+                },
+                player2: {
+                    groundArena: ['battlefield-marine']
+                }
+            });
+
+            const { context } = contextRef;
+
+            context.player1.clickCard(context.fettsFirespray);
+            expect(context.player1).toHavePrompt('Choose a player to target for ability \'Deal 2 indirect damage to a player\'');
+            context.player1.clickPrompt('Deal indirect damage to opponent');
+            context.player2.setDistributeIndirectDamagePromptState(new Map([
+                [context.p2Base, 2],
+            ]));
+            expect(context.p2Base.damage).toBe(2);
+        });
+
+        it('Fett\'s Firespray\'s ability should deal 2 indirect damage to opponent when played as we control Boba4 as leader', async function () {
+            await contextRef.setupTestAsync({
+                phase: 'action',
+                player1: {
+                    hand: ['fetts-firespray#feared-silhouette'],
+                    leader: 'boba-fett#any-methods-necessary'
+                },
+                player2: {
+                    groundArena: ['battlefield-marine']
+                }
+            });
+
+            const { context } = contextRef;
+
+            context.player1.clickCard(context.fettsFirespray);
+            expect(context.player1).toHavePrompt('Choose a player to target for ability \'Deal 2 indirect damage to a player\'');
+            context.player1.clickPrompt('Deal indirect damage to opponent');
+            context.player2.setDistributeIndirectDamagePromptState(new Map([
+                [context.p2Base, 2],
+            ]));
+            expect(context.p2Base.damage).toBe(2);
+            context.player1.clickPrompt('Pass'); // Pass on Boba\'s leader ability
+        });
+
+        it('Fett\'s Firespray\'s ability should deal 2 indirect damage to opponent when played as we control Boba1 as unit', async function () {
+            await contextRef.setupTestAsync({
+                phase: 'action',
+                player1: {
+                    hand: ['fetts-firespray#feared-silhouette'],
+                    groundArena: ['boba-fett#disintegrator'],
+                    leader: 'rio-durant#wisecracking-wheelman'
+                },
+                player2: {
+                    groundArena: ['battlefield-marine']
+                }
+            });
+
+            const { context } = contextRef;
+
+            context.player1.clickCard(context.fettsFirespray);
+            expect(context.player1).toHavePrompt('Choose a player to target for ability \'Deal 2 indirect damage to a player\'');
+            context.player1.clickPrompt('Deal indirect damage to opponent');
+            context.player2.setDistributeIndirectDamagePromptState(new Map([
+                [context.p2Base, 2],
+            ]));
+            expect(context.p2Base.damage).toBe(2);
+        });
+
+        it('Fett\'s Firespray\'s ability should deal 2 indirect damage to opponent on attack as we control Boba1 as leader unit', async function () {
+            await contextRef.setupTestAsync({
+                phase: 'action',
+                player1: {
+                    spaceArena: ['fetts-firespray#feared-silhouette'],
+                    leader: { card: 'boba-fett#collecting-the-bounty', deployed: true }
+                },
+                player2: {
+                    groundArena: ['battlefield-marine']
+                }
+            });
+
+            const { context } = contextRef;
+
+            context.player1.clickCard(context.fettsFirespray);
+            context.player1.clickCard(context.p2Base);
+            expect(context.player1).toHavePrompt('Choose a player to target for ability \'Deal 2 indirect damage to a player\'');
+            context.player1.clickPrompt('Deal indirect damage to opponent');
+            context.player2.setDistributeIndirectDamagePromptState(new Map([
+                [context.p2Base, 2],
+            ]));
+            expect(context.p2Base.damage).toBe(6); // 4+2
+        });
+
+        it('Fett\'s Firespray\'s ability should deal 2 indirect damage to opponent on attack as we control Boba4 unit as upgrade', async function () {
+            await contextRef.setupTestAsync({
+                phase: 'action',
+                player1: {
+                    hand: ['boba-fett#feared-bounty-hunter'],
+                    spaceArena: ['fetts-firespray#feared-silhouette'],
+                    leader: { card: 'rio-durant#wisecracking-wheelman' },
+                },
+                player2: {
+                    groundArena: ['battlefield-marine']
+                }
+            });
+
+            const { context } = contextRef;
+
+            context.player1.clickCard(context.bobaFett);
+            context.player1.clickPrompt('Play Boba Fett with Piloting');
+            context.player1.clickCard(context.fettsFirespray);
+
+            // skip boba ability
+            context.player1.clickPrompt('Pass');
+            context.player2.passAction();
+
+            context.player1.clickCard(context.fettsFirespray);
+            context.player1.clickCard(context.p2Base);
+            expect(context.player1).toHavePrompt('Choose a player to target for ability \'Deal 2 indirect damage to a player\'');
+            context.player1.clickPrompt('Deal indirect damage to opponent');
+            context.player2.setDistributeIndirectDamagePromptState(new Map([
+                [context.p2Base, 2],
+            ]));
+            expect(context.p2Base.damage).toBe(8);
+        });
+
+        it('Fett\'s Firespray\'s ability should deal 1 indirect damage to opponent on attack', async function () {
+            await contextRef.setupTestAsync({
+                phase: 'action',
+                player1: {
+                    spaceArena: ['fetts-firespray#feared-silhouette'],
+                    leader: 'rio-durant#wisecracking-wheelman'
+                },
+                player2: {
+                    groundArena: ['battlefield-marine']
+                }
+            });
+
+            const { context } = contextRef;
+
+            context.player1.clickCard(context.fettsFirespray);
+            context.player1.clickCard(context.p2Base);
+            expect(context.player1).toHavePrompt('Choose a player to target for ability \'Deal 1 indirect damage to a player\'');
+            context.player1.clickPrompt('Deal indirect damage to opponent');
+            context.player2.setDistributeIndirectDamagePromptState(new Map([
+                [context.p2Base, 1],
+            ]));
+            expect(context.p2Base.damage).toBe(5); // 4+1
+        });
+    });
+});

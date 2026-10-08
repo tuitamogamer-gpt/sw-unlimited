@@ -1,0 +1,39 @@
+{
+  "title": "Terentatek",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 5,
+  "text": "While an opponent controls a Force unit, this unit gains Ambush. (When you play this unit, it may attack an enemy unit.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as \"When Played\" abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8660042329",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 118
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 118
+    }
+  ],
+  "internalName": "terentatek"
+}

@@ -1,0 +1,201 @@
+import { Contract } from '../utils/Contract';
+import type { IScheduledTask, IScheduler, ISchedulerErrorContext } from '../../../utils/IScheduler';
+import type { IActionTimerHandler } from './IActionTimer';
+import { PlayerTimeRemainingStatus } from './IActionTimer';
+
+interface ISpecificTimeHandler {
+    fireOnRemainingTimeMs: number;
+    handler: IActionTimerHandler;
+}
+
+/**
+ * Simple action timer that can schedule handlers at specific time intervals.
+ * Subclasses can extend this with context-specific logic (e.g., Game/Player checks).
+ */
+export class SimpleActionTimer {
+    protected readonly timeLimitMs: number;
+    protected readonly scheduler: IScheduler;
+    protected readonly errorContext: ISchedulerErrorContext;
+
+    protected timers: IScheduledTask[] = [];
+    protected endTime: Date | null = null;
+    protected pauseTime: Date | null = null;
+    protected _timeRemainingStatus: PlayerTimeRemainingStatus = PlayerTimeRemainingStatus.NoAlert;
+    protected onSpecificTimeHandlers: ISpecificTimeHandler[] = [];
+    protected timerOverrideValueSeconds: number | null = null;
+
+    public get isPaused(): boolean {
+        return this.endTime !== null && this.pauseTime !== null;
+    }
+
+    public get isRunning(): boolean {
+        return (
+            this.endTime !== null &&
+            this.pauseTime === null &&
+            this.scheduler.now() < this.endTime.getTime()
+        );
+    }
+
+    public get timeRemainingSeconds(): number | null {
+        if (this.endTime === null) {
+            return null;
+        }
+        // If paused, calculate remaining time from when we paused
+        const referenceTime = this.pauseTime ?? this.scheduler.currentDate();
+        const remainingMs = this.endTime.getTime() - referenceTime.getTime();
+        return remainingMs > 0 ? Math.ceil(remainingMs / 1000) : null;
+    }
+
+    public get timeRemainingStatus(): PlayerTimeRemainingStatus {
+        return this._timeRemainingStatus;
+    }
+
+    /**
+     * Resets the warning status back to NoAlert without affecting the underlying timer.
+     * Useful when the timer becomes inactive (e.g. paused or stopped) and any displayed
+     * warning state should be cleared.
+     */
+    public resetStatus(): void {
+        this._timeRemainingStatus = PlayerTimeRemainingStatus.NoAlert;
+    }
+
+    public constructor(
+        timeLimitSeconds: number,
+        scheduler: IScheduler,
+        errorContext: ISchedulerErrorContext
+    ) {
+        Contract.assertPositiveNonZero(timeLimitSeconds);
+
+        this.timeLimitMs = timeLimitSeconds * 1000;
+        this.scheduler = scheduler;
+        this.errorContext = errorContext;
+    }
+
+    /**
+     * Adds a handler to be called when the timer reaches a specific remaining time.
+     * @param timeSeconds The remaining time (in seconds) at which to fire the handler. Use 0 for timeout.
+     * @param handler The handler to call
+     */
+    public addSpecificTimeHandler(timeSeconds: number, handler: IActionTimerHandler): void {
+        Contract.assertTrue(timeSeconds >= 0, `Target time for handler must be non-negative: ${timeSeconds}`);
+        Contract.assertTrue(timeSeconds * 1000 < this.timeLimitMs, `Target time for handler (${timeSeconds}) must be less than the time limit (${this.timeLimitMs / 1000})`);
+
+        this.onSpecificTimeHandlers.push({
+            fireOnRemainingTimeMs: timeSeconds * 1000,
+            handler,
+        });
+    }
+
+    /**
+     * Starts the timer. Can optionally override the time limit for this run.
+     * @param overrideTimeLimitSeconds Optional override for the time limit (must be greater than default)
+     */
+    public start(overrideTimeLimitSeconds?: number): void {
+        Contract.assertTrue(
+            overrideTimeLimitSeconds == null || overrideTimeLimitSeconds * 1000 >= this.timeLimitMs,
+            `Received invalid time limit, must be null or greater than ${this.timeLimitMs / 1000}: ${overrideTimeLimitSeconds}`
+        );
+
+        this.timerOverrideValueSeconds = overrideTimeLimitSeconds;
+        this._timeRemainingStatus = PlayerTimeRemainingStatus.NoAlert;
+
+        this.stop();
+        this.initializeTimersForTimeRemaining(this.getTimeLimitMs());
+    }
+
+    /**
+     * Stops the timer and clears all scheduled handlers.
+     */
+    public stop(): void {
+        for (const timer of this.timers) {
+            timer.cancel();
+        }
+
+        this._timeRemainingStatus = PlayerTimeRemainingStatus.NoAlert;
+
+        this.timers = [];
+        this.endTime = null;
+        this.pauseTime = null;
+    }
+
+    /**
+     * Pauses the timer, preserving remaining time.
+     */
+    public pause(): void {
+        if (!this.isRunning) {
+            return;
+        }
+
+        this.pauseTime = this.scheduler.currentDate();
+        this.clearTimers();
+    }
+
+    /**
+     * Resumes the timer from where it was paused.
+     */
+    public resume(): void {
+        if (!this.isPaused || this.endTime === null || this.pauseTime === null) {
+            return;
+        }
+
+        const timeRemainingMs = this.endTime.getTime() - this.pauseTime.getTime();
+        if (timeRemainingMs <= 0) {
+            this.stop();
+            return;
+        }
+
+        // Clear pause state and reinitialize with remaining time
+        this.endTime = null;
+        this.pauseTime = null;
+        this.initializeTimersForTimeRemaining(timeRemainingMs);
+    }
+
+    /**
+     * Called before firing a handler. Override in subclasses to add safety checks.
+     * If this returns false, the handler will not be fired and the timer will be stopped.
+     */
+    protected shouldFireHandler(): boolean {
+        return true;
+    }
+
+    protected getTimeLimitMs(): number {
+        return this.timerOverrideValueSeconds ? this.timerOverrideValueSeconds * 1000 : this.timeLimitMs;
+    }
+
+    private clearTimers(): void {
+        for (const timer of this.timers) {
+            timer.cancel();
+        }
+        this.timers = [];
+    }
+
+    private initializeTimersForTimeRemaining(timeRemainingMs: number): void {
+        Contract.assertIsNullLike(this.endTime, 'End time must be cleared before initializing timers');
+        Contract.assertPositiveNonZero(timeRemainingMs);
+        Contract.assertTrue(this.timers.length === 0, 'Timers must be cleared before initializing new timers');
+
+        this.endTime = new Date(this.scheduler.now() + timeRemainingMs);
+        this.pauseTime = null;
+
+        const safeCallHandler = (handler: IActionTimerHandler) => {
+            if (!this.shouldFireHandler()) {
+                this.stop();
+                return;
+            }
+
+            handler((newStatus: PlayerTimeRemainingStatus) => this._timeRemainingStatus = newStatus);
+        };
+
+        for (const handler of this.onSpecificTimeHandlers) {
+            if (timeRemainingMs > handler.fireOnRemainingTimeMs) {
+                const timer = this.scheduler.setTimeout(
+                    () => safeCallHandler(handler.handler),
+                    timeRemainingMs - handler.fireOnRemainingTimeMs,
+                    this.errorContext
+                );
+
+                this.timers.push(timer);
+            }
+        }
+    }
+}

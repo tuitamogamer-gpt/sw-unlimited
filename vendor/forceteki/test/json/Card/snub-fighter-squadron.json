@@ -1,0 +1,42 @@
+{
+  "title": "Snub Fighter Squadron",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 4,
+  "text": "Ambush (When you play this unit, it may attack an enemy unit.)\nWhen Played: Deal 1 damage to a space unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3607969168",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 194
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 194
+    }
+  ],
+  "internalName": "snub-fighter-squadron"
+}

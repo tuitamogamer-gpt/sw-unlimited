@@ -1,0 +1,37 @@
+{
+  "title": "Fenn Rau",
+  "subtitle": "Protector of Concord Dawn",
+  "cost": 6,
+  "hp": 6,
+  "power": 5,
+  "text": "When Played: You may play an upgrade from your hand. It costs 2 resources less.\nWhen you play an upgrade on this unit: Give an enemy unit –2/–2 for this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3399023235",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 67
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 67
+    }
+  ],
+  "internalName": "fenn-rau#protector-of-concord-dawn"
+}

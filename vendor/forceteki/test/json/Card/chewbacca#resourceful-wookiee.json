@@ -1,0 +1,41 @@
+{
+  "title": "Chewbacca",
+  "subtitle": "Resourceful Wookiee",
+  "cost": 3,
+  "hp": 5,
+  "power": 0,
+  "text": "This unit gains Raid 1 for each exhausted resource you control.\nWhile each resource you control is exhausted, this unit gains Overwhelm.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8860453492",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid",
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 117
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 117
+    }
+  ],
+  "internalName": "chewbacca#resourceful-wookiee"
+}

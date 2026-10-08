@@ -1,0 +1,40 @@
+{
+  "title": "Outflank",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Attack with 2 units (one at a time).",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "You must attack with two units, if able. Units must be ready in order to attack.\nFully resolve the first attack, including all triggers, before beginning the second attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0802973415",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 123
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 128
+    },
+    {
+      "set": "TWI",
+      "number": 123
+    }
+  ],
+  "internalName": "outflank"
+}

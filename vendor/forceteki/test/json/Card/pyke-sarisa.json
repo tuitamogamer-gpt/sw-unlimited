@@ -1,0 +1,41 @@
+{
+  "title": "Pyke Sarisa",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 4,
+  "text": "When Played: Give a unit Sentinel for this phase. (Enemy units in its arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5836421084",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 246
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 246
+    }
+  ],
+  "internalName": "pyke-sarisa"
+}

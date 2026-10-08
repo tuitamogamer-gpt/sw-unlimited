@@ -1,0 +1,31 @@
+{
+  "title": "Spy",
+  "subtitle": "",
+  "cost": 0,
+  "hp": 2,
+  "power": 0,
+  "text": "Raid 2 (This unit gets +2/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6665455613",
+  "aspects": [],
+  "traits": [
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "token",
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC"
+  },
+  "internalName": "spy"
+}

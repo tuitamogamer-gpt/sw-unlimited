@@ -1,0 +1,36 @@
+{
+  "title": "Moment of Glory",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Give a unit +4/+4 for this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1701265931",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 130
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 130
+    }
+  ],
+  "internalName": "moment-of-glory"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Bo-Katan Kryze",
+  "subtitle": "Alone",
+  "cost": 9,
+  "hp": 8,
+  "power": 8,
+  "text": "When Played: Give each enemy unit –3/–3 for this phase.\nWhen an enemy unit is defeated: Give an Experience token to a friendly unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Bo-Katan's \"When Played\" ability can trigger her \"When an enemy unit is defeated\" ability if it defeats enemy units.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2959504320",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 51
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 51
+    }
+  ],
+  "internalName": "bokatan-kryze#alone"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Accelerate Our Plans",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Exhaust a friendly unit. If you do, attack with another unit. It gets +3/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you exhaust a friendly unit with Accelerate Our Plans, you must attack with a unit, if able. Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6471963627",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 228
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 228
+    }
+  ],
+  "internalName": "accelerate-our-plans"
+}

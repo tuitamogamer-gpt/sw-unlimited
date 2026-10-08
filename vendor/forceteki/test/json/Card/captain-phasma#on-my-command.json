@@ -1,0 +1,39 @@
+{
+  "title": "Captain Phasma",
+  "subtitle": "On My Command",
+  "cost": 5,
+  "hp": 6,
+  "power": 5,
+  "text": "When Played/On Attack: You may give another First Order unit +2/+2 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3427170256",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "first order",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 88
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 88
+    }
+  ],
+  "internalName": "captain-phasma#on-my-command"
+}

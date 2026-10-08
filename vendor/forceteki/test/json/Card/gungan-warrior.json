@@ -1,0 +1,41 @@
+{
+  "title": "Gungan Warrior",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 3,
+  "text": "Shielded (When you play this unit, give a Shield token to it.)\nRestore 1 (When this unit attacks, heal 1 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2628450872",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "gungan",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded",
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 247
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 247
+    }
+  ],
+  "internalName": "gungan-warrior"
+}

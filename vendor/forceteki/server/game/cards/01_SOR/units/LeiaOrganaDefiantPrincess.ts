@@ -1,0 +1,30 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { INonLeaderUnitAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { NonLeaderUnitCard } from '../../../core/card/NonLeaderUnitCard';
+import { TargetMode, WildcardCardType } from '../../../core/Constants';
+
+export default class LeiaOrganaDefiantPrincess extends NonLeaderUnitCard {
+    protected override getImplementationId() {
+        return {
+            id: '9680213078',
+            internalName: 'leia-organa#defiant-princess'
+        };
+    }
+
+    public override setupCardAbilities(registrar: INonLeaderUnitAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.addWhenPlayedAbility({
+            title: 'Ready a resource or exhaust a unit',
+            targetResolver: {
+                mode: TargetMode.Select,
+                choices: {
+                    ['Ready a friendly resource']: AbilityHelper.immediateEffects.readyResources({ amount: 1 }),
+                    ['Ready an enemy resource']: AbilityHelper.immediateEffects.readyResources((context) => ({ amount: 1, target: context.player.opponent })),
+                    ['Exhaust a unit']: AbilityHelper.immediateEffects.selectCard({
+                        cardTypeFilter: WildcardCardType.Unit,
+                        immediateEffect: AbilityHelper.immediateEffects.exhaust()
+                    })
+                }
+            }
+        });
+    }
+}

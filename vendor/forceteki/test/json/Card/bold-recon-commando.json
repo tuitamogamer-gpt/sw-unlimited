@@ -1,0 +1,41 @@
+{
+  "title": "Bold Recon Commando",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "Saboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3600744650",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "republic",
+    "clone",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 161
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 161
+    }
+  ],
+  "internalName": "bold-recon-commando"
+}

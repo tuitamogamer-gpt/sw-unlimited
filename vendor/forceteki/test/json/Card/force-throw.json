@@ -1,0 +1,36 @@
+{
+  "title": "Force Throw",
+  "subtitle": null,
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Choose a player. That player discards a card from their hand. Then, if you control a FORCE unit, you may deal damage to a unit equal to the cost of the discarded card.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1705806419",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 167
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 167
+    }
+  ],
+  "internalName": "force-throw"
+}

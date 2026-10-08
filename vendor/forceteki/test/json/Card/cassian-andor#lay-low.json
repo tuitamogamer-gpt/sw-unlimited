@@ -1,0 +1,38 @@
+{
+  "title": "Cassian Andor",
+  "subtitle": "Lay Low",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "While this unit is defending, the attacker gets –2/–0.\nIf an enemy card ability would deal damage to this unit, prevent 2 of that damage.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Enemy card abilities include any ability controlled by an enemy on a unit, upgrade, or event. Combat damage is not a card ability.\nIf Cassian has a Shield attached to him, you can choose in what order to resolve the damage prevention effects.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5613349384",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 42
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 42
+    }
+  ],
+  "internalName": "cassian-andor#lay-low"
+}

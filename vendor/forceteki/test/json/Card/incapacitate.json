@@ -1,0 +1,36 @@
+{
+  "title": "Incapacitate",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Give a unit –2/–2 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3925532730",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 131
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 131
+    }
+  ],
+  "internalName": "incapacitate"
+}

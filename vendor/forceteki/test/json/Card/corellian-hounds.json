@@ -1,0 +1,37 @@
+{
+  "title": "Corellian Hounds",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 5,
+  "text": "If an opponent controls no ground units, this unit enters play ready.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1475870465",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 170
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 170
+    }
+  ],
+  "internalName": "corellian-hounds"
+}

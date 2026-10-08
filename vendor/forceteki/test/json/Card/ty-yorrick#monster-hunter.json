@@ -1,0 +1,38 @@
+{
+  "title": "Ty Yorrick",
+  "subtitle": "Monster Hunter",
+  "cost": 5,
+  "hp": 5,
+  "power": 4,
+  "text": "If a friendly ability would deal damage, you may have that ability deal that much damage plus 1 instead.\nOn Attack: You may deal 1 damage to a Creature unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "When determining how much damage an ability does with Ty Yorrick in play, replace the number in the ability with that number plus one and resolve accordingly.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1425091321",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "force",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 185
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 185
+    }
+  ],
+  "internalName": "ty-yorrick#monster-hunter"
+}

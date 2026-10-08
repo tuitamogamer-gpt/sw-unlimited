@@ -1,0 +1,40 @@
+{
+  "title": "Luke Skywalker",
+  "subtitle": "Hero of Yavin",
+  "cost": 6,
+  "hp": 6,
+  "power": 5,
+  "text": "Action [Exhaust]: If you attacked with a Fighter unit this phase, deal 1 damage to a unit.",
+  "deployBox": "\nThis upgrade can’t be defeated by enemy card abilities.\nAttached unit is a leader unit. If it’s a Fighter, it gains: “On Attack: You may deal 3 damage to a unit.”\n",
+  "epicAction": "Epic Action: If you control 6 or more resources, choose one:\nDeploy this leader.\nDeploy this leader as an upgrade on a friendly Vehicle unit without a Pilot on it.",
+  "unique": true,
+  "rules": "Luke’s leader ability still can be used as an action even if you haven't attacked with a Fighter unit this phase (but no damage is dealt).\n",
+  "upgradePower": 4,
+  "upgradeHp": 5,
+  "id": "0766281795",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "rebel",
+    "pilot"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 12
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 12
+    }
+  ],
+  "internalName": "luke-skywalker#hero-of-yavin"
+}

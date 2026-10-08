@@ -1,0 +1,43 @@
+{
+  "title": "Han Solo",
+  "subtitle": "Has His Moments",
+  "cost": 5,
+  "hp": 5,
+  "power": 4,
+  "text": "Ambush",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Pilots are considered units while not in play. If you use a \"play a unit\" ability, you may only play a Pilot as a unit. If you use a \"play an upgrade\" ability, you may only play a Pilot as an upgrade. If you use a \"play a card\" ability, you may do either.\nAmbush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\nUnits must be ready in order to attack.\n“Combat damage” is only the damage dealt during the “deal combat damage” step of an attack.\nIf the Millennium Falcon piloted by Han deals combat damage first, and the defender is defeated by that damage, it does not deal combat damage back. If it survives and has Grit, it deals bonus damage from Grit when dealing combat damage back.\n(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": 2,
+  "upgradeHp": 3,
+  "id": "6720065735",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "pilot"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush",
+    "piloting"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 203
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 203
+    }
+  ],
+  "pilotText": "Piloting [2 resources Cunning Heroism] \nWhen played as an upgrade: You may attack with attached unit. If it's the Millennium Falcon, it deals its combat damage before the defender.",
+  "internalName": "han-solo#has-his-moments"
+}

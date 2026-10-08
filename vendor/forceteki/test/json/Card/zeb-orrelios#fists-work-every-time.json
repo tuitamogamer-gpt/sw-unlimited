@@ -1,0 +1,39 @@
+{
+  "title": "Zeb Orrelios",
+  "subtitle": "Fists Work Every Time",
+  "cost": 7,
+  "hp": 7,
+  "power": 5,
+  "text": "When Played: Give 3 Advantage tokens to another unit.\nWhen a friendly upgrade is defeated: Deal 1 damage to a base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1805238104",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "spectre"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 161
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 161
+    }
+  ],
+  "internalName": "zeb-orrelios#fists-work-every-time"
+}

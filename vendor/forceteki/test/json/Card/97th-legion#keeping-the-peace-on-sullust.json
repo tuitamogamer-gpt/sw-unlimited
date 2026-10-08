@@ -1,0 +1,38 @@
+{
+  "title": "97th Legion",
+  "subtitle": "Keeping the Peace on Sullust",
+  "cost": 7,
+  "hp": 0,
+  "power": 0,
+  "text": "This unit gets +1/+1 for each resource you control.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7648077180",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 118
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 118
+    }
+  ],
+  "internalName": "97th-legion#keeping-the-peace-on-sullust"
+}

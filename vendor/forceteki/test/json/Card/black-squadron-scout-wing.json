@@ -1,0 +1,40 @@
+{
+  "title": "Black Squadron Scout Wing",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "When you play an upgrade on this unit: You may attack with this unit. It gets +1/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Attaching an upgrade or creating and attaching a token upgrade do not trigger Black Squadron Scout Wing's ability.\nUnits must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6354077246",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "resistance",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 202
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 202
+    }
+  ],
+  "internalName": "black-squadron-scout-wing"
+}

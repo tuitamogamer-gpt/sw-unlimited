@@ -1,0 +1,41 @@
+{
+  "title": "Salacious Crumb",
+  "subtitle": "Cackling Companion",
+  "cost": 1,
+  "hp": 2,
+  "power": 0,
+  "text": "Raid 2\nIf you control Jabba the Hutt (as a leader or unit), this unit enters play ready.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2443700984",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 210
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 210
+    }
+  ],
+  "internalName": "salacious-crumb#cackling-companion"
+}

@@ -1,0 +1,1444 @@
+{
+  "testedAt": "2026-10-08T18:10:21.153Z",
+  "importedDecks": 18,
+  "executableDecks": 18,
+  "uniqueRegisteredCards": 476,
+  "inputSha256": {
+    "data/decks.json": "3e10e241768ed81eaddb966f3e0271bf7b6fbbf8802846b6afab3a6f399cad24",
+    "server/engine.cjs": "07ef70e9c12297e4c782b9c33d6e9bd271c8f4ab831a76fa8518a0809d2b1619",
+    "server/bot.cjs": "c3a11eaf857e5fdb6a4764a27fddf62c7ca3e3eb123dfd6bb0fd9f97eb0ced70",
+    "vendor/forceteki/server/game/core/gameSteps/abilityWindow/TriggerWindowBase.ts": "fa4b0a925042a59a322b2a895c9ce0e9653c5524d22d56a7caf58fe9fe931a54"
+  },
+  "unsupported": [],
+  "seeds": [
+    101,
+    202
+  ],
+  "results": [
+    {
+      "playerDeck": "sor-luke-skywalker",
+      "botDeck": "sor-darth-vader",
+      "seed": 101,
+      "difficulty": "normal",
+      "actions": 141,
+      "rounds": 7,
+      "winnerIds": [
+        "human"
+      ],
+      "durationMs": 1133,
+      "decisionsMs": 39,
+      "highestDecisionMs": 1,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 42,
+        "resource": 28,
+        "actionWindow": 56,
+        "optionalTrigger": 1,
+        "displayCards": 11,
+        "number": 2
+      },
+      "actionCounts": {
+        "button": 46,
+        "card": 93,
+        "perCard": 2
+      },
+      "maxAttachedCards": 3,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 8,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 30,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "sor-luke-skywalker",
+      "botDeck": "shd-moff-gideon",
+      "seed": 202,
+      "difficulty": "normal",
+      "actions": 145,
+      "rounds": 7,
+      "winnerIds": [
+        "human"
+      ],
+      "durationMs": 940,
+      "decisionsMs": 27,
+      "highestDecisionMs": 1,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 44,
+        "resource": 29,
+        "actionWindow": 59,
+        "number": 3,
+        "displayCards": 8,
+        "optionalTrigger": 1
+      },
+      "actionCounts": {
+        "button": 43,
+        "card": 97,
+        "perCard": 5
+      },
+      "maxAttachedCards": 5,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 0,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 30,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "sor-darth-vader",
+      "botDeck": "shd-moff-gideon",
+      "seed": 101,
+      "difficulty": "normal",
+      "actions": 158,
+      "rounds": 9,
+      "winnerIds": [
+        "human"
+      ],
+      "durationMs": 985,
+      "decisionsMs": 28,
+      "highestDecisionMs": 1,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 52,
+        "resource": 36,
+        "actionWindow": 66,
+        "displayCards": 1,
+        "distributeAmongTargets": 2
+      },
+      "actionCounts": {
+        "button": 51,
+        "card": 105,
+        "stateful": 2
+      },
+      "maxAttachedCards": 1,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 27,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 30,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "sor-darth-vader",
+      "botDeck": "shd-the-mandalorian",
+      "seed": 202,
+      "difficulty": "normal",
+      "actions": 131,
+      "rounds": 7,
+      "winnerIds": [
+        "human"
+      ],
+      "durationMs": 941,
+      "decisionsMs": 25,
+      "highestDecisionMs": 1,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 39,
+        "resource": 28,
+        "actionWindow": 57,
+        "displayCards": 3,
+        "optionalTrigger": 3
+      },
+      "actionCounts": {
+        "button": 40,
+        "card": 91
+      },
+      "maxAttachedCards": 3,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 17,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 30,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "shd-moff-gideon",
+      "botDeck": "shd-the-mandalorian",
+      "seed": 101,
+      "difficulty": "normal",
+      "actions": 109,
+      "rounds": 6,
+      "winnerIds": [
+        "human"
+      ],
+      "durationMs": 804,
+      "decisionsMs": 20,
+      "highestDecisionMs": 0,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 31,
+        "resource": 26,
+        "actionWindow": 46,
+        "displayCards": 5
+      },
+      "actionCounts": {
+        "button": 34,
+        "card": 75
+      },
+      "maxAttachedCards": 3,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 6,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 30,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "shd-moff-gideon",
+      "botDeck": "twi-ahsoka-tano",
+      "seed": 202,
+      "difficulty": "normal",
+      "actions": 173,
+      "rounds": 9,
+      "winnerIds": [
+        "bot"
+      ],
+      "durationMs": 1666,
+      "decisionsMs": 38,
+      "highestDecisionMs": 0,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 57,
+        "resource": 35,
+        "actionWindow": 80
+      },
+      "actionCounts": {
+        "button": 54,
+        "card": 119
+      },
+      "maxAttachedCards": 1,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 30,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 0,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "shd-the-mandalorian",
+      "botDeck": "twi-ahsoka-tano",
+      "seed": 101,
+      "difficulty": "normal",
+      "actions": 223,
+      "rounds": 10,
+      "winnerIds": [
+        "human"
+      ],
+      "durationMs": 2088,
+      "decisionsMs": 45,
+      "highestDecisionMs": 1,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 78,
+        "resource": 34,
+        "actionWindow": 95,
+        "displayCards": 9,
+        "optionalTrigger": 5,
+        "triggerWindow": 1
+      },
+      "actionCounts": {
+        "button": 65,
+        "card": 158
+      },
+      "maxAttachedCards": 5,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 28,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 30,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "shd-the-mandalorian",
+      "botDeck": "twi-general-grievous",
+      "seed": 202,
+      "difficulty": "normal",
+      "actions": 178,
+      "rounds": 9,
+      "winnerIds": [
+        "bot"
+      ],
+      "durationMs": 1310,
+      "decisionsMs": 30,
+      "highestDecisionMs": 1,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 61,
+        "resource": 33,
+        "actionWindow": 79,
+        "triggerWindow": 2,
+        "optionalTrigger": 2
+      },
+      "actionCounts": {
+        "button": 50,
+        "card": 128
+      },
+      "maxAttachedCards": 5,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 30,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 27,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "twi-ahsoka-tano",
+      "botDeck": "twi-general-grievous",
+      "seed": 101,
+      "difficulty": "normal",
+      "actions": 114,
+      "rounds": 7,
+      "winnerIds": [
+        "human"
+      ],
+      "durationMs": 952,
+      "decisionsMs": 26,
+      "highestDecisionMs": 1,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 34,
+        "resource": 29,
+        "actionWindow": 50
+      },
+      "actionCounts": {
+        "button": 34,
+        "card": 80
+      },
+      "maxAttachedCards": 0,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 1,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 30,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "twi-ahsoka-tano",
+      "botDeck": "jtl-boba-fett",
+      "seed": 202,
+      "difficulty": "normal",
+      "actions": 100,
+      "rounds": 5,
+      "winnerIds": [
+        "human"
+      ],
+      "durationMs": 590,
+      "decisionsMs": 17,
+      "highestDecisionMs": 0,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 31,
+        "resource": 22,
+        "actionWindow": 36,
+        "optionalTrigger": 3,
+        "distributeAmongTargets": 7
+      },
+      "actionCounts": {
+        "button": 33,
+        "card": 60,
+        "stateful": 7
+      },
+      "maxAttachedCards": 2,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 11,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 30,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "twi-general-grievous",
+      "botDeck": "jtl-boba-fett",
+      "seed": 101,
+      "difficulty": "normal",
+      "actions": 125,
+      "rounds": 6,
+      "winnerIds": [
+        "bot"
+      ],
+      "durationMs": 652,
+      "decisionsMs": 18,
+      "highestDecisionMs": 0,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 41,
+        "resource": 25,
+        "actionWindow": 43,
+        "optionalTrigger": 5,
+        "distributeAmongTargets": 10
+      },
+      "actionCounts": {
+        "button": 44,
+        "card": 71,
+        "stateful": 10
+      },
+      "maxAttachedCards": 2,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 30,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 7,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "twi-general-grievous",
+      "botDeck": "jtl-han-solo",
+      "seed": 202,
+      "difficulty": "normal",
+      "actions": 120,
+      "rounds": 6,
+      "winnerIds": [
+        "bot"
+      ],
+      "durationMs": 695,
+      "decisionsMs": 19,
+      "highestDecisionMs": 0,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 39,
+        "resource": 25,
+        "actionWindow": 49,
+        "displayCards": 3,
+        "optionalTrigger": 2,
+        "triggerWindow": 1
+      },
+      "actionCounts": {
+        "button": 39,
+        "card": 81
+      },
+      "maxAttachedCards": 1,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 30,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 5,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "jtl-boba-fett",
+      "botDeck": "jtl-han-solo",
+      "seed": 101,
+      "difficulty": "normal",
+      "actions": 98,
+      "rounds": 5,
+      "winnerIds": [
+        "bot"
+      ],
+      "durationMs": 542,
+      "decisionsMs": 15,
+      "highestDecisionMs": 0,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 28,
+        "resource": 22,
+        "actionWindow": 36,
+        "displayCards": 3,
+        "distributeAmongTargets": 3,
+        "optionalTrigger": 5
+      },
+      "actionCounts": {
+        "button": 33,
+        "card": 62,
+        "stateful": 3
+      },
+      "maxAttachedCards": 3,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 30,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 14,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "jtl-boba-fett",
+      "botDeck": "lof-qui-gon-jinn",
+      "seed": 202,
+      "difficulty": "normal",
+      "actions": 107,
+      "rounds": 6,
+      "winnerIds": [
+        "human"
+      ],
+      "durationMs": 573,
+      "decisionsMs": 15,
+      "highestDecisionMs": 0,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 30,
+        "resource": 25,
+        "actionWindow": 42,
+        "distributeAmongTargets": 5,
+        "optionalTrigger": 2,
+        "number": 2
+      },
+      "actionCounts": {
+        "button": 38,
+        "card": 64,
+        "stateful": 5
+      },
+      "maxAttachedCards": 4,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 3,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 28,
+          "hp": 28
+        }
+      ]
+    },
+    {
+      "playerDeck": "jtl-han-solo",
+      "botDeck": "lof-qui-gon-jinn",
+      "seed": 101,
+      "difficulty": "normal",
+      "actions": 123,
+      "rounds": 6,
+      "winnerIds": [
+        "human"
+      ],
+      "durationMs": 713,
+      "decisionsMs": 18,
+      "highestDecisionMs": 0,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 40,
+        "resource": 25,
+        "actionWindow": 48,
+        "displayCards": 3,
+        "optionalTrigger": 2,
+        "triggerWindow": 4
+      },
+      "actionCounts": {
+        "button": 44,
+        "card": 79
+      },
+      "maxAttachedCards": 1,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 5,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 28,
+          "hp": 28
+        }
+      ]
+    },
+    {
+      "playerDeck": "jtl-han-solo",
+      "botDeck": "lof-darth-maul",
+      "seed": 202,
+      "difficulty": "normal",
+      "actions": 116,
+      "rounds": 6,
+      "winnerIds": [
+        "human"
+      ],
+      "durationMs": 700,
+      "decisionsMs": 19,
+      "highestDecisionMs": 1,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 39,
+        "resource": 25,
+        "actionWindow": 45,
+        "optionalTrigger": 2,
+        "displayCards": 3,
+        "triggerWindow": 1
+      },
+      "actionCounts": {
+        "button": 37,
+        "card": 79
+      },
+      "maxAttachedCards": 1,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 17,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 28,
+          "hp": 28
+        }
+      ]
+    },
+    {
+      "playerDeck": "lof-qui-gon-jinn",
+      "botDeck": "lof-darth-maul",
+      "seed": 101,
+      "difficulty": "normal",
+      "actions": 150,
+      "rounds": 8,
+      "winnerIds": [
+        "bot"
+      ],
+      "durationMs": 782,
+      "decisionsMs": 21,
+      "highestDecisionMs": 1,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 53,
+        "resource": 34,
+        "actionWindow": 55,
+        "triggerWindow": 4,
+        "optionalTrigger": 3
+      },
+      "actionCounts": {
+        "button": 54,
+        "card": 96
+      },
+      "maxAttachedCards": 2,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 28,
+          "hp": 28
+        },
+        {
+          "seat": "bot",
+          "damage": 25,
+          "hp": 28
+        }
+      ]
+    },
+    {
+      "playerDeck": "lof-qui-gon-jinn",
+      "botDeck": "sec-padme-amidala",
+      "seed": 202,
+      "difficulty": "normal",
+      "actions": 139,
+      "rounds": 7,
+      "winnerIds": [
+        "bot"
+      ],
+      "durationMs": 816,
+      "decisionsMs": 20,
+      "highestDecisionMs": 0,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 54,
+        "resource": 29,
+        "actionWindow": 53,
+        "passDelay": 1,
+        "displayCards": 1
+      },
+      "actionCounts": {
+        "button": 42,
+        "card": 97
+      },
+      "maxAttachedCards": 1,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 28,
+          "hp": 28
+        },
+        {
+          "seat": "bot",
+          "damage": 4,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "lof-darth-maul",
+      "botDeck": "sec-padme-amidala",
+      "seed": 101,
+      "difficulty": "normal",
+      "actions": 237,
+      "rounds": 11,
+      "winnerIds": [
+        "bot"
+      ],
+      "durationMs": 1684,
+      "decisionsMs": 41,
+      "highestDecisionMs": 1,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 91,
+        "resource": 39,
+        "actionWindow": 88,
+        "displayCards": 6,
+        "optionalTrigger": 9,
+        "triggerWindow": 3
+      },
+      "actionCounts": {
+        "button": 78,
+        "card": 159
+      },
+      "maxAttachedCards": 1,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 28,
+          "hp": 28
+        },
+        {
+          "seat": "bot",
+          "damage": 19,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "lof-darth-maul",
+      "botDeck": "sec-chancellor-palpatine",
+      "seed": 202,
+      "difficulty": "normal",
+      "actions": 195,
+      "rounds": 9,
+      "winnerIds": [
+        "bot"
+      ],
+      "durationMs": 1442,
+      "decisionsMs": 35,
+      "highestDecisionMs": 1,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 68,
+        "resource": 36,
+        "actionWindow": 71,
+        "displayCards": 1,
+        "triggerWindow": 7,
+        "optionalTrigger": 10,
+        "passDelay": 1
+      },
+      "actionCounts": {
+        "button": 67,
+        "card": 128
+      },
+      "maxAttachedCards": 1,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 28,
+          "hp": 28
+        },
+        {
+          "seat": "bot",
+          "damage": 19,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "sec-padme-amidala",
+      "botDeck": "sec-chancellor-palpatine",
+      "seed": 101,
+      "difficulty": "normal",
+      "actions": 124,
+      "rounds": 6,
+      "winnerIds": [
+        "human"
+      ],
+      "durationMs": 679,
+      "decisionsMs": 21,
+      "highestDecisionMs": 2,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 44,
+        "resource": 26,
+        "actionWindow": 43,
+        "optionalTrigger": 4,
+        "displayCards": 5,
+        "passDelay": 1
+      },
+      "actionCounts": {
+        "button": 40,
+        "card": 84
+      },
+      "maxAttachedCards": 0,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 2,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 30,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "sec-padme-amidala",
+      "botDeck": "law-leia-organa",
+      "seed": 202,
+      "difficulty": "normal",
+      "actions": 88,
+      "rounds": 5,
+      "winnerIds": [
+        "bot"
+      ],
+      "durationMs": 584,
+      "decisionsMs": 15,
+      "highestDecisionMs": 0,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 27,
+        "resource": 22,
+        "actionWindow": 35,
+        "batchTriggerResolution": 1,
+        "optionalTrigger": 2
+      },
+      "actionCounts": {
+        "button": 29,
+        "card": 59
+      },
+      "maxAttachedCards": 6,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 30,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 13,
+          "hp": 27
+        }
+      ]
+    },
+    {
+      "playerDeck": "sec-chancellor-palpatine",
+      "botDeck": "law-leia-organa",
+      "seed": 101,
+      "difficulty": "normal",
+      "actions": 203,
+      "rounds": 10,
+      "winnerIds": [
+        "bot"
+      ],
+      "durationMs": 1576,
+      "decisionsMs": 38,
+      "highestDecisionMs": 1,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 66,
+        "resource": 37,
+        "actionWindow": 86,
+        "displayCards": 8,
+        "triggerWindow": 4,
+        "optionalTrigger": 1
+      },
+      "actionCounts": {
+        "button": 60,
+        "card": 143
+      },
+      "maxAttachedCards": 6,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 30,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 12,
+          "hp": 27
+        }
+      ]
+    },
+    {
+      "playerDeck": "sec-chancellor-palpatine",
+      "botDeck": "law-jabba-the-hutt",
+      "seed": 202,
+      "difficulty": "normal",
+      "actions": 185,
+      "rounds": 9,
+      "winnerIds": [
+        "human"
+      ],
+      "durationMs": 1344,
+      "decisionsMs": 37,
+      "highestDecisionMs": 7,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 58,
+        "resource": 35,
+        "actionWindow": 72,
+        "displayCards": 11,
+        "triggerWindow": 1,
+        "optionalTrigger": 6,
+        "number": 1
+      },
+      "actionCounts": {
+        "button": 75,
+        "card": 110
+      },
+      "maxAttachedCards": 1,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 6,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 27,
+          "hp": 27
+        }
+      ]
+    },
+    {
+      "playerDeck": "law-leia-organa",
+      "botDeck": "law-jabba-the-hutt",
+      "seed": 101,
+      "difficulty": "normal",
+      "actions": 88,
+      "rounds": 5,
+      "winnerIds": [
+        "human"
+      ],
+      "durationMs": 449,
+      "decisionsMs": 13,
+      "highestDecisionMs": 0,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 24,
+        "resource": 22,
+        "actionWindow": 36,
+        "displayCards": 5
+      },
+      "actionCounts": {
+        "button": 32,
+        "card": 56
+      },
+      "maxAttachedCards": 7,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 0,
+          "hp": 27
+        },
+        {
+          "seat": "bot",
+          "damage": 27,
+          "hp": 27
+        }
+      ]
+    },
+    {
+      "playerDeck": "law-leia-organa",
+      "botDeck": "ash-emperor-palpatine",
+      "seed": 202,
+      "difficulty": "normal",
+      "actions": 134,
+      "rounds": 6,
+      "winnerIds": [
+        "human"
+      ],
+      "durationMs": 713,
+      "decisionsMs": 21,
+      "highestDecisionMs": 0,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 37,
+        "resource": 25,
+        "actionWindow": 53,
+        "displayCards": 14,
+        "batchTriggerResolution": 1,
+        "optionalTrigger": 1,
+        "triggerWindow": 1,
+        "distributeAmongTargets": 1
+      },
+      "actionCounts": {
+        "button": 46,
+        "card": 81,
+        "perCard": 6,
+        "stateful": 1
+      },
+      "maxAttachedCards": 6,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 5,
+          "hp": 27
+        },
+        {
+          "seat": "bot",
+          "damage": 30,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "law-jabba-the-hutt",
+      "botDeck": "ash-emperor-palpatine",
+      "seed": 101,
+      "difficulty": "normal",
+      "actions": 135,
+      "rounds": 6,
+      "winnerIds": [
+        "bot"
+      ],
+      "durationMs": 694,
+      "decisionsMs": 18,
+      "highestDecisionMs": 0,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 48,
+        "resource": 26,
+        "actionWindow": 48,
+        "displayCards": 3,
+        "optionalTrigger": 6,
+        "batchTriggerResolution": 2,
+        "triggerWindow": 1
+      },
+      "actionCounts": {
+        "button": 46,
+        "card": 89
+      },
+      "maxAttachedCards": 4,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 27,
+          "hp": 27
+        },
+        {
+          "seat": "bot",
+          "damage": 7,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "law-jabba-the-hutt",
+      "botDeck": "ash-luke-skywalker",
+      "seed": 202,
+      "difficulty": "normal",
+      "actions": 113,
+      "rounds": 6,
+      "winnerIds": [
+        "bot"
+      ],
+      "durationMs": 742,
+      "decisionsMs": 24,
+      "highestDecisionMs": 7,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 34,
+        "resource": 26,
+        "actionWindow": 44,
+        "displayCards": 2,
+        "optionalTrigger": 6
+      },
+      "actionCounts": {
+        "button": 38,
+        "card": 75
+      },
+      "maxAttachedCards": 6,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 27,
+          "hp": 27
+        },
+        {
+          "seat": "bot",
+          "damage": 19,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "ash-emperor-palpatine",
+      "botDeck": "ash-luke-skywalker",
+      "seed": 101,
+      "difficulty": "normal",
+      "actions": 184,
+      "rounds": 8,
+      "winnerIds": [
+        "bot"
+      ],
+      "durationMs": 1193,
+      "decisionsMs": 32,
+      "highestDecisionMs": 3,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 62,
+        "resource": 33,
+        "actionWindow": 73,
+        "optionalTrigger": 6,
+        "batchTriggerResolution": 3,
+        "triggerWindow": 4,
+        "displayCards": 2
+      },
+      "actionCounts": {
+        "button": 56,
+        "card": 128
+      },
+      "maxAttachedCards": 8,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 30,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 12,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "ash-emperor-palpatine",
+      "botDeck": "ibh-leia-organa",
+      "seed": 202,
+      "difficulty": "normal",
+      "actions": 129,
+      "rounds": 7,
+      "winnerIds": [
+        "human"
+      ],
+      "durationMs": 683,
+      "decisionsMs": 20,
+      "highestDecisionMs": 1,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 38,
+        "resource": 29,
+        "actionWindow": 57,
+        "optionalTrigger": 3,
+        "batchTriggerResolution": 1
+      },
+      "actionCounts": {
+        "button": 41,
+        "card": 88
+      },
+      "maxAttachedCards": 7,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 12,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 20,
+          "hp": 20
+        }
+      ]
+    },
+    {
+      "playerDeck": "ash-luke-skywalker",
+      "botDeck": "ibh-leia-organa",
+      "seed": 101,
+      "difficulty": "normal",
+      "actions": 97,
+      "rounds": 6,
+      "winnerIds": [
+        "human"
+      ],
+      "durationMs": 425,
+      "decisionsMs": 13,
+      "highestDecisionMs": 1,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 25,
+        "resource": 26,
+        "actionWindow": 38,
+        "optionalTrigger": 5,
+        "triggerWindow": 2
+      },
+      "actionCounts": {
+        "button": 35,
+        "card": 62
+      },
+      "maxAttachedCards": 1,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 4,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 20,
+          "hp": 20
+        }
+      ]
+    },
+    {
+      "playerDeck": "ash-luke-skywalker",
+      "botDeck": "ibh-darth-vader",
+      "seed": 202,
+      "difficulty": "normal",
+      "actions": 186,
+      "rounds": 9,
+      "winnerIds": [
+        "human"
+      ],
+      "durationMs": 1261,
+      "decisionsMs": 34,
+      "highestDecisionMs": 1,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 62,
+        "resource": 36,
+        "actionWindow": 82,
+        "optionalTrigger": 5
+      },
+      "actionCounts": {
+        "button": 44,
+        "card": 142
+      },
+      "maxAttachedCards": 3,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 15,
+          "hp": 30
+        },
+        {
+          "seat": "bot",
+          "damage": 20,
+          "hp": 20
+        }
+      ]
+    },
+    {
+      "playerDeck": "ibh-leia-organa",
+      "botDeck": "ibh-darth-vader",
+      "seed": 101,
+      "difficulty": "normal",
+      "actions": 94,
+      "rounds": 5,
+      "winnerIds": [
+        "human"
+      ],
+      "durationMs": 477,
+      "decisionsMs": 16,
+      "highestDecisionMs": 1,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 33,
+        "resource": 22,
+        "actionWindow": 38
+      },
+      "actionCounts": {
+        "button": 26,
+        "card": 68
+      },
+      "maxAttachedCards": 0,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 9,
+          "hp": 20
+        },
+        {
+          "seat": "bot",
+          "damage": 20,
+          "hp": 20
+        }
+      ]
+    },
+    {
+      "playerDeck": "ibh-leia-organa",
+      "botDeck": "sor-luke-skywalker",
+      "seed": 202,
+      "difficulty": "normal",
+      "actions": 126,
+      "rounds": 7,
+      "winnerIds": [
+        "bot"
+      ],
+      "durationMs": 632,
+      "decisionsMs": 18,
+      "highestDecisionMs": 0,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 42,
+        "resource": 29,
+        "actionWindow": 52,
+        "number": 1,
+        "displayCards": 1
+      },
+      "actionCounts": {
+        "button": 36,
+        "card": 90
+      },
+      "maxAttachedCards": 4,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 20,
+          "hp": 20
+        },
+        {
+          "seat": "bot",
+          "damage": 12,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "ibh-darth-vader",
+      "botDeck": "sor-luke-skywalker",
+      "seed": 101,
+      "difficulty": "normal",
+      "actions": 98,
+      "rounds": 6,
+      "winnerIds": [
+        "bot"
+      ],
+      "durationMs": 498,
+      "decisionsMs": 15,
+      "highestDecisionMs": 0,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 28,
+        "resource": 26,
+        "actionWindow": 43
+      },
+      "actionCounts": {
+        "button": 30,
+        "card": 68
+      },
+      "maxAttachedCards": 2,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 20,
+          "hp": 20
+        },
+        {
+          "seat": "bot",
+          "damage": 7,
+          "hp": 30
+        }
+      ]
+    },
+    {
+      "playerDeck": "ibh-darth-vader",
+      "botDeck": "sor-darth-vader",
+      "seed": 202,
+      "difficulty": "normal",
+      "actions": 129,
+      "rounds": 7,
+      "winnerIds": [
+        "bot"
+      ],
+      "durationMs": 772,
+      "decisionsMs": 23,
+      "highestDecisionMs": 0,
+      "promptCounts": {
+        "initiative": 1,
+        "select": 40,
+        "resource": 30,
+        "actionWindow": 57,
+        "optionalTrigger": 1
+      },
+      "actionCounts": {
+        "button": 36,
+        "card": 93
+      },
+      "maxAttachedCards": 0,
+      "finalBases": [
+        {
+          "seat": "human",
+          "damage": 20,
+          "hp": 20
+        },
+        {
+          "seat": "bot",
+          "damage": 23,
+          "hp": 30
+        }
+      ]
+    }
+  ],
+  "passed": true,
+  "totalActions": 4995
+}

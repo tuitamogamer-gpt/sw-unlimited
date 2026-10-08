@@ -1,0 +1,38 @@
+{
+  "title": "Kouhun Assassination",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "An opponent (of your choice) may discard a card from their hand. If they do, give a non-Vehicle unit –8/–8 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6353405903",
+  "aspects": [
+    "cunning",
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 33
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 33
+    }
+  ],
+  "internalName": "kouhun-assassination"
+}

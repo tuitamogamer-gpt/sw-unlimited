@@ -1,0 +1,37 @@
+{
+  "title": "Neel",
+  "subtitle": "The Cutest Boy",
+  "cost": 1,
+  "hp": 4,
+  "power": 1,
+  "text": "When Played/On Attack: The next unit you play this phase with 1 or less power enters play ready.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "(ERRATA) When Played/On Attack: The next unit you play this phase with 1 or less printed power enters play ready.\nOnce Neel's “When Played/On Attack” ability resolves, it remains active even if it is defeated before you play your next unit with 1 or less printed power.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8371755043",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 248
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 248
+    }
+  ],
+  "internalName": "neel#the-cutest-boy"
+}

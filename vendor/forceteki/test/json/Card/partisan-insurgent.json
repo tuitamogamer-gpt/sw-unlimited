@@ -1,0 +1,40 @@
+{
+  "title": "Partisan Insurgent",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "While you control another [Aggression] unit, this unit gains Raid 2. (It gets +2/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4642322279",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "rebel",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 159
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 159
+    }
+  ],
+  "internalName": "partisan-insurgent"
+}

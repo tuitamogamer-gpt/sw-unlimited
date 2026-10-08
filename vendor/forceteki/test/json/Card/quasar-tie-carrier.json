@@ -1,0 +1,39 @@
+{
+  "title": "Quasar TIE Carrier",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 7,
+  "power": 5,
+  "text": "On Attack: Create a TIE Fighter token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2657417747",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 243
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 243
+    }
+  ],
+  "internalName": "quasar-tie-carrier"
+}

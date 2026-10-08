@@ -1,0 +1,39 @@
+{
+  "title": "Life Wind Sage",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 5,
+  "power": 3,
+  "text": "While an enemy unit is exhausted, this unit gains Raid 2. (This unit gets +2/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5522824465",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "force"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 212
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 212
+    }
+  ],
+  "internalName": "life-wind-sage"
+}

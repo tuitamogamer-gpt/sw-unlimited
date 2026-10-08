@@ -1,0 +1,39 @@
+{
+  "title": "Saesee Tiin",
+  "subtitle": "Courageous Warrior",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "When Played: If you have the initiative, deal 1 damage to each of up to 3 units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "All damage dealt by Saesee Tiin's \"When Played\" ability is dealt simultaneously.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7137948532",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 167
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 167
+    }
+  ],
+  "internalName": "saesee-tiin#courageous-warrior"
+}

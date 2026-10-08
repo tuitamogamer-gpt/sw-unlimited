@@ -1,0 +1,41 @@
+{
+  "title": "Astromech Pilot",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 3,
+  "power": 1,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Pilots are considered units while not in play. If you use a \"play a unit\" ability, you may only play a Pilot as a unit. If you use a \"play an upgrade\" ability, you may only play a Pilot as an upgrade. If you use a \"play a card\" ability, you may do either.\n",
+  "upgradePower": 1,
+  "upgradeHp": 3,
+  "id": "0511138070",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "droid",
+    "pilot"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "piloting"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 57
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 57
+    }
+  ],
+  "pilotText": "Piloting [2 resources Vigilance] (You may play this as an upgrade on a friendly Vehicle without a Pilot.)\nWhen played as an upgrade: You may heal 2 damage from a unit.",
+  "internalName": "astromech-pilot"
+}

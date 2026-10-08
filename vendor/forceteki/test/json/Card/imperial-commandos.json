@@ -1,0 +1,40 @@
+{
+  "title": "Imperial Commandos",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 4,
+  "power": 4,
+  "text": "When Played: You may defeat a non-leader unit with 4 or less power.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1409067163",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "clone",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 68
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 68
+    }
+  ],
+  "internalName": "imperial-commandos"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Open Circle Ace",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 2,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9620848758",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 201
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 201
+    }
+  ],
+  "internalName": "open-circle-ace"
+}

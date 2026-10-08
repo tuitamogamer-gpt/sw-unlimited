@@ -1,0 +1,36 @@
+{
+  "title": "Droid Deployment",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Create 2 Battle Droid tokens.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6826668370",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 237
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 237
+    }
+  ],
+  "internalName": "droid-deployment"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Coronet",
+  "subtitle": "Stately Vessel",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "Restore 1 (When this unit attacks, heal 1 damage from your base.)\nEach other friendly unit gains Restore 1.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7898942239",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 47
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 47
+    }
+  ],
+  "internalName": "coronet#stately-vessel"
+}

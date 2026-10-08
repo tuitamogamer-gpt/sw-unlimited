@@ -1,0 +1,38 @@
+{
+  "title": "Knight of Ren",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 4,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8660257242",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "first order"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 84
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 84
+    }
+  ],
+  "internalName": "knight-of-ren"
+}

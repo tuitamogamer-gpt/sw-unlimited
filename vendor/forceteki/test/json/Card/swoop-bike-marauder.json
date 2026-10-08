@@ -1,0 +1,38 @@
+{
+  "title": "Swoop Bike Marauder",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "On Attack: Draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3151374593",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 107
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 107
+    }
+  ],
+  "internalName": "swoop-bike-marauder"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Leia Organa",
+  "subtitle": "Get to Your Transports!",
+  "cost": 5,
+  "hp": 7,
+  "power": 3,
+  "text": "Action [1 resource, Exhaust]: Heal 1 damage from a friendly unit.",
+  "deployBox": "On Attack: Heal 1 damage from a friendly unit and 1 damage from another friendly unit.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader. (Flip her, ready her, and move her to the ground arena.)",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9970912404",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 1
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 1
+    }
+  ],
+  "internalName": "leia-organa#get-to-your-transports"
+}

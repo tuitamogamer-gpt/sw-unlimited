@@ -1,0 +1,39 @@
+{
+  "title": "Trade Federation Shuttle",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 2,
+  "text": "When Played: If you control a damaged unit, create a Battle Droid token.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8345985976",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 60
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 60
+    }
+  ],
+  "internalName": "trade-federation-shuttle"
+}

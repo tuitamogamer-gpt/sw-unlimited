@@ -1,0 +1,39 @@
+{
+  "title": "Director Krennic",
+  "subtitle": "Amidst My Achievement",
+  "cost": 7,
+  "hp": 9,
+  "power": 4,
+  "text": "Action [Exhaust, defeat a friendly unit]: Create a Credit token.",
+  "deployBox": "When Deployed: Another friendly unit deals damage equal to its power to an enemy unit.",
+  "epicAction": "Epic Action: If you control 7 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1627648051",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 8
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 8
+    }
+  ],
+  "internalName": "director-krennic#amidst-my-achievement"
+}

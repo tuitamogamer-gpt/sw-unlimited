@@ -1,0 +1,41 @@
+{
+  "title": "Luke Skywalker",
+  "subtitle": "Dreaming Farmboy",
+  "cost": 1,
+  "hp": 3,
+  "power": 1,
+  "text": "Raid 1\nWhile it's the first round of the game, this unit enters play ready.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3854292375",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 208
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 208
+    }
+  ],
+  "internalName": "luke-skywalker#dreaming-farmboy"
+}

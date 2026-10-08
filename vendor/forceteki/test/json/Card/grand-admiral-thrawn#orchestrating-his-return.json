@@ -1,0 +1,42 @@
+{
+  "title": "Grand Admiral Thrawn",
+  "subtitle": "Orchestrating His Return",
+  "cost": 7,
+  "hp": 7,
+  "power": 5,
+  "text": "Support (When you play this unit, you may attack with another unit. It gains this unit's other abilities for this attack.)\nWhen Attack Ends: If the defending unit was defeated, ready this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "When Attack Ends abilities trigger at the same time as units deal combat damage.\nIf you use Thrawn's Support ability to attack with another unit and the defending unit is defeated by that attack, the attacking unit readies.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3881321989",
+  "aspects": [
+    "command",
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "support"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 33
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 33
+    }
+  ],
+  "internalName": "grand-admiral-thrawn#orchestrating-his-return"
+}

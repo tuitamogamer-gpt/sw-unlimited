@@ -1,0 +1,41 @@
+{
+  "title": "L3-37",
+  "subtitle": "Droid Revolutionary",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: You may rescue a captured card. If you don't, give a Shield token to this unit.\nSmuggle [4 resources Cunning Heroism] (If this card is a resource, you may play her for her smuggle cost. Replace her with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9552605383",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "underworld",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "smuggle"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 197
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 197
+    }
+  ],
+  "internalName": "l337#droid-revolutionary"
+}

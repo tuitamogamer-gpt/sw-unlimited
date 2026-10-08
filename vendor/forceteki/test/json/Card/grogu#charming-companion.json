@@ -1,0 +1,38 @@
+{
+  "title": "Grogu",
+  "subtitle": "Charming Companion",
+  "cost": 4,
+  "hp": 3,
+  "power": 0,
+  "text": "",
+  "deployBox": "While another friendly unit is defending, it gets +1/+0.\nWhile another friendly unit is attacking, the defending unit gets –1/–0.",
+  "epicAction": "When you play a <uq> unit that costs 4 or more: If this leader is ready, you may deploy him.",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nPlaying a pilot as an upgrade does not count as playing a unit, so it would not let you deploy Grogu.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2168426335",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "force"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 18
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 18
+    }
+  ],
+  "internalName": "grogu#charming-companion"
+}

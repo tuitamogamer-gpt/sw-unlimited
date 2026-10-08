@@ -1,0 +1,38 @@
+{
+  "title": "Boga",
+  "subtitle": "Loyal Varactyl",
+  "cost": 6,
+  "hp": 6,
+  "power": 6,
+  "text": "When Played/When Defeated: Choose a non-vehicle unit in your discard pile not named Boga. For this phase, you may play that unit from your discard pile. It costs 1 resource less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2640980103",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 122
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 122
+    }
+  ],
+  "internalName": "boga#loyal-varactyl"
+}

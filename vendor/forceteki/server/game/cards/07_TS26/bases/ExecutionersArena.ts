@@ -1,0 +1,31 @@
+import type { IBaseAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import { WildcardCardType } from '../../../core/Constants';
+import { BaseCard } from '../../../core/card/BaseCard';
+
+export default class ExecutionersArena extends BaseCard {
+    protected override getImplementationId() {
+        return {
+            id: '1546304694',
+            internalName: 'executioners-arena',
+        };
+    }
+
+    public override setupCardAbilities(registrar: IBaseAbilityRegistrar, abilityHelper: IAbilityHelper) {
+        registrar.setEpicActionAbility({
+            title: 'For each friendly leader unit, deal 2 damage to a unit',
+            contextTitle: (context) => {
+                const count = context.player.getArenaUnits({ condition: (c) => c.isLeaderUnit() }).length;
+                return `Deal 2 damage to a unit for each of your ${count} friendly leader ${count === 1 ? 'unit' : 'units'}`;
+            },
+            immediateEffect: abilityHelper.immediateEffects.simultaneous((context) => (
+                context.player.getArenaUnits({ condition: (c) => c.isLeaderUnit() }).map((_) =>
+                    abilityHelper.immediateEffects.selectCard({
+                        optional: true,
+                        cardTypeFilter: WildcardCardType.Unit,
+                        immediateEffect: abilityHelper.immediateEffects.damage({ amount: 2 })
+                    }))
+            ))
+        });
+    }
+}

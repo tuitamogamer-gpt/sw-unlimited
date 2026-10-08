@@ -1,0 +1,37 @@
+{
+  "title": "Bold Resistance",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Choose up to 3 units that share the same Trait. Each of those units gets +2/+0 for this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8022262805",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 153
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 153
+    }
+  ],
+  "internalName": "bold-resistance"
+}

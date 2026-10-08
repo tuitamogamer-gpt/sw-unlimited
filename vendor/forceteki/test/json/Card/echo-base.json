@@ -1,0 +1,36 @@
+{
+  "title": "Echo Base",
+  "subtitle": null,
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": null,
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2055904747",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "hoth"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 24
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 24
+    }
+  ],
+  "internalName": "echo-base"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Sol",
+  "subtitle": "Compassionate Guardian",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "Shielded (When you play this unit, give a Shield token to him.)\nOn Attack: This unit gains Sentinel for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1274733676",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded",
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 210
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 210
+    }
+  ],
+  "internalName": "sol#compassionate-guardian"
+}

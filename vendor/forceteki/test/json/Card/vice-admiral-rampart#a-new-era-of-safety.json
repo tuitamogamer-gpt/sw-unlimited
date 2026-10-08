@@ -1,0 +1,39 @@
+{
+  "title": "Vice Admiral Rampart",
+  "subtitle": "A New Era of Safety",
+  "cost": 2,
+  "hp": 5,
+  "power": 1,
+  "text": "If an upgrade on your base would be defeated, you may defeat this unit instead.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9604498190",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 60
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 60
+    }
+  ],
+  "internalName": "vice-admiral-rampart#a-new-era-of-safety"
+}

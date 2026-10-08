@@ -1,0 +1,40 @@
+{
+  "title": "Confederate Courier",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 2,
+  "text": "When Defeated: Create a Battle Droid token.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3680942691",
+  "aspects": [
+    "villainy",
+    "command"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 79
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 79
+    }
+  ],
+  "internalName": "confederate-courier"
+}

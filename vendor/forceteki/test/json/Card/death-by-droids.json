@@ -1,0 +1,36 @@
+{
+  "title": "Death by Droids",
+  "subtitle": "",
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "Defeat a unit that costs 3 or less. Create 2 Battle Droid tokens.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card's cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0968965258",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 76
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 76
+    }
+  ],
+  "internalName": "death-by-droids"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Infantry of the 212th",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "Coordinate — Sentinel (Gain this keyword while you control 3 or more units. Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4179773207",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "republic",
+    "clone",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "coordinate",
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 61
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 61
+    }
+  ],
+  "internalName": "infantry-of-the-212th"
+}

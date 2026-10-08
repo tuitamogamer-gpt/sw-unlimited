@@ -1,0 +1,39 @@
+{
+  "title": "Mining Guild TIE Fighter",
+  "subtitle": null,
+  "cost": 1,
+  "hp": 2,
+  "power": 1,
+  "text": "On Attack: You may pay [2 resources]. If you do, draw a card.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4299027717",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 206
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 206
+    }
+  ],
+  "internalName": "mining-guild-tie-fighter"
+}

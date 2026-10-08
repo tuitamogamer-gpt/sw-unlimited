@@ -1,0 +1,42 @@
+{
+  "title": "Chewbacca",
+  "subtitle": "Mighty Rescuer",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "Overwhelm\nWhen Attack Ends: If the defending unit was defeated, give an Experience token to this unit and heal 3 damage from him.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n\"When Attack Ends\" abilities trigger at the same time the attacking unit deals combat damage. If Chewbacca is defeated by combat damage, you cannot heal him or give him an Experience token.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6434420907",
+  "aspects": [
+    "vigilance",
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 34
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 34
+    }
+  ],
+  "internalName": "chewbacca#mighty-rescuer"
+}

@@ -1,0 +1,28 @@
+{
+  "title": "Shield",
+  "subtitle": null,
+  "cost": 0,
+  "hp": 0,
+  "power": 0,
+  "text": "If damage would be dealt to attached unit, prevent that damage. If you do, defeat a Shield token on it.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "8752877738",
+  "aspects": [],
+  "traits": [
+    "armor"
+  ],
+  "keywords": [],
+  "types": [
+    "token",
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SOR"
+  },
+  "internalName": "shield"
+}

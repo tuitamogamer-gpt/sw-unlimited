@@ -1,0 +1,40 @@
+{
+  "title": "Mercenary Fleet",
+  "subtitle": "",
+  "cost": 9,
+  "hp": 10,
+  "power": 10,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5379948126",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "fighter",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 164
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 164
+    }
+  ],
+  "internalName": "mercenary-fleet"
+}

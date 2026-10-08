@@ -1,0 +1,36 @@
+{
+  "title": "Maz Kanata's Castle",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4006047777",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "takodana"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 21
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 21
+    }
+  ],
+  "internalName": "maz-kanatas-castle"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "In Defense of Kamino",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "For this phase, each friendly Republic unit gains Restore 2 and: “When Defeated: Create a Clone Trooper token.”",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1272825113",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "republic"
+  ],
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 129
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 129
+    }
+  ],
+  "internalName": "in-defense-of-kamino"
+}

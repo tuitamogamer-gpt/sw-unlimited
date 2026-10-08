@@ -1,0 +1,36 @@
+{
+  "title": "Medal Ceremony",
+  "subtitle": null,
+  "cost": 0,
+  "hp": null,
+  "power": null,
+  "text": "Give an Experience token to each of up to 3 REBEL units that attacked this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4536594859",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 245
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 245
+    }
+  ],
+  "internalName": "medal-ceremony"
+}

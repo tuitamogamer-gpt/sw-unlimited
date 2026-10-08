@@ -1,0 +1,39 @@
+{
+  "title": "Republic Tactical Officer",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "When Played: You may attack with a Republic unit. It gets +2/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2395430106",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "clone"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 91
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 91
+    }
+  ],
+  "internalName": "republic-tactical-officer"
+}

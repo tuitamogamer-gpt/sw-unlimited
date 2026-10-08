@@ -1,0 +1,38 @@
+{
+  "title": "Colonel Yularen",
+  "subtitle": "ISB Director",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "When you play a [Command] unit (including this one): Heal 1 damage from your base.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0961039929",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 109
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 109
+    }
+  ],
+  "internalName": "colonel-yularen#isb-director"
+}

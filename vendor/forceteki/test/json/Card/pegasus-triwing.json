@@ -1,0 +1,38 @@
+{
+  "title": "Pegasus Tri-Wing",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 3,
+  "text": "When Played: You may defeat a friendly upgrade. If you do, ready this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5027901038",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 171
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 171
+    }
+  ],
+  "internalName": "pegasus-triwing"
+}

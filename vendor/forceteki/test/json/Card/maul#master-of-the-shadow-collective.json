@@ -1,0 +1,42 @@
+{
+  "title": "Maul",
+  "subtitle": "Master of the Shadow Collective",
+  "cost": 7,
+  "hp": 8,
+  "power": 6,
+  "text": "Overwhelm\nWhen Attack Ends: If this unit dealt combat damage to a player's base, you may take control of a non-leader unit that player controls. When this unit leaves play, that unit's owner takes control of that unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n“Combat damage” is only the damage dealt during the “deal combat damage” step of an attack.\n\"When Attack Ends\" abilities trigger at the same time the attacking unit deals combat damage. Maul does not need to survive the attack for his ability to trigger, but if he is not in play when it resolves, you do not take control of a unit.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7615680141",
+  "aspects": [
+    "command",
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 54
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 54
+    }
+  ],
+  "internalName": "maul#master-of-the-shadow-collective"
+}

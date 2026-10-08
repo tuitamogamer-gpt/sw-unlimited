@@ -1,0 +1,43 @@
+{
+  "title": "Pirate Battle Tank",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 6,
+  "power": 4,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)\nSmuggle [7 resources Command Villainy] (If this card is a resource, you may play it for its smuggle cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8552719712",
+  "aspects": [
+    "villainy",
+    "command"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "tank"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel",
+    "smuggle"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 89
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 89
+    }
+  ],
+  "internalName": "pirate-battle-tank"
+}

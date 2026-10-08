@@ -1,0 +1,40 @@
+{
+  "title": "Vanguard Ace",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 1,
+  "power": 1,
+  "text": "When Played: For each other card you played this phase, give an Experience token to this unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "If Vanguard Ace is played by an event, that event counts as another card played this phase.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3018017739",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "new republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 191
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 191
+    }
+  ],
+  "internalName": "vanguard-ace"
+}

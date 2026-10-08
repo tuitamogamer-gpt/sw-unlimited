@@ -1,0 +1,40 @@
+{
+  "title": "Rukh",
+  "subtitle": "Thrawn's Assassin",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "Shielded (When you play this unit, give a Shield token to it.)\n\nWhen this unit deals combat damage to a non-leader unit while attacking: Defeat that unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "“Combat damage” is only the damage dealt during the “deal combat damage” step of an attack.\nWhen Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3280523224",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 85
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 85
+    }
+  ],
+  "internalName": "rukh#thrawns-assassin"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Single Reactor Ignition",
+  "subtitle": "",
+  "cost": 8,
+  "hp": null,
+  "power": null,
+  "text": "Defeat all units. For each enemy unit defeated this way, deal 1 damage to its controller's base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5657954810",
+  "aspects": [
+    "vigilance",
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "disaster",
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 44
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 44
+    }
+  ],
+  "internalName": "single-reactor-ignition"
+}

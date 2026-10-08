@@ -1,0 +1,42 @@
+{
+  "title": "Captain Vaughn",
+  "subtitle": "Search the Tunnels",
+  "cost": 3,
+  "hp": 5,
+  "power": 2,
+  "text": "Grit\nWhen Defeated: Search the top 3 cards of your deck for a card and draw it. Then, put a card from your hand on top of your deck. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6443803946",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "clone",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 39
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 39
+    }
+  ],
+  "internalName": "captain-vaughn#search-the-tunnels"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Survivors' Gauntlet",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "When Played/On Attack: You may attach an upgrade on a unit to another eligible unit controlled by the same player.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1503633301",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "mandalorian",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 64
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 64
+    }
+  ],
+  "internalName": "survivors-gauntlet"
+}

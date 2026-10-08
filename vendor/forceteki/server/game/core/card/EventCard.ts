@@ -1,0 +1,174 @@
+import type { Player } from '../Player';
+import type { ICardWithCostProperty } from './propertyMixins/Cost';
+import { WithCost } from './propertyMixins/Cost';
+import type { MoveZoneDestination } from '../Constants';
+import { AbilityRestriction, CardType, EffectName, WildcardZoneName, ZoneName } from '../Constants';
+import type { Restriction } from '../ongoingEffect/effectImpl/Restriction';
+import type { AbilityContext } from '../ability/AbilityContext';
+import { Contract } from '../utils/Contract';
+import type { IAdjustCostAbilityProps, IDecreaseCostAbilityProps, IPlayableCard, IPlayableOrDeployableCard } from './baseClasses/PlayableOrDeployableCard';
+import { PlayableOrDeployableCard } from './baseClasses/PlayableOrDeployableCard';
+import type { IEventAbilityProps, IPlayCostProperties, IPlayRestrictionAbilityProps } from '../../Interfaces';
+import { EventAbility } from '../ability/EventAbility';
+import { PlayEventAction } from '../../actions/PlayEventAction';
+import { WithStandardAbilitySetup } from './propertyMixins/StandardAbilitySetup';
+import type { IPlayCardActionProperties } from '../ability/PlayCardAction';
+import { NoActionSystem } from '../../gameSystems/NoActionSystem';
+import type { ICardCanChangeControllers } from './CardInterfaces';
+import type { InitializeCardStateOption } from './Card';
+import type { ICardDataJson } from '../../../utils/cardData/CardDataInterfaces';
+import type { IBasicAbilityRegistrar, IEventAbilityRegistrar } from './AbilityRegistrationInterfaces';
+import type { IAbilityHelper } from '../../AbilityHelper';
+import type { ICardWithTriggeredAbilities } from './propertyMixins/TriggeredAbilityRegistration';
+import { WithTriggeredAbilities } from './propertyMixins/TriggeredAbilityRegistration';
+import type { ConstantAbility } from '../ability/ConstantAbility';
+import { registerStateBase, stateRef } from '../GameObjectUtils';
+
+const EventCardParent = WithCost(WithTriggeredAbilities(WithStandardAbilitySetup(PlayableOrDeployableCard)));
+
+export interface IEventCard extends IPlayableOrDeployableCard, ICardCanChangeControllers, ICardWithCostProperty, ICardWithTriggeredAbilities<EventCard> {
+    getEventAbility(): EventAbility;
+}
+
+@registerStateBase()
+export class EventCard extends EventCardParent implements IEventCard {
+    @stateRef() private accessor eventAbility: EventAbility | null = null;
+
+    public constructor(owner: Player, cardData: ICardDataJson) {
+        super(owner, cardData);
+        Contract.assertEqual(this.printedType, CardType.Event);
+    }
+
+    protected override onInitialize(): void {
+        super.onInitialize();
+
+        Contract.assertFalse(this.hasImplementationFile && !this.eventAbility, 'Event card\'s ability was not initialized');
+
+        // currently the only constant abilities an event card can have are those that reduce cost, which are always active regardless of zone
+        for (const constantAbility of this.constantAbilities) {
+            constantAbility.registeredEffects = this.addEffectToEngine(constantAbility.buildEffectFactoryProps());
+        }
+    }
+
+    public override isEvent(): this is IEventCard {
+        return true;
+    }
+
+    public override buildPlayCardAction(properties: IPlayCardActionProperties) {
+        return this.game.gameObjectManager.createWithoutRefsUnsafe(() => new PlayEventAction(this.game, this, properties));
+    }
+
+    protected override getPlayRestriction(player: Player, context: AbilityContext): Restriction | null {
+        return PlayEventAction.getPlayRestriction(player, this, context);
+    }
+
+    public override canChangeController(): this is ICardCanChangeControllers {
+        return true;
+    }
+
+    public override isPlayable(): this is IPlayableCard {
+        return true;
+    }
+
+    public override getConstantAbilities(): ConstantAbility[] {
+        if (this.isBlankOutOfPlay()) {
+            return [];
+        }
+
+        return this.constantAbilities as ConstantAbility[];
+    }
+
+    /** Ability of event card when played. Will be a "blank" ability with no effect if this card is disabled by an effect. */
+    public getEventAbility(): EventAbility {
+        if (this.isBlank()) {
+            const blankSource = this.getOngoingEffectSources(EffectName.Blank);
+            return new EventAbility(this.game, this, {
+                title: 'No effect',
+                printedAbility: false,
+                effect: 'do nothing due to an ongoing effect of {1}',
+                effectArgs: [blankSource],
+                immediateEffect: new NoActionSystem({ hasLegalTarget: true })
+            });
+        } else if (!this.hasImplementationFile) {
+            return new EventAbility(this.game, this, {
+                title: 'Unimplemented event card ability',
+                printedAbility: false,
+                effect: 'do nothing because the card is not implemented yet',
+                immediateEffect: new NoActionSystem({ hasLegalTarget: true })
+            });
+        }
+
+        return this.eventAbility;
+    }
+
+    public override moveTo(targetZoneName: MoveZoneDestination, initializeCardState?: InitializeCardStateOption): void {
+        if (this.zoneName === ZoneName.Discard && targetZoneName === ZoneName.Discard) {
+            this.removeLastingEffects();
+        }
+        super.moveTo(targetZoneName, initializeCardState);
+    }
+
+    protected override initializeForCurrentZone(prevZone?: ZoneName): void {
+        super.initializeForCurrentZone(prevZone);
+
+        // event cards can only be exhausted when resourced
+        switch (this.zoneName) {
+            case ZoneName.Resource:
+                this.setExhaustEnabled(true);
+                break;
+
+            default:
+                this.setExhaustEnabled(false);
+                break;
+        }
+    }
+
+    protected override getAbilityRegistrar(): IEventAbilityRegistrar {
+        return {
+            ...super.getAbilityRegistrar() as IBasicAbilityRegistrar<EventCard>,
+            setEventAbility: (properties: IEventAbilityProps) => this.setEventAbility(properties),
+            addAdditionalPlayCost: (properties) => this.registerAdditionalPlayCost(properties as IPlayCostProperties<this>),
+            addAlternatePlayCost: (properties) => this.registerAlternatePlayCost(properties as IPlayCostProperties<this>),
+            addAdjustCostAbility: (properties: IAdjustCostAbilityProps<EventCard>) => this.addAdjustCostAbility(properties),
+            addDecreaseCostAbility: (properties: IDecreaseCostAbilityProps<EventCard>) => this.addDecreaseCostAbility(properties),
+            addPlayRestrictionAbility: (properties: IPlayRestrictionAbilityProps) => this.addPlayRestrictionAbility(properties),
+        };
+    }
+
+    protected override callSetupWithRegistrar() {
+        this.setupCardAbilities(this.getAbilityRegistrar(), this.game.abilityHelper);
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    public override setupCardAbilities(registrar: IEventAbilityRegistrar, AbilityHelper: IAbilityHelper) { }
+
+    private setEventAbility(properties: IEventAbilityProps) {
+        properties.cardName = this.title;
+        this.eventAbility = new EventAbility(this.game, this, properties);
+    }
+
+    /** Add a constant ability on the card that adjusts its own cost under the given condition */
+    private addAdjustCostAbility(properties: IAdjustCostAbilityProps<EventCard>): void {
+        this.constantAbilities = [...this.constantAbilities, this.createConstantAbility(this.generateAdjustCostAbilityProps(properties))];
+    }
+
+    /** Add a constant ability on the card that decreases its cost under the given condition */
+    private addDecreaseCostAbility(properties: IDecreaseCostAbilityProps<EventCard>): void {
+        this.constantAbilities = [...this.constantAbilities, this.createConstantAbility(this.generateDecreaseCostAbilityProps(properties))];
+    }
+
+    private addPlayRestrictionAbility(properties: IPlayRestrictionAbilityProps) {
+        const ability = this.createConstantAbility({
+            title: properties.title,
+            sourceZoneFilter: WildcardZoneName.Any,
+            ongoingEffect: this.game.abilityHelper.ongoingEffects.cardCannot({
+                cannot: AbilityRestriction.Play,
+                restrictedActionCondition: properties.restrictedActionCondition,
+            }),
+        });
+
+        ability.registeredEffects = this.addEffectToEngine(ability.buildEffectFactoryProps());
+        this.constantAbilities = [...this.constantAbilities, ability];
+    }
+}
+

@@ -1,0 +1,37 @@
+{
+  "title": "Adamant Ewoks",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "When Played: If you control another Ewok unit or an Endor base, you may deal 1 damage to a base and 1 damage to an enemy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2238339364",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "ewok"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 177
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 177
+    }
+  ],
+  "internalName": "adamant-ewoks"
+}

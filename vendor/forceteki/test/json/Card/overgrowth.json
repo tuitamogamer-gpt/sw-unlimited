@@ -1,0 +1,36 @@
+{
+  "title": "Overgrowth",
+  "subtitle": "",
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "If you control a Kashyyyk base, a friendly unit deals damage equal to its power to an enemy unit.\nResource this card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\nResources enter play exhausted.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1479940864",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "disaster"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 151
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 151
+    }
+  ],
+  "internalName": "overgrowth"
+}

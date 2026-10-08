@@ -1,0 +1,39 @@
+{
+  "title": "Strafing Gunship",
+  "subtitle": null,
+  "cost": 4,
+  "hp": 4,
+  "power": 3,
+  "text": "This unit can attack units in the ground arena. While this unit is attacking a ground unit, the defender gets –2/–0.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "If an enemy space unit has Sentinel, Strafing Gunship cannot attack non-Sentinel ground units. Enemy ground units with Sentinel do not affect Strafing Gunship’s ability to attack ground units.\n(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5464125379",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 212
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 212
+    }
+  ],
+  "internalName": "strafing-gunship"
+}

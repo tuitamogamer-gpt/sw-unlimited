@@ -1,0 +1,40 @@
+{
+  "title": "Sabine Wren",
+  "subtitle": "You Can Count On Me",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "While this unit is exhausted, she can't be attacked (unless she gains Sentinel).\nOn Attack: You may discard a card from your deck. If it doesn't share an aspect with your base, deal 2 damage to a ground unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Always discard from the top of a deck, unless an ability specifies otherwise.\nIf a unit that can't be attacked gains Sentinel, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2843644198",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "fringe",
+    "mandalorian",
+    "spectre"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 195
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 195
+    }
+  ],
+  "internalName": "sabine-wren#you-can-count-on-me"
+}

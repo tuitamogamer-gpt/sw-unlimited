@@ -1,0 +1,42 @@
+{
+  "title": "Qui-Gon Jinn",
+  "subtitle": "We'll Handle This",
+  "cost": 5,
+  "hp": 5,
+  "power": 2,
+  "text": "Grit\nWhen Played: You may defeat a unit that attacked your base this phase. If it's a leader unit, defeat this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4719334042",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 78
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 78
+    }
+  ],
+  "internalName": "quigon-jinn#well-handle-this"
+}

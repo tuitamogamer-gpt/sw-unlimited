@@ -1,0 +1,39 @@
+{
+  "title": "Migs Mayfeld",
+  "subtitle": "How About a Toast?",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "Support\nOn Attack: Deal 1 damage to the defending unit. If this unit is upgraded, deal 2 damage to the defending unit instead.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Migs' \"\"On Attack\"\" ability deals 2 damage to the defending unit if the attacking unit is upgraded.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2696522642",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "support"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 168
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 168
+    }
+  ],
+  "internalName": "migs-mayfeld#how-about-a-toast"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Koska Reeves",
+  "subtitle": "Warrior of Mandalore",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "While you control a token unit, this unit gains Sentinel.\nWhen Played: If a friendly unit was defeated this phase, create a Mandalorian token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6057506500",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 79
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 79
+    }
+  ],
+  "internalName": "koska-reeves#warrior-of-mandalore"
+}

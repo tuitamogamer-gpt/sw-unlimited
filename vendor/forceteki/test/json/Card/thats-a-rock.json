@@ -1,0 +1,36 @@
+{
+  "title": "That's a Rock",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Deal 1 damage to a unit.\nWhen this event is discarded from your hand or deck: You may deal 1 damage to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8051235147",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 206
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 206
+    }
+  ],
+  "internalName": "thats-a-rock"
+}

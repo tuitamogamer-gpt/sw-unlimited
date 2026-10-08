@@ -1,0 +1,39 @@
+{
+  "title": "TIE/ln Fighter",
+  "subtitle": null,
+  "cost": 1,
+  "hp": 1,
+  "power": 2,
+  "text": null,
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5562575456",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 225
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 225
+    }
+  ],
+  "internalName": "tieln-fighter"
+}

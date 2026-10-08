@@ -1,0 +1,41 @@
+{
+  "title": "Confederate Tri-Fighter",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "Bases can't be healed.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6277739341",
+  "aspects": [
+    "villainy",
+    "aggression"
+  ],
+  "traits": [
+    "separatist",
+    "droid",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 132
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 132
+    }
+  ],
+  "internalName": "confederate-trifighter"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Niman Strike",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a Force unit, even if it's exhausted. It gets +1/+0 and can't attack bases for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you play Niman Strike, you must attack with a unit, if able. \nUnits that can’t attack bases can still damage bases through other abilities, like Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5960134941",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 124
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 124
+    }
+  ],
+  "internalName": "niman-strike"
+}

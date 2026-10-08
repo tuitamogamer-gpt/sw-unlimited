@@ -1,0 +1,39 @@
+{
+  "title": "Unrefusable Offer",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 0,
+  "power": 0,
+  "text": "Attach to a non-leader unit.\nAttached unit gains: “Bounty — Play this unit for free (under your control). It enters play ready. At the start of the regroup phase, defeat it.”",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "“Play for free” ignores all resource costs, including the aspect penalty, but not other additional costs.\n(ERRATA) Attach to a non-leader unit. Attached unit gains: “Bounty — Play this unit from its owner's discard pile or from capture for free (under your control). It enters play ready. At the start of the regroup phase, defeat it.”\n",
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "7270736993",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "bounty",
+    "condition"
+  ],
+  "keywords": [
+    "bounty"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 226
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 226
+    }
+  ],
+  "internalName": "unrefusable-offer"
+}

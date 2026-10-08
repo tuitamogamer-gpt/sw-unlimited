@@ -1,0 +1,38 @@
+{
+  "title": "Furtive Handmaiden",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 2,
+  "text": "On Attack: You may discard a card from your hand. If you do, draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7125768467",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "naboo"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 197
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 197
+    }
+  ],
+  "internalName": "furtive-handmaiden"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Take Cover",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "This event costs 1 resource less to play for each friendly leader unit.\nHeal up to 3 damage from a unit and give a Shield token to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3088628219",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 47
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 47
+    }
+  ],
+  "internalName": "take-cover"
+}

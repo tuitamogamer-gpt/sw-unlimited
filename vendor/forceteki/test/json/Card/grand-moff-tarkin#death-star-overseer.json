@@ -1,0 +1,39 @@
+{
+  "title": "Grand Moff Tarkin",
+  "subtitle": "Death Star Overseer",
+  "cost": 4,
+  "hp": 3,
+  "power": 2,
+  "text": "When Played: Search the top 5 cards of your deck for up to 2 Imperial cards, reveal them, and draw them. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9266336818",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 84
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 84
+    }
+  ],
+  "internalName": "grand-moff-tarkin#death-star-overseer"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Commence Patrol",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Put another card in a discard pile on the bottom of its owner's deck. If you do, create an X-Wing token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8323555870",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 205
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 205
+    }
+  ],
+  "internalName": "commence-patrol"
+}

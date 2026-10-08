@@ -1,0 +1,39 @@
+{
+  "title": "Guild Target",
+  "subtitle": "",
+  "cost": 0,
+  "hp": 0,
+  "power": 0,
+  "text": "Attached unit gains: “Bounty — Deal 2 damage to a base. If this unit is unique, deal 3 damage instead.” (When this unit is defeated or captured, its opponent collects its bounty.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "(ERRATA) Templating update: “Unique” becomes “<uq>”.\n",
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "2740761445",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "bounty",
+    "condition"
+  ],
+  "keywords": [
+    "bounty"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 173
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 173
+    }
+  ],
+  "internalName": "guild-target"
+}

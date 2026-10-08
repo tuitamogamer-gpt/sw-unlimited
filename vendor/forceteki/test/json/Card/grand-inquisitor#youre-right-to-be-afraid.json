@@ -1,0 +1,43 @@
+{
+  "title": "Grand Inquisitor",
+  "subtitle": "You're Right to Be Afraid",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "Hidden\nRaid 1\nOther friendly Inquisitor units gain Hidden.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "If a unit has Hidden and Sentinel at the same time, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0686684746",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "imperial",
+    "inquisitor"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "hidden",
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 132
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 132
+    }
+  ],
+  "internalName": "grand-inquisitor#youre-right-to-be-afraid"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "A'Koba",
+  "subtitle": "Restless Raider",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "Raid 1 (This unit gets +1/+0 while attacking.)\nWhen Played: Give a unit +2/+0 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6927577313",
+  "aspects": [
+    "aggression",
+    "cunning"
+  ],
+  "traits": [
+    "tusken"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 52
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 52
+    }
+  ],
+  "internalName": "akoba#restless-raider"
+}

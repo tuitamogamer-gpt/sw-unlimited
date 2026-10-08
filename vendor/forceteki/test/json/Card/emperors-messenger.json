@@ -1,0 +1,41 @@
+{
+  "title": "Emperor's Messenger",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 3,
+  "power": 0,
+  "text": "Support (When you play this unit, you may attack with another unit. It gains this unit's other abilities for this attack.)\nOn Attack: Ready a resource.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6725068449",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "support"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 189
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 189
+    }
+  ],
+  "internalName": "emperors-messenger"
+}

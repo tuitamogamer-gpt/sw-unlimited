@@ -1,0 +1,37 @@
+{
+  "title": "As I Have Foreseen",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Look at the top card of your deck. You may use the Force (lose your Force token). If you do, play that card. It costs 4 resources less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8569501777",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 188
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 188
+    }
+  ],
+  "internalName": "as-i-have-foreseen"
+}

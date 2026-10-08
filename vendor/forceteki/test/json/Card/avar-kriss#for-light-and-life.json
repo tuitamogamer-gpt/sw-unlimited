@@ -1,0 +1,42 @@
+{
+  "title": "Avar Kriss",
+  "subtitle": "For Light and Life",
+  "cost": 2,
+  "hp": 5,
+  "power": 0,
+  "text": "Raid 1\nmock ability text",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "avar-kriss#for-light-and-life-id",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 71
+  },
+  "internalName": "avar-kriss#for-light-and-life",
+  "arena": "ground",
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 71
+    }
+  ]
+}

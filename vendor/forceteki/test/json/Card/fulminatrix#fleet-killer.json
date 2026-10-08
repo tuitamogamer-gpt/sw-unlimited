@@ -1,0 +1,40 @@
+{
+  "title": "Fulminatrix",
+  "subtitle": "Fleet Killer",
+  "cost": 8,
+  "hp": 7,
+  "power": 9,
+  "text": "When Played/On Attack: You may deal 4 damage to a ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2460309477",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "first order",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 142
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 142
+    }
+  ],
+  "internalName": "fulminatrix#fleet-killer"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Daring Raid",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Deal 2 damage to a unit or base.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7826408293",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 170
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 178
+    },
+    {
+      "set": "TWI",
+      "number": 170
+    }
+  ],
+  "internalName": "daring-raid"
+}

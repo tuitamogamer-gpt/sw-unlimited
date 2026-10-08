@@ -1,0 +1,42 @@
+{
+  "title": "Black Sun Patroller",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "Shielded (When you play this unit, give a Shield token to it.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9337828045",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 211
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 211
+    }
+  ],
+  "internalName": "black-sun-patroller"
+}

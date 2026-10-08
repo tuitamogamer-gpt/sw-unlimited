@@ -1,0 +1,41 @@
+{
+  "title": "Luke Skywalker",
+  "subtitle": "Do You Read Me?",
+  "cost": 7,
+  "hp": 6,
+  "power": 6,
+  "text": "Restore 2 (When this unit attacks, heal 2 damage from your base.)\nWhen Played: You may deal 3 damage to a ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1174196426",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 20
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 20
+    }
+  ],
+  "internalName": "luke-skywalker#do-you-read-me"
+}

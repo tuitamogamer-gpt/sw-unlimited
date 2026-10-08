@@ -1,0 +1,40 @@
+{
+  "title": "Mace Windu",
+  "subtitle": "Vaapad Form Master",
+  "cost": 7,
+  "hp": 8,
+  "power": 5,
+  "text": "Action [1 resource, Exhaust]: Deal 1 damage to a damaged enemy unit. Then, if it has 5 or more damage on it, deal 1 damage to it.",
+  "deployBox": "When Deployed: Deal 2 damage to each damaged enemy unit.",
+  "epicAction": "Epic Action: If you control 7 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Mace's leader ability deals 2 instances of damage. If both instances of instances of damage are dealt to a unit with a Shield token, the Shield will only prevent the first damage.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4628885755",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 13
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 13
+    }
+  ],
+  "internalName": "mace-windu#vaapad-form-master"
+}

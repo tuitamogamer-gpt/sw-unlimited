@@ -1,0 +1,40 @@
+{
+  "title": "Omega",
+  "subtitle": "Close Your Eyes and Focus",
+  "cost": 5,
+  "hp": 7,
+  "power": 2,
+  "text": "Action [1 resource, Exhaust]: Attack with a Heroism unit. It gains Grit for this attack. (It gets +1/+0 for each damage on it.)",
+  "deployBox": "Other friendly Heroism units gain Grit.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "If you use Omega’s leader ability, you must attack with a unit, if able. Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5495312929",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "clone"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 6
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 6
+    }
+  ],
+  "internalName": "omega#close-your-eyes-and-focus"
+}

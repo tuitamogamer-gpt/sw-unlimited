@@ -1,0 +1,41 @@
+{
+  "title": "Sabine's Lightsaber",
+  "subtitle": "Not Alone",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "Attach to a non-Vehicle unit.\nIf attached unit is Sabine Wren or a Force unit, it gains Restore 2.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": 2,
+  "upgradeHp": 2,
+  "id": "3331025130",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "item",
+    "weapon",
+    "lightsaber"
+  ],
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 114
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 114
+    }
+  ],
+  "internalName": "sabines-lightsaber#not-alone"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Jocasta Nu",
+  "subtitle": "The Gift of Knowledge",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "When Played: You may attach a friendly upgrade on a friendly unit to a different eligible unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "You can use Jocasta's ability to attach an upgrade to her.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8635969563",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 248
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 248
+    }
+  ],
+  "internalName": "jocasta-nu#the-gift-of-knowledge"
+}

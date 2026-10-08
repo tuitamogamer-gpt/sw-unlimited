@@ -1,0 +1,37 @@
+{
+  "title": "Choose Your Path",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Choose one:\nIf you control a Force unit, heal 5 damage from your base.\nIf you control a Mandalorian unit, create a Mandalorian token and give an Advantage token to it.\n",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2613847155",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "mandalorian"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 257
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 257
+    }
+  ],
+  "internalName": "choose-your-path"
+}

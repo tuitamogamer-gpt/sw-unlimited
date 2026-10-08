@@ -1,0 +1,39 @@
+{
+  "title": "Corporate Defense Shuttle",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 5,
+  "power": 3,
+  "text": "This unit can't attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4332645242",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 59
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 59
+    }
+  ],
+  "internalName": "corporate-defense-shuttle"
+}

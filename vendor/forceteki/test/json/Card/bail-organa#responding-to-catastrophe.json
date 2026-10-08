@@ -1,0 +1,39 @@
+{
+  "title": "Bail Organa",
+  "subtitle": "Responding to Catastrophe",
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "On Attack: You may discard a card from your hand. If you do, create a Spy token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9280012856",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 198
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 198
+    }
+  ],
+  "internalName": "bail-organa#responding-to-catastrophe"
+}

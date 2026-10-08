@@ -1,0 +1,39 @@
+{
+  "title": "Sando Aqua Monster",
+  "subtitle": "",
+  "cost": 8,
+  "hp": 9,
+  "power": 5,
+  "text": "Grit\nWhen Played: If you control a Naboo base, you may defeat any number of ground units with combined power equal to or less than this unit's power. Deal damage to this unit equal to the combined power of the defeated units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8902247163",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 94
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 94
+    }
+  ],
+  "internalName": "sando-aqua-monster"
+}

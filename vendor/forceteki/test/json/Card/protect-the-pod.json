@@ -1,0 +1,36 @@
+{
+  "title": "Protect the Pod",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "A friendly non-Vehicle unit deals damage equal to its remaining HP to an enemy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1723823172",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 128
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 128
+    }
+  ],
+  "internalName": "protect-the-pod"
+}

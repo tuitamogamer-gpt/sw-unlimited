@@ -1,0 +1,40 @@
+{
+  "title": "General Krell",
+  "subtitle": "Heartless Tactician",
+  "cost": 5,
+  "hp": 4,
+  "power": 5,
+  "text": "Each other friendly unit gains: “When Defeated: You may draw a card.”",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "If General Krell is defeated simultaneously with other friendly units, all “When Defeated” abilities still trigger.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9353672706",
+  "aspects": [
+    "command",
+    "command"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 105
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 105
+    }
+  ],
+  "internalName": "general-krell#heartless-tactician"
+}

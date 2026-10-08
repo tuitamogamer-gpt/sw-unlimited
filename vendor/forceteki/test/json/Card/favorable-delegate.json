@@ -1,0 +1,38 @@
+{
+  "title": "Favorable Delegate",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 5,
+  "power": 1,
+  "text": "When Played: Draw a card.\nWhen Defeated: Discard a card from your hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9479767991",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "republic",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 208
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 208
+    }
+  ],
+  "internalName": "favorable-delegate"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Devaronian Doorbuster",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "Restore 1 (When this unit attacks, heal 1 damage from your base.)\nSaboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3937106144",
+  "aspects": [
+    "command",
+    "cunning"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore",
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 70
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 70
+    }
+  ],
+  "internalName": "devaronian-doorbuster"
+}

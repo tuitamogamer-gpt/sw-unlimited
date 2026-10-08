@@ -1,0 +1,36 @@
+{
+  "title": "Unauthorized Investigation",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Create a Spy token.\nYou may disclose Aggression (reveal a card from your hand with this aspect icon). If you do, create another Spy token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3260156899",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 181
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 181
+    }
+  ],
+  "internalName": "unauthorized-investigation"
+}

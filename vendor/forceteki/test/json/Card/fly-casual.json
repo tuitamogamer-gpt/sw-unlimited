@@ -1,0 +1,37 @@
+{
+  "title": "Fly Casual",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Ready a Vehicle unit. It can't attack bases for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Units that can’t attack bases can still damage bases through other abilities, like Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2948553808",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 206
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 206
+    }
+  ],
+  "internalName": "fly-casual"
+}

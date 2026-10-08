@@ -1,0 +1,47 @@
+{
+  "title": "Evacuation Escort",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9489761564",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 12
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 12
+    },
+    {
+      "set": "IBH",
+      "number": 35
+    },
+    {
+      "set": "IBH",
+      "number": 44
+    }
+  ],
+  "internalName": "evacuation-escort"
+}

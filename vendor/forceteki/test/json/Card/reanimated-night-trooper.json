@@ -1,0 +1,41 @@
+{
+  "title": "Reanimated Night Trooper",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 2,
+  "text": "When Defeated: Look at the top card of a deck. You may discard it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9790448244",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "night",
+    "undead",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 45
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 45
+    }
+  ],
+  "internalName": "reanimated-night-trooper"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "The Darksaber",
+  "subtitle": "Icon of Leadership",
+  "cost": 4,
+  "hp": 2,
+  "power": 4,
+  "text": "Attach to a <uq> non-Vehicle unit.\nAttached unit is a leader unit and gains the Mandalorian trait.\nAttached unit gains: “While you are paying costs, this unit provides its aspect icons.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": 4,
+  "upgradeHp": 2,
+  "id": "3629508713",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "mandalorian",
+    "item",
+    "weapon"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 135
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 135
+    }
+  ],
+  "internalName": "the-darksaber#icon-of-leadership"
+}

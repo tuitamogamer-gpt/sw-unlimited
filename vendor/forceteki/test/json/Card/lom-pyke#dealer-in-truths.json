@@ -1,0 +1,40 @@
+{
+  "title": "Lom Pyke",
+  "subtitle": "Dealer in Truths",
+  "cost": 4,
+  "hp": 6,
+  "power": 4,
+  "text": "On Attack: You may give a Shield token to an enemy unit. If you do, give a Shield token to a friendly unit.\nSmuggle [5 resources Vigilance Villainy]",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5632569775",
+  "aspects": [
+    "villainy",
+    "vigilance"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "smuggle"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 32
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 32
+    }
+  ],
+  "internalName": "lom-pyke#dealer-in-truths"
+}

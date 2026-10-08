@@ -1,0 +1,39 @@
+{
+  "title": "Bounty Hunter's Quarry",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 0,
+  "power": 0,
+  "text": "Attached unit gains: “Bounty — Search the top 5 cards of your deck, or 10 cards instead if this unit is unique, for a unit that costs 3 or less and play it for free.” (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nAfter searching, put any cards not chosen on the bottom of your deck in a random order.\n“Play for free” ignores all resource costs, including the aspect penalty, but not other additional costs.\nIf you choose a Pilot unit with your search, you may only play it as a unit.\n(ERRATA) Templating update: “Unique” becomes “<uq>”.\n",
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "9642863632",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "bounty",
+    "condition"
+  ],
+  "keywords": [
+    "bounty"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 123
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 123
+    }
+  ],
+  "internalName": "bounty-hunters-quarry"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "The Tarkin Doctrine",
+  "subtitle": "Protect and Punish",
+  "cost": 1,
+  "hp": 0,
+  "power": 0,
+  "text": "Fortify (Attach this to your base, not a unit.)\nAttached base gains: “When you play a Fortification upgrade: Exhaust an enemy unit.”\nWhen Played: If you control Grand Moff Tarkin, give an enemy unit –3/–0 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "3583020989",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "law"
+  ],
+  "keywords": [
+    "fortify"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 206
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 206
+    }
+  ],
+  "internalName": "the-tarkin-doctrine#protect-and-punish"
+}

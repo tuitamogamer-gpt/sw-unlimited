@@ -1,0 +1,38 @@
+{
+  "title": "Star Wing Scout",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 1,
+  "power": 4,
+  "text": "When Defeated: If you have the initiative, draw 2 cards.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7517208605",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 163
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 163
+    }
+  ],
+  "internalName": "star-wing-scout"
+}

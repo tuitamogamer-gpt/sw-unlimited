@@ -1,0 +1,42 @@
+{
+  "title": "Jango Fett",
+  "subtitle": "Renowned Bounty Hunter",
+  "cost": 4,
+  "hp": 6,
+  "power": 3,
+  "text": "While attacking a unit with a Bounty, this unit gets +3/+0 and gains Overwhelm.\nWhen this unit attacks and defeats a unit: Draw a card.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "A unit “attacks and defeats a unit” if it defeats the defender at any point during the attack.\nShields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\nWhen Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve.\n(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6769342445",
+  "aspects": [
+    "villainy",
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "bounty",
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 138
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 138
+    }
+  ],
+  "internalName": "jango-fett#renowned-bounty-hunter"
+}

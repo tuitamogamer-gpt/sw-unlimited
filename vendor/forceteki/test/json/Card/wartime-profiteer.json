@@ -1,0 +1,37 @@
+{
+  "title": "Wartime Profiteer",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 3,
+  "text": "When Defeated: Each opponent may ready a resource.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2014524470",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 76
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 76
+    }
+  ],
+  "internalName": "wartime-profiteer"
+}

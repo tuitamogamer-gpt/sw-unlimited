@@ -1,0 +1,41 @@
+{
+  "title": "Diplomatic Envoy",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: You may disclose Command (reveal a card from your hand with this aspect icon). If you do, the next unit you play this phase gains Ambush for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "The Ambush from Diplomatic Envoy's “When Played” ability remains active even if it is defeated before you play another unit.\nAmbush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8636880882",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 109
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 109
+    }
+  ],
+  "internalName": "diplomatic-envoy"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Booma Ball",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: You may return an upgrade that costs 3 or less to its owner's hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers. A pilot's cost is the card's printed cost, not the cost in the Piloting ability.\nAbilities that return a card to hand must choose a card in play unless otherwise specified.\n",
+  "upgradePower": 2,
+  "upgradeHp": 2,
+  "id": "9354439184",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "item",
+    "weapon"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 236
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 236
+    }
+  ],
+  "internalName": "booma-ball"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "The Invisible Hand",
+  "subtitle": "Crawling With Vultures",
+  "cost": 6,
+  "hp": 6,
+  "power": 6,
+  "text": "When Played/When this unit completes an attack (and survives): You may search the top 8 cards of your deck for a Droid unit, reveal it, and draw it. If it costs 2 or less, you may play it for free. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "A unit must survive an attack to trigger its “when this unit completes an attack” abilities.\nAbilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n“Play for free” ignores all resource costs, including the aspect penalty, but not other additional costs.\nAfter searching, put any cards not chosen on the bottom of your deck in a random order.\nIf you choose any Pilot units with your search, you may only play them as units.\nWhen Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7138400365",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 89
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 89
+    }
+  ],
+  "internalName": "the-invisible-hand#crawling-with-vultures"
+}

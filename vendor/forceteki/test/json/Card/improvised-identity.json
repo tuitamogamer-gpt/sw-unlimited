@@ -1,0 +1,36 @@
+{
+  "title": "Improvised Identity",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 0,
+  "text": "Attach to a ground unit.\nAttached unit gains: “Action: Search the top 3 cards of your deck for a ground unit and discard it. Then, you may attack with this unit. For this attack, this unit gains the discarded unit's abilities. Use this ability only once each round.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\nUnits must be ready in order to attack.\n",
+  "upgradePower": 0,
+  "upgradeHp": 3,
+  "id": "6801123100",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 230
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 230
+    }
+  ],
+  "internalName": "improvised-identity"
+}

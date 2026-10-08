@@ -1,0 +1,36 @@
+{
+  "title": "Forward Command Post",
+  "subtitle": "",
+  "cost": null,
+  "hp": 20,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0479107180",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "hoth"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 54
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 54
+    }
+  ],
+  "internalName": "forward-command-post"
+}

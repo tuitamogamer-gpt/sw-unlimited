@@ -1,0 +1,40 @@
+{
+  "title": "Kuiil",
+  "subtitle": "I Have Spoken",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "Restore 1 (When this unit attacks, heal 1 damage from your base.)\nOn Attack: Discard a card from your deck. If it shares an aspect with your base, return it to your hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Always discard from the top of a deck, unless an ability specifies otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5511838014",
+  "aspects": [
+    "heroism",
+    "vigilance"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 41
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 41
+    }
+  ],
+  "internalName": "kuiil#i-have-spoken"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Broken Horn",
+  "subtitle": "Vizago's Pride",
+  "cost": 5,
+  "hp": 4,
+  "power": 5,
+  "text": "When Played: If you have fewer cards in hand than an opponent, draw a card. If you control fewer resources than an opponent, resource the top card of your deck.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "If there are multiple opponents, the controlling player chooses which one will be “an opponent.”\nResources enter play exhausted.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9574762282",
+  "aspects": [
+    "aggression",
+    "cunning"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 83
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 83
+    }
+  ],
+  "internalName": "broken-horn#vizagos-pride"
+}

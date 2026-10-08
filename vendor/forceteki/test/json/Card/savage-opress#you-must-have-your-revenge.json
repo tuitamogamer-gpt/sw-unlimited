@@ -1,0 +1,42 @@
+{
+  "title": "Savage Opress",
+  "subtitle": "You Must Have Your Revenge",
+  "cost": 6,
+  "hp": 7,
+  "power": 3,
+  "text": "Each friendly unit with the most power among friendly units gains Overwhelm. (When attacking an enemy unit, deal excess damage to the opponent's base.)",
+  "deployBox": "Raid 3 (This unit gets +3/+0 while attacking.)\nOverwhelm\nEach other friendly unit gains Overwhelm.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\nAbilities that refer to a card’s power include temporary modifiers.\nIf multiple friendly units are tied for the most power, they each gain Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4061486636",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm",
+    "raid"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 5
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 5
+    }
+  ],
+  "internalName": "savage-opress#you-must-have-your-revenge"
+}

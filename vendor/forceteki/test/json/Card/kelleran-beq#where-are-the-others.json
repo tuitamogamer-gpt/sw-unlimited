@@ -1,0 +1,41 @@
+{
+  "title": "Kelleran Beq",
+  "subtitle": "Where are the Others?",
+  "cost": 4,
+  "hp": 5,
+  "power": 3,
+  "text": "Ambush\nThis unit gets +1/+0 for each other unit (friendly and enemy) with 0 power.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\nAbilities that refer to a card’s power include temporary modifiers. Power cannot be reduced below 0.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2037046615",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 206
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 206
+    }
+  ],
+  "internalName": "kelleran-beq#where-are-the-others"
+}

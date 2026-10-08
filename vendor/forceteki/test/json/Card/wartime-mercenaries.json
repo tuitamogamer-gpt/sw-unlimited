@@ -1,0 +1,37 @@
+{
+  "title": "Wartime Mercenaries",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 5,
+  "power": 5,
+  "text": "When Defeated: An opponent may give an Experience token to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6507361368",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 54
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 54
+    }
+  ],
+  "internalName": "wartime-mercenaries"
+}

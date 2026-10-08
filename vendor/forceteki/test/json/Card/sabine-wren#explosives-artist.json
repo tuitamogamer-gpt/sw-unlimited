@@ -1,0 +1,40 @@
+{
+  "title": "Sabine Wren",
+  "subtitle": "Explosives Artist",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "While there are at least 3 aspects among other friendly units, this unit can't be attacked (unless she gains Sentinel).\n\nOn Attack: You may deal 1 damage to the defender or to a base.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Sabine’s first ability requires 3 different aspects among other friendly units.\nIf a unit that can't be attacked gains Sentinel, it can be attacked.\n(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3646264648",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian",
+    "rebel",
+    "spectre"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 142
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 142
+    }
+  ],
+  "internalName": "sabine-wren#explosives-artist"
+}

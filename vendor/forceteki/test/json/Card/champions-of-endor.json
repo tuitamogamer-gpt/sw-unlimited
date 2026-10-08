@@ -1,0 +1,38 @@
+{
+  "title": "Champions of Endor",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 3,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4516882765",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "ewok"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 163
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 163
+    }
+  ],
+  "internalName": "champions-of-endor"
+}

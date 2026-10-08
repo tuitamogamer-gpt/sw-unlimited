@@ -1,0 +1,37 @@
+{
+  "title": "Aid from the Innocent",
+  "subtitle": "",
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "Search the top 10 cards of your deck for 2 Heroism non-unit cards and discard them. (Put the other cards on the bottom of your deck in a random order.)\nFor this phase, you may play the discarded cards, and they each cost 2 resources less.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7510418786",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 201
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 201
+    }
+  ],
+  "internalName": "aid-from-the-innocent"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Rugged Survivors",
+  "subtitle": null,
+  "cost": 5,
+  "hp": 5,
+  "power": 3,
+  "text": "Grit (This unit gets +1/+0 for each damage on it.)\n\nOn Attack: If you control a leader unit, you may draw a card.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4599464590",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 67
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 67
+    }
+  ],
+  "internalName": "rugged-survivors"
+}

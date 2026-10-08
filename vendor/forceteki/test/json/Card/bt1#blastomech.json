@@ -1,0 +1,39 @@
+{
+  "title": "BT-1",
+  "subtitle": "Blastomech",
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "On Attack: Discard a card from your deck. If it's Aggression, you may deal 1 damage to a ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Always discard from the top of a deck, unless an ability specifies otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9876200854",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 173
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 173
+    }
+  ],
+  "internalName": "bt1#blastomech"
+}

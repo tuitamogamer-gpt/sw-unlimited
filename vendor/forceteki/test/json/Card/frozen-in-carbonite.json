@@ -1,0 +1,37 @@
+{
+  "title": "Frozen in Carbonite",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 0,
+  "power": 0,
+  "text": "Attach to a non-leader unit.\nAttached unit can't ready.\nWhen Played: Exhaust attached unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "7718080954",
+  "aspects": [
+    "villainy",
+    "cunning"
+  ],
+  "traits": [
+    "condition"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 193
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 193
+    }
+  ],
+  "internalName": "frozen-in-carbonite"
+}

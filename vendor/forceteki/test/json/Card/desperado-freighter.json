@@ -1,0 +1,40 @@
+{
+  "title": "Desperado Freighter",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 6,
+  "power": 5,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1556608115",
+  "aspects": [
+    "heroism",
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 152
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 152
+    }
+  ],
+  "internalName": "desperado-freighter"
+}

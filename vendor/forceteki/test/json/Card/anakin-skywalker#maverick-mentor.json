@@ -1,0 +1,42 @@
+{
+  "title": "Anakin Skywalker",
+  "subtitle": "Maverick Mentor",
+  "cost": 5,
+  "hp": 6,
+  "power": 6,
+  "text": "Coordinate — On Attack: Draw a card. (Gain this ability while you control 3 or more units.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2282198576",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "coordinate"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 147
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 147
+    }
+  ],
+  "internalName": "anakin-skywalker#maverick-mentor"
+}

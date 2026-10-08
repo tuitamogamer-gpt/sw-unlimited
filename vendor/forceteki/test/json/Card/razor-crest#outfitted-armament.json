@@ -1,0 +1,41 @@
+{
+  "title": "Razor Crest",
+  "subtitle": "Outfitted Armament",
+  "cost": 4,
+  "hp": 5,
+  "power": 3,
+  "text": "Saboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)\nOn Attack: You may discard a card from your hand. If you do, this unit gets +2/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4046328280",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "mandalorian",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 172
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 172
+    }
+  ],
+  "internalName": "razor-crest#outfitted-armament"
+}

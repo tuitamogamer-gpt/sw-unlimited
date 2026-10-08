@@ -1,0 +1,36 @@
+{
+  "title": "Senate Rotunda",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7504537867",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "coruscant"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 22
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 22
+    }
+  ],
+  "internalName": "senate-rotunda"
+}

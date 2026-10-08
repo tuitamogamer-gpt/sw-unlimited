@@ -1,0 +1,39 @@
+{
+  "title": "Fugitive Wookiee",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 3,
+  "text": "Bounty — Exhaust a unit. (When this unit is defeated or captured, your opponent collects its bounty.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6947306017",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "bounty"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 211
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 211
+    }
+  ],
+  "internalName": "fugitive-wookiee"
+}

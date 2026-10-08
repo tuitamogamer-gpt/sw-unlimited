@@ -1,0 +1,39 @@
+{
+  "title": "Kimogila Heavy Fighter",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 3,
+  "text": "When Played: Deal 3 indirect damage to a player. Exhaust each unit damaged this way. (That player assigns 3 unpreventable damage among their base and units.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "A player can't assign more indirect damage to a unit than it has remaining HP. Indirect damage is unpreventable and ignores Shields.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6757031085",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 222
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 222
+    }
+  ],
+  "internalName": "kimogila-heavy-fighter"
+}

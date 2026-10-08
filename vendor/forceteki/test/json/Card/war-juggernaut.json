@@ -1,0 +1,39 @@
+{
+  "title": "War Juggernaut",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 7,
+  "power": 3,
+  "text": "This unit gets +1/+0 for each damaged unit.\nWhen Played: Deal 1 damage to each of any number of units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4203363893",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "tank"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 170
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 170
+    }
+  ],
+  "internalName": "war-juggernaut"
+}

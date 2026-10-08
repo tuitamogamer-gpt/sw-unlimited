@@ -1,0 +1,48 @@
+import type { INonLeaderUnitAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { NonLeaderUnitCard } from '../../../core/card/NonLeaderUnitCard';
+import { AbilityType, RelativePlayer, Trait, WildcardCardType } from '../../../core/Constants';
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import { TextHelper } from '../../../core/utils/TextHelper';
+
+export default class SnapWexleyResistanceReconFlier extends NonLeaderUnitCard {
+    protected override getImplementationId() {
+        return {
+            id: '0524529055',
+            internalName: 'snap-wexley#resistance-recon-flier',
+        };
+    }
+
+    public override setupCardAbilities(registrar: INonLeaderUnitAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.addTriggeredAbility({
+            title: `The next ${TextHelper.Trait.Resistance} card you play this phase costs ${TextHelper.resource(1)} less`,
+            when: {
+                whenPlayed: true,
+                onAttack: true,
+            },
+            immediateEffect: AbilityHelper.immediateEffects.forThisPhasePlayerEffect({
+                effect: AbilityHelper.ongoingEffects.decreaseCost({
+                    match: (card) => card.hasSomeTrait(Trait.Resistance),
+                    cardTypeFilter: WildcardCardType.Playable,
+                    limit: AbilityHelper.limit.perPlayerPerGame(1),
+                    amount: 1
+                })
+            })
+        });
+
+        registrar.addPilotingAbility({
+            title: `Search the top 5 cards of your deck for a ${TextHelper.Trait.Resistance} card, reveal it, and draw it`,
+            type: AbilityType.Triggered,
+            when: {
+                whenPlayed: true,
+            },
+            immediateEffect: AbilityHelper.immediateEffects.deckSearch({
+                searchCount: 5,
+                cardCondition: (card) => card.hasSomeTrait(Trait.Resistance),
+                selectedCardsImmediateEffect: AbilityHelper.immediateEffects.revealAndDraw({
+                    useDisplayPrompt: true,
+                    promptedPlayer: RelativePlayer.Opponent
+                })
+            })
+        });
+    }
+}

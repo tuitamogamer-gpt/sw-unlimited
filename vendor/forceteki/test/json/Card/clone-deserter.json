@@ -1,0 +1,42 @@
+{
+  "title": "Clone Deserter",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 3,
+  "power": 2,
+  "text": "Restore 1 (When this unit attacks, heal 1 damage from your base.)\nBounty — Draw a card. (When this unit is defeated or captured, your opponent collects its bounty.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9503028597",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "fringe",
+    "clone"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore",
+    "bounty"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 95
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 95
+    }
+  ],
+  "internalName": "clone-deserter"
+}

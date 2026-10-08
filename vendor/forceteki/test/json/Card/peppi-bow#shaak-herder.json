@@ -1,0 +1,40 @@
+{
+  "title": "Peppi Bow",
+  "subtitle": "Shaak Herder",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "Restore 1 (When this unit attacks, heal 1 damage from your base.)\nWhile this unit is upgraded, she gets +1/+1.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4438529342",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "gungan"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 73
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 73
+    }
+  ],
+  "internalName": "peppi-bow#shaak-herder"
+}

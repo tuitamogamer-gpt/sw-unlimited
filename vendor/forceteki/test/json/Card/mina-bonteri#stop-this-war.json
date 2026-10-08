@@ -1,0 +1,41 @@
+{
+  "title": "Mina Bonteri",
+  "subtitle": "Stop This War",
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "Restore 1 (When this unit attacks, heal 1 damage from your base.)\nWhen Defeated: You may disclose CommandCommandHeroism (reveal cards from your hand with these aspect icons among them). If you do, draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9378249305",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "separatist",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 94
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 94
+    }
+  ],
+  "internalName": "mina-bonteri#stop-this-war"
+}

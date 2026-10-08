@@ -1,0 +1,36 @@
+{
+  "title": "Evil is Everywhere",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Defeat a unit with cost equal to or less than the number of Villainy aspect icons among friendly units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9136668882",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "disaster"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 247
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 247
+    }
+  ],
+  "internalName": "evil-is-everywhere"
+}

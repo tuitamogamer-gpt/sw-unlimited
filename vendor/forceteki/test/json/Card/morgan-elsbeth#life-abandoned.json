@@ -1,0 +1,41 @@
+{
+  "title": "Morgan Elsbeth",
+  "subtitle": "Life Abandoned",
+  "cost": 6,
+  "hp": 6,
+  "power": 5,
+  "text": "Support (When you play this unit, you may attack with another unit. It gains this unit's other abilities for this attack.)\nWhen Defeated: You may give a unit –2/–2 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3100960073",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "night"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "support"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 50
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 50
+    }
+  ],
+  "internalName": "morgan-elsbeth#life-abandoned"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "King Grakchawwaa",
+  "subtitle": "King of Kashyyyk",
+  "cost": 6,
+  "hp": 6,
+  "power": 6,
+  "text": "When Played: For each other friendly Wookiee unit, resource the top card of your deck. Ready each card resourced this way.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0958357863",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "wookiee",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 123
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 123
+    }
+  ],
+  "internalName": "king-grakchawwaa#king-of-kashyyyk"
+}

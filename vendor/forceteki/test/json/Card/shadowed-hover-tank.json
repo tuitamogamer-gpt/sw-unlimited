@@ -1,0 +1,41 @@
+{
+  "title": "Shadowed Hover Tank",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 5,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8776260462",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "tank"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 224
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 224
+    }
+  ],
+  "internalName": "shadowed-hover-tank"
+}

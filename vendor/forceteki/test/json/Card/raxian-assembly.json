@@ -1,0 +1,38 @@
+{
+  "title": "Raxian Assembly",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 6,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2257974813",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "separatist",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 118
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 118
+    }
+  ],
+  "internalName": "raxian-assembly"
+}

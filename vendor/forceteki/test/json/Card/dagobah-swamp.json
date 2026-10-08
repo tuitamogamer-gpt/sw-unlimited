@@ -1,0 +1,36 @@
+{
+  "title": "Dagobah Swamp",
+  "subtitle": null,
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": null,
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3810584393",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "dagobah"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 21
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 21
+    }
+  ],
+  "internalName": "dagobah-swamp"
+}

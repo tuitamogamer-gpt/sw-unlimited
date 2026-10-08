@@ -1,0 +1,37 @@
+{
+  "title": "No Good to Me Dead",
+  "subtitle": null,
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Exhaust a unit. That unit can't ready this round (including during the regroup phase).",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8800836530",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 186
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 186
+    }
+  ],
+  "internalName": "no-good-to-me-dead"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Unmarked Credits",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Create a Credit token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7477598198",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 244
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 244
+    }
+  ],
+  "internalName": "unmarked-credits"
+}

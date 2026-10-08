@@ -1,0 +1,38 @@
+{
+  "title": "Cobb Vanth",
+  "subtitle": "The Marshal",
+  "cost": 3,
+  "hp": 2,
+  "power": 3,
+  "text": "When Defeated: Search the top 10 cards of your deck for a unit that costs 2 or less and discard it. For this phase, you may play that card from your discard pile for free.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nAfter searching, put any cards not chosen on the bottom of your deck in a random order.\n“Play for free” ignores all resource costs, including the aspect penalty, but not other additional costs.\nWhen a unit is played through Cobb’s ability, it enters play as a new copy of that unit. If it is defeated that same phase, it cannot be replayed again from the discard pile, as the new copy is not considered the same copy as the card discarded through Cobb’s ability.\nBecause Cobb Vanth's ability lets you \"play that card\" from your discard pile, you can play a Pilot unit as a unit or an upgrade.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9151673075",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "fringe",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 115
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 115
+    }
+  ],
+  "internalName": "cobb-vanth#the-marshal"
+}

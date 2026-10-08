@@ -1,0 +1,36 @@
+{
+  "title": "Don't Get Cocky",
+  "subtitle": null,
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Choose a unit. One at a time, reveal cards from your deck until you choose to stop or have revealed 7 cards. If the combined cost of the revealed cards is 7 or less, deal that much damage to the chosen unit. Put the revealed cards on the bottom of your deck in a random order.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nAlways reveal from the top of a deck unless an ability says otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2202839291",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 223
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 223
+    }
+  ],
+  "internalName": "dont-get-cocky"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Resilient",
+  "subtitle": null,
+  "cost": 1,
+  "hp": 3,
+  "power": 0,
+  "text": null,
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 3,
+  "id": "9059202647",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 70
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 69
+    },
+    {
+      "set": "SHD",
+      "number": 70
+    }
+  ],
+  "internalName": "resilient"
+}

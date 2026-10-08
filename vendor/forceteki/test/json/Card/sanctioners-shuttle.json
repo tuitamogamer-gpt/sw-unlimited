@@ -1,0 +1,41 @@
+{
+  "title": "Sanctioner's Shuttle",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 2,
+  "text": "Coordinate — When Played: This unit captures an enemy non-leader unit that costs 3 or less. (Gain this ability while you control 3 or more units, including this one.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card's cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4512764429",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "coordinate"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 213
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 213
+    }
+  ],
+  "internalName": "sanctioners-shuttle"
+}

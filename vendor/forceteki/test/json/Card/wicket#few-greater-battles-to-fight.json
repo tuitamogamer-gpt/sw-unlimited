@@ -1,0 +1,38 @@
+{
+  "title": "Wicket",
+  "subtitle": "Few Greater Battles to Fight",
+  "cost": 4,
+  "hp": 5,
+  "power": 2,
+  "text": "When a friendly unit attacks a unit that costs more than it: You may exhaust this leader. If you do, draw a card.",
+  "deployBox": "On Attack: If you control a unit that costs 3 or less, draw a card.",
+  "epicAction": "Epic Action: If you control 4 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8333035317",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "ewok"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 14
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 14
+    }
+  ],
+  "internalName": "wicket#few-greater-battles-to-fight"
+}

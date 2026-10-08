@@ -1,0 +1,37 @@
+{
+  "title": "Mandalorian Armor",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "Attach to a non-Vehicle unit.\nWhen Played: If attached unit is a Mandalorian, give a Shield token to it.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 3,
+  "id": "3514010297",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "item",
+    "armor"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 73
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 73
+    }
+  ],
+  "internalName": "mandalorian-armor"
+}

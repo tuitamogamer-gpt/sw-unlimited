@@ -1,0 +1,38 @@
+{
+  "title": "Greedo",
+  "subtitle": "Slow on the Draw",
+  "cost": 1,
+  "hp": 1,
+  "power": 3,
+  "text": "When Defeated: You may discard a card from your deck. If it's not a unit, deal 2 damage to a ground unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Always discard from the top of a deck unless an ability says otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0949648290",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 204
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 204
+    }
+  ],
+  "internalName": "greedo#slow-on-the-draw"
+}

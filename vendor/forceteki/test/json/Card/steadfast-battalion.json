@@ -1,0 +1,39 @@
+{
+  "title": "Steadfast Battalion",
+  "subtitle": null,
+  "cost": 5,
+  "hp": 5,
+  "power": 5,
+  "text": "Overwhelm (When attacking an enemy unit, deal excess damage to the opponent's base.)\n\nOn Attack: If you control a leader unit, give a friendly unit +2/+2 for this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6432884726",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 116
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 116
+    }
+  ],
+  "internalName": "steadfast-battalion"
+}

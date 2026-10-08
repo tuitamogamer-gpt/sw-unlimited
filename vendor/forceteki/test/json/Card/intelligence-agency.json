@@ -1,0 +1,39 @@
+{
+  "title": "Intelligence Agency",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 0,
+  "power": 0,
+  "text": "Fortify (Attach this to your base, not a unit.)\nAttached base gains: “You may look at the top card of your deck at any time.”\nWhen Played: Look at an opponent's hand. You may discard a card from it. If you do, they draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "5810314397",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "fortification"
+  ],
+  "keywords": [
+    "fortify"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 205
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 205
+    }
+  ],
+  "internalName": "intelligence-agency"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Supporting Eta-2",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "On Attack: You may give a ground unit +2/+0 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7232609585",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 160
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 160
+    }
+  ],
+  "internalName": "supporting-eta2"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Outland TIE Vanguard",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 2,
+  "text": "When Played: You may give an Experience token to another unit that costs 3 or less.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8712779685",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 82
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 82
+    }
+  ],
+  "internalName": "outland-tie-vanguard"
+}

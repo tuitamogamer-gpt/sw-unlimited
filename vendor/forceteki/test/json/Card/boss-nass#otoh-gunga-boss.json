@@ -1,0 +1,39 @@
+{
+  "title": "Boss Nass",
+  "subtitle": "Otoh Gunga Boss",
+  "cost": 4,
+  "hp": 6,
+  "power": 4,
+  "text": "When Played/On Attack: You may defeat a Shield token on a friendly Gungan unit. If you do, create a Beast token and give a Shield token to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8413537581",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "gungan",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 77
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 77
+    }
+  ],
+  "internalName": "boss-nass#otoh-gunga-boss"
+}

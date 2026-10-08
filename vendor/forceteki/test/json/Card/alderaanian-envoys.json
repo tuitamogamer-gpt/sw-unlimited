@@ -1,0 +1,40 @@
+{
+  "title": "Alderaanian Envoys",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 7,
+  "power": 3,
+  "text": "Restore 3 (When this unit attacks, heal 3 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8695231257",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "republic",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 66
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 66
+    }
+  ],
+  "internalName": "alderaanian-envoys"
+}

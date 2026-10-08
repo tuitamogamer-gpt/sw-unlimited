@@ -1,0 +1,39 @@
+{
+  "title": "Hotshot DL-44 Blaster",
+  "subtitle": null,
+  "cost": 1,
+  "hp": 0,
+  "power": 2,
+  "text": "Attach to a non-VEHICLE unit.\n\nSmuggle [3 resources, cunning]\n\nWhen played using Smuggle: Attack with attached unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "If you play the Blaster using Smuggle, you must attack with the attached unit, if able. Units must be ready in order to attack.\nYou can only attack with units you control, so using Smuggle to play Hotshot DL-44 Blaster on an enemy unit does not begin an attack.\n",
+  "upgradePower": 2,
+  "upgradeHp": 0,
+  "id": "5874342508",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "item",
+    "weapon"
+  ],
+  "keywords": [
+    "smuggle"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 174
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 174
+    }
+  ],
+  "internalName": "hotshot-dl44-blaster"
+}

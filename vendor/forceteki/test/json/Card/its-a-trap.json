@@ -1,0 +1,37 @@
+{
+  "title": "It's a Trap",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "If an opponent controls more space units than you, ready each space unit you control.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0964312065",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 209
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 209
+    }
+  ],
+  "internalName": "its-a-trap"
+}

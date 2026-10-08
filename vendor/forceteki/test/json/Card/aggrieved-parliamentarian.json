@@ -1,0 +1,36 @@
+{
+  "title": "Aggrieved Parliamentarian",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: Choose an opponent. They shuffle their discard pile and put it on the bottom of their deck.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2535372432",
+  "aspects": [],
+  "traits": [
+    "separatist",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 252
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 252
+    }
+  ],
+  "internalName": "aggrieved-parliamentarian"
+}

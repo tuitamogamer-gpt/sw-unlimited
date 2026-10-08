@@ -1,0 +1,37 @@
+{
+  "title": "Karabast",
+  "subtitle": null,
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "A friendly unit deals damage to an enemy unit equal to the amount of damage on the friendly unit plus 1.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6515891401",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "spectre"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 151
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 151
+    }
+  ],
+  "internalName": "karabast"
+}

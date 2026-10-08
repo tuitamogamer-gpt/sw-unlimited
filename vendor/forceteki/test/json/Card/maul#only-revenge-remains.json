@@ -1,0 +1,39 @@
+{
+  "title": "Maul",
+  "subtitle": "Only Revenge Remains",
+  "cost": 4,
+  "hp": 6,
+  "power": 6,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3460896271",
+  "aspects": [
+    "aggression",
+    "aggression"
+  ],
+  "traits": [
+    "force",
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 174
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 174
+    }
+  ],
+  "internalName": "maul#only-revenge-remains"
+}

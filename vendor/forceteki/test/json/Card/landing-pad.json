@@ -1,0 +1,36 @@
+{
+  "title": "Landing Pad",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 0,
+  "power": 0,
+  "text": "Fortify (Attach this to your base, not a unit.)\nAttached base gains: “Friendly space units get +1/+0.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "0920001727",
+  "aspects": [],
+  "traits": [
+    "fortification"
+  ],
+  "keywords": [
+    "fortify"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 271
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 271
+    }
+  ],
+  "internalName": "landing-pad"
+}

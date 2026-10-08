@@ -1,0 +1,41 @@
+{
+  "title": "Doctor Evazan",
+  "subtitle": "Wanted on Twelve Systems",
+  "cost": 2,
+  "hp": 3,
+  "power": 3,
+  "text": "Shielded (When you play this unit, give a Shield token to him.)\nBounty — Ready up to 12 resources. (When this unit is defeated or captured, your opponent collects his bounty.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6135081953",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded",
+    "bounty"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 185
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 185
+    }
+  ],
+  "internalName": "doctor-evazan#wanted-on-twelve-systems"
+}

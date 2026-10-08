@@ -1,0 +1,40 @@
+{
+  "title": "Kage Elite",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 2,
+  "text": "Raid 2 (This unit gets +2/+0 while attacking.)\nSaboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6715387845",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid",
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 234
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 234
+    }
+  ],
+  "internalName": "kage-elite"
+}

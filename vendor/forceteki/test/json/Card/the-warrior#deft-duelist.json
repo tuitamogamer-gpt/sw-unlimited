@@ -1,0 +1,41 @@
+{
+  "title": "The Warrior",
+  "subtitle": "Deft Duelist",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "Action [1 resource, Exhaust]: Play a unit with 3 or less power from your hand (paying its cost) and give it Ambush for this phase.",
+  "deployBox": "Ambush (When you deploy this leader, she may immediately attack an enemy unit.)\nRaid 1 (This unit gets +1/+0 while attacking.)",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Abilities that let you play a card require you to pay that card’s cost unless specified otherwise.\nWhen playing a card using The Warrior's ability, determine its power without applying modifiers from active effects in play that don't specifically reference cards in your hand.\nAmbush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2327086062",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "tusken"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush",
+    "raid"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 18
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 18
+    }
+  ],
+  "internalName": "the-warrior#deft-duelist"
+}

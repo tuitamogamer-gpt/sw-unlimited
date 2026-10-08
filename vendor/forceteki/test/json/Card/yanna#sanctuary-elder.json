@@ -1,0 +1,41 @@
+{
+  "title": "Yanna",
+  "subtitle": "Sanctuary Elder",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "Grit (This unit gets +1/+0 for each damage on her.)\nRestore 1 (When this unit attacks, heal 1 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1137833146",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit",
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 76
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 76
+    }
+  ],
+  "internalName": "yanna#sanctuary-elder"
+}

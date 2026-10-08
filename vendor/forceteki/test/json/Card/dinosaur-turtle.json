@@ -1,0 +1,37 @@
+{
+  "title": "Dinosaur Turtle",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 7,
+  "power": 7,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9890561214",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 131
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 131
+    }
+  ],
+  "internalName": "dinosaur-turtle"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Ketsu Onyo",
+  "subtitle": "Old Friend",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "Saboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)\nWhen this unit deals combat damage to a base: You may defeat an upgrade that costs 2 or less.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nCombat damage” is only the damage dealt during the “deal combat damage” step of an attack.\nWhen Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4595532978",
+  "aspects": [
+    "heroism",
+    "aggression"
+  ],
+  "traits": [
+    "mandalorian",
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 147
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 147
+    }
+  ],
+  "internalName": "ketsu-onyo#old-friend"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Underestimated",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 2,
+  "text": "Attach to a unit that costs 4 or less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": 2,
+  "upgradeHp": 1,
+  "id": "0122156036",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 79
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 79
+    }
+  ],
+  "internalName": "underestimated"
+}

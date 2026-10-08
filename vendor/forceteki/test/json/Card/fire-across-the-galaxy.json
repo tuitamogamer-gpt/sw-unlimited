@@ -1,0 +1,36 @@
+{
+  "title": "Fire Across the Galaxy",
+  "subtitle": "",
+  "cost": 6,
+  "hp": null,
+  "power": null,
+  "text": "Use any number of “When Played” abilities on friendly Spectre units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Any ability whose trigger starts with \"When played…\" is considered a \"When Played\" ability.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3669825370",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "spectre"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 256
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 256
+    }
+  ],
+  "internalName": "fire-across-the-galaxy"
+}

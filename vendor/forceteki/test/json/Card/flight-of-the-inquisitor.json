@@ -1,0 +1,36 @@
+{
+  "title": "Flight of the Inquisitor",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "You may return a Force unit and a Lightsaber upgrade from your discard pile to your hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1393713161",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 240
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 240
+    }
+  ],
+  "internalName": "flight-of-the-inquisitor"
+}

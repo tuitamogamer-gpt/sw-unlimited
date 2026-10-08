@@ -1,0 +1,41 @@
+{
+  "title": "Captain Tarpals",
+  "subtitle": "Grand Army Captain",
+  "cost": 1,
+  "hp": 2,
+  "power": 0,
+  "text": "Shielded (When you play this unit, give a Shield token to him.)\nRaid 2 (This unit gets +2/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9307938996",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "gungan",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded",
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 254
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 254
+    }
+  ],
+  "internalName": "captain-tarpals#grand-army-captain"
+}

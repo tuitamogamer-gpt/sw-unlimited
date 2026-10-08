@@ -1,0 +1,38 @@
+{
+  "title": "Mining Guild Trespasser",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 5,
+  "power": 5,
+  "text": "When Played: You may deal 2 damage to a base and 2 damage to an enemy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8252724583",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 186
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 186
+    }
+  ],
+  "internalName": "mining-guild-trespasser"
+}

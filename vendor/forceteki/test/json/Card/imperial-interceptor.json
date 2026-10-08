@@ -1,0 +1,40 @@
+{
+  "title": "Imperial Interceptor",
+  "subtitle": null,
+  "cost": 4,
+  "hp": 2,
+  "power": 3,
+  "text": "When Played: You may deal 3 damage to a space unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9002021213",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 132
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 132
+    }
+  ],
+  "internalName": "imperial-interceptor"
+}

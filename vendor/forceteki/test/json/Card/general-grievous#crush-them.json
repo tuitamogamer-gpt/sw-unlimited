@@ -1,0 +1,41 @@
+{
+  "title": "General Grievous",
+  "subtitle": "Crush Them!",
+  "cost": 5,
+  "hp": 0,
+  "power": 0,
+  "text": "This unit gets +1/+1 for each resource you control.\nWhile this unit is undamaged, he gains Sentinel. (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2292638343",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 50
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 50
+    }
+  ],
+  "internalName": "general-grievous#crush-them"
+}

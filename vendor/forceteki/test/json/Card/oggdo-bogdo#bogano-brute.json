@@ -1,0 +1,37 @@
+{
+  "title": "Oggdo Bogdo",
+  "subtitle": "Bogano Brute",
+  "cost": 3,
+  "hp": 5,
+  "power": 5,
+  "text": "This unit can't attack unless it's damaged.\nWhen this unit attacks and defeats a unit: Heal 2 damage from this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "When Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2508430135",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 63
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 63
+    }
+  ],
+  "internalName": "oggdo-bogdo#bogano-brute"
+}

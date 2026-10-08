@@ -1,0 +1,36 @@
+{
+  "title": "Administrator's Tower",
+  "subtitle": null,
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": null,
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8129465864",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "cloud city"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 29
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 29
+    }
+  ],
+  "internalName": "administrators-tower"
+}

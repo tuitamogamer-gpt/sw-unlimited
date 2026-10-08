@@ -1,0 +1,28 @@
+{
+  "title": "Advantage",
+  "subtitle": "",
+  "cost": 0,
+  "hp": 0,
+  "power": 1,
+  "text": "When attached unit's attack or defense ends: Defeat this upgrade.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "When Attack Ends/When Defense Ends abilities trigger at the same time as units deal combat damage.\n",
+  "upgradePower": 1,
+  "upgradeHp": 0,
+  "id": "5844562972",
+  "aspects": [],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "token",
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH"
+  },
+  "internalName": "advantage"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Rebel Propagandist",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "When Played/When Defeated: Give another friendly unit +1/+0 and Saboteur for this phase. (When that unit attacks, ignore Sentinel and defeat the defender's Shields.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2292355369",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 202
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 202
+    }
+  ],
+  "internalName": "rebel-propagandist"
+}

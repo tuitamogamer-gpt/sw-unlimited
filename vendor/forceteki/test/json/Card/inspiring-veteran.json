@@ -1,0 +1,39 @@
+{
+  "title": "Inspiring Veteran",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "When Played: Give an Advantage token to each of up to 3 exhausted units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2631235511",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "resistance",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 205
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 205
+    }
+  ],
+  "internalName": "inspiring-veteran"
+}

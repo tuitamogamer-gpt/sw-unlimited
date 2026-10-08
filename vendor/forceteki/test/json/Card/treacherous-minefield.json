@@ -1,0 +1,36 @@
+{
+  "title": "Treacherous Minefield",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Choose an arena. For this phase, each unit in that arena gains: “On Attack: Deal 2 damage to this unit.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Treacherous Minefield gives the \"\"On Attack\"\" ability to each unit in the chosen arena when the event is played. Units that enter play after the event is played don't gain the \"\"On Attack\"\" ability.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3174645451",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 186
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 186
+    }
+  ],
+  "internalName": "treacherous-minefield"
+}

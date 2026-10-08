@@ -1,0 +1,37 @@
+{
+  "title": "Doctor Aphra",
+  "subtitle": "Digging For Answers",
+  "cost": 4,
+  "hp": 5,
+  "power": 4,
+  "text": "On Attack: Discard 3 cards from your deck. You may return an Underworld card discarded this way to your hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Always discard from the top of a deck, unless an ability specifies otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4883890091",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 194
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 194
+    }
+  ],
+  "internalName": "doctor-aphra#digging-for-answers"
+}

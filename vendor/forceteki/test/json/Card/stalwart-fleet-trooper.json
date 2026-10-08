@@ -1,0 +1,40 @@
+{
+  "title": "Stalwart Fleet Trooper",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4055046222",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 254
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 254
+    }
+  ],
+  "internalName": "stalwart-fleet-trooper"
+}

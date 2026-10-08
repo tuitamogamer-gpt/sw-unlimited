@@ -1,0 +1,40 @@
+{
+  "title": "Wing Guard Security Team",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 4,
+  "power": 4,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)\nWhen Played: Give a Shield token to each of up to 2 Fringe units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7508489374",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "fringe",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 72
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 72
+    }
+  ],
+  "internalName": "wing-guard-security-team"
+}

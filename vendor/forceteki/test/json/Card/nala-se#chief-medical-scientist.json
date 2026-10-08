@@ -1,0 +1,37 @@
+{
+  "title": "Nala Se",
+  "subtitle": "Chief Medical Scientist",
+  "cost": 5,
+  "hp": 7,
+  "power": 4,
+  "text": "On Attack: You may disclose VigilanceVigilance (reveal cards from your hand with these aspect icons among them). If you do, heal up to 4 damage from among other units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0644276722",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "kaminoan"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 65
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 65
+    }
+  ],
+  "internalName": "nala-se#chief-medical-scientist"
+}

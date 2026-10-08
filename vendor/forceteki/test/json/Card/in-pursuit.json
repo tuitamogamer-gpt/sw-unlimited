@@ -1,0 +1,36 @@
+{
+  "title": "In Pursuit",
+  "subtitle": "",
+  "cost": 0,
+  "hp": null,
+  "power": null,
+  "text": "Exhaust a friendly unit. If you do, exhaust an enemy unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6401761275",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 221
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 221
+    }
+  ],
+  "internalName": "in-pursuit"
+}

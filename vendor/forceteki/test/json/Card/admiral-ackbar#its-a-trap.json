@@ -1,0 +1,39 @@
+{
+  "title": "Admiral Ackbar",
+  "subtitle": "It's A Trap!",
+  "cost": 6,
+  "hp": 8,
+  "power": 3,
+  "text": "Action [1 resource, Exhaust]: Exhaust a non-leader unit. If you do, its controller creates an X-Wing token.",
+  "deployBox": "On Attack: You may exhaust a unit. If you do, its controller creates an X-Wing token.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7514405173",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 16
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 16
+    }
+  ],
+  "internalName": "admiral-ackbar#its-a-trap"
+}

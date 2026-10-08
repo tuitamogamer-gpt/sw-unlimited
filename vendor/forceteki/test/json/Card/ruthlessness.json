@@ -1,0 +1,37 @@
+{
+  "title": "Ruthlessness",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 0,
+  "power": 2,
+  "text": "Attached unit gains: “When this unit attacks and defeats a unit: Deal 2 damage to the defending player's base.”",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "A unit “attacks and defeats a unit” if it defeats the defender at any point during the attack.\nWhen Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve\n(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": 2,
+  "upgradeHp": 0,
+  "id": "4897501399",
+  "aspects": [
+    "villainy",
+    "aggression"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 143
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 143
+    }
+  ],
+  "internalName": "ruthlessness"
+}

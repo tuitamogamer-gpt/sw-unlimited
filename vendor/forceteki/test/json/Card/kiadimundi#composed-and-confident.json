@@ -1,0 +1,41 @@
+{
+  "title": "Ki-Adi-Mundi",
+  "subtitle": "Composed and Confident",
+  "cost": 5,
+  "hp": 7,
+  "power": 5,
+  "text": "Coordinate — When an opponent plays their second card each phase: You may draw 2 cards.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7200475001",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "coordinate"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 64
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 64
+    }
+  ],
+  "internalName": "kiadimundi#composed-and-confident"
+}

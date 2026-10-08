@@ -1,0 +1,36 @@
+{
+  "title": "Unmasking the Conspiracy",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Discard a card from your hand. If you do, look at an opponent's hand and discard a card from it.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0959549331",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 223
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 223
+    }
+  ],
+  "internalName": "unmasking-the-conspiracy"
+}

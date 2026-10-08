@@ -1,0 +1,45 @@
+{
+  "title": "Chewbacca",
+  "subtitle": "Rrruuuurrr",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1112130807",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 3
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 3
+    },
+    {
+      "set": "IBH",
+      "number": 46
+    }
+  ],
+  "internalName": "chewbacca#rrruuuurrr"
+}

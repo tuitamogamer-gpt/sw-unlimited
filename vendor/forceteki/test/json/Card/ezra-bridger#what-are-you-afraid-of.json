@@ -1,0 +1,40 @@
+{
+  "title": "Ezra Bridger",
+  "subtitle": "What Are You Afraid Of?",
+  "cost": 4,
+  "hp": 4,
+  "power": 5,
+  "text": "When you take the initiative: You may deal 3 damage to your base. If you do, create a Beast token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7046829720",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "rebel",
+    "spectre"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 168
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 168
+    }
+  ],
+  "internalName": "ezra-bridger#what-are-you-afraid-of"
+}

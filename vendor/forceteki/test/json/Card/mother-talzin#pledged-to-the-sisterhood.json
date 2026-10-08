@@ -1,0 +1,42 @@
+{
+  "title": "Mother Talzin",
+  "subtitle": "Pledged to the Sisterhood",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "Raid 1\nEach other friendly unit gains Restore 1.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7923280265",
+  "aspects": [
+    "vigilance",
+    "aggression"
+  ],
+  "traits": [
+    "force",
+    "night"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid",
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 39
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 39
+    }
+  ],
+  "internalName": "mother-talzin#pledged-to-the-sisterhood"
+}

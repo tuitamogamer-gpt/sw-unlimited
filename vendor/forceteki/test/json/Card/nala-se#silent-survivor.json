@@ -1,0 +1,38 @@
+{
+  "title": "Nala Se",
+  "subtitle": "Silent Survivor",
+  "cost": 2,
+  "hp": 7,
+  "power": 1,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5691187672",
+  "aspects": [
+    "vigilance",
+    "vigilance"
+  ],
+  "traits": [
+    "kaminoan"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 82
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 82
+    }
+  ],
+  "internalName": "nala-se#silent-survivor"
+}

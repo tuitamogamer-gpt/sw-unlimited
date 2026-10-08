@@ -1,0 +1,40 @@
+{
+  "title": "Target the Main Generator",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Deal 2 damage to a base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8290455967",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 59
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 59
+    },
+    {
+      "set": "IBH",
+      "number": 71
+    }
+  ],
+  "internalName": "target-the-main-generator"
+}

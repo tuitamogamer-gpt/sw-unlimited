@@ -1,0 +1,37 @@
+describe('Greef Karga, Affable Commissioner', function() {
+    integration(function(contextRef) {
+        describe('Greef Karga\'s Ability', function() {
+            beforeEach(function () {
+                return contextRef.setupTestAsync({
+                    phase: 'action',
+                    player1: {
+                        hand: ['greef-karga#affable-commissioner'],
+                        deck: ['foundling', 'pyke-sentinel', 'atst', 'cartel-spacer', 'battlefield-marine']
+                    }
+                });
+            });
+
+            it('can draw upgrade', function () {
+                const { context } = contextRef;
+
+                context.player1.clickCard(context.greefKarga);
+
+                expect(context.player1).toHaveExactDisplayPromptCards({
+                    selectable: [context.foundling],
+                    invalid: [context.pykeSentinel, context.atst, context.battlefieldMarine, context.cartelSpacer]
+                });
+                expect(context.player1).not.toHaveEnabledPromptButton('Done');
+                expect(context.player1).toHaveEnabledPromptButton('Take nothing');
+
+                context.player1.clickCardInDisplayCardPrompt(context.foundling);
+
+                // P2 is prompted to see the revealed card
+                expect(context.player2).toHaveExactViewableDisplayPromptCards([context.foundling]);
+                context.player2.clickDone();
+
+                expect(context.foundling).toBeInZone('hand');
+                expect(context.getChatLog()).toContain('player1 uses Greef Karga to reveal and draw Foundling');
+            });
+        });
+    });
+});

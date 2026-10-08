@@ -1,0 +1,42 @@
+{
+  "title": "Raddus",
+  "subtitle": "Holdo's Final Command",
+  "cost": 7,
+  "hp": 6,
+  "power": 8,
+  "text": "While you control another Resistance card (unit, upgrade, or leader), this unit gains Sentinel.\nWhen Defeated: Deal damage equal to this unit's power to an enemy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Damage dealt by Raddus' \"When Defeated\" ability includes any modifiers to Raddus' power when it was defeated.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8779760486",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "resistance",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 104
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 104
+    }
+  ],
+  "internalName": "raddus#holdos-final-command"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Droid Laser Turret",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 1,
+  "power": 2,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)\nShielded (When you play this unit, give a Shield token to it.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0617956264",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel",
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 118
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 118
+    }
+  ],
+  "internalName": "droid-laser-turret"
+}

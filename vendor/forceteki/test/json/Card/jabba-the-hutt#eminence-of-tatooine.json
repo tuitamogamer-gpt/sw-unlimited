@@ -1,0 +1,42 @@
+{
+  "title": "Jabba the Hutt",
+  "subtitle": "Eminence of Tatooine",
+  "cost": 4,
+  "hp": 6,
+  "power": 2,
+  "text": "Restore 2\nWhen Played: You may return an upgrade to its owner's hand. If it's returned to your hand, you may play it for free.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that return a card to hand must choose a card in play unless otherwise specified.\n“Play for free” ignores all resource costs, including the aspect penalty, but not other additional costs.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7317430733",
+  "aspects": [
+    "cunning",
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "hutt"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 42
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 42
+    }
+  ],
+  "internalName": "jabba-the-hutt#eminence-of-tatooine"
+}

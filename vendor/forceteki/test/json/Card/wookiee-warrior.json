@@ -1,0 +1,39 @@
+{
+  "title": "Wookiee Warrior",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 5,
+  "power": 2,
+  "text": "Grit (This unit gets +1/+0 for each damage on it.)\nWhen Played: If you control another Wookiee unit, draw a card.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1477806735",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 249
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 249
+    }
+  ],
+  "internalName": "wookiee-warrior"
+}

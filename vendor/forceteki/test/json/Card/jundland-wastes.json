@@ -1,0 +1,36 @@
+{
+  "title": "Jundland Wastes",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8087001946",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tatooine"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 28
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 28
+    }
+  ],
+  "internalName": "jundland-wastes"
+}

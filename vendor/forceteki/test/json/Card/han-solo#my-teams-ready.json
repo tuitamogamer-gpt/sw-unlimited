@@ -1,0 +1,39 @@
+{
+  "title": "Han Solo",
+  "subtitle": "My Team's Ready",
+  "cost": 5,
+  "hp": 7,
+  "power": 4,
+  "text": "Action [Exhaust]: Ready another unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2192872798",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 170
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 170
+    }
+  ],
+  "internalName": "han-solo#my-teams-ready"
+}

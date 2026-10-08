@@ -1,0 +1,39 @@
+{
+  "title": "Fambaa Shield Team",
+  "subtitle": "",
+  "cost": 7,
+  "hp": 7,
+  "power": 4,
+  "text": "When Played: Give a Shield token to each friendly ground unit without a Shield token on it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1962406139",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "creature",
+    "gungan"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 80
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 80
+    }
+  ],
+  "internalName": "fambaa-shield-team"
+}

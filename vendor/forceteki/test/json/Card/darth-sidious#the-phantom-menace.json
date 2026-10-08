@@ -1,0 +1,42 @@
+{
+  "title": "Darth Sidious",
+  "subtitle": "The Phantom Menace",
+  "cost": 8,
+  "hp": 8,
+  "power": 6,
+  "text": "Restore 2 (When this unit attacks, heal 2 damage from your base.)\nWhen Played: You may use the Force. If you do, defeat each non-Sith unit with 3 or less remaining HP.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6797297267",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "separatist",
+    "sith"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 39
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 39
+    }
+  ],
+  "internalName": "darth-sidious#the-phantom-menace"
+}

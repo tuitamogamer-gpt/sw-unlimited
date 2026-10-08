@@ -1,0 +1,40 @@
+{
+  "title": "Repair",
+  "subtitle": null,
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Heal 3 damage from a unit or base.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8679831560",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 75
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 74
+    },
+    {
+      "set": "JTL",
+      "number": 75
+    }
+  ],
+  "internalName": "repair"
+}

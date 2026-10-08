@@ -1,0 +1,36 @@
+{
+  "title": "Windfall",
+  "subtitle": "",
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "Create 3 Credit tokens.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3232608976",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 248
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 248
+    }
+  ],
+  "internalName": "windfall"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Stockpile",
+  "subtitle": "",
+  "cost": 6,
+  "hp": null,
+  "power": null,
+  "text": "Resource this event and the top card of your deck.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Resources enter play exhausted.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8221105498",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 171
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 171
+    }
+  ],
+  "internalName": "stockpile"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Vaneé",
+  "subtitle": "I Live to Serve",
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "When Played/On Attack: You may defeat an Experience token on a friendly unit. If you do, give an Experience token to a friendly unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "You may choose to defeat an Experience token on and give an Experience token to the same unit.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0398004943",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "sith",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 82
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 82
+    }
+  ],
+  "internalName": "vanee#i-live-to-serve"
+}

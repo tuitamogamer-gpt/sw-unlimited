@@ -1,0 +1,36 @@
+{
+  "title": "Gifted Urchin",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9014610567",
+  "aspects": [],
+  "traits": [
+    "force",
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 256
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 256
+    }
+  ],
+  "internalName": "gifted-urchin"
+}

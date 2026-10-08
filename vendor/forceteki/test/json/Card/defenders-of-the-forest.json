@@ -1,0 +1,40 @@
+{
+  "title": "Defenders of the Forest",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 3,
+  "power": 5,
+  "text": "Ambush (When you play this unit, it may attack an enemy unit.)\nOverwhelm (When attacking an enemy unit, deal excess damage to the opponent's base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\nAmbush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7572957828",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "ewok"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush",
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 129
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 129
+    }
+  ],
+  "internalName": "defenders-of-the-forest"
+}

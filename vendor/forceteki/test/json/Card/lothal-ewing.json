@@ -1,0 +1,42 @@
+{
+  "title": "Lothal E-Wing",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "While an enemy unit is upgraded, this unit gains Restore 2. (When this unit attacks, heal 2 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6287790677",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "new republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 57
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 57
+    }
+  ],
+  "internalName": "lothal-ewing"
+}

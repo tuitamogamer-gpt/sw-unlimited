@@ -1,0 +1,42 @@
+{
+  "title": "Home One",
+  "subtitle": "Alliance Flagship",
+  "cost": 8,
+  "hp": 7,
+  "power": 7,
+  "text": "Restore 2\n\nEach other friendly unit gains Restore 1.\n\nWhen Played: Play a [Heroism] unit from your discard pile. It costs [3 resources] less.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4919000710",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 102
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 102
+    }
+  ],
+  "internalName": "home-one#alliance-flagship"
+}

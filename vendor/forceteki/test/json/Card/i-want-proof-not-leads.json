@@ -1,0 +1,41 @@
+{
+  "title": "I Want Proof, Not Leads",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Draw 2 cards, then discard a card from your hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2796502553",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 74
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 74
+    },
+    {
+      "set": "IBH",
+      "number": 102
+    }
+  ],
+  "internalName": "i-want-proof-not-leads"
+}

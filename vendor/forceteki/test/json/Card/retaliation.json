@@ -1,0 +1,36 @@
+{
+  "title": "Retaliation",
+  "subtitle": "",
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "Defeat a unit that dealt damage to a base this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1095143323",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 77
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 77
+    }
+  ],
+  "internalName": "retaliation"
+}

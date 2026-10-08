@@ -1,0 +1,40 @@
+{
+  "title": "Remnant Official",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "Restore 2 (When this unit attacks, heal 2 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9848866699",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 76
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 76
+    }
+  ],
+  "internalName": "remnant-official"
+}

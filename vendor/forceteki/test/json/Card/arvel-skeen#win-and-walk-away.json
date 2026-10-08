@@ -1,0 +1,37 @@
+{
+  "title": "Arvel Skeen",
+  "subtitle": "Win and Walk Away",
+  "cost": 3,
+  "hp": 3,
+  "power": 4,
+  "text": "When Played/On Attack: You may defeat a Credit token (belonging to any player). If you do, deal 1 damage to a unit or base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5253255222",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 191
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 191
+    }
+  ],
+  "internalName": "arvel-skeen#win-and-walk-away"
+}

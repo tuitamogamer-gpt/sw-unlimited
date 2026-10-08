@@ -1,0 +1,39 @@
+{
+  "title": "Sinister War Memorial",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 0,
+  "power": 0,
+  "text": "Fortify (Attach this to your base, not a unit.)\nAttached base gains: “When a friendly unit is defeated: Heal 1 damage from this base.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "3798257647",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "fortification"
+  ],
+  "keywords": [
+    "fortify"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 113
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 113
+    }
+  ],
+  "internalName": "sinister-war-memorial"
+}

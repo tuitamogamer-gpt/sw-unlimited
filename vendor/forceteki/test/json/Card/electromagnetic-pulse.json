@@ -1,0 +1,36 @@
+{
+  "title": "Electromagnetic Pulse",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Deal 2 damage to a Droid or Vehicle unit and exhaust it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4819196588",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 230
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 230
+    }
+  ],
+  "internalName": "electromagnetic-pulse"
+}

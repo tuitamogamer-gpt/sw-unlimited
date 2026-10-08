@@ -1,0 +1,39 @@
+{
+  "title": "Jaunty Light Freighter",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 1,
+  "power": 1,
+  "text": "When Played: Give an Experience token to this unit for each different aspect among units you control.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1925389607",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 147
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 147
+    }
+  ],
+  "internalName": "jaunty-light-freighter"
+}

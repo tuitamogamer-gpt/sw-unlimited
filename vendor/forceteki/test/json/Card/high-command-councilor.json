@@ -1,0 +1,40 @@
+{
+  "title": "High Command Councilor",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "While you control another Official unit, this unit gains Raid 2. (It gets +2/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9716623420",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 249
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 249
+    }
+  ],
+  "internalName": "high-command-councilor"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "The Inquisitor's TIE",
+  "subtitle": "Would Rather Win",
+  "cost": 4,
+  "hp": 5,
+  "power": 4,
+  "text": "mock ability text",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "the-inquisitors-tie#would-rather-win-id",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "fighter",
+    "inquisitor"
+  ],
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 104
+  },
+  "internalName": "the-inquisitors-tie#would-rather-win",
+  "arena": "space",
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 104
+    }
+  ]
+}

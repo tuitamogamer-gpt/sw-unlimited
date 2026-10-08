@@ -1,0 +1,42 @@
+{
+  "title": "Obi-Wan Kenobi",
+  "subtitle": "Protective Padawan",
+  "cost": 3,
+  "hp": 5,
+  "power": 3,
+  "text": "When you play a Force unit (including this one): This unit gains Sentinel for this phase. ",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6059510270",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 96
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 96
+    }
+  ],
+  "internalName": "obiwan-kenobi#protective-padawan"
+}

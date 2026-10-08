@@ -1,0 +1,41 @@
+{
+  "title": "V-19 Skirmisher",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "While you control 3 or more units, this unit gains Sentinel. (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2814980803",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 137
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 137
+    }
+  ],
+  "internalName": "v19-skirmisher"
+}

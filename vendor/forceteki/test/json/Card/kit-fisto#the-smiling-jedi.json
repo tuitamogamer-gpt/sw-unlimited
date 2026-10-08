@@ -1,0 +1,42 @@
+{
+  "title": "Kit Fisto",
+  "subtitle": "The Smiling Jedi",
+  "cost": 6,
+  "hp": 6,
+  "power": 7,
+  "text": "Saboteur\nCoordinate — On Attack: You may deal 3 damage to a ground unit. (Gain this ability while you control 3 or more units.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1641175580",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur",
+    "coordinate"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 165
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 165
+    }
+  ],
+  "internalName": "kit-fisto#the-smiling-jedi"
+}

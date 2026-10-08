@@ -1,0 +1,41 @@
+{
+  "title": "Fang Fighter Squadron",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 5,
+  "text": "Support (When you play this unit, you may attack with another unit. It gains this unit's other abilities for this attack.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6082600222",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "mandalorian",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "support"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 130
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 130
+    }
+  ],
+  "internalName": "fang-fighter-squadron"
+}

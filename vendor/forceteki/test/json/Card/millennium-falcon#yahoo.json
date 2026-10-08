@@ -1,0 +1,40 @@
+{
+  "title": "Millennium Falcon",
+  "subtitle": "YA-HOO!",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "mock ability text",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "millennium-falcon#yahoo-id",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "transport"
+  ],
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 158
+  },
+  "internalName": "millennium-falcon#yahoo",
+  "arena": "space",
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 158
+    }
+  ]
+}

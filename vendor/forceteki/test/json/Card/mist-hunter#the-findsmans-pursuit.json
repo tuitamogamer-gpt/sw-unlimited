@@ -1,0 +1,40 @@
+{
+  "title": "Mist Hunter",
+  "subtitle": "The Findsman's Pursuit",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "On Attack: If you played a Bounty Hunter or Pilot card this phase, you may draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7192849828",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 186
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 186
+    }
+  ],
+  "internalName": "mist-hunter#the-findsmans-pursuit"
+}

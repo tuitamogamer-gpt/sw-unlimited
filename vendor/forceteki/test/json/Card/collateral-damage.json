@@ -1,0 +1,36 @@
+{
+  "title": "Collateral Damage",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Deal 2 damage to a unit. Then, deal 2 damage to a base or another unit in the same arena.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3101172453",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "disaster"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 208
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 208
+    }
+  ],
+  "internalName": "collateral-damage"
+}

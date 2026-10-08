@@ -1,0 +1,41 @@
+{
+  "title": "Leia Organa",
+  "subtitle": "Pilots, To Your Stations",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "Restore 1 (When this unit attacks, heal 1 damage from your base.)\nWhen Played: You may attack with a Pilot unit or a unit with a Pilot on it. It gets +1/+0 and gains Restore 1 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7924461681",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 97
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 97
+    }
+  ],
+  "internalName": "leia-organa#pilots-to-your-stations"
+}

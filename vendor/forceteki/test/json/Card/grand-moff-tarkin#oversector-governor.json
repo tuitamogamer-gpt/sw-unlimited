@@ -1,0 +1,39 @@
+{
+  "title": "Grand Moff Tarkin",
+  "subtitle": "Oversector Governor",
+  "cost": 5,
+  "hp": 7,
+  "power": 2,
+  "text": "Action [1 resource, exhaust]: Give an Experience token to an Imperial unit.",
+  "deployBox": "On Attack: You may give an Experience token to another Imperial unit.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2912358777",
+  "aspects": [
+    "villainy",
+    "command"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 7
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 7
+    }
+  ],
+  "internalName": "grand-moff-tarkin#oversector-governor"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Vanquish",
+  "subtitle": null,
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "Defeat a non-leader unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6472095064",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 77
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 78
+    },
+    {
+      "set": "TWI",
+      "number": 77
+    }
+  ],
+  "internalName": "vanquish"
+}

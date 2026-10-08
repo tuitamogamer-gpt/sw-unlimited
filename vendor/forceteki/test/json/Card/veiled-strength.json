@@ -1,0 +1,38 @@
+{
+  "title": "Veiled Strength",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 0,
+  "power": 0,
+  "text": "Attach to a non-leader unit.\nAttached unit gains Grit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "7057086144",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 128
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 128
+    }
+  ],
+  "internalName": "veiled-strength"
+}

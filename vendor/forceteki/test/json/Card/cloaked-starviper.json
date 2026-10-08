@@ -1,0 +1,39 @@
+{
+  "title": "Cloaked StarViper",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 2,
+  "power": 3,
+  "text": "When Played: Give 2 Shield tokens to this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1996597848",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 67
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 67
+    }
+  ],
+  "internalName": "cloaked-starviper"
+}

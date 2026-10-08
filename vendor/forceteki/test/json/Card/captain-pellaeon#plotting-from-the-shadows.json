@@ -1,0 +1,41 @@
+{
+  "title": "Captain Pellaeon",
+  "subtitle": "Plotting from the Shadows",
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "While a leader unit has been defeated this phase, this unit gains Raid 3. (He gets +3/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9744743320",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 93
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 93
+    }
+  ],
+  "internalName": "captain-pellaeon#plotting-from-the-shadows"
+}

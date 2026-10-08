@@ -1,0 +1,38 @@
+{
+  "title": "Mind Trick",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Exhaust any number of units with a combined power of 4 or less. If you control a Force unit, those units lose all abilities and can't gain abilities for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n(ERRATA) Templating update: “Lose all abilities and can't gain abilities” becomes “lose all abilities”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1146162009",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 202
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 202
+    }
+  ],
+  "internalName": "mind-trick"
+}

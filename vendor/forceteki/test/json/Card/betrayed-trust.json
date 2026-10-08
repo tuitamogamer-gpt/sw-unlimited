@@ -1,0 +1,36 @@
+{
+  "title": "Betrayed Trust",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Choose an enemy unit. For this phase, that unit can't deal combat damage.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "“Combat damage” is only the damage dealt during the “deal combat damage” step of an attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7069221067",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 130
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 130
+    }
+  ],
+  "internalName": "betrayed-trust"
+}

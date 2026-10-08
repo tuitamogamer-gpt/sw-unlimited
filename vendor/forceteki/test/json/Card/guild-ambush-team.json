@@ -1,0 +1,39 @@
+{
+  "title": "Guild Ambush Team",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 4,
+  "power": 5,
+  "text": "Ambush (When you play this unit, it may attack an enemy unit.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0220114200",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 239
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 239
+    }
+  ],
+  "internalName": "guild-ambush-team"
+}

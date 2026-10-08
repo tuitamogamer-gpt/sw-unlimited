@@ -1,0 +1,40 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { INonLeaderUnitAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { NonLeaderUnitCard } from '../../../core/card/NonLeaderUnitCard';
+import { RelativePlayer } from '../../../core/Constants';
+
+export default class DjBlatantThief extends NonLeaderUnitCard {
+    protected override getImplementationId() {
+        return {
+            id: '4002861992',
+            internalName: 'dj#blatant-thief',
+        };
+    }
+
+    public override setupCardAbilities(registrar: INonLeaderUnitAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.addTriggeredAbility({
+            title: 'Take control of an enemy resource. When this unit leaves play, that resource\'s owner takes control of it.',
+            when: {
+                whenPlayedUsingSmuggle: true,
+            },
+            immediateEffect: AbilityHelper.immediateEffects.sequential((sequentialContext) => [
+                AbilityHelper.immediateEffects.takeControlOfResource((context) => ({ target: context.player })),
+                AbilityHelper.immediateEffects.whenSourceLeavesPlayDelayedCardEffect(() => ({
+                    title: 'Return the stolen resource to its owner',
+                    // we use a context handler here to force evaluation of the target's exhausted state to happen when the delayed effect resolves,
+                    // instead of when it's created
+                    target: sequentialContext.events[0]?.card,
+                    immediateEffect: AbilityHelper.immediateEffects.conditional({
+                        // the effect fizzles if the stolen card is no longer a resource (e.g. it was defeated) since there is nothing to return
+                        condition: () => sequentialContext.events[0]?.card.isResource(),
+                        onTrue: AbilityHelper.immediateEffects.resourceCard(() => ({
+                            targetPlayer: RelativePlayer.Opponent,
+                            target: sequentialContext.events[0]?.card,
+                            readyResource: !sequentialContext.events[0]?.card.exhausted
+                        }))
+                    })
+                }))
+            ])
+        });
+    }
+}

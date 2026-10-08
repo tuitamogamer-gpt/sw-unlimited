@@ -1,0 +1,39 @@
+{
+  "title": "Imposing Scout Walker",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 6,
+  "power": 4,
+  "text": "When Played: You may deal 3 damage to a ground unit. If it's defeated this way, give 3 Advantage tokens to this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8185107573",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "walker"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 176
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 176
+    }
+  ],
+  "internalName": "imposing-scout-walker"
+}

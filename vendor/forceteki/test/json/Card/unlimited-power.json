@@ -1,0 +1,37 @@
+{
+  "title": "Unlimited Power",
+  "subtitle": "",
+  "cost": 6,
+  "hp": null,
+  "power": null,
+  "text": "Deal 4 damage to a unit, 3 damage to a second unit, 2 damage to a third unit, and 1 damage to a fourth unit. (All damage is dealt simultaneously.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "All damage dealt by Unlimited Power is dealt simultaneously.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0056489820",
+  "aspects": [
+    "aggression",
+    "aggression"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 156
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 156
+    }
+  ],
+  "internalName": "unlimited-power"
+}

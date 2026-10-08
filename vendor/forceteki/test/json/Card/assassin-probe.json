@@ -1,0 +1,36 @@
+{
+  "title": "Assassin Probe",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 4,
+  "power": 4,
+  "text": "When Defeated: Deal 1 damage to each exhausted enemy ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6916352335",
+  "aspects": [],
+  "traits": [
+    "separatist",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 263
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 263
+    }
+  ],
+  "internalName": "assassin-probe"
+}

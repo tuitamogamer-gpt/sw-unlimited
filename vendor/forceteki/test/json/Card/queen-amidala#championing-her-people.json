@@ -1,0 +1,39 @@
+{
+  "title": "Queen Amidala",
+  "subtitle": "Championing Her People",
+  "cost": 5,
+  "hp": 3,
+  "power": 5,
+  "text": "When Played: Create 2 Spy tokens.\nIf damage would be dealt to this unit, you may defeat another friendly unit that shares a trait with this unit. If you do, prevent that damage.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "If Queen Amidala has a Shield attached to her, you can choose in what order to resolve the damage prevention effects.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2638173987",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "naboo",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 101
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 101
+    }
+  ],
+  "internalName": "queen-amidala#championing-her-people"
+}

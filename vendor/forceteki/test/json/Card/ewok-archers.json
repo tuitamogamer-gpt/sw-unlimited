@@ -1,0 +1,39 @@
+{
+  "title": "Ewok Archers",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 5,
+  "power": 2,
+  "text": "While you control another unit that costs 3 or less, this unit gains Ambush. (When you play this unit, it may attack an enemy unit.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nAmbush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0743602026",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "ewok"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 257
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 257
+    }
+  ],
+  "internalName": "ewok-archers"
+}

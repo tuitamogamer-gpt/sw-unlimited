@@ -1,0 +1,35 @@
+{
+  "title": "Hold-Out Blaster",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 0,
+  "power": 1,
+  "text": "Attach to a non-Vehicle unit.\nWhen Played: You may have attached unit deal 1 damage to a ground unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 0,
+  "id": "7280804443",
+  "aspects": [],
+  "traits": [
+    "item",
+    "weapon"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 256
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 256
+    }
+  ],
+  "internalName": "holdout-blaster"
+}

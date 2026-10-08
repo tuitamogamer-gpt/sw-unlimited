@@ -1,0 +1,41 @@
+{
+  "title": "Emperor Palpatine",
+  "subtitle": "Consolidating Power",
+  "cost": 5,
+  "hp": 2,
+  "power": 3,
+  "text": "When Played: You may take control of an enemy non-leader unit that costs 3 or less. If you do, give 2 Weakness tokens to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3322121916",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "imperial",
+    "sith",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 110
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 110
+    }
+  ],
+  "internalName": "emperor-palpatine#consolidating-power"
+}

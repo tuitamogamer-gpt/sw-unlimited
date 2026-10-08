@@ -1,0 +1,38 @@
+{
+  "title": "Lando Calrissian",
+  "subtitle": "Check This Out",
+  "cost": 3,
+  "hp": 4,
+  "power": 4,
+  "text": "mock ability text",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "lando-calrissian#check-this-out-id",
+  "aspects": [
+    "cunning",
+    "cunning"
+  ],
+  "traits": [
+    "official"
+  ],
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 167
+  },
+  "internalName": "lando-calrissian#check-this-out",
+  "arena": "ground",
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 167
+    }
+  ]
+}

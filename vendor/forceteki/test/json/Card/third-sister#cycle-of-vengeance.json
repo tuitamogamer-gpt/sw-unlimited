@@ -1,0 +1,43 @@
+{
+  "title": "Third Sister",
+  "subtitle": "Cycle of Vengeance",
+  "cost": 4,
+  "hp": 3,
+  "power": 6,
+  "text": "Overwhelm\nWhen Played: You may deal 2 damage to a unit. If you do, that unit's controller may deal 3 damage to a unit. If they do, that unit's controller may deal 4 damage to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6355999082",
+  "aspects": [
+    "aggression",
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "imperial",
+    "inquisitor"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 51
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 51
+    }
+  ],
+  "internalName": "third-sister#cycle-of-vengeance"
+}

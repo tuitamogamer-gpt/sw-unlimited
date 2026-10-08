@@ -1,0 +1,41 @@
+{
+  "title": "Imperial Deck Officer",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "Action [Exhaust]: Heal 2 damage from a Villainy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9508246309",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "imperial"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 62
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 62
+    },
+    {
+      "set": "IBH",
+      "number": 100
+    }
+  ],
+  "internalName": "imperial-deck-officer"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Gorian Shard's Corsair",
+  "subtitle": "Pirate Warship",
+  "cost": 6,
+  "hp": 5,
+  "power": 6,
+  "text": "Damage dealt by friendly Underworld cards is unpreventable.\nWhen Played/On Attack: You may deal 2 damage to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0689229976",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 196
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 196
+    }
+  ],
+  "internalName": "gorian-shards-corsair#pirate-warship"
+}

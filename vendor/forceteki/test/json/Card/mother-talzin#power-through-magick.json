@@ -1,0 +1,39 @@
+{
+  "title": "Mother Talzin",
+  "subtitle": "Power Through Magick",
+  "cost": 5,
+  "hp": 7,
+  "power": 3,
+  "text": "Action [Exhaust, use the Force (lose your Force token)]: Give a unit –1/–1 for this phase.",
+  "deployBox": "On Attack: You may give a unit –1/–1 for this phase.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2520636620",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "night"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 2
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 2
+    }
+  ],
+  "internalName": "mother-talzin#power-through-magick"
+}

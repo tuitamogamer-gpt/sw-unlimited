@@ -1,0 +1,40 @@
+{
+  "title": "Radiant VII",
+  "subtitle": "Negotiating for Naboo",
+  "cost": 6,
+  "hp": 7,
+  "power": 5,
+  "text": "When Played: You may deal 3 damage to this unit. If you do, give a Shield token to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7701528392",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 79
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 79
+    }
+  ],
+  "internalName": "radiant-vii#negotiating-for-naboo"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Shadowed Intentions",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 0,
+  "power": 0,
+  "text": "Attached unit gains: “This unit can't be captured, defeated, or returned to its owner's hand by enemy card abilities.”",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "9003830954",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 220
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 220
+    }
+  ],
+  "internalName": "shadowed-intentions"
+}

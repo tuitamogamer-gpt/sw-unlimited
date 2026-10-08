@@ -1,0 +1,41 @@
+{
+  "title": "Satine Kryze",
+  "subtitle": "Standing on Principles",
+  "cost": 5,
+  "hp": 8,
+  "power": 0,
+  "text": "Action [Exhaust]: Heal up to 2 damage from a unit. If you do, deal that much damage to your base.",
+  "deployBox": "Restore 4",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "You can use Satine's leader ability and choose to heal 0 damage from a unit, but if you do, you are not considered to have healed any damage.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2070613552",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 5
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 5
+    }
+  ],
+  "internalName": "satine-kryze#standing-on-principles"
+}

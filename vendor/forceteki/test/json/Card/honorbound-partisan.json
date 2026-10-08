@@ -1,0 +1,39 @@
+{
+  "title": "Honor-Bound Partisan",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: Deal 1 damage to a base.\nWhen Defeated: The next unit you play this phase costs 1 resource less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6722304652",
+  "aspects": [
+    "command",
+    "aggression"
+  ],
+  "traits": [
+    "rebel",
+    "twi'lek"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 58
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 58
+    }
+  ],
+  "internalName": "honorbound-partisan"
+}

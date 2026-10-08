@@ -1,0 +1,41 @@
+{
+  "title": "Bith Brute",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 4,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)\nSaboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2953532086",
+  "aspects": [
+    "vigilance",
+    "aggression"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel",
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 49
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 49
+    }
+  ],
+  "internalName": "bith-brute"
+}

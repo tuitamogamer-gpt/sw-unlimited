@@ -1,0 +1,42 @@
+{
+  "title": "Kylo Ren's Command Shuttle",
+  "subtitle": "Icon of Authority",
+  "cost": 4,
+  "hp": 5,
+  "power": 3,
+  "text": "Each friendly ground unit with Sentinel gets +0/+2.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9396057440",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "first order",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 32
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 32
+    }
+  ],
+  "internalName": "kylo-rens-command-shuttle#icon-of-authority"
+}

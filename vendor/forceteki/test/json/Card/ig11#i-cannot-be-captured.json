@@ -1,0 +1,38 @@
+{
+  "title": "IG-11",
+  "subtitle": "I Cannot Be Captured",
+  "cost": 5,
+  "hp": 5,
+  "power": 6,
+  "text": "If this unit would be captured, defeat him and deal 3 damage to each enemy ground unit instead.\nOn Attack: You may deal 3 damage to a damaged ground unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3417125055",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "droid",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 170
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 170
+    }
+  ],
+  "internalName": "ig11#i-cannot-be-captured"
+}

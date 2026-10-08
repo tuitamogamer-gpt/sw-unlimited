@@ -1,0 +1,49 @@
+{
+  "title": "Lambda Shuttle",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 5,
+  "power": 2,
+  "text": "Restore 1 (When this unit attacks, heal 1 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0008529481",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 58
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 58
+    },
+    {
+      "set": "IBH",
+      "number": 84
+    },
+    {
+      "set": "IBH",
+      "number": 90
+    }
+  ],
+  "internalName": "lambda-shuttle"
+}

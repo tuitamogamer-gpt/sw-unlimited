@@ -1,0 +1,36 @@
+{
+  "title": "Blood Sport",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Deal 2 damage to each ground unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2103133661",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 173
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 173
+    }
+  ],
+  "internalName": "blood-sport"
+}

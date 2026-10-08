@@ -1,0 +1,37 @@
+{
+  "title": "Let the Wookiee Win",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "An opponent chooses one:\n<bullet>You ready up to 6 resources.\nYou ready a friendly unit. If it's a Wookiee unit, attack with it. It gets +2/+0 for this attack.</bullet>",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "If there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7578472075",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 205
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 205
+    }
+  ],
+  "internalName": "let-the-wookiee-win"
+}

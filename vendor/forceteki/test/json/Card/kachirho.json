@@ -1,0 +1,36 @@
+{
+  "title": "Kachirho",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5618455889",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "kashyyyk"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 21
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 21
+    }
+  ],
+  "internalName": "kachirho"
+}

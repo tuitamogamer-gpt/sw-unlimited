@@ -1,0 +1,39 @@
+{
+  "title": "Mace Windu",
+  "subtitle": "Austere Centrist",
+  "cost": 3,
+  "hp": 5,
+  "power": 4,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0886129762",
+  "aspects": [
+    "command",
+    "command"
+  ],
+  "traits": [
+    "force",
+    "jedi"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 128
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 128
+    }
+  ],
+  "internalName": "mace-windu#austere-centrist"
+}

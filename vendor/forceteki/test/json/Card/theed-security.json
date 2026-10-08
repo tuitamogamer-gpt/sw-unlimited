@@ -1,0 +1,39 @@
+{
+  "title": "Theed Security",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "When Played: If an opponent controls an upgrade, give an Experience token to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9857313649",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "naboo",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 95
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 95
+    }
+  ],
+  "internalName": "theed-security"
+}

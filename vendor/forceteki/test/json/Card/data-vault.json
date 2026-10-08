@@ -1,0 +1,36 @@
+{
+  "title": "Data Vault",
+  "subtitle": "",
+  "cost": null,
+  "hp": 33,
+  "power": null,
+  "text": "Your minimum deck size is increased by 10 cards.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4028826022",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "scarif"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 24
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 24
+    }
+  ],
+  "internalName": "data-vault"
+}

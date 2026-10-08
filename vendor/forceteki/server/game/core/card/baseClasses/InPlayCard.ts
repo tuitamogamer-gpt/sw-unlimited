@@ -1,0 +1,607 @@
+import type { ICardDataJson } from '../../../../utils/cardData/CardDataInterfaces';
+import { FrameworkDefeatCardSystem } from '../../../gameSystems/FrameworkDefeatCardSystem';
+import { DefeatSourceType } from '../../../IDamageOrDefeatSource';
+import type { IAttachCardContext, IConstantAbilityProps, ITriggeredAbilityBaseProps, WhenTypeOrStandard } from '../../../Interfaces';
+import type { AbilityContext } from '../../ability/AbilityContext';
+import type { TriggeredAbilityBase } from '../../ability/TriggeredAbility';
+import type { GameEvent } from '../../event/GameEvent';
+import * as CardSelectorFactory from '../../cardSelector/CardSelectorFactory';
+import { CardType, EffectName, KeywordName, RelativePlayer, StandardTriggeredAbilityType, TargetMode, WildcardZoneName, ZoneName } from '../../Constants';
+import type { ISelectCardPromptProperties } from '../../gameSteps/PromptInterfaces';
+import { SelectCardMode } from '../../gameSteps/PromptInterfaces';
+import type { Player } from '../../Player';
+import { Contract } from '../../utils/Contract';
+import { EnumHelpers } from '../../utils/EnumHelpers';
+import { Helpers } from '../../utils/Helpers';
+import type { IBasicAbilityRegistrar, IInPlayCardAbilityRegistrar } from '../AbilityRegistrationInterfaces';
+import { InitializeCardStateOption, type Card } from '../Card';
+import type { ICardWithActionAbilities } from '../propertyMixins/ActionAbilityRegistration';
+import { WithAllAbilityTypes } from '../propertyMixins/AllAbilityTypeRegistrations';
+import type { ICardWithConstantAbilities, IConstantAbilityRegistrar } from '../propertyMixins/ConstantAbilityRegistration';
+import type { ICardWithCostProperty } from '../propertyMixins/Cost';
+import { WithCost } from '../propertyMixins/Cost';
+import type { ICardWithPreEnterPlayAbilities } from '../propertyMixins/PreEnterPlayAbilityRegistration';
+import type { ICardWithTriggeredAbilities, ITriggeredAbilityRegistrar } from '../propertyMixins/TriggeredAbilityRegistration';
+import type { IUnitCard } from '../propertyMixins/UnitProperties';
+import type { ICardWithUpgrades } from '../CardInterfaces';
+import type { IAdjustCostAbilityProps, IDecreaseCostAbilityProps, IIgnoreAllAspectPenaltiesProps, IIgnoreSpecificAspectPenaltyProps, IPlayableOrDeployableCard } from './PlayableOrDeployableCard';
+import { PlayableOrDeployableCard } from './PlayableOrDeployableCard';
+import { getPrintedAttributesOverride } from '../../ongoingEffect/effectImpl/PrintedAttributesOverride';
+import { registerStateBase, stateRef, stateRefArray, statePrimitive } from '../../GameObjectUtils';
+
+const InPlayCardParent = WithAllAbilityTypes(WithCost(PlayableOrDeployableCard));
+
+// required for mixins to be based on this class
+export type InPlayCardConstructor = new (...args: any[]) => InPlayCard;
+
+export interface IInPlayCard extends IPlayableOrDeployableCard, ICardWithCostProperty, ICardWithActionAbilities<IInPlayCard>, ICardWithConstantAbilities<IInPlayCard>, ICardWithTriggeredAbilities<IInPlayCard>, ICardWithPreEnterPlayAbilities {
+    get printedUpgradeHp(): number;
+    get printedUpgradePower(): number;
+    get disableOngoingEffectsForDefeat(): boolean;
+    get inPlayId(): number;
+    get mostRecentInPlayId(): number;
+    get parentCard(): ICardWithUpgrades;
+    get parentUnit(): IUnitCard;
+    get pendingDefeat(): boolean;
+    getUpgradeHp(): number;
+    getUpgradePower(): number;
+    isInPlay(): boolean;
+    registerPendingUniqueDefeat();
+    checkUnique();
+    attachTo(newParentCard: ICardWithUpgrades, newController?: Player);
+    isAttached(): boolean;
+    unattach(event?: any);
+    canAttach(targetCard: Card, context: AbilityContext, controller?: Player): boolean;
+    checkRegisterWhenAttackOrDefenseEndsAbilities(event: GameEvent): void;
+}
+
+/**
+ * Subclass of {@link Card} (via {@link PlayableOrDeployableCard}) that adds properties for cards that
+ * can be in any "in-play" zones (`SWU 4.9`). This encompasses all card types other than events or bases.
+ *
+ * The unique properties of in-play cards added by this subclass are:
+ * 1. "Ongoing" abilities, i.e., triggered abilities and constant abilities
+ * 2. Defeat state management
+ * 3. Uniqueness management
+ */
+@registerStateBase()
+export class InPlayCard extends InPlayCardParent implements IInPlayCard {
+    private readonly _printedUpgradeHp: number;
+    private readonly _printedUpgradePower: number;
+
+    protected attachCondition: (context: IAttachCardContext<this>) => boolean;
+
+    @stateRefArray()
+    private accessor _whenAttackOrDefenseEndsAbilities: readonly TriggeredAbilityBase[] | null = null;
+
+    @statePrimitive()
+    private accessor _disableOngoingEffectsForDefeat: boolean = null;
+
+    /**
+     * If true, then this card's ongoing effects are disabled in preparation for it to be defeated (usually due to unique rule).
+     * Triggered abilities are not disabled until it leaves the field.
+     *
+     * Can only be true if pendingDefeat is also true.
+     */
+    public get disableOngoingEffectsForDefeat() {
+        this.assertPropertyEnabledForZone(this._disableOngoingEffectsForDefeat, 'disableOngoingEffectsForDefeat');
+        return this._disableOngoingEffectsForDefeat;
+    }
+
+    @statePrimitive()
+    private accessor _mostRecentInPlayId: number = -1
+
+    /**
+     * Every time a card enters play, it becomes a new "copy" of the card as far as the game is concerned (SWU 8.6.4).
+     * This in-play id is used to distinguish copies of the card - every time it enters play, the id is incremented.
+     * If the card is no longer in play, this property is not available and {@link mostRecentInPlayId} should be used instead.
+     */
+    public get inPlayId() {
+        this.assertPropertyEnabledForZoneBoolean(this.isInPlay(), 'inPlayId');
+        return this._mostRecentInPlayId;
+    }
+
+    /**
+     * If the card is in a non-hidden, non-arena zone, this property is the most recent value of {@link inPlayId} for the card.
+     * This is used to determine e.g. if a card in the discard pile was defeated this phase.
+     */
+    public get mostRecentInPlayId() {
+        this.assertPropertyEnabledForZoneBoolean(
+            !this.isInPlay() && this.zone.hiddenForPlayers == null,
+            'mostRecentInPlayId'
+        );
+
+        return this._mostRecentInPlayId;
+    }
+
+    /**
+     * The card this upgrade is underneath: a unit for most upgrades, or a base for Fortify upgrades.
+     * For upgrades that can only ever attach to units, prefer {@link parentUnit} to read it typed as a unit.
+     */
+    public get parentCard(): ICardWithUpgrades {
+        Contract.assertNotNullLike(this._parentCard);
+        // TODO: move IsInPlay to be usable here
+        Contract.assertTrue(this.isInPlay());
+
+        return this._parentCard;
+    }
+
+    protected set parentCard(value: ICardWithUpgrades | null) {
+        this._parentCard = value;
+    }
+
+    /**
+     * The unit this upgrade is attached to. Only valid for upgrades that can exclusively attach to units;
+     * asserts the parent is a unit (it never is for a Fortify base upgrade).
+     */
+    public get parentUnit(): IUnitCard {
+        const parent = this.parentCard;
+        Contract.assertTrue(parent.isUnit(), `Expected the parent of ${this.internalName} to be a unit but it is ${parent.internalName}`);
+        return parent;
+    }
+
+    // NAMING NOTE: Normally underscore is used for TS private only, but this is an exception for UnitProperties.ts
+    @statePrimitive()
+    protected accessor _pendingDefeat: boolean = null;
+
+    // NAMING NOTE: Normally underscore is used for TS private only, but this is an exception for UnitProperties.ts
+    @stateRef()
+    protected accessor _parentCard: ICardWithUpgrades | null = null;
+
+    /**
+     * If true, then this card is queued to be defeated as a consequence of another effect (damage, unique rule)
+     * and will be removed from the field after the current event window has finished the resolution step.
+     *
+     * When this is true, most systems cannot target the card.
+     */
+    public get pendingDefeat() {
+        this.assertPropertyEnabledForZone(this._pendingDefeat, 'pendingDefeat');
+        return this._pendingDefeat;
+    }
+
+    public constructor(owner: Player, cardData: ICardDataJson) {
+        super(owner, cardData);
+
+        // this class is for all card types other than Base and Event (Base is checked in the superclass constructor)
+        Contract.assertFalse(this.printedType === CardType.Event);
+
+        if (this.isUpgrade()) {
+            Contract.assertNotNullLike(cardData.upgradeHp);
+            Contract.assertNotNullLike(cardData.upgradePower);
+        }
+
+        const hasUpgradeStats = cardData.upgradePower != null && cardData.upgradeHp != null;
+
+        Contract.assertTrue(hasUpgradeStats ||
+          (cardData.upgradePower == null && cardData.upgradeHp == null));
+
+        if (hasUpgradeStats) {
+            this._printedUpgradePower = cardData.upgradePower;
+            this._printedUpgradeHp = cardData.upgradeHp;
+        }
+    }
+
+    public isInPlay(): boolean {
+        // The arenas are the usual in-play zones for in-play cards. The base zone is also an in-play zone
+        // (`SWU 4.9.1`); an upgrade attached to a base (via Fortify) lives there and is considered in play.
+        return EnumHelpers.isArena(this.zoneName) || (this.zoneName === ZoneName.Base && this.isUpgrade());
+    }
+
+    public override canBeInPlay(): this is IInPlayCard {
+        return true;
+    }
+
+    protected setPendingDefeatEnabled(enabledStatus: boolean) {
+        this._pendingDefeat = enabledStatus ? false : null;
+        this._disableOngoingEffectsForDefeat = enabledStatus ? false : null;
+    }
+
+    public checkIsAttachable(): void {
+        throw new Error(`Card ${this.internalName} may not be attached`);
+    }
+
+    public assertIsUpgrade(): void {
+        Contract.assertTrue(this.isUpgrade());
+        Contract.assertNotNullLike(this._parentCard);
+    }
+
+    public get printedUpgradeHp(): number {
+        if (this.hasOngoingEffect(EffectName.PrintedAttributesOverride)) {
+            const override = getPrintedAttributesOverride('printedUpgradeHp', this.getOngoingEffectValues(EffectName.PrintedAttributesOverride));
+            if (override != null) {
+                return override;
+            }
+        }
+
+        return this._printedUpgradeHp;
+    }
+
+    public get printedUpgradePower(): number {
+        if (this.hasOngoingEffect(EffectName.PrintedAttributesOverride)) {
+            const override = getPrintedAttributesOverride('printedUpgradePower', this.getOngoingEffectValues(EffectName.PrintedAttributesOverride));
+            if (override != null) {
+                return override;
+            }
+        }
+
+        return this._printedUpgradePower;
+    }
+
+    public getUpgradeHp(): number {
+        return this.printedUpgradeHp;
+    }
+
+    public getUpgradePower(): number {
+        return this.printedUpgradePower;
+    }
+
+    protected get canBeUpgrade(): boolean {
+        return this.printedUpgradeHp != null && this.printedUpgradePower != null;
+    }
+
+    public attachTo(newParentCard: ICardWithUpgrades, newController?: Player) {
+        this.checkIsAttachable();
+        Contract.assertTrue(newParentCard.isUnit() || newParentCard.isBase());
+
+        // this assert needed for type narrowing or else the moveTo fails
+        Contract.assertTrue(
+            newParentCard.zoneName === ZoneName.SpaceArena ||
+            newParentCard.zoneName === ZoneName.GroundArena ||
+            newParentCard.zoneName === ZoneName.Base
+        );
+
+        if (this._parentCard) {
+            this.unattach();
+        }
+
+        // Base upgrades attach only to their controller's own base, so control never transfers for them;
+        // the takeControl path (and its arena-only zone parameter) applies to unit hosts only.
+        if (newController && newController !== this.controller && newParentCard.zoneName !== ZoneName.Base) {
+            this.takeControl(newController, newParentCard.zoneName);
+        } else {
+            this.moveTo(
+                newParentCard.zoneName,
+                this.isInPlay() ? InitializeCardStateOption.DoNotInitialize : InitializeCardStateOption.Initialize
+            );
+        }
+
+        this.updateStateOnAttach();
+
+        if (this.attachCondition) {
+            const context: IAttachCardContext<this> = {
+                source: this,
+                controllingPlayer: newController || this.controller,
+                attachTarget: newParentCard
+            };
+
+            Contract.assertTrue(this.attachCondition(context));
+        }
+
+        newParentCard.attachUpgrade(this);
+
+        this.parentCard = newParentCard;
+    }
+
+    protected updateStateOnAttach() {
+        return;
+    }
+
+    public isAttached(): boolean {
+        // TODO: I think we can't check this here because we need to be able to check if this is attached in some places like the getType method
+        // this.assertIsUpgrade();
+        return !!this._parentCard;
+    }
+
+    public unattach(event = null) {
+        Contract.assertNotNullLike(this._parentCard, 'Attempting to unattach upgrade when already unattached');
+        this.assertIsUpgrade();
+
+        this.parentCard.unattachUpgrade(this, event);
+        this.parentCard = null;
+    }
+
+    /**
+     * Checks whether the passed card meets any attachment restrictions for this card. Upgrade
+     * implementations must override this if they have specific attachment conditions.
+     */
+    public canAttach(targetCard: Card, context: AbilityContext, controller: Player = this.controller): boolean {
+        this.checkIsAttachable();
+
+        const attachContext: IAttachCardContext<this> = {
+            source: this,
+            controllingPlayer: controller,
+            attachTarget: targetCard
+        };
+
+        if (this.attachCondition && !this.attachCondition(attachContext)) {
+            return false;
+        }
+
+        return this.canAttachToTargetType(targetCard, controller);
+    }
+
+    /**
+     * Checks whether the target is a legal _type_ of card for this upgrade to attach to, independent of any
+     * per-card {@link attachCondition} refinement. Defaults to the standard "attach to a unit" restriction;
+     * attach-restriction keywords such as Fortify override this.
+     */
+    protected canAttachToTargetType(targetCard: Card, controller: Player): boolean {
+        // The Fortify keyword replaces the default "attach to a unit" restriction: the upgrade
+        // attaches to its controller's own base instead, and can't attach to a unit.
+        if (this.hasSomeKeyword(KeywordName.Fortify)) {
+            return targetCard.isBase() && targetCard.controller === controller;
+        }
+
+        return targetCard.isUnit();
+    }
+
+    /**
+     * This is required because a gainCondition call can happen after an upgrade is discarded,
+     * so we need to short-circuit in that case to keep from trying to access illegal state such as parentCard
+     */
+    protected addZoneCheckToGainCondition(gainCondition?: (context: AbilityContext<this>) => boolean) {
+        return gainCondition == null
+            ? null
+            : (context: AbilityContext<this>) => this.isInPlay() && gainCondition(context);
+    }
+
+    public override getSummary(activePlayer: Player, overrideHidden: boolean = false) {
+        return { ...super.getSummary(activePlayer, overrideHidden),
+            parentCardId: this._parentCard ? this._parentCard.uuid : null };
+    }
+
+    /**
+     * Some abilities (such as the Advantage token's "When Attack/Defense Ends") are registered just-in-time
+     * rather than staying registered for the card's entire time in play. This avoids carrying a persistent
+     * listener for every such card on the board. A single game-level listener (see
+     * {@link UnitPropertiesCard.registerRulesListeners}) routes attack-end events to the involved cards.
+     */
+    public override getTriggeredAbilities(): TriggeredAbilityBase[] {
+        const abilities = super.getTriggeredAbilities();
+
+        // gate the just-in-time abilities behind the same blanking check that super applies to printed abilities
+        return this._whenAttackOrDefenseEndsAbilities != null && !this.isFullyBlanked()
+            ? [...abilities, ...this._whenAttackOrDefenseEndsAbilities]
+            : abilities;
+    }
+
+    // ********************************************* ABILITY SETUP *********************************************
+    protected override getAbilityRegistrar(): IInPlayCardAbilityRegistrar<this> {
+        const registrar = super.getAbilityRegistrar() as IBasicAbilityRegistrar<this>;
+
+        return {
+            ...registrar,
+            addAdditionalPlayCost: (properties) => this.registerAdditionalPlayCost(properties),
+            addAlternatePlayCost: (properties) => this.registerAlternatePlayCost(properties),
+            addAdjustCostAbility: (properties) => this.addAdjustCostAbility(properties, registrar),
+            addDecreaseCostAbility: (properties) => this.addDecreaseCostAbility(properties, registrar),
+            addWhenPlayedAbility: (properties) => this.addWhenPlayedAbility(properties, registrar),
+            addWhenDefeatedAbility: (properties) => this.addWhenDefeatedAbility(properties, registrar),
+            addIgnoreAllAspectPenaltiesAbility: (properties) => this.addIgnoreAllAspectPenaltiesAbility(properties, registrar),
+            addIgnoreSpecificAspectPenaltyAbility: (properties) => this.addIgnoreSpecificAspectPenaltyAbility(properties, registrar),
+        };
+    }
+
+    private addWhenPlayedAbility(properties: ITriggeredAbilityBaseProps<this>, registrar: ITriggeredAbilityRegistrar<this>): TriggeredAbilityBase {
+        const when: WhenTypeOrStandard = { [StandardTriggeredAbilityType.WhenPlayed]: true };
+        return registrar.addTriggeredAbility({ ...properties, when });
+    }
+
+    private addWhenDefeatedAbility(properties: ITriggeredAbilityBaseProps<this>, registrar: ITriggeredAbilityRegistrar<this>): TriggeredAbilityBase {
+        const when: WhenTypeOrStandard = { [StandardTriggeredAbilityType.WhenDefeated]: true };
+        const triggeredProperties = Object.assign(properties, { when });
+        return registrar.addTriggeredAbility(triggeredProperties);
+    }
+
+    /** Add a constant ability on the card that adjusts its own cost under the given condition */
+    private addAdjustCostAbility(properties: IAdjustCostAbilityProps<this>, registrar: IConstantAbilityRegistrar<this>): IConstantAbilityProps<this> {
+        return registrar.addConstantAbility(this.generateAdjustCostAbilityProps(properties));
+    }
+
+    /** Add a constant ability on the card that decreases its cost under the given condition */
+    private addDecreaseCostAbility(properties: IDecreaseCostAbilityProps<this>, registrar: IConstantAbilityRegistrar<this>): IConstantAbilityProps<this> {
+        return registrar.addConstantAbility(this.generateDecreaseCostAbilityProps(properties));
+    }
+
+    /** Add a constant ability on the card that ignores all aspect penalties under the given condition */
+    private addIgnoreAllAspectPenaltiesAbility(properties: IIgnoreAllAspectPenaltiesProps<this>, registrar: IConstantAbilityRegistrar<this>): IConstantAbilityProps<this> {
+        return registrar.addConstantAbility(this.generateIgnoreAllAspectPenaltiesAbilityProps(properties));
+    }
+
+    /** Add a constant ability on the card that ignores specific aspect penalties under the given condition */
+    private addIgnoreSpecificAspectPenaltyAbility(properties: IIgnoreSpecificAspectPenaltyProps<this>, registrar: IConstantAbilityRegistrar<this>): IConstantAbilityProps<this> {
+        return registrar.addConstantAbility(this.generateIgnoreSpecificAspectPenaltiesAbilityProps(properties));
+    }
+
+    public override registerMove(movedFromZone: ZoneName): void {
+        super.registerMove(movedFromZone);
+
+        this.movedFromZone = movedFromZone;
+    }
+
+    protected override initializeForCurrentZone(prevZone?: ZoneName) {
+        super.initializeForCurrentZone(prevZone);
+
+        // The base zone counts as in play for an attached upgrade (Fortify), so treat it like the arenas here.
+        const wasInPlay = EnumHelpers.isArena(prevZone) || (prevZone === ZoneName.Base && this.isUpgrade());
+
+        if (this.isInPlay()) {
+            this.setPendingDefeatEnabled(true);
+
+            // increment to a new in-play id if we're entering play, indicating that we are now a new "copy" of this card (SWU 8.6.4)
+            if (!wasInPlay) {
+                this._mostRecentInPlayId += 1;
+            }
+        } else {
+            this.setPendingDefeatEnabled(false);
+
+            // if we're moving from a visible zone (discard, capture) to a hidden zone, increment the in-play id to represent the loss of information (card becomes a new copy)
+            if (EnumHelpers.isHiddenFromOpponent(this.zoneName, RelativePlayer.Self) && !EnumHelpers.isHiddenFromOpponent(prevZone, RelativePlayer.Self)) {
+                this._mostRecentInPlayId += 1;
+            }
+        }
+    }
+
+    protected override validateCardAbilities(abilities: TriggeredAbilityBase[], cardText?: string) {
+        if (!this.hasImplementationFile || cardText == null) {
+            return;
+        }
+
+        Contract.assertFalse(
+            !this.disableWhenDefeatedCheck &&
+            cardText && Helpers.hasSomeMatch(cardText, /(?:^|(?:[\n/]))When Defeated/gi) &&
+            !abilities.some((ability) => ability.isWhenDefeated),
+            `Card ${this.internalName} has one or more 'When Defeated' keywords in its text but no corresponding ability definition or set property 'disableWhenDefeatedCheck' to true on card implementation`
+        );
+        Contract.assertFalse(
+            !this.disableOnAttackCheck &&
+            cardText && Helpers.hasSomeMatch(cardText, /(?:^|(?:[\n/]))On Attack\b/gi) &&
+            !abilities.some((ability) => ability.isOnAttackAbility),
+            `Card ${this.internalName} has one or more 'On Attack' keywords in its text but no corresponding ability definition or set property 'disableOnAttackCheck' to true on card implementation`
+        );
+        Contract.assertFalse(
+            !this.disableWhenPlayedCheck &&
+            cardText && Helpers.hasSomeMatch(cardText, /(?:^|(?:[\n/]))When Played\b/gi) &&
+            !abilities.some((ability) => ability.isWhenPlayed),
+            `Card ${this.internalName} has one or more 'When Played' keywords in its text but no corresponding ability definition or set property 'disableWhenPlayedCheck' to true on card implementation`
+        );
+        Contract.assertFalse(
+            !this.disableWhenPlayedUsingSmuggleCheck &&
+            cardText && Helpers.hasSomeMatch(cardText, /(?:^|(?:[\n/]))When Played using Smuggle\b/gi) &&
+            !abilities.some((ability) => ability.isWhenPlayedUsingSmuggle),
+            `Card ${this.internalName} has one or more 'When Played using Smuggle' keywords in its text but no corresponding ability definition or set property 'disableWhenPlayedUsingSmuggleCheck' to true on card implementation`
+        );
+    }
+
+    // **************** MANUAL ABILITY REGISTRATION ****************
+
+    public checkRegisterWhenAttackOrDefenseEndsAbilities(event: GameEvent): void {
+        const abilities = this.buildWhenAttackOrDefenseEndsAbilities();
+        if (abilities.length === 0) {
+            return;
+        }
+
+        Contract.assertIsNullLike(
+            this._whenAttackOrDefenseEndsAbilities,
+            () => `Failed to unregister "When Attack/Defense Ends" abilities from previous attack: ${this._whenAttackOrDefenseEndsAbilities?.map((ability) => ability.getTitle()).join(', ')}`
+        );
+
+        this._whenAttackOrDefenseEndsAbilities = abilities;
+
+        for (const ability of abilities) {
+            ability.registerEvents();
+        }
+
+        event.addCleanupHandler(() => this.unregisterWhenAttackOrDefenseEndsAbilities());
+    }
+
+    public unregisterWhenAttackOrDefenseEndsAbilities(): void {
+        Contract.assertTrue(Array.isArray(this._whenAttackOrDefenseEndsAbilities), '"When Attack/Defense Ends" ability registration was skipped');
+
+        for (const ability of this._whenAttackOrDefenseEndsAbilities) {
+            ability.unregisterEvents();
+        }
+
+        this._whenAttackOrDefenseEndsAbilities = null;
+    }
+
+    /**
+     * Builds this card's "When Attack/Defense Ends" abilities, or returns an empty array if it has none. Overridden by
+     * cards (e.g. the Advantage token) that rely on the just-in-time registration described above.
+     */
+    protected buildWhenAttackOrDefenseEndsAbilities(): TriggeredAbilityBase[] {
+        return [];
+    }
+
+    // ******************************************** UNIQUENESS MANAGEMENT ********************************************
+    public registerPendingUniqueDefeat() {
+        Contract.assertTrue(this.getDuplicatesInPlayForController().length > 0);
+
+        this._pendingDefeat = true;
+        this._disableOngoingEffectsForDefeat = true;
+    }
+
+    public checkUnique() {
+        Contract.assertTrue(this.unique);
+
+        // need to filter for other cards that have unique = true since Clone will create non-unique duplicates
+        const uniqueDuplicatesInPlay = this.getDuplicatesInPlayForController();
+        const numUniqueDuplicatesInPlay = uniqueDuplicatesInPlay.length;
+
+        if (numUniqueDuplicatesInPlay === 0) {
+            return;
+        }
+
+        if (this.isUpgrade() && uniqueDuplicatesInPlay.every((duplicateCard) =>
+            duplicateCard.isUpgrade() &&
+            duplicateCard.parentCard === this.parentCard
+        )) {
+            // Band-aid fix for https://github.com/SWU-Karabast/forceteki/issues/1491
+            // We will default to defeating the oldest duplicate in play
+            uniqueDuplicatesInPlay.sort((a, b) => a.mostRecentInPlayId - b.mostRecentInPlayId);
+            this.resolveUniqueDefeat(uniqueDuplicatesInPlay[0]);
+            this.game.addMessage(
+                '{0} defeats 1 copy of {1} due to the uniqueness rule (the oldest copy is defeated by default)',
+                this.controller, this
+            );
+            this.resolveUniqueDefeat(uniqueDuplicatesInPlay[0]);
+            return;
+        }
+
+        const unitDisplayName = this.title + (this.subtitle ? ', ' + this.subtitle : '');
+
+        const selector = CardSelectorFactory.create({
+            mode: TargetMode.Exactly,
+            numCards: numUniqueDuplicatesInPlay,
+            zoneFilter: WildcardZoneName.AnyArena,
+            controller: RelativePlayer.Self,
+            cardCondition: (card: InPlayCard) =>
+                card.unique && card.title === this.title && card.subtitle === this.subtitle && !card.pendingDefeat,
+        });
+
+        const chooseDuplicateToDefeatPromptProperties: ISelectCardPromptProperties = {
+            activePromptTitle: `Choose which ${numUniqueDuplicatesInPlay > 1 ? 'copies' : 'copy'} of ${unitDisplayName} to defeat`,
+            waitingPromptTitle: `Waiting for opponent to choose which ${numUniqueDuplicatesInPlay > 1 ? 'copies' : 'copy'} of ${unitDisplayName} to defeat`,
+            source: 'Unique rule',
+            isOpponentEffect: false,
+            selectCardMode: numUniqueDuplicatesInPlay > 1 ? SelectCardMode.Multiple : SelectCardMode.Single,
+            selector: selector,
+            onSelect: (cardOrCards) => {
+                if (Array.isArray(cardOrCards)) {
+                    for (const card of cardOrCards) {
+                        Contract.assertTrue(card.canBeInPlay(), `Card ${card.title} is not a IInPlayCard`);
+                        this.resolveUniqueDefeat(card);
+                    }
+                    this.game.addMessage(
+                        '{0} defeats {1} {2} of {3} due to the uniqueness rule',
+                        this.controller, cardOrCards.length, cardOrCards.length > 1 ? 'copies' : 'copy', this
+                    );
+                    return true;
+                }
+                Contract.assertTrue(cardOrCards.canBeInPlay(), `Card ${cardOrCards.title} is not a IInPlayCard`);
+                this.game.addMessage(
+                    '{0} defeats 1 copy of {1} due to the uniqueness rule',
+                    this.controller, this
+                );
+                return this.resolveUniqueDefeat(cardOrCards);
+            }
+        };
+        this.game.promptForSelect(this.controller, chooseDuplicateToDefeatPromptProperties);
+    }
+
+    private getDuplicatesInPlayForController() {
+        return this.controller.getDuplicatesInPlay(this).filter(
+            (duplicateCard) => duplicateCard.unique && !duplicateCard.pendingDefeat
+        );
+    }
+
+    private resolveUniqueDefeat(duplicateToDefeat: IInPlayCard) {
+        const duplicateDefeatSystem = new FrameworkDefeatCardSystem({ defeatSource: DefeatSourceType.UniqueRule, target: duplicateToDefeat });
+        this.game.addSubwindowEvents(duplicateDefeatSystem.generateEvent(this.game.getFrameworkContext()));
+
+        duplicateToDefeat.registerPendingUniqueDefeat();
+
+        return true;
+    }
+}
+

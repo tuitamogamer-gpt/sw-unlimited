@@ -1,0 +1,36 @@
+{
+  "title": "I Have the High Ground",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Choose a friendly unit. Each enemy unit gets –4/–0 while attacking that unit this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "(ERRATA) Choose a friendly unit. For this phase, while that unit is defending, the attacker gets –4/–0.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9399634203",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 72
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 72
+    }
+  ],
+  "internalName": "i-have-the-high-ground"
+}

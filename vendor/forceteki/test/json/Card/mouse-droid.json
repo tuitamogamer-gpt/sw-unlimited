@@ -1,0 +1,40 @@
+{
+  "title": "Mouse Droid",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 1,
+  "text": "Raid 1 (This unit gets +1/+0 while attacking.)\nWhen Played: The next Imperial unit you play this phase costs 1 resource less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Once Mouse Droid's “When Played” ability resolves, it remains active even if it is defeated before you play your next Imperial unit.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2588977937",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 237
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 237
+    }
+  ],
+  "internalName": "mouse-droid"
+}

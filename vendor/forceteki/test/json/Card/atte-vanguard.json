@@ -1,0 +1,41 @@
+{
+  "title": "AT-TE Vanguard",
+  "subtitle": "",
+  "cost": 8,
+  "hp": 9,
+  "power": 6,
+  "text": "Restore 3 (When this unit attacks, heal 3 damage from your base.)\nWhen Defeated: Create 2 Clone Trooper tokens.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5350889336",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "walker"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 247
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 247
+    }
+  ],
+  "internalName": "atte-vanguard"
+}

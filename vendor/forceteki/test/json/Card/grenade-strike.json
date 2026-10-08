@@ -1,0 +1,36 @@
+{
+  "title": "Grenade Strike",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Deal 2 damage to a unit. You may deal 1 damage to another unit in the same arena.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4042866439",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 171
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 171
+    }
+  ],
+  "internalName": "grenade-strike"
+}

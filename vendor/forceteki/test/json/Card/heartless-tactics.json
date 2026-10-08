@@ -1,0 +1,37 @@
+{
+  "title": "Heartless Tactics",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Exhaust a unit and give it –2/–0 for this phase. Then, if it has 0 power and isn't a leader, you may return it to its owner's hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If a unit's power is modified below 0, it is considered to have 0 power.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2384695376",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 194
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 194
+    }
+  ],
+  "internalName": "heartless-tactics"
+}

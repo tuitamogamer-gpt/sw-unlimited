@@ -1,0 +1,39 @@
+{
+  "title": "Kessel Hulk",
+  "subtitle": "",
+  "cost": 7,
+  "hp": 7,
+  "power": 5,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1961735633",
+  "aspects": [],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 263
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 263
+    }
+  ],
+  "internalName": "kessel-hulk"
+}

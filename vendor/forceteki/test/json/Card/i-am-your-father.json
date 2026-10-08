@@ -1,0 +1,36 @@
+{
+  "title": "I Am Your Father",
+  "subtitle": null,
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Deal 7 damage to an enemy unit unless its controller says \"no.\" If they do, draw 3 cards.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "You must choose a unit before your opponent chooses whether to say “no.”\nYour opponent may opt to use another method instead of saying “no” as long as they clearly indicate which option they are choosing.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0523973552",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 233
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 233
+    }
+  ],
+  "internalName": "i-am-your-father"
+}

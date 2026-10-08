@@ -1,0 +1,38 @@
+{
+  "title": "Huyang",
+  "subtitle": "Enduring Instructor",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "When Played: Choose another friendly unit. While this unit is in play, the chosen unit gets +2/+2.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Until Huyang leaves play, the friendly unit gets +2/+2. This effect is not changed if an opponent takes control of Huyang.\nIf Huyang is captured and then rescued, his \"When Played\" effect does not resume.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8418001763",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "jedi",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 110
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 110
+    }
+  ],
+  "internalName": "huyang#enduring-instructor"
+}

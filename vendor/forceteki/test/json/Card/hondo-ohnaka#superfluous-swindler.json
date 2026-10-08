@@ -1,0 +1,40 @@
+{
+  "title": "Hondo Ohnaka",
+  "subtitle": "Superfluous Swindler",
+  "cost": 4,
+  "hp": 5,
+  "power": 3,
+  "text": "Shielded\nOn Attack: You may take control of a non-Pilot upgrade on a unit and attach it to a different eligible unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "You can use Hondo's ability to attach an upgrade to himself.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2644994192",
+  "aspects": [
+    "vigilance",
+    "vigilance"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 56
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 56
+    }
+  ],
+  "internalName": "hondo-ohnaka#superfluous-swindler"
+}

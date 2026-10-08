@@ -1,0 +1,41 @@
+{
+  "title": "Blockade Ship",
+  "subtitle": "",
+  "cost": 8,
+  "hp": 8,
+  "power": 5,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)\nEnemy ground units get –1/–0 while attacking.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8431210052",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 251
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 251
+    }
+  ],
+  "internalName": "blockade-ship"
+}

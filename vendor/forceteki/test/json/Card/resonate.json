@@ -1,0 +1,36 @@
+{
+  "title": "Resonate",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "If a friendly non-leader unit shares a Trait with a friendly leader, heal 4 damage from a unit or base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2493874586",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 98
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 98
+    }
+  ],
+  "internalName": "resonate"
+}

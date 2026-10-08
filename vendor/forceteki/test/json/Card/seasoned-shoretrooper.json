@@ -1,0 +1,43 @@
+{
+  "title": "Seasoned Shoretrooper",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "While you control 6 or more resources, this unit gets +2/+0.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3988315236",
+  "aspects": [
+    "villainy",
+    "command"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 83
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 81
+    },
+    {
+      "set": "SHD",
+      "number": 83
+    }
+  ],
+  "internalName": "seasoned-shoretrooper"
+}

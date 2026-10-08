@@ -1,0 +1,39 @@
+{
+  "title": "Inferno Squad",
+  "subtitle": "We Can Grieve Later",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "When Played/When Defeated: You may deal 1 damage to a unit and give a Weakness token to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9241047444",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 202
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 202
+    }
+  ],
+  "internalName": "inferno-squad#we-can-grieve-later"
+}

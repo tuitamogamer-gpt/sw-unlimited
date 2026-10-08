@@ -1,0 +1,42 @@
+{
+  "title": "Eighth Brother",
+  "subtitle": "Hunt Together",
+  "cost": 6,
+  "hp": 7,
+  "power": 5,
+  "text": "Ambush (When you play this unit, it may attack an enemy unit.)\nWhen you play another unit: You may use the Force (lose your Force token). If you do, give a unit +2/+2 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as \"When Played\" abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7821324752",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "imperial",
+    "inquisitor"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 87
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 87
+    }
+  ],
+  "internalName": "eighth-brother#hunt-together"
+}

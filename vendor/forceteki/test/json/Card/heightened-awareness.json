@@ -1,0 +1,36 @@
+{
+  "title": "Heightened Awareness",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 0,
+  "text": "Attached unit gains: “When the regroup phase starts: Give an Advantage token to this unit.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 2,
+  "id": "6098089171",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 227
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 227
+    }
+  ],
+  "internalName": "heightened-awareness"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Barriss Offee",
+  "subtitle": "Redeeming Herself",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "When Played: Heal up to 2 damage from a unit. Give an Advantage token to it for each damage healed this way.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1853815084",
+  "aspects": [
+    "cunning",
+    "vigilance"
+  ],
+  "traits": [
+    "force",
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 44
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 44
+    }
+  ],
+  "internalName": "barriss-offee#redeeming-herself"
+}

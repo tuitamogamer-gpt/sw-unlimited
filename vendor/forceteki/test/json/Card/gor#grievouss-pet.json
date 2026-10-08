@@ -1,0 +1,43 @@
+{
+  "title": "Gor",
+  "subtitle": "Grievous's Pet",
+  "cost": 12,
+  "hp": 7,
+  "power": 7,
+  "text": "Exploit 3\nSentinel\nAmbush\nOverwhelm",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\nShields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2554988743",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "separatist",
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "exploit",
+    "sentinel",
+    "ambush",
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 118
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 118
+    }
+  ],
+  "internalName": "gor#grievouss-pet"
+}

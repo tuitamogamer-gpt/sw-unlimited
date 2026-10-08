@@ -1,0 +1,34 @@
+{
+  "title": "Growth",
+  "subtitle": "",
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "Create a Beast token.\nHeal 3 damage from your base.\nDraw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2496794687",
+  "aspects": [],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 272
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 272
+    }
+  ],
+  "internalName": "growth"
+}

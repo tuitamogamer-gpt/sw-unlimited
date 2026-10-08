@@ -1,0 +1,39 @@
+{
+  "title": "U-Wing Lander",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: Give 3 Experience tokens to this unit.\nWhen this unit completes an attack (and survives): You may attach an upgrade on this unit to another eligible friendly Vehicle unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "A unit must survive an attack to trigger its “when this unit completes an attack” abilities.\nWhen Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8544209291",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 70
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 70
+    }
+  ],
+  "internalName": "uwing-lander"
+}

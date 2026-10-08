@@ -1,0 +1,40 @@
+{
+  "title": "Rotunda Senate Guards",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 5,
+  "power": 4,
+  "text": "While this unit is undamaged, it gains Sentinel. (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9206238000",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "republic",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 63
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 63
+    }
+  ],
+  "internalName": "rotunda-senate-guards"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Mark My Words",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 0,
+  "power": 2,
+  "text": "Attach to a damaged unit.\nAttached unit gains Overwhelm. (When attacking an enemy unit, deal excess damage to the opponent's base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": 2,
+  "upgradeHp": 0,
+  "id": "4401214542",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 181
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 181
+    }
+  ],
+  "internalName": "mark-my-words"
+}

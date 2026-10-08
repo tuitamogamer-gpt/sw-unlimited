@@ -1,0 +1,37 @@
+{
+  "title": "Don't Touch Anything",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Deal 3 damage to a random enemy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "When choosing randomly from a set of options, any method agreed upon by both players is acceptable, so long as each option has an equal likelihood of being chosen.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9042649302",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 217
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 217
+    }
+  ],
+  "internalName": "dont-touch-anything"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Mando's N-1 Starfighter",
+  "subtitle": "Faster than a Fathier",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "Support\nOn Attack: You may exhaust a friendly (non-upgrade) leader. If you do, this unit gets +2/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "You may exhaust leaders or leader units as part of Mando's N-1 Starfighter's \"\"On Attack\"\" ability. Upgrades can't be exhausted.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8053076603",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "support"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 203
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 203
+    }
+  ],
+  "internalName": "mandos-n1-starfighter#faster-than-a-fathier"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Recruit",
+  "subtitle": null,
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Search the top 5 cards of your deck for a unit, reveal it, and draw it. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3407775126",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 123
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 123
+    }
+  ],
+  "internalName": "recruit"
+}

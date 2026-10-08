@@ -1,0 +1,40 @@
+{
+  "title": "Shaak Ti",
+  "subtitle": "Unity Wins Wars",
+  "cost": 4,
+  "hp": 4,
+  "power": 3,
+  "text": "Each friendly token unit gets +1/+0.\nOn Attack: Create a Clone Trooper token.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1314547987",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 94
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 94
+    }
+  ],
+  "internalName": "shaak-ti#unity-wins-wars"
+}

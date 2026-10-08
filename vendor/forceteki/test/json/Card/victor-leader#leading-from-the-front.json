@@ -1,0 +1,40 @@
+{
+  "title": "Victor Leader",
+  "subtitle": "Leading from the Front",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "Each other friendly space unit gets +1/+1.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9811031405",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 85
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 85
+    }
+  ],
+  "internalName": "victor-leader#leading-from-the-front"
+}

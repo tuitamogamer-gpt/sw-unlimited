@@ -1,0 +1,36 @@
+{
+  "title": "Echo Caverns",
+  "subtitle": "",
+  "cost": null,
+  "hp": 20,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1049149674",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "hoth"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 2
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 2
+    }
+  ],
+  "internalName": "echo-caverns"
+}

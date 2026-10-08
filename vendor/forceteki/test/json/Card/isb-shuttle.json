@@ -1,0 +1,40 @@
+{
+  "title": "ISB Shuttle",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 3,
+  "text": "When Played: If a friendly unit was defeated this phase, create a Spy token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7227136692",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 83
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 83
+    }
+  ],
+  "internalName": "isb-shuttle"
+}

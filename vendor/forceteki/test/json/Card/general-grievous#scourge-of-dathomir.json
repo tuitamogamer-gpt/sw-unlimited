@@ -1,0 +1,39 @@
+{
+  "title": "General Grievous",
+  "subtitle": "Scourge of Dathomir",
+  "cost": 7,
+  "hp": 5,
+  "power": 8,
+  "text": "Bases can't be healed.\nWhen Played: Deal 4 damage to a base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3294806366",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 159
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 159
+    }
+  ],
+  "internalName": "general-grievous#scourge-of-dathomir"
+}

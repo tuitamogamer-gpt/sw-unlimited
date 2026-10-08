@@ -1,0 +1,39 @@
+{
+  "title": "Flock of Mynocks",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "Overwhelm (When attacking an enemy unit, deal excess damage to the opponent's base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6110403018",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "space",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 139
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 139
+    }
+  ],
+  "internalName": "flock-of-mynocks"
+}

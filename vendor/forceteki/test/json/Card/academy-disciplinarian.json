@@ -1,0 +1,38 @@
+{
+  "title": "Academy Disciplinarian",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "When Played: You may deal 1 damage to a friendly unit with 2 or less power and ready it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0409503639",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 165
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 165
+    }
+  ],
+  "internalName": "academy-disciplinarian"
+}

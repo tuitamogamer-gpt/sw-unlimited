@@ -1,0 +1,42 @@
+{
+  "title": "Bright Hope",
+  "subtitle": "The Last Transport",
+  "cost": 4,
+  "hp": 6,
+  "power": 2,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)\n\nWhen Played: You may return a friendly non-leader ground unit to its owner's hand. If you do, draw a card.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Abilities that return a card to hand must choose a card in play unless otherwise specified.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6253392993",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 99
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 99
+    }
+  ],
+  "internalName": "bright-hope#the-last-transport"
+}

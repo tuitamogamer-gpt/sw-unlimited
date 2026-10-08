@@ -1,0 +1,40 @@
+{
+  "title": "Darth Vader",
+  "subtitle": "Dark Lord of the Sith",
+  "cost": 7,
+  "hp": 8,
+  "power": 5,
+  "text": "Action [1 resource, exhaust]: If you played a [Villainy] card this phase, deal 1 damage to a unit and 1 damage to a base.",
+  "deployBox": "On Attack: You may deal 2 damage to a unit.",
+  "epicAction": "Epic Action: If you control 7 or more resources, deploy this leader. (Flip him, ready him, and move him to the ground arena.)",
+  "unique": true,
+  "rules": "Vader’s leader ability still can be used as an action even if you haven’t played a Villain card this phase (but it deals no damage).\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6088773439",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "imperial",
+    "sith"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 10
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 10
+    }
+  ],
+  "internalName": "darth-vader#dark-lord-of-the-sith"
+}

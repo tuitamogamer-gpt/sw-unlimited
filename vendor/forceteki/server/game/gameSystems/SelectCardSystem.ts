@@ -1,0 +1,180 @@
+import type { AbilityContext } from '../core/ability/AbilityContext';
+import type { Card } from '../core/card/Card';
+import type { MetaEventName, RelativePlayer } from '../core/Constants';
+import { GameStateChangeRequired } from '../core/Constants';
+import { CardTargetSystem, type ICardTargetSystemProperties } from '../core/gameSystem/CardTargetSystem';
+import type { GameEvent } from '../core/event/GameEvent';
+import { CardTargetResolver } from '../core/ability/abilityTargets/CardTargetResolver';
+import { PlayCardSystem } from './PlayCardSystem';
+import type { GameSystem } from '../core/gameSystem/GameSystem';
+import { type DistributiveOmit, Helpers } from '../core/utils/Helpers';
+import type { Player } from '../core/Player';
+import { EnumHelpers } from '../core/utils/EnumHelpers';
+import type { ICardTargetResolver } from '../TargetInterfaces';
+import type { MsgArg } from '../core/chat/GameChat';
+
+export type ISelectCardProperties<TContext extends AbilityContext = AbilityContext> = ICardTargetSystemProperties
+  & DistributiveOmit<ICardTargetResolver<TContext>, 'immediateEffect'>
+  & Required<Pick<ICardTargetResolver<TContext>, 'immediateEffect'>>
+  & {
+      player?: RelativePlayer;
+      cancelHandler?: () => void;
+      onSelectHandler?: (card: Card | Card[]) => void;
+      optional?: boolean;
+      name?: string;
+      effect?: string;
+      effectArgs?: (context) => string[];
+      cancelIfNoTargets?: boolean;
+  };
+
+/**
+ * A wrapper system for adding a target selection prompt around the execution the wrapped system.
+ * Functions the same as a targetResolver and used in situations where one can't be created (e.g., costs).
+ */
+export class SelectCardSystem<TContext extends AbilityContext = AbilityContext> extends CardTargetSystem<TContext, ISelectCardProperties<TContext>> {
+    public override readonly name: string = 'selectCard';
+    public override readonly eventName: MetaEventName.SelectCard;
+    public override readonly effectDescription = 'choose a target for {0}';
+    protected override readonly defaultProperties: Partial<ISelectCardProperties<TContext>> = {
+        cardCondition: () => true,
+        optional: false,
+    };
+
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    public eventHandler(event): void { }
+
+    public override getEffectMessage(context: TContext): [string, any[]] {
+        const { target, effect, effectArgs } = this.generatePropertiesFromContext(context);
+
+        if (effect) {
+            return [effect, effectArgs ? effectArgs(context) : []];
+        }
+
+        return super.getEffectMessage(context);
+    }
+
+    public override generatePropertiesFromContext(context: TContext, additionalProperties: Partial<ISelectCardProperties<TContext>> = {}) {
+        const properties = super.generatePropertiesFromContext(context, additionalProperties);
+
+        if (!properties.name) {
+            properties.name = properties.isCost ? 'cost' : 'target';
+        }
+
+        return properties;
+    }
+
+    public override canAffectInternal(card: Card, context: TContext, additionalProperties: Partial<ISelectCardProperties<TContext>> = {}, mustChangeGameState = GameStateChangeRequired.None): boolean {
+        const targetResolver = this.generateTargetResolver(context, additionalProperties, mustChangeGameState);
+        return targetResolver.canTarget(card, context);
+    }
+
+    public override hasLegalTarget(context: TContext, additionalProperties: Partial<ISelectCardProperties<TContext>> = {}, mustChangeGameState = GameStateChangeRequired.None): boolean {
+        const targetResolver = this.generateTargetResolver(context, additionalProperties, mustChangeGameState);
+        return targetResolver.hasLegalTarget(context);
+    }
+
+    /**
+     * True if this selection can be legally resolved by choosing zero cards (e.g. {@link TargetMode.UpTo}).
+     */
+    public selectionAllowsChoosingNoCards(context: TContext, additionalProperties: Partial<ISelectCardProperties<TContext>> = {}): boolean {
+        return this.generateTargetResolver(context, additionalProperties).allowsChoosingNoCards;
+    }
+
+    public override queueGenerateEventGameSteps(events: GameEvent[], context: TContext, additionalProperties: Partial<ISelectCardProperties<TContext>> = {}): void {
+        if (!this.hasLegalTarget(context, additionalProperties)) {
+            return;
+        }
+
+        const properties = this.generatePropertiesFromContext(context, additionalProperties);
+        const canCancel = properties.cancelHandler != null;
+
+        const targetResolver = this.generateTargetResolver(context, additionalProperties);
+        const targetResults = context.ability?.getDefaultTargetResults(context, canCancel) ?? {
+            canIgnoreAllCosts: false,
+            cancelled: false,
+            payCostsFirst: false,
+            delayTargeting: null,
+            canCancel,
+        };
+        targetResolver.resolve(context, targetResults);
+
+        context.game.queueSimpleStep(() => {
+            const selectedCards = Helpers.asArray(context.targets[properties.name]);
+
+            if (targetResults.cancelled || (properties.cancelIfNoTargets && selectedCards.length === 0)) {
+                properties.cancelHandler?.();
+                return;
+            }
+
+            // a mandatory selection resolves without a card when the resolver finds no effective target and skips the
+            // prompt, leaving nothing to apply the effect to. choosing nothing in an "up to" selection is a real choice
+            if (selectedCards.length === 0 && !this.selectionAllowsChoosingNoCards(context, additionalProperties)) {
+                return;
+            }
+
+            // `context.target` is only set for a resolver named 'target', so gating on it silently
+            // dropped the message whenever a caller passed its own `name` (and let an unrelated
+            // enclosing target stand in for this one). The selection we just resolved is the guard.
+            if (!properties.isCost && selectedCards.length > 0 && !this.effectReportsItself(properties.immediateEffect)) {
+                this.addOnSelectEffectMessage(context, properties);
+            }
+            properties.onSelectHandler?.(context.targets[properties.name] ?? context.target);
+            properties.immediateEffect.queueGenerateEventGameSteps(events, context, additionalProperties);
+        }, `Execute immediate effect for select card system "${properties.name}"`);
+    }
+
+    /**
+     * Whether the wrapped effect already reports itself in the game log, making a message from
+     * this selection either redundant or meaningless:
+     *
+     * - a nested selection has chosen nothing to act on yet, so all it can say is
+     *   "choose a target for <the card this one picked>", which reads as if that card is the
+     *   target. Its own inner step emits the message that matters.
+     * - playing a card always emits "<player> plays <card>" of its own.
+     */
+    private effectReportsItself(immediateEffect: GameSystem<TContext>): boolean {
+        return immediateEffect instanceof SelectCardSystem || immediateEffect instanceof PlayCardSystem;
+    }
+
+    private addOnSelectEffectMessage(
+        context: TContext,
+        properties: ISelectCardProperties<TContext>
+    ) {
+        const [effectMessage, effectArgs] = properties.immediateEffect.getEffectMessage(context);
+
+        if (!effectMessage) {
+            return;
+        }
+
+        const messageArgs: MsgArg[] = [context.player, ' uses ', context.source, ' to ', { format: effectMessage, args: effectArgs }];
+        context.game.addMessage(`{${[...Array(messageArgs.length).keys()].join('}{')}}`, ...messageArgs);
+    }
+
+    public override hasTargetsChosenByPlayer(context: TContext, player: Player = context.player, additionalProperties: Partial<ISelectCardProperties<TContext>> = {}): boolean {
+        const properties = this.generatePropertiesFromContext(context, additionalProperties);
+
+        if (properties.player === EnumHelpers.asRelativePlayer(context.player, player)) {
+            return true;
+        }
+
+        return properties.immediateEffect.hasTargetsChosenByPlayer(context, player, additionalProperties);
+    }
+
+    private generateTargetResolver(context: TContext, additionalProperties: Partial<ISelectCardProperties<TContext>> = {}, mustChangeGameState?: GameStateChangeRequired): CardTargetResolver {
+        const properties = this.generatePropertiesFromContext(context, additionalProperties);
+
+        const targetResolverProperties = { choosingPlayer: properties.player, mustChangeGameState, ...properties };
+        if (properties.isCost) {
+            targetResolverProperties.optional = false;
+            targetResolverProperties.mustChangeGameState = GameStateChangeRequired.MustFullyResolve;
+        } else if (properties.immediateEffect.isOptional(context)) {
+            targetResolverProperties.optional = true;
+        }
+
+        if (targetResolverProperties.waitingPromptTitle == null && context.source.isCard()) {
+            targetResolverProperties.waitingPromptTitle = 'Waiting for opponent';
+        }
+
+        return new CardTargetResolver(properties.name, targetResolverProperties, context.ability);
+    }
+}

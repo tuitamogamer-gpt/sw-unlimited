@@ -1,0 +1,36 @@
+{
+  "title": "Coordinated Front",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "You may give a ground unit +2/+2 for this phase.\nYou may give a space unit +2/+2 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9595202461",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 253
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 253
+    }
+  ],
+  "internalName": "coordinated-front"
+}

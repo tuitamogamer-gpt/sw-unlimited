@@ -1,0 +1,38 @@
+{
+  "title": "Embo",
+  "subtitle": "Stoic and Resolute",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "When this unit completes an attack: If the defender was defeated, heal up to 2 damage from a unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "A unit must survive an attack to trigger its “when this unit completes an attack” abilities.\nWhen Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0518313150",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 59
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 59
+    }
+  ],
+  "internalName": "embo#stoic-and-resolute"
+}

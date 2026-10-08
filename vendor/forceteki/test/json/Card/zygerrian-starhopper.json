@@ -1,0 +1,40 @@
+{
+  "title": "Zygerrian Starhopper",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "When Defeated: Deal 2 indirect damage to a player. (They assign 2 unpreventable damage among their base and units.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "A player can't assign more indirect damage to a unit than it has remaining HP. Indirect damage is unpreventable and ignores Shields.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7389195577",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 183
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 183
+    }
+  ],
+  "internalName": "zygerrian-starhopper"
+}

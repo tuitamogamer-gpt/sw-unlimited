@@ -1,0 +1,40 @@
+{
+  "title": "Frenzied Tri-Fighters",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 3,
+  "power": 5,
+  "text": "When Played: You may defeat an upgrade that costs 3 or less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers. A pilot's cost is the card's printed cost, not the cost in the Piloting ability.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1633962913",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "droid",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 249
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 249
+    }
+  ],
+  "internalName": "frenzied-trifighters"
+}

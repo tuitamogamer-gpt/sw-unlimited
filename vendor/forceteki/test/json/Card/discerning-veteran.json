@@ -1,0 +1,37 @@
+{
+  "title": "Discerning Veteran",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 4,
+  "power": 3,
+  "text": "When Played: This unit captures an enemy non-leader ground unit. (Put the captured card facedown under this unit until this unit leaves play.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9765804063",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 120
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 120
+    }
+  ],
+  "internalName": "discerning-veteran"
+}

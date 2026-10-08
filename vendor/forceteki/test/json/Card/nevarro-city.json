@@ -1,0 +1,36 @@
+{
+  "title": "Nevarro City",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5662039114",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "nevarro"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 22
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 22
+    }
+  ],
+  "internalName": "nevarro-city"
+}

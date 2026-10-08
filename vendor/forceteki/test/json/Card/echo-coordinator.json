@@ -1,0 +1,46 @@
+{
+  "title": "Echo Coordinator",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 5,
+  "power": 1,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8073149642",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 7
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 7
+    },
+    {
+      "set": "IBH",
+      "number": 43
+    },
+    {
+      "set": "IBH",
+      "number": 47
+    }
+  ],
+  "internalName": "echo-coordinator"
+}

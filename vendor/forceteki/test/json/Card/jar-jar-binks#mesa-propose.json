@@ -1,0 +1,42 @@
+{
+  "title": "Jar Jar Binks",
+  "subtitle": "Mesa Propose…",
+  "cost": 2,
+  "hp": 1,
+  "power": 2,
+  "text": "When Played: You may give another friendly unit +2/+2 for this phase.\nPlot (When you deploy a leader, you may play this card from your resources, paying its cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9985741271",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "naboo",
+    "republic",
+    "gungan",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "plot"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 111
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 111
+    }
+  ],
+  "internalName": "jar-jar-binks#mesa-propose"
+}

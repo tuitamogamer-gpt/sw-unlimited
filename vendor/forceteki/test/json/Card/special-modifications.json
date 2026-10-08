@@ -1,0 +1,36 @@
+{
+  "title": "Special Modifications",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "Attach to a Vehicle unit.\nWhen Played: If attached unit is a Transport, you may create a Spy token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 3,
+  "id": "8828770229",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "modification"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 227
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 227
+    }
+  ],
+  "internalName": "special-modifications"
+}

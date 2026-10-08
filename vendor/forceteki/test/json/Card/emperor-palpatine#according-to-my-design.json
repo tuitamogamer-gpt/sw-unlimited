@@ -1,0 +1,41 @@
+{
+  "title": "Emperor Palpatine",
+  "subtitle": "According to My Design",
+  "cost": 7,
+  "hp": 8,
+  "power": 4,
+  "text": "Action [Exhaust]: Choose an exhausted friendly unit. Give an Advantage token to it for each other friendly unit.",
+  "deployBox": "On Attack: You may choose another exhausted friendly unit. If you do, give an Advantage token to it for each other friendly unit.",
+  "epicAction": "Epic Action: If you control 7 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Emperor Palpatine's ability gives Advantage tokens equal to the number of friendly units minus 1.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9261531867",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "imperial",
+    "sith",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 15
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 15
+    }
+  ],
+  "internalName": "emperor-palpatine#according-to-my-design"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Strike Team Vanguard",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 5,
+  "power": 5,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1029172801",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 61
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 61
+    }
+  ],
+  "internalName": "strike-team-vanguard"
+}

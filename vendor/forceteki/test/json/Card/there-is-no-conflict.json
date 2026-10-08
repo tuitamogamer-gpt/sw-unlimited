@@ -1,0 +1,37 @@
+{
+  "title": "There Is No Conflict",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: Return any number of other upgrades on attached unit to their owners' hands.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 2,
+  "upgradeHp": 2,
+  "id": "8773190295",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 199
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 199
+    }
+  ],
+  "internalName": "there-is-no-conflict"
+}

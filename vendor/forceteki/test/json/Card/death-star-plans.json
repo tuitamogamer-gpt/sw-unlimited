@@ -1,0 +1,34 @@
+{
+  "title": "Death Star Plans",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 0,
+  "power": 0,
+  "text": "When attached unit is attacked: The attacking player takes control of this upgrade and attaches it to a unit they control.\nAttached unit gains: “The first unit you play each round costs 2 resources less.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "“When attached unit is attacked” triggers at the same time as “On Attack” abilities.\nMultiple players can benefit from the discount ability in the same round.\nOn Defense abilities trigger when this unit is chosen as the defender for an attack, in the same window as the attacker's On Attack abilities.\n",
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "7501988286",
+  "aspects": [],
+  "traits": [
+    "item"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 260
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 260
+    }
+  ],
+  "internalName": "death-star-plans"
+}

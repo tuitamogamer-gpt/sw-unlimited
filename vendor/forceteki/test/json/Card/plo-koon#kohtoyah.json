@@ -1,0 +1,44 @@
+{
+  "title": "Plo Koon",
+  "subtitle": "Koh-to-yah!",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "Ambush (When you play this unit, it may ready and attack an enemy unit.)\nCoordinate — Raid 3 (Gain this keyword while you control 3 or more units. This unit gets +3/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7494987248",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush",
+    "coordinate",
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 196
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 196
+    }
+  ],
+  "internalName": "plo-koon#kohtoyah"
+}

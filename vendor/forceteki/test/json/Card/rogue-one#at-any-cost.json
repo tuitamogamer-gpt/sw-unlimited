@@ -1,0 +1,39 @@
+{
+  "title": "Rogue One",
+  "subtitle": "At Any Cost",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "When a friendly unit is defeated: Look at the top 2 cards of your deck. Put any number of them on the bottom of your deck and the rest on top in any order.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6685110508",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 119
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 119
+    }
+  ],
+  "internalName": "rogue-one#at-any-cost"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Nebulon-C Frigate",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "When Played: You may heal 3 damage from a unit or base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0656766123",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "new republic",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 81
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 81
+    }
+  ],
+  "internalName": "nebulonc-frigate"
+}

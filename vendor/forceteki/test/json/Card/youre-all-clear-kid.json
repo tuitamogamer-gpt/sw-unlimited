@@ -1,0 +1,37 @@
+{
+  "title": "You're All Clear, Kid",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Defeat an enemy space unit with 3 or less remaining HP. If you do and an opponent controls no space units, you may give an Experience token to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you defeat an opponent's last space unit with this event, you may give an Experience token to a unit, even if that unit has a \"When Defeated\" ability that would put a new space unit into play.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5834478243",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 55
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 55
+    }
+  ],
+  "internalName": "youre-all-clear-kid"
+}

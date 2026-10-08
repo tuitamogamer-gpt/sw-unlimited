@@ -1,0 +1,39 @@
+{
+  "title": "Crucible",
+  "subtitle": "Centuries of Wisdom",
+  "cost": 6,
+  "hp": 5,
+  "power": 5,
+  "text": "When Played/When Defeated: Give an Experience token to each other friendly unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9372674583",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "jedi",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 119
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 119
+    }
+  ],
+  "internalName": "crucible#centuries-of-wisdom"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Familiar Strategem",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a unit. If it shares a Trait with another friendly unit, it gets +2/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you play Familiar Strategem, you must attack with a unit, if able. Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3139780185",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 266
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 266
+    }
+  ],
+  "internalName": "familiar-strategem"
+}

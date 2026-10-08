@@ -1,0 +1,38 @@
+{
+  "title": "Chief Chirpa",
+  "subtitle": "Defiant Elder",
+  "cost": 2,
+  "hp": 5,
+  "power": 1,
+  "text": "This unit gets +1/+0 for each other friendly Ewok unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9897192796",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "ewok"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 164
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 164
+    }
+  ],
+  "internalName": "chief-chirpa#defiant-elder"
+}

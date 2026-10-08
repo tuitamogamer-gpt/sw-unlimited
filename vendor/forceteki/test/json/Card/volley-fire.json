@@ -1,0 +1,38 @@
+{
+  "title": "Volley Fire",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "A friendly unit deals damage equal to its Raid to an enemy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5636350836",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 192
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 192
+    }
+  ],
+  "internalName": "volley-fire"
+}

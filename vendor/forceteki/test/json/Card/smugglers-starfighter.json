@@ -1,0 +1,41 @@
+{
+  "title": "Smuggler's Starfighter",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: If you control another Underworld unit, give an enemy unit –3/–0 for this phase.\nSmuggle [4 resources Cunning] (If this card is a resource, you may play it for its smuggle cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1312599620",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "smuggle"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 215
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 215
+    }
+  ],
+  "internalName": "smugglers-starfighter"
+}

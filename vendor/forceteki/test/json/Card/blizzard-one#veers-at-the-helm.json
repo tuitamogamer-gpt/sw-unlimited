@@ -1,0 +1,40 @@
+{
+  "title": "Blizzard One",
+  "subtitle": "Veers at the Helm",
+  "cost": 7,
+  "hp": 7,
+  "power": 5,
+  "text": "When Played: You may defeat a non-leader ground unit with 3 or less remaining HP.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5480486728",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "walker"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 99
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 99
+    }
+  ],
+  "internalName": "blizzard-one#veers-at-the-helm"
+}

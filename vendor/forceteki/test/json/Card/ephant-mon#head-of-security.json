@@ -1,0 +1,38 @@
+{
+  "title": "Ephant Mon",
+  "subtitle": "Head of Security",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "On Attack: Choose an enemy non-leader unit that attacked your base this phase. A friendly unit in the same arena captures that unit. (Put the captured card facedown under the friendly unit until the friendly unit leaves play.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Ephant Mon can capture a unit with his own ability.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9734237871",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 88
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 88
+    }
+  ],
+  "internalName": "ephant-mon#head-of-security"
+}

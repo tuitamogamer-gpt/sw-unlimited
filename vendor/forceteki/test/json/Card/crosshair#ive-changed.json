@@ -1,0 +1,38 @@
+{
+  "title": "Crosshair",
+  "subtitle": "I've Changed",
+  "cost": 5,
+  "hp": 6,
+  "power": 5,
+  "text": "When this unit is dealt damage and survives: Each player draws a card.\nWhen an opponent draws 1 or more cards during the action phase: Deal 2 damage to their base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5410512027",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "clone"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 169
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 169
+    }
+  ],
+  "internalName": "crosshair#ive-changed"
+}

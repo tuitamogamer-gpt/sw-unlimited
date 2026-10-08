@@ -1,0 +1,40 @@
+{
+  "title": "Moralo Eval",
+  "subtitle": "Infamous Murderer",
+  "cost": 3,
+  "hp": 2,
+  "power": 3,
+  "text": "Shielded (When you play this unit, give a Shield token to him.)\nWhen your base is dealt combat damage: You may deal 1 damage to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "“Combat damage” is only the damage dealt during the “end attack” step of an attack. It doesn't include damage from triggered abilities.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9215361599",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 73
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 73
+    }
+  ],
+  "internalName": "moralo-eval#infamous-murderer"
+}

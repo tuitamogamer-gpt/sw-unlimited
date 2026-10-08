@@ -1,0 +1,36 @@
+{
+  "title": "Covering the Wing",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Create an X-Wing token. You may give a Shield token to another unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2579248092",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 76
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 76
+    }
+  ],
+  "internalName": "covering-the-wing"
+}

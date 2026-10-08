@@ -1,0 +1,36 @@
+{
+  "title": "The Burden of Masters",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Put a Force unit from your discard pile on the bottom of your deck. If you do, play a unit from your hand and give 2 Experience tokens to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that let you play a card require you to pay that card’s cost unless specified otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8365703627",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 125
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 125
+    }
+  ],
+  "internalName": "the-burden-of-masters"
+}

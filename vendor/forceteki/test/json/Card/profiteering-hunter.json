@@ -1,0 +1,38 @@
+{
+  "title": "Profiteering Hunter",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 3,
+  "power": 1,
+  "text": "When Played: Another friendly unit gets +1/+1 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3174856258",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 151
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 151
+    }
+  ],
+  "internalName": "profiteering-hunter"
+}

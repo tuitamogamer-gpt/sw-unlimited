@@ -1,0 +1,37 @@
+{
+  "title": "Rampaging Wampa",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 3,
+  "power": 6,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5599665266",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 76
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 76
+    }
+  ],
+  "internalName": "rampaging-wampa"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Force Lightning",
+  "subtitle": null,
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Choose a unit. It loses all abilities for this phase. Then, if you control a FORCE unit, pay any number of resources and deal 2 damage to the chosen unit for each resource paid this way.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "The chosen unit can still gain new abilities later in the phase, including the abilities it lost.\nAll damage dealt by a single ability is dealt simultaneously.\nThe chosen unit can't gain abilities for this phase.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2639435822",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 138
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 138
+    }
+  ],
+  "internalName": "force-lightning"
+}

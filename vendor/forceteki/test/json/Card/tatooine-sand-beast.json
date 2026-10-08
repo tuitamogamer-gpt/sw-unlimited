@@ -1,0 +1,39 @@
+{
+  "title": "Tatooine Sand Beast",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 4,
+  "power": 8,
+  "text": "Hidden (This unit can't be attacked if it was played this phase.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If a unit has Hidden and Sentinel at the same time, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1653829589",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 225
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 225
+    }
+  ],
+  "internalName": "tatooine-sand-beast"
+}

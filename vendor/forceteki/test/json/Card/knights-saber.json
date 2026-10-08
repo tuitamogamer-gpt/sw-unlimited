@@ -1,0 +1,39 @@
+{
+  "title": "Knight's Saber",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "Attach to a Jedi non-Vehicle unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 3,
+  "upgradeHp": 2,
+  "id": "6885149318",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "item",
+    "weapon",
+    "lightsaber"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 151
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 151
+    }
+  ],
+  "internalName": "knights-saber"
+}

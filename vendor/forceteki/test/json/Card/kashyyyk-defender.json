@@ -1,0 +1,40 @@
+{
+  "title": "Kashyyyk Defender",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 5,
+  "power": 0,
+  "text": "Grit (This unit gets +1/+0 for each damage on it.)\nWhen Played: Heal up to 2 damage from another unit and deal that much damage to this unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8552292852",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 44
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 44
+    }
+  ],
+  "internalName": "kashyyyk-defender"
+}

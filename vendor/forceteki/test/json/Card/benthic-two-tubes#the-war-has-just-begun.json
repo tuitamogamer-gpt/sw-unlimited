@@ -1,0 +1,39 @@
+{
+  "title": "Benthic \"Two Tubes\"",
+  "subtitle": "The War Has Just Begun",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "On Attack: Deal 1 damage to an enemy ground unit.\nWhen Defeated: Deal 1 damage to a base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3026579497",
+  "aspects": [
+    "command",
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 57
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 57
+    }
+  ],
+  "internalName": "benthic-two-tubes#the-war-has-just-begun"
+}

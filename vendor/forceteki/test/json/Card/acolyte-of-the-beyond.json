@@ -1,0 +1,38 @@
+{
+  "title": "Acolyte of the Beyond",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "On Attack/When Defeated: The Force is with you (create your Force token).",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0958021533",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "sith"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 129
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 129
+    }
+  ],
+  "internalName": "acolyte-of-the-beyond"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Liberated Wookiee",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2871790352",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 143
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 143
+    }
+  ],
+  "internalName": "liberated-wookiee"
+}

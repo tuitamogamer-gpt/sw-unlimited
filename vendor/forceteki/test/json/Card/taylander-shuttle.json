@@ -1,0 +1,39 @@
+{
+  "title": "Taylander Shuttle",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "On Attack: If you have the initiative, create a Spy token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4832242481",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 115
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 115
+    }
+  ],
+  "internalName": "taylander-shuttle"
+}

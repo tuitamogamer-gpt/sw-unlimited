@@ -1,0 +1,40 @@
+{
+  "title": "Corona Squadron X-Wing",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "On Attack: You may ready a resource.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6727635998",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "new republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 209
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 209
+    }
+  ],
+  "internalName": "corona-squadron-xwing"
+}

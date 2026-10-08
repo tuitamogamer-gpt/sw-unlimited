@@ -1,0 +1,36 @@
+{
+  "title": "Mechanize",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Play a non-Vehicle unit from your discard pile (paying its cost) and give an Experience token to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that let you play a card require you to pay that card’s cost unless specified otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9392548494",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 57
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 57
+    }
+  ],
+  "internalName": "mechanize"
+}

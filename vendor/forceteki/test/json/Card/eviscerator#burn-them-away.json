@@ -1,0 +1,40 @@
+{
+  "title": "Eviscerator",
+  "subtitle": "Burn Them Away",
+  "cost": 8,
+  "hp": 7,
+  "power": 9,
+  "text": "Advantage tokens on friendly units lose all abilities. (They aren't defeated after combat.)\nWhen Played/On Attack: Give 2 Advantage tokens to each other friendly unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Friendly Advantage tokens lose all abilities and can't gain abilities while Eviscerator is in play. This means they won't be defeated after combat.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0839374599",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 149
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 149
+    }
+  ],
+  "internalName": "eviscerator#burn-them-away"
+}

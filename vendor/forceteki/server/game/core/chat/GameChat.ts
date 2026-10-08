@@ -1,0 +1,154 @@
+import type { GameObject } from '../GameObject';
+import type { ISerializedMessage } from '../../Interfaces';
+import { ChatHelpers } from './ChatHelpers';
+
+export type MsgArg = string | number | FormatMessage | GameObject | MsgArg[] | { name: string } | { message: string | string[] } | { getShortSummary: () => string };
+export interface FormatMessage {
+    format: string;
+    args: MsgArg[];
+}
+
+export class GameChat {
+    public messages: ISerializedMessage[] = [];
+
+    public typingState: Record<string, boolean> = {};
+
+    private readonly pushUpdate: () => void;
+
+    public constructor(pushUpdate: () => void) {
+        this.pushUpdate = pushUpdate;
+    }
+
+    public addChatMessage(player: any, message: any): void {
+        const playerArg = {
+            name: player.name || player.username,
+            id: player.id,
+            type: 'playerChat'
+        };
+
+        this.addMessage('{0} {1}', playerArg, message);
+    }
+
+    public addMessage(message: string, ...args: MsgArg[]): void {
+        const formattedMessage = this.formatMessage(message, args);
+        this.messages.push({ date: new Date(), message: formattedMessage });
+    }
+
+    public addAlert(type: string, message: string, ...args: MsgArg[]): void {
+        const formattedMessage = this.formatMessage(message, args);
+        this.messages.push({ date: new Date(), message: { alert: { type: type, message: formattedMessage } } });
+        this.pushUpdate();
+    }
+
+    public setTypingState(userId: string, isTyping: boolean): void {
+        this.typingState[userId] = isTyping;
+    }
+
+    /**
+     * Returns only player chat messages, excluding game log messages and alerts.
+     */
+    public getPlayerChatMessages(): ISerializedMessage[] {
+        return this.messages.filter((messageEntry) => {
+            const message = messageEntry.message;
+
+            // Exclude alert messages
+            if (typeof message === 'object' && message !== null && 'alert' in message) {
+                return false;
+            }
+
+            // Include only messages whose first element is a playerChat marker
+            if (Array.isArray(message) && message.length > 0) {
+                const firstElement = message[0];
+                if (typeof firstElement === 'object' && firstElement && 'type' in firstElement && firstElement['type'] === 'playerChat') {
+                    return true;
+                }
+            }
+            return false;
+        });
+    }
+
+    private formatMessage(format: string, args: MsgArg[]): string | string[] {
+        if (!format) {
+            return '';
+        }
+
+        // split the format string by placeholders like {0}, {1}, etc.
+        const fragments = format.split(/(\{\d+\})/);
+
+        const formatOutput = [];
+        for (const fragment of fragments) {
+            const argMatch = fragment.match(/\{(\d+)\}/);
+
+            let formattedFragment;
+            if (argMatch) {
+                formattedFragment = this.tryFormatPlaceholder(fragment, argMatch, args);
+            } else {
+                formattedFragment = fragment;
+            }
+
+            if (formattedFragment) {
+                if (Array.isArray(formattedFragment)) {
+                    formatOutput.push(...formattedFragment);
+                    continue;
+                }
+
+                const prevFragmentType = typeof formatOutput.at(-1);
+                const thisFragmentType = typeof formattedFragment;
+
+                if (prevFragmentType === 'string' && (thisFragmentType === 'string' || thisFragmentType === 'number')) {
+                    // concatenate simple strings and numbers together to reduce the number of elements sent over the wire
+                    formatOutput[formatOutput.length - 1] += formattedFragment;
+                } else if (thisFragmentType === 'number') {
+                    formatOutput.push(formattedFragment.toString());
+                } else {
+                    formatOutput.push(formattedFragment);
+                }
+            }
+        }
+
+        return formatOutput;
+    }
+
+    /**
+     * Tries to format the fragment if it is a placeholder such as '{0}', returns null if no placeholder is found or if the argument is not valid
+     */
+    private tryFormatPlaceholder(fragment: string, argMatch: RegExpMatchArray, args: MsgArg[]): any | null {
+        if (!args) {
+            return null;
+        }
+
+        const arg: MsgArg = args[argMatch[1]];
+        if (!arg) {
+            return null;
+        }
+
+        if (Array.isArray(arg)) {
+            if (typeof arg[0] === 'string' && arg[0].includes('{')) {
+                return this.formatMessage(arg[0], arg.slice(1));
+            }
+            return this.formatArray(arg);
+        } else if (typeof arg === 'object') {
+            if ('message' in arg && arg.message) {
+                return arg.message;
+            } else if ('getShortSummary' in arg && arg.getShortSummary) {
+                return arg.getShortSummary();
+            } else if ('format' in arg && 'args' in arg) {
+                return this.formatMessage(arg.format, arg.args);
+            }
+        }
+
+        return arg;
+    }
+
+    private formatArray(array: MsgArg[]): string | string[] {
+        array = array.filter((arg) => !Array.isArray(arg) || arg.length > 0);
+
+        if (array.length === 0) {
+            return [];
+        }
+
+        const format = ChatHelpers.formatWithLength(array.length);
+
+        return this.formatMessage(format, array);
+    }
+}

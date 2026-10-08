@@ -1,0 +1,38 @@
+{
+  "title": "Echo Base Engineer",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "When Played: You may give a Shield token to a damaged Vehicle unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3660641793",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 44
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 44
+    }
+  ],
+  "internalName": "echo-base-engineer"
+}

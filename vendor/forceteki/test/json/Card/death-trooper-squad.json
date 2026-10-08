@@ -1,0 +1,38 @@
+{
+  "title": "Death Trooper Squad",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 5,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9011599796",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 242
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 242
+    }
+  ],
+  "internalName": "death-trooper-squad"
+}

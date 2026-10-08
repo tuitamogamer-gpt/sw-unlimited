@@ -1,0 +1,36 @@
+{
+  "title": "This Is The Way",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Search the top 8 cards of your deck for up to 2 Mandalorian and/or upgrade cards, reveal them, and draw them. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9845101935",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 253
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 253
+    }
+  ],
+  "internalName": "this-is-the-way"
+}

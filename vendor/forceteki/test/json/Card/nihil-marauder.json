@@ -1,0 +1,42 @@
+{
+  "title": "Nihil Marauder",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 5,
+  "power": 1,
+  "text": "Raid 3 (This unit gets +3/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4460062481",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "trooper",
+    "nihil"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 182
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 182
+    }
+  ],
+  "internalName": "nihil-marauder"
+}

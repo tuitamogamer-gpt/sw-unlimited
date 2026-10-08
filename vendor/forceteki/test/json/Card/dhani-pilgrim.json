@@ -1,0 +1,37 @@
+{
+  "title": "Dhani Pilgrim",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 3,
+  "power": 1,
+  "text": "When Played/When Defeated: Heal 1 damage from your base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9394156877",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 55
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 55
+    }
+  ],
+  "internalName": "dhani-pilgrim"
+}

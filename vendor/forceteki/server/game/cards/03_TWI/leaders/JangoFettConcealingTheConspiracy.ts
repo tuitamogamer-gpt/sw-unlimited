@@ -1,0 +1,69 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { ILeaderUnitAbilityRegistrar, ILeaderUnitLeaderSideAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { LeaderUnitCard } from '../../../core/card/LeaderUnitCard';
+import { DamageSourceType } from '../../../IDamageOrDefeatSource';
+
+export default class JangoFettConcealingTheConspiracy extends LeaderUnitCard {
+    protected override getImplementationId() {
+        return {
+            id: '9155536481',
+            internalName: 'jango-fett#concealing-the-conspiracy',
+        };
+    }
+
+    protected override setupLeaderSideAbilities(registrar: ILeaderUnitLeaderSideAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        // When a friendly unit deals damage to an enemy unit:
+        //     You may exhaust this leader.
+        //     If you do, exhaust that enemy unit.
+        registrar.addTriggeredAbility({
+            title: 'Exhaust leader and exhaust the damaged enemy unit',
+            optional: true,
+            when: {
+                onDamageDealt: (event, context) => this.isEnemyUnitDamagedByFriendlyUnit(event, context)
+            },
+            immediateEffect: AbilityHelper.immediateEffects.exhaust(),
+            ifYouDo: (ifYouDoContext) => ({
+                title: 'Exhaust the damaged enemy unit',
+                immediateEffect: AbilityHelper.immediateEffects.exhaust(
+                    { target: ifYouDoContext.event.card }
+                )
+            })
+        });
+    }
+
+    protected override setupLeaderUnitSideAbilities(registrar: ILeaderUnitAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        // When a friendly unit deals damage to an enemy unit:
+        //     You may exhaust that unit.
+        registrar.addTriggeredAbility({
+            title: 'Exhaust the damaged enemy unit',
+            optional: true,
+            when: {
+                onDamageDealt: (event, context) => this.isEnemyUnitDamagedByFriendlyUnit(event, context)
+            },
+            immediateEffect: AbilityHelper.immediateEffects.exhaust((context) => {
+                return { target: context.event.card };
+            })
+        });
+    }
+
+    private isEnemyUnitDamagedByFriendlyUnit(event, context): boolean {
+        // If an enemy unit received the damage
+        if (event.card.isUnit() && event.card.controller !== context.player) {
+            switch (event.damageSource.type) {
+                case DamageSourceType.Ability:
+                    // TODO: event.damageSource.controller will eventually be non-optional
+                    const controller = event.damageSource.controller ?? event.damageSource.card.controller;
+                    // If the damage was dealt by a friendly unit via an ability
+                    return event.damageSource.card.isUnit() &&
+                      controller === context.player;
+
+                case DamageSourceType.Attack:
+                    // If the damage was dealt by a friendly unit via combat
+                    return event.damageSource.damageDealtBy.some((card) => card.isUnit()) &&
+                      event.damageSource.damageDealtBy.some((unit) => unit.controller === context.player);
+            }
+        }
+
+        return false;
+    }
+}

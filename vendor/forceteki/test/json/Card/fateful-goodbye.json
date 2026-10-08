@@ -1,0 +1,37 @@
+{
+  "title": "Fateful Goodbye",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "If a friendly unit left play this phase, distribute 3 Advantage tokens among friendly units. If a friendly leader unit left play this phase, distribute 5 Advantage tokens instead.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5173793776",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 211
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 211
+    }
+  ],
+  "internalName": "fateful-goodbye"
+}

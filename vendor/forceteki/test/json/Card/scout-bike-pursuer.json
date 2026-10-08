@@ -1,0 +1,41 @@
+{
+  "title": "Scout Bike Pursuer",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "Grit (This unit gets +1/+0 for each damage on it.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9633997311",
+  "aspects": [
+    "villainy",
+    "vigilance"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 32
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 32
+    }
+  ],
+  "internalName": "scout-bike-pursuer"
+}

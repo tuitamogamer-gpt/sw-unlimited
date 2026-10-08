@@ -1,0 +1,41 @@
+{
+  "title": "Escort Skiff",
+  "subtitle": null,
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "While you control another [Command] unit, this unit gains Ambush. (After you play this unit, it may ready and attack an enemy unit.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2027289177",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "speeder"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 114
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 114
+    }
+  ],
+  "internalName": "escort-skiff"
+}

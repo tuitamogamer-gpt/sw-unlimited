@@ -1,0 +1,40 @@
+{
+  "title": "Gungan Battle Wagon",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2947510914",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "creature",
+    "gungan"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 226
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 226
+    }
+  ],
+  "internalName": "gungan-battle-wagon"
+}

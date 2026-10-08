@@ -1,0 +1,44 @@
+{
+  "title": "Mae",
+  "subtitle": "Kill the Dream",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "Ambush\nShielded\nGrit",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3192928418",
+  "aspects": [
+    "cunning",
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "sith"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush",
+    "shielded",
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 55
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 55
+    }
+  ],
+  "internalName": "mae#kill-the-dream"
+}

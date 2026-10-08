@@ -1,0 +1,41 @@
+{
+  "title": "Commander Gree",
+  "subtitle": "Of the 41st Elite Corps",
+  "cost": 4,
+  "hp": 6,
+  "power": 3,
+  "text": "While there are 3 or more Command aspect icons among friendly units (including this one) and upgrades, this unit gains Raid 4.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7449157652",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "republic",
+    "clone",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 138
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 138
+    }
+  ],
+  "internalName": "commander-gree#of-the-41st-elite-corps"
+}

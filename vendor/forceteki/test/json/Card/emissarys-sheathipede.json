@@ -1,0 +1,39 @@
+{
+  "title": "Emissary's Sheathipede",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "When Defeated: Each opponent may ready a resource.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2511177657",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 215
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 215
+    }
+  ],
+  "internalName": "emissarys-sheathipede"
+}

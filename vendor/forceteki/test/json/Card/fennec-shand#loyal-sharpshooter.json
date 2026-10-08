@@ -1,0 +1,39 @@
+{
+  "title": "Fennec Shand",
+  "subtitle": "Loyal Sharpshooter",
+  "cost": 7,
+  "hp": 6,
+  "power": 4,
+  "text": "Ambush (When you play this unit, it may ready and attack an enemy unit.)\nOn Attack: Deal 1 damage to the defender (if it's a unit) for each different cost among cards in your discard pile.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nAmbush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7982524453",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 220
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 220
+    }
+  ],
+  "internalName": "fennec-shand#loyal-sharpshooter"
+}

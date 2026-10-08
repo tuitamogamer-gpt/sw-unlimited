@@ -1,0 +1,42 @@
+{
+  "title": "Jango Fett",
+  "subtitle": "Wily Mercenary",
+  "cost": 6,
+  "hp": 5,
+  "power": 6,
+  "text": "Shielded (When you play this unit, give a Shield token to him.)\nOn Attack: If this unit is upgraded, exhaust an enemy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9196710830",
+  "aspects": [
+    "cunning",
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 87
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 87
+    }
+  ],
+  "internalName": "jango-fett#wily-mercenary"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Aggrocrab",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 4,
+  "power": 6,
+  "text": "While you have the initiative, this unit costs 1 resource less to play.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2811497947",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 184
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 184
+    }
+  ],
+  "internalName": "aggrocrab"
+}

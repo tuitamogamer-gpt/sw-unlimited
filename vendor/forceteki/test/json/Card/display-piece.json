@@ -1,0 +1,37 @@
+{
+  "title": "Display Piece",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Defeat an enemy non-leader unit. Its controller resources it from its owner's discard pile.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Resources enter play exhausted.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8875606707",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 103
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 103
+    }
+  ],
+  "internalName": "display-piece"
+}

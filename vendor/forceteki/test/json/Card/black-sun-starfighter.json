@@ -1,0 +1,41 @@
+{
+  "title": "Black Sun Starfighter",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 3,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0315522200",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 237
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 237
+    }
+  ],
+  "internalName": "black-sun-starfighter"
+}

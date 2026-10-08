@@ -1,0 +1,39 @@
+{
+  "title": "Enticing Reward",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 0,
+  "power": 0,
+  "text": "Attached unit gains: “Bounty — Search the top 10 cards of your deck for 2 non-unit cards, reveal them, and draw them. (Put the other cards on the bottom of your deck in a random order.) Then, if this unit isn't unique, discard a card from your hand.”",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n(ERRATA) Templating update: “Unique” becomes “<uq>”.\n",
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "6420322033",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "bounty",
+    "condition"
+  ],
+  "keywords": [
+    "bounty"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 222
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 222
+    }
+  ],
+  "internalName": "enticing-reward"
+}

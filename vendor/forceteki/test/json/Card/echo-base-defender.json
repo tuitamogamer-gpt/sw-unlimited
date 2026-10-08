@@ -1,0 +1,41 @@
+{
+  "title": "Echo Base Defender",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 3,
+  "power": 4,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6912684909",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 98
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 98
+    }
+  ],
+  "internalName": "echo-base-defender"
+}

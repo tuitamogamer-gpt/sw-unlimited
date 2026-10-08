@@ -1,0 +1,42 @@
+{
+  "title": "Banking Clan Shuttle",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "Hidden (This unit can't be attacked if it was played this phase.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If a unit has Hidden and Sentinel at the same time, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5451377567",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 181
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 181
+    }
+  ],
+  "internalName": "banking-clan-shuttle"
+}

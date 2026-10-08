@@ -1,0 +1,37 @@
+{
+  "title": "ASP Laborer",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "Restore 1 (When this unit attacks, heal 1 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7399279394",
+  "aspects": [],
+  "traits": [
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 259
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 259
+    }
+  ],
+  "internalName": "asp-laborer"
+}

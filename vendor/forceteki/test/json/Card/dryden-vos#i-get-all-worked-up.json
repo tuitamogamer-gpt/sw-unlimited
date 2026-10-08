@@ -1,0 +1,38 @@
+{
+  "title": "Dryden Vos",
+  "subtitle": "I Get All Worked Up",
+  "cost": 4,
+  "hp": 5,
+  "power": 2,
+  "text": "On Attack: You may double this unit's power for this attack. If you do, this unit doesn't ready during the next regroup phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\nDryden Vos doubles whatever his power is when his \"On Attack\" ability resolves, which includes temporary attack power modifiers like Raid.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8544724262",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 137
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 137
+    }
+  ],
+  "internalName": "dryden-vos#i-get-all-worked-up"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Apology Accepted",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Defeat a friendly unit. You may give 2 Experience tokens to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9283378702",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 91
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 91
+    }
+  ],
+  "internalName": "apology-accepted"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Lifetree Caravan",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 1,
+  "power": 2,
+  "text": "When Played: If you control 3 or more units (including this one), you may resource the top card of your deck.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Resources enter play exhausted.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5032370330",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "ewok"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 136
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 136
+    }
+  ],
+  "internalName": "lifetree-caravan"
+}

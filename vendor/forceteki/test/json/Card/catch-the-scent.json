@@ -1,0 +1,36 @@
+{
+  "title": "Catch the Scent",
+  "subtitle": "",
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "Create 2 Beast tokens and ready 1 of them.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9992522105",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 195
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 195
+    }
+  ],
+  "internalName": "catch-the-scent"
+}

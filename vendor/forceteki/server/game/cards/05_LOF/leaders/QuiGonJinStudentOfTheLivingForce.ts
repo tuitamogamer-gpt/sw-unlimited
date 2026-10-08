@@ -1,0 +1,84 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { AbilityContext } from '../../../core/ability/AbilityContext';
+import type { ILeaderUnitAbilityRegistrar, ILeaderUnitLeaderSideAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { LeaderUnitCard } from '../../../core/card/LeaderUnitCard';
+import { Aspect, EventName, RelativePlayer, WildcardCardType, WildcardZoneName, ZoneName } from '../../../core/Constants';
+import { CostAdjustType } from '../../../core/cost/CostAdjuster';
+import { TextHelper } from '../../../core/utils/TextHelper';
+
+export default class QuiGonJinStudentOfTheLivingForce extends LeaderUnitCard {
+    protected override getImplementationId() {
+        return {
+            id: '2580909557',
+            internalName: 'quigon-jinn#student-of-the-living-force',
+        };
+    }
+
+    protected override setupLeaderSideAbilities(registrar: ILeaderUnitLeaderSideAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.addActionAbility({
+            title: `Return a friendly non-leader unit to its owner\'s hand. If you do, play a non-${TextHelper.Villainy} unit that costs less than the returned unit for free`,
+            cost: [
+                AbilityHelper.costs.exhaustSelf(),
+                AbilityHelper.costs.useTheForce()
+            ],
+            targetResolver: {
+                controller: RelativePlayer.Self,
+                zoneFilter: WildcardZoneName.AnyArena,
+                cardTypeFilter: WildcardCardType.NonLeaderUnit,
+                immediateEffect: AbilityHelper.immediateEffects.returnToHand()
+            },
+            ifYouDo: (ifYouDoContext) => {
+                const returnedUnitCost = QuiGonJinStudentOfTheLivingForce.returnedUnitCost(ifYouDoContext);
+
+                return {
+                    title: `Play a non-${TextHelper.Villainy} unit that costs less than ${returnedUnitCost}`,
+                    targetResolver: {
+                        controller: RelativePlayer.Self,
+                        zoneFilter: ZoneName.Hand,
+                        cardCondition: (card) => card.isUnit() && !card.hasSomeAspect(Aspect.Villainy) && card.cost < returnedUnitCost,
+                        immediateEffect: AbilityHelper.immediateEffects.playCardFromHand({
+                            adjustCost: { costAdjustType: CostAdjustType.Free },
+                            playAsType: WildcardCardType.Unit
+                        })
+                    }
+                };
+            }
+        });
+    }
+
+    protected override setupLeaderUnitSideAbilities(registrar: ILeaderUnitAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.addWhenAttackEndsAbility({
+            title: `Return a friendly non-leader unit to its owner\'s hand. If you do, play a non-${TextHelper.Villainy} unit that costs less than the returned unit for free`,
+            optional: true,
+            attackerMustSurvive: true,
+            targetResolver: {
+                controller: RelativePlayer.Self,
+                zoneFilter: WildcardZoneName.AnyArena,
+                cardTypeFilter: WildcardCardType.NonLeaderUnit,
+                immediateEffect: AbilityHelper.immediateEffects.returnToHand()
+            },
+            ifYouDo: (ifYouDoContext) => {
+                const returnedUnitCost = QuiGonJinStudentOfTheLivingForce.returnedUnitCost(ifYouDoContext);
+
+                return {
+                    title: `Play a non-${TextHelper.Villainy} unit that costs less than ${returnedUnitCost}`,
+                    targetResolver: {
+                        controller: RelativePlayer.Self,
+                        zoneFilter: ZoneName.Hand,
+                        cardCondition: (card) => card.isUnit() && !card.hasSomeAspect(Aspect.Villainy) && card.cost < returnedUnitCost,
+                        immediateEffect: AbilityHelper.immediateEffects.playCardFromHand({
+                            adjustCost: { costAdjustType: CostAdjustType.Free },
+                            playAsType: WildcardCardType.Unit
+                        })
+                    }
+                };
+            }
+        });
+    }
+
+    private static returnedUnitCost(ifYouDoContext: AbilityContext): number {
+        return ifYouDoContext.events.find(
+            (event) => event.name === EventName.OnCardMoved && event.card === ifYouDoContext.target
+        )?.lastKnownInformation?.cost ?? ifYouDoContext.target.cost;
+    }
+}

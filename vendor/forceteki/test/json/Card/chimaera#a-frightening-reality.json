@@ -1,0 +1,40 @@
+{
+  "title": "Chimaera",
+  "subtitle": "A Frightening Reality",
+  "cost": 7,
+  "hp": 6,
+  "power": 6,
+  "text": "When Played: You may choose a friendly unit and an enemy non-leader unit. If you do, defeat those units.\nWhen an enemy unit is defeated: Heal 2 damage from your base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6078486694",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 52
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 52
+    }
+  ],
+  "internalName": "chimaera#a-frightening-reality"
+}

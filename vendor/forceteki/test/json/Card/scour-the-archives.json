@@ -1,0 +1,36 @@
+{
+  "title": "Scour the Archives",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Search the top 8 cards of your deck for an upgrade, reveal it, and draw it. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5396248950",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 72
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 72
+    }
+  ],
+  "internalName": "scour-the-archives"
+}

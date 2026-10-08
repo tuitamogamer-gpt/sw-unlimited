@@ -1,0 +1,62 @@
+import { StateWatcher } from '../core/stateWatcher/StateWatcher';
+import { StateWatcherName } from '../core/Constants';
+import type { StateWatcherRegistrar } from '../core/stateWatcher/StateWatcherRegistrar';
+import type { Player } from '../core/Player';
+import type { IInPlayCard } from '../core/card/baseClasses/InPlayCard';
+import type { Game } from '../core/Game';
+import type { UnwrapRef } from '../core/GameObjectBase';
+
+import { registerState, type GameObjectId } from '../core/GameObjectUtils';
+
+export interface EnteredCardEntry {
+    card: GameObjectId<IInPlayCard>;
+    playedBy: GameObjectId<Player>;
+}
+
+@registerState()
+export class CardsEnteredPlayThisPhaseWatcher extends StateWatcher<EnteredCardEntry> {
+    public constructor(
+        game: Game,
+        registrar: StateWatcherRegistrar) {
+        super(game, StateWatcherName.CardsEnteredPlayThisPhase, registrar);
+    }
+
+    protected override mapCurrentValue(stateValue: EnteredCardEntry[]): UnwrapRef<EnteredCardEntry[]> {
+        return stateValue.map((x) => ({ playedBy: this.game.getFromId(x.playedBy), card: this.game.getFromId(x.card) }));
+    }
+
+    /**
+     * Returns an array of {@link EnteredCardEntry} objects representing every card entering play
+     * in this phase so far and the player who played that card
+     */
+    public override getCurrentValue() {
+        return super.getCurrentValue();
+    }
+
+    /** Filters the list of entered play cards in the state and returns the cards that match */
+    public getCardsEnteredPlay(filter: (entry: UnwrapRef<EnteredCardEntry>) => boolean): IInPlayCard[] {
+        return this.getCurrentValue()
+            .filter(filter)
+            .map((entry) => entry.card);
+    }
+
+    /** Checks the state for cards that entered play and match the provided filter */
+    public someCardEnteredPlay(filter: (entry: UnwrapRef<EnteredCardEntry>) => boolean): boolean {
+        return this.getCardsEnteredPlay(filter).length > 0;
+    }
+
+    protected override setupWatcher() {
+        // on card entered play, add the card to the player's list of cards entered play this phase
+        this.addUpdater({
+            when: {
+                onUnitEntersPlay: () => true,
+            },
+            update: (currentState: EnteredCardEntry[], event: any) =>
+                currentState.concat({ card: event.card.getObjectId(), playedBy: event.card.controller.getObjectId() })
+        });
+    }
+
+    protected override getResetValue(): EnteredCardEntry[] {
+        return [];
+    }
+}

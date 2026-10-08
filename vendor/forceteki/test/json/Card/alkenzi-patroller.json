@@ -1,0 +1,41 @@
+{
+  "title": "Alkenzi Patroller",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 2,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8560067936",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 114
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 114
+    }
+  ],
+  "internalName": "alkenzi-patroller"
+}

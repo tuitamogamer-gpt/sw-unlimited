@@ -1,0 +1,40 @@
+{
+  "title": "B1 Attack Platform",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 5,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1313247160",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "droid",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 133
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 133
+    }
+  ],
+  "internalName": "b1-attack-platform"
+}

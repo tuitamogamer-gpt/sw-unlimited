@@ -1,0 +1,37 @@
+{
+  "title": "Diplomatic Immunity",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "Attached unit gains: “When this unit is attacked: You may disclose VigilanceVigilanceHeroismHeroism (reveal cards from your hand with these aspect icons among them). If you do, the attacker gets –2/–0 for this attack.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "“When this unit is attacked” triggers at the same time as “On Attack” abilities.\nOn Defense abilities trigger when this unit is chosen as the defender for an attack, in the same window as the attacker's On Attack abilities.\n",
+  "upgradePower": 2,
+  "upgradeHp": 2,
+  "id": "4446525648",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "law"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 52
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 52
+    }
+  ],
+  "internalName": "diplomatic-immunity"
+}

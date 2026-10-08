@@ -1,0 +1,43 @@
+{
+  "title": "Scorpenek Annihilator Droid",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 5,
+  "power": 5,
+  "text": "Sentinel\nShielded\nOverwhelm",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8601456110",
+  "aspects": [
+    "vigilance",
+    "command"
+  ],
+  "traits": [
+    "underworld",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel",
+    "shielded",
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 29
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 29
+    }
+  ],
+  "internalName": "scorpenek-annihilator-droid"
+}

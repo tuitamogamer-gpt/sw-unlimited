@@ -1,0 +1,45 @@
+{
+  "title": "Consortium StarViper",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "While you have the initiative, this unit gains Restore 2. (When this unit attacks, heal 2 damage from your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1611702639",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 112
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 112
+    },
+    {
+      "set": "ASH",
+      "number": 122
+    }
+  ],
+  "internalName": "consortium-starviper"
+}

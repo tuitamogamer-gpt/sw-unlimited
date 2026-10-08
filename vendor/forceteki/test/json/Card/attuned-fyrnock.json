@@ -1,0 +1,40 @@
+{
+  "title": "Attuned Fyrnock",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 4,
+  "text": "Hidden (This unit can't be attacked if it was played this phase.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If a unit has Hidden and Sentinel at the same time, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1433284352",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 143
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 143
+    }
+  ],
+  "internalName": "attuned-fyrnock"
+}

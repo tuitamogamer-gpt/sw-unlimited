@@ -1,0 +1,43 @@
+{
+  "title": "Kanan Jarrus",
+  "subtitle": "Help Us Survive",
+  "cost": 6,
+  "hp": 6,
+  "power": 3,
+  "text": "Action [1 resource, Exhaust]: Give a Shield token to a Creature or Spectre unit.",
+  "deployBox": "Shielded (When you deploy this leader, give a Shield token to him.)\nWhile you control another Creature or Spectre unit, this unit gets +2/+2.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8304104587",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "rebel",
+    "spectre"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 4
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 4
+    }
+  ],
+  "internalName": "kanan-jarrus#help-us-survive"
+}

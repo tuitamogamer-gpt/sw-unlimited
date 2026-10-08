@@ -1,0 +1,40 @@
+{
+  "title": "Hound's Tooth",
+  "subtitle": "Reliable and Deadly",
+  "cost": 3,
+  "hp": 3,
+  "power": 4,
+  "text": "While attacking an exhausted unit that didn't enter play this phase, this unit deals combat damage before the defender.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "“Combat damage” is only the damage dealt during the “deal combat damage” step of an attack.\nIf Hound's Tooth deals combat damage first, and the defender is defeated by that damage, it does not deal combat damage back. If it survives and has Grit, it deals bonus damage from Grit when dealing combat damage back.\n(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3876470102",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 185
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 185
+    }
+  ],
+  "internalName": "hounds-tooth#reliable-and-deadly"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Air Superiority",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "If you control more space units than an opponent, deal 4 damage to a ground unit that opponent controls.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6410144226",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 125
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 125
+    }
+  ],
+  "internalName": "air-superiority"
+}

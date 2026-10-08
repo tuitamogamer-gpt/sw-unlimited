@@ -1,0 +1,39 @@
+{
+  "title": "Ryloth Revolutionary Rider",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 4,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9859570567",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "creature",
+    "twi'lek",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 258
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 258
+    }
+  ],
+  "internalName": "ryloth-revolutionary-rider"
+}

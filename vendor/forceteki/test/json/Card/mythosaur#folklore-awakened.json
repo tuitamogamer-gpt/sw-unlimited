@@ -1,0 +1,40 @@
+{
+  "title": "Mythosaur",
+  "subtitle": "Folklore Awakened",
+  "cost": 9,
+  "hp": 10,
+  "power": 10,
+  "text": "Shielded\nFriendly upgraded units can't be exhausted or returned to hand by enemy card abilities.\nFriendly leaders gain the Mandalorian trait.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Friendly upgraded units can be exhausted by other game effects, such as when attacking.\nMythosaur gives friendly leaders, leader units, and leader upgrades the Mandalorian trait.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1462779761",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "mandalorian",
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 73
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 73
+    }
+  ],
+  "internalName": "mythosaur#folklore-awakened"
+}

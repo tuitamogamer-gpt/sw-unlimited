@@ -1,0 +1,37 @@
+{
+  "title": "Swoop Racer",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 3,
+  "power": 4,
+  "text": null,
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9448937272",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 210
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 210
+    }
+  ],
+  "internalName": "swoop-racer"
+}

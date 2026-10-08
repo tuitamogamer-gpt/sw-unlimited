@@ -1,0 +1,147 @@
+import { AlertType, PhaseName, SnapshotType } from '../../Constants';
+import { EventName } from '../../Constants';
+import type { Game } from '../../Game';
+import { BaseStepWithPipeline } from '../BaseStepWithPipeline';
+import { SimpleStep } from '../SimpleStep';
+import type { IStep } from '../IStep';
+import { TriggerHandlingMode } from '../../event/EventWindow';
+import { Helpers } from '../../utils/Helpers';
+import type { SnapshotManager } from '../../snapshot/SnapshotManager';
+import { SnapshotTimepoint } from '../../snapshot/SnapshotInterfaces';
+import type { FormatMessage } from '../../chat/GameChat';
+import type { AdditionalPhaseEffect } from '../../ongoingEffect/effectImpl/AdditionalPhaseEffect';
+
+/** Indicates whether a new phase is being constructed during normal game flow or as part of a rollback of some type */
+export enum PhaseInitializeMode {
+    Normal = 'normal',
+    RollbackToStartOfPhase = 'rollbackToStartOfPhase',
+    RollbackToWithinPhase = 'rollbackToWithinPhase',
+    RollbackToEndOfPhase = 'rollbackToEndOfPhase',
+}
+
+export abstract class Phase extends BaseStepWithPipeline {
+    protected readonly name: PhaseName;
+    protected readonly snapshotManager: SnapshotManager;
+    protected readonly onPhaseStarted: (Phase) => void = null;
+    protected readonly additionalPhaseEffect: AdditionalPhaseEffect;
+
+    public constructor(
+        game: Game,
+        name: PhaseName,
+        snapshotManager: SnapshotManager,
+        additionalPhaseEffect: AdditionalPhaseEffect = null
+    ) {
+        super(game);
+
+        this.name = name;
+        this.snapshotManager = snapshotManager;
+        this.additionalPhaseEffect = additionalPhaseEffect;
+    }
+
+    protected initialise(steps: IStep[], initializeMode: PhaseInitializeMode): void {
+        const startStep: IStep[] = [
+            new SimpleStep(this.game, () => this.game.currentPhase = this.name, 'setCurrentPhase')
+        ];
+
+        // skip the start step if we're rolling back to somewhere within the phase
+        if (initializeMode === PhaseInitializeMode.Normal) {
+            startStep.push(new SimpleStep(this.game, () => this.takeStartOfPhaseSnapshot(), 'takeStartOfPhaseSnapshot'));
+        }
+
+        if (initializeMode !== PhaseInitializeMode.RollbackToWithinPhase) {
+            startStep.push(new SimpleStep(this.game, () => this.startPhase(), 'startPhase'));
+        }
+
+        this.pipeline.initialise([
+            ...startStep,
+            ...steps,
+            new SimpleStep(this.game, () => this.endPhase(initializeMode), 'endPhase')
+        ]);
+    }
+
+    private takeStartOfPhaseSnapshot() {
+        if (this.additionalPhaseEffect) {
+            // Mark the additional phase as started for this round
+            // Do this before snapshot so it is preserved in case of rollback
+            const additionalPhase = this.additionalPhaseEffect;
+            additionalPhase.markAdditionalPhaseStarted(this.game.roundNumber);
+        }
+
+        this.snapshotManager.moveToNextTimepoint(SnapshotTimepoint.StartOfPhase);
+        this.snapshotManager.takeSnapshot({
+            type: SnapshotType.Phase,
+            phaseName: this.name
+        });
+    }
+
+    protected isAdditionalPhase(): boolean {
+        return this.additionalPhaseEffect !== null;
+    }
+
+    protected startPhase(): void {
+        // reset trackers indicating if a player has been prompted
+        this.game.resetPromptedPlayersTracking();
+
+        this.game.createEventAndOpenWindow(EventName.OnPhaseStarted, null, { phase: this.name }, TriggerHandlingMode.ResolvesTriggers, () => {
+            if (this.name !== PhaseName.Setup) {
+                const additionalArg = this.isAdditionalPhase() ? 'Additional ' : '';
+                const effect = this.isAdditionalPhase() ? this.additionalPhaseEffect : null;
+                const effectSource = this.isAdditionalPhase() ? effect.source : null;
+                const additionalSourceArg: FormatMessage | string = this.isAdditionalPhase() ? { format: ' (granted by {0})', args: [effectSource] } : '';
+                this.game.addAlert(AlertType.Notification, 'Round: {0} - {1}{2} Phase{3}', this.game.roundNumber, additionalArg, Helpers.upperCaseFirstLetter(this.name), additionalSourceArg);
+            }
+        });
+    }
+
+    protected endPhase(initializeMode: PhaseInitializeMode): void {
+        const shouldUpdateTimepoint = initializeMode !== PhaseInitializeMode.RollbackToEndOfPhase;
+
+        // TODO: we haven't implemented end of setup or regroup phases yet
+        const checkTakeSnapshot = shouldUpdateTimepoint && this.name === PhaseName.Action;
+
+        if (shouldUpdateTimepoint) {
+            this.game.snapshotManager.moveToNextTimepoint(SnapshotTimepoint.EndOfPhase);
+
+            if (checkTakeSnapshot) {
+                // reset trackers indicating if a player has been prompted
+                this.game.resetPromptedPlayersTracking();
+            }
+        }
+
+        this.game.createEventAndOpenWindow(
+            EventName.OnPhaseEnded,
+            null,
+            { phase: this.name },
+            TriggerHandlingMode.ResolvesTriggers,
+            () => this.game.currentPhase = null
+        );
+
+        if (checkTakeSnapshot) {
+            // checks if a player was prompted during the end step and if so, takes a snapshot so they can unwind to the prompt
+            this.game.queueSimpleStep(() => this.takeActionSnapshotsForPromptedPlayers(), 'takeActionSnapshotsForPromptedPlayers');
+        }
+
+        if (this.additionalPhaseEffect) {
+            // Mark the additional phase as ended for this round
+            const additionalPhase = this.additionalPhaseEffect;
+            additionalPhase.markAdditionalPhaseEnded(this.game.roundNumber);
+        }
+
+        // for post-phase state cleanup. emit directly, don't need a window.
+        this.game.emit(EventName.OnPhaseEndedCleanup, { phase: this.name });
+    }
+
+    protected takeActionSnapshotsForPromptedPlayers(): void {
+        for (const player of this.game.getPlayers()) {
+            if (this.game.hasBeenPrompted(player)) {
+                this.game.snapshotManager.takeSnapshot({
+                    type: SnapshotType.Action,
+                    playerId: player.id
+                });
+            }
+        }
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    public resetPhase(): void { }
+}

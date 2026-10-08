@@ -1,0 +1,39 @@
+{
+  "title": "Huyang",
+  "subtitle": "Your Aptitude Falls Short",
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "On Attack: You may give an upgraded unit –4/–0 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5606840637",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "jedi",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 56
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 56
+    }
+  ],
+  "internalName": "huyang#your-aptitude-falls-short"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Zenuas Shadow Fighter",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "Hidden (This unit can't be attacked if it was played this phase.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4447282259",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 217
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 217
+    }
+  ],
+  "internalName": "zenuas-shadow-fighter"
+}

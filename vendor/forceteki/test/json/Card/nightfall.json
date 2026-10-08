@@ -1,0 +1,36 @@
+{
+  "title": "Nightfall",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Deal 1 damage to an enemy unit.\nIf you control an Endor base, you may attack with a unit. It gets +2/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6401776875",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "disaster"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 193
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 193
+    }
+  ],
+  "internalName": "nightfall"
+}

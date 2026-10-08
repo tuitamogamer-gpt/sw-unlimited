@@ -1,0 +1,42 @@
+{
+  "title": "Sundari Gauntlet",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 6,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)\nOn Defense: Deal 1 damage to your base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "“On Defense” abilities trigger at the same time as “On Attack” abilities.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1109370851",
+  "aspects": [
+    "command",
+    "aggression"
+  ],
+  "traits": [
+    "mandalorian",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 24
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 24
+    }
+  ],
+  "internalName": "sundari-gauntlet"
+}

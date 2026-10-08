@@ -1,0 +1,39 @@
+{
+  "title": "Grogu",
+  "subtitle": "Yes. Yes. Yes.",
+  "cost": 3,
+  "hp": 6,
+  "power": 2,
+  "text": "When you take the initiative: You may attack with a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5918558119",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 155
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 155
+    }
+  ],
+  "internalName": "grogu#yes-yes-yes"
+}

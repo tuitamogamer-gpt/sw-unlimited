@@ -1,0 +1,40 @@
+{
+  "title": "Black One",
+  "subtitle": "Scourge of Starkiller Base",
+  "cost": 6,
+  "hp": 4,
+  "power": 4,
+  "text": "When Played/When Defeated: You may discard your hand. If you do, draw 3 cards.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "If you have no cards in your hand, you may still choose to discard your hand in order to draw 3 cards.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8429598559",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "resistance",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 147
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 147
+    }
+  ],
+  "internalName": "black-one#scourge-of-starkiller-base"
+}

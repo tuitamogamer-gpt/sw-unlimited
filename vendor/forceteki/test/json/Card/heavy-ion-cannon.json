@@ -1,0 +1,39 @@
+{
+  "title": "Heavy Ion Cannon",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 0,
+  "power": 0,
+  "text": "Fortify (Attach this to your base, not a unit.)\nWhen Played: Draw a card.\nAttached base gains: “Action [discard a card from your hand]: Deal 2 damage to a unit. Use this ability only once each phase.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "5341831883",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "fortification"
+  ],
+  "keywords": [
+    "fortify"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 172
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 172
+    }
+  ],
+  "internalName": "heavy-ion-cannon"
+}

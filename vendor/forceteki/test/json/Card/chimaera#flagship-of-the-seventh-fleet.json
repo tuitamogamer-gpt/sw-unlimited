@@ -1,0 +1,42 @@
+{
+  "title": "Chimaera",
+  "subtitle": "Flagship of the Seventh Fleet",
+  "cost": 8,
+  "hp": 7,
+  "power": 8,
+  "text": "Shielded (When you play this unit, give a Shield token to it.)\n\nOn Attack: Name a card. An opponent reveals their hand and discards a card with that name from it.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "If there are multiple opponents, the controlling player chooses which one will be “an opponent.”\nAbilities that refer to a card’s “name” do not include the subtitle of the card.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7728042035",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 185
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 185
+    }
+  ],
+  "internalName": "chimaera#flagship-of-the-seventh-fleet"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Peridea Bandit",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 4,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4344365271",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 190
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 190
+    }
+  ],
+  "internalName": "peridea-bandit"
+}

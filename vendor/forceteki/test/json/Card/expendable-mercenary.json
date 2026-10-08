@@ -1,0 +1,38 @@
+{
+  "title": "Expendable Mercenary",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 3,
+  "text": "When Defeated: You may resource this unit from its owner's discard pile.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Resources enter play exhausted.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6434969978",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 159
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 159
+    }
+  ],
+  "internalName": "expendable-mercenary"
+}

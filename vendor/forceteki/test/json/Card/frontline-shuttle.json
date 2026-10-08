@@ -1,0 +1,38 @@
+{
+  "title": "Frontline Shuttle",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "Action [defeat this unit]: Attack with a unit, even if it's exhausted. It can't attack bases for this attack.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "If you use Frontline Shuttle’s ability, you must attack with a unit, if able.\nUnits that can’t attack bases can still damage bases through other abilities, like Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2471223947",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 110
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 110
+    }
+  ],
+  "internalName": "frontline-shuttle"
+}

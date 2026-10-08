@@ -1,0 +1,41 @@
+{
+  "title": "Treacherous Pyke",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 3,
+  "text": "Ambush (When you play this unit, it may attack an enemy unit.)\nSaboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8767838857",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush",
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 198
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 198
+    }
+  ],
+  "internalName": "treacherous-pyke"
+}

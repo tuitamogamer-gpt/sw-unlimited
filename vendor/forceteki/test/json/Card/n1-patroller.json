@@ -1,0 +1,39 @@
+{
+  "title": "N-1 Patroller",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: You may defeat a non-leader unit with 1 or less remaining HP.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5712834448",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "naboo",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 86
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 86
+    }
+  ],
+  "internalName": "n1-patroller"
+}

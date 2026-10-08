@@ -1,0 +1,39 @@
+{
+  "title": "Syndicate Lackeys",
+  "subtitle": null,
+  "cost": 5,
+  "hp": 4,
+  "power": 5,
+  "text": "Ambush (After you play this unit, it may ready and attack an enemy unit.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5346983501",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 213
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 213
+    }
+  ],
+  "internalName": "syndicate-lackeys"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Bendu",
+  "subtitle": "The One in the Middle",
+  "cost": 6,
+  "hp": 7,
+  "power": 4,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)\n\nOn Attack: The next non-[Heroism], non-[Villainy] card you play this phase costs [2 resources] less.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "The cost reduction from Bendu’s “On Attack” ability remains active even if Bendu is defeated.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5707383130",
+  "aspects": [
+    "vigilance",
+    "vigilance"
+  ],
+  "traits": [
+    "creature",
+    "force"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 56
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 56
+    }
+  ],
+  "internalName": "bendu#the-one-in-the-middle"
+}

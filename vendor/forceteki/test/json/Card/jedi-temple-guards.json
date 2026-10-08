@@ -1,0 +1,41 @@
+{
+  "title": "Jedi Temple Guards",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 2,
+  "text": "Ambush (When you play this unit, it may attack an enemy unit.)\nRestore 2 (When this unit attacks, heal 2 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as \"When Played\" abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6745607382",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "force",
+    "jedi"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush",
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 113
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 113
+    }
+  ],
+  "internalName": "jedi-temple-guards"
+}

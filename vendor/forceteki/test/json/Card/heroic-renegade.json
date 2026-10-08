@@ -1,0 +1,40 @@
+{
+  "title": "Heroic Renegade",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "Grit (This unit gets +1/+0 for each damage on it.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9195624101",
+  "aspects": [
+    "heroism",
+    "aggression"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 146
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 146
+    }
+  ],
+  "internalName": "heroic-renegade"
+}

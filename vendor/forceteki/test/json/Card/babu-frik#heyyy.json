@@ -1,0 +1,37 @@
+{
+  "title": "Babu Frik",
+  "subtitle": "Heyyy!",
+  "cost": 1,
+  "hp": 4,
+  "power": 1,
+  "text": "Action [Exhaust]: You may attack with a friendly Droid unit. For this attack, it deals damage equal to its remaining HP instead of its power.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6501780064",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 206
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 206
+    }
+  ],
+  "internalName": "babu-frik#heyyy"
+}

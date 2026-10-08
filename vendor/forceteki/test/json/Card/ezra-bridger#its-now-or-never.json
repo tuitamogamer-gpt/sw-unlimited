@@ -1,0 +1,43 @@
+{
+  "title": "Ezra Bridger",
+  "subtitle": "It's Now or Never",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "When a friendly unit's attack ends: If it dealt 3 or more combat damage to a base, you may exhaust this leader. If you do, give an Advantage token to a different unit.",
+  "deployBox": "Saboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)\nWhen a friendly unit's attack ends: If it dealt 3 or more combat damage to a base, you may give an Advantage token to a different unit.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "When Attack Ends abilities trigger at the same time as units deal combat damage. The attacking unit doesn't need to survive in order to give an Advantage token, so long as it dealt 3 or more combat damage to a base.\nEzra's unit ability can give an Advantage token to himself when another friendly unit's attack ends.\n“Combat damage” is only the damage dealt during the “End attack” step of an attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2102850055",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "rebel",
+    "spectre"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 13
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 13
+    }
+  ],
+  "internalName": "ezra-bridger#its-now-or-never"
+}

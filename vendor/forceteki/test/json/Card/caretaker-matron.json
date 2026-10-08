@@ -1,0 +1,37 @@
+{
+  "title": "Caretaker Matron",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 0,
+  "text": "Action [Exhaust]: If you played a Force card this phase, draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Caretaker Matron's ability can still be used as an action even if you haven't played a Force card this phase (but you don't draw a card).\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6800160263",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 243
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 243
+    }
+  ],
+  "internalName": "caretaker-matron"
+}

@@ -1,0 +1,68 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { TriggeredAbilityContext } from '../../../core/ability/TriggeredAbilityContext';
+import type { INonLeaderUnitAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { NonLeaderUnitCard } from '../../../core/card/NonLeaderUnitCard';
+import { Aspect, CardType, PhaseName, RelativePlayer, WildcardCardType, ZoneName } from '../../../core/Constants';
+
+export default class ReyWithPalpatinesPower extends NonLeaderUnitCard {
+    protected override getImplementationId() {
+        return {
+            id: '6172986745',
+            internalName: 'rey#with-palpatines-power',
+        };
+    }
+
+    public override setupCardAbilities(registrar: INonLeaderUnitAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.addTriggeredAbility({
+            title: 'Reveal Rey to deal 2 damage to a unit and 2 damage to a base',
+            optional: true,
+            when: {
+                onCardsDrawn: (event, context) => this.checkDrawnCard(event, context)
+            },
+            zoneFilter: ZoneName.Hand,
+            immediateEffect: AbilityHelper.immediateEffects.conditional({
+                condition: (context) =>
+                    this.aggressionAspectCondition(context) &&
+                    context.source.zoneName === ZoneName.Hand,
+                onTrue: AbilityHelper.immediateEffects.sequential([
+                    AbilityHelper.immediateEffects.reveal((context) => ({
+                        promptedPlayer: RelativePlayer.Opponent,
+                        useDisplayPrompt: true,
+                        target: context.source
+                    })),
+                    AbilityHelper.immediateEffects.simultaneous([
+                        AbilityHelper.immediateEffects.selectCard({
+                            cardTypeFilter: WildcardCardType.Unit,
+                            immediateEffect: AbilityHelper.immediateEffects.damage({ amount: 2 })
+                        }),
+                        AbilityHelper.immediateEffects.selectCard({
+                            cardTypeFilter: CardType.Base,
+                            immediateEffect: AbilityHelper.immediateEffects.damage({ amount: 2 })
+                        })
+                    ])
+                ])
+            })
+        });
+    }
+
+    private aggressionAspectCondition(context: TriggeredAbilityContext) {
+        const leaderCards = context.player.getLeaderCards();
+        const allCardsToCheck = [...leaderCards, context.player.base];
+
+        return allCardsToCheck.some((card) => card.hasSomeAspect(Aspect.Aggression));
+    }
+
+    // Checks that the drawn card is Rey and that it is the action phase
+    private checkDrawnCard(event: any, context: TriggeredAbilityContext) {
+        if (event.player !== context.player || context.game.currentPhase !== PhaseName.Action) {
+            return false;
+        }
+
+        if (event.card && event.card === context.source) {
+            return true;
+        } else if (event.cards && event.cards.includes(context.source)) {
+            return true;
+        }
+        return false;
+    }
+}

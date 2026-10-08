@@ -1,0 +1,36 @@
+{
+  "title": "Dooku's Palace",
+  "subtitle": "",
+  "cost": null,
+  "hp": 27,
+  "power": null,
+  "text": "Epic Action: Play a unit from your hand. It costs 1 resource less for each friendly leader unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4631699773",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "serenno"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 10
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 10
+    }
+  ],
+  "internalName": "dookus-palace"
+}

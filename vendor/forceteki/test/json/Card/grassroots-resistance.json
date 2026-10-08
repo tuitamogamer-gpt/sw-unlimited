@@ -1,0 +1,40 @@
+{
+  "title": "Grassroots Resistance",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Deal 3 damage to a unit.\nHeal 3 damage from your base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7249575408",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 258
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 258
+    },
+    {
+      "set": "ASH",
+      "number": 258
+    }
+  ],
+  "internalName": "grassroots-resistance"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Milodon Rider",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 6,
+  "power": 5,
+  "text": "Ambush (When you play this unit, it may attack an enemy unit.)\nWhen Played: You may return another friendly non-leader unit to its owner's hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\nAbilities that return a card to hand must choose a card in play unless otherwise specified.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2463919106",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "fringe",
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 240
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 240
+    }
+  ],
+  "internalName": "milodon-rider"
+}

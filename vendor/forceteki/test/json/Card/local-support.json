@@ -1,0 +1,36 @@
+{
+  "title": "Local Support",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "When Played: Reveal the top card of your deck. If it shares a trait with a friendly unit, draw it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 3,
+  "id": "1597342503",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 148
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 148
+    }
+  ],
+  "internalName": "local-support"
+}

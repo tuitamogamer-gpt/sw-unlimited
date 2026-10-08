@@ -1,0 +1,41 @@
+{
+  "title": "Jedi Sentinel",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 5,
+  "text": "While the Force is with you, this unit gains Sentinel. (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5573238875",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 196
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 196
+    }
+  ],
+  "internalName": "jedi-sentinel"
+}

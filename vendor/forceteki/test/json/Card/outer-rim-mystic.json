@@ -1,0 +1,38 @@
+{
+  "title": "Outer Rim Mystic",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 6,
+  "power": 2,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4543549467",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "force",
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 112
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 112
+    }
+  ],
+  "internalName": "outer-rim-mystic"
+}

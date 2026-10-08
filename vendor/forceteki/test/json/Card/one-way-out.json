@@ -1,0 +1,39 @@
+{
+  "title": "One Way Out",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a unit. It gets +1/+0 and gains Overwhelm for this attack. If it attacks a unit, the defender loses all abilities for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you play One Way Out, you must attack with a unit, if able. Units must be ready in order to attack.\nShields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\nThe defending unit also can't gain abilities for this attack.\n(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5820487880",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 157
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 157
+    }
+  ],
+  "internalName": "one-way-out"
+}

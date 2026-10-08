@@ -1,0 +1,40 @@
+{
+  "title": "Eravana",
+  "subtitle": "Hauling Rathtars",
+  "cost": 5,
+  "hp": 7,
+  "power": 1,
+  "text": "On Attack: Create a Beast token and ready it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4371076477",
+  "aspects": [
+    "command",
+    "cunning"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 47
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 47
+    }
+  ],
+  "internalName": "eravana#hauling-rathtars"
+}

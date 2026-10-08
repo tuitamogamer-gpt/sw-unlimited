@@ -1,0 +1,40 @@
+{
+  "title": "Cartel Spacer",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "When Played: If you control another [Cunning] unit, exhaust an enemy unit that costs 4 or less.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3802299538",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 178
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 178
+    }
+  ],
+  "internalName": "cartel-spacer"
+}

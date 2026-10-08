@@ -1,0 +1,36 @@
+{
+  "title": "Smoke and Cinders",
+  "subtitle": null,
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "Each player discards all but 2 cards (of their choice) from their hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6702266551",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "disaster"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 174
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 174
+    }
+  ],
+  "internalName": "smoke-and-cinders"
+}

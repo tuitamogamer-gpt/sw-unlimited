@@ -1,0 +1,36 @@
+{
+  "title": "Alliance Outpost",
+  "subtitle": "",
+  "cost": null,
+  "hp": 26,
+  "power": null,
+  "text": "Epic Action [defeat a friendly token]: Give an Experience or Shield token to a unit, or create a Credit token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3469239154",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "lowick"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 19
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 19
+    }
+  ],
+  "internalName": "alliance-outpost"
+}

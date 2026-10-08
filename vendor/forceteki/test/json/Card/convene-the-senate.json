@@ -1,0 +1,36 @@
+{
+  "title": "Convene the Senate",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Search the top 8 cards of your deck for up to 2 Official units, reveal them, and draw them. (Put the other cards on the bottom of your deck in a random order.)\nCreate a Spy token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5001969384",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "law"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 128
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 128
+    }
+  ],
+  "internalName": "convene-the-senate"
+}

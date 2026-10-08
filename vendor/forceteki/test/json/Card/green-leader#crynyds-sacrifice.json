@@ -1,0 +1,40 @@
+{
+  "title": "Green Leader",
+  "subtitle": "Crynyd's Sacrifice",
+  "cost": 2,
+  "hp": 1,
+  "power": 3,
+  "text": "When Defeated: You may deal 2 damage to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7688684269",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 153
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 153
+    }
+  ],
+  "internalName": "green-leader#crynyds-sacrifice"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Princess Leia",
+  "subtitle": "On a Diplomatic Mission",
+  "cost": 6,
+  "hp": 7,
+  "power": 4,
+  "text": "",
+  "deployBox": "mock ability text",
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "princess-leia#on-a-diplomatic-mission-id",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "official"
+  ],
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 8
+  },
+  "internalName": "princess-leia#on-a-diplomatic-mission",
+  "arena": "ground",
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 8
+    }
+  ]
+}

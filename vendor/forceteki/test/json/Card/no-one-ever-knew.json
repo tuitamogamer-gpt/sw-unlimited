@@ -1,0 +1,37 @@
+{
+  "title": "No One Ever Knew",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "For each friendly Official unit, exhaust an enemy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5278047091",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 196
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 196
+    }
+  ],
+  "internalName": "no-one-ever-knew"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Confiscate",
+  "subtitle": null,
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Defeat an upgrade.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5950125325",
+  "aspects": [],
+  "traits": [
+    "law"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 262
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 251
+    },
+    {
+      "set": "SHD",
+      "number": 262
+    }
+  ],
+  "internalName": "confiscate"
+}

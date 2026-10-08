@@ -1,0 +1,38 @@
+{
+  "title": "C-3PO",
+  "subtitle": "Captivating Storyteller",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "When Played: You may give an Ewok unit +2/+2 for this phase. You may give a Rebel unit +2/+2 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9713461356",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 255
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 255
+    }
+  ],
+  "internalName": "c3po#captivating-storyteller"
+}

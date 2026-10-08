@@ -1,0 +1,37 @@
+{
+  "title": "Twice the Pride",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 0,
+  "power": 4,
+  "text": "When Played: Deal 2 damage to attached unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 4,
+  "upgradeHp": 0,
+  "id": "7439418148",
+  "aspects": [
+    "aggression",
+    "aggression"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 155
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 155
+    }
+  ],
+  "internalName": "twice-the-pride"
+}

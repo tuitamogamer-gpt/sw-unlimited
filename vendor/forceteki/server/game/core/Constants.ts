@@ -1,0 +1,770 @@
+// allow block comments without spaces so we can have compact jsdoc descriptions in this file
+/* eslint @stylistic/lines-around-comment: off */
+
+export enum ZoneName {
+    Base = 'base',
+    Capture = 'capture',
+    Deck = 'deck',
+    Discard = 'discard',
+    GroundArena = 'groundArena',
+    Hand = 'hand',
+    OutsideTheGame = 'outsideTheGame',
+    Resource = 'resource',
+    SpaceArena = 'spaceArena',
+}
+
+export enum DeckZoneDestination {
+    DeckTop = 'deckTop',
+    DeckBottom = 'deckBottom'
+}
+
+export enum SnapshotType {
+    Action = 'action',
+    Manual = 'manual',
+    Phase = 'phase',
+    Quick = 'quick',
+}
+
+export enum ChatObjectType {
+    Player = 'player',
+    Card = 'card',
+}
+
+/**
+ * Helper type used when a passed ZoneName represents a move destination.
+ * Used to account for moving to top or bottom of deck.
+ */
+export type MoveZoneDestination = Exclude<ZoneName, ZoneName.Deck | ZoneName.Capture> | DeckZoneDestination.DeckBottom | DeckZoneDestination.DeckTop;
+
+export enum WildcardZoneName {
+    Any = 'any',
+    AnyArena = 'anyArena',
+
+    /** Any zone that is a valid attack target - an arena or base zone */
+    AnyAttackable = 'anyAttackable'
+}
+
+export type ZoneFilter = ZoneName | WildcardZoneName;
+
+export type Arena = ZoneName.GroundArena | ZoneName.SpaceArena;
+
+export enum DeployType {
+    LeaderUpgrade = 'leaderUpgrade',
+    LeaderUnit = 'leaderUnit',
+}
+
+export enum PlayType {
+    Piloting = 'piloting',
+    PlayFromHand = 'playFromHand',
+    PlayFromOutOfPlay = 'playFromOutOfPlay',
+    Plot = 'plot',
+    Smuggle = 'smuggle',
+}
+
+/**
+ * How a unit entered play.
+ *
+ * Used to scope "enters play ready" effects that only apply to certain entry
+ * paths, e.g. "the next unit you play this phase enters play ready" should only apply to units that
+ * entered play via the "played" path, not tokens created by abilities or units put into play by other
+ * means.
+ */
+export enum EntryType {
+    Played = 'played',
+    Created = 'created',
+    Rescued = 'rescued',
+    Deployed = 'deployed'
+}
+
+export enum StatType {
+    Hp = 'hp',
+    Power = 'power'
+}
+
+export enum DamageType {
+    Combat = 'combat',
+    Ability = 'ability',
+    Excess = 'excess',
+    Overwhelm = 'overwhelm'
+}
+
+export enum EffectName {
+    AbilityRestrictions = 'abilityRestrictions',
+    AdditionalAction = 'additionalActions',
+    AdditionalPhase = 'additionalPhase',
+    AdditionalActionAfterWindowCompleted = 'additionalActionsAfterWindowCompleted',
+    AdditionalPlayCost = 'additionalPlaycost',
+    AdditionalTriggerCost = 'additionalTriggercost',
+    AssignIndirectDamageDealtToOpponents = 'assignIndirectDamageDealtToOpponents',
+    AssignIndirectDamageDealtByUnit = 'assignIndirectDamageDealtByUnit',
+    Blank = 'blank',
+    BlankExceptKeyword = 'blankExceptKeyword',
+    BlankExceptFromSourceCard = 'blankExceptFromSourceCard',
+    CanAttackBaseWhileUsingAmbush = 'canAttackBaseWhileUsingAmbush',
+    CanAttackGroundArenaFromSpaceArena = 'canAttackGroundArenaFromSpaceArena',
+    CanAttackSpaceArenaFromGroundArena = 'canAttackSpaceArenaFromGroundArena',
+    CanAttackMultipleUnitsSimultaneously = 'canAttackMultipleUnitsSimultaneously',
+    CanBeTriggeredByOpponent = 'canBeTriggeredByOpponent',
+    CanBePlayedWithPilotingIgnoringPilotLimit = 'canBePlayedWithPilotingIgnoringPilotLimit',
+    CannotBeDefeatedByDamage = 'cannotBeDefeatedByDamage',
+    CanPlayFromDiscard = 'canPlayFromDiscard',
+    ChangeType = 'changeType',
+    CloneUnit = 'cloneUnit',
+    CopyStandardTriggeredAbilities = 'copyStandardTriggeredAbilities',
+    CostAdjuster = 'costAdjuster',
+    DelayedEffect = 'delayedEffect',
+    DoesNotReady = 'doesNotReady',
+    DamageDealtByThisCardIsUnpreventable = 'damageDealtByThisCardIsUnpreventable',
+    DealsCombatDamageFirst = 'dealsCombatDamageFirst',
+    DrawAdditionalCardsInRegroup = 'drawAdditionalCardsInRegroup',
+    EntersPlayReady = 'entersPlayReady',
+    GainAbility = 'gainAbility',
+    GainKeyword = 'gainKeyword',
+    GainNonKeywordAbilitiesFromUnit = 'gainNonKeywordAbilitiesFromUnit',
+    GainTrait = 'gainTrait',
+    IncreaseLimitOnAbilities = 'increaseLimitOnAbilities',
+    IsLeader = 'isLeader',
+    LoseKeyword = 'loseKeyword',
+    LoseTrait = 'loseTrait',
+    UnitsEnterPlayReady = 'unitsEnterPlayReady',
+    ModifyHp = 'modifyHp',
+    ModifyIndirectDamage = 'modifyIndirectDamage',
+    ModifyPilotLimit = 'modifyPilotLimit',
+    ModifyStartingHandSize = 'modifyStartingHandSize',
+    ModifyPower = 'modifyPower',
+    ModifyStats = 'modifyStats',
+    DoubleDeckSearchCount = 'doubleDeckSearchCount',
+    MultiplyNumericKeyword = 'multiplyNumericKeyword',
+    MustAttack = 'mustAttack',
+    MustBeChosen = 'mustBeChosen',
+    NoMulligan = 'noMulligan',
+    PrintedAttributesOverride = 'printedAttributesOverride',
+    ProvidesAspectsForCosts = 'providesAspectsForCosts',
+    ReplaceKeyword = 'replaceKeyword',
+    RescuedUnitsEnterPlayReady = 'rescuedUnitsEnterPlayReady',
+    SetPower = 'setPower',
+    ShowTopCard = 'showTopCard',
+    SuppressEffects = 'suppressEffects',
+    TakeControl = 'takeControl',
+    TokenUnitsEnterPlayReady = 'tokenUnitsEnterPlayReady',
+    UnlessActionCost = 'unlessActionCost',
+    UpgradeHpModifier = 'upgradeHpModifier',
+    UpgradePowerModifier = 'upgradePowerModifier',
+
+    // "cannot" effects
+    CannotApplyLastingEffects = 'cannotApplyLastingEffects',
+    CannotAttackBase = 'cannotAttackBase',
+    CannotAttack = 'cannotAttack',
+}
+
+export enum Duration {
+    Custom = 'custom',
+    Persistent = 'persistent',
+    UntilEndOfAttack = 'untilEndOfAttack',
+    UntilEndOfPhase = 'untilEndOfPhase',
+    UntilEndOfRound = 'untilEndOfRound',
+    WhileSourceInPlay = 'whileSourceInPlay'
+}
+
+export enum Stage {
+    Cost = 'cost',
+    Effect = 'effect',
+    PreTarget = 'preTarget',
+    Target = 'target',
+    Trigger = 'trigger'
+}
+
+export enum RelativePlayer {
+    Self = 'self',
+    Opponent = 'opponent'
+}
+
+export enum WildcardRelativePlayer {
+    Any = 'any'
+}
+
+export type RelativePlayerFilter = RelativePlayer | WildcardRelativePlayer;
+
+export enum StandardTriggeredAbilityType {
+    OnAttack = 'onAttack',
+    OnDefense = 'onDefense',
+    WhenDefeated = 'whenDefeated',
+    WhenPlayed = 'whenPlayed',
+    WhenPlayedUsingSmuggle = 'whenPlayedUsingSmuggle',
+}
+
+export enum TargetMode {
+    AutoSingle = 'autoSingle',
+    // TODO: add 'Between'
+    BetweenVariable = 'betweenVariable',
+    DropdownList = 'dropdownList',
+    Exactly = 'exactly',
+    ExactlyVariable = 'exactlyVariable',
+    MaxStat = 'maxStat',
+    MultiplePlayers = 'multiplePlayers',
+    ChooseNumber = 'chooseNumber',
+    Player = 'player',
+    Select = 'select',
+    SelectUnless = 'selectUnless',
+    Single = 'single',
+    Unlimited = 'unlimited',
+    UpTo = 'upTo',
+    UpToVariable = 'upToVariable'
+}
+
+export enum PhaseName {
+    Setup = 'setup',
+    Action = 'action',
+    Regroup = 'regroup'
+}
+
+export enum CardType {
+    Base = 'base',
+
+    /** non-leader, non-token unit */
+    BasicUnit = 'basicUnit',
+
+    /** non-token upgrade */
+    BasicUpgrade = 'basicUpgrade',
+    Event = 'event',
+    Leader = 'leader',
+    NonTokenLeaderUnit = 'nonTokenLeaderUnit',
+    TokenLeaderUnit = 'tokenLeaderUnit',
+    LeaderUpgrade = 'leaderUpgrade',
+    TokenUnit = 'tokenUnit',
+    TokenUpgrade = 'tokenUpgrade',
+    TokenCard = 'tokenCard',
+    NonLeaderUnitUpgrade = 'nonLeaderUnitUpgrade',
+}
+
+export enum WildcardCardType {
+    Any = 'any',
+    LeaderUnit = 'leaderUnit',
+    NonLeaderUnit = 'nonLeaderUnit',
+    NonLeaderUpgrade = 'nonLeaderUpgrade',
+    NonTokenUnit = 'nonTokenUnit',
+    NonUnit = 'nonUnit',
+    /** Any card type that can be played from hand */
+    Playable = 'playable',
+    Token = 'token',
+
+    /** Any unit type, including leader and token units */
+    Unit = 'unit',
+
+    /** Any upgrade type, including token upgrades */
+    Upgrade = 'upgrade',
+
+    UnitUpgrade = 'unitUpgrade',
+}
+
+export type CardTypeFilter = CardType | WildcardCardType;
+
+export enum TokenUpgradeName {
+    Experience = 'experience',
+    Shield = 'shield',
+    Advantage = 'advantage',
+    Weakness = 'weakness',
+}
+
+export enum TokenUnitName {
+    BattleDroid = 'battleDroid',
+    CloneTrooper = 'cloneTrooper',
+    XWing = 'xwing',
+    TIEFighter = 'tieFighter',
+    Spy = 'spy',
+    Mandalorian = 'mandalorian',
+    Beast = 'beast',
+}
+
+export enum TokenCardName {
+    Force = 'the-force',
+    Credit = 'credit',
+}
+
+export type TokenName = TokenUpgradeName | TokenUnitName | TokenCardName;
+
+// TODO: start removing these if they aren't used
+export enum EventName {
+    OnAbilityResolved = 'onAbilityResolved',
+    OnAbilityResolverInitiated = 'onAbilityResolverInitiated',
+    OnActionTaken = 'onActionTaken',
+    OnAddTokenToCard = 'onAddTokenToCard',
+    OnAspectsDisclosed = 'onAspectsDisclosed',
+    OnAttackDamageResolved = 'onAttackDamageResolved',
+    OnAttackDeclared = 'onAttackDeclared',
+    OnAttackEnd = 'onAttackEnd',
+    OnBeginRound = 'onBeginRound',
+    OnBlastCounterClaimed = 'onBlastCounterClaimed',
+    OnBountyCollected = 'onBountyCollected',
+    OnCardAbilityInitiated = 'onCardAbilityInitiated',
+    OnBaseDefeated = 'onBaseDefeated',
+    OnCardAbilityTriggered = 'onCardAbilityTriggered',
+    OnCardCaptured = 'onCardCaptured',
+    OnCardDefeated = 'onCardDefeated',
+    OnCardExhausted = 'onCardExhausted',
+    OnCardLeavesPlay = 'onCardLeavesPlay',
+    OnCardMoved = 'onCardMoved',
+    OnCardPlayed = 'onCardPlayed',
+    OnCardReadied = 'onCardReadied',
+    OnCardResourced = 'onCardResourced',
+    OnCardReturnedToHand = 'onCardReturnedToHand',
+    OnCardRevealed = 'onCardRevealed',
+    OnCardDiscarded = 'onCardDiscarded',
+    OnCardsDiscardedFromHand = 'onCardsDiscardedFromHand',
+    OnCardsDrawn = 'onCardsDrawn',
+    OnClaimInitiative = 'onClaimInitiative',
+    OnDamageDealt = 'onDamageDealt',
+    OnDamageHealed = 'onDamageHealed',
+    OnDamageUnitsToPayCost = 'onDamageUnitsToPayCost',
+    OnDeckSearch = 'onDeckSearch',
+    OnDeckShuffled = 'onDeckShuffled',
+    OnDefeatCreditsToPayCost = 'onDefeatCreditsToPayCost',
+    OnDefeatResourcesToPayCost = 'onDefeatResourcesToPayCost',
+    OnDiscardFromDeck = 'onDiscardFromDeck',
+    OnEffectApplied = 'onEffectApplied',
+    OnEntireHandDiscarded = 'onEntireHandDiscarded',
+    OnExhaustResources = 'onExhaustResources',
+    OnExhaustUnitsToPayCost = 'onExhaustUnitsToPayCost',
+    OnExploitUnits = 'onExploitUnits',
+    OnForceUsed = 'onForceUsed',
+    OnIndirectDamageDealtToPlayer = 'onIndirectDamageDealtToPlayer',
+    OnInitiateAbilityEffects = 'onInitiateAbilityEffects',
+    OnLeaderDeployed = 'onLeaderDeployed',
+    OnLeaderFlipped = 'onLeaderFlipped',
+    OnLookAtCard = 'onLookAtCard',
+    OnLookMoveDeckCardsTopOrBottom = 'onLookMoveDeckCardsTopOrBottom',
+    OnPassActionPhasePriority = 'onPassActionPhasePriority',
+    OnPhaseEnded = 'onPhaseEnded',
+    OnPhaseEndedCleanup = 'onPhaseEndedCleanup',
+    OnPhaseStarted = 'onPhaseStarted',
+    OnPlanCounterClaimed = 'onPlanCounterClaimed',
+    OnPlanCounterPutOnBottom = 'onPlanCounterPutOnBottom',
+    OnReadyResources = 'onReadyResources',
+    OnRescue = 'onRescue',
+    OnRegroupPhaseReadyCards = 'onRegroupPhaseReadyCards',
+    OnRoundEnded = 'onRoundEnded',
+    OnRoundEndedCleanup = 'onRoundEndedCleanup',
+    OnStatusTokenDiscarded = 'onStatusTokenDiscarded',
+    OnStatusTokenGained = 'onStatusTokenGained',
+    OnStatusTokenMoved = 'onStatusTokenMoved',
+    OnTakeControl = 'onTakeControl',
+    OnTokensCreated = 'onTokensCreated',
+    OnUnitEntersPlay = 'onUnitEntersPlay',
+    OnUpgradeAttached = 'onUpgradeAttached',
+    OnUpgradeUnattached = 'onUpgradeUnattached',
+    OnUseOnAttack = 'onUseOnAttack',
+    OnUseWhenDefeated = 'onUseWhenDefeated',
+    OnUseWhenPlayed = 'onUseWhenPlayed',
+}
+
+/**
+ * Meta-events are infrastructure events that exist to facilitate game events.
+ * Abilities cannot trigger on them because they don't exist in the SWU rules, they're just
+ * to help us execute the game rules correctly.
+ */
+export enum MetaEventName {
+    AttackSteps = 'attackSteps',
+    Conditional = 'conditional',
+    ChooseModalEffects = 'ChooseModalEffects',
+    ChooseNumber = 'chooseNumber',
+    DistributeDamage = 'distributeDamage',
+    DistributeIndirectDamageToCards = 'distributeIndirectDamageToCards',
+    DistributeHealing = 'distributeHealing',
+    DistributeTokenUpgrade = 'distributeTokenUpgrade',
+    ExecuteHandler = 'executeHandler',
+    InitiateAttack = 'initiateAttack',
+    IncreaseAbilityDamage = 'increaseAbilityDamage',
+    GameLost = 'gameLost',
+    GameWon = 'gameWon',
+    NoAction = 'noAction',
+    Optional = 'optional',
+    PayCardPrintedCost = 'payCardPrintedCost',
+    PlayCard = 'playCard',
+    PlayMultipleCardsFromDiscard = 'playMultipleCardsFromDiscard',
+    PlayMultipleCardsFromHand = 'playMultipleCardsFromHand',
+    RandomSelection = 'randomSelection',
+    ReplacementEffect = 'replacementEffect',
+    RevealAndDrawCard = 'revealAndDrawCard',
+    SelectCard = 'selectCard',
+    SelectPlayer = 'selectPlayer',
+    Sequential = 'sequential',
+    Simultaneous = 'simultaneous',
+}
+
+export enum AbilityType {
+    Action = 'action',
+    Constant = 'constant',
+    DamageModification = 'damageModification',
+    DelayedEffect = 'delayedEffect',
+    Event = 'event',
+    ReplacementEffect = 'replacementEffect',
+    Triggered = 'triggered',
+}
+
+export enum Aspect {
+    Aggression = 'aggression',
+    Command = 'command',
+    Cunning = 'cunning',
+    Heroism = 'heroism',
+    Vigilance = 'vigilance',
+    Villainy = 'villainy',
+}
+
+export enum KeywordName {
+    Ambush = 'ambush',
+    Bounty = 'bounty',
+    Coordinate = 'coordinate',
+    Exploit = 'exploit',
+    Fortify = 'fortify',
+    Grit = 'grit',
+    Hidden = 'hidden',
+    Overwhelm = 'overwhelm',
+    Raid = 'raid',
+    Restore = 'restore',
+    Piloting = 'piloting',
+    Plot = 'plot',
+    Saboteur = 'saboteur',
+    Sentinel = 'sentinel',
+    Shielded = 'shielded',
+    Smuggle = 'smuggle',
+    Support = 'support',
+}
+
+export enum Trait {
+    Armor = 'armor',
+    Bounty = 'bounty',
+    BountyHunter = 'bounty hunter',
+    CapitalShip = 'capital ship',
+    Clone = 'clone',
+    Condition = 'condition',
+    Creature = 'creature',
+    Disaster = 'disaster',
+    Droid = 'droid',
+    Ewok = 'ewok',
+    Fighter = 'fighter',
+    FirstOrder = 'first order',
+    Force = 'force',
+    Fortification = 'fortification',
+    Fringe = 'fringe',
+    Gambit = 'gambit',
+    Gungan = 'gungan',
+    Hutt = 'hutt',
+    Imperial = 'imperial',
+    Innate = 'innate',
+    Inquisitor = 'inquisitor',
+    Item = 'item',
+    Jawa = 'jawa',
+    Jedi = 'jedi',
+    Kaminoan = 'kaminoan',
+    Law = 'law',
+    Learned = 'learned',
+    Lightsaber = 'lightsaber',
+    Mandalorian = 'mandalorian',
+    Modification = 'modification',
+    Musician = 'musician',
+    Naboo = 'naboo',
+    NewRepublic = 'new republic',
+    Night = 'night',
+    Nihil = 'nihil',
+    Official = 'official',
+    Pilot = 'pilot',
+    Plan = 'plan',
+    Rebel = 'rebel',
+    Republic = 'republic',
+    Resistance = 'resistance',
+    Separatist = 'separatist',
+    Sith = 'sith',
+    Spectre = 'spectre',
+    Speeder = 'speeder',
+    Supply = 'supply',
+    Tactic = 'tactic',
+    Tank = 'tank',
+    Transport = 'transport',
+    Trick = 'trick',
+    Trooper = 'trooper',
+    Tusken = 'tusken',
+    Twilek = 'twi\'lek',
+    Undead = 'undead',
+    Underworld = 'underworld',
+    Vehicle = 'vehicle',
+    Walker = 'walker',
+    Weapon = 'weapon',
+    Wookiee = 'wookiee',
+
+    // bases trait
+    Aldhani = 'aldhani',
+    Atollon = 'atollon',
+    Bracca = 'bracca',
+    Cantonica = 'cantonica',
+    Castilon = 'castilon',
+    Christophsis = 'christophsis',
+    CloudCity = 'cloud city',
+    Concordia = 'concordia',
+    Coruscant = 'coruscant',
+    Corellia = 'corellia',
+    Dagobah = 'dagobah',
+    Dathomir = 'dathomir',
+    DeathStar = 'death star',
+    DQar = 'd\'qar',
+    Eadu = 'eadu',
+    Endor = 'endor',
+    Ferrix = 'ferrix',
+    Geonosis = 'geonosis',
+    Hoth = 'hoth',
+    HosnianPrime = 'hosnian prime',
+    Ilum = 'ilum',
+    Jedha = 'jedha',
+    Kamino = 'kamino',
+    Kashyyyk = 'kashyyyk',
+    Kessel = 'kessel',
+    Kalevala = 'kalevala',
+    Lothal = 'lothal',
+    Lowick = 'lowick',
+    Malachor = 'malachor',
+    Mandalore = 'mandalore',
+    Mortis = 'mortis',
+    Mustafar = 'mustafar',
+    Nadiri = 'nadiri',
+    Narkina5 = 'narkina 5',
+    Nevarro = 'nevarro',
+    ObaDiah = 'oba diah',
+    Onderon = 'onderon',
+    Peridea = 'peridea',
+    Pillio = 'pillio',
+    Quarzite = 'quarzite',
+    Ryloth = 'ryloth',
+    Scarif = 'scarif',
+    Seatos = 'seatos',
+    SegraMilo = 'segra milo',
+    Serenno = 'serenno',
+    Sorgan = 'sorgan',
+    StarkillerBase = 'starkiller base',
+    StarlightBeacon = 'starlight beacon',
+    StygeonPrime = 'stygeon prime',
+    Takodana = 'takodana',
+    Tatooine = 'tatooine',
+    Utapau = 'utapau',
+    Vardos = 'vardos',
+    Vassek = 'vassek',
+    Wayland = 'wayland',
+    Yavin4 = 'yavin 4',
+    Zanbar = 'zanbar',
+    Zeffo = 'zeffo',
+}
+
+// TODO: these could stand to be reorganized and cleaned up a bit
+// TODO: fix restrictions on players not being recognized by PlayerTargetResolver
+export enum AbilityRestriction {
+
+    /** Restricts a card from being declared as an attacker */
+    Attack = 'attack',
+
+    /** Restricts a card from being declared as an attack target */
+    BeAttacked = 'beAttacked',
+
+    /** Restricts a player's ability to play units */
+    PlayUnit = 'playUnit',
+
+    /** Restricts a player's ability to play upgrades */
+    PlayUpgrade = 'playUpgrade',
+
+    /** Restricts a player's ability to play events */
+    PlayEvent = 'playEvent',
+
+    /** Restricts a player's ability to put a certain card or type of card into play */
+    PutIntoPlay = 'putIntoPlay',
+
+    /** Restricts a card from being played. Typically used for event cards, see {@link AbilityRestriction.PutIntoPlay} for other card types */
+    Play = 'play',
+
+    /** Restricts a card or card type from being able to enter play. Typically used for non-events. See {@link AbilityRestriction.Play} for event cards */
+    EnterPlay = 'enterPlay',
+
+    /** Restricts a game object from being targetable by abilities */
+    AbilityTarget = 'abilityTarget',
+
+    BeHealed = 'beHealed',
+    Exhaust = 'exhaust',
+    InitiateKeywords = 'initiateKeywords',
+    Ready = 'ready',
+    DoesNotReadyDuringRegroup = 'doesNotReadyDuringRegroup',
+    ReceiveDamage = 'receiveDamage',
+    TriggerAbilities = 'triggerAbilities',
+    BeCaptured = 'beCaptured',
+    BeDefeated = 'beDefeated',
+    ReturnToHand = 'returnToHand',
+    DealCombatDamage = 'dealCombatDamage',
+}
+
+/** Union type of AbilityRestriction values that can block a card from being played */
+export type PlayRestriction =
+  | AbilityRestriction.Play
+  | AbilityRestriction.PlayEvent
+  | AbilityRestriction.PlayUnit
+  | AbilityRestriction.PlayUpgrade
+  | AbilityRestriction.PutIntoPlay
+  | AbilityRestriction.EnterPlay;
+
+export enum DamageModificationType {
+    Cap = 'cap',
+    PreventAll = 'all',
+    Increase = 'increase',
+    Multiply = 'multiply',
+    Reduce = 'reduce',
+    Replace = 'replace'
+}
+
+export enum StateWatcherName {
+    ActionsThisPhase = 'actionsThisPhase',
+    AttacksThisPhase = 'attacksThisPhase',
+    CardsDefeatedThisPhase = 'cardsDefeatedThisPhase',
+    CardsDiscardedThisPhase = 'cardsDiscardedThisPhase',
+    CardsDrawnThisPhase = 'cardsDrawnThisPhase',
+    CardsEnteredPlayThisPhase = 'cardsEnteredPlayThisPhase',
+    CardsLeftPlayThisPhase = 'cardsLeftPlayThisPhase',
+    CardsPlayedThisPhase = 'cardsPlayedThisPhase',
+    DamageDealtThisPhase = 'damageDealtThisPhase',
+    ForceUsedThisPhase = 'forceUsedThisPhase',
+    LeadersDeployedThisPhase = 'leadersDeployedThisPhase',
+    TokensCreatedThisPhase = 'tokensCreatedThisPhase',
+    UnitsHealedThisPhase = 'unitsHealedThisPhase',
+    UnitsDamagedThisPhase = 'unitsDamagedThisPhase',
+    BasesHealedThisPhase = 'basesHealedThisPhase',
+
+    // TODO STATE WATCHERS: watcher types needed
+    // - unit defeated: Iden, Emperor's Legion, Brutal Traditions, Spark of Hope, Bravado
+    // - damaged base: Cassian leader, Forced Surrender
+    // - card played: Luke leader, Vader leader, Lothal Insurgent, Vanguard Ace, Guardian of the Whills, Relentless, Omega
+    // - entered play: Boba unit
+    // - attacked base: Ephant Mon, Rule with Respect
+    // - attacked with unit type: Medal Ceremony, Bo-Katan leader, Asajj Ventress
+}
+
+/** For "canAffect" and target eligibility checks, indicates whether game state must be changed by the effect in order for the check to pass */
+export enum GameStateChangeRequired {
+    /** Game state change is not required */
+    None = 'none',
+
+    /**
+     * Game state change is required but the effect is not required to fully resolve. E.g., if exhausting resources,
+     * would not need to exhaust the full number of requested resources.
+     */
+    MustFullyOrPartiallyResolve = 'mustFullyOrPartiallyResolve',
+
+    /**
+     * Game state change is required and the effect is required to fully resolve. E.g., if exhausting resources,
+     * would be required to exhaust the full number of requested resources.
+     */
+    MustFullyResolve = 'mustFullyResolve',
+}
+
+export enum SubStepCheck {
+    None = 'none',
+    /** ifYouDoNot is a special case which needs to ignore SubStep checks, but then and ifYouDo will do this check. */
+    ThenIfYouDo = 'thenIfYouDo',
+    All = 'all'
+}
+
+export enum AlertType {
+    Notification = 'notification',
+    Warning = 'warning',
+    Danger = 'danger',
+    ReadyStatus = 'readyStatus',
+}
+
+/** During a rollback, indicates what point in the round the snapshot is from */
+export enum RollbackRoundEntryPoint {
+    StartOfActionPhase = 'startOfActionPhase',
+    WithinActionPhase = 'withinActionPhase',
+    EndOfActionPhase = 'endOfActionPhase',
+    StartOfRegroupPhase = 'startOfRegroupPhase',
+    WithinRegroupPhase = 'withinRegroupPhase',
+    EndOfRegroupPhase = 'endOfRegroupPhase',
+}
+
+export enum RollbackSetupEntryPoint {
+    StartOfSetupPhase = 'startOfSetupPhase',
+    WithinSetupPhase = 'withinSetupPhase',
+}
+
+export enum GameErrorSeverity {
+    Normal = 'normal',
+
+    /**
+     * Indicates that we should inform the player that something has gone wrong and send a discord update, but do not throw and interrupt
+     * game flow.
+     *
+     * Used for cases when something unexpected happens but we can potentially recover without losing game state.
+     */
+    SevereGameMessageOnly = 'severeGameMessageOnly',
+
+    /**
+     * Indicates that we should inform the player that something has gone wrong and send a discord update, then throw to interrupt game flow.
+     *
+     * Used for cases when something unexpected happens and we cannot recover.
+     */
+    SevereHaltGame = 'severeHaltGame',
+}
+
+export enum GameEndReason {
+    Concede = 'concede',
+    GameRules = 'gameRules',
+    PlayerLeft = 'playerLeft',
+    Timeout = 'timeout',
+}
+
+export enum Conjunction {
+    And = 'and',
+    Or = 'or',
+    AndOr = 'and/or',
+}
+
+/**
+ * Named Actions which have special button styles associated on front end
+ *
+ * If you add to this list, make sure to add a matching style in CardActionTray.tsx
+ */
+export enum NamedAction {
+    Damage = 'Damage',
+    Draw = 'Draw',
+    Discard = 'Discard',
+    Exhaust = 'Exhaust',
+    Pay = 'Pay',
+    Return = 'Return',
+    Play = 'Play',
+    Top = 'Top',
+    Bottom = 'Bottom',
+}
+
+export enum SwuGameFormat {
+    Premier = 'premier',
+    Open = 'open',
+    Eternal = 'eternal',
+    Limited = 'limited',
+    FauxSuns = 'fauxSuns',
+}
+
+/** The claim counters available during the action phase. TwinSuns/FauxSuns formats use all three; other formats use only Initiative. */
+export enum ClaimCounterType {
+    Initiative = 'initiative',
+    Plan = 'plan',
+    Blast = 'blast',
+}
+
+export enum CardPool {
+    Current = 'current',
+    NextSet = 'nextSet',
+    Unlimited = 'unlimited',
+}
+
+export enum GamesToWinMode {
+    BestOfOne = 'bestOfOne',
+    BestOfThree = 'bestOfThree',
+}
+
+export enum RematchMode {
+    Regular = 'regular',
+    Reset = 'reset',
+    Bo1ConvertToBo3 = 'bo1ConvertToBo3',
+    NewBo3 = 'newBo3',
+}

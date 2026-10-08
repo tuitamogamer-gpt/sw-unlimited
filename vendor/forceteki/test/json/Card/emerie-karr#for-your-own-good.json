@@ -1,0 +1,38 @@
+{
+  "title": "Emerie Karr",
+  "subtitle": "For Your Own Good",
+  "cost": 1,
+  "hp": 1,
+  "power": 2,
+  "text": "When Played: You may deal 1 damage to another ground unit. If you control that unit, the next unit you play this phase costs 1 resource less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "The cost discount from Emerie's “When Played” ability remains active even if she leaves play.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6241727747",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "imperial",
+    "clone"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 130
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 130
+    }
+  ],
+  "internalName": "emerie-karr#for-your-own-good"
+}

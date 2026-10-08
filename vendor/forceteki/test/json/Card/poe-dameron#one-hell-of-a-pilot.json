@@ -1,0 +1,42 @@
+{
+  "title": "Poe Dameron",
+  "subtitle": "One Hell of a Pilot",
+  "cost": 4,
+  "hp": 3,
+  "power": 3,
+  "text": "When played as a unit: Create an X-Wing token. You may attach this unit as an upgrade to a friendly Vehicle unit without a Pilot on it.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Pilots are considered units while not in play. If you use a \"play a unit\" ability, you may only play a Pilot as a unit. If you use a \"play an upgrade\" ability, you may only play a Pilot as an upgrade. If you use a \"play a card\" ability, you may do either.\nPoe may attach to the X-Wing created by his \"When Played\" ability.\n",
+  "upgradePower": 2,
+  "upgradeHp": 3,
+  "id": "8757741946",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "resistance",
+    "pilot"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "piloting"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 100
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 100
+    }
+  ],
+  "pilotText": "Piloting [2 resources Command Heroism] (You may play this as an upgrade on a friendly Vehicle without a Pilot.)",
+  "internalName": "poe-dameron#one-hell-of-a-pilot"
+}

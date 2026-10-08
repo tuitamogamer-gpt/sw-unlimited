@@ -1,0 +1,38 @@
+{
+  "title": "Hondo Ohnaka",
+  "subtitle": "Plays By His Own Rules",
+  "cost": 5,
+  "hp": 7,
+  "power": 3,
+  "text": "You may look at the top card of your deck at any time.\nAction: Play the top card of your deck (paying its cost). Use this ability only once each round.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that let you play a card require you to pay that card’s cost unless specified otherwise.\nHondo's action ability cannot be used as an action if you can't play the unit, as it would not change the game state.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6961763445",
+  "aspects": [
+    "cunning",
+    "vigilance"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 94
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 94
+    }
+  ],
+  "internalName": "hondo-ohnaka#plays-by-his-own-rules"
+}

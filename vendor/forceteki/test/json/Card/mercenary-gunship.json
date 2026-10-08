@@ -1,0 +1,37 @@
+{
+  "title": "Mercenary Gunship",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "Action [4 resources]: Take control of this unit. Any player may use this ability.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3577961001",
+  "aspects": [],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 256
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 256
+    }
+  ],
+  "internalName": "mercenary-gunship"
+}

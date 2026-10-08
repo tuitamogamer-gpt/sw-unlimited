@@ -1,0 +1,41 @@
+{
+  "title": "Shielded Hauler",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 4,
+  "text": "Shielded (When you play this unit, give a Shield token to it.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0494529513",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 122
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 122
+    }
+  ],
+  "internalName": "shielded-hauler"
+}

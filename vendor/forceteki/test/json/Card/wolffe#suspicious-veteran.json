@@ -1,0 +1,40 @@
+{
+  "title": "Wolffe",
+  "subtitle": "Suspicious Veteran",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "Saboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)\n\nWhen Played/On Attack: Bases can't be healed for this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Bases can’t be healed for the phase even if Wolffe is defeated after triggering his ability.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7533529264",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "fringe",
+    "clone"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 160
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 160
+    }
+  ],
+  "internalName": "wolffe#suspicious-veteran"
+}

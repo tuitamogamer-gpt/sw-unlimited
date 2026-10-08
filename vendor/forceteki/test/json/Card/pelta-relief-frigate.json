@@ -1,0 +1,39 @@
+{
+  "title": "Pelta Relief Frigate",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 4,
+  "power": 5,
+  "text": "When Played: Heal 2 damage from a friendly base and 2 damage from a friendly unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3340474751",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 91
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 91
+    }
+  ],
+  "internalName": "pelta-relief-frigate"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Remote Escort Tank",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 5,
+  "power": 5,
+  "text": "When Played: Give a unit Sentinel for this phase.\nPlot (When you deploy a leader, you may play this card from your resources, paying its cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3206848209",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "tank"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "plot"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 255
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 255
+    }
+  ],
+  "internalName": "remote-escort-tank"
+}

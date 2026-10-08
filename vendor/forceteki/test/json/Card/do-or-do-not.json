@@ -1,0 +1,36 @@
+{
+  "title": "Do or Do Not",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "You may use the Force (lose your Force token). If you do, draw 2 cards. If you do not, draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2062827036",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 175
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 175
+    }
+  ],
+  "internalName": "do-or-do-not"
+}

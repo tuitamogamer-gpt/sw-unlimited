@@ -1,0 +1,40 @@
+{
+  "title": "Osha",
+  "subtitle": "Haunted By Her Past",
+  "cost": 6,
+  "hp": 6,
+  "power": 5,
+  "text": "Action [Exhaust]: If a friendly Heroism unit was defeated this phase, play a Villainy unit from your resources, ignoring its Villainy aspect penalties. If you do, you may resource a card from your hand.",
+  "deployBox": "Saboteur\nAction: Play a Villainy unit from your resources, ignoring its Villainy aspect penalties. If you do, you may resource a card from your hand.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Osha’s leader ability still can be used as an action even if no friendly Heroism units were defeated this phase (but you don't get to play a card).\nResources enter play exhausted.\nOsha's action ability cannot be used as an action if you don't play a unit, as it would not change the game state.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9853778959",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "force"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 17
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 17
+    }
+  ],
+  "internalName": "osha#haunted-by-her-past"
+}

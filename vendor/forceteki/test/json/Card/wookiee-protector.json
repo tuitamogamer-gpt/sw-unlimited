@@ -1,0 +1,40 @@
+{
+  "title": "Wookiee Protector",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7623376050",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 75
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 75
+    }
+  ],
+  "internalName": "wookiee-protector"
+}

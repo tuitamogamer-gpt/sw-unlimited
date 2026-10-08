@@ -1,0 +1,40 @@
+{
+  "title": "Jedi Light Cruiser",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 7,
+  "power": 6,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1271289335",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "jedi",
+    "republic",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 251
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 251
+    }
+  ],
+  "internalName": "jedi-light-cruiser"
+}

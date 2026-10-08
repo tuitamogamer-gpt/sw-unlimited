@@ -1,0 +1,40 @@
+{
+  "title": "Padmé Amidala",
+  "subtitle": "What Do You Have to Hide?",
+  "cost": 6,
+  "hp": 8,
+  "power": 3,
+  "text": "When you reveal or discard 1 or more cards from your hand: You may exhaust this leader. If you do, deal 1 damage to a unit.",
+  "deployBox": "When you reveal or discard 1 or more cards from your hand: You may deal 1 damage to a unit.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "If another player's ability discards a card from your hand, you are still considered to discard that card, and Padme's ability still triggers.\nOnly effects that explicitly reveal cards from your hand can trigger Padme's ability. Padme's ability does not trigger if you show an opponent a card for game state purposes.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3399415368",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "naboo",
+    "republic",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 16
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 16
+    }
+  ],
+  "internalName": "padme-amidala#what-do-you-have-to-hide"
+}

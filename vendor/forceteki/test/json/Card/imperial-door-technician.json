@@ -1,0 +1,39 @@
+{
+  "title": "Imperial Door Technician",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 2,
+  "text": "When Defeated: Heal 2 damage from your base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6948319712",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 97
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 97
+    }
+  ],
+  "internalName": "imperial-door-technician"
+}

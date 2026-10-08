@@ -1,0 +1,38 @@
+{
+  "title": "Duchess's Protector",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 2,
+  "text": "When Defeated: Create a Mandalorian token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2943731349",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 58
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 58
+    }
+  ],
+  "internalName": "duchesss-protector"
+}

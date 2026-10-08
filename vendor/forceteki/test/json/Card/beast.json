@@ -1,0 +1,29 @@
+{
+  "title": "Beast",
+  "subtitle": "",
+  "cost": 0,
+  "hp": 3,
+  "power": 3,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6445363199",
+  "aspects": [],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "token",
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW"
+  },
+  "internalName": "beast"
+}

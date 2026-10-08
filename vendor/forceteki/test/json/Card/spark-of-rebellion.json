@@ -1,0 +1,37 @@
+{
+  "title": "Spark of Rebellion",
+  "subtitle": null,
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Look at an opponent's hand and discard a card from it.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2050990622",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "spectre"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 200
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 200
+    }
+  ],
+  "internalName": "spark-of-rebellion"
+}

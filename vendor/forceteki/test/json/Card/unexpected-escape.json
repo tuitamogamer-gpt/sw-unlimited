@@ -1,0 +1,36 @@
+{
+  "title": "Unexpected Escape",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Exhaust a unit. You may rescue a captured card guarded by that unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1973545191",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 76
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 76
+    }
+  ],
+  "internalName": "unexpected-escape"
+}

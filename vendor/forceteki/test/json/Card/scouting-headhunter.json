@@ -1,0 +1,41 @@
+{
+  "title": "Scouting Headhunter",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 2,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3584805138",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 110
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 110
+    }
+  ],
+  "internalName": "scouting-headhunter"
+}

@@ -1,0 +1,35 @@
+{
+  "title": "The Father",
+  "subtitle": "Maintaining Balance",
+  "cost": 8,
+  "hp": 10,
+  "power": 5,
+  "text": "When you use the Force: You may deal 1 damage to this unit. If you do, the Force is with you.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "The Father's ability triggers when you use the Force but only resolves after any current ability is finished resolving.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1554637578",
+  "aspects": [],
+  "traits": [
+    "force"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 260
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 260
+    }
+  ],
+  "internalName": "the-father#maintaining-balance"
+}

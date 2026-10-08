@@ -1,0 +1,39 @@
+{
+  "title": "Jar Jar Binks",
+  "subtitle": "Bumbling Representative",
+  "cost": 2,
+  "hp": 5,
+  "power": 1,
+  "text": "mock ability text",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "jar-jar-binks#bumbling-representative-id",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "gungan",
+    "official"
+  ],
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 187
+  },
+  "internalName": "jar-jar-binks#bumbling-representative",
+  "arena": "ground",
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 187
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Inquisitor's Lightsaber",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "Attach to a non-Vehicle unit.\nAttached unit gains: “While attacking a Force unit, this unit gets +2/+0.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 3,
+  "id": "3895004077",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "item",
+    "weapon",
+    "lightsaber"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 90
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 90
+    }
+  ],
+  "internalName": "inquisitors-lightsaber"
+}

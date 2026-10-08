@@ -1,0 +1,37 @@
+{
+  "title": "Vanguard Infantry",
+  "subtitle": null,
+  "cost": 1,
+  "hp": 2,
+  "power": 1,
+  "text": "When Defeated: You may give an Experience token to a unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5575681343",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 108
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 108
+    }
+  ],
+  "internalName": "vanguard-infantry"
+}

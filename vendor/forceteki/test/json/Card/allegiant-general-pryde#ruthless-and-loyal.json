@@ -1,0 +1,39 @@
+{
+  "title": "Allegiant General Pryde",
+  "subtitle": "Ruthless and Loyal",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "When indirect damage is dealt to a unit: You may defeat a non-unique upgrade on it.\nOn Attack: If you have the initiative, deal 2 indirect damage to a player.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "A player can't assign more indirect damage to a unit than it has remaining HP. Indirect damage is unpreventable and ignores Shields.\n(ERRATA) Templating update: “Unique” becomes “<uq>”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9611596703",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "first order",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 133
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 133
+    }
+  ],
+  "internalName": "allegiant-general-pryde#ruthless-and-loyal"
+}

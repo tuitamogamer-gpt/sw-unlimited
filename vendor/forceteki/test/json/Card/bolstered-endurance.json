@@ -1,0 +1,36 @@
+{
+  "title": "Bolstered Endurance",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 3,
+  "power": 1,
+  "text": "Attach to a Force unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 3,
+  "id": "3730933081",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 74
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 74
+    }
+  ],
+  "internalName": "bolstered-endurance"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Lightmaker",
+  "subtitle": "I Have An Idea",
+  "cost": 5,
+  "hp": 4,
+  "power": 3,
+  "text": "Raid 4\nWhen Defeated: Choose an arena. Exhaust each enemy unit in that arena.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2808340732",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 207
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 207
+    }
+  ],
+  "internalName": "lightmaker#i-have-an-idea"
+}

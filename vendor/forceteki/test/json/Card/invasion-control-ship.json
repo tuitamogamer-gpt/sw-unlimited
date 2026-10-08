@@ -1,0 +1,41 @@
+{
+  "title": "Invasion Control Ship",
+  "subtitle": "",
+  "cost": 7,
+  "hp": 9,
+  "power": 5,
+  "text": "Friendly Droid units gain Raid 2.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9937756875",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 169
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 169
+    }
+  ],
+  "internalName": "invasion-control-ship"
+}

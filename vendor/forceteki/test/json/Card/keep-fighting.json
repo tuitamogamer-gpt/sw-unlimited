@@ -1,0 +1,36 @@
+{
+  "title": "Keep Fighting",
+  "subtitle": null,
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Ready a unit with 3 or less power.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3058784025",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 169
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 169
+    }
+  ],
+  "internalName": "keep-fighting"
+}

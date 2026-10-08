@@ -1,0 +1,39 @@
+{
+  "title": "Wing Leader",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 1,
+  "power": 2,
+  "text": "When Played: Give 2 Experience tokens to another friendly REBEL unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3443737404",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 241
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 241
+    }
+  ],
+  "internalName": "wing-leader"
+}

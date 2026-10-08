@@ -1,0 +1,39 @@
+{
+  "title": "Awakened Exogorth",
+  "subtitle": "",
+  "cost": 7,
+  "hp": 7,
+  "power": 7,
+  "text": "Hidden (This unit can't be attacked if it was played this phase.)\nWhile this unit is attacking, the defending unit gets –3/–0.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If a unit has Hidden and Sentinel at the same time, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2900138286",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "space",
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 233
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 233
+    }
+  ],
+  "internalName": "awakened-exogorth"
+}

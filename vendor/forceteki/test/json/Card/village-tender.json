@@ -1,0 +1,40 @@
+{
+  "title": "Village Tender",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 3,
+  "power": 1,
+  "text": "Hidden (This unit can't be attacked if it was played this phase.)\nRestore 1 (When this unit attacks, heal 1 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If a unit has Hidden and Sentinel at the same time, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1978321046",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "ewok"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "hidden",
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 107
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 107
+    }
+  ],
+  "internalName": "village-tender"
+}

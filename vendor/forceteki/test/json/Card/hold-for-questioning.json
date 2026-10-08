@@ -1,0 +1,37 @@
+{
+  "title": "Hold For Questioning",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Exhaust an enemy unit. If you do, look at its controller's hand and discard a card from it that shares an aspect with that unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8906788860",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "law"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 217
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 217
+    }
+  ],
+  "internalName": "hold-for-questioning"
+}

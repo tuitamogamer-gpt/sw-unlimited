@@ -1,0 +1,41 @@
+{
+  "title": "Del Meeko",
+  "subtitle": "Providing Overwatch",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "Restore 1 (When this unit attacks, heal 1 damage from your base.)\n\nEach event an opponent plays costs [1 resource] more.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9412277544",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 34
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 34
+    }
+  ],
+  "internalName": "del-meeko#providing-overwatch"
+}

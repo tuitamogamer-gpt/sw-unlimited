@@ -1,0 +1,41 @@
+{
+  "title": "Heirloom Lightsaber",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "Attach to a non-Vehicle unit.\nIf attached unit is a Force unit, it gains Restore 1. (When this unit attacks, heal 1 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 2,
+  "upgradeHp": 2,
+  "id": "9852723156",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "item",
+    "weapon",
+    "lightsaber"
+  ],
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 53
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 53
+    }
+  ],
+  "internalName": "heirloom-lightsaber"
+}

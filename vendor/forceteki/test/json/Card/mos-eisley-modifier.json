@@ -1,0 +1,40 @@
+{
+  "title": "Mos Eisley Modifier",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 1,
+  "text": "Support (When you play this unit, you may attack with another unit. It gains this unit's other abilities for this attack.)\nGrit (This unit gets +1/+0 for each damage on it.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4307074948",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "support",
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 74
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 74
+    }
+  ],
+  "internalName": "mos-eisley-modifier"
+}

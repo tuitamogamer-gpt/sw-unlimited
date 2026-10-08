@@ -1,0 +1,41 @@
+{
+  "title": "Moff Gideon",
+  "subtitle": "Remnant Commander",
+  "cost": 3,
+  "hp": 5,
+  "power": 2,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)\nWhen Defeated: You may return a non-<uq> Imperial unit from your discard pile to your hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4641653534",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 97
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 97
+    }
+  ],
+  "internalName": "moff-gideon#remnant-commander"
+}

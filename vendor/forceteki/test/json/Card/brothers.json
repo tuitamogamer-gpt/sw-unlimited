@@ -1,0 +1,36 @@
+{
+  "title": "Brothers",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Attack with up to 2 <uq> units (one at a time). Prevent all combat damage that would be dealt to each of them for these attacks.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Units must be ready in order to attack.\nFully resolve the first attack, including all triggers, before beginning the second attack.\n“Combat damage” is only the damage dealt during the “end attack” step of an attack. It doesn't include damage from triggered abilities.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7421920224",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 59
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 59
+    }
+  ],
+  "internalName": "brothers"
+}

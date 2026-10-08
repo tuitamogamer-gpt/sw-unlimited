@@ -1,0 +1,40 @@
+{
+  "title": "The Galleon",
+  "subtitle": "Marauding Pirate Ship",
+  "cost": 7,
+  "hp": 6,
+  "power": 6,
+  "text": "When Played: You may disclose AggressionAggressionVillainy (reveal cards from your hand with these aspect icons among them). If you do, create 3 Spy tokens.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8897596897",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 141
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 141
+    }
+  ],
+  "internalName": "the-galleon#marauding-pirate-ship"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Shoot First",
+  "subtitle": null,
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a unit. It gets +1/+0 for this attack and deals its combat damage before the defender. (If the defender is defeated, it deals no combat damage.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "You must attack with a unit, if able. Units must be ready in order to attack.\n“Combat damage” is only the damage dealt during the “deal combat damage” step of an attack.\nIf the defender is defeated by the attacked, it does not deal combat damage back. If it survives and has Grit, it deals bonus damage from Grit when dealing combat damage back.\n(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8297630396",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 217
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 217
+    }
+  ],
+  "internalName": "shoot-first"
+}

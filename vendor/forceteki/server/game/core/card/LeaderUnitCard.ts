@@ -1,0 +1,339 @@
+import type { Player } from '../Player';
+import type { ZoneFilter } from '../Constants';
+import { CardType, DeployType, EffectName, RelativePlayer, Trait, WildcardCardType } from '../Constants';
+import { AbilityType, WildcardZoneName, ZoneName } from '../Constants';
+import { getPrintedAttributesOverride } from '../ongoingEffect/effectImpl/PrintedAttributesOverride';
+import type { IUnitAbilityRegistrar, IUnitCard } from './propertyMixins/UnitProperties';
+import { WithUnitProperties } from './propertyMixins/UnitProperties';
+import { EnumHelpers } from '../utils/EnumHelpers';
+import { TextHelper } from '../utils/TextHelper';
+import type { IActionAbilityProps, IConstantAbilityProps, IReplacementEffectAbilityProps, ITriggeredAbilityProps, IAbilityPropsWithType } from '../../Interfaces';
+import { Helpers } from '../utils/Helpers';
+import { Contract } from '../utils/Contract';
+import { EpicActionLimit } from '../ability/AbilityLimit';
+import { DeployLeaderSystem } from '../../gameSystems/DeployLeaderSystem';
+import type { ActionAbilityBase } from '../ability/ActionAbility';
+import type { ILeaderCard } from './propertyMixins/LeaderProperties';
+import { WithLeaderProperties } from './propertyMixins/LeaderProperties';
+import { InPlayCard } from './baseClasses/InPlayCard';
+import type { ICardDataJson } from '../../../utils/cardData/CardDataInterfaces';
+import type { ILeaderUnitAbilityRegistrar, ILeaderUnitLeaderSideAbilityRegistrar } from './AbilityRegistrationInterfaces';
+import type { TriggeredAbilityBase } from '../ability/TriggeredAbility';
+import type { Card } from './Card';
+import type ReplacementEffectAbility from '../ability/ReplacementEffectAbility';
+import type { IAbilityHelper } from '../../AbilityHelper';
+import type { ConstantAbility } from '../ability/ConstantAbility';
+import { registerStateBase, stateRef } from '../GameObjectUtils';
+
+const LeaderUnitCardParent = WithUnitProperties(WithLeaderProperties(InPlayCard));
+
+/** Represents a deployable leader in a deployed state (i.e., is also a unit) */
+export interface ILeaderUnitCard extends ILeaderCard, IUnitCard {}
+
+/** Represents a deployable leader in an undeployed state */
+export interface IDeployableLeaderCard extends ILeaderUnitCard {
+    get deployed(): boolean;
+    deploy(deployProps: { type: DeployType.LeaderUnit } | { type: DeployType.LeaderUpgrade; parentCard: IUnitCard }): void;
+    undeploy(): void;
+}
+
+@registerStateBase()
+export class LeaderUnitCard extends LeaderUnitCardParent implements IDeployableLeaderCard {
+    protected setupLeaderUnitSide;
+
+    @stateRef()
+    private accessor _deployEpicActionLimit: EpicActionLimit = null;
+
+    private readonly deployBox: string;
+
+    protected get deployEpicActionLimit() {
+        return this._deployEpicActionLimit;
+    }
+
+    private deployEpicActions: ActionAbilityBase[] = [];
+
+    public get deployed() {
+        return this._deployed;
+    }
+
+    /**
+     * Most deployable leaders share printed identity between their leader side and deployed unit side.
+     * For the rare leader whose deployed side has a distinct name/subtitle/traits (provided via the
+     * back-side card data), swap to those values while deployed. When no back-side data is present the
+     * front-side values are used, so existing single-identity leaders are unaffected.
+     */
+    public override get title(): string {
+        if (this.hasOngoingEffect(EffectName.PrintedAttributesOverride)) {
+            const override = getPrintedAttributesOverride('title', this.getOngoingEffectValues(EffectName.PrintedAttributesOverride));
+            if (override != null) {
+                return override;
+            }
+        }
+
+        return this.deployed && this._backSideTitle != null ? this._backSideTitle : this._title;
+    }
+
+    public override get subtitle(): string {
+        if (this.hasOngoingEffect(EffectName.PrintedAttributesOverride)) {
+            const override = getPrintedAttributesOverride('subtitle', this.getOngoingEffectValues(EffectName.PrintedAttributesOverride));
+            if (override != null) {
+                return override;
+            }
+        }
+
+        return this.deployed && this._backSideSubtitle != null ? this._backSideSubtitle : this._subtitle;
+    }
+
+    protected override getPrintedTraits(): Set<Trait> {
+        if (this.hasOngoingEffect(EffectName.PrintedAttributesOverride)) {
+            const override = getPrintedAttributesOverride('printedTraits', this.getOngoingEffectValues(EffectName.PrintedAttributesOverride));
+            if (override != null) {
+                return new Set(override);
+            }
+        }
+
+        return this.deployed && this.backsidePrintedTraits.size > 0
+            ? new Set(this.backsidePrintedTraits)
+            : new Set(this.printedTraits);
+    }
+
+    public override getType(): CardType {
+        if (this.canBeUpgrade && this.isAttached()) {
+            return CardType.LeaderUpgrade;
+        }
+        return this._deployed ? CardType.NonTokenLeaderUnit : CardType.Leader;
+    }
+
+    public constructor(owner: Player, cardData: ICardDataJson) {
+        super(owner, cardData);
+        this._deployEpicActionLimit = new EpicActionLimit(this.game);
+
+        const registrar = this.getAbilityRegistrar();
+
+        // add deploy leader action
+        this.deployEpicActions.push(registrar.addActionAbility({
+            limit: this.deployEpicActionLimit,
+            title: `Deploy ${this.title}`,
+            requiresConfirmation: true,
+            condition: (context) => context.player.resources.length >= context.source.cost,
+            zoneFilter: ZoneName.Base,
+            immediateEffect: new DeployLeaderSystem({}),
+            ...this.deployActionAbilityProps(this.game.abilityHelper)
+        }));
+
+        this.deployBox = cardData.deployBox;
+    }
+
+    protected override onInitialize(): void {
+        super.onInitialize();
+        this.setupLeaderUnitSide = true;
+        this.setupLeaderUnitSideAbilities(this.getAbilityRegistrar(), this.game.abilityHelper);
+        this.validateCardAbilities(this.triggeredAbilities, this.deployBox);
+    }
+
+    protected deployActionAbilityProps(AbilityHelper: IAbilityHelper): Partial<IActionAbilityProps<this>> {
+        return {};
+    }
+
+    protected override initializeStateForAbilitySetup() {
+        super.initializeStateForAbilitySetup();
+        this.deployEpicActions = [];
+    }
+
+    public override isUnit(): this is IUnitCard {
+        return this._deployed && !this.isAttached();
+    }
+
+    public override isDeployableLeader(): this is IDeployableLeaderCard {
+        return true;
+    }
+
+    public override isLeader(): this is ILeaderCard {
+        return true;
+    }
+
+    public override isLeaderUnit(): this is ILeaderUnitCard {
+        return this.isUnit();
+    }
+
+    public override initializeForStartZone(): void {
+        super.initializeForStartZone();
+
+        // leaders are always in a zone where they are allowed to be exhausted
+        this.setExhaustEnabled(true);
+        this.resolveAbilitiesForNewZone();
+    }
+
+    public override checkIsAttachable(): void {
+        Contract.assertTrue(this.canBeUpgrade);
+    }
+
+    /** Deploy the leader to the arena. Handles the move operation and state changes. */
+    public deploy(deployProps: { type: DeployType.LeaderUnit } | { type: DeployType.LeaderUpgrade; parentCard: IUnitCard }) {
+        Contract.assertFalse(this._deployed, `Attempting to deploy already deployed leader ${this.internalName}`);
+
+        this._deployed = true;
+
+        switch (deployProps.type) {
+            case DeployType.LeaderUpgrade:
+                this.attachTo(deployProps.parentCard);
+                break;
+            case DeployType.LeaderUnit:
+            default:
+                this.moveTo(this.defaultArena);
+                break;
+        }
+    }
+
+    /** Return the leader from the arena to the base zone. Handles the move operation and state changes. */
+    public undeploy() {
+        Contract.assertTrue(this._deployed, `Attempting to un-deploy leader ${this.internalName} while it is not deployed`);
+
+        this._deployed = false;
+        this.moveTo(ZoneName.Base);
+    }
+
+    protected override getAbilityRegistrar(): ILeaderUnitAbilityRegistrar & ILeaderUnitLeaderSideAbilityRegistrar {
+        const registrar = super.getAbilityRegistrar() as IUnitAbilityRegistrar<LeaderUnitCard>;
+
+        return {
+            ...registrar,
+            addPilotDeploy: () => this.addPilotDeploy(true, registrar),
+        };
+    }
+
+    protected override callSetupLeaderWithRegistrar() {
+        this.setupLeaderSideAbilities(this.getAbilityRegistrar(), this.game.abilityHelper);
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    protected override setupLeaderSideAbilities(registrar: ILeaderUnitLeaderSideAbilityRegistrar, AbilityHelper: IAbilityHelper) {}
+
+    /**
+     * Create card abilities for the leader unit side by calling subsequent methods with appropriate properties
+     */
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    protected setupLeaderUnitSideAbilities(registrar: ILeaderUnitAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+    }
+
+    private addPilotDeploy(makeAttachedUnitALeader: boolean, registrar: IUnitAbilityRegistrar<LeaderUnitCard>) {
+        Contract.assertNotNullLike(this.printedUpgradeHp, `Leader ${this.title} is missing upgrade HP.`);
+        Contract.assertNotNullLike(this.printedUpgradePower, `Leader ${this.title} is missing upgrade power.`);
+
+        if (makeAttachedUnitALeader) {
+            registrar.addPilotingConstantAbilityTargetingAttached({
+                title: 'Attached unit is a Leader',
+                ongoingEffect: this.game.abilityHelper.ongoingEffects.isLeader()
+            });
+        }
+
+        this.deployEpicActions.push(registrar.addActionAbility({
+            title: `Deploy ${this.title} as a ${TextHelper.Trait.Pilot}`,
+            requiresConfirmation: true,
+            limit: this.deployEpicActionLimit,
+            condition: (context) => context.player.resources.length >= context.source.cost,
+            targetResolver: {
+                cardTypeFilter: WildcardCardType.Unit,
+                controller: RelativePlayer.Self,
+                cardCondition: (card, context) => card.isUnit() && card.hasSomeTrait(Trait.Vehicle) && card.canAttachPilot(context.source),
+                immediateEffect: this.game.abilityHelper.immediateEffects.deployAndAttachPilotLeader((context) => ({
+                    leaderPilotCard: context.source
+                }))
+            }
+        }));
+    }
+
+    protected override createCoordinateAbilityProps(properties: IAbilityPropsWithType<this>): IAbilityPropsWithType<this> {
+        return this.addZoneForSideToAbilityWithType(properties);
+    }
+
+    public override createActionAbility<TSource extends Card = this>(properties: IActionAbilityProps<TSource>): ActionAbilityBase {
+        if (properties.printedAbility) {
+            properties.zoneFilter = this.getAbilityZonesForSide(properties.zoneFilter);
+        }
+
+        return super.createActionAbility(properties);
+    }
+
+    public override createConstantAbility<TSource extends Card = this>(properties: IConstantAbilityProps<TSource>): ConstantAbility {
+        if (properties.printedAbility) {
+            properties.sourceZoneFilter = this.getAbilityZonesForSide(properties.sourceZoneFilter);
+        }
+
+        return super.createConstantAbility(properties);
+    }
+
+    public override createReplacementEffectAbility<TSource extends Card = this>(properties: IReplacementEffectAbilityProps<TSource>): ReplacementEffectAbility {
+        if (properties.printedAbility) {
+            properties.zoneFilter = this.getAbilityZonesForSide(properties.zoneFilter);
+        }
+
+        return super.createReplacementEffectAbility(properties);
+    }
+
+    protected override createTriggeredAbility<TSource extends Card = this>(properties: ITriggeredAbilityProps<TSource>): TriggeredAbilityBase {
+        if (properties.printedAbility) {
+            properties.zoneFilter = this.getAbilityZonesForSide(properties.zoneFilter);
+        }
+
+        return super.createTriggeredAbility(properties);
+    }
+
+    /** Generates the right zoneFilter property depending on which leader side we're setting up */
+    private addZoneForSideToAbilityWithType<Properties extends IAbilityPropsWithType<LeaderUnitCard>>(properties: Properties) {
+        if (properties.type === AbilityType.Constant) {
+            properties.sourceZoneFilter = this.getAbilityZonesForSide(properties.sourceZoneFilter);
+        } else {
+            properties.zoneFilter = this.getAbilityZonesForSide(properties.zoneFilter);
+        }
+        return properties;
+    }
+
+    private getAbilityZonesForSide(propertyZone: ZoneFilter | ZoneFilter[]) {
+        // A deployed leader retains its unit-side abilities when moved to the other arena.
+        const abilityZone = this.setupLeaderUnitSide ? WildcardZoneName.AnyArena : ZoneName.Base;
+
+        return propertyZone
+            ? Helpers.asArray(propertyZone).concat([abilityZone])
+            : abilityZone;
+    }
+
+    protected override initializeForCurrentZone(prevZone?: ZoneName): void {
+        super.initializeForCurrentZone(prevZone);
+
+        switch (this.zoneName) {
+            case ZoneName.GroundArena:
+            case ZoneName.SpaceArena:
+                this._deployed = true;
+                this.setDamageEnabled(true);
+                this.setActiveAttackEnabled(true);
+                this.setUpgradesEnabled(true);
+                this.setExhaustEnabled(true);
+                this.exhausted = false;
+                this.setCaptureZoneEnabled(true);
+                break;
+
+            case ZoneName.Base:
+                this._deployed = false;
+                this.setDamageEnabled(false);
+                this.setActiveAttackEnabled(false);
+                this.setUpgradesEnabled(false);
+                this.setExhaustEnabled(true);
+                this.exhausted = prevZone ? EnumHelpers.isArena(prevZone) : false;
+                this.setCaptureZoneEnabled(false);
+                break;
+        }
+    }
+
+    public override getSummary(activePlayer: Player, overrideHidden: boolean = false) {
+        return {
+            ...super.getSummary(activePlayer, overrideHidden),
+            epicDeployActionSpent: this.deployEpicActionLimit.isAtMax(this.owner)
+        };
+    }
+
+    public override getCardState(): any {
+        return { ...super.getCardState(),
+            deployed: this.deployed };
+    }
+}

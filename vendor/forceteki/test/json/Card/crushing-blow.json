@@ -1,0 +1,36 @@
+{
+  "title": "Crushing Blow",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Defeat a non-leader unit that costs 2 or less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4218264341",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 77
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 77
+    }
+  ],
+  "internalName": "crushing-blow"
+}

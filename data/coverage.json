@@ -1,0 +1,203 @@
+{
+  "engineCommit": "1f0e9783c4743acdc67df0c4ab3f3610a349c32a",
+  "decks": [
+    {
+      "id": "sor-luke-skywalker",
+      "name": "Luke Skywalker · Spark of Rebellion",
+      "supported": true,
+      "cardCount": 50,
+      "coverage": {
+        "total": 31,
+        "implemented": 31,
+        "missing": []
+      }
+    },
+    {
+      "id": "sor-darth-vader",
+      "name": "Darth Vader · Spark of Rebellion",
+      "supported": true,
+      "cardCount": 50,
+      "coverage": {
+        "total": 29,
+        "implemented": 29,
+        "missing": []
+      }
+    },
+    {
+      "id": "shd-moff-gideon",
+      "name": "Moff Gideon · Shadows of the Galaxy",
+      "supported": true,
+      "cardCount": 50,
+      "coverage": {
+        "total": 29,
+        "implemented": 29,
+        "missing": []
+      }
+    },
+    {
+      "id": "shd-the-mandalorian",
+      "name": "The Mandalorian · Shadows of the Galaxy",
+      "supported": true,
+      "cardCount": 50,
+      "coverage": {
+        "total": 30,
+        "implemented": 30,
+        "missing": []
+      }
+    },
+    {
+      "id": "twi-ahsoka-tano",
+      "name": "Ahsoka Tano · Twilight of the Republic",
+      "supported": true,
+      "cardCount": 50,
+      "coverage": {
+        "total": 31,
+        "implemented": 31,
+        "missing": []
+      }
+    },
+    {
+      "id": "twi-general-grievous",
+      "name": "General Grievous · Twilight of the Republic",
+      "supported": true,
+      "cardCount": 50,
+      "coverage": {
+        "total": 32,
+        "implemented": 32,
+        "missing": []
+      }
+    },
+    {
+      "id": "jtl-boba-fett",
+      "name": "Boba Fett · Jump to Lightspeed",
+      "supported": true,
+      "cardCount": 50,
+      "coverage": {
+        "total": 25,
+        "implemented": 25,
+        "missing": []
+      }
+    },
+    {
+      "id": "jtl-han-solo",
+      "name": "Han Solo · Jump to Lightspeed",
+      "supported": true,
+      "cardCount": 50,
+      "coverage": {
+        "total": 27,
+        "implemented": 27,
+        "missing": []
+      }
+    },
+    {
+      "id": "lof-qui-gon-jinn",
+      "name": "Qui-Gon Jinn · Legends of the Force",
+      "supported": true,
+      "cardCount": 50,
+      "coverage": {
+        "total": 25,
+        "implemented": 25,
+        "missing": []
+      }
+    },
+    {
+      "id": "lof-darth-maul",
+      "name": "Darth Maul · Legends of the Force",
+      "supported": true,
+      "cardCount": 50,
+      "coverage": {
+        "total": 25,
+        "implemented": 25,
+        "missing": []
+      }
+    },
+    {
+      "id": "sec-padme-amidala",
+      "name": "Padmé Amidala · Secrets of Power",
+      "supported": true,
+      "cardCount": 50,
+      "coverage": {
+        "total": 30,
+        "implemented": 30,
+        "missing": []
+      }
+    },
+    {
+      "id": "sec-chancellor-palpatine",
+      "name": "Chancellor Palpatine · Secrets of Power",
+      "supported": true,
+      "cardCount": 50,
+      "coverage": {
+        "total": 28,
+        "implemented": 28,
+        "missing": []
+      }
+    },
+    {
+      "id": "law-leia-organa",
+      "name": "Leia Organa · A Lawless Time",
+      "supported": true,
+      "cardCount": 50,
+      "coverage": {
+        "total": 25,
+        "implemented": 25,
+        "missing": []
+      }
+    },
+    {
+      "id": "law-jabba-the-hutt",
+      "name": "Jabba the Hutt · A Lawless Time",
+      "supported": true,
+      "cardCount": 50,
+      "coverage": {
+        "total": 25,
+        "implemented": 25,
+        "missing": []
+      }
+    },
+    {
+      "id": "ash-emperor-palpatine",
+      "name": "Emperor Palpatine · Ashes of the Empire",
+      "supported": true,
+      "cardCount": 50,
+      "coverage": {
+        "total": 25,
+        "implemented": 25,
+        "missing": []
+      }
+    },
+    {
+      "id": "ash-luke-skywalker",
+      "name": "Luke Skywalker · Ashes of the Empire",
+      "supported": true,
+      "cardCount": 50,
+      "coverage": {
+        "total": 25,
+        "implemented": 25,
+        "missing": []
+      }
+    },
+    {
+      "id": "ibh-leia-organa",
+      "name": "Leia Organa · Intro Battle: Hoth",
+      "supported": true,
+      "cardCount": 50,
+      "coverage": {
+        "total": 25,
+        "implemented": 25,
+        "missing": []
+      }
+    },
+    {
+      "id": "ibh-darth-vader",
+      "name": "Darth Vader · Intro Battle: Hoth",
+      "supported": true,
+      "cardCount": 50,
+      "coverage": {
+        "total": 26,
+        "implemented": 26,
+        "missing": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "title": "The Way of the Mand'alor",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 0,
+  "power": 2,
+  "text": "This upgrade costs 1 resource less to play on a Mandalorian unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 2,
+  "upgradeHp": 0,
+  "id": "6045776127",
+  "aspects": [],
+  "traits": [
+    "mandalorian"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 263
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 263
+    }
+  ],
+  "internalName": "the-way-of-the-mandalor"
+}

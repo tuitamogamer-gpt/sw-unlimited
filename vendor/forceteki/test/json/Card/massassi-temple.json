@@ -1,0 +1,36 @@
+{
+  "title": "Massassi Temple",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7720892024",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "yavin 4"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 26
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 26
+    }
+  ],
+  "internalName": "massassi-temple"
+}

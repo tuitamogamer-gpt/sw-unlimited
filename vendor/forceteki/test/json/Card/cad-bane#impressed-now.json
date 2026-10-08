@@ -1,0 +1,41 @@
+{
+  "title": "Cad Bane",
+  "subtitle": "Impressed Now?",
+  "cost": 5,
+  "hp": 5,
+  "power": 4,
+  "text": "When Played: You may defeat a unit with 2 or less remaining HP.\nPlot (When you deploy a leader, you may play this card from your resources, paying its cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8365930807",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "plot"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 34
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 34
+    }
+  ],
+  "internalName": "cad-bane#impressed-now"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Mon Mothma",
+  "subtitle": "Voice Of The Rebellion",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "When Played: Search the top 5 cards of your deck for a REBEL card, reveal it, and draw it. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3498814896",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 96
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 96
+    }
+  ],
+  "internalName": "mon-mothma#voice-of-the-rebellion"
+}

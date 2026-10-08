@@ -1,0 +1,41 @@
+{
+  "title": "Chain Code Collector",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 2,
+  "power": 4,
+  "text": "Ambush (When you play this unit, it may ready and attack an enemy unit.)\nOn Attack: If the defender has a Bounty, it gets –4/–0 for this attack.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7171636330",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush",
+    "bounty"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 216
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 216
+    }
+  ],
+  "internalName": "chain-code-collector"
+}

@@ -1,0 +1,25 @@
+{
+  "title": "The Force",
+  "subtitle": "",
+  "cost": 0,
+  "hp": null,
+  "power": null,
+  "text": "(The Force is with you. When you use the Force, remove this token from play.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "An individual player may only control one Force token at a time. If a player already controls a Force token when they are instructed to create their Force token, nothing happens.\nEach player may create their own Force token. It is not shared between players.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4571900905",
+  "aspects": [],
+  "traits": [],
+  "keywords": [],
+  "types": [
+    "token"
+  ],
+  "setId": {
+    "set": "LOF"
+  },
+  "internalName": "the-force"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Far Far Away",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Return a friendly non-leader unit to its owner's hand. If you do, return an enemy non-leader unit to its owner's hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that return a card to hand must choose a card in play unless otherwise specified.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6508831546",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 236
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 236
+    }
+  ],
+  "internalName": "far-far-away"
+}

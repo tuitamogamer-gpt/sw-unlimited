@@ -1,0 +1,41 @@
+{
+  "title": "Ion Cannon",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 5,
+  "power": 0,
+  "text": "Action [Exhaust]: Deal 3 damage to a space unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9782761594",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "weapon"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 16
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 16
+    },
+    {
+      "set": "IBH",
+      "number": 27
+    }
+  ],
+  "internalName": "ion-cannon"
+}

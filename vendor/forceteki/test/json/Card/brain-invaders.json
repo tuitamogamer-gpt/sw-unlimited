@@ -1,0 +1,35 @@
+{
+  "title": "Brain Invaders",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 2,
+  "text": "Each leader loses all abilities except for epic actions and can't gain abilities.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "(ERRATA) Each non-upgrade leader loses all abilities except for epic actions.\n(ERRATA) Templating update: “Lose all abilities and can't gain abilities” becomes “lose all abilities”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4602353389",
+  "aspects": [],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 255
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 255
+    }
+  ],
+  "internalName": "brain-invaders"
+}

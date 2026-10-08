@@ -1,0 +1,36 @@
+{
+  "title": "Pau City",
+  "subtitle": "",
+  "cost": null,
+  "hp": 26,
+  "power": null,
+  "text": "Each leader unit you control gets +0/+1.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6594935791",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "utapau"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 19
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 19
+    }
+  ],
+  "internalName": "pau-city"
+}

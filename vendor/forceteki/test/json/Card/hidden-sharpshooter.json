@@ -1,0 +1,41 @@
+{
+  "title": "Hidden Sharpshooter",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 4,
+  "text": "Ambush (When you play this unit, it may ready and attack an enemy unit.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7953154930",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "republic",
+    "clone",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 214
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 214
+    }
+  ],
+  "internalName": "hidden-sharpshooter"
+}

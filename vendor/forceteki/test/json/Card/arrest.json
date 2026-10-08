@@ -1,0 +1,37 @@
+{
+  "title": "Arrest",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Your base captures an enemy non-leader unit. At the start of the regroup phase, its owner rescues it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "A base capturing a unit functions similarly to a unit capturing another unit. The captured unit is placed facedown under the base, out of play, and the base guards that unit. The captured unit can be rescued so long as the rescue ability doesn't specify that a unit is guarding the captured unit.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1407380526",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "law"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 195
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 195
+    }
+  ],
+  "internalName": "arrest"
+}

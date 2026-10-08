@@ -1,0 +1,39 @@
+{
+  "title": "Umbaran Mobile Cannon",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 3,
+  "power": 7,
+  "text": "The first time this unit would take damage each phase, prevent that damage.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8495959027",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "walker"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 67
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 67
+    }
+  ],
+  "internalName": "umbaran-mobile-cannon"
+}

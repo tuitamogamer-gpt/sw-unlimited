@@ -1,0 +1,40 @@
+{
+  "title": "Shin Hati",
+  "subtitle": "Going Somewhere?",
+  "cost": 5,
+  "hp": 6,
+  "power": 6,
+  "text": "While this is the only friendly non-leader ground unit, she gains Sentinel. (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1043323645",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "force"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 49
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 49
+    }
+  ],
+  "internalName": "shin-hati#going-somewhere"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "The Son",
+  "subtitle": "Embodiment of Darkness",
+  "cost": 7,
+  "hp": 8,
+  "power": 6,
+  "text": "While the Force is with you, each friendly unit gets +2/+0.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5460831827",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "force"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 237
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 237
+    }
+  ],
+  "internalName": "the-son#embodiment-of-darkness"
+}

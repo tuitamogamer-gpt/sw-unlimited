@@ -1,0 +1,40 @@
+{
+  "title": "Shuttle Tydirium",
+  "subtitle": "Fly Casual",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "On Attack: Discard a card from your deck. If it has an odd cost, you may give an Experience token to another unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nAlways discard from the top of a deck, unless an ability specifies otherwise.\nZero is an even number.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1990020761",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 200
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 200
+    }
+  ],
+  "internalName": "shuttle-tydirium#fly-casual"
+}

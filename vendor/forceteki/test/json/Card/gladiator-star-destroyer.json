@@ -1,0 +1,42 @@
+{
+  "title": "Gladiator Star Destroyer",
+  "subtitle": null,
+  "cost": 6,
+  "hp": 6,
+  "power": 5,
+  "text": "When Played: Give a unit Sentinel for this phase. (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8294130780",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 86
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 86
+    }
+  ],
+  "internalName": "gladiator-star-destroyer"
+}

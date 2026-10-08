@@ -1,0 +1,39 @@
+{
+  "title": "Insurgent Camp",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 0,
+  "power": 0,
+  "text": "Fortify (Attach this to your base, not a unit.)\nWhen you play a unit with 3 or less power: You may defeat this upgrade. If you do, ready that unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "4289478789",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "fortification"
+  ],
+  "keywords": [
+    "fortify"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 216
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 216
+    }
+  ],
+  "internalName": "insurgent-camp"
+}

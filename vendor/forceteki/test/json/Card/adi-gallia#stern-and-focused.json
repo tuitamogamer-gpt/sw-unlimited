@@ -1,0 +1,40 @@
+{
+  "title": "Adi Gallia",
+  "subtitle": "Stern and Focused",
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "When an opponent plays an event: Deal 1 damage to that player's base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4741025404",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 142
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 142
+    }
+  ],
+  "internalName": "adi-gallia#stern-and-focused"
+}

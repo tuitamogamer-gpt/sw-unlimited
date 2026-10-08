@@ -1,0 +1,37 @@
+{
+  "title": "Bokken Saber",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 1,
+  "text": "Attach to a non-Vehicle unit.\nAttached unit gains: “When Attack Ends: Give an Advantage token to this unit.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "When Attack Ends abilities trigger at the same time as units deal combat damage.\n",
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "0136138854",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "item",
+    "weapon"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 180
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 180
+    }
+  ],
+  "internalName": "bokken-saber"
+}

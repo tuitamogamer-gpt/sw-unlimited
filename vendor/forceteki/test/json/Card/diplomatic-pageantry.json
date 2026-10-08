@@ -1,0 +1,36 @@
+{
+  "title": "Diplomatic Pageantry",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Exhaust a friendly unit and an enemy unit. If you do, give 2 Advantage tokens to that friendly unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6089557572",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "law"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 231
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 231
+    }
+  ],
+  "internalName": "diplomatic-pageantry"
+}

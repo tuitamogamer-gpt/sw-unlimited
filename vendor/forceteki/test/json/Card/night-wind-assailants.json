@@ -1,0 +1,39 @@
+{
+  "title": "Night Wind Assailants",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 5,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5952331790",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 251
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 251
+    }
+  ],
+  "internalName": "night-wind-assailants"
+}

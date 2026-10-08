@@ -1,0 +1,28 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { INonLeaderUnitAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { NonLeaderUnitCard } from '../../../core/card/NonLeaderUnitCard';
+import { RelativePlayer, Trait } from '../../../core/Constants';
+import { TextHelper } from '../../../core/utils/TextHelper';
+
+export default class MonMothmaVoiceoftheRebellion extends NonLeaderUnitCard {
+    protected override getImplementationId() {
+        return {
+            id: '3498814896',
+            internalName: 'mon-mothma#voice-of-the-rebellion'
+        };
+    }
+
+    public override setupCardAbilities(registrar: INonLeaderUnitAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.addWhenPlayedAbility({
+            title: `Search the top 5 cards of your deck for a ${TextHelper.Trait.Rebel} card, then reveal and draw it.`,
+            immediateEffect: AbilityHelper.immediateEffects.deckSearch({
+                searchCount: 5,
+                cardCondition: (card) => card.hasSomeTrait(Trait.Rebel),
+                selectedCardsImmediateEffect: AbilityHelper.immediateEffects.revealAndDraw({
+                    useDisplayPrompt: true,
+                    promptedPlayer: RelativePlayer.Opponent
+                })
+            })
+        });
+    }
+}

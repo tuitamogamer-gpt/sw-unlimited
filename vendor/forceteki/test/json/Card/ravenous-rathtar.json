@@ -1,0 +1,37 @@
+{
+  "title": "Ravenous Rathtar",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 5,
+  "power": 8,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5796902316",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 168
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 168
+    }
+  ],
+  "internalName": "ravenous-rathtar"
+}

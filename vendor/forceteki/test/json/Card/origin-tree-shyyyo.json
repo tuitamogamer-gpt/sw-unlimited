@@ -1,0 +1,39 @@
+{
+  "title": "Origin Tree Shyyyo",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 8,
+  "power": 4,
+  "text": "Restore 1\nWhile you control a Kashyyyk base, the first, second, and third units you play each round cost 1 resource less, 2 resources less, and 3 resources less, respectively.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "\"First\", \"second\", and \"third\" are independent of when Origin Tree Shyyyo enters play. If Origin Tree Shyyyo is the first unit you play in a round, the next unit you play will cost 2 less.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1467748247",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 145
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 145
+    }
+  ],
+  "internalName": "origin-tree-shyyyo"
+}

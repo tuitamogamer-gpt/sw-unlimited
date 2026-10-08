@@ -1,0 +1,40 @@
+{
+  "title": "Garindan",
+  "subtitle": "Information Broker",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "When Played: Name a card. Look at an opponent's hand and discard a card with that name from it.\nPlot (When you deploy a leader, you may play this card from your resources, paying its cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s “name” do not include the subtitle of the card.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2276001210",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "plot"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 186
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 186
+    }
+  ],
+  "internalName": "garindan#information-broker"
+}

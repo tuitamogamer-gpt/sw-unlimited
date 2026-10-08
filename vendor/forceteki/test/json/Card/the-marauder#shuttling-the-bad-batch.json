@@ -1,0 +1,42 @@
+{
+  "title": "The Marauder",
+  "subtitle": "Shuttling the Bad Batch",
+  "cost": 5,
+  "hp": 5,
+  "power": 4,
+  "text": "Ambush\nWhen Played: Choose a card in your discard pile. Put it into play as a resource if it shares a name with a unit you control.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\nAbilities that refer to a card’s “name” do not include the subtitle of the card.\nA card put into play as a resource enters play exhausted.\n(ERRATA) Templating update: “Put into play as a resource” becomes “resource”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2143627819",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 102
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 102
+    }
+  ],
+  "internalName": "the-marauder#shuttling-the-bad-batch"
+}

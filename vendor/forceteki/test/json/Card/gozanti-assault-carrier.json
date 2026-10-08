@@ -1,0 +1,43 @@
+{
+  "title": "Gozanti Assault Carrier",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "Support (When you play this unit, you may attack with another unit. It gains this unit's other abilities for this attack.)\nOn Attack: This unit gains Sentinel for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you use Gozanti Assault Carrier's Support ability to attack with another unit, the \"\"On Attack\"\" ability gives the attacking unit Sentinel for this phase.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8244257655",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "support",
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 99
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 99
+    }
+  ],
+  "internalName": "gozanti-assault-carrier"
+}

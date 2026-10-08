@@ -1,0 +1,42 @@
+{
+  "title": "Forged Starfighter",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 1,
+  "text": "Hidden (This unit can't be attacked if it was played this phase.)\nRaid 1 (This unit gets +1/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If a unit has Hidden and Sentinel at the same time, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6082085272",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "sith",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "hidden",
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 228
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 228
+    }
+  ],
+  "internalName": "forged-starfighter"
+}

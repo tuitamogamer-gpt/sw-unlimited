@@ -1,0 +1,36 @@
+{
+  "title": "Barrel Roll",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a space unit. After completing this attack, you may exhaust a space unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you play Barrel Roll, you must attack with a unit, if able. Units must be ready in order to attack.\nResolve all triggered abilities from the attack before exhausting a unit.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7660822254",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 228
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 228
+    }
+  ],
+  "internalName": "barrel-roll"
+}

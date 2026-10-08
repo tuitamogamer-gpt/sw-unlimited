@@ -1,0 +1,39 @@
+{
+  "title": "Nightbrother",
+  "subtitle": "Maul's Gauntlet",
+  "cost": 7,
+  "hp": 7,
+  "power": 6,
+  "text": "When Played: You may play a unit from your discard pile. It costs 3 resources less and enters play ready. At the start of the next regroup phase, defeat it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "The played unit is defeated at the start of the next regroup phase, even if Nightbrother leaves play.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3863446149",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 204
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 204
+    }
+  ],
+  "internalName": "nightbrother#mauls-gauntlet"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Keep Them Talking",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Exhaust up to 2 units that each cost 3 or less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3228349929",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 233
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 233
+    }
+  ],
+  "internalName": "keep-them-talking"
+}

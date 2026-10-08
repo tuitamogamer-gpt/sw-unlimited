@@ -1,0 +1,37 @@
+{
+  "title": "Target Tagger",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "When Played: You may attack with a unit. If it's a Bounty Hunter, it gets +2/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5613037149",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 157
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 157
+    }
+  ],
+  "internalName": "target-tagger"
+}

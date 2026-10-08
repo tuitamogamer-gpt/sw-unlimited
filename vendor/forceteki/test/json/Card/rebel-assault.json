@@ -1,0 +1,38 @@
+{
+  "title": "Rebel Assault",
+  "subtitle": null,
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a REBEL unit. It gets +1/+0 for this attack.\n\nThen, attack with another REBEL unit. It gets +1/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "You must attack with a Rebel unit, if able. Units must be ready in order to attack.\nFor abilities that encompass multiple actions, resolve each action (and any resulting triggers) sequentially.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8988732248",
+  "aspects": [
+    "heroism",
+    "command"
+  ],
+  "traits": [
+    "rebel",
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 103
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 103
+    }
+  ],
+  "internalName": "rebel-assault"
+}

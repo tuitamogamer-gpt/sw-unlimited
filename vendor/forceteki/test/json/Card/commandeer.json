@@ -1,0 +1,36 @@
+{
+  "title": "Commandeer",
+  "subtitle": "",
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "Take control of a non-leader Vehicle unit that costs 6 or less without a Pilot on it. If you do, ready it. At the start of the next regroup phase, return that unit to its owner's hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nCommandeer only returns the unit to hand if it's in play.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8105698374",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 235
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 235
+    }
+  ],
+  "internalName": "commandeer"
+}

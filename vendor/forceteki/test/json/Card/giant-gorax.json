@@ -1,0 +1,39 @@
+{
+  "title": "Giant Gorax",
+  "subtitle": "",
+  "cost": 7,
+  "hp": 7,
+  "power": 7,
+  "text": "Overwhelm\nOn Attack/When Defeated: If you control an Endor base, each opponent chooses one:\nYou deal 3 damage to a unit or base they control.\nThey discard a card from their hand and defeat a resource they control.\n",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3695328235",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 188
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 188
+    }
+  ],
+  "internalName": "giant-gorax"
+}

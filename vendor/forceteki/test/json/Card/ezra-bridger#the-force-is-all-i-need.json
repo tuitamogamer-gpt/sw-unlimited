@@ -1,0 +1,42 @@
+{
+  "title": "Ezra Bridger",
+  "subtitle": "The Force is All I Need",
+  "cost": 6,
+  "hp": 6,
+  "power": 6,
+  "text": "Support (When you play this unit, you may attack with another unit. It gains this unit's other abilities for this attack.)\nOn Attack: If this unit is upgraded, you may give a unit –3/–0 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Ezra's \"\"On Attack\"\" ability gives a unit -3/-0 if the attacking unit is upgraded.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8765396756",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "spectre"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "support"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 209
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 209
+    }
+  ],
+  "internalName": "ezra-bridger#the-force-is-all-i-need"
+}

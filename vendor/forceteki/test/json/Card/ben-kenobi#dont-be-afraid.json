@@ -1,0 +1,39 @@
+{
+  "title": "Ben Kenobi",
+  "subtitle": "Don't Be Afraid",
+  "cost": 5,
+  "hp": 5,
+  "power": 5,
+  "text": "When Played: You may exhaust a unit with 3 or less power.\nOn Attack: You may heal 3 damage from another unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0072366270",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "fringe",
+    "jedi"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 261
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 261
+    }
+  ],
+  "internalName": "ben-kenobi#dont-be-afraid"
+}

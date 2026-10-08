@@ -1,0 +1,40 @@
+{
+  "title": "Governor's Shuttle",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 4,
+  "power": 2,
+  "text": "When Played: Each player chooses a unit they control. Defeat those units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2268751344",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 99
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 99
+    }
+  ],
+  "internalName": "governors-shuttle"
+}

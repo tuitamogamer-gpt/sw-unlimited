@@ -1,0 +1,40 @@
+{
+  "title": "Heroic Purrgil",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "Ambush (When you play this unit, it may attack an enemy unit.)\nWhile attacking using Ambush, this unit gets +2/+0.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2147688448",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "space",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 207
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 207
+    }
+  ],
+  "internalName": "heroic-purrgil"
+}

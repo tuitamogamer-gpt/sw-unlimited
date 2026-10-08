@@ -1,0 +1,39 @@
+{
+  "title": "Reckless Gunslinger",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 2,
+  "text": "When Played: Deal 1 damage to each base.\nSmuggle [3 resources Aggression] (If this card is a resource, you may play it for its smuggle cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9690731982",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "smuggle"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 160
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 160
+    }
+  ],
+  "internalName": "reckless-gunslinger"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Sabine Wren",
+  "subtitle": "I Learned the Hard Way",
+  "cost": 5,
+  "hp": 5,
+  "power": 4,
+  "text": "Shielded (When you play this unit, give a Shield token to her.)\nWhen 1 or more upgrades attach to this unit (including from Shielded): You may exhaust a ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6033198879",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "jedi",
+    "mandalorian",
+    "spectre"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 208
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 208
+    }
+  ],
+  "internalName": "sabine-wren#i-learned-the-hard-way"
+}

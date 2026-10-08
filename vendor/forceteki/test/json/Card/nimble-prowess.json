@@ -1,0 +1,36 @@
+{
+  "title": "Nimble Prowess",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 1,
+  "text": "Attach to a friendly unit.\nWhen Played: You may exhaust a unit in attached unit's arena.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "8929879236",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 69
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 69
+    }
+  ],
+  "internalName": "nimble-prowess"
+}

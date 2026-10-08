@@ -1,0 +1,36 @@
+{
+  "title": "Strangled Cliffs",
+  "subtitle": "",
+  "cost": null,
+  "hp": 28,
+  "power": null,
+  "text": "When a friendly Force unit attacks: The Force is with you (create your Force token).",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8710346686",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "dathomir"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 27
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 27
+    }
+  ],
+  "internalName": "strangled-cliffs"
+}

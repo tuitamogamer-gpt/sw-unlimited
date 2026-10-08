@@ -1,0 +1,41 @@
+{
+  "title": "Ezra Bridger",
+  "subtitle": "Attuned With Life",
+  "cost": 3,
+  "hp": 5,
+  "power": 3,
+  "text": "On Attack: You may give an Experience token to another Creature or Spectre unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0726963200",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "rebel",
+    "spectre"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 46
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 46
+    }
+  ],
+  "internalName": "ezra-bridger#attuned-with-life"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Resupply",
+  "subtitle": null,
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Put this event into play as a resource.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "A card put into play as a resource enters play exhausted.\n(ERRATA) Templating update: “Put into play as a resource” becomes “resource”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2703877689",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 127
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 126
+    },
+    {
+      "set": "TWI",
+      "number": 127
+    }
+  ],
+  "internalName": "resupply"
+}

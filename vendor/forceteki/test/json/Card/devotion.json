@@ -1,0 +1,42 @@
+{
+  "title": "Devotion",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 1,
+  "power": 1,
+  "text": "Attached unit gains Restore 2. (When this unit attacks, heal 2 damage from its controller's base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "8788948272",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 96
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 70
+    },
+    {
+      "set": "HMW",
+      "number": 96
+    }
+  ],
+  "internalName": "devotion"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Chewbacca's Bowcaster",
+  "subtitle": "Handcrafted Tradition",
+  "cost": 3,
+  "hp": 1,
+  "power": 3,
+  "text": "Attach to a non-Vehicle unit.\nWhen Played: If attached unit is Chewbacca, resource the top card of your deck. (It enters play exhausted.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Resources enter play exhausted.\n",
+  "upgradePower": 3,
+  "upgradeHp": 1,
+  "id": "5609025703",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "item",
+    "weapon"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 127
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 127
+    }
+  ],
+  "internalName": "chewbaccas-bowcaster#handcrafted-tradition"
+}

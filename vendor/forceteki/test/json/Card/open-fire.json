@@ -1,0 +1,40 @@
+{
+  "title": "Open Fire",
+  "subtitle": null,
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Deal 4 damage to a unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8148673131",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 174
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 172
+    },
+    {
+      "set": "TWI",
+      "number": 174
+    }
+  ],
+  "internalName": "open-fire"
+}

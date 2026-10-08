@@ -1,0 +1,40 @@
+{
+  "title": "Eeth Koth",
+  "subtitle": "Spiritual Warrior",
+  "cost": 4,
+  "hp": 4,
+  "power": 5,
+  "text": "When Defeated: You may use the Force. If you do, put this card into play as a resource.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "A card put into play as a resource enters play exhausted.\n(ERRATA) Templating update: “Put into play as a resource” becomes “resource”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1160624693",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 97
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 97
+    }
+  ],
+  "internalName": "eeth-koth#spiritual-warrior"
+}

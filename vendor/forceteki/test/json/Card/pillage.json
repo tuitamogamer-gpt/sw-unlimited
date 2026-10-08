@@ -1,0 +1,36 @@
+{
+  "title": "Pillage",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Choose a player. They discard 2 cards from their hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4772866341",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 181
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 181
+    }
+  ],
+  "internalName": "pillage"
+}

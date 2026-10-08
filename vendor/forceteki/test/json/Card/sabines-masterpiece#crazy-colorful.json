@@ -1,0 +1,40 @@
+{
+  "title": "Sabine's Masterpiece",
+  "subtitle": "Crazy Colorful",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "On Attack: If you control a:\n<bullet>Vigilance unit, heal 2 damage from a base.\nCommand unit, give an Experience token to a unit.\nAggression unit, deal 1 damage to a unit or a base.\nCunning unit, exhaust or ready a resource.</bullet>\n",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7325248681",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "fighter",
+    "spectre"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 250
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 250
+    }
+  ],
+  "internalName": "sabines-masterpiece#crazy-colorful"
+}

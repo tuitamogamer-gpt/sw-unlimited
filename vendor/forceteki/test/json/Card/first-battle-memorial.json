@@ -1,0 +1,36 @@
+{
+  "title": "First Battle Memorial",
+  "subtitle": "",
+  "cost": null,
+  "hp": 27,
+  "power": null,
+  "text": "Epic Action: For each friendly leader unit, give an Experience token to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1352374398",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "coruscant"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 9
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 9
+    }
+  ],
+  "internalName": "first-battle-memorial"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Ninth Sister",
+  "subtitle": "Hulking Inquisitor",
+  "cost": 7,
+  "hp": 7,
+  "power": 8,
+  "text": "Overwhelm\nWhen Played: An opponent discards a card from their hand. You may deal damage equal to its cost divided as you choose among any number of units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nShields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\nYou can choose to assign more damage to a unit than it has remaining HP.\nAll damage dealt by Ninth Sister's \"\"When Played\"\" ability is dealt simultaneously.\nIf there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7852298661",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "imperial",
+    "inquisitor"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 148
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 148
+    }
+  ],
+  "internalName": "ninth-sister#hulking-inquisitor"
+}

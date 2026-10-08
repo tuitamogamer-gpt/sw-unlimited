@@ -1,0 +1,40 @@
+{
+  "title": "Red Five",
+  "subtitle": "Running the Trench",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "On Attack: You may deal 2 damage to a damaged unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8500401413",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 151
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 151
+    }
+  ],
+  "internalName": "red-five#running-the-trench"
+}

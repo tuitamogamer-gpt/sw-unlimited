@@ -1,0 +1,38 @@
+{
+  "title": "Trade Route Taxation",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Choose an opponent. If you control more units than that opponent, they can't play events for this phase.\nPlot (When you deploy a leader, you may play this card from your resources, paying its cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3776423866",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "law"
+  ],
+  "keywords": [
+    "plot"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 126
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 126
+    }
+  ],
+  "internalName": "trade-route-taxation"
+}

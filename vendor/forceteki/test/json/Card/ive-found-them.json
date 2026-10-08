@@ -1,0 +1,40 @@
+{
+  "title": "I've Found Them",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Reveal the top 3 cards of your deck. Draw a unit revealed this way, then discard the other revealed cards.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6605408513",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 9
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 9
+    },
+    {
+      "set": "IBH",
+      "number": 25
+    }
+  ],
+  "internalName": "ive-found-them"
+}

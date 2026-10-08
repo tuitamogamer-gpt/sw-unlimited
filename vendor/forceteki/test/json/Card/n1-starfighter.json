@@ -1,0 +1,40 @@
+{
+  "title": "N-1 Starfighter",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9035255842",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "naboo",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 192
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 192
+    }
+  ],
+  "internalName": "n1-starfighter"
+}

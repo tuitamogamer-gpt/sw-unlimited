@@ -1,0 +1,40 @@
+{
+  "title": "Syndicate Security",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "Grit (This unit gets +1/+0 for each damage on it.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2548963403",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "underworld",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 123
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 123
+    }
+  ],
+  "internalName": "syndicate-security"
+}

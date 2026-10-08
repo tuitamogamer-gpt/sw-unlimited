@@ -1,0 +1,42 @@
+{
+  "title": "Sugi",
+  "subtitle": "Hired Guardian",
+  "cost": 4,
+  "hp": 6,
+  "power": 4,
+  "text": "While an enemy unit is upgraded, this unit gains Sentinel.\nSmuggle [6 resources Vigilance] (If this card is a resource, you may play her for her smuggle cost. Replace her with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9871430123",
+  "aspects": [
+    "vigilance",
+    "vigilance"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel",
+    "smuggle"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 52
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 52
+    }
+  ],
+  "internalName": "sugi#hired-guardian"
+}

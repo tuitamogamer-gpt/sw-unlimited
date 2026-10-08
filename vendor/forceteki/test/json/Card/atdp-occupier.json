@@ -1,0 +1,41 @@
+{
+  "title": "AT-DP Occupier",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 3,
+  "text": "This unit costs 1 resource less to play for each damaged ground unit.\nOverwhelm (When attacking an enemy unit, deal excess damage to the opponent's base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1087522061",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "walker"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 163
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 163
+    }
+  ],
+  "internalName": "atdp-occupier"
+}

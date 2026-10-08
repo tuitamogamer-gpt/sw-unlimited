@@ -1,0 +1,43 @@
+{
+  "title": "Sabine Wren",
+  "subtitle": "Spectre Five",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "Ambush (When you play this unit, she may attack an enemy unit.)\nWhen Played: You may defeat a non-<uq> upgrade. If you control a Vigilance or Command unit, you may defeat an upgrade instead.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3553805201",
+  "aspects": [
+    "aggression",
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian",
+    "rebel",
+    "spectre"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 78
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 78
+    }
+  ],
+  "internalName": "sabine-wren#spectre-five"
+}

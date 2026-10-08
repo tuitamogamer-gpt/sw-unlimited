@@ -1,0 +1,38 @@
+{
+  "title": "The Darksaber",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 4,
+  "text": "Attach to a non-Vehicle unit.\nWhile playing this upgrade on a Mandalorian unit, ignore its aspect penalty.\nAttached unit gains, “On Attack: Give an Experience token to each other friendly Mandalorian unit.”",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": 4,
+  "upgradeHp": 3,
+  "id": "3141660491",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "mandalorian",
+    "item",
+    "weapon"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 126
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 126
+    }
+  ],
+  "internalName": "the-darksaber"
+}

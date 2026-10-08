@@ -1,0 +1,39 @@
+{
+  "title": "TIE Advanced",
+  "subtitle": null,
+  "cost": 4,
+  "hp": 2,
+  "power": 3,
+  "text": "When Played: Give 2 Experience tokens to another friendly IMPERIAL unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4092697474",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 231
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 231
+    }
+  ],
+  "internalName": "tie-advanced"
+}

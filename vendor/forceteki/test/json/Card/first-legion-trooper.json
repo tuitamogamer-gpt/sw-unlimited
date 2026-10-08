@@ -1,0 +1,47 @@
+{
+  "title": "First Legion Trooper",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0875657287",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 55
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 55
+    },
+    {
+      "set": "IBH",
+      "number": 73
+    },
+    {
+      "set": "IBH",
+      "number": 101
+    }
+  ],
+  "internalName": "first-legion-trooper"
+}

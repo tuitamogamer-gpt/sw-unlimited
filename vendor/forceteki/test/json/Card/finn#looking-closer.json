@@ -1,0 +1,40 @@
+{
+  "title": "Finn",
+  "subtitle": "Looking Closer",
+  "cost": 6,
+  "hp": 5,
+  "power": 6,
+  "text": "Ambush (When you play this unit, he may attack an enemy unit.)\nOn Attack: You may give a Shield token to a non-<uq> unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6365678821",
+  "aspects": [
+    "cunning",
+    "vigilance"
+  ],
+  "traits": [
+    "resistance"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 95
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 95
+    }
+  ],
+  "internalName": "finn#looking-closer"
+}

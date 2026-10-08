@@ -1,0 +1,40 @@
+{
+  "title": "Darth Vader",
+  "subtitle": "Unstoppable",
+  "cost": 7,
+  "hp": 8,
+  "power": 6,
+  "text": "Action [Exhaust, discard a card from your hand]: Deal 1 damage to a unit or base.",
+  "deployBox": "On Attack: Discard any number of cards from your hand. Deal damage to a unit or base equal to the number of cards discarded this way.",
+  "epicAction": "Epic Action: If you control 7 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2554022314",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "imperial",
+    "sith"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 11
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 11
+    }
+  ],
+  "internalName": "darth-vader#unstoppable"
+}

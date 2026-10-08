@@ -1,0 +1,39 @@
+{
+  "title": "Enfys Nest",
+  "subtitle": "Marauder",
+  "cost": 6,
+  "hp": 4,
+  "power": 5,
+  "text": "Ambush (When you play this unit, it may ready and attack an enemy unit.)\nWhile a friendly unit (including this one) is attacking using Ambush, the defender gets –3/–0.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8107876051",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 219
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 219
+    }
+  ],
+  "internalName": "enfys-nest#marauder"
+}

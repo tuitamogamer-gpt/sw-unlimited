@@ -1,0 +1,39 @@
+{
+  "title": "Director Krennic",
+  "subtitle": "The Work Has Stalled",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "On Attack: If your base is upgraded, draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6368234898",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 61
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 61
+    }
+  ],
+  "internalName": "director-krennic#the-work-has-stalled"
+}

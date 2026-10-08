@@ -1,0 +1,41 @@
+{
+  "title": "General Rieekan",
+  "subtitle": "Defensive Strategist",
+  "cost": 6,
+  "hp": 7,
+  "power": 5,
+  "text": "When Played/On Attack: Choose a friendly unit. If it has Sentinel, give an Experience token to it. Otherwise, it gains Sentinel for this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3468546373",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 103
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 103
+    }
+  ],
+  "internalName": "general-rieekan#defensive-strategist"
+}

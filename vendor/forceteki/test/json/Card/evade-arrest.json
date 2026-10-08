@@ -1,0 +1,36 @@
+{
+  "title": "Evade Arrest",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Exhaust any number of non-<uq> units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3505666313",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 82
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 82
+    }
+  ],
+  "internalName": "evade-arrest"
+}

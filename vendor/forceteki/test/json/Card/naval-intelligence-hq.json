@@ -1,0 +1,36 @@
+{
+  "title": "Naval Intelligence HQ",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2696059415",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "coruscant"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 24
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 24
+    }
+  ],
+  "internalName": "naval-intelligence-hq"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Relic Scavenger",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "Restore 2 (When this unit attacks, heal 2 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3242169334",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 116
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 116
+    }
+  ],
+  "internalName": "relic-scavenger"
+}

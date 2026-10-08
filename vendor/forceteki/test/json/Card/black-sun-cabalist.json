@@ -1,0 +1,37 @@
+{
+  "title": "Black Sun Cabalist",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "When Played: Give an Experience token to another friendly Underworld unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3080000065",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 249
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 249
+    }
+  ],
+  "internalName": "black-sun-cabalist"
+}

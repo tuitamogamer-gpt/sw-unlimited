@@ -1,0 +1,36 @@
+{
+  "title": "Knowledge and Defense",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Give a unit –2/–2 for this phase.\nDraw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9368244861",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 75
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 75
+    }
+  ],
+  "internalName": "knowledge-and-defense"
+}

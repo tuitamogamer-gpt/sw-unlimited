@@ -1,0 +1,39 @@
+{
+  "title": "Republic ARC-170",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9176356859",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 111
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 111
+    }
+  ],
+  "internalName": "republic-arc170"
+}

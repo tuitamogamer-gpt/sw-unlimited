@@ -1,0 +1,41 @@
+{
+  "title": "Scythe",
+  "subtitle": "Intimidating Silhouette",
+  "cost": 4,
+  "hp": 5,
+  "power": 3,
+  "text": "On Attack: You may give another friendly Inquisitor unit +2/+0 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8496493030",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "transport",
+    "inquisitor"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 135
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 135
+    }
+  ],
+  "internalName": "scythe#intimidating-silhouette"
+}

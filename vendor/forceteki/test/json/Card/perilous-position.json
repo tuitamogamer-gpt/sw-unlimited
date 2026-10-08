@@ -1,0 +1,36 @@
+{
+  "title": "Perilous Position",
+  "subtitle": "",
+  "cost": 3,
+  "hp": -2,
+  "power": -2,
+  "text": "When Played: Exhaust attached unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": -2,
+  "upgradeHp": -2,
+  "id": "8061497086",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "condition"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 70
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 70
+    }
+  ],
+  "internalName": "perilous-position"
+}

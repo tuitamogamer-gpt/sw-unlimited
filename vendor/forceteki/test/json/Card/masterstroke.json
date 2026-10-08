@@ -1,0 +1,36 @@
+{
+  "title": "Masterstroke",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a unit. It gets +1/+0 for this attack for each unit the defending player controls in its arena.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "You must attack with a unit, if able. Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6315733621",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 234
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 234
+    }
+  ],
+  "internalName": "masterstroke"
+}

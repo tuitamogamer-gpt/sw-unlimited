@@ -1,0 +1,36 @@
+{
+  "title": "Evacuate",
+  "subtitle": "",
+  "cost": 6,
+  "hp": null,
+  "power": null,
+  "text": "Return each non-leader unit to its owner's hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that return a card to hand must choose a card in play unless otherwise specified.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8261033110",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 233
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 233
+    }
+  ],
+  "internalName": "evacuate"
+}

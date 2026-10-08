@@ -1,0 +1,36 @@
+{
+  "title": "Pursue the Lead",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Choose a player. That player discards a card from their hand. If it costs 3 or less, create a Spy token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2634645435",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 178
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 178
+    }
+  ],
+  "internalName": "pursue-the-lead"
+}

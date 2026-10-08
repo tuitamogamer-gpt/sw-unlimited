@@ -1,0 +1,36 @@
+{
+  "title": "Forced Pacification",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Defeat any number of friendly units. For each friendly unit defeated this way, exhaust 2 enemy units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6558799761",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 253
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 253
+    }
+  ],
+  "internalName": "forced-pacification"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Ancient Henge",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5672134899",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "seatos"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 23
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 23
+    }
+  ],
+  "internalName": "ancient-henge"
+}

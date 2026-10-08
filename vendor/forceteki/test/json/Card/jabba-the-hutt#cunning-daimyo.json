@@ -1,0 +1,39 @@
+{
+  "title": "Jabba the Hutt",
+  "subtitle": "Cunning Daimyo",
+  "cost": 4,
+  "hp": 8,
+  "power": 2,
+  "text": "Each TRICK event you play costs [1 resource] less. \n\nWhen Played: Search the top 8 cards of your deck for a TRICK event, reveal it, and draw it. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5035052619",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "hutt"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 181
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 181
+    }
+  ],
+  "internalName": "jabba-the-hutt#cunning-daimyo"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Outer Rim Headhunter",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "Raid 1 (This unit gets +1/+0 while attacking.)\n\nOn Attack: If you control a leader unit, you may exhaust a non-leader unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3613174521",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 208
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 208
+    }
+  ],
+  "internalName": "outer-rim-headhunter"
+}

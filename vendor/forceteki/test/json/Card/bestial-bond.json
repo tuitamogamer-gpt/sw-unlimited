@@ -1,0 +1,37 @@
+{
+  "title": "Bestial Bond",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: If attached unit is a Creature or a Force unit, create a Beast token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 2,
+  "upgradeHp": 2,
+  "id": "3533153742",
+  "aspects": [
+    "vigilance",
+    "command"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 38
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 38
+    }
+  ],
+  "internalName": "bestial-bond"
+}

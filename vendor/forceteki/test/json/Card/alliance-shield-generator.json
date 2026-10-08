@@ -1,0 +1,39 @@
+{
+  "title": "Alliance Shield Generator",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 0,
+  "power": 0,
+  "text": "Fortify (Attach this to your base, not a unit.)\nIf attached base would be dealt 5 or more damage, prevent that damage. If you do, defeat this upgrade and draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "9829603191",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "fortification"
+  ],
+  "keywords": [
+    "fortify"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 81
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 81
+    }
+  ],
+  "internalName": "alliance-shield-generator"
+}

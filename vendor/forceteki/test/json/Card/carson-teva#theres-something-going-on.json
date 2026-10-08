@@ -1,0 +1,40 @@
+{
+  "title": "Carson Teva",
+  "subtitle": "There's Something Going On",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "Support (When you play this unit, you may attack with another unit. It gains this unit's other abilities for this attack.)\nWhile attacking, this unit deals combat damage before the defender.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "If an attacking unit deals combat damage first, and the defending unit is defeated by that damage, it does not deal combat damage back. If it survives and has Grit, it deals bonus damage from Grit when dealing combat damage back.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7521690984",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "new republic"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "support"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 202
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 202
+    }
+  ],
+  "internalName": "carson-teva#theres-something-going-on"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Ahsoka Tano",
+  "subtitle": "Trust in the Force",
+  "cost": 6,
+  "hp": 6,
+  "power": 5,
+  "text": "Action [Exhaust]: Choose a unit with less power than a friendly unit. It gets +2/+0 for this phase.",
+  "deployBox": "Support (When you deploy this leader, you may attack with another unit. It gains this unit's other abilities for this attack.)\nOn Attack: You may give a unit with less power than this unit +2/+0 for this phase.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3086126864",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "support"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 9
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 9
+    }
+  ],
+  "internalName": "ahsoka-tano#trust-in-the-force"
+}

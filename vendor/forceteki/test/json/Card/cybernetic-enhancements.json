@@ -1,0 +1,36 @@
+{
+  "title": "Cybernetic Enhancements",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: Draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 2,
+  "upgradeHp": 2,
+  "id": "2053930913",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "modification"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 87
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 87
+    }
+  ],
+  "internalName": "cybernetic-enhancements"
+}

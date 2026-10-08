@@ -1,0 +1,39 @@
+{
+  "title": "Silver Angel",
+  "subtitle": "Trace's Hope",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "When 1 or more damage is healed from this unit: You may deal 1 damage to a space unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8352777268",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 62
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 62
+    }
+  ],
+  "internalName": "silver-angel#traces-hope"
+}

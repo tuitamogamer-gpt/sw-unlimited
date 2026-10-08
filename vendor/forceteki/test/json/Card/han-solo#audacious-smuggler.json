@@ -1,0 +1,38 @@
+{
+  "title": "Han Solo",
+  "subtitle": "Audacious Smuggler",
+  "cost": 6,
+  "hp": 6,
+  "power": 4,
+  "text": "Action [exhaust]: Put a card from your hand into play as a resource and ready it. At the start of the next action phase, defeat a resource you control.",
+  "deployBox": "On Attack: Put the top card of your deck into play as a resource and ready it. At the start of the next action phase, defeat a resource you control.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Han’s ability’s requirement to defeat a resource remains active even if he is defeated or changes zones before the start of the next action phase.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5954056864",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 17
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 17
+    }
+  ],
+  "internalName": "han-solo#audacious-smuggler"
+}

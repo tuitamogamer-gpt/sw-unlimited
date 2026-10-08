@@ -1,0 +1,36 @@
+{
+  "title": "Choose Sides",
+  "subtitle": "",
+  "cost": 7,
+  "hp": null,
+  "power": null,
+  "text": "Choose a friendly non-leader unit and an enemy non-leader unit. Exchange control of those units.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2346145249",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 132
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 132
+    }
+  ],
+  "internalName": "choose-sides"
+}

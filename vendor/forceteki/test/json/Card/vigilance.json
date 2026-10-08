@@ -1,0 +1,37 @@
+{
+  "title": "Vigilance",
+  "subtitle": null,
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Choose two, in any order:\n\nDiscard 6 cards from an opponent's deck.\nHeal 5 damage from a base.\nDefeat a unit with 3 or less remaining HP.\nGive a Shield token to a unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Always discard from the top of a deck unless an ability says otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8615772965",
+  "aspects": [
+    "vigilance",
+    "vigilance"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 58
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 58
+    }
+  ],
+  "internalName": "vigilance"
+}

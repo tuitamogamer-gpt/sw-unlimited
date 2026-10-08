@@ -1,0 +1,38 @@
+{
+  "title": "Saw Gerrera",
+  "subtitle": "Shadowlands Insurgent",
+  "cost": 4,
+  "hp": 6,
+  "power": 3,
+  "text": "When an opponent plays an event: Resource the top card of your deck.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Resources enter play exhausted.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3947921548",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 119
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 119
+    }
+  ],
+  "internalName": "saw-gerrera#shadowlands-insurgent"
+}

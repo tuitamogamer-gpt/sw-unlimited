@@ -1,0 +1,39 @@
+{
+  "title": "Lurking Wampa",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 6,
+  "text": "Hidden (This unit can't be attacked if it was played this phase.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If a unit has Hidden and Sentinel at the same time, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2703311384",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 229
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 229
+    }
+  ],
+  "internalName": "lurking-wampa"
+}

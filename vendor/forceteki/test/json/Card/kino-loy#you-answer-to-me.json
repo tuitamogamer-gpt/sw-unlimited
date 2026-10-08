@@ -1,0 +1,37 @@
+{
+  "title": "Kino Loy",
+  "subtitle": "You Answer to Me",
+  "cost": 3,
+  "hp": 5,
+  "power": 1,
+  "text": "This unit gets +1/+0 for each other exhausted friendly unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9354864848",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 114
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 114
+    }
+  ],
+  "internalName": "kino-loy#you-answer-to-me"
+}

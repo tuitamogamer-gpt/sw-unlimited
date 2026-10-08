@@ -1,0 +1,38 @@
+{
+  "title": "C-3PO",
+  "subtitle": "Protocol Droid",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "When Played/On Attack: Choose a number, then look at the top card of your deck. If its cost is the chosen number, you may reveal and draw it. (Otherwise, leave it on top of your deck.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8009713136",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 238
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 238
+    }
+  ],
+  "internalName": "c3po#protocol-droid"
+}

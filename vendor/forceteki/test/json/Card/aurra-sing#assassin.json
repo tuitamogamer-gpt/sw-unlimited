@@ -1,0 +1,39 @@
+{
+  "title": "Aurra Sing",
+  "subtitle": "Assassin",
+  "cost": 7,
+  "hp": 7,
+  "power": 3,
+  "text": "Action [Exhaust]: Defeat a non‑leader unit with 1 or less remaining HP.",
+  "deployBox": "When Deployed: You may defeat a non‑leader unit with 5 or less remaining HP.",
+  "epicAction": "Epic Action: If you control 7 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6840600155",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 4
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 4
+    }
+  ],
+  "internalName": "aurra-sing#assassin"
+}

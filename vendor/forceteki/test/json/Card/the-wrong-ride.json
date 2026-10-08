@@ -1,0 +1,38 @@
+{
+  "title": "The Wrong Ride",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Exhaust 2 enemy resources.\nPlot (When you deploy a leader, you may play this card from your resources, paying its cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8796918121",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "disaster"
+  ],
+  "keywords": [
+    "plot"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 235
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 235
+    }
+  ],
+  "internalName": "the-wrong-ride"
+}

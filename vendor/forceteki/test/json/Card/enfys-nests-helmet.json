@@ -1,0 +1,38 @@
+{
+  "title": "Enfys Nest's Helmet",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 0,
+  "text": "Attach to a non-Vehicle unit.\nAttached unit gains: “On Attack: You may give another unit +3/+0 for this phase.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 2,
+  "id": "9472544840",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "item",
+    "armor"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 186
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 186
+    }
+  ],
+  "internalName": "enfys-nests-helmet"
+}

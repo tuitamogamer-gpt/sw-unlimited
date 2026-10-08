@@ -1,0 +1,36 @@
+{
+  "title": "Whirlwind of Power",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Give a unit –2/–2 for this phase. If you control a Force unit, give it –3/–3 instead.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1655929166",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 78
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 78
+    }
+  ],
+  "internalName": "whirlwind-of-power"
+}

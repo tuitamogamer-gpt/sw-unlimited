@@ -1,0 +1,100 @@
+describe('Shoot Down', function () {
+    integration(function (contextRef) {
+        describe('Shoot Down\'s ability', function () {
+            beforeEach(function () {
+                return contextRef.setupTestAsync({
+                    phase: 'action',
+                    player1: {
+                        hand: ['shoot-down'],
+                        spaceArena: ['alliance-xwing'],
+                        groundArena: ['battlefield-marine']
+                    },
+                    player2: {
+                        spaceArena: ['tieln-fighter', 'system-patrol-craft', { card: 'cartel-spacer', upgrades: ['shield'] }],
+                        groundArena: ['atst'],
+                    }
+                });
+            });
+
+            it('should defeat a space unit and deal damage to a base', function () {
+                const { context } = contextRef;
+
+                context.player1.clickCard(context.shootDown);
+
+                expect(context.player1).toBeAbleToSelectExactly([context.allianceXwing, context.tielnFighter, context.systemPatrolCraft, context.cartelSpacer]);
+                context.player1.clickCard(context.tielnFighter);
+
+                expect(context.tielnFighter).toBeInZone('discard');
+                expect(context.player1).toHavePassAbilityPrompt('Deal 2 damage to a base');
+                context.player1.clickPrompt('Trigger');
+                expect(context.player1).toBeAbleToSelectExactly([context.p2Base, context.p1Base]);
+                context.player1.clickCard(context.p2Base);
+                expect(context.player2).toBeActivePlayer();
+            });
+
+            it('should defeat a space unit and player chooses not to deal damage to a base', function () {
+                const { context } = contextRef;
+
+                context.player1.clickCard(context.shootDown);
+
+                expect(context.player1).toBeAbleToSelectExactly([context.allianceXwing, context.tielnFighter, context.systemPatrolCraft, context.cartelSpacer]);
+                context.player1.clickCard(context.tielnFighter);
+
+                expect(context.tielnFighter).toBeInZone('discard');
+                expect(context.player1).toHavePassAbilityPrompt('Deal 2 damage to a base');
+                context.player1.clickPrompt('Pass');
+                expect(context.player2).toBeActivePlayer();
+            });
+
+            it('should neither defeat a unit nor deal damage to a base', function () {
+                const { context } = contextRef;
+
+                context.player1.clickCard(context.shootDown);
+
+                expect(context.player1).toBeAbleToSelectExactly([context.allianceXwing, context.tielnFighter, context.systemPatrolCraft, context.cartelSpacer]);
+                context.player1.clickCard(context.systemPatrolCraft);
+                expect(context.systemPatrolCraft.damage).toBe(3);
+                expect(context.player2).toBeActivePlayer();
+            });
+
+            it('should not deal damage to base if shield was defeat', function () {
+                const { context } = contextRef;
+
+                context.player1.clickCard(context.shootDown);
+                context.player1.clickCard(context.cartelSpacer);
+
+                expect(context.player2).toBeActivePlayer();
+                expect(context.p2Base.damage).toBe(0);
+            });
+        });
+
+        it('should not deal damage to base if target cannot be defeat by damage', async function () {
+            await contextRef.setupTestAsync({
+                phase: 'action',
+                player1: {
+                    hand: ['shoot-down'],
+                    spaceArena: ['alliance-xwing'],
+                    groundArena: ['battlefield-marine']
+                },
+                player2: {
+                    hand: ['the-tragedy-of-plagueis'],
+                    spaceArena: ['tieln-fighter'],
+                    groundArena: ['atst'],
+                    hasInitiative: true,
+                }
+            });
+            const { context } = contextRef;
+
+            context.player2.clickCard(context.theTragedyOfPlagueis);
+            context.player2.clickCard(context.tielnFighter);
+            context.player1.clickCard(context.battlefieldMarine);
+
+            context.player1.clickCard(context.shootDown);
+            context.player1.clickCard(context.tielnFighter);
+
+            expect(context.player2).toBeActivePlayer();
+            expect(context.tielnFighter).toBeInZone('spaceArena');
+            expect(context.p2Base.damage).toBe(0);
+        });
+    });
+});

@@ -1,0 +1,38 @@
+{
+  "title": "Jaxxon",
+  "subtitle": "I Can Hear You Breathing!",
+  "cost": 1,
+  "hp": 3,
+  "power": 3,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9427322990",
+  "aspects": [
+    "cunning",
+    "cunning"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 219
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 219
+    }
+  ],
+  "internalName": "jaxxon#i-can-hear-you-breathing"
+}

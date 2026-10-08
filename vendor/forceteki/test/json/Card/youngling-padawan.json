@@ -1,0 +1,39 @@
+{
+  "title": "Youngling Padawan",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "When Played: The Force is with you (create your Force token).",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0612354523",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 193
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 193
+    }
+  ],
+  "internalName": "youngling-padawan"
+}

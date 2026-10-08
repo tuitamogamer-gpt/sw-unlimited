@@ -1,0 +1,36 @@
+{
+  "title": "Academy Training",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": null,
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 2,
+  "upgradeHp": 2,
+  "id": "3463676231",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 120
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 120
+    }
+  ],
+  "internalName": "academy-training"
+}

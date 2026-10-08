@@ -1,0 +1,37 @@
+{
+  "title": "Unity of Purpose",
+  "subtitle": "",
+  "cost": 6,
+  "hp": null,
+  "power": null,
+  "text": "For each friendly unit with a different name, give each unit you control +1/+1 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s “name” do not include the subtitle of the card.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0753707056",
+  "aspects": [
+    "command",
+    "command"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 106
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 106
+    }
+  ],
+  "internalName": "unity-of-purpose"
+}

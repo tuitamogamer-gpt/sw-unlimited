@@ -1,0 +1,42 @@
+{
+  "title": "Supremacy",
+  "subtitle": "Of Unimaginable Size",
+  "cost": 12,
+  "hp": 12,
+  "power": 12,
+  "text": "Ambush\nOther friendly Vehicle units get +6/+6.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as \"When Played\" abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4478482436",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "first order",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 89
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 89
+    }
+  ],
+  "internalName": "supremacy#of-unimaginable-size"
+}

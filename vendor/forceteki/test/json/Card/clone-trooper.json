@@ -1,0 +1,33 @@
+{
+  "title": "Clone Trooper",
+  "subtitle": "",
+  "cost": 0,
+  "hp": 2,
+  "power": 2,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3941784506",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "clone",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "token",
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI"
+  },
+  "internalName": "clone-trooper"
+}

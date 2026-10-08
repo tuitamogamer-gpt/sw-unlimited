@@ -1,0 +1,40 @@
+{
+  "title": "King Katuunko",
+  "subtitle": "Great King of Toydaria",
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "When Played: All units (including enemy units) gain Restore 1 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3325398707",
+  "aspects": [
+    "vigilance",
+    "command"
+  ],
+  "traits": [
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 16
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 16
+    }
+  ],
+  "internalName": "king-katuunko#great-king-of-toydaria"
+}

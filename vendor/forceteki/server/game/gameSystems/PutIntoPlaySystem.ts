@@ -1,0 +1,239 @@
+import type { AbilityContext } from '../core/ability/AbilityContext';
+import {
+    AbilityRestriction, EffectName,
+    EntryType,
+    EventName,
+    PlayType,
+    RelativePlayer,
+    WildcardCardType,
+    ZoneName
+} from '../core/Constants';
+import { CardTargetSystem, type ICardTargetSystemProperties } from '../core/gameSystem/CardTargetSystem';
+import type { Card } from '../core/card/Card';
+import type { GameSystem } from '../core/gameSystem/GameSystem';
+import type { Player } from '../core/Player';
+import type { UnitsEnterPlayReadyForPlayer } from '../core/playerEffect/UnitsEnterPlayReadyForPlayer';
+import { ChatHelpers } from '../core/chat/ChatHelpers';
+import { SubwindowEventHandlingMode, TriggerHandlingMode } from '../core/event/EventWindow';
+import { EnumHelpers } from '../core/utils/EnumHelpers';
+import { Helpers } from '../core/utils/Helpers';
+
+export interface IPutIntoPlayProperties extends ICardTargetSystemProperties {
+    controller?: Player | RelativePlayer;
+    overrideZone?: ZoneName;
+    entersReady?: boolean;
+
+    /** How the unit is entering play. Default is `EntryType.Played` */
+    entryType: EntryType;
+
+    /**
+     * Effect(s) resolved as the unit enters play, retargeted onto it. They resolve after the unit is put into play but
+     * before this window's game-state defeat check, so e.g. an HP-buffing token applied here counts before the unit is
+     * checked for defeat by an ongoing HP reduction.
+     *
+     * Each must be a "leaf" system acting on a single card target (e.g. `giveExperience()`, `damage()`,
+     * `cardLastingEffect()`, `attachUpgrade()`); its target is overwritten with the entering unit. Pass an array for
+     * several effects — do not wrap them in `simultaneous(...)`, which does not produce a single retargetable event.
+     */
+    enterPlayEffect?: GameSystem | GameSystem[];
+
+    /**
+     * Card credited as the source of {@link enterPlayEffect} in the chat log. Defaults to `context.source`; supplied
+     * explicitly when playing a unit, where `context.source` is the played card rather than the ability that granted
+     * the effect (e.g. Three Lessons).
+     */
+    enterPlayEffectSource?: Card;
+}
+
+export class PutIntoPlaySystem<TContext extends AbilityContext = AbilityContext> extends CardTargetSystem<TContext, IPutIntoPlayProperties> {
+    public override readonly name = 'putIntoPlay';
+    public override readonly eventName = EventName.OnUnitEntersPlay;
+    public override effectDescription = 'put {0} into play';
+    public override readonly costDescription = 'putting {0} into play';
+
+    protected override readonly targetTypeFilter = [WildcardCardType.Unit];
+    protected override defaultProperties: IPutIntoPlayProperties = {
+        controller: RelativePlayer.Self,
+        overrideZone: null,
+        entersReady: false,
+        entryType: EntryType.Played
+    };
+
+    public eventHandler(event): void {
+        if (event.newController && event.newController !== event.card.controller) {
+            event.card.takeControl(event.newController, event.card.defaultArena);
+        } else {
+            event.card.moveTo(event.card.defaultArena);
+        }
+
+        if (event.entersReady) {
+            event.card.ready();
+        } else {
+            event.card.exhaust();
+        }
+
+        this.resolveEnterPlayEffects(event);
+    }
+
+    /**
+     * Resolves any {@link IPutIntoPlayProperties.enterPlayEffect} systems, retargeted onto the entering unit, in a new
+     * event window. Opening it from this handler front-inserts it into the current window's pipeline, so it resolves
+     * after the unit is in play but before this window's defeat check (`resolveGameState`). The unit is already in play
+     * when these effects are generated, so effects and any replacement effects reacting to them target it correctly.
+     *
+     * Any defeats caused by these effects are deferred to this window, so the unit is still in play when this window
+     * emits its triggers (e.g. the unit's own "When Played" abilities).
+     */
+    private resolveEnterPlayEffects(event): void {
+        const enterPlayEffects = Helpers.asArray(event.enterPlayEffect).filter((system) => system != null) as GameSystem[];
+        if (enterPlayEffects.length === 0) {
+            return;
+        }
+
+        const context = event.context;
+        const unit: Card = event.card;
+
+        // Point each effect at the entering unit so its chat message and generated event both target it.
+        for (const system of enterPlayEffects) {
+            system.setDefaultTargetFn(() => unit);
+        }
+
+        this.logEnterPlayEffects(enterPlayEffects, context, event.enterPlayEffectSource ?? context.source);
+
+        const effectEvents = enterPlayEffects.map((system) => system.generateRetargetedEvent(unit, context));
+        context.game.openEventWindow(effectEvents, TriggerHandlingMode.PassesTriggersToParentWindow, SubwindowEventHandlingMode.PassesSubwindowEventsToParentWindow);
+    }
+
+    /** Adds a chat line for the enter-play effects, matching the `{player} uses {source} to {effect}` format used for ability effects. */
+    private logEnterPlayEffects(systems: GameSystem[], context: TContext, source: Card): void {
+        const loggableSystems = systems.filter((system) => system.hasLegalTarget(context));
+        if (loggableSystems.length === 0) {
+            return;
+        }
+
+        let effectMessage: string;
+        let effectArgs: any[];
+        if (loggableSystems.length === 1) {
+            const [message, args] = loggableSystems[0].getEffectMessage(context);
+            effectMessage = message;
+            effectArgs = Helpers.asArray(args);
+        } else {
+            effectMessage = ChatHelpers.formatWithLength(loggableSystems.length, 'to ');
+            effectArgs = loggableSystems.map((system) => {
+                const [message, args] = system.getEffectMessage(context);
+                return { format: message, args: Helpers.asArray(args) };
+            });
+        }
+
+        context.game.addMessage('{0} uses {1} to {2}', context.player, source, { format: effectMessage, args: effectArgs });
+    }
+
+    public override canAffectInternal(card: Card, context: TContext): boolean {
+        const contextCopy = context.copy({ source: card });
+        const player = this.getPutIntoPlayPlayer(contextCopy, card);
+        if (!super.canAffectInternal(card, context)) {
+            return false;
+        } else if (!card.canBeInPlay() || card.isInPlay()) {
+            return false;
+        } else if (
+            card.zoneName === ZoneName.Resource &&
+            !(context.playType === PlayType.Smuggle || context.playType === PlayType.PlayFromOutOfPlay || context.playType === PlayType.Plot)
+        ) {
+            return false;
+        } else if (card.hasRestriction(AbilityRestriction.EnterPlay, context)) {
+            return false;
+        } else if (player.hasRestriction(AbilityRestriction.PutIntoPlay, contextCopy)) {
+            return false;
+        }
+        return true;
+    }
+
+    protected override addPropertiesToEvent(event, card: Card, context: TContext, additionalProperties: Partial<IPutIntoPlayProperties>): void {
+        // TODO:rename this class and all related classes / methods as PutUnitIntoPlay
+        const { controller, overrideZone, entersReady, entryType, enterPlayEffect, enterPlayEffectSource } = this.generatePropertiesFromContext(
+            context,
+            additionalProperties
+        ) as IPutIntoPlayProperties;
+        super.addPropertiesToEvent(event, card, context, additionalProperties);
+        const newController = EnumHelpers.asConcretePlayer(controller, context.player);
+        event.controller = controller;
+        event.originalZone = overrideZone || card.zoneName;
+        event.entryType = entryType;
+        event.enterPlayEffect = enterPlayEffect;
+        event.enterPlayEffectSource = enterPlayEffectSource;
+        const matchersApply = this.checkEntersPlayReadyEffectsForPlayer(card, newController, context, entryType);
+        event.entersReady = entersReady ||
+          this.checkEntersPlayReady(card, newController) ||
+          (newController.hasOngoingEffect(EffectName.TokenUnitsEnterPlayReady) && EnumHelpers.isToken(card.type)) ||
+          matchersApply;
+        event.newController = newController;
+        event.setPreResolutionEffect((event) => {
+            const card: Card = event.card;
+            if (card.canRegisterPreEnterPlayAbilities()) {
+                for (const ability of card.getPreEnterPlayAbilities()) {
+                    const preEnterPlayContext = ability.createContext(context.player, event);
+
+                    preEnterPlayContext.costs = { ...context.costs };
+
+                    context.game.resolveAbility(preEnterPlayContext);
+                }
+                context.game.queueSimpleStep(() => {
+                    if (!event.entersReady) {
+                        const matchersApply = this.checkEntersPlayReadyEffectsForPlayer(card, newController, context, entryType);
+                        event.entersReady = this.checkEntersPlayReady(card, newController) ||
+                          (newController.hasOngoingEffect(EffectName.TokenUnitsEnterPlayReady) && EnumHelpers.isToken(card.type)) ||
+                          matchersApply;
+                    }
+                }, `Update onUnitEntersPlay event after resolving pre-enter play abilities for ${card.internalName}`);
+            }
+        });
+    }
+
+    private getPutIntoPlayPlayer(context: AbilityContext, card: Card) {
+        return context.player || card.owner;
+    }
+
+    /**
+     * Consults any `UnitsEnterPlayReadyForPlayer` effects registered on the new controller.
+     *
+     * To ensure limits are counted correctly, we apply all effects that match the entering card,
+     * even if the card will enter play ready after just one of them. This ensures that if multiple
+     * effects apply to the same card, all of their limits will be incremented appropriately and
+     * none of them will be able to apply more times than they should.
+     */
+    private checkEntersPlayReadyEffectsForPlayer(card: Card, newController: Player, context: AbilityContext, entryType: EntryType): boolean {
+        const matchers = newController.getOngoingEffectValues<UnitsEnterPlayReadyForPlayer>(
+            EffectName.UnitsEnterPlayReady
+        );
+        let didApply = false;
+        for (const matcher of matchers) {
+            if (matcher.canApplyTo(card, newController, context, entryType)) {
+                matcher.applyTo(card, newController);
+                didApply = true;
+            }
+        }
+        return didApply;
+    }
+
+    /**
+     * Evaluates EntersPlayReady constant ability conditions using the new controller as
+     * `context.player`, rather than the card's current controller (which is the original
+     * owner when an opponent plays the card via e.g. Vermillion).
+     */
+    private checkEntersPlayReady(card: Card, newController: Player): boolean {
+        for (const ability of card.getConstantAbilities()) {
+            for (const effect of ability.registeredEffects) {
+                if (effect.type !== EffectName.EntersPlayReady) {
+                    continue;
+                }
+                if (!effect.impl.isConditional) {
+                    return true;
+                }
+                if (effect.condition(effect.context.copy({ player: newController }))) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+}

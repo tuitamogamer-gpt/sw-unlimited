@@ -1,0 +1,36 @@
+{
+  "title": "Relentless Pursuit",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Choose a friendly unit. It captures an enemy non-leader unit that costs the same as or less than it. If the friendly unit is a Bounty Hunter, give a Shield token to it. (Put the captured card facedown under the friendly unit until it leaves play.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5778949819",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 232
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 232
+    }
+  ],
+  "internalName": "relentless-pursuit"
+}

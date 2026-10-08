@@ -1,0 +1,43 @@
+{
+  "title": "Yoda",
+  "subtitle": "Begun, the Clone War Has",
+  "cost": 5,
+  "hp": 4,
+  "power": 4,
+  "text": "If you control 7 or more resources, this unit costs 2 resources less to play.\nWhen Played/When Defeated: Create a Clone Trooper token and give it Sentinel for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1104377502",
+  "aspects": [
+    "vigilance",
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 14
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 14
+    }
+  ],
+  "internalName": "yoda#begun-the-clone-war-has"
+}

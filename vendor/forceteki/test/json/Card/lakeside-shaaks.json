@@ -1,0 +1,37 @@
+{
+  "title": "Lakeside Shaaks",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "When Played: Ready a friendly resource.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8486848877",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 228
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 228
+    }
+  ],
+  "internalName": "lakeside-shaaks"
+}

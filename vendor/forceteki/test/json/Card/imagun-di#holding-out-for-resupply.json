@@ -1,0 +1,41 @@
+{
+  "title": "Ima-Gun Di",
+  "subtitle": "Holding Out For Resupply",
+  "cost": 3,
+  "hp": 3,
+  "power": 5,
+  "text": "When Defeated: If you control fewer resources than an opponent, you may resource a card from your hand. If you do, resource the top card of your deck.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Resources enter play exhausted.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6561074658",
+  "aspects": [
+    "command",
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 44
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 44
+    }
+  ],
+  "internalName": "imagun-di#holding-out-for-resupply"
+}

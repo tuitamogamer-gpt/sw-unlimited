@@ -1,0 +1,40 @@
+{
+  "title": "Waylay",
+  "subtitle": null,
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Return a non-leader unit to its owner's hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that return a card to hand must choose a card in play unless otherwise specified.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7202133736",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 226
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 222
+    },
+    {
+      "set": "TWI",
+      "number": 226
+    }
+  ],
+  "internalName": "waylay"
+}

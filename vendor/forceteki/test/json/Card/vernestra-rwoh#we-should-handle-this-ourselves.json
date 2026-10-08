@@ -1,0 +1,41 @@
+{
+  "title": "Vernestra Rwoh",
+  "subtitle": "We Should Handle This Ourselves",
+  "cost": 6,
+  "hp": 5,
+  "power": 5,
+  "text": "Sentinel\nAs an additional cost to play this unit, put up to 2 units that each cost 5 or less from your discard pile on the bottom of your deck. This unit gains those units' “When Played” abilities for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2449316417",
+  "aspects": [
+    "command",
+    "cunning"
+  ],
+  "traits": [
+    "force",
+    "jedi"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 48
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 48
+    }
+  ],
+  "internalName": "vernestra-rwoh#we-should-handle-this-ourselves"
+}

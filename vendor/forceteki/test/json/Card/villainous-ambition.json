@@ -1,0 +1,36 @@
+{
+  "title": "Villainous Ambition",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 0,
+  "power": 2,
+  "text": "When Played: If attached unit is a Villainy unit, you may deal 2 damage to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 2,
+  "upgradeHp": 0,
+  "id": "1801601861",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 252
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 252
+    }
+  ],
+  "internalName": "villainous-ambition"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "With Thunderous Applause",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Give a unit +2/+2 for this phase.\nYou may disclose Command (reveal a card from your hand with this aspect icon). If you do, give another unit +2/+2 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1156033141",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 129
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 129
+    }
+  ],
+  "internalName": "with-thunderous-applause"
+}

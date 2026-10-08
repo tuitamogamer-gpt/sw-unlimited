@@ -1,0 +1,39 @@
+{
+  "title": "Sith Legionnaire",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "While you control another Villainy unit, this unit gets +2/+0.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4082337781",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "sith",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 81
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 81
+    }
+  ],
+  "internalName": "sith-legionnaire"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Attack Pattern Delta",
+  "subtitle": null,
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Give a friendly unit +3/+3 for this phase.\n\nGive another friendly unit +2/+2 for this phase.\n\nGive a third friendly unit +1/+1 for this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1939951561",
+  "aspects": [
+    "command",
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 106
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 106
+    }
+  ],
+  "internalName": "attack-pattern-delta"
+}

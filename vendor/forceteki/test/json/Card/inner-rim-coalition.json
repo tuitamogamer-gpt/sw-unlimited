@@ -1,0 +1,39 @@
+{
+  "title": "Inner Rim Coalition",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 5,
+  "power": 6,
+  "text": "When Defeated: You may ready a unit that costs 5 or less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7585037197",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 154
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 154
+    }
+  ],
+  "internalName": "inner-rim-coalition"
+}

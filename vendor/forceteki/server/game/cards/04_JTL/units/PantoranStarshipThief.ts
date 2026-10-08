@@ -1,0 +1,56 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { INonLeaderUnitAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { NonLeaderUnitCard } from '../../../core/card/NonLeaderUnitCard';
+import { AbilityType, Trait, WildcardRelativePlayer } from '../../../core/Constants';
+import { TextHelper } from '../../../core/utils/TextHelper';
+
+export default class PantoranStarshipThief extends NonLeaderUnitCard {
+    protected override getImplementationId() {
+        return {
+            id: '6515230001',
+            internalName: 'pantoran-starship-thief',
+        };
+    }
+
+    public override setupCardAbilities(registrar: INonLeaderUnitAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.addWhenPlayedAbility({
+            title: `Pay ${TextHelper.resource(3)} to attach this unit as an upgrade to a ${TextHelper.Trait.Fighter} or ${TextHelper.Trait.Transport} unit without a ${TextHelper.Trait.Pilot} on it. Take control of that unit`,
+            contextTitle: (context) => `Pay ${TextHelper.resource(3)} to attach ${context.source.title} as an upgrade to a ${TextHelper.Trait.Fighter} or ${TextHelper.Trait.Transport} unit without a ${TextHelper.Trait.Pilot} on it. Take control of that unit`,
+            optional: true,
+            immediateEffect: AbilityHelper.immediateEffects.payResources((context) => ({
+                amount: 3,
+                target: context.player
+            })),
+            ifYouDo: {
+                title: `Attach this unit as an upgrade to a ${TextHelper.Trait.Fighter} or ${TextHelper.Trait.Transport} unit without a ${TextHelper.Trait.Pilot} on it. Take control of that unit`,
+                contextTitle: (context) => `Attach ${context.source.title} as an upgrade to a ${TextHelper.Trait.Fighter} or ${TextHelper.Trait.Transport} unit without a ${TextHelper.Trait.Pilot} on it. Take control of that unit`,
+                targetResolver: {
+                    controller: WildcardRelativePlayer.Any,
+                    cardCondition: (card) => card.isUnit() &&
+                      (card.hasSomeTrait(Trait.Fighter) || card.hasSomeTrait(Trait.Transport)) &&
+                      !card.upgrades.some((upgrade) => upgrade.hasSomeTrait(Trait.Pilot)),
+                    immediateEffect: AbilityHelper.immediateEffects.sequential([
+                        AbilityHelper.immediateEffects.attachUpgrade((context) => ({
+                            upgrade: context.source,
+                        })),
+                        AbilityHelper.immediateEffects.takeControlOfUnit((context) => ({
+                            newController: context.source.owner,
+                        })),
+                    ]),
+                }
+            }
+        });
+
+        registrar.addPilotingAbility({
+            type: AbilityType.Triggered,
+            title: 'That unit\'s owner takes control of it',
+            when: {
+                onUpgradeUnattached: (event, context) => event.upgradeCard === context.source,
+            },
+            immediateEffect: AbilityHelper.immediateEffects.takeControlOfUnit((context) => ({
+                target: context.event.parentCard,
+                newController: context.event.parentCard.owner
+            }))
+        });
+    }
+}

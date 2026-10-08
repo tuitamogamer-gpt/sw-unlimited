@@ -1,0 +1,37 @@
+{
+  "title": "Brutal Traditions",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 1,
+  "text": "Action: If an enemy unit was defeated this phase, play this upgrade from your discard pile (paying its cost).",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Brutal Traditions’ ability cannot be used as an action if no enemy unit left play this phase, as it would not change the game state.\nAbilities that let you play a card require you to pay that card’s cost unless specified otherwise.\n",
+  "upgradePower": 1,
+  "upgradeHp": 2,
+  "id": "4843813137",
+  "aspects": [
+    "villainy",
+    "vigilance"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 38
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 38
+    }
+  ],
+  "internalName": "brutal-traditions"
+}

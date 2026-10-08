@@ -1,0 +1,43 @@
+{
+  "title": "R2-D2",
+  "subtitle": "Known to Make Mistakes",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "On Attack: If you control a Command unit, exhaust an enemy ground unit that costs 4 or less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3366353612",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 11
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 11
+    },
+    {
+      "set": "IBH",
+      "number": 49
+    }
+  ],
+  "internalName": "r2d2#known-to-make-mistakes"
+}

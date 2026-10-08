@@ -1,0 +1,40 @@
+{
+  "title": "Obi-Wan Kenobi",
+  "subtitle": "Courage Makes Heroes",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "Action [Exhaust, use the Force (lose your Force token)]: Give an Experience token to a unit without an Experience token on it.",
+  "deployBox": "On Attack: You may give an Experience token to another unit without an Experience token on it.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2693401411",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 8
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 8
+    }
+  ],
+  "internalName": "obiwan-kenobi#courage-makes-heroes"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Luke's Jedi Lightsaber",
+  "subtitle": "Constructed by Hand",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "Attach to a non-Vehicle unit.\nIf attached unit is Luke Skywalker, he gains Sentinel. (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": 3,
+  "upgradeHp": 3,
+  "id": "4924242543",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "item",
+    "weapon",
+    "lightsaber"
+  ],
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 66
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 66
+    }
+  ],
+  "internalName": "lukes-jedi-lightsaber#constructed-by-hand"
+}

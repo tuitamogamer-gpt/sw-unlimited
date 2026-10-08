@@ -1,0 +1,39 @@
+{
+  "title": "Arena Nexu",
+  "subtitle": "Starved for Prey",
+  "cost": 4,
+  "hp": 6,
+  "power": 2,
+  "text": "Grit\nOn Attack: You may deal 3 damage to a friendly Creature unit (including this one) and ready this unit. Use this ability only once each round.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8117759033",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 182
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 182
+    }
+  ],
+  "internalName": "arena-nexu#starved-for-prey"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Implicate",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Choose a unit. For this phase, it gains Sentinel and: “When this unit is attacked: Create a Spy token.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "“When this unit is attacked” triggers at the same time as “On Attack” abilities.\nOn Defense abilities trigger when this unit is chosen as the defender for an attack, in the same window as the attacker's On Attack abilities.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7737958693",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 231
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 231
+    }
+  ],
+  "internalName": "implicate"
+}

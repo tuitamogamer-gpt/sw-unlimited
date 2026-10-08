@@ -1,0 +1,36 @@
+{
+  "title": "Encircle",
+  "subtitle": "",
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "This event costs 1 resource less to play for each friendly unit.\nA friendly unit captures an enemy non-leader unit in the same arena. (Put the captured card facedown under that unit until that unit leaves play.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9368766211",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 61
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 61
+    }
+  ],
+  "internalName": "encircle"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Caught in the Crossfire",
+  "subtitle": "",
+  "cost": 6,
+  "hp": null,
+  "power": null,
+  "text": "Choose 2 enemy units in the same arena. Each of those units deals damage equal to its power to the other.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card's power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5013139687",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "disaster"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 176
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 176
+    }
+  ],
+  "internalName": "caught-in-the-crossfire"
+}

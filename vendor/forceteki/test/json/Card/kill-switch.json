@@ -1,0 +1,36 @@
+{
+  "title": "Kill Switch",
+  "subtitle": "",
+  "cost": 2,
+  "hp": -1,
+  "power": -1,
+  "text": "When Played: Exhaust attached unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": -1,
+  "upgradeHp": -1,
+  "id": "6489301305",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "condition"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 127
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 127
+    }
+  ],
+  "internalName": "kill-switch"
+}

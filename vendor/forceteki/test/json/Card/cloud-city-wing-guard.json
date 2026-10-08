@@ -1,0 +1,40 @@
+{
+  "title": "Cloud City Wing Guard",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9702250295",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "fringe",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 63
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 63
+    }
+  ],
+  "internalName": "cloud-city-wing-guard"
+}

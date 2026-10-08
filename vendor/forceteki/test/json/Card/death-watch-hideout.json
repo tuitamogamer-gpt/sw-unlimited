@@ -1,0 +1,36 @@
+{
+  "title": "Death Watch Hideout",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2547571983",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "concordia"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 23
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 23
+    }
+  ],
+  "internalName": "death-watch-hideout"
+}

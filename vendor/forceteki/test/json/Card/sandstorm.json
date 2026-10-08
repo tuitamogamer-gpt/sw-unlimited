@@ -1,0 +1,36 @@
+{
+  "title": "Sandstorm",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "While you control a Tatooine base, this event costs 1 resource less to play.\nChoose an arena. Give a Weakness token to each exhausted enemy unit in that arena.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8078114304",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "disaster"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 240
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 240
+    }
+  ],
+  "internalName": "sandstorm"
+}

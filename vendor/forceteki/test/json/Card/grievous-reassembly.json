@@ -1,0 +1,36 @@
+{
+  "title": "Grievous Reassembly",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Heal 3 damage from a unit. Create a Battle Droid token.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6732988831",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 73
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 73
+    }
+  ],
+  "internalName": "grievous-reassembly"
+}

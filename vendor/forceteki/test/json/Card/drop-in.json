@@ -1,0 +1,36 @@
+{
+  "title": "Drop In",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Create 2 Clone Trooper tokens.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5074877594",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 251
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 251
+    }
+  ],
+  "internalName": "drop-in"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Reputable Hunter",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "If an enemy unit has a Bounty, this unit costs 1 resource less to play.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6905327595",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "bounty"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 117
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 117
+    }
+  ],
+  "internalName": "reputable-hunter"
+}

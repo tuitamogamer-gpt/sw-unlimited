@@ -1,0 +1,38 @@
+{
+  "title": "Paz Vizsla",
+  "subtitle": "Unyielding Warrior",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "This unit gets +2/+0 for each damage on him.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3337614029",
+  "aspects": [
+    "aggression",
+    "aggression"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 153
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 153
+    }
+  ],
+  "internalName": "paz-vizsla#unyielding-warrior"
+}

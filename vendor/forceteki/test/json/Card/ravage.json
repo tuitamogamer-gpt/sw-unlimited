@@ -1,0 +1,38 @@
+{
+  "title": "Ravage",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Distribute up to 3 Weakness tokens among any number of units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5237976866",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "disaster",
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 71
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 71
+    }
+  ],
+  "internalName": "ravage"
+}

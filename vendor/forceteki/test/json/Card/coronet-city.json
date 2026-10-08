@@ -1,0 +1,36 @@
+{
+  "title": "Coronet City",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4313706014",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "corellia"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 25
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 25
+    }
+  ],
+  "internalName": "coronet-city"
+}

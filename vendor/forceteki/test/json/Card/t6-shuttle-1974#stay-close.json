@@ -1,0 +1,40 @@
+{
+  "title": "T-6 Shuttle 1974",
+  "subtitle": "Stay Close",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "When this unit is attacked (before damage is dealt): You may give an Experience token to this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "\"When this unit is attacked\" triggers at the same time as \"On Attack\" abilities.\nOn Defense abilities trigger when this unit is chosen as the defender for an attack, in the same window as the attacker's On Attack abilities.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2134957922",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 47
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 47
+    }
+  ],
+  "internalName": "t6-shuttle-1974#stay-close"
+}

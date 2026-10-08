@@ -1,0 +1,39 @@
+{
+  "title": "Medical Frigate",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 6,
+  "power": 3,
+  "text": "On Attack: You may heal 2 damage from another unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6503652883",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 250
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 250
+    }
+  ],
+  "internalName": "medical-frigate"
+}

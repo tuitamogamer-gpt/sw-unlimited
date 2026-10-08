@@ -1,0 +1,42 @@
+{
+  "title": "Chewbacca",
+  "subtitle": "Pykesbane",
+  "cost": 8,
+  "hp": 10,
+  "power": 4,
+  "text": "Grit\nWhen Played: You may defeat a unit with 5 or less remaining HP.\nSmuggle [9 resources Aggression Heroism]",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5169472456",
+  "aspects": [
+    "heroism",
+    "vigilance"
+  ],
+  "traits": [
+    "underworld",
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit",
+    "smuggle"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 50
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 50
+    }
+  ],
+  "internalName": "chewbacca#pykesbane"
+}

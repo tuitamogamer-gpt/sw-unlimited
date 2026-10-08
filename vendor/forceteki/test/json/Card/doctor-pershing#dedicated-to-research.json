@@ -1,0 +1,39 @@
+{
+  "title": "Doctor Pershing",
+  "subtitle": "Dedicated to Research",
+  "cost": 2,
+  "hp": 4,
+  "power": 0,
+  "text": "Support (When you play this unit, you may attack with another unit. It gains this unit's other abilities for this attack.)\nOn Attack: If this unit has 3 or more remaining HP, draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "If you use Doctor Pershing's Support ability to attack with another unit, you only draw a card from the \"\"On Attack\"\" ability if the attacking unit has 3 or more remaining HP.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2812074334",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "new republic"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "support"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 72
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 72
+    }
+  ],
+  "internalName": "doctor-pershing#dedicated-to-research"
+}

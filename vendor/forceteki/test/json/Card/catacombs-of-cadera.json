@@ -1,0 +1,36 @@
+{
+  "title": "Catacombs of Cadera",
+  "subtitle": null,
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": null,
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8659924257",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "jedha"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 26
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 26
+    }
+  ],
+  "internalName": "catacombs-of-cadera"
+}

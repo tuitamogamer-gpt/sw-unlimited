@@ -1,0 +1,39 @@
+{
+  "title": "Underworld Thug",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": null,
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1598425314",
+  "aspects": [],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 257
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 247
+    },
+    {
+      "set": "SHD",
+      "number": 257
+    }
+  ],
+  "internalName": "underworld-thug"
+}

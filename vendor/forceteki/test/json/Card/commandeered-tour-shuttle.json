@@ -1,0 +1,40 @@
+{
+  "title": "Commandeered Tour Shuttle",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: You may ready another unit with 3 or less power.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4304460989",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 165
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 165
+    }
+  ],
+  "internalName": "commandeered-tour-shuttle"
+}

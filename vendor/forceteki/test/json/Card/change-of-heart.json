@@ -1,0 +1,36 @@
+{
+  "title": "Change of Heart",
+  "subtitle": null,
+  "cost": 6,
+  "hp": null,
+  "power": null,
+  "text": "Take control of a non-leader unit. At the start of the regroup phase, its owner takes control of it.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1626462639",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 224
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 224
+    }
+  ],
+  "internalName": "change-of-heart"
+}

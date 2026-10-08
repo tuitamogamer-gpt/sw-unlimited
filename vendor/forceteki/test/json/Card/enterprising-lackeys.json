@@ -1,0 +1,40 @@
+{
+  "title": "Enterprising Lackeys",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 5,
+  "power": 5,
+  "text": "When Defeated: You may defeat a friendly resource. If you do, put this unit into play as a resource.\nSmuggle [6 resources Command Command]",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "A card put into play as a resource enters play exhausted.\n(ERRATA) Templating update: “Put into play as a resource” becomes “resource”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7204838421",
+  "aspects": [
+    "command",
+    "command"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "smuggle"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 107
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 107
+    }
+  ],
+  "internalName": "enterprising-lackeys"
+}

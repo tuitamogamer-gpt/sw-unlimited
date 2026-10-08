@@ -1,0 +1,36 @@
+{
+  "title": "Focus Fire",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Choose a unit. Each friendly Vehicle unit in the same arena deals damage equal to its power to that unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8905858173",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 129
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 129
+    }
+  ],
+  "internalName": "focus-fire"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Shield Drive Outfitter",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 3,
+  "power": 1,
+  "text": "When Played: You may pay 1 resource. If you do, give a Shield token to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0340520874",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 113
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 113
+    }
+  ],
+  "internalName": "shield-drive-outfitter"
+}

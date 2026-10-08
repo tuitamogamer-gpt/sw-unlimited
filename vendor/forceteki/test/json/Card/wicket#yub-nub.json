@@ -1,0 +1,41 @@
+{
+  "title": "Wicket",
+  "subtitle": "Yub Nub!",
+  "cost": 1,
+  "hp": 3,
+  "power": 3,
+  "text": "Saboteur\nThis unit can't attack bases.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Units that can’t attack bases can still damage bases through other abilities, like Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4800098984",
+  "aspects": [
+    "command",
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "ewok"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 34
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 34
+    }
+  ],
+  "internalName": "wicket#yub-nub"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Arena Reek",
+  "subtitle": "Fixture of Ceremony",
+  "cost": 3,
+  "hp": 4,
+  "power": 4,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0212754007",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 135
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 135
+    }
+  ],
+  "internalName": "arena-reek#fixture-of-ceremony"
+}

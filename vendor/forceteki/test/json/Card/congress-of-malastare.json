@@ -1,0 +1,38 @@
+{
+  "title": "Congress of Malastare",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 5,
+  "text": "The first upgrade you play each phase costs 1 resource less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1629192496",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "republic",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 64
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 64
+    }
+  ],
+  "internalName": "congress-of-malastare"
+}

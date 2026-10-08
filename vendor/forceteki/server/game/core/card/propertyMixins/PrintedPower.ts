@@ -1,0 +1,43 @@
+import { EffectName } from '../../Constants';
+import { registerStateBase } from '../../GameObjectUtils';
+import { getPrintedAttributesOverride } from '../../ongoingEffect/effectImpl/PrintedAttributesOverride';
+import { Contract } from '../../utils/Contract';
+import type { Card, CardConstructor } from '../Card';
+
+export interface ICardWithPrintedPowerProperty extends Card {
+    getPrintedPower(): number;
+    getPower(): number;
+}
+
+/** Mixin function that adds the `printedPower` property to a base class. */
+export function WithPrintedPower<TBaseClass extends CardConstructor>(BaseClass: TBaseClass) {
+    @registerStateBase()
+    class WithPrintedPower extends (BaseClass as TBaseClass) {
+        public readonly printedPower: number;
+
+        // see Card constructor for list of expected args
+        public constructor(...args: any[]) {
+            super(...args);
+            const [Player, cardData] = this.unpackConstructorArgs(...args);
+
+            Contract.assertNotNullLike(cardData.power);
+            this.printedPower = cardData.power;
+        }
+
+        public getPower(): number {
+            return this.getPrintedPower();
+        }
+
+        public getPrintedPower(): number {
+            if (this.hasOngoingEffect(EffectName.PrintedAttributesOverride)) {
+                const override = getPrintedAttributesOverride('printedPower', this.getOngoingEffectValues(EffectName.PrintedAttributesOverride));
+                if (override != null) {
+                    return override;
+                }
+            }
+            return this.printedPower;
+        }
+    }
+
+    return WithPrintedPower;
+}

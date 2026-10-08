@@ -1,0 +1,39 @@
+{
+  "title": "Doctor Hemlock",
+  "subtitle": "Emotion Has No Place Here",
+  "cost": 6,
+  "hp": 6,
+  "power": 3,
+  "text": "Action [1 resource, Exhaust]: Give a Weakness token to a unit without a Weakness token on it.",
+  "deployBox": "On Attack: You may give a Weakness token to a unit.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3060442176",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 3
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 3
+    }
+  ],
+  "internalName": "doctor-hemlock#emotion-has-no-place-here"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Moff Gideon",
+  "subtitle": "Cold Calling",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "mock ability text",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "moff-gideon#cold-calling-id",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 22
+  },
+  "internalName": "moff-gideon#cold-calling",
+  "arena": "ground",
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 22
+    }
+  ]
+}

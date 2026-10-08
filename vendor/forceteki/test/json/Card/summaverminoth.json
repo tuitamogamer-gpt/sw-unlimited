@@ -1,0 +1,39 @@
+{
+  "title": "Summa-verminoth",
+  "subtitle": "",
+  "cost": 12,
+  "hp": 15,
+  "power": 15,
+  "text": "Sentinel\nOn Attack: Defeat all other space units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8724833287",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 83
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 83
+    }
+  ],
+  "internalName": "summaverminoth"
+}

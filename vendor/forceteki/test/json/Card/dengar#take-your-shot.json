@@ -1,0 +1,40 @@
+{
+  "title": "Dengar",
+  "subtitle": "Take Your Shot",
+  "cost": 3,
+  "hp": 3,
+  "power": 4,
+  "text": "When a unit with the highest cost among enemy units is defeated: Create a Credit token. Use this ability only once each round.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nIf multiple enemy unis are tied for the highest cost, defeating any of them will trigger Dengar's ability.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8453622426",
+  "aspects": [
+    "command",
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 53
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 53
+    }
+  ],
+  "internalName": "dengar#take-your-shot"
+}

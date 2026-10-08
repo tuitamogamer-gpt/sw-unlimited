@@ -1,0 +1,36 @@
+{
+  "title": "Direct Hit",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Defeat a non-leader Vehicle unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5093056978",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 78
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 78
+    }
+  ],
+  "internalName": "direct-hit"
+}

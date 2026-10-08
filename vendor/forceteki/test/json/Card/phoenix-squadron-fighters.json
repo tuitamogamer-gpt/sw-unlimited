@@ -1,0 +1,40 @@
+{
+  "title": "Phoenix Squadron Fighters",
+  "subtitle": "",
+  "cost": 8,
+  "hp": 6,
+  "power": 6,
+  "text": "This unit costs 1 resource less to play for each friendly damaged unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8025566663",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 110
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 110
+    }
+  ],
+  "internalName": "phoenix-squadron-fighters"
+}

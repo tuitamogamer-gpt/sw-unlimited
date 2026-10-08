@@ -1,0 +1,41 @@
+{
+  "title": "Volunteer Soldier",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 3,
+  "power": 2,
+  "text": "Raid 1 (This unit gets +1/+0 while attacking.)\n\nIf you control a TROOPER unit, this unit costs [1 resource] less to play.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4111616117",
+  "aspects": [],
+  "traits": [
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 254
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 248
+    },
+    {
+      "set": "TWI",
+      "number": 254
+    }
+  ],
+  "internalName": "volunteer-soldier"
+}

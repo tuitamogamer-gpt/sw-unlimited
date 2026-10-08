@@ -1,0 +1,40 @@
+{
+  "title": "The Armorer",
+  "subtitle": "Secrecy is Our Survival",
+  "cost": 6,
+  "hp": 5,
+  "power": 5,
+  "text": "Shielded (When you play this unit, give a Shield token to her.)\nWhen Played: Give a Shield token to each friendly unit with Shielded (including this one).",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4809843947",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 64
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 64
+    }
+  ],
+  "internalName": "the-armorer#secrecy-is-our-survival"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Ahsoka Tano",
+  "subtitle": "I Have an Idea",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "When you play an event: You may exhaust this leader. If you do, look at the top card of your deck. You may play it (paying its cost), discard it, or leave it on top of your deck.",
+  "deployBox": "Raid 1 (This unit gets +1/+0 while attacking.)\nWhen Attack Ends: Look at the top card of your deck. You may play it, discard it, or leave it on top of your deck. If you play it, it costs 1 resource less.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Abilities that let you play a card require you to pay that card’s cost unless specified otherwise.\n\"When Attack Ends\" abilities trigger at the same time the attacking unit deals combat damage. Ahsoka doesn't need to survive the attack in order to use this ability.\nFully resolve the played event before resolving Ahsoka's triggered leader ability.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8865072142",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "force"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 8
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 8
+    }
+  ],
+  "internalName": "ahsoka-tano#i-have-an-idea"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Auzituck Liberator Gunship",
+  "subtitle": null,
+  "cost": 4,
+  "hp": 4,
+  "power": 3,
+  "text": "Ambush (After you play this unit, it may ready and attack an enemy unit.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7285270931",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 195
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 195
+    }
+  ],
+  "internalName": "auzituck-liberator-gunship"
+}

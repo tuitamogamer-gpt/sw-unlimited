@@ -1,0 +1,36 @@
+{
+  "title": "Reckoning",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Deal damage to a unit equal to the total amount of damage on all units you control.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0632920954",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 187
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 187
+    }
+  ],
+  "internalName": "reckoning"
+}

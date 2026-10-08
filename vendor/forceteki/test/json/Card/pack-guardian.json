@@ -1,0 +1,39 @@
+{
+  "title": "Pack Guardian",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 5,
+  "text": "While this unit is ready, it gains Sentinel. (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0283253814",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 259
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 259
+    }
+  ],
+  "internalName": "pack-guardian"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Howler Pack",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 3,
+  "power": 3,
+  "text": "When Played/When Defeated: Create a Beast token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3609615193",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 144
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 144
+    }
+  ],
+  "internalName": "howler-pack"
+}

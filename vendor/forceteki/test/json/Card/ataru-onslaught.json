@@ -1,0 +1,36 @@
+{
+  "title": "Ataru Onslaught",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Ready a Force unit with 4 or less power.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6736342819",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 174
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 174
+    }
+  ],
+  "internalName": "ataru-onslaught"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Power of the Dark Side",
+  "subtitle": null,
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "An opponent chooses a unit they control. Defeat that unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "If there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0176921487",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 41
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 41
+    }
+  ],
+  "internalName": "power-of-the-dark-side"
+}

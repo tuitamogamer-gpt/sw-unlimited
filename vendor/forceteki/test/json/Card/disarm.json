@@ -1,0 +1,36 @@
+{
+  "title": "Disarm",
+  "subtitle": null,
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Give an enemy unit –4/–0 for this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2587711125",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 216
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 216
+    }
+  ],
+  "internalName": "disarm"
+}

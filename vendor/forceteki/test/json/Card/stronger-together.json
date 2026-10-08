@@ -1,0 +1,36 @@
+{
+  "title": "Stronger Together",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Create 2 Mandalorian tokens.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5181800767",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 140
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 140
+    }
+  ],
+  "internalName": "stronger-together"
+}

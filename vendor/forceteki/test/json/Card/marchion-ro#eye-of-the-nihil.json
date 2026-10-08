@@ -1,0 +1,41 @@
+{
+  "title": "Marchion Ro",
+  "subtitle": "Eye of the Nihil",
+  "cost": 6,
+  "hp": 7,
+  "power": 6,
+  "text": "Each friendly unit's Raid is doubled.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Apply Marchion Ro's doubling ability as the last step of calculating a unit's Raid value. A unit with Raid 2 is considered to have Raid 4 while Marchion Ro is in play. If the unit then gains Raid 1, it is now considered to have Raid 6.\nIf multiple abilities double a unit's Raid (such as a player controlling Marchion Ro and a Cloned copy), both abilities apply and the Raid value is quadrupled.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4627342747",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "nihil"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 186
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 186
+    }
+  ],
+  "internalName": "marchion-ro#eye-of-the-nihil"
+}

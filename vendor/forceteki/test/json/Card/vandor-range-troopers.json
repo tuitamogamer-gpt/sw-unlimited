@@ -1,0 +1,39 @@
+{
+  "title": "Vandor Range Troopers",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 6,
+  "power": 4,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9552652111",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 98
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 98
+    }
+  ],
+  "internalName": "vandor-range-troopers"
+}

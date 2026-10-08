@@ -1,0 +1,36 @@
+{
+  "title": "Galactic Escalation",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Each player resources the top card of their deck.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Resources enter play exhausted.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1590343202",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 56
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 56
+    }
+  ],
+  "internalName": "galactic-escalation"
+}

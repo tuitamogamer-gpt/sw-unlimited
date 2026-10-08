@@ -1,0 +1,40 @@
+{
+  "title": "Qui-Gon Jinn",
+  "subtitle": "Student of the Living Force",
+  "cost": 6,
+  "hp": 7,
+  "power": 4,
+  "text": "Action [Exhaust, use the Force (lose your Force token)]: Return a friendly non-leader unit to its owner's hand. Play a non-Villainy unit that costs less than the returned unit from your hand for free.",
+  "deployBox": "When this unit completes an attack (and survives): You may return a friendly non-leader unit to its owner's hand. Play a non-Villainy unit that costs less than the returned unit from your hand for free.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "\"Play for free\" ignores all resource costs, including the aspect penalty, but not other additional costs.\nA unit must survive an attack to trigger its \"when this unit completes an attack\" abilities.\nAbilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nAbilities that return a card to hand must choose a card in play unless otherwise specified.\nWhen Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2580909557",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 16
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 16
+    }
+  ],
+  "internalName": "quigon-jinn#student-of-the-living-force"
+}

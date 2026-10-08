@@ -1,0 +1,36 @@
+{
+  "title": "The Clone Wars",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Pay any number of resources. Create that many Clone Trooper tokens. Each opponent creates that many Battle Droid tokens.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "The cost of the event doesn't count toward the number of tokens created.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2267524398",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "disaster"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 125
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 125
+    }
+  ],
+  "internalName": "the-clone-wars"
+}

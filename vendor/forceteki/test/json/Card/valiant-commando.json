@@ -1,0 +1,39 @@
+{
+  "title": "Valiant Commando",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "When this unit deals combat damage to a base: You may defeat this unit. If you do, deal 3 damage to that base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "“Combat damage” is only the damage dealt during the “deal combat damage” step of an attack.\nWhen Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7315775303",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 150
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 150
+    }
+  ],
+  "internalName": "valiant-commando"
+}

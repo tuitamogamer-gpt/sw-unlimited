@@ -1,0 +1,36 @@
+{
+  "title": "Foundling Rescue",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "You may defeat a unit with 2 or less remaining HP.\nCreate a Mandalorian token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2405496593",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 92
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 92
+    }
+  ],
+  "internalName": "foundling-rescue"
+}

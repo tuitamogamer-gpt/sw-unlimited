@@ -1,0 +1,36 @@
+{
+  "title": "The Conflict Within",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 0,
+  "power": 0,
+  "text": "Attached unit gains: “When this unit readies: You may pay 3 resources. If you don't, exhaust this unit.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "0336845028",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "condition"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 88
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 88
+    }
+  ],
+  "internalName": "the-conflict-within"
+}

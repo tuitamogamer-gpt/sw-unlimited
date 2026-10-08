@@ -1,0 +1,38 @@
+{
+  "title": "Shin Hati",
+  "subtitle": "Eager Adversary",
+  "cost": 6,
+  "hp": 6,
+  "power": 4,
+  "text": "When a friendly unit's attack ends: You may exhaust this leader. If you do, exhaust a unit that costs less than the amount of combat damage dealt to a base this attack.",
+  "deployBox": "When a friendly unit's attack ends: You may exhaust a unit that costs less than the amount of combat damage dealt to a base this attack. Use this ability only once each round.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n“Combat damage” is only the damage dealt during the “End attack” step of an attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7358789406",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "force"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 16
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 16
+    }
+  ],
+  "internalName": "shin-hati#eager-adversary"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Munificent Frigate",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 7,
+  "power": 4,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4789935295",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 69
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 69
+    }
+  ],
+  "internalName": "munificent-frigate"
+}

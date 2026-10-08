@@ -1,0 +1,40 @@
+{
+  "title": "Enoch",
+  "subtitle": "Solemn Servant",
+  "cost": 4,
+  "hp": 5,
+  "power": 4,
+  "text": "When Defeated: You may deal up to 6 damage to your base. The next unit you play this phase costs 1 resource less for every 2 damage dealt this way.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "If Enoch's ability's damage to your base is prevented, then there is no cost reduction.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0694894752",
+  "aspects": [
+    "vigilance",
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 27
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 27
+    }
+  ],
+  "internalName": "enoch#solemn-servant"
+}

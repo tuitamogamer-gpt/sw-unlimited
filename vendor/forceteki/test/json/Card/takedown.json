@@ -1,0 +1,36 @@
+{
+  "title": "Takedown",
+  "subtitle": null,
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Defeat a unit with 5 or less remaining HP.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4849184191",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 77
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 77
+    }
+  ],
+  "internalName": "takedown"
+}

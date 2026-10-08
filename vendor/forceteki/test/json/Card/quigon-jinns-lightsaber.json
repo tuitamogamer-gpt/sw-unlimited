@@ -1,0 +1,39 @@
+{
+  "title": "Qui-Gon Jinn's Lightsaber",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 3,
+  "text": "Attach to a friendly non-Vehicle unit.\nWhen Played: If attached unit is Qui-Gon Jinn, you may exhaust any number of units with combined cost 6 or less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": 3,
+  "upgradeHp": 1,
+  "id": "3445044882",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "item",
+    "weapon",
+    "lightsaber"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 201
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 201
+    }
+  ],
+  "internalName": "quigon-jinns-lightsaber"
+}

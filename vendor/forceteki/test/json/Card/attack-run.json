@@ -1,0 +1,34 @@
+{
+  "title": "Attack Run",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Attack with 2 space units (one at a time).",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you play Attack Run, you must attack with two units, if able. Units must be ready in order to attack.\nFully resolve the first attack, including all triggers, before beginning the second attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1355075014",
+  "aspects": [],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 261
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 261
+    }
+  ],
+  "internalName": "attack-run"
+}

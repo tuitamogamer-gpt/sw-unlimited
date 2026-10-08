@@ -1,0 +1,36 @@
+{
+  "title": "KCM Mining Facility",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0109520913",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "mustafar"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 26
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 26
+    }
+  ],
+  "internalName": "kcm-mining-facility"
+}

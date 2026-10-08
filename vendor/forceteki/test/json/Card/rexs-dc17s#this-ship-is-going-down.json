@@ -1,0 +1,38 @@
+{
+  "title": "Rex's DC-17s",
+  "subtitle": "This Ship is Going Down",
+  "cost": 3,
+  "hp": 2,
+  "power": 3,
+  "text": "Attach to a non-Vehicle unit.\nAttached unit gains: “When an enemy unit readies during the action phase: Ready this unit. Use this ability only once each round.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": 3,
+  "upgradeHp": 2,
+  "id": "4781765221",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "item",
+    "weapon"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 63
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 63
+    }
+  ],
+  "internalName": "rexs-dc17s#this-ship-is-going-down"
+}

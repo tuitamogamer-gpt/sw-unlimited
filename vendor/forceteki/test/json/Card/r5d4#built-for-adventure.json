@@ -1,0 +1,40 @@
+{
+  "title": "R5-D4",
+  "subtitle": "Built for Adventure",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "Support (When you play this unit, you may attack with another unit. It gains this unit's other abilities for this attack.)\nOn Attack: Defeat all upgrades on the defending unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3708951358",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "support"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 156
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 156
+    }
+  ],
+  "internalName": "r5d4#built-for-adventure"
+}

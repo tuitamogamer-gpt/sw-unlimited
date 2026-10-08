@@ -1,0 +1,36 @@
+{
+  "title": "Shatterpoint",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Choose one:\nDefeat a non-leader unit with 3 or less remaining HP.\nUse the Force (lose your Force token). If you do, defeat a non-leader unit.\n",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0033766648",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 79
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 79
+    }
+  ],
+  "internalName": "shatterpoint"
+}

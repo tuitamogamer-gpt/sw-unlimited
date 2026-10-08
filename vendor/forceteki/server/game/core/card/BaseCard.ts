@@ -1,0 +1,168 @@
+import type { Player } from '../Player';
+import { Card } from './Card';
+import { CardType } from '../Constants';
+import { Contract } from '../utils/Contract';
+import type { ICardWithDamageProperty } from './propertyMixins/Damage';
+import { WithDamage } from './propertyMixins/Damage';
+import type { ActionAbilityBase } from '../ability/ActionAbility';
+import type { IEpicActionProps } from '../../Interfaces';
+import { WithStandardAbilitySetup } from './propertyMixins/StandardAbilitySetup';
+import { WithTriggeredAbilities, type ICardWithTriggeredAbilities } from './propertyMixins/TriggeredAbilityRegistration';
+import { WithConstantAbilities } from './propertyMixins/ConstantAbilityRegistration';
+import type { ICardWithActionAbilities } from './propertyMixins/ActionAbilityRegistration';
+import { WithActionAbilities } from './propertyMixins/ActionAbilityRegistration';
+import type { ICardDataJson } from '../../../utils/cardData/CardDataInterfaces';
+import { EpicActionAbility } from '../../abilities/EpicActionAbility';
+import type { IBaseAbilityRegistrar, IBasicAbilityRegistrar } from './AbilityRegistrationInterfaces';
+import type { IAbilityHelper } from '../../AbilityHelper';
+import type { ICardWithCaptureZone } from '../zone/CaptureZone';
+import { CaptureZone } from '../zone/CaptureZone';
+import { registerStateBase, statePrimitive, stateRef, stateRefArray } from '../GameObjectUtils';
+import type { ICardWithUpgrades, IUpgradeCard } from './CardInterfaces';
+
+const BaseCardParent = WithActionAbilities(WithConstantAbilities(WithTriggeredAbilities(WithDamage(WithStandardAbilitySetup(Card)))));
+
+export interface IBaseCard extends ICardWithDamageProperty, ICardWithActionAbilities<IBaseCard>, ICardWithTriggeredAbilities<IBaseCard>, ICardWithCaptureZone, ICardWithUpgrades {
+    get epicActionSpent(): boolean;
+    get defeated(): boolean;
+    defeatBase(): void;
+}
+
+/** A Base card (as in, the card you put in your base zone) */
+@registerStateBase()
+export class BaseCard extends BaseCardParent implements IBaseCard {
+    private _epicActionAbility?: EpicActionAbility;
+
+    public get epicActionSpent() {
+        Contract.assertNotNullLike(this._epicActionAbility, `Attempting to check if epic action for card ${this.internalName} is spent, but no epic action ability is set`);
+        return this.epicActionSpentInternal();
+    }
+
+    @statePrimitive()
+    private accessor _defeated = false;
+
+    /**
+     * Whether this base has been directly defeated by an ability. A base is also considered defeated by the
+     * game rules when its damage reaches its HP (see {@link Game.checkWinCondition}); this flag covers the
+     * separate case of an ability that defeats a base outright.
+     */
+    public get defeated(): boolean {
+        return this._defeated;
+    }
+
+    public defeatBase(): void {
+        this._defeated = true;
+    }
+
+    @stateRef()
+    private accessor _captureZone: CaptureZone | null = null;
+
+    public get captureZone(): CaptureZone {
+        return this._captureZone;
+    }
+
+    public get capturedUnits() {
+        Contract.assertNotNullLike(this._captureZone, `Attempting to access captured units for card ${this.internalName}, but capture zone is not initialized`);
+        return this.captureZone.cards;
+    }
+
+    @stateRefArray()
+    private accessor _upgrades: readonly IUpgradeCard[] = [];
+
+    public get upgrades(): IUpgradeCard[] {
+        return [...this._upgrades];
+    }
+
+    public isUpgraded(): boolean {
+        return this._upgrades.length > 0;
+    }
+
+    /**
+     * Add the passed upgrade to this base's upgrade list. The upgrade must already have been moved into
+     * the base zone (mirrors {@link IUnitCard.attachUpgrade} for units in an arena).
+     */
+    public attachUpgrade(upgrade: IUpgradeCard) {
+        Contract.assertEqual(upgrade.zoneName, this.zoneName);
+        Contract.assertTrue(this.zone.hasCard(upgrade));
+
+        this._upgrades = [...this._upgrades, upgrade];
+    }
+
+    public unattachUpgrade(upgrade: IUpgradeCard, event = null) {
+        this._upgrades = this._upgrades.filter((card) => card.uuid !== upgrade.uuid);
+    }
+
+    public constructor(owner: Player, cardData: ICardDataJson) {
+        super(owner, cardData);
+        Contract.assertEqual(this.printedType, CardType.Base);
+    }
+
+    public override isBase(): this is IBaseCard {
+        return true;
+    }
+
+    public override initializeForStartZone(): void {
+        super.initializeForStartZone();
+
+        this.setDamageEnabled(true);
+        this.setActiveAttackEnabled(true);
+        this.initializeCaptureZone();
+
+        for (const ability of this.getTriggeredAbilities()) {
+            ability.registerEvents();
+        }
+
+        for (const ability of this.getConstantAbilities()) {
+            ability.registeredEffects = this.addEffectToEngine(ability.buildEffectFactoryProps());
+        }
+    }
+
+    public override getActionAbilities(): ActionAbilityBase[] {
+        if (!this.isFullyBlanked() && this._epicActionAbility) {
+            return super.getActionAbilities().concat(this._epicActionAbility);
+        }
+
+        return super.getActionAbilities();
+    }
+
+    public override canRegisterTriggeredAbilities(): this is ICardWithTriggeredAbilities<this> {
+        return true;
+    }
+
+    private setEpicActionAbility(properties: IEpicActionProps<this>): void {
+        Contract.assertIsNullLike(this._epicActionAbility, 'Epic action ability already set');
+
+        this._epicActionAbility = new EpicActionAbility(this.game, this, properties);
+    }
+
+    private epicActionSpentInternal(): boolean {
+        return this._epicActionAbility ? this._epicActionAbility.isSpent(this.owner) : false;
+    }
+
+    public override getSummary(activePlayer: Player, overrideHidden: boolean = false) {
+        return {
+            ...super.getSummary(activePlayer, overrideHidden),
+            epicActionSpent: this.epicActionSpentInternal(),
+            isDefender: this.isDefending(),
+            upgrades: this.upgrades.map((upgrade) => upgrade.getSummary(activePlayer, overrideHidden)),
+        };
+    }
+
+    protected override getAbilityRegistrar(): IBaseAbilityRegistrar {
+        return {
+            ...super.getAbilityRegistrar() as IBasicAbilityRegistrar<BaseCard>,
+            setEpicActionAbility: (properties: IEpicActionProps<this>) => this.setEpicActionAbility(properties),
+        };
+    }
+
+    protected override callSetupWithRegistrar() {
+        this.setupCardAbilities(this.getAbilityRegistrar(), this.game.abilityHelper);
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    public override setupCardAbilities(registrar: IBaseAbilityRegistrar, AbilityHelper: IAbilityHelper) { }
+
+    private initializeCaptureZone() {
+        this._captureZone = new CaptureZone(this.game, this.owner, this);
+    }
+}

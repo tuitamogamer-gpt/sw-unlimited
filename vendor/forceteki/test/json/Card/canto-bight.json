@@ -1,0 +1,36 @@
+{
+  "title": "Canto Bight",
+  "subtitle": "",
+  "cost": null,
+  "hp": 27,
+  "power": null,
+  "text": "Epic Action: Play a card from your hand, ignoring 1 of its Vigilance, Command, Aggression, or Cunning aspect penalties.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that let you play a card require you to pay that card’s cost unless specified otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2937103129",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "cantonica"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 28
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 28
+    }
+  ],
+  "internalName": "canto-bight"
+}

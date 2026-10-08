@@ -1,0 +1,42 @@
+{
+  "title": "Xanadu Blood",
+  "subtitle": "Cad Bane's Reward",
+  "cost": 6,
+  "hp": 6,
+  "power": 4,
+  "text": "Raid 2\nWhen Played/On Attack: You may return another friendly non-leader Underworld unit to its owner's hand. If you do, exhaust an enemy unit or resource.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Abilities that return a card to hand must choose a card in play unless otherwise specified.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5818136044",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 191
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 191
+    }
+  ],
+  "internalName": "xanadu-blood#cad-banes-reward"
+}

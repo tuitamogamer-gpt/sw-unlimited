@@ -1,0 +1,40 @@
+{
+  "title": "Lando Calrissian",
+  "subtitle": "With Impeccable Taste",
+  "cost": 4,
+  "hp": 5,
+  "power": 2,
+  "text": "Action [Exhaust]: Play a card using Smuggle. It costs 2 resources less. Defeat a resource you own and control.",
+  "deployBox": "Action: Play a card using Smuggle. It costs 2 resources less. Defeat a resource you own and control. Use this ability only once each round.",
+  "epicAction": "Epic Action: If you control 4 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "When using Lando’s ability to Smuggle a card, a resource is defeated after replacing the Smuggled card but before resolving any “When Played” abilities.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5440730550",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "smuggle"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 17
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 17
+    }
+  ],
+  "internalName": "lando-calrissian#with-impeccable-taste"
+}

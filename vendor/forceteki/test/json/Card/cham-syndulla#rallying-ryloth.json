@@ -1,0 +1,38 @@
+{
+  "title": "Cham Syndulla",
+  "subtitle": "Rallying Ryloth",
+  "cost": 4,
+  "hp": 4,
+  "power": 5,
+  "text": "When Played: If an opponent controls more resources than you, you may put the top card of your deck into play as a resource.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "A card put into play as a resource enters play exhausted.\n(ERRATA) Templating update: “Put into play as a resource” becomes “resource”. \"Controls more\" becomes \"control fewer\".\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4019449999",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "rebel",
+    "twi'lek"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 164
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 164
+    }
+  ],
+  "internalName": "cham-syndulla#rallying-ryloth"
+}

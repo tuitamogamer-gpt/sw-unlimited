@@ -1,0 +1,42 @@
+{
+  "title": "Grand Admiral Sloane",
+  "subtitle": "Holding the Empire Together",
+  "cost": 5,
+  "hp": 5,
+  "power": 4,
+  "text": "Action [Exhaust]: Choose one:\nGive each ground unit Sentinel and Overwhelm for this phase.\nGive each space unit Sentinel and Overwhelm for this phase.\n",
+  "deployBox": "Overwhelm\nEach other friendly unit gains Overwhelm and Sentinel.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Sloane's leader ability gives Sentinel and Overwhelm to each ground or space unit when the ability is used. Units that enter play after the ability is used don't gain Sentinel or Overwhelm.\nShields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6779170431",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel",
+    "overwhelm"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 7
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 7
+    }
+  ],
+  "internalName": "grand-admiral-sloane#holding-the-empire-together"
+}

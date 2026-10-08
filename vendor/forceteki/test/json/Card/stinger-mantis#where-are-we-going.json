@@ -1,0 +1,40 @@
+{
+  "title": "Stinger Mantis",
+  "subtitle": "Where Are We Going?",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "When Played: You may deal 2 damage to an exhausted unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1545515980",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 198
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 198
+    }
+  ],
+  "internalName": "stinger-mantis#where-are-we-going"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Now There Are Two of Them",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "If you control exactly one unit, play a non-Vehicle unit from your hand that shares a Trait with the unit you control. It costs 5 resources less.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6849037019",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 225
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 225
+    }
+  ],
+  "internalName": "now-there-are-two-of-them"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Count Dooku",
+  "subtitle": "Darth Tyranus",
+  "cost": 7,
+  "hp": 4,
+  "power": 5,
+  "text": "Shielded (When you play this unit, give him a Shield token.)\n\nWhen Played: You may defeat a unit with 4 or less remaining HP.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9624333142",
+  "aspects": [
+    "villainy",
+    "vigilance"
+  ],
+  "traits": [
+    "force",
+    "sith",
+    "separatist"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 38
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 38
+    }
+  ],
+  "internalName": "count-dooku#darth-tyranus"
+}

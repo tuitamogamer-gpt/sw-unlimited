@@ -1,0 +1,40 @@
+{
+  "title": "Sebulba",
+  "subtitle": "Especially Dangerous Dug",
+  "cost": 4,
+  "hp": 5,
+  "power": 2,
+  "text": "Action [Exhaust, discard a card from your deck]: A friendly unit gains Raid 1 for this phase.",
+  "deployBox": "Raid 1\nOn Attack: Discard a card from your deck.",
+  "epicAction": "Epic Action: If you control 4 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Always discard from the top of a deck, unless an ability specifies otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6320413972",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 12
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 12
+    }
+  ],
+  "internalName": "sebulba#especially-dangerous-dug"
+}

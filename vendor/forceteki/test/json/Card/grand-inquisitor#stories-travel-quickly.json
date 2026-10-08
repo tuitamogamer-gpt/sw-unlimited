@@ -1,0 +1,42 @@
+{
+  "title": "Grand Inquisitor",
+  "subtitle": "Stories Travel Quickly",
+  "cost": 5,
+  "hp": 5,
+  "power": 3,
+  "text": "Action [Exhaust, use the Force (lose your Force token)]: Attack with a friendly unit. The defender gets –2/–0 for this attack.",
+  "deployBox": "Shielded (When you deploy this leader, give a Shield token to him.)\nOn Attack: The defender gets –2/–0 for this attack.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "If you use Grand Inquisitor’s leader ability, you must attack with a unit, if able. Units must be ready in order to attack.\n(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5917432593",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "imperial",
+    "inquisitor"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 14
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 14
+    }
+  ],
+  "internalName": "grand-inquisitor#stories-travel-quickly"
+}

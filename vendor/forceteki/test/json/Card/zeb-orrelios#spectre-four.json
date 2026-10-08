@@ -1,0 +1,42 @@
+{
+  "title": "Zeb Orrelios",
+  "subtitle": "Spectre Four",
+  "cost": 5,
+  "hp": 4,
+  "power": 4,
+  "text": "Sentinel\nWhen Played: You may deal 3 damage to a ground unit. If you control a Command or Cunning unit, you may deal 5 damage to a ground unit instead.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "(ERRATA) Name: \"Zeb Orrelios\"\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6658095148",
+  "aspects": [
+    "vigilance",
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "spectre"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 45
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 45
+    }
+  ],
+  "internalName": "zeb-orrelios#spectre-four"
+}

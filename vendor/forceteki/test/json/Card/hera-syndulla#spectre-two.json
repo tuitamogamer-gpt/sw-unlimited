@@ -1,0 +1,40 @@
+{
+  "title": "Hera Syndulla",
+  "subtitle": "Spectre Two",
+  "cost": 6,
+  "hp": 6,
+  "power": 4,
+  "text": "Ignore the aspect penalty on SPECTRE cards you play.",
+  "deployBox": "Ignore the aspect penalty on SPECTRE cards you play.\n\nOn Attack: You may give an Experience token to another unique unit.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "(ERRATA) Templating update: \"Aspect penalty\" becomes \"aspect penalties\" when referring to multiple.\n(ERRATA) Templating update: “Unique” becomes “<uq>”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7440067052",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "twi'lek",
+    "spectre"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 8
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 8
+    }
+  ],
+  "internalName": "hera-syndulla#spectre-two"
+}

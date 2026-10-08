@@ -1,0 +1,59 @@
+diff --git a/server/game/core/gameSteps/abilityWindow/TriggerWindowBase.ts b/server/game/core/gameSteps/abilityWindow/TriggerWindowBase.ts
+index fd05406..a2b4339 100644
+--- a/server/game/core/gameSteps/abilityWindow/TriggerWindowBase.ts
++++ b/server/game/core/gameSteps/abilityWindow/TriggerWindowBase.ts
+@@ -371,7 +371,9 @@ export abstract class TriggerWindowBase extends BaseStep {
+             },
+             onResolveAll: () => {
+                 this.pendingBatchResolve = { player, groupKey };
+-                this.promptUnresolvedAbilities();
++                // Resume through continue() after this prompt completes. If every remaining
++                // trigger has lost its legal effect, promptUnresolvedAbilities() returns true;
++                // calling it here would discard that completion and exhaust the player order.
+             },
+         }));
+     }
+diff --git a/test/server/cards/08_ASH/tokens/Advantage.spec.ts b/test/server/cards/08_ASH/tokens/Advantage.spec.ts
+index c02c82e..11e911c 100644
+--- a/test/server/cards/08_ASH/tokens/Advantage.spec.ts
++++ b/test/server/cards/08_ASH/tokens/Advantage.spec.ts
+@@ -260,6 +260,39 @@ describe('Advantage', function() {
+         });
+ 
+         describe('When both the attacker and defender have multiple Advantage tokens', function() {
++            it('finishes a grouped window after the defender and its Advantage tokens have already left play', async function() {
++                await contextRef.setupTestAsync({
++                    phase: 'action',
++                    player1: {
++                        leader: 'luke-skywalker#i-can-save-him',
++                        spaceArena: [{ card: 'alphabet-squadron-uwing#quiet-devotion', upgrades: ['shield'] }]
++                    },
++                    player2: {
++                        spaceArena: [{
++                            card: 'bothan5#new-republic-prison-ship',
++                            upgrades: ['advantage', 'advantage', 'advantage']
++                        }]
++                    }
++                });
++
++                const { context } = contextRef;
++                const tokens = context.player2.findCardsByName('advantage');
++                context.player1.clickCard(context.alphabetSquadronUwing);
++                context.player1.clickCard(context.bothan5);
++                context.player1.clickPrompt('You');
++                context.player1.clickPrompt('Trigger');
++                expect(context.player2).toHavePrompt('Resolve "Defeat Advantage token"');
++                context.player2.clickPrompt('Resolve all (3)');
++
++                expect(context.alphabetSquadronUwing).toBeInZone('spaceArena');
++                expect(context.alphabetSquadronUwing.damage).toBe(0);
++                expect(context.bothan5).toBeInZone('discard');
++                for (const token of tokens) {
++                    expect(token).toBeInZone('outsideTheGame');
++                }
++                expect(context.player2).toBeActivePlayer();
++            });
++
+             it('prompts each controlling player for their own grouped-trigger resolution', async function() {
+                 await contextRef.setupTestAsync({
+                     phase: 'action',

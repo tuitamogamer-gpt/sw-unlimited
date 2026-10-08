@@ -1,0 +1,37 @@
+{
+  "title": "Maim",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Deal 1 damage to a unit and exhaust it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6988596587",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 207
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 207
+    }
+  ],
+  "internalName": "maim"
+}

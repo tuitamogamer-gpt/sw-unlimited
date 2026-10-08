@@ -1,0 +1,42 @@
+{
+  "title": "Mace Windu",
+  "subtitle": "Party Crasher",
+  "cost": 7,
+  "hp": 7,
+  "power": 5,
+  "text": "Ambush\n\nWhen this unit attacks and defeats a unit: Ready him.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "A unit “attacks and defeats a unit” if it defeats the defender at any point during the attack.\nAmbush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\nWhen Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5230572435",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 149
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 149
+    }
+  ],
+  "internalName": "mace-windu#party-crasher"
+}

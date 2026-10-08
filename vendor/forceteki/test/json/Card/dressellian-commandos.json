@@ -1,0 +1,42 @@
+{
+  "title": "Dressellian Commandos",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 4,
+  "text": "Ambush (When you play this unit, it may attack an enemy unit.)\nPlot (When you deploy a leader, you may play this card from your resources, paying its cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8826807979",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "plot",
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 100
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 100
+    }
+  ],
+  "internalName": "dressellian-commandos"
+}

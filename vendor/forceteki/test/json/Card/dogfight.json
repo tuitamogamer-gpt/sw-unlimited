@@ -1,0 +1,36 @@
+{
+  "title": "Dogfight",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a unit, even if it's exhausted. That unit can't attack bases for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you play Dogfight, you must attack with a unit, if able.\nUnits that can’t attack bases can still damage bases through other abilities, like Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3436482269",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 123
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 123
+    }
+  ],
+  "internalName": "dogfight"
+}

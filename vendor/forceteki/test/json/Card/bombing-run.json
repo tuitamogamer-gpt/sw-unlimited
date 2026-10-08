@@ -1,0 +1,36 @@
+{
+  "title": "Bombing Run",
+  "subtitle": null,
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "Choose an arena (ground or space). Deal 3 damage to each unit in that arena.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7916724925",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 173
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 173
+    }
+  ],
+  "internalName": "bombing-run"
+}

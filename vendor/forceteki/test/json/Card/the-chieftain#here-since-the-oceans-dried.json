@@ -1,0 +1,40 @@
+{
+  "title": "The Chieftain",
+  "subtitle": "Here Since the Oceans Dried",
+  "cost": 3,
+  "hp": 5,
+  "power": 2,
+  "text": "This unit gains Raid 1 for each other friendly Tusken unit.\nWhile a friendly Tusken unit is defending, it gets +1/+0 for each Raid it has.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5863566876",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "tusken"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 212
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 212
+    }
+  ],
+  "internalName": "the-chieftain#here-since-the-oceans-dried"
+}

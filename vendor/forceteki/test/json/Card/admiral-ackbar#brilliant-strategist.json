@@ -1,0 +1,41 @@
+{
+  "title": "Admiral Ackbar",
+  "subtitle": "Brilliant Strategist",
+  "cost": 3,
+  "hp": 4,
+  "power": 1,
+  "text": "Restore 1 (When this unit attacks, heal 1 damage from your base.)\n\nWhen Played: You may deal damage to a unit equal to the number of units you control in its arena. ",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0827076106",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 97
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 97
+    }
+  ],
+  "internalName": "admiral-ackbar#brilliant-strategist"
+}

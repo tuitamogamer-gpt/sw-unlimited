@@ -1,0 +1,38 @@
+{
+  "title": "Industrious Team",
+  "subtitle": "",
+  "cost": 8,
+  "hp": 7,
+  "power": 4,
+  "text": "When Played: You may defeat a non-leader unit with 4 or less remaining HP.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5713950795",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 124
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 124
+    }
+  ],
+  "internalName": "industrious-team"
+}

@@ -1,0 +1,35 @@
+{
+  "title": "Criminal Contact",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "On Attack: You may pay 2 resources. If you do, create a Credit token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6530952637",
+  "aspects": [],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 258
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 258
+    }
+  ],
+  "internalName": "criminal-contact"
+}

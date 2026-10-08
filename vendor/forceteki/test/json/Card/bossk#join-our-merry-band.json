@@ -1,0 +1,40 @@
+{
+  "title": "Bossk",
+  "subtitle": "Join Our Merry Band",
+  "cost": 4,
+  "hp": 5,
+  "power": 3,
+  "text": "On Attack: Give a unit +1/+1 for this phase. You may give a unit –1/–1 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3310848830",
+  "aspects": [
+    "vigilance",
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 31
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 31
+    }
+  ],
+  "internalName": "bossk#join-our-merry-band"
+}

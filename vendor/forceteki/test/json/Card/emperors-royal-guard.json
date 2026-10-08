@@ -1,0 +1,40 @@
+{
+  "title": "Emperor's Royal Guard",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "While you control an OFFICIAL unit, this unit gains Sentinel.\n\nWhile you control Emperor Palpatine (as a leader or unit), this unit gets +0/+1.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1780978508",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 82
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 82
+    }
+  ],
+  "internalName": "emperors-royal-guard"
+}

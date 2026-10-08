@@ -1,0 +1,37 @@
+{
+  "title": "In Debt to Crimson Dawn",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 0,
+  "power": 0,
+  "text": "When attached unit readies: Exhaust it unless its controller pays 2 resources.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "7962923506",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "condition"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 192
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 192
+    }
+  ],
+  "internalName": "in-debt-to-crimson-dawn"
+}

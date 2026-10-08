@@ -1,0 +1,39 @@
+{
+  "title": "Resistance X-Wing",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "While this unit has a Pilot on it, it gets +1/+1.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5052103576",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "resistance",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 247
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 247
+    }
+  ],
+  "internalName": "resistance-xwing"
+}

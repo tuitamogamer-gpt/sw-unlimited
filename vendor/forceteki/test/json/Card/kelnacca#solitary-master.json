@@ -1,0 +1,42 @@
+{
+  "title": "Kelnacca",
+  "subtitle": "Solitary Master",
+  "cost": 4,
+  "hp": 5,
+  "power": 4,
+  "text": "Restore 2\nWhen Played: You may pay any number of resources. For every 3 resources paid this way, deal damage equal to this unit's power to an enemy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Defeating Credits is not considered paying resources.\nAbilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7621020577",
+  "aspects": [
+    "vigilance",
+    "command"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 36
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 36
+    }
+  ],
+  "internalName": "kelnacca#solitary-master"
+}

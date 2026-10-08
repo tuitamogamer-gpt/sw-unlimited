@@ -1,0 +1,39 @@
+{
+  "title": "Gamorrean Retainer",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "While you control another Command unit, this unit gains Sentinel. (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4590862665",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 112
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 112
+    }
+  ],
+  "internalName": "gamorrean-retainer"
+}

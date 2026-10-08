@@ -1,0 +1,36 @@
+{
+  "title": "Lair of Grievous",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7827173440",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "vassek"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 23
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 23
+    }
+  ],
+  "internalName": "lair-of-grievous"
+}

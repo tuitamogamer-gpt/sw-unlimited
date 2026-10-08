@@ -1,0 +1,36 @@
+{
+  "title": "Budget Scheming",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Give an Experience token to each of up to 3 Official units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3489636326",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "law"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 124
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 124
+    }
+  ],
+  "internalName": "budget-scheming"
+}

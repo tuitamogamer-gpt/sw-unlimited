@@ -1,0 +1,40 @@
+{
+  "title": "Annihilator",
+  "subtitle": "Tagge's Flagship",
+  "cost": 11,
+  "hp": 12,
+  "power": 12,
+  "text": "When Played/When Defeated: You may defeat an enemy unit. If you do, search its controller's deck and hand for each card with that unit's name and discard them. (They shuffle their deck.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "After searching a deck, that deck's owner shuffles it.\nAbilities that refer to a card’s “name” do not include the subtitle of the card.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8582806124",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 41
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 41
+    }
+  ],
+  "internalName": "annihilator#tagges-flagship"
+}

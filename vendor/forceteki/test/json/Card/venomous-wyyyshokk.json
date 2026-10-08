@@ -1,0 +1,37 @@
+{
+  "title": "Venomous Wyyyshokk",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "When Defeated: You may give a Weakness token to a damaged unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5121155857",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 87
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 87
+    }
+  ],
+  "internalName": "venomous-wyyyshokk"
+}

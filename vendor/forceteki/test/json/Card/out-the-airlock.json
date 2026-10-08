@@ -1,0 +1,36 @@
+{
+  "title": "Out the Airlock",
+  "subtitle": "",
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "Give a unit –5/–5 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3782661648",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 79
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 79
+    }
+  ],
+  "internalName": "out-the-airlock"
+}

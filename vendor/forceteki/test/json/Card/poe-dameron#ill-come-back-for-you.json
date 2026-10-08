@@ -1,0 +1,41 @@
+{
+  "title": "Poe Dameron",
+  "subtitle": "I'll Come Back For You",
+  "cost": 2,
+  "hp": 3,
+  "power": 3,
+  "text": "All units lose Sentinel.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "All units lose Sentinel and can't gain Sentinel while Poe is in play.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6619522667",
+  "aspects": [
+    "aggression",
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "resistance"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 40
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 40
+    }
+  ],
+  "internalName": "poe-dameron#ill-come-back-for-you"
+}

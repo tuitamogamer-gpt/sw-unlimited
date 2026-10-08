@@ -1,0 +1,40 @@
+{
+  "title": "Darth Revan's Lightsabers",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "Attach to a non-Vehicle unit.\nIf attached unit is a Sith, it gains Grit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": 2,
+  "upgradeHp": 2,
+  "id": "9566815036",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "item",
+    "weapon",
+    "lightsaber"
+  ],
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 238
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 238
+    }
+  ],
+  "internalName": "darth-revans-lightsabers"
+}

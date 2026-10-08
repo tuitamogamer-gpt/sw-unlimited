@@ -1,0 +1,40 @@
+{
+  "title": "Barriss Offee",
+  "subtitle": "We Have Become Villains",
+  "cost": 6,
+  "hp": 7,
+  "power": 4,
+  "text": "Action [Exhaust, use the Force (lose your Force token)]: Play an event from your hand. It costs 1 resource less.",
+  "deployBox": "Action [use the Force]: Play an event from your hand. It costs 1 resource less.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1184397926",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 13
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 13
+    }
+  ],
+  "internalName": "barriss-offee#we-have-become-villains"
+}

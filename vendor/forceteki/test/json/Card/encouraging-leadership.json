@@ -1,0 +1,36 @@
+{
+  "title": "Encouraging Leadership",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Give each friendly unit +1/+1 for this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4916334670",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 126
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 126
+    }
+  ],
+  "internalName": "encouraging-leadership"
+}

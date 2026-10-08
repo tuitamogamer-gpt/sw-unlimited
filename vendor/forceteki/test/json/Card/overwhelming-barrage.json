@@ -1,0 +1,37 @@
+{
+  "title": "Overwhelming Barrage",
+  "subtitle": null,
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "Give a friendly unit +2/+2 for this phase. Then, it deals damage equal to its power divided as you choose among any number of other units.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "You can choose to assign more damage to a unit than it has remaining HP.\nAll damage dealt by a single ability is dealt simultaneously.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1900571801",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 92
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 92
+    }
+  ],
+  "internalName": "overwhelming-barrage"
+}

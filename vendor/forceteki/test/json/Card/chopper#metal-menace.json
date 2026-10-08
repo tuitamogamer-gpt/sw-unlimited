@@ -1,0 +1,42 @@
+{
+  "title": "Chopper",
+  "subtitle": "Metal Menace",
+  "cost": 1,
+  "hp": 3,
+  "power": 1,
+  "text": "While you control another SPECTRE unit, this unit gains Raid 1.\n\nOn Attack: Discard a card from the defending player's deck. If it's an event, exhaust a resource that player controls.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Always discard from the top of a deck unless an ability says otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6208347478",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "droid",
+    "spectre"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 188
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 188
+    }
+  ],
+  "internalName": "chopper#metal-menace"
+}

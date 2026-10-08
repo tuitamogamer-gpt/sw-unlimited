@@ -1,0 +1,41 @@
+{
+  "title": "Omicron Strike Craft",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 2,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6332346890",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 64
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 64
+    }
+  ],
+  "internalName": "omicron-strike-craft"
+}

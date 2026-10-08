@@ -1,0 +1,39 @@
+{
+  "title": "Nute Gunray",
+  "subtitle": "Perfectly Legal",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: Each friendly unit (including this one) deals 1 damage to a different enemy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6462566000",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 105
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 105
+    }
+  ],
+  "internalName": "nute-gunray#perfectly-legal"
+}

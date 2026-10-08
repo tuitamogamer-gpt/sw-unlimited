@@ -1,0 +1,40 @@
+{
+  "title": "Dooku",
+  "subtitle": "It Is Too Late",
+  "cost": 4,
+  "hp": 4,
+  "power": 5,
+  "text": "Hidden (This unit can't be attacked if it was played this phase.)\nWhen Played: Each friendly unit with Hidden can't be attacked for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Dooku's \"When Played\" ability affects each friendly unit with Hidden, even if it entered play in a previous round.\nIf a unit has Hidden and Sentinel at the same time, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3052907071",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "force",
+    "jedi"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 211
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 211
+    }
+  ],
+  "internalName": "dooku#it-is-too-late"
+}

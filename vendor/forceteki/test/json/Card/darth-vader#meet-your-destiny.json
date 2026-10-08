@@ -1,0 +1,42 @@
+{
+  "title": "Darth Vader",
+  "subtitle": "Meet Your Destiny",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "Shielded\nWhile this unit is ready, he gains Sentinel.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2759135991",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "imperial",
+    "sith"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded",
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 243
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 243
+    }
+  ],
+  "internalName": "darth-vader#meet-your-destiny"
+}

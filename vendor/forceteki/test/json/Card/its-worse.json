@@ -1,0 +1,34 @@
+{
+  "title": "It's Worse",
+  "subtitle": "",
+  "cost": 7,
+  "hp": null,
+  "power": null,
+  "text": "Defeat a non-leader unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6707315263",
+  "aspects": [],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 264
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 264
+    }
+  ],
+  "internalName": "its-worse"
+}

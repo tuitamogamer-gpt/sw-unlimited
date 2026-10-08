@@ -1,0 +1,37 @@
+{
+  "title": "The Chaos of War",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Deal damage to each player's base equal to the number of cards in that player's hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8090818642",
+  "aspects": [
+    "aggression",
+    "aggression"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 159
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 159
+    }
+  ],
+  "internalName": "the-chaos-of-war"
+}

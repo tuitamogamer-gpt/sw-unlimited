@@ -1,0 +1,38 @@
+{
+  "title": "Saw Gerrera",
+  "subtitle": "Extremist",
+  "cost": 4,
+  "hp": 4,
+  "power": 5,
+  "text": "As an additional cost for each opponent to play an event, they must deal 2 damage to their base.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "If an opponent’s base is defeated by the cost of playing an event, the event’s ability does not resolve.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5555846790",
+  "aspects": [
+    "aggression",
+    "aggression"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 153
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 153
+    }
+  ],
+  "internalName": "saw-gerrera#extremist"
+}

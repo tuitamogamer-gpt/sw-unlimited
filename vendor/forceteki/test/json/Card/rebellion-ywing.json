@@ -1,0 +1,48 @@
+{
+  "title": "Rebellion Y-Wing",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 2,
+  "text": "On Attack: Deal 1 damage to a base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9863058946",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 6
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 6
+    },
+    {
+      "set": "IBH",
+      "number": 24
+    },
+    {
+      "set": "IBH",
+      "number": 32
+    }
+  ],
+  "internalName": "rebellion-ywing"
+}

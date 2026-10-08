@@ -1,0 +1,40 @@
+{
+  "title": "Invasion Lander",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 7,
+  "power": 3,
+  "text": "When Played: Give each other friendly unit +2/+2 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1582734327",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 111
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 111
+    }
+  ],
+  "internalName": "invasion-lander"
+}

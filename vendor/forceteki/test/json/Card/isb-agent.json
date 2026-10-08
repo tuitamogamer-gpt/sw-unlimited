@@ -1,0 +1,42 @@
+{
+  "title": "ISB Agent",
+  "subtitle": null,
+  "cost": 1,
+  "hp": 3,
+  "power": 1,
+  "text": "When Played: You may reveal an event from your hand. If you do, deal 1 damage to a unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5154172446",
+  "aspects": [
+    "villainy",
+    "cunning"
+  ],
+  "traits": [
+    "imperial"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 184
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 176
+    },
+    {
+      "set": "SEC",
+      "number": 184
+    }
+  ],
+  "internalName": "isb-agent"
+}

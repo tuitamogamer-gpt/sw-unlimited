@@ -1,0 +1,36 @@
+{
+  "title": "Droid Cohort",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 1,
+  "text": "Attached unit gains, “When Defeated: Create a Battle Droid token.”",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "7547538214",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 218
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 218
+    }
+  ],
+  "internalName": "droid-cohort"
+}

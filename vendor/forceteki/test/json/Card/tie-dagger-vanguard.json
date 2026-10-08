@@ -1,0 +1,40 @@
+{
+  "title": "TIE Dagger Vanguard",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: You may deal 2 damage to a damaged unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7157369742",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "first order",
+    "sith",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 239
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 239
+    }
+  ],
+  "internalName": "tie-dagger-vanguard"
+}

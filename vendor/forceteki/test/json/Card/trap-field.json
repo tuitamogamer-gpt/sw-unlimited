@@ -1,0 +1,39 @@
+{
+  "title": "Trap Field",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 0,
+  "power": 0,
+  "text": "Fortify (Attach this to your base, not a unit.)\nWhen a non-leader ground unit enters play (including token units): You may defeat this upgrade. If you do, deal 3 damage to that unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "2964276290",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "fortification"
+  ],
+  "keywords": [
+    "fortify"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 171
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 171
+    }
+  ],
+  "internalName": "trap-field"
+}

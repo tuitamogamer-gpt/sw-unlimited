@@ -1,0 +1,41 @@
+{
+  "title": "Calculating MagnaGuard",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "When Played/When a friendly unit is defeated: This unit gains Sentinel for this phase. (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1039828081",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 33
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 33
+    }
+  ],
+  "internalName": "calculating-magnaguard"
+}

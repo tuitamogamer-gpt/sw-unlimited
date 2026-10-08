@@ -1,0 +1,39 @@
+{
+  "title": "Regional Sympathizers",
+  "subtitle": null,
+  "cost": 4,
+  "hp": 4,
+  "power": 3,
+  "text": "Restore 2 (When this unit attacks, heal 2 damage from your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1081012039",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 243
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 243
+    }
+  ],
+  "internalName": "regional-sympathizers"
+}

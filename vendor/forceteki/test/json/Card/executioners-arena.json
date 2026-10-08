@@ -1,0 +1,36 @@
+{
+  "title": "Executioner's Arena",
+  "subtitle": "",
+  "cost": null,
+  "hp": 27,
+  "power": null,
+  "text": "Epic Action: For each friendly leader unit, you may deal 2 damage to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you control multiple leader units, you may deal 2 damage multiple times, to the same unit or different units. All damage is dealt simultaneously.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1546304694",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "geonosis"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 11
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 11
+    }
+  ],
+  "internalName": "executioners-arena"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Luke Skywalker",
+  "subtitle": "I Can Save Him",
+  "cost": 7,
+  "hp": 7,
+  "power": 6,
+  "text": "When a friendly unit's attack ends: You may exhaust this leader. If you do, heal 1 damage from that unit.",
+  "deployBox": "When a friendly unit's attack ends: Heal 2 damage from that unit or from your base.",
+  "epicAction": "Epic Action: If you control 7 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "When Attack Ends abilities trigger at the same time as units deal combat damage. If the attacking unit is defeated by combat damage, you cannot heal it.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6397550626",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 5
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 5
+    }
+  ],
+  "internalName": "luke-skywalker#i-can-save-him"
+}

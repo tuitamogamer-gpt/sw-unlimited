@@ -1,0 +1,38 @@
+{
+  "title": "Massassi Tactical Officer",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 4,
+  "power": 0,
+  "text": "Action [Exhaust]: Attack with a Fighter unit. It gets +2/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you use Massassi Tactical Officer’s ability, you must attack with a unit, if able. Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6600603122",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 146
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 146
+    }
+  ],
+  "internalName": "massassi-tactical-officer"
+}

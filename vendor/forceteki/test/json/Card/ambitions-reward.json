@@ -1,0 +1,36 @@
+{
+  "title": "Ambition's Reward",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 1,
+  "text": "When Played: Create a Spy token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "8243760282",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "law"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 175
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 175
+    }
+  ],
+  "internalName": "ambitions-reward"
+}

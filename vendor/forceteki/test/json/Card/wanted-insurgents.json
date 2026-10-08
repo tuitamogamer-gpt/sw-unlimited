@@ -1,0 +1,39 @@
+{
+  "title": "Wanted Insurgents",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 4,
+  "text": "Bounty — Deal 2 damage to a unit. (When this unit is defeated or captured, your opponent collects its bounty.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8679638018",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "bounty"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 167
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 167
+    }
+  ],
+  "internalName": "wanted-insurgents"
+}

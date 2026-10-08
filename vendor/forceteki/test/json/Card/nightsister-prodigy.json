@@ -1,0 +1,41 @@
+{
+  "title": "Nightsister Prodigy",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 5,
+  "text": "Hidden (This unit can't be attacked if it was played this phase.)\nOverwhelm (When attacking an enemy unit, deal excess damage to the opponent's base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If a unit has Hidden and Sentinel at the same time, it can be attacked.\nShields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8375600168",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "force",
+    "night"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "hidden",
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 183
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 183
+    }
+  ],
+  "internalName": "nightsister-prodigy"
+}

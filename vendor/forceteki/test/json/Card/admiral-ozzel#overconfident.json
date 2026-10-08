@@ -1,0 +1,39 @@
+{
+  "title": "Admiral Ozzel",
+  "subtitle": "Overconfident",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "Action [exhaust]: Play an Imperial unit from your hand (paying its cost). It enters play ready. Each opponent may ready a unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Abilities that let you play a card require you to pay that card’s cost unless specified otherwise.\nOpponents choose and ready their units before resolving any “When Played” abilities or other abilities that trigger when you play your unit.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8117080217",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 129
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 129
+    }
+  ],
+  "internalName": "admiral-ozzel#overconfident"
+}

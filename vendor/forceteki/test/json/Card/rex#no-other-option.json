@@ -1,0 +1,39 @@
+{
+  "title": "Rex",
+  "subtitle": "No Other Option",
+  "cost": 6,
+  "hp": 6,
+  "power": 5,
+  "text": "Action [Exhaust, ready an exhausted enemy unit]: The next event you play this phase costs 1 resource less.",
+  "deployBox": "On Attack: You may ready an exhausted enemy unit. If you do, the next event you play this phase costs 2 resources less.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "The cost reduction from Rex's “On Attack” ability remains active even if he is defeated.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2792883006",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "clone",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 6
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 6
+    }
+  ],
+  "internalName": "rex#no-other-option"
+}

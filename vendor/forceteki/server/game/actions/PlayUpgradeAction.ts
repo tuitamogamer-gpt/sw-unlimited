@@ -1,0 +1,115 @@
+import type { AbilityContext } from '../core/ability/AbilityContext';
+import type { IPlayCardActionProperties, PlayCardContext } from '../core/ability/PlayCardAction';
+import { PlayCardAction } from '../core/ability/PlayCardAction';
+import type { Card } from '../core/card/Card';
+import type { UpgradeCard } from '../core/card/UpgradeCard';
+import { AbilityRestriction, CardType, KeywordName, PlayType, RelativePlayer, Stage, ZoneName } from '../core/Constants';
+import type { Restriction } from '../core/ongoingEffect/effectImpl/Restriction';
+import type { Player } from '../core/Player';
+import type { Game } from '../core/Game';
+import { Contract } from '../core/utils/Contract';
+import { TextHelper } from '../core/utils/TextHelper';
+import { ChatHelpers } from '../core/chat/ChatHelpers.js';
+import { AttachUpgradeSystem } from '../gameSystems/AttachUpgradeSystem';
+import { attachUpgrade } from '../gameSystems/GameSystemLibrary';
+
+import { registerState } from '../core/GameObjectUtils';
+
+@registerState()
+export class PlayUpgradeAction extends PlayCardAction {
+    // we pass in a targetResolver holding the attachUpgrade system so that the action will be blocked if there are no valid targets
+    public constructor(game: Game, card: Card, properties: IPlayCardActionProperties) {
+        super(game, card,
+            {
+                ...properties,
+                targetResolver: {
+                    activePromptTitle: `Attach ${card.title} to ${card.hasSomeKeyword(KeywordName.Fortify) ? 'a base' : 'a unit'}`,
+                    cardCondition: (card, context) => {
+                        if (properties.attachTargetCondition && !properties.attachTargetCondition(card, context)) {
+                            return false;
+                        }
+
+                        // Exclude units the upgrade can't be afforded on when attached to them (see issue #1970).
+                        // Only evaluated at the Pre-Target stage, before resources have been spent.
+                        if (context.stage === Stage.PreTarget && !context.ability.canPayCosts(context)) {
+                            return false;
+                        }
+
+                        return true;
+                    },
+                    immediateEffect: attachUpgrade<AbilityContext<UpgradeCard>>((context) => ({ upgrade: context.source }))
+                }
+            }
+        );
+    }
+
+    public override executeHandler(context: PlayCardContext) {
+        const isUpgrade = context.source.isUpgrade();
+        const isPilot = !isUpgrade && (context.source.isUnit() && context.source.hasSomeKeyword(KeywordName.Piloting));
+
+        Contract.assertTrue(isUpgrade || isPilot);
+        Contract.assertTrue(context.source.canBeInPlay());
+
+        this.checkAndRearrangeResources(context);
+
+        const events = [
+            new AttachUpgradeSystem({
+                upgrade: context.source,
+                target: context.target,
+                newController: RelativePlayer.Self
+            }).generateEvent(context),
+            this.generateOnPlayEvent(context, { attachTarget: context.target })
+        ];
+
+        if (context.playType === PlayType.Smuggle) {
+            this.addSmuggleEvent(events, context);
+        }
+
+        context.game.openEventWindow(events);
+    }
+
+    public override getCardTypeWhenInPlay(card: Card, playType: PlayType): CardType {
+        // We need to override this method to ensure Pilots are marked as upgrades in the onCardPlayed event
+        return playType === PlayType.Piloting && card.isUnit() ? CardType.NonLeaderUnitUpgrade : card.type;
+    }
+
+    public override clone(overrideProperties: Partial<Omit<IPlayCardActionProperties, 'playType'>>) {
+        return new PlayUpgradeAction(this.game, this.card, { ...this.createdWithProperties, ...overrideProperties });
+    }
+
+    /**
+     * Check if playing an upgrade card is restricted for the given player and card.
+     * @param player The player attempting to play the upgrade
+     * @param card The upgrade card being played
+     * @param context The context for restriction checks
+     * @returns The Restriction blocking play, or null if not restricted
+     */
+    public static getPlayRestriction(player: Player, card: Card, context: AbilityContext): Restriction | null {
+        return player.getMatchingRestrictions([AbilityRestriction.Play, AbilityRestriction.PlayUpgrade, AbilityRestriction.PutIntoPlay], context)[0] ??
+          card.getMatchingRestrictions([AbilityRestriction.Play, AbilityRestriction.EnterPlay], context)[0] ??
+          null;
+    }
+
+    public override meetsRequirements(context = this.createContext(), ignoredRequirements: string[] = []): string {
+        if (PlayUpgradeAction.getPlayRestriction(context.player, context.source, context) != null) {
+            return 'restriction';
+        }
+
+        if (!this.hasSomeLegalTarget(context)) {
+            return 'attachTarget';
+        }
+
+        return super.meetsRequirements(context, ignoredRequirements);
+    }
+
+    public override displayMessage(context: AbilityContext) {
+        let playTypeDescription = '';
+        if (context.playType === PlayType.Smuggle) {
+            playTypeDescription = ` using ${TextHelper.Smuggle}`;
+        } else if (context.playType === PlayType.Piloting) {
+            playTypeDescription = ` with ${TextHelper.Piloting}`;
+        }
+        const locationDescription = ChatHelpers.getTargetLocationMessage(context.source, context, new Set([ZoneName.Hand]));
+        context.game.addMessage('{0} plays {1}{2}{3}, attaching it to {4}', context.player, context.source, locationDescription, playTypeDescription, context.target);
+    }
+}

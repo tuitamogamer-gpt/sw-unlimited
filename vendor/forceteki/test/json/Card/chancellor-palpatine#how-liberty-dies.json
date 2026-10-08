@@ -1,0 +1,41 @@
+{
+  "title": "Chancellor Palpatine",
+  "subtitle": "How Liberty Dies",
+  "cost": 7,
+  "hp": 8,
+  "power": 6,
+  "text": "Action [1 resource, Exhaust]: Search the top 5 cards of your deck for a card with Plot, reveal it, and draw it. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": "When Deployed: The next card you play using Plot this phase costs 3 resources less.",
+  "epicAction": "Epic Action: If you control 7 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "The cost discount from Palpatine's “When Deployed” ability remains active even if he is defeated before you play a card using Plot.\nAfter searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1020365882",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "republic",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "plot"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 1
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 1
+    }
+  ],
+  "internalName": "chancellor-palpatine#how-liberty-dies"
+}

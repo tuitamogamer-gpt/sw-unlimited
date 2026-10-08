@@ -1,0 +1,42 @@
+{
+  "title": "Snowtrooper Lieutenant",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: You may attack with a unit. If it's an Imperial unit, it gets +2/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9097690846",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 236
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 227
+    },
+    {
+      "set": "SHD",
+      "number": 236
+    }
+  ],
+  "internalName": "snowtrooper-lieutenant"
+}

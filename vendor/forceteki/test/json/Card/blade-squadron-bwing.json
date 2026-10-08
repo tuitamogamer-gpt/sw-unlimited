@@ -1,0 +1,40 @@
+{
+  "title": "Blade Squadron B-Wing",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "When Played: If another player controls 3 or more exhausted units, give a Shield token to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1965647391",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 199
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 199
+    }
+  ],
+  "internalName": "blade-squadron-bwing"
+}

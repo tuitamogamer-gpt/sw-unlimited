@@ -1,0 +1,43 @@
+{
+  "title": "Admiral Piett",
+  "subtitle": "In Command Now",
+  "cost": 4,
+  "hp": 5,
+  "power": 2,
+  "text": "On Attack: If you control a Aggression unit, draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0274964861",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 60
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 60
+    },
+    {
+      "set": "IBH",
+      "number": 65
+    }
+  ],
+  "internalName": "admiral-piett#in-command-now"
+}

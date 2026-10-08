@@ -1,0 +1,39 @@
+{
+  "title": "Protector",
+  "subtitle": null,
+  "cost": 1,
+  "hp": 1,
+  "power": 1,
+  "text": "Attached unit gains Sentinel. (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "4550121827",
+  "aspects": [
+    "vigilance",
+    "vigilance"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 57
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 57
+    }
+  ],
+  "internalName": "protector"
+}

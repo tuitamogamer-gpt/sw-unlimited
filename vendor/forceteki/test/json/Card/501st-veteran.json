@@ -1,0 +1,44 @@
+{
+  "title": "501st Veteran",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 0,
+  "text": "Grit\nRaid 1\nWhile this unit is undamaged it gains Sentinel.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9624598578",
+  "aspects": [
+    "vigilance",
+    "aggression"
+  ],
+  "traits": [
+    "republic",
+    "clone",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit",
+    "raid",
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 20
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 20
+    }
+  ],
+  "internalName": "501st-veteran"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "The Great Progenitor",
+  "subtitle": "First of the Drengir",
+  "cost": 5,
+  "hp": 7,
+  "power": 4,
+  "text": "When Attack Ends: You may give a Weakness token to this unit. If you do, create a Beast token for each Weakness token on this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "When Attack Ends abilities trigger at the same time the attacking unit deals combat damage. If the Great Progenitor does not survive the attack, it will be defeated before you could choose to give it a Weakness token.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1666373167",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 67
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 67
+    }
+  ],
+  "internalName": "the-great-progenitor#first-of-the-drengir"
+}

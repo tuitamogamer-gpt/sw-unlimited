@@ -1,0 +1,39 @@
+{
+  "title": "Beilert Valance",
+  "subtitle": "Target: Vader",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "On Attack: Draw a card. You may deal damage to a ground unit equal to the number of cards you've drawn this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3803673331",
+  "aspects": [
+    "vigilance",
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 51
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 51
+    }
+  ],
+  "internalName": "beilert-valance#target-vader"
+}

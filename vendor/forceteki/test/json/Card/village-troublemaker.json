@@ -1,0 +1,40 @@
+{
+  "title": "Village Troublemaker",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 2,
+  "text": "While you control an Endor base, this unit gains Hidden and Saboteur.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If a unit has Hidden and Sentinel at the same time, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6012814125",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "ewok"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "hidden",
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 176
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 176
+    }
+  ],
+  "internalName": "village-troublemaker"
+}

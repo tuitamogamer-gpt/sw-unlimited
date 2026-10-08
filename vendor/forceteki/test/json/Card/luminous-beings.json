@@ -1,0 +1,37 @@
+{
+  "title": "Luminous Beings",
+  "subtitle": "",
+  "cost": 6,
+  "hp": null,
+  "power": null,
+  "text": "Put up to 3 Force units from your discard pile on the bottom of your deck in a random order. Give that many units +4/+4 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6801641285",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 104
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 104
+    }
+  ],
+  "internalName": "luminous-beings"
+}

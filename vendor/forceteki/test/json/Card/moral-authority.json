@@ -1,0 +1,36 @@
+{
+  "title": "Moral Authority",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 0,
+  "power": 2,
+  "text": "Attach to a friendly <uq> (unique) unit.\nWhen Played: Attached unit captures an enemy non-leader unit with less remaining HP than it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 2,
+  "upgradeHp": 0,
+  "id": "0475605203",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 256
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 256
+    }
+  ],
+  "internalName": "moral-authority"
+}

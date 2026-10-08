@@ -1,0 +1,37 @@
+{
+  "title": "Command",
+  "subtitle": null,
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Choose two, in any order:\n\nGive 2 Experience tokens to a unit.\nA friendly unit deals damage equal to its power to a non-unique enemy unit.\nPut this event into play as a resource.\nReturn a unit from your discard pile to your hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "A card put into play as a resource enters play exhausted.\n(ERRATA) Templating update: “Put into play as a resource” becomes “resource”.\n(ERRATA) Templating update: “Unique” becomes “<uq>”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0073206444",
+  "aspects": [
+    "command",
+    "command"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 107
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 107
+    }
+  ],
+  "internalName": "command"
+}

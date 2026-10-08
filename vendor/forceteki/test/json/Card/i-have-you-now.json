@@ -1,0 +1,37 @@
+{
+  "title": "I Have You Now",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a Vehicle unit. Prevent all damage that would be dealt to it during this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you play I Have You Now, you must attack with a unit, if able. Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5667308555",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 193
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 193
+    }
+  ],
+  "internalName": "i-have-you-now"
+}

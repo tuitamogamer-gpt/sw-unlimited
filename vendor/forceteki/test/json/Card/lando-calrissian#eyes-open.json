@@ -1,0 +1,41 @@
+{
+  "title": "Lando Calrissian",
+  "subtitle": "Eyes Open",
+  "cost": 5,
+  "hp": 5,
+  "power": 4,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)\nWhile this unit is defending, the attacker gets –1/–0.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2254545413",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 108
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 108
+    }
+  ],
+  "internalName": "lando-calrissian#eyes-open"
+}

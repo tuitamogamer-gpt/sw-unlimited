@@ -1,0 +1,41 @@
+{
+  "title": "Maul",
+  "subtitle": "Old Master",
+  "cost": 7,
+  "hp": 6,
+  "power": 5,
+  "text": "Action [Exhaust]: Play a unit from your hand. It costs 1 resource less. Then, defeat it. (When Played abilities resolve after the unit is defeated.)",
+  "deployBox": "Shielded\nWhen Deployed: You may play a unit that was defeated this phase from your discard pile. It costs 5 resources less.",
+  "epicAction": "Epic Action: If you control 7 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "When using Maul's leader ability, any abilities that trigger from playing the unit, including that unit's \"When Played\" abilities, still trigger. The played unit is defeated before any of triggered abilities resolve.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1565669348",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 16
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 16
+    }
+  ],
+  "internalName": "maul#old-master"
+}

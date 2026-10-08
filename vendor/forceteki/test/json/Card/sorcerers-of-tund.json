@@ -1,0 +1,40 @@
+{
+  "title": "Sorcerers of Tund",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 6,
+  "power": 6,
+  "text": "Shielded (When you play this card, give a Shield token to it.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0355203328",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "force",
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 214
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 214
+    }
+  ],
+  "internalName": "sorcerers-of-tund"
+}

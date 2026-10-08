@@ -1,0 +1,48 @@
+{
+  "title": "GR-75 Medium Transport",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 4,
+  "power": 5,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0446985285",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 22
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 22
+    },
+    {
+      "set": "IBH",
+      "number": 33
+    },
+    {
+      "set": "IBH",
+      "number": 40
+    }
+  ],
+  "internalName": "gr75-medium-transport"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Clone of the Zillo Beast",
+  "subtitle": "Emperor's Experiment",
+  "cost": 4,
+  "hp": 6,
+  "power": 6,
+  "text": "Other friendly units get –2/–2.\nOn Attack: You may give a Weakness token to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2558977875",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "clone",
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 65
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 65
+    }
+  ],
+  "internalName": "clone-of-the-zillo-beast#emperors-experiment"
+}

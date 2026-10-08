@@ -1,0 +1,36 @@
+{
+  "title": "Transmission Jamming",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Name a card. Cards with that name can't be played this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s “name” do not include the subtitle of the card.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1984654702",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 243
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 243
+    }
+  ],
+  "internalName": "transmission-jamming"
+}

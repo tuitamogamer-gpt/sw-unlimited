@@ -1,0 +1,42 @@
+{
+  "title": "Red Three",
+  "subtitle": "Unstoppable",
+  "cost": 3,
+  "hp": 3,
+  "power": 2,
+  "text": "Raid 1 (This unit gets +1/+0 while attacking.)\n\nEach other friendly [Heroism] unit gains Raid 1.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8995892693",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 144
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 144
+    }
+  ],
+  "internalName": "red-three#unstoppable"
+}

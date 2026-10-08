@@ -1,0 +1,40 @@
+{
+  "title": "Soulless One",
+  "subtitle": "Swift and Agile",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "On Attack: You may disclose CunningCunningVillainy (reveal cards from your hand with these aspect icons among them). If you do, ready 2 resources.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3595837658",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 190
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 190
+    }
+  ],
+  "internalName": "soulless-one#swift-and-agile"
+}

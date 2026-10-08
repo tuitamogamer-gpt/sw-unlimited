@@ -1,0 +1,42 @@
+{
+  "title": "Ravager",
+  "subtitle": "Final Imperial Command",
+  "cost": 9,
+  "hp": 10,
+  "power": 8,
+  "text": "Restore 2\nWhen you play a unit: You may have it deal damage equal to its power to a unit in the same arena.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\nWhen you play Ravager, its ability triggers, and you may have it deal damage equal to its power to a unit in the same arena.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4828998087",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 102
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 102
+    }
+  ],
+  "internalName": "ravager#final-imperial-command"
+}

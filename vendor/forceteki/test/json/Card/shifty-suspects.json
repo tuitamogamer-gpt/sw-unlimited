@@ -1,0 +1,38 @@
+{
+  "title": "Shifty Suspects",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 5,
+  "power": 4,
+  "text": "On Attack: Bases can't be healed for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9994217631",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 197
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 197
+    }
+  ],
+  "internalName": "shifty-suspects"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "The Desolation of Hoth",
+  "subtitle": "",
+  "cost": 6,
+  "hp": null,
+  "power": null,
+  "text": "Defeat up to 2 enemy units that each cost 3 or less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4087028261",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "disaster"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 104
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 104
+    }
+  ],
+  "internalName": "the-desolation-of-hoth"
+}

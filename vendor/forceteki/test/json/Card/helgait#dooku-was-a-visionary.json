@@ -1,0 +1,38 @@
+{
+  "title": "Helgait",
+  "subtitle": "Dooku Was a Visionary",
+  "cost": 5,
+  "hp": 4,
+  "power": 6,
+  "text": "When Defeated: You may distribute a number of Advantage tokens equal to this unit's power among friendly units (divided as you choose).",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9419144933",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "separatist"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 195
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 195
+    }
+  ],
+  "internalName": "helgait#dooku-was-a-visionary"
+}

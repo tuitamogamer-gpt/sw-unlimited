@@ -1,0 +1,40 @@
+{
+  "title": "Mos Eisley",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4751899478",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tatooine"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 32
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 30
+    },
+    {
+      "set": "HMW",
+      "number": 32
+    }
+  ],
+  "internalName": "mos-eisley"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Yoda's Lightsaber",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 3,
+  "text": "Attach to a non-Vehicle unit.\nWhen Played: You may use the Force (lose your Force token). If you do, heal 3 damage from a base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": 3,
+  "upgradeHp": 1,
+  "id": "5800386133",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "item",
+    "weapon",
+    "lightsaber"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 102
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 102
+    }
+  ],
+  "internalName": "yodas-lightsaber"
+}

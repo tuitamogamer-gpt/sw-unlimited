@@ -1,0 +1,42 @@
+{
+  "title": "Enforcer Squadron",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 5,
+  "text": "Hidden (This unit can't be attacked if it was played this phase.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0343591883",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 138
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 138
+    }
+  ],
+  "internalName": "enforcer-squadron"
+}

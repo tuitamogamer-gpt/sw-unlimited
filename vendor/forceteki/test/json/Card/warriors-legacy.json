@@ -1,0 +1,36 @@
+{
+  "title": "Warrior's Legacy",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 1,
+  "power": 2,
+  "text": "Attached unit gains: “When Defeated: Create a Mandalorian token.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 2,
+  "upgradeHp": 1,
+  "id": "9104765158",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 134
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 134
+    }
+  ],
+  "internalName": "warriors-legacy"
+}

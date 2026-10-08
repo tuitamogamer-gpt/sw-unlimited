@@ -1,0 +1,40 @@
+{
+  "title": "Domesticated Loth-Cat",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 3,
+  "power": 1,
+  "text": "Enemy units lose Ambush and Support.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "All enemy units lose and can't gain Ambush and Support while Domesticated Loth-Cat is in play. This ability applies to units as they are played.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0637436414",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush",
+    "support"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 68
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 68
+    }
+  ],
+  "internalName": "domesticated-lothcat"
+}

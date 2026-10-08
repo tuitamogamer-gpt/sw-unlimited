@@ -1,0 +1,38 @@
+{
+  "title": "Coastal Catamarans",
+  "subtitle": "",
+  "cost": 7,
+  "hp": 8,
+  "power": 8,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1226993616",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "vehicle",
+    "transport"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 93
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 93
+    }
+  ],
+  "internalName": "coastal-catamarans"
+}

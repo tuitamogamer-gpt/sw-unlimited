@@ -1,0 +1,41 @@
+{
+  "title": "Grand Admiral Thrawn",
+  "subtitle": "Victory is Mine",
+  "cost": 8,
+  "hp": 8,
+  "power": 5,
+  "text": "Action [Exhaust]: Attack with a unit. It gains Restore 2 for this attack if you control the same number of units as the defending player.",
+  "deployBox": "Restore 2\nOn Attack: If you control more units than the defending player, you may defeat a non-leader unit they control.",
+  "epicAction": "Epic Action: If you control 8 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "If you use Thrawn’s leader ability, you must attack with a unit, if able. Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1997690465",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 4
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 4
+    }
+  ],
+  "internalName": "grand-admiral-thrawn#victory-is-mine"
+}

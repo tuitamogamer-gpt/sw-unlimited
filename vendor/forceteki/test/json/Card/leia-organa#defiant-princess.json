@@ -1,0 +1,39 @@
+{
+  "title": "Leia Organa",
+  "subtitle": "Defiant Princess",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: Either ready a resource or exhaust a unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "You may choose whether to ready a resource or exhaust a unit.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9680213078",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 189
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 189
+    }
+  ],
+  "internalName": "leia-organa#defiant-princess"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Ferry Droid",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 5,
+  "power": 1,
+  "text": "When Played: Give 4 Advantage tokens to this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5271028285",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 218
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 218
+    }
+  ],
+  "internalName": "ferry-droid"
+}

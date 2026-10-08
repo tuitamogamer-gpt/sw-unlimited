@@ -1,0 +1,41 @@
+{
+  "title": "Vigilant Pursuit Craft",
+  "subtitle": null,
+  "cost": 5,
+  "hp": 5,
+  "power": 3,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)\n\nSmuggle [7 resources, vigilance] (If this card is a resource, you may play it for its smuggle cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1982478444",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel",
+    "smuggle"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 65
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 65
+    }
+  ],
+  "internalName": "vigilant-pursuit-craft"
+}

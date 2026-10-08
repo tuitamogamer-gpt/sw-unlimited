@@ -1,0 +1,40 @@
+{
+  "title": "Tatooine Repulsor Train",
+  "subtitle": "",
+  "cost": 7,
+  "hp": 7,
+  "power": 8,
+  "text": "This unit can't be attacked while you control 2 or more exhausted units (unless it gains Sentinel).\nOn Attack: Deal 2 damage to a ground unit for each friendly exhausted unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "(ERRATA) On Attack: Choose a ground unit. Deal 2 damage to it for each friendly exhausted unit.\nIf Tatooine Repulsor Train gains Sentinel, it can be attacked, even while you control 2 or more exhausted units.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9629363501",
+  "aspects": [
+    "command",
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "speeder"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 35
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 35
+    }
+  ],
+  "internalName": "tatooine-repulsor-train"
+}

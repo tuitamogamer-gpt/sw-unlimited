@@ -1,0 +1,38 @@
+{
+  "title": "Mayor's Majordomo",
+  "subtitle": "No Problem Groveling",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "Action [Exhaust, discard a card from your hand]: Exhaust a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "ERRATA: Traits: Official, Twi'lek\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6565211534",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "official",
+    "twi'lek"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 217
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 217
+    }
+  ],
+  "internalName": "mayors-majordomo#no-problem-groveling"
+}

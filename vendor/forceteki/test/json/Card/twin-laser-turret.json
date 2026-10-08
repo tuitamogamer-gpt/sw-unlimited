@@ -1,0 +1,37 @@
+{
+  "title": "Twin Laser Turret",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "Attach to a Vehicle unit.\nAttached unit gains: “On Attack: Deal 1 damage to each of up to 2 units in this arena.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 2,
+  "upgradeHp": 2,
+  "id": "9981313319",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "modification",
+    "weapon"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 172
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 172
+    }
+  ],
+  "internalName": "twin-laser-turret"
+}

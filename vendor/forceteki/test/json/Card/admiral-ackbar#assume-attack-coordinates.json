@@ -1,0 +1,39 @@
+{
+  "title": "Admiral Ackbar",
+  "subtitle": "Assume Attack Coordinates",
+  "cost": 5,
+  "hp": 6,
+  "power": 6,
+  "text": "When Played: You may defeat this unit. If you do, search the top 10 cards of your deck for any number of space units with combined cost 5 or less and play each of them for free.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nAfter searching, put any cards not chosen on the bottom of your deck in a random order.\n“Play for free” ignores all resource costs, including the aspect penalty, but not other additional costs.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2541287519",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 110
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 110
+    }
+  ],
+  "internalName": "admiral-ackbar#assume-attack-coordinates"
+}

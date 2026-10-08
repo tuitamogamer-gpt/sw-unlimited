@@ -1,0 +1,36 @@
+{
+  "title": "Detention Block Rescue",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Deal 3 damage to a unit. If that unit is guarding any captured cards, deal 6 damage instead.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8576088385",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 180
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 180
+    }
+  ],
+  "internalName": "detention-block-rescue"
+}

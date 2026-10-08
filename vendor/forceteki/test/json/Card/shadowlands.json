@@ -1,0 +1,36 @@
+{
+  "title": "Shadowlands",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6555104126",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "kashyyyk"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 30
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 30
+    }
+  ],
+  "internalName": "shadowlands"
+}

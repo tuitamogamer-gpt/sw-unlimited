@@ -1,0 +1,36 @@
+{
+  "title": "Eject",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Detach a Pilot upgrade, move it to the ground arena as a unit, and exhaust it. Draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Moving the Pilot doesn't cause it to leave or enter play.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8993849612",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 126
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 126
+    }
+  ],
+  "internalName": "eject"
+}

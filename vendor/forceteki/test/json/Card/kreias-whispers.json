@@ -1,0 +1,37 @@
+{
+  "title": "Kreia's Whispers",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Draw 3 cards, then put a card from your hand on the top of your deck and another card from your hand on the bottom of your deck.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3661373584",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "force",
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 232
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 232
+    }
+  ],
+  "internalName": "kreias-whispers"
+}

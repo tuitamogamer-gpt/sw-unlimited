@@ -1,0 +1,41 @@
+{
+  "title": "Bib Fortuna",
+  "subtitle": "Jabba's Majordomo",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "Shielded (When you play this unit, give him a Shield token.)\n\nAction [Exhaust]: Play an event from your hand. It costs [1 resource] less.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7870435409",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "twi'lek"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 177
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 177
+    }
+  ],
+  "internalName": "bib-fortuna#jabbas-majordomo"
+}

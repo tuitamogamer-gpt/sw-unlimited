@@ -1,0 +1,37 @@
+{
+  "title": "Kragan Gorr",
+  "subtitle": "Warbird Captain",
+  "cost": 6,
+  "hp": 6,
+  "power": 6,
+  "text": "When an enemy unit attacks your base: Give a Shield token to a friendly unit in the same arena as the attacker.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "When an enemy unit attacks your base” triggers at the same time as “On Attack” abilities.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7674544152",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 241
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 241
+    }
+  ],
+  "internalName": "kragan-gorr#warbird-captain"
+}

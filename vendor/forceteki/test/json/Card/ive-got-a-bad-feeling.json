@@ -1,0 +1,38 @@
+{
+  "title": "I've Got A Bad Feeling",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "mock ability text",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "ive-got-a-bad-feeling-id",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 166
+  },
+  "internalName": "ive-got-a-bad-feeling",
+  "arena": null,
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 166
+    }
+  ]
+}

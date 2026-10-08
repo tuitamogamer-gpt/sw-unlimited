@@ -1,0 +1,41 @@
+{
+  "title": "Bounty Hunter Crew",
+  "subtitle": null,
+  "cost": 6,
+  "hp": 4,
+  "power": 4,
+  "text": "Ambush (After you play this unit, it may ready and attack an enemy unit.)\n\nWhen Played: You may return an event from a discard pile to its owner's hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3684950815",
+  "aspects": [
+    "villainy",
+    "cunning"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 183
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 183
+    }
+  ],
+  "internalName": "bounty-hunter-crew"
+}

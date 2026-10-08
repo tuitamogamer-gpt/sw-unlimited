@@ -1,0 +1,39 @@
+{
+  "title": "Orn Free Taa",
+  "subtitle": "Political Power Broker",
+  "cost": 2,
+  "hp": 4,
+  "power": 0,
+  "text": "This unit gets +1/+0 for each Law card in your discard pile.\nWhen Played: Search the top 10 cards of your deck for a Law card, reveal it, and draw it. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4529664083",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "republic",
+    "twi'lek",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 112
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 112
+    }
+  ],
+  "internalName": "orn-free-taa#political-power-broker"
+}

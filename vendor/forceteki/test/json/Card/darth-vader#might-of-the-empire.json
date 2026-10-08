@@ -1,0 +1,42 @@
+{
+  "title": "Darth Vader",
+  "subtitle": "Might of the Empire",
+  "cost": 6,
+  "hp": 5,
+  "power": 5,
+  "text": "Friendly units that cost 3 or more gain Raid 1.",
+  "deployBox": "Raid 1\nOther friendly units that cost 3 or more gain Raid 1.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0645623807",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "imperial",
+    "sith"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 7
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 7
+    }
+  ],
+  "internalName": "darth-vader#might-of-the-empire"
+}

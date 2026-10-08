@@ -1,0 +1,39 @@
+{
+  "title": "Crafty Smuggler",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "Shielded (When you play this unit, give a Shield token to it.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0700214503",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 207
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 207
+    }
+  ],
+  "internalName": "crafty-smuggler"
+}

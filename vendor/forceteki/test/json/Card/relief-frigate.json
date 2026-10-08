@@ -1,0 +1,39 @@
+{
+  "title": "Relief Frigate",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 7,
+  "power": 3,
+  "text": "When Played: Choose a base. Heal 3 damage from each other base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9458579327",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 42
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 42
+    }
+  ],
+  "internalName": "relief-frigate"
+}

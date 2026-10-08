@@ -1,0 +1,44 @@
+{
+  "title": "Captain Rex",
+  "subtitle": "Staunch Advocate",
+  "cost": 7,
+  "hp": 5,
+  "power": 7,
+  "text": "Sentinel\nShielded\nRestore 3",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "captain-rex#staunch-advocate-id",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "clone",
+    "trooper"
+  ],
+  "keywords": [
+    "sentinel",
+    "shielded",
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 41
+  },
+  "internalName": "captain-rex#staunch-advocate",
+  "arena": "ground",
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 41
+    }
+  ]
+}

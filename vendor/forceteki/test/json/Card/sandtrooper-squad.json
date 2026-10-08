@@ -1,0 +1,42 @@
+{
+  "title": "Sandtrooper Squad",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 3,
+  "text": "Ambush (When you play this unit, it may attack an enemy unit.)\nRaid 1 (This unit gets +1/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5756928198",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush",
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 201
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 201
+    }
+  ],
+  "internalName": "sandtrooper-squad"
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Supercommando Squad",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 4,
+  "power": 4,
+  "text": "Shielded (When you play this unit, give a Shield token to it.)\nWhile this unit is upgraded, it gains Sentinel. (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4341703515",
+  "aspects": [
+    "villainy",
+    "vigilance"
+  ],
+  "traits": [
+    "imperial",
+    "mandalorian",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded",
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 34
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 34
+    }
+  ],
+  "internalName": "supercommando-squad"
+}

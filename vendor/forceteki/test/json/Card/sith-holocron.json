@@ -1,0 +1,38 @@
+{
+  "title": "Sith Holocron",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 1,
+  "text": "Attach to a Force unit.\nAttached unit gains: “On Attack: You may deal 2 damage to a friendly unit. If you do, this unit gets +2/+0 for this attack.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "The attached unit can use Sith Holocron's ability to damage itself.\n",
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "0412810079",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "sith",
+    "item"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 138
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 138
+    }
+  ],
+  "internalName": "sith-holocron"
+}

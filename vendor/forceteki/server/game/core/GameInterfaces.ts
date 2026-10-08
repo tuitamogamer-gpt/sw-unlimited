@@ -1,0 +1,69 @@
+import type { SwuGameFormat } from './Constants';
+import type { Lobby } from '../../gamenode/Lobby';
+import type { IUser } from '../../Settings';
+import type { CardDataGetter } from '../../utils/cardData/CardDataGetter';
+import type { Attack } from './attack/Attack';
+import type { EventWindow } from './event/EventWindow';
+import type { AbilityResolver } from './gameSteps/AbilityResolver';
+import type { ActionWindow } from './gameSteps/ActionWindow';
+import type { UiPrompt } from './gameSteps/prompts/UiPrompt';
+import type { UndoMode } from './snapshot/SnapshotManager';
+import type { IScheduler } from '../../utils/IScheduler';
+import { Contract } from './utils/Contract';
+
+export interface GameConfiguration {
+    id: string;
+    owner: string;
+    players: IUser[];
+    spectators?: IUser[];
+    allowSpectators: boolean;
+
+    /** The deck/rules format being played. Defaults to Premier when omitted. */
+    format?: SwuGameFormat;
+    cardDataGetter: CardDataGetter;
+
+    /**
+     * Card titles legal in this game's format and card pool, used to restrict "name a card" options.
+     * When omitted, every card title is available.
+     */
+    legalCardTitles?: ReadonlySet<string>;
+    useActionTimer?: boolean;
+    pushUpdate: () => void;
+
+    /** Supplies timers and the clock. Callbacks scheduled through it are error-guarded. */
+    scheduler: IScheduler;
+    userTimeoutDisconnect: (userId: string) => void;
+    undoMode?: UndoMode;
+
+    /** Player ID who gets to choose who starts with initiative, or undefined for random selection */
+    preselectedFirstPlayerId?: string;
+
+    /** Callback to forfeit a Bo3 set when a player times out during a game. Only provided for Bo3 matches. */
+    onBo3SetForfeit?: (losingPlayerId: string) => void;
+}
+
+export interface ICurrentlyResolving {
+    abilityResolver?: AbilityResolver;
+    actionWindow?: ActionWindow;
+    attack?: Attack;
+    eventWindow?: EventWindow;
+    openPrompt?: UiPrompt;
+}
+
+export function validateGameConfiguration(configuration: GameConfiguration): void {
+    Contract.assertNotNullLike(configuration.id);
+    Contract.assertNotNullLike(configuration.owner);
+    Contract.assertNotNullLike(configuration.players);
+    Contract.assertNotNullLike(configuration.cardDataGetter);
+    Contract.assertNotNullLike(configuration.pushUpdate);
+    Contract.assertNotNullLike(configuration.scheduler);
+    Contract.assertNotNullLike(configuration.userTimeoutDisconnect);
+}
+
+export interface GameOptions {
+    router: Lobby;
+}
+
+export function validateGameOptions(options: GameOptions): void {
+    Contract.assertNotNullLike(options.router);
+}

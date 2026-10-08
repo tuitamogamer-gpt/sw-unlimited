@@ -1,0 +1,37 @@
+{
+  "title": "Battle Fury",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 3,
+  "text": "Attached unit gains: “On Attack: Discard a card from your hand.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 3,
+  "upgradeHp": 3,
+  "id": "4256802093",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 139
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 139
+    }
+  ],
+  "internalName": "battle-fury"
+}

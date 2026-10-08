@@ -1,0 +1,214 @@
+describe('Defeat timing', function() {
+    integration(function(contextRef) {
+        describe('When a unit enters play with a constant ability that defeats other units,', function() {
+            beforeEach(function () {
+                return contextRef.setupTestAsync({
+                    phase: 'action',
+                    player1: {
+                        hand: ['supreme-leader-snoke#shadow-ruler'],
+                        groundArena: ['maz-kanata#pirate-queen'],
+                    },
+                    player2: {
+                        groundArena: ['vanguard-infantry'],
+                    },
+
+                    // IMPORTANT: this is here for backwards compatibility of older tests, don't use in new code
+                    autoSingleTarget: true
+                });
+            });
+
+            it('"when played" and "when defeated" triggers should go in the same window', function () {
+                const { context } = contextRef;
+
+                context.player1.clickCard(context.supremeLeaderSnoke);
+                expect(context.player1).toHavePrompt('Both players have triggered abilities in response. Choose a player to resolve all of their abilities first:');
+                expect(context.player2).toHavePrompt('Waiting for opponent to choose a player to resolve their triggers first');
+
+                context.player1.clickPrompt('You');
+                expect(context.mazKanata).toHaveExactUpgradeNames(['experience']);
+
+                // vanguard on-defeat trigger happens next automatically
+                expect(context.player2).toBeAbleToSelectExactly([context.mazKanata, context.supremeLeaderSnoke]);
+                context.player2.clickPrompt('Pass');
+
+                expect(context.player2).toBeActivePlayer();
+            });
+        });
+
+        // TODO: add a similar test for Dodonna and units leaving the field due to a +hp modifier going away
+        describe('When a unit enters play and is immediately defeated by a constant ability,', function() {
+            beforeEach(function () {
+                return contextRef.setupTestAsync({
+                    phase: 'action',
+                    player1: {
+                        groundArena: ['supreme-leader-snoke#shadow-ruler'],
+                    },
+                    player2: {
+                        hand: ['vanguard-infantry'],
+                        groundArena: [{ card: 'maz-kanata#pirate-queen', upgrades: ['experience', 'experience'] }]
+                    },
+
+                    // IMPORTANT: this is here for backwards compatibility of older tests, don't use in new code
+                    autoSingleTarget: true
+                });
+            });
+
+            it('"when played" and "when defeated" triggers should go in the same window', function () {
+                const { context } = contextRef;
+
+                context.player1.passAction();
+
+                context.player2.clickCard(context.vanguardInfantry);
+                expect(context.player2).toHavePrompt('You have multiple triggers to resolve. Choose which to resolve first:');
+                expect(context.player1).toHavePrompt('Waiting for opponent');
+                expect(context.vanguardInfantry).toBeInZone('discard');
+
+                context.player2.clickPrompt('Give an Experience token to a unit');
+                context.player2.clickPrompt('Pass');
+
+                // maz kanata on-play trigger happens next automatically
+                expect(context.mazKanata).toHaveExactUpgradeNames(['experience', 'experience', 'experience']);
+                expect(context.player1).toBeActivePlayer();
+            });
+        });
+
+        describe('When a unit enters play and is immediately defeated by a constant ability,', function() {
+            beforeEach(function () {
+                return contextRef.setupTestAsync({
+                    phase: 'action',
+                    player1: {
+                        groundArena: ['supreme-leader-snoke#shadow-ruler'],
+                    },
+                    player2: {
+                        hand: ['vanguard-infantry', 'lieutenant-childsen#death-star-prison-warden', 'vanquish']
+                    },
+
+                    // IMPORTANT: this is here for backwards compatibility of older tests, don't use in new code
+                    autoSingleTarget: true
+                });
+            });
+
+            it('it cannot gain experience from its "when played" ability', function () {
+                const { context } = contextRef;
+
+                context.player1.passAction();
+
+                context.player2.clickCard(context.lieutenantChildsen);
+
+                expect(context.lieutenantChildsen).toBeInZone('discard');
+                context.player2.clickPrompt('Reveal up to 4 Vigilance cards from your hand. For each card revealed this way, give an Experience token to this unit -> Vanquish');
+                context.player1.clickDone();
+                expect(context.player1).toBeActivePlayer();
+            });
+        });
+
+        describe('When multiple units are defeated simultaneously,', function() {
+            beforeEach(function () {
+                return contextRef.setupTestAsync({
+                    phase: 'action',
+                    player1: {
+                        hand: ['superlaser-blast'],
+                        groundArena: ['general-krell#heartless-tactician'],
+                        spaceArena: ['cartel-spacer'],
+                        leader: { card: 'iden-versio#inferno-squad-commander', deployed: true },
+                        base: { card: 'administrators-tower', damage: 5 }
+                    },
+                    player2: {
+                        groundArena: ['superlaser-technician', 'yoda#old-master'],
+                        leader: { card: 'luke-skywalker#faithful-friend', deployed: true }
+                    },
+
+                    // IMPORTANT: this is here for backwards compatibility of older tests, don't use in new code
+                    autoSingleTarget: true
+                });
+            });
+
+            it('the active player should choose which player\'s triggers happen first, then each player should be able to choose the order of their triggers in turn', function () {
+                const { context } = contextRef;
+
+                context.player1.clickCard(context.superlaserBlast);
+
+                // all units defeated
+                expect(context.generalKrell).toBeInZone('discard');
+                expect(context.cartelSpacer).toBeInZone('discard');
+                expect(context.superlaserTechnician).toBeInZone('discard');
+                expect(context.yoda).toBeInZone('discard');
+                expect(context.idenVersio).toBeInZone('base');
+                expect(context.lukeSkywalker).toBeInZone('base');
+
+                // triggered abilities happen
+                expect(context.player1).toHavePrompt('Both players have triggered abilities in response. Choose a player to resolve all of their abilities first:');
+                context.player1.clickPrompt('You');
+                expect(context.player1).toHavePrompt('You have multiple triggers to resolve. Choose which to resolve first:');
+                // the three identical Iden Versio heal triggers are grouped into a single entry
+                expect(context.player1).toHaveExactPromptButtons([
+                    'Draw a card',
+                    'Draw a card',
+                    'When an opponent\'s unit is defeated, heal 1 from base'
+                ]);
+                // selecting the grouped entry opens the resolution modal
+                context.player1.clickPrompt('When an opponent\'s unit is defeated, heal 1 from base');
+                expect(context.player1).toHavePrompt('Resolve "When an opponent\'s unit is defeated, heal 1 from base"');
+                expect(context.player1).toHaveExactPromptButtons(['Resolve next', 'Resolve all (3)']);
+                context.player1.clickPrompt('Resolve all (3)');
+                // after the grouped heals resolve, the two draw triggers remain
+                context.player1.clickPrompt('Draw a card');
+                // may ability prompts the player whether or not to actually use it before it fully resolves
+                expect(context.player1).toHavePassAbilityPrompt('Draw a card');
+                context.player1.clickPrompt('Trigger');
+                // last trigger is chosen automatically
+                expect(context.player1).toHavePassAbilityPrompt('Draw a card');
+                context.player1.clickPrompt('Pass');
+
+                // automatically moves to other player's triggers
+                expect(context.player2).toHavePrompt('You have multiple triggers to resolve. Choose which to resolve first:');
+                expect(context.player2).toHaveExactPromptButtons(['Put Superlaser Technician into play as a resource and ready it', 'Choose any number of players to draw 1 card']);
+                context.player2.clickPrompt('Choose any number of players to draw 1 card');
+                context.player2.clickPrompt('You');
+                context.player2.clickDone();
+                expect(context.player2).toHavePassAbilityPrompt('Put Superlaser Technician into play as a resource and ready it');
+                context.player2.clickPrompt('Trigger');
+
+                // triggers all done, action is finally over
+                expect(context.player2).toBeActivePlayer();
+
+                // checking trigger effects all happened properly
+                expect(context.p1Base.damage).toBe(2);
+                expect(context.player1.hand.length).toBe(1);
+                expect(context.player2.hand.length).toBe(1);
+                expect(context.superlaserTechnician).toBeInZone('resource');
+            });
+        });
+
+        describe('When a unit not controlled by the owner is defeated,', function() {
+            beforeEach(function () {
+                return contextRef.setupTestAsync({
+                    phase: 'action',
+                    player1: {
+                        hand: ['change-of-heart'],
+                        groundArena: ['wampa', 'super-battle-droid'],
+                    },
+                    player2: {
+                        groundArena: ['vanguard-infantry', 'battlefield-marine', 'patrolling-aat'],
+                    },
+                });
+            });
+
+            it('"when defeated" triggers should be resolved by the controller', function () {
+                const { context } = contextRef;
+
+                context.player1.clickCard(context.changeOfHeart);
+                context.player1.clickCard(context.vanguardInfantry);
+                expect(context.vanguardInfantry).toBeInZone('groundArena', context.player1);
+
+                context.player2.clickCard(context.battlefieldMarine);
+                context.player2.clickCard(context.vanguardInfantry);
+
+                context.player1.clickCard(context.wampa);
+                expect(context.wampa).toHaveExactUpgradeNames(['experience']);
+
+                expect(context.player1).toBeActivePlayer();
+            });
+        });
+    });
+});

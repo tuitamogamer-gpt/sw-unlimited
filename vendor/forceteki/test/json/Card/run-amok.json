@@ -1,0 +1,36 @@
+{
+  "title": "Run Amok",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Create a Beast token.\nDeal 1 damage to a friendly ground unit and 1 damage to an enemy ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6376056191",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "disaster"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 194
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 194
+    }
+  ],
+  "internalName": "run-amok"
+}

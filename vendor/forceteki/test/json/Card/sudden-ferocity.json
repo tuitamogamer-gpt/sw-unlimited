@@ -1,0 +1,38 @@
+{
+  "title": "Sudden Ferocity",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 0,
+  "power": 3,
+  "text": "Plot (When you deploy a leader, you may play this card from your resources, paying its cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 3,
+  "upgradeHp": 0,
+  "id": "2785395871",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [
+    "plot"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 176
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 176
+    }
+  ],
+  "internalName": "sudden-ferocity"
+}

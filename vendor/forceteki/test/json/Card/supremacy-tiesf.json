@@ -1,0 +1,42 @@
+{
+  "title": "Supremacy TIE/sf",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6148303031",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "first order",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 34
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 34
+    }
+  ],
+  "internalName": "supremacy-tiesf"
+}

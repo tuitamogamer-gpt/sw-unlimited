@@ -1,0 +1,36 @@
+{
+  "title": "Foresight",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 0,
+  "text": "Attached unit gains: “When the regroup phase starts (before drawing cards): Name a card, then look at the top card of your deck. If it's the named card, you may reveal and draw it.”",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card's “name” do not include the subtitle of the card.\n",
+  "upgradePower": 0,
+  "upgradeHp": 2,
+  "id": "3962135775",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 68
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 68
+    }
+  ],
+  "internalName": "foresight"
+}

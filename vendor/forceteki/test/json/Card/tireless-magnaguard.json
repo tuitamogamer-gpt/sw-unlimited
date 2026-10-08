@@ -1,0 +1,39 @@
+{
+  "title": "Tireless Magnaguard",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 5,
+  "text": "When Defeated: If this unit had 5 or more power, for this phase you may play this unit from your discard pile for free and give 2 Weakness tokens to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Tireless Magnaguard's ability references its power when it was defeated, which includes temporary modifiers.\n“Play for free” ignores all resource costs, including the aspect penalty, but not other additional costs.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1558034495",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 109
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 109
+    }
+  ],
+  "internalName": "tireless-magnaguard"
+}

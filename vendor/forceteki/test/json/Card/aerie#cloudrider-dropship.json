@@ -1,0 +1,40 @@
+{
+  "title": "Aerie",
+  "subtitle": "Cloud-Rider Dropship",
+  "cost": 6,
+  "hp": 7,
+  "power": 3,
+  "text": "On Attack: Deal 2 damage to an enemy ground unit and 2 damage to a base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0475417545",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 184
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 184
+    }
+  ],
+  "internalName": "aerie#cloudrider-dropship"
+}

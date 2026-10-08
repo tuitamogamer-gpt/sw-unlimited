@@ -1,0 +1,42 @@
+{
+  "title": "Jendirian Valley",
+  "subtitle": "Refugee Freighter",
+  "cost": 4,
+  "hp": 5,
+  "power": 1,
+  "text": "Restore 1\nWhen Played: Search the top 8 cards of your deck for a card and resource it. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\nResources enter play exhausted.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1994755867",
+  "aspects": [
+    "vigilance",
+    "command"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 18
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 18
+    }
+  ],
+  "internalName": "jendirian-valley#refugee-freighter"
+}

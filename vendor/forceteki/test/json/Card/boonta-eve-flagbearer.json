@@ -1,0 +1,37 @@
+{
+  "title": "Boonta Eve Flagbearer",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 3,
+  "power": 1,
+  "text": "When a friendly unit attacks: If no other units have attacked this phase (including enemy units), heal 2 damage from your base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "\"No other units have attacked this phase\" means that no player has made an attack with a unit this phase.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4976768529",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 112
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 112
+    }
+  ],
+  "internalName": "boonta-eve-flagbearer"
+}

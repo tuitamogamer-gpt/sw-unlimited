@@ -1,0 +1,40 @@
+{
+  "title": "Callous Bounty Hunter",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "Saboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0407515487",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 250
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 250
+    }
+  ],
+  "internalName": "callous-bounty-hunter"
+}

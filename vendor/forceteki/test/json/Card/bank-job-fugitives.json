@@ -1,0 +1,35 @@
+{
+  "title": "Bank Job Fugitives",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 6,
+  "power": 4,
+  "text": "When Played: Create a Credit token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6438727942",
+  "aspects": [],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 262
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 262
+    }
+  ],
+  "internalName": "bank-job-fugitives"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Echo",
+  "subtitle": "Restored",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "Restore 2\nWhen Played: You may discard a card from your hand. Give 2 Experience tokens to a unit in play with the same name as the discarded card.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Abilities that refer to a card’s “name” do not include the subtitle of the card.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3671559022",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "fringe",
+    "clone"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 99
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 99
+    }
+  ],
+  "internalName": "echo#restored"
+}

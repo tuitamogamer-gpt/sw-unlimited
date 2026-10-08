@@ -1,0 +1,41 @@
+{
+  "title": "Alexsandr Kallus",
+  "subtitle": "With New Purpose",
+  "cost": 7,
+  "hp": 6,
+  "power": 6,
+  "text": "While you have the initiative, each other friendly <uq> (unique) unit gains Raid 2.\nWhen Played: Deal 2 damage to each of up to 3 ground units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6009912241",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "spectre"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 155
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 155
+    }
+  ],
+  "internalName": "alexsandr-kallus#with-new-purpose"
+}

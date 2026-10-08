@@ -1,0 +1,39 @@
+{
+  "title": "Grand Admiral Thrawn",
+  "subtitle": "Grand Schemer",
+  "cost": 7,
+  "hp": 7,
+  "power": 8,
+  "text": "When Played: An opponent may choose a non-leader unit they control. If they do, this unit captures that unit. If they don't, ready this unit.\nWhen Defeated: A friendly unit captures an enemy non-leader unit in the same arena.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "If there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2232791747",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 193
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 193
+    }
+  ],
+  "internalName": "grand-admiral-thrawn#grand-schemer"
+}

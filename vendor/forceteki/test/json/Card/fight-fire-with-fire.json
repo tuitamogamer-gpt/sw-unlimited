@@ -1,0 +1,36 @@
+{
+  "title": "Fight Fire With Fire",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Choose a friendly unit and an enemy unit in the same arena. If you do, deal 3 damage to each of them.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If there aren't a friendly and enemy unit in the same arena to choose, deal no damage.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3885807284",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 173
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 173
+    }
+  ],
+  "internalName": "fight-fire-with-fire"
+}

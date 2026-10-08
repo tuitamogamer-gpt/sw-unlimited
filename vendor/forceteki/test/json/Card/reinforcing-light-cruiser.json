@@ -1,0 +1,42 @@
+{
+  "title": "Reinforcing Light Cruiser",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 5,
+  "power": 5,
+  "text": "Restore 1 (When this unit attacks, heal 1 damage from your base.)\nWhen Played: You may exhaust a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4771692173",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 51
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 51
+    }
+  ],
+  "internalName": "reinforcing-light-cruiser"
+}

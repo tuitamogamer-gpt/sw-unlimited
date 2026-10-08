@@ -1,0 +1,40 @@
+{
+  "title": "Jyn Erso",
+  "subtitle": "Stardust",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "While an enemy unit has been defeated this phase, this unit gets +1/+0 and gains Saboteur.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7099699830",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 143
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 143
+    }
+  ],
+  "internalName": "jyn-erso#stardust"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Boba Fett",
+  "subtitle": "Compensated If He Dies",
+  "cost": 5,
+  "hp": 7,
+  "power": 4,
+  "text": "mock ability text",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "boba-fett#compensated-if-he-dies-id",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 146
+  },
+  "internalName": "boba-fett#compensated-if-he-dies",
+  "arena": "ground",
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 146
+    }
+  ]
+}

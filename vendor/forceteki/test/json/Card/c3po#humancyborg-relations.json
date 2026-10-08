@@ -1,0 +1,39 @@
+{
+  "title": "C-3PO",
+  "subtitle": "Human-Cyborg Relations",
+  "cost": 4,
+  "hp": 6,
+  "power": 1,
+  "text": "Action [1 resource, Exhaust]: If you control an exhausted unit, exhaust a unit.",
+  "deployBox": "On Attack: If you control another exhausted unit, you may exhaust a unit.",
+  "epicAction": "Epic Action: If you control 4 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "C-3PO’s leader ability still can be used as an action even if you don't control an exhausted unit (but no unit gets exhausted).\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8365538125",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 15
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 15
+    }
+  ],
+  "internalName": "c3po#humancyborg-relations"
+}

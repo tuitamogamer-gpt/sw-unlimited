@@ -1,0 +1,42 @@
+{
+  "title": "Nute Gunray",
+  "subtitle": "Escaping Justice",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "Grit\nWhen Played/On Attack: You may give another friendly Official unit Sentinel for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0296782712",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit",
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 31
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 31
+    }
+  ],
+  "internalName": "nute-gunray#escaping-justice"
+}

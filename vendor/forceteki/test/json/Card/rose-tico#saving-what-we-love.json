@@ -1,0 +1,38 @@
+{
+  "title": "Rose Tico",
+  "subtitle": "Saving What We Love",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "Action [Exhaust]: Heal 2 damage from a Vehicle unit that attacked this phase.",
+  "deployBox": "On Attack: You may heal 2 damage from a Vehicle unit.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3933322003",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "resistance"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 4
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 4
+    }
+  ],
+  "internalName": "rose-tico#saving-what-we-love"
+}

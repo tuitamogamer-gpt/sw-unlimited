@@ -1,0 +1,40 @@
+{
+  "title": "Grand Inquisitor",
+  "subtitle": "How The Mighty Will Fall",
+  "cost": 4,
+  "hp": 6,
+  "power": 3,
+  "text": "mock ability text",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "grand-inquisitor#how-the-mighty-will-fall-id",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "imperial",
+    "inquisitor"
+  ],
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 103
+  },
+  "internalName": "grand-inquisitor#how-the-mighty-will-fall",
+  "arena": "ground",
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 103
+    }
+  ]
+}

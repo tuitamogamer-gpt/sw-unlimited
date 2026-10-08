@@ -1,0 +1,38 @@
+{
+  "title": "Nightsister Warrior",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Defeated: Draw a card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6772792435",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "force",
+    "night"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 59
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 59
+    }
+  ],
+  "internalName": "nightsister-warrior"
+}

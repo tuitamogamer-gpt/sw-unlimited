@@ -1,0 +1,38 @@
+{
+  "title": "General Veers",
+  "subtitle": "Blizzard Force Commander",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "Other friendly Imperial units get +1/+1.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1557302740",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 230
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 230
+    }
+  ],
+  "internalName": "general-veers#blizzard-force-commander"
+}

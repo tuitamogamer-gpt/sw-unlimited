@@ -1,0 +1,37 @@
+{
+  "title": "The Daughter",
+  "subtitle": "Embodiment of Light",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "When damage is dealt to your base: You may use the Force (lose your Force token). If you do, heal 2 damage from your base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0662915879",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "force"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 252
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 252
+    }
+  ],
+  "internalName": "the-daughter#embodiment-of-light"
+}

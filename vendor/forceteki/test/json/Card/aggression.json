@@ -1,0 +1,37 @@
+{
+  "title": "Aggression",
+  "subtitle": null,
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Choose two, in any order:\n\nDraw a card.\nDefeat up to 2 upgrades.\nReady a unit with 3 or less power.\nDeal 4 damage to a unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3736081333",
+  "aspects": [
+    "aggression",
+    "aggression"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 155
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 155
+    }
+  ],
+  "internalName": "aggression"
+}

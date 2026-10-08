@@ -1,0 +1,38 @@
+{
+  "title": "Desert Sharpshooter",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "When Played: You may deal 2 damage to an upgraded ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3381567608",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "twi'lek",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 170
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 170
+    }
+  ],
+  "internalName": "desert-sharpshooter"
+}

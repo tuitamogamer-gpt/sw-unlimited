@@ -1,0 +1,36 @@
+{
+  "title": "Cure Wounds",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Use the Force (lose your Force token). If you do, heal 6 damage from a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3853063436",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 75
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 75
+    }
+  ],
+  "internalName": "cure-wounds"
+}

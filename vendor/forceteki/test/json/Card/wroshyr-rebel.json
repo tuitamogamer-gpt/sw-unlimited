@@ -1,0 +1,38 @@
+{
+  "title": "Wroshyr Rebel",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 0,
+  "text": "This unit gets +1/+0 for every 2 resources you control.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7296857431",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "rebel",
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 133
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 133
+    }
+  ],
+  "internalName": "wroshyr-rebel"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Jedi Interceptor",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "While you control 6 or more resources, this unit gets +2/+0.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4746955711",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "jedi",
+    "republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 256
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 256
+    }
+  ],
+  "internalName": "jedi-interceptor"
+}

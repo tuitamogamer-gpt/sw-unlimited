@@ -1,0 +1,42 @@
+{
+  "title": "Guavian Antagonizer",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 3,
+  "power": 2,
+  "text": "Saboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)\nBounty — Draw a card. (When this unit is defeated or captured, your opponent collects its bounty.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2151430798",
+  "aspects": [
+    "villainy",
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur",
+    "bounty"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 134
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 134
+    }
+  ],
+  "internalName": "guavian-antagonizer"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Blade of Talzin",
+  "subtitle": "A Gift of Shadows",
+  "cost": 2,
+  "hp": 1,
+  "power": 2,
+  "text": "Attach to a non-Vehicle unit.\nWhen Defeated: If this upgrade was on a friendly Night unit, return this upgrade from your discard pile to your hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": 2,
+  "upgradeHp": 1,
+  "id": "8297084135",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "night",
+    "item",
+    "weapon"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 55
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 55
+    }
+  ],
+  "internalName": "blade-of-talzin#a-gift-of-shadows"
+}

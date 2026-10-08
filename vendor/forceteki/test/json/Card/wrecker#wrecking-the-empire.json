@@ -1,0 +1,37 @@
+{
+  "title": "Wrecker",
+  "subtitle": "Wrecking the Empire",
+  "cost": 6,
+  "hp": 6,
+  "power": 6,
+  "text": "When Played: Each player chooses a unit they control. Deal 3 damage to each chosen unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3294976485",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "clone"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 263
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 263
+    }
+  ],
+  "internalName": "wrecker#wrecking-the-empire"
+}

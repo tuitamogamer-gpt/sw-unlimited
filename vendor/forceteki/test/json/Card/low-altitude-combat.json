@@ -1,0 +1,37 @@
+{
+  "title": "Low Altitude Combat",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Move a space unit to the ground arena (it's now a ground unit). If you do, you may attack with a ground unit. It gets +2/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Units must be ready in order to attack.\nYou can attack with the unit that you move to the ground arena or a different unit.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9783991030",
+  "aspects": [
+    "command",
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 50
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 50
+    }
+  ],
+  "internalName": "low-altitude-combat"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Scramble Fighters",
+  "subtitle": "",
+  "cost": 7,
+  "hp": null,
+  "power": null,
+  "text": "Create 8 TIE Fighter tokens and ready them. They can't attack bases for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Units that can’t attack bases can still damage bases through other abilities, like Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5841647666",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 92
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 92
+    }
+  ],
+  "internalName": "scramble-fighters"
+}

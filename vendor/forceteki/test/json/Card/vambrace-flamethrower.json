@@ -1,0 +1,38 @@
+{
+  "title": "Vambrace Flamethrower",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 1,
+  "power": 1,
+  "text": "Attach to a non-Vehicle unit.\nAttached unit gains: “On Attack: You may deal 3 damage divided as you choose among enemy ground units.”",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "You can choose to assign more damage to a unit than it has remaining HP.\nAll damage dealt by a single ability is dealt simultaneously.\n",
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "6471336466",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "item",
+    "armor",
+    "weapon"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 177
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 177
+    }
+  ],
+  "internalName": "vambrace-flamethrower"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Auzituck Avenger",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 4,
+  "power": 4,
+  "text": "Raid 2 (This unit gets +2/+0 while attacking.)\nRestore 2 (When this unit attacks, heal 2 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9432909087",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "raid",
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 120
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 120
+    }
+  ],
+  "internalName": "auzituck-avenger"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Cutthroat Podracer",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "When Played: You may deal 2 damage to an exhausted ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7742850323",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "vehicle",
+    "speeder"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 213
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 213
+    }
+  ],
+  "internalName": "cutthroat-podracer"
+}

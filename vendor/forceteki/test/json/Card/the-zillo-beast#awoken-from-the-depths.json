@@ -1,0 +1,37 @@
+{
+  "title": "The Zillo Beast",
+  "subtitle": "Awoken From The Depths",
+  "cost": 9,
+  "hp": 10,
+  "power": 10,
+  "text": "When Played: Give each enemy ground unit –5/–0 for this phase.\nWhen the regroup phase starts: Heal 5 damage from this unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0216922902",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 67
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 67
+    }
+  ],
+  "internalName": "the-zillo-beast#awoken-from-the-depths"
+}

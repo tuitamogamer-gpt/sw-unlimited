@@ -1,0 +1,40 @@
+{
+  "title": "Warbird Stowaway",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 2,
+  "text": "While you have the initiative, this unit gets +2/+0.\nSmuggle [4 resources Command Villainy] (If this card is a resource, you may play it for its smuggle cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8305828130",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "smuggle"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 86
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 86
+    }
+  ],
+  "internalName": "warbird-stowaway"
+}

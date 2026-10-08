@@ -1,0 +1,36 @@
+{
+  "title": "Heroic Bravery",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 0,
+  "text": "When Played: If attached unit is a Heroism unit, give a Shield token to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 2,
+  "id": "8162797914",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 264
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 264
+    }
+  ],
+  "internalName": "heroic-bravery"
+}

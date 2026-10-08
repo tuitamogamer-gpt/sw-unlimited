@@ -1,0 +1,36 @@
+{
+  "title": "Shipbreaking Yard",
+  "subtitle": "",
+  "cost": null,
+  "hp": 26,
+  "power": null,
+  "text": "Epic Action: Discard 3 cards from your deck. You may return a card discarded this way to the top of your deck.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Always discard from the top of a deck, unless an ability specifies otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2034527101",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "bracca"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 26
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 26
+    }
+  ],
+  "internalName": "shipbreaking-yard"
+}

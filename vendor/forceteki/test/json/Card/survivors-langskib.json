@@ -1,0 +1,41 @@
+{
+  "title": "Survivors' Langskib",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3777155291",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "mandalorian",
+    "vehicle",
+    "speeder"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 126
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 126
+    }
+  ],
+  "internalName": "survivors-langskib"
+}

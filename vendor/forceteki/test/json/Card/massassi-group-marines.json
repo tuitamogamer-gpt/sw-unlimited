@@ -1,0 +1,39 @@
+{
+  "title": "Massassi Group Marines",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 4,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2124574639",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 146
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 146
+    }
+  ],
+  "internalName": "massassi-group-marines"
+}

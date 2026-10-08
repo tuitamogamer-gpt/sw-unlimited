@@ -1,0 +1,36 @@
+{
+  "title": "Reconnaissance",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "If you control a ground unit and a space unit, draw 2 cards.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7947982615",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 125
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 125
+    }
+  ],
+  "internalName": "reconnaissance"
+}

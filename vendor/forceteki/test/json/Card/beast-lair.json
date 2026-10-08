@@ -1,0 +1,38 @@
+{
+  "title": "Beast Lair",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 0,
+  "power": 0,
+  "text": "Fortify (Attach this to your base, not a unit.)\nAttached base gains: “When the action phase starts: You may discard a card from your hand. If you do, create a Beast token.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Because Beast Lair's ability triggers when the action phase starts, the created Beast token will enter play exhausted and not ready until the next regroup phase.\n",
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "1444437999",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "fortification"
+  ],
+  "keywords": [
+    "fortify"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 147
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 147
+    }
+  ],
+  "internalName": "beast-lair"
+}

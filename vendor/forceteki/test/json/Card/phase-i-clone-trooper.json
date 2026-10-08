@@ -1,0 +1,39 @@
+{
+  "title": "Phase I Clone Trooper",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9209567613",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "clone",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 241
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 241
+    }
+  ],
+  "internalName": "phase-i-clone-trooper"
+}

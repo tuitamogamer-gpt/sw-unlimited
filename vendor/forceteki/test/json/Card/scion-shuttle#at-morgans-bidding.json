@@ -1,0 +1,42 @@
+{
+  "title": "Scion Shuttle",
+  "subtitle": "At Morgan's Bidding",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "Support (When you play this unit, you may attack with another unit. It gains this unit's other abilities for this attack.)\nWhile this unit is attacking, the defending unit gets –1/–1.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8573360332",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "support"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 46
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 46
+    }
+  ],
+  "internalName": "scion-shuttle#at-morgans-bidding"
+}

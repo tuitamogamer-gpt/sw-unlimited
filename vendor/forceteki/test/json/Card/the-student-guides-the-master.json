@@ -1,0 +1,37 @@
+{
+  "title": "The Student Guides the Master",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Give a friendly unit +1/+0 for this phase for each other friendly unit with less power than it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0002611789",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 115
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 115
+    }
+  ],
+  "internalName": "the-student-guides-the-master"
+}

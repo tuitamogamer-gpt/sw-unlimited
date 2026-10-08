@@ -1,0 +1,38 @@
+{
+  "title": "Bendu",
+  "subtitle": "Do You Fear the Storm?",
+  "cost": 8,
+  "hp": 10,
+  "power": 10,
+  "text": "On Attack: Deal 3 damage to each other unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "All damage dealt by Bendu's \"On Attack\" ability is dealt simultaneously.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6564460785",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "force",
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 170
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 170
+    }
+  ],
+  "internalName": "bendu#do-you-fear-the-storm"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "The Great Mothers",
+  "subtitle": "With Strange Magicks",
+  "cost": 7,
+  "hp": 7,
+  "power": 6,
+  "text": "Support\nWhen Attack Ends: If this unit dealt combat damage to 1 or more non-leader units, defeat those units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "“Combat damage” is only the damage dealt during the “End attack” step of an attack.\nWhen Attack Ends abilities trigger at the same time as units deal combat damage. The Great Mothers do not need to survive the attack in order to resolve defeat units, so long as they dealt combat damage to those units.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5392982470",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "night"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "support"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 101
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 101
+    }
+  ],
+  "internalName": "the-great-mothers#with-strange-magicks"
+}

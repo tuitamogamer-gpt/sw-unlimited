@@ -1,0 +1,37 @@
+{
+  "title": "Force Choke",
+  "subtitle": null,
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "If you control a FORCE unit, this event costs [1 resource] less to play. \n\nDeal 5 damage to a non-VEHICLE unit. That unit's controller draws a card.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1446471743",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 139
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 139
+    }
+  ],
+  "internalName": "force-choke"
+}

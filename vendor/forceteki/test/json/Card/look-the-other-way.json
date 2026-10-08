@@ -1,0 +1,36 @@
+{
+  "title": "Look the Other Way",
+  "subtitle": "",
+  "cost": 0,
+  "hp": null,
+  "power": null,
+  "text": "Exhaust a unit unless its controller pays 2 resources.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2750823386",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 227
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 227
+    }
+  ],
+  "internalName": "look-the-other-way"
+}

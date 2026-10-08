@@ -1,0 +1,40 @@
+{
+  "title": "J-Type Nubian Starship",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "When Played: Draw a card.\nWhen Defeated: Discard a card from your hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7074896971",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "naboo",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 194
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 194
+    }
+  ],
+  "internalName": "jtype-nubian-starship"
+}

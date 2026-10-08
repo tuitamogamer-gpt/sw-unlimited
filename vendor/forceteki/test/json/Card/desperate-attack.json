@@ -1,0 +1,36 @@
+{
+  "title": "Desperate Attack",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a damaged unit. It gets +2/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "You must attack with a damaged unit, if able. Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6962053552",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 179
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 179
+    }
+  ],
+  "internalName": "desperate-attack"
+}

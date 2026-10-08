@@ -1,0 +1,40 @@
+{
+  "title": "Dooku's Solar Sailer",
+  "subtitle": "Beautiful and Expensive",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "When Played/On Attack: If a base was healed this phase, give an Experience token to another Separatist unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5179344355",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 38
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 38
+    }
+  ],
+  "internalName": "dookus-solar-sailer#beautiful-and-expensive"
+}

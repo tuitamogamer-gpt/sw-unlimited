@@ -1,0 +1,36 @@
+{
+  "title": "Dedicated Wingmen",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Create 2 X-Wing tokens.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8382691367",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 254
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 254
+    }
+  ],
+  "internalName": "dedicated-wingmen"
+}

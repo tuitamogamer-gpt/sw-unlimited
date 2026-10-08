@@ -1,0 +1,39 @@
+{
+  "title": "Grand Army Marine",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: Give a Shield token to a friendly Gungan unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2662175313",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "gungan",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 72
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 72
+    }
+  ],
+  "internalName": "grand-army-marine"
+}

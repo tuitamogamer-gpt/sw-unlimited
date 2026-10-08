@@ -1,0 +1,37 @@
+{
+  "title": "Axe Woves",
+  "subtitle": "Undaunted",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "When you draw 1 or more cards (including during the regroup phase): Give an Advantage token to this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9992086344",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 169
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 169
+    }
+  ],
+  "internalName": "axe-woves#undaunted"
+}

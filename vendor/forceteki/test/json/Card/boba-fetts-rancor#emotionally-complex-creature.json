@@ -1,0 +1,38 @@
+{
+  "title": "Boba Fett's Rancor",
+  "subtitle": "Emotionally Complex Creature",
+  "cost": 8,
+  "hp": 9,
+  "power": 8,
+  "text": "When Played: Deal 5 damage to your base. Then, deal 5 damage to an enemy ground unit. Then, deal 5 damage to the same unit.\nOn Attack: You may deal 1 damage to a base for every 5 damage on your base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "(ERRATA) On Attack: Choose a base. You may deal 1 damage to it for every 5 damage on your base.\nBoba Fett's Rancor's \"\"When Played\"\" ability deals 2 instances of damage to a unit. If both instances of damage are dealt to a unit with a Shield token, the Shield will only prevent the first damage.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2424880043",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 179
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 179
+    }
+  ],
+  "internalName": "boba-fetts-rancor#emotionally-complex-creature"
+}

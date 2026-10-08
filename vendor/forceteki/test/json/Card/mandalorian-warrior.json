@@ -1,0 +1,35 @@
+{
+  "title": "Mandalorian Warrior",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "When Played: You may give an Experience token to another Mandalorian unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1081897816",
+  "aspects": [],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 258
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 258
+    }
+  ],
+  "internalName": "mandalorian-warrior"
+}

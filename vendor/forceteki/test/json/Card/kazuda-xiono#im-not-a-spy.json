@@ -1,0 +1,40 @@
+{
+  "title": "Kazuda Xiono",
+  "subtitle": "I'm Not A Spy",
+  "cost": 4,
+  "hp": 6,
+  "power": 2,
+  "text": "Raid 2 (This unit gets +2/+0 while attacking.)\nWhile you control fewer resources than an opponent, this unit gets +2/+0.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4297412862",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "resistance"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 151
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 151
+    }
+  ],
+  "internalName": "kazuda-xiono#im-not-a-spy"
+}

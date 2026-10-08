@@ -1,0 +1,44 @@
+{
+  "title": "Cell Block Guard",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2524528997",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 238
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 229
+    },
+    {
+      "set": "SHD",
+      "number": 238
+    }
+  ],
+  "internalName": "cell-block-guard"
+}

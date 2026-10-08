@@ -1,0 +1,39 @@
+{
+  "title": "Mister Bones",
+  "subtitle": "I Performed Violence",
+  "cost": 1,
+  "hp": 1,
+  "power": 3,
+  "text": "On Attack: If you have no cards in your hand, you may deal 3 damage to a ground unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7789777396",
+  "aspects": [
+    "aggression",
+    "aggression"
+  ],
+  "traits": [
+    "fringe",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 154
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 154
+    }
+  ],
+  "internalName": "mister-bones#i-performed-violence"
+}

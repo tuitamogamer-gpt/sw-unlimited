@@ -1,0 +1,40 @@
+{
+  "title": "Defiant Hammerhead",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 6,
+  "power": 6,
+  "text": "On Attack: If this unit is attacking a unit, you may give this unit +4/+0 for this attack. If you do, defeat this unit after completing this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Resolve all triggered abilities from the attack before defeating the unit.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1272763174",
+  "aspects": [
+    "command",
+    "aggression"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 62
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 62
+    }
+  ],
+  "internalName": "defiant-hammerhead"
+}

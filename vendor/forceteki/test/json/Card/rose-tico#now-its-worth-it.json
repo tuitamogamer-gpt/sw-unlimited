@@ -1,0 +1,38 @@
+{
+  "title": "Rose Tico",
+  "subtitle": "Now It's Worth It",
+  "cost": 5,
+  "hp": 5,
+  "power": 5,
+  "text": "If you control a non-<uq> unit, this unit enters play ready.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1266774503",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "resistance"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 223
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 223
+    }
+  ],
+  "internalName": "rose-tico#now-its-worth-it"
+}

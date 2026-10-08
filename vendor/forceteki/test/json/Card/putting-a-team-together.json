@@ -1,0 +1,36 @@
+{
+  "title": "Putting a Team Together",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Search the top 8 cards of your deck for a Vigilance, Aggression, or Cunning unit, reveal it, and draw it. (Put the rest of the cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4634587022",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 166
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 166
+    }
+  ],
+  "internalName": "putting-a-team-together"
+}

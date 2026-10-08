@@ -1,0 +1,37 @@
+{
+  "title": "Bracca Shipbreaker",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 4,
+  "text": "On Attack: Discard a card from your deck.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Always discard from the top of a deck, unless an ability specifies otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3984861140",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 192
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 192
+    }
+  ],
+  "internalName": "bracca-shipbreaker"
+}

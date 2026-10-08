@@ -1,0 +1,36 @@
+{
+  "title": "Consumed by the Dark Side",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Give 2 Experience tokens to a unit, then deal 2 damage to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8621390428",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 239
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 239
+    }
+  ],
+  "internalName": "consumed-by-the-dark-side"
+}

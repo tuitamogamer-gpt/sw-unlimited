@@ -1,0 +1,38 @@
+{
+  "title": "At Attin Safety Droid",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "If your base would be dealt more than 4 damage, prevent all but 4 of that damage.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4072236059",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "republic",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 70
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 70
+    }
+  ],
+  "internalName": "at-attin-safety-droid"
+}

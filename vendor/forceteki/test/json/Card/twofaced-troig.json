@@ -1,0 +1,40 @@
+{
+  "title": "Two-Faced Troig",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "Sentinel\nWhen Played: You may have an opponent take control of this unit. If you do, create 2 Credit tokens.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6703132790",
+  "aspects": [
+    "cunning",
+    "vigilance"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 92
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 92
+    }
+  ],
+  "internalName": "twofaced-troig"
+}

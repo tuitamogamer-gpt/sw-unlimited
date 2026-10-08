@@ -1,0 +1,36 @@
+{
+  "title": "Common Cause",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Give a unit +1/+1 for this phase for each different aspect among units you control.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4006503809",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 167
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 167
+    }
+  ],
+  "internalName": "common-cause"
+}

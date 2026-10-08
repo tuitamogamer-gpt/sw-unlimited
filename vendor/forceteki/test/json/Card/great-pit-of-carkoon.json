@@ -1,0 +1,36 @@
+{
+  "title": "Great Pit of Carkoon",
+  "subtitle": "",
+  "cost": null,
+  "hp": 27,
+  "power": null,
+  "text": "Epic Action [discard a unit from your hand]: Search your deck for a card named The Sarlacc of Carkoon, reveal it, and draw it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "After searching your deck, shuffle it.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7897278827",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tatooine"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 23
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 23
+    }
+  ],
+  "internalName": "great-pit-of-carkoon"
+}

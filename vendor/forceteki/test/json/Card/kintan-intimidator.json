@@ -1,0 +1,38 @@
+{
+  "title": "Kintan Intimidator",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 4,
+  "power": 1,
+  "text": "On Attack: Exhaust the defender.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9725921907",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 183
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 183
+    }
+  ],
+  "internalName": "kintan-intimidator"
+}

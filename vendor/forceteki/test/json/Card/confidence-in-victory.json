@@ -1,0 +1,37 @@
+{
+  "title": "Confidence in Victory",
+  "subtitle": "",
+  "cost": 10,
+  "hp": null,
+  "power": null,
+  "text": "Play only as your first action in the action phase.\nChoose an arena. At the start of the regroup phase, if you are the only player who controls units in that arena, you win the game.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Confidence in Victory can only be played by taking the \"Play a Card\" action to play it as your first action in the action phase. It can't be played as the result of another action, even if it it's still your first turn.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4234231959",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 145
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 145
+    }
+  ],
+  "internalName": "confidence-in-victory"
+}

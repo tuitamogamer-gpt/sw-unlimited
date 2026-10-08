@@ -1,0 +1,46 @@
+{
+  "title": "Death Squadron Star Destroyer",
+  "subtitle": "",
+  "cost": 7,
+  "hp": 6,
+  "power": 5,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0162722840",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 79
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 79
+    },
+    {
+      "set": "IBH",
+      "number": 98
+    }
+  ],
+  "internalName": "death-squadron-star-destroyer"
+}

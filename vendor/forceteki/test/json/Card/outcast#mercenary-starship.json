@@ -1,0 +1,40 @@
+{
+  "title": "Outcast",
+  "subtitle": "Mercenary Starship",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "When a friendly unit enters play (including this one): It gets +1/+0 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5394891260",
+  "aspects": [
+    "aggression",
+    "cunning"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 41
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 41
+    }
+  ],
+  "internalName": "outcast#mercenary-starship"
+}

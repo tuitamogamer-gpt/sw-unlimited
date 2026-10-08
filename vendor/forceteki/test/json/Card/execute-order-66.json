@@ -1,0 +1,36 @@
+{
+  "title": "Execute Order 66",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Deal 6 damage to each Jedi unit. For each unit defeated this way, its controller creates a Clone Trooper token.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4569767827",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 239
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 239
+    }
+  ],
+  "internalName": "execute-order-66"
+}

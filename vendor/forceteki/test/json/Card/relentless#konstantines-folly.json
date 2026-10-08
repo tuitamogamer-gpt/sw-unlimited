@@ -1,0 +1,40 @@
+{
+  "title": "Relentless",
+  "subtitle": "Konstantine's Folly",
+  "cost": 9,
+  "hp": 8,
+  "power": 8,
+  "text": "The first event played by each opponent each round loses all abilities.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3401690666",
+  "aspects": [
+    "villainy",
+    "command"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 89
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 89
+    }
+  ],
+  "internalName": "relentless#konstantines-folly"
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Aayla Secura",
+  "subtitle": "Master of the Blade",
+  "cost": 5,
+  "hp": 5,
+  "power": 6,
+  "text": "Coordinate — On Attack: Prevent all combat damage that would be dealt to this unit for this attack.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "“Combat damage” is only the damage dealt during the “deal combat damage” step of an attack.\n(ERRATA) Trait(s): Force, Jedi, Republic, Twi'lek\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6190335038",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic",
+    "twi'lek"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "coordinate"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 96
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 96
+    }
+  ],
+  "internalName": "aayla-secura#master-of-the-blade"
+}

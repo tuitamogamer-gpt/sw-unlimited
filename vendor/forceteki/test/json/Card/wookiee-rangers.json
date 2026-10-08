@@ -1,0 +1,39 @@
+{
+  "title": "Wookiee Rangers",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 6,
+  "power": 5,
+  "text": "While you control another Wookiee unit or a Kashyyyk base, this unit gains Sentinel. (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9324135917",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 142
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 142
+    }
+  ],
+  "internalName": "wookiee-rangers"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Bix Caleen",
+  "subtitle": "Selling Scrap",
+  "cost": 4,
+  "hp": 5,
+  "power": 4,
+  "text": "When Played/On Attack: You may discard a card from your hand. If you do, create a Credit token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5249469281",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 236
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 236
+    }
+  ],
+  "internalName": "bix-caleen#selling-scrap"
+}

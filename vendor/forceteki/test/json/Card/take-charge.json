@@ -1,0 +1,36 @@
+{
+  "title": "Take Charge",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "This event costs 1 resource less to play for each friendly leader unit.\nGive an Experience token to each of up to 3 units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4540524041",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 60
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 60
+    }
+  ],
+  "internalName": "take-charge"
+}

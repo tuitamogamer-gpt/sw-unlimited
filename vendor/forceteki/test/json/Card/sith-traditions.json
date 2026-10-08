@@ -1,0 +1,38 @@
+{
+  "title": "Sith Traditions",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 1,
+  "text": "Attach to a non-Vehicle unit.\nAttached unit gains: “On Attack: Give an Experience token to this unit.” and “When Defeated: Give an Experience token to a friendly unit.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "1377604550",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "sith",
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 52
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 52
+    }
+  ],
+  "internalName": "sith-traditions"
+}

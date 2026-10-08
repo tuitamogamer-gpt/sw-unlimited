@@ -1,0 +1,42 @@
+{
+  "title": "Gold Leader",
+  "subtitle": "Fastest Ship in the Fleet",
+  "cost": 6,
+  "hp": 5,
+  "power": 5,
+  "text": "Shielded (When you play this unit, give a Shield token to it.)\nWhile this unit is defending, the attacker gets –1/–0.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6300552434",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 54
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 54
+    }
+  ],
+  "internalName": "gold-leader#fastest-ship-in-the-fleet"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Profundity",
+  "subtitle": "We Fight!",
+  "cost": 9,
+  "hp": 9,
+  "power": 8,
+  "text": "Overwhelm\nWhen Played/When Defeated: Choose a player. They discard a card from their hand. Then, if they have more cards in their hand than you, they discard a card from their hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7072861308",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 154
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 154
+    }
+  ],
+  "internalName": "profundity#we-fight"
+}

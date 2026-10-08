@@ -1,0 +1,42 @@
+{
+  "title": "Smuggler's YT-2400",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 4,
+  "text": "Ambush (When you play this unit, it may attack an enemy unit.)\nWhen Played: You may pay 1 resource. If you do, this unit gets +1/+1 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2352370791",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 148
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 148
+    }
+  ],
+  "internalName": "smugglers-yt2400"
+}

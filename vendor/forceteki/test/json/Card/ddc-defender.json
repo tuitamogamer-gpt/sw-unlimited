@@ -1,0 +1,38 @@
+{
+  "title": "DDC Defender",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 0,
+  "power": 1,
+  "text": "Attach to a non-Vehicle unit.\nAttached unit gains: “On Defense: You may deal 1 damage to a unit in this unit's arena and exhaust it.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "“On Defense” abilities trigger at the same time as “On Attack” abilities.\n",
+  "upgradePower": 1,
+  "upgradeHp": 0,
+  "id": "9650520838",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "item",
+    "weapon"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 210
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 210
+    }
+  ],
+  "internalName": "ddc-defender"
+}

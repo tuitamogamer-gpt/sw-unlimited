@@ -1,0 +1,37 @@
+{
+  "title": "Inspector's Shuttle",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "When Played: Name a card, then an opponent reveals their hand. For each copy of the named card in their hand, give an Experience token to this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "(ERRATA) When Played: Name a card, then an opponent reveals their hand. For each card with that name in their hand, give an Experience token to this unit.\nAbilities that refer to a card’s “name” do not include the subtitle of the card.\nIf there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3789032775",
+  "aspects": [],
+  "traits": [
+    "republic",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 260
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 260
+    }
+  ],
+  "internalName": "inspectors-shuttle"
+}

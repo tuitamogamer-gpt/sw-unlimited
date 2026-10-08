@@ -1,0 +1,40 @@
+{
+  "title": "Babwa Venomor",
+  "subtitle": "Burning Kashyyyk",
+  "cost": 2,
+  "hp": 4,
+  "power": 4,
+  "text": "Overwhelm\nWhen Played: An opponent creates a Beast token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\nIf there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8185409655",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 152
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 152
+    }
+  ],
+  "internalName": "babwa-venomor#burning-kashyyyk"
+}

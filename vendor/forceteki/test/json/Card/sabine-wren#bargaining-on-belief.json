@@ -1,0 +1,42 @@
+{
+  "title": "Sabine Wren",
+  "subtitle": "Bargaining on Belief",
+  "cost": 5,
+  "hp": 5,
+  "power": 3,
+  "text": "Action [Exhaust]: An opponent gives 2 Advantage tokens to a unit they control. If they do, the next unit you play this phase gains Shielded for this phase. (When you play that unit, give a Shield token to it.)",
+  "deployBox": "On Attack: The next unit you play this phase gains Shielded for this phase.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Once Sabine's “On Attack” ability resolves, it remains active even if she is defeated before you play your next unit.\nIf there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6706120928",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "jedi",
+    "mandalorian",
+    "spectre"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 6
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 6
+    }
+  ],
+  "internalName": "sabine-wren#bargaining-on-belief"
+}

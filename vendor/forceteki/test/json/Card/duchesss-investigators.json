@@ -1,0 +1,37 @@
+{
+  "title": "Duchess's Investigators",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 4,
+  "power": 4,
+  "text": "When Played: You may disclose Cunning (reveal a card from your hand with this aspect icon). If you do, each opponent discards a random card from their hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6838167753",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 223
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 223
+    }
+  ],
+  "internalName": "duchesss-investigators"
+}

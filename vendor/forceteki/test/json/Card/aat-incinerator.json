@@ -1,0 +1,39 @@
+{
+  "title": "AAT Incinerator",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "When Played: Deal 1 damage to each of up to 4 other ground units. If no friendly units were damaged by this ability, deal 2 damage to your base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6702516903",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "tank"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 169
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 169
+    }
+  ],
+  "internalName": "aat-incinerator"
+}

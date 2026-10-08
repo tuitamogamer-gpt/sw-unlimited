@@ -1,0 +1,38 @@
+{
+  "title": "Smuggler's Aid",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Heal 3 damage from your base.\nSmuggle [3 resources Heroism] (If this card is a resource, you may play it for its smuggle cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0866321455",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [
+    "smuggle"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 252
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 252
+    }
+  ],
+  "internalName": "smugglers-aid"
+}

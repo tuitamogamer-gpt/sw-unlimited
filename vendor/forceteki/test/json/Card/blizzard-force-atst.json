@@ -1,0 +1,50 @@
+{
+  "title": "Blizzard Force AT-ST",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 4,
+  "power": 5,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6199578966",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "walker"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 70
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 70
+    },
+    {
+      "set": "IBH",
+      "number": 89
+    },
+    {
+      "set": "IBH",
+      "number": 103
+    }
+  ],
+  "internalName": "blizzard-force-atst"
+}

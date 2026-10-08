@@ -1,0 +1,42 @@
+{
+  "title": "Fennec Shand",
+  "subtitle": "The Galaxy Is Dangerous",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "Ambush (When you play this unit, she may attack an enemy unit.)\nSaboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1127236116",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush",
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 192
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 192
+    }
+  ],
+  "internalName": "fennec-shand#the-galaxy-is-dangerous"
+}

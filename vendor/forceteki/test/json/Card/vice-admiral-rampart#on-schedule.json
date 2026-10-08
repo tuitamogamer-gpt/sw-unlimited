@@ -1,0 +1,39 @@
+{
+  "title": "Vice Admiral Rampart",
+  "subtitle": "On Schedule",
+  "cost": 4,
+  "hp": 6,
+  "power": 3,
+  "text": "On Attack: You may disclose CommandCommandVillainy (reveal cards from your hand with these aspect icons among them). If you do, give an Experience token to each of up to 2 other units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6496365934",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 85
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 85
+    }
+  ],
+  "internalName": "vice-admiral-rampart#on-schedule"
+}

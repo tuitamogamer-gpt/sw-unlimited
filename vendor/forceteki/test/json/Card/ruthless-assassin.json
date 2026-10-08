@@ -1,0 +1,40 @@
+{
+  "title": "Ruthless Assassin",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 3,
+  "text": "Overwhelm (When attacking an enemy unit, deal excess damage to the opponent's base.)\nWhen Played: Deal 2 damage to a friendly unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "If Ruthless Assassin is the only friendly unit in play, it must be chosen by its “When Played” ability.\nShields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3803148745",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 235
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 235
+    }
+  ],
+  "internalName": "ruthless-assassin"
+}

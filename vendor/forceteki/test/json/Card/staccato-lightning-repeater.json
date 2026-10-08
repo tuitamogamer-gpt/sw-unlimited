@@ -1,0 +1,38 @@
+{
+  "title": "\"Staccato Lightning\" Repeater",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 1,
+  "power": 3,
+  "text": "Attach to a non-Vehicle unit.\nWhen Played: Deal 1 damage to each of up to 3 different ground units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 3,
+  "upgradeHp": 1,
+  "id": "9671644417",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "item",
+    "weapon"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 187
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 187
+    }
+  ],
+  "internalName": "staccato-lightning-repeater"
+}

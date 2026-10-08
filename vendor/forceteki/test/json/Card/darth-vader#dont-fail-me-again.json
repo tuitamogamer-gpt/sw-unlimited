@@ -1,0 +1,40 @@
+{
+  "title": "Darth Vader",
+  "subtitle": "Don't Fail Me Again",
+  "cost": 6,
+  "hp": 8,
+  "power": 3,
+  "text": "Action [1 resource, Exhaust]: Deal 1 damage to a base.",
+  "deployBox": "On Attack: Deal 2 damage to a base.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader. (Flip him, ready him, and move him to the ground arena.)",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9389694773",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "imperial",
+    "sith"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 53
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 53
+    }
+  ],
+  "internalName": "darth-vader#dont-fail-me-again"
+}

@@ -1,0 +1,35 @@
+{
+  "title": "LEP Ratcatcher",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 1,
+  "text": "When Played: You may deal 1 damage to a ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2632789465",
+  "aspects": [],
+  "traits": [
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 259
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 259
+    }
+  ],
+  "internalName": "lep-ratcatcher"
+}

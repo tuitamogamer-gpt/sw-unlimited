@@ -1,0 +1,39 @@
+{
+  "title": "The Legacy Run",
+  "subtitle": "Doomed Debris",
+  "cost": 5,
+  "hp": 3,
+  "power": 3,
+  "text": "When Defeated: Deal 6 damage divided as you choose among enemy units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "All damage dealt by The Legacy Run's \"When Defeated\" ability is dealt simultaneously.\nYou can choose to assign more damage to a unit than it has remaining HP.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7793687843",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 213
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 213
+    }
+  ],
+  "internalName": "the-legacy-run#doomed-debris"
+}

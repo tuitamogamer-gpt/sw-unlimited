@@ -1,0 +1,38 @@
+{
+  "title": "Mylaya Rider",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 4,
+  "power": 4,
+  "text": "When Played: Create a Beast token and heal 2 damage from your base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6717068953",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "creature",
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 262
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 262
+    }
+  ],
+  "internalName": "mylaya-rider"
+}

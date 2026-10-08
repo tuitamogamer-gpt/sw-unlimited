@@ -1,0 +1,36 @@
+{
+  "title": "Traitorous",
+  "subtitle": null,
+  "cost": 5,
+  "hp": 0,
+  "power": 0,
+  "text": "When this upgrade becomes attached to a non‑leader unit that costs 3 or less: Take control of that unit.\n\nWhen this upgrade becomes unattached from a unit: That unit's owner takes control of it.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n(ERRATA) Templating update: “Becomes attached” changes to “attaches”. “Becomes unattached” updates to “detaches”.\n",
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "8055390529",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 122
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 122
+    }
+  ],
+  "internalName": "traitorous"
+}

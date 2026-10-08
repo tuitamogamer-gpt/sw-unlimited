@@ -1,0 +1,36 @@
+{
+  "title": "Capital City",
+  "subtitle": null,
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": null,
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6366665313",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "lothal"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 20
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 20
+    }
+  ],
+  "internalName": "capital-city"
+}

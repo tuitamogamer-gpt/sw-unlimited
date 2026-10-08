@@ -1,0 +1,39 @@
+{
+  "title": "Gar Saxon",
+  "subtitle": "Coveting Power",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "When you play an upgrade on this unit: You may create a Mandalorian token. Use this ability only once each round.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Attaching a token upgrade is not considered playing an upgrade and does not trigger Gar Saxon's ability.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6754905608",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "mandalorian",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 47
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 47
+    }
+  ],
+  "internalName": "gar-saxon#coveting-power"
+}

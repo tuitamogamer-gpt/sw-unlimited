@@ -1,0 +1,41 @@
+{
+  "title": "B2EMO",
+  "subtitle": "That's Two Lies",
+  "cost": 1,
+  "hp": 4,
+  "power": 0,
+  "text": "Restore 1\nOn Attack: You may disclose HeroismHeroism (reveal cards from your hand with these aspect icons among them). If you do, give a unit Sentinel for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5030756090",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "fringe",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore",
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 248
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 248
+    }
+  ],
+  "internalName": "b2emo#thats-two-lies"
+}

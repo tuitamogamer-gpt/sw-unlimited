@@ -1,0 +1,40 @@
+{
+  "title": "Battle-Scarred Destroyer",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 8,
+  "power": 7,
+  "text": "When Played: Deal 4 damage to a friendly unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0405244910",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 158
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 158
+    }
+  ],
+  "internalName": "battlescarred-destroyer"
+}

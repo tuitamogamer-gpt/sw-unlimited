@@ -1,0 +1,39 @@
+{
+  "title": "Owen Lars",
+  "subtitle": "Devoted Uncle",
+  "cost": 1,
+  "hp": 3,
+  "power": 0,
+  "text": "Restore 2\nWhen Defeated: Search the top 5 cards of your deck for a Force unit, reveal it, and draw it. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5264998537",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 57
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 57
+    }
+  ],
+  "internalName": "owen-lars#devoted-uncle"
+}

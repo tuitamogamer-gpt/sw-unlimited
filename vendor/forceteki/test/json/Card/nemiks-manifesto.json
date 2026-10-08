@@ -1,0 +1,38 @@
+{
+  "title": "Nemik's Manifesto",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 1,
+  "text": "Attach to a non-Vehicle unit.\nAttached unit gains the Rebel trait and: “When Defeated: Deal 1 damage to each enemy base for each other friendly Rebel unit.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "9242248347",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "item",
+    "rebel"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 156
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 156
+    }
+  ],
+  "internalName": "nemiks-manifesto"
+}

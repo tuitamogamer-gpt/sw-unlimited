@@ -1,0 +1,39 @@
+{
+  "title": "Clan Wren Loyalist",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 3,
+  "text": "When Played: Search the top 5 cards of your deck for a card that shares a Trait with a unit you control, reveal it, and draw it. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0447040261",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 107
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 107
+    }
+  ],
+  "internalName": "clan-wren-loyalist"
+}

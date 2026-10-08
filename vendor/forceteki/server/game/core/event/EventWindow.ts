@@ -1,0 +1,349 @@
+import type { AbilityContext } from '../ability/AbilityContext';
+import { AbilityType } from '../Constants';
+import { ReplacementEffectWindow } from '../gameSteps/abilityWindow/ReplacementEffectWindow';
+import { TriggeredAbilityWindow } from '../gameSteps/abilityWindow/TriggeredAbilityWindow';
+import { BaseStepWithPipeline } from '../gameSteps/BaseStepWithPipeline';
+import { SimpleStep } from '../gameSteps/SimpleStep';
+import { Contract } from '../utils/Contract';
+
+export enum TriggerHandlingMode {
+
+    /** Any abilities triggered during this event window will not be resolved immediately but passed to the parent window */
+    PassesTriggersToParentWindow = 'passesTriggersToParentWindow',
+
+    /** Any abilities triggered during this event window or passed up from child windows will be resolved immediately. */
+    ResolvesTriggers = 'resolvesTriggers',
+
+    /** This event window is not a type that should trigger abilities, so any triggers that happen are an error */
+    CannotHaveTriggers = 'cannotHaveTriggers',
+}
+
+export enum SubwindowEventHandlingMode {
+
+    /** Sub-window events (typically defeats) queued during this event window are resolved in a new window once this window's events have resolved */
+    ResolvesSubwindowEvents = 'resolvesSubwindowEvents',
+
+    /**
+     * Sub-window events queued during this event window are passed to the parent window, so they resolve only after the parent window's
+     * events have resolved and emitted their triggers
+     */
+    PassesSubwindowEventsToParentWindow = 'passesSubwindowEventsToParentWindow',
+}
+
+export class EventWindow extends BaseStepWithPipeline {
+    protected _events: any[] = [];
+    protected _triggeredAbilityWindow?: TriggeredAbilityWindow = null;
+
+    private parentWindow?: EventWindow = null;
+    private resolvedEvents: any[] = [];
+    private subwindowEvents: any[] = [];
+    private subAbilityStepFn?: () => AbilityContext = null;
+    private windowDepth?: number = null;
+    private postEventResolutionCallbacks: (() => void)[] = [];
+
+    public get events() {
+        return this._events;
+    }
+
+    public get triggerHandlingMode() {
+        return this._triggerHandlingMode;
+    }
+
+    public get subwindowEventHandlingMode() {
+        return this._subwindowEventHandlingMode;
+    }
+
+    public get triggeredAbilityWindow() {
+        if (this.triggerHandlingMode === TriggerHandlingMode.CannotHaveTriggers) {
+            Contract.fail(`Attempting to access triggered ability window for type(s) ${this} which cannot trigger abilities`);
+        }
+
+        return this._triggeredAbilityWindow;
+    }
+
+    /** Creates an object holding one or more GameEvents that occur at the same time.
+     *  @param game - The game object.
+     *  @param {GameEvent[]} events - Events belonging to this window.
+     *  @param {TriggerHandlingMode} triggerHandlingMode - Whether this event window should create its own TriggeredAbilityWindow which will resolve after its events (and any nested events).
+     * If set to {@link TriggerHandlingMode.PassesTriggersToParentWindow}, this window will borrow its parent EventWindow's TriggeredAbilityWindow, which will receive any triggers that trigger
+     * during this EventWindow's events, to be resolved after all nested events of its owner are done.
+     *  @param {SubwindowEventHandlingMode} subwindowEventHandlingMode - Whether sub-window events (typically defeats) queued during this window are resolved by
+     * this window or passed to its parent window.
+     */
+    public constructor(
+        game,
+        events,
+        private _triggerHandlingMode: TriggerHandlingMode = TriggerHandlingMode.PassesTriggersToParentWindow,
+        private _subwindowEventHandlingMode: SubwindowEventHandlingMode = SubwindowEventHandlingMode.ResolvesSubwindowEvents
+    ) {
+        super(game);
+
+        events.forEach((event) => {
+            if (event.canResolve) {
+                this.addEvent(event);
+            }
+        });
+
+        this.initialise();
+    }
+
+    public initialise() {
+        this.pipeline.initialise([
+            new SimpleStep(this.game, () => this.setParentEventWindow(), 'setParentEventWindow'),
+            new SimpleStep(this.game, () => this.checkEventCondition(), 'checkEventCondition'),
+            new SimpleStep(this.game, () => this.openReplacementEffectWindow(), 'openReplacementEffectWindow'),
+            new SimpleStep(this.game, () => this.generateContingentEventsAndReplacementWindow(), 'generateContingentEventsAndReplacementWindow'),
+            new SimpleStep(this.game, () => this.preResolutionEffects(), 'preResolutionEffects'),
+            new SimpleStep(this.game, () => this.resolveEvents(), 'resolveEvents'),
+            new SimpleStep(this.game, () => this.checkUniqueRule(), 'checkUniqueRule'),
+            new SimpleStep(this.game, () => this.resolveGameState(), 'resolveGameState'),
+            new SimpleStep(this.game, () => this.postResolutionTriggers(), 'postResolutionTriggers'),
+            new SimpleStep(this.game, () => this.resolveSubwindowEvents(), 'resolveSubwindowEvents'),
+            new SimpleStep(this.game, () => this.resolveSubAbilityStep(), 'resolveSubAbilityStep'),
+            new SimpleStep(this.game, () => this.resolveTriggersIfNecessary(), 'resolveTriggersIfNecessary'),
+            new SimpleStep(this.game, () => this.cleanup(), 'cleanup')
+        ]);
+    }
+
+    public override continue() {
+        const complete = super.continue();
+
+        // A pause for player input breaks an automatic loop. Count only the
+        // uninterrupted nesting depth so voluntary repeated combos can continue.
+        if (!complete) {
+            this.windowDepth = 0;
+        }
+
+        return complete;
+    }
+
+    public addEvent(event) {
+        event.setWindow(this);
+        this._events.push(event);
+        return event;
+    }
+
+    public removeEvent(event) {
+        this._events = this._events.filter((e) => e !== event);
+        return event;
+    }
+
+    /**
+     * "Sub-ability-steps" are subsequent steps after the initial ability effect, such as "then" or "if you do."
+     * This function sets a generator method which will be used to evaluate the context after event resolution and,
+     * if appropriate, create the sub-ability step to be resolved next
+     */
+    public setSubAbilityStep(subAbilityStepFn: () => AbilityContext) {
+        Contract.assertIsNullLike(this.subAbilityStepFn, 'Attempting to set event window\'s then ability but it is already set');
+
+        this.subAbilityStepFn = subAbilityStepFn;
+    }
+
+    /**
+     * Adds "sub-window" events which will have priority resolution and be resolved immediately after the currently resolving
+     * set of events, preceding the next steps of the currently resolving ability.
+     *
+     * Typically used for defeat events.
+     */
+    public addSubwindowEvents(events) {
+        this.subwindowEvents = this.subwindowEvents.concat(events);
+    }
+
+    /**
+     * Registers a callback to be invoked after every event in this window has finished resolving,
+     * but before {@link resolveGameState} runs. Used to defer work that needs to happen "after the
+     * simultaneous batch" — for example, defeat checks triggered by damage. Deferring lets all
+     * simultaneous events in the same window (such as an HP-buffing upgrade attaching) apply their
+     * effects before the defeat decision is locked in.
+     */
+    public addPostEventResolutionCallback(callback: () => void) {
+        this.postEventResolutionCallbacks.push(callback);
+    }
+
+    /** Set parent event window and initialize triggering window based on configured rules and parent window settings (if relevant) */
+    private setParentEventWindow() {
+        this.parentWindow = this.game.currentEventWindow;
+        this.windowDepth = this.parentWindow ? this.parentWindow.windowDepth + 1 : 0;
+
+        if (this.windowDepth >= 50) {
+            throw new Error('Event window depth has reached 50, likely caught in an infinite loop');
+        }
+
+        this.game.currentEventWindow = this;
+
+        if (this._triggerHandlingMode === TriggerHandlingMode.PassesTriggersToParentWindow) {
+            Contract.assertNotNullLike(this.parentWindow, `Attempting to create event window ${this} as a child window but no parent window exists`);
+            Contract.assertFalse(this.parentWindow.triggerHandlingMode === TriggerHandlingMode.CannotHaveTriggers, `${this} is attempting pass triggers to ${this.parentWindow} which cannot have ability triggers`);
+        }
+
+        if (this._subwindowEventHandlingMode === SubwindowEventHandlingMode.PassesSubwindowEventsToParentWindow) {
+            Contract.assertNotNullLike(this.parentWindow, `Attempting to pass sub-window events of ${this} to a parent window but no parent window exists`);
+        }
+
+        switch (this.triggerHandlingMode) {
+            case TriggerHandlingMode.PassesTriggersToParentWindow:
+                this._triggeredAbilityWindow = this.parentWindow.triggeredAbilityWindow;
+                break;
+            case TriggerHandlingMode.ResolvesTriggers:
+                this._triggeredAbilityWindow = new TriggeredAbilityWindow(this.game, AbilityType.Triggered, this);
+                break;
+            case TriggerHandlingMode.CannotHaveTriggers:
+                this._triggeredAbilityWindow = null;
+                break;
+            default:
+                Contract.fail(`Unknown value for triggerHandlingMode: ${this.triggerHandlingMode}`);
+        }
+    }
+
+    private checkEventCondition() {
+        this._events.forEach((event) => event.checkCondition());
+    }
+
+    private openReplacementEffectWindow() {
+        if (this._events.length === 0) {
+            return;
+        }
+
+        // Some effects may generate their own replacement events due to game rules (e.g. if a leader unit would
+        // change control, it is defeated instead). We need to pick those up here and add them to the event window.
+        const replacementEvents = this.events.flatMap((event) => event.generateReplacementEvents());
+        replacementEvents.forEach((event) => this.addEvent(event));
+
+        // This will pick up explicit replacement effects like the ones directly triggered by card abilities
+        const replacementEffectWindow = new ReplacementEffectWindow(this.game, this);
+        replacementEffectWindow.emitEvents();
+        this.queueStep(replacementEffectWindow);
+    }
+
+    /**
+     * Creates any "contingent" events which will happen in the same window as the primary event
+     * but will be resolved after it in order. The main use case for this is upgrades being
+     * defeated at the same time as the parent card holding them.
+     */
+    private generateContingentEventsAndReplacementWindow() {
+        let contingentEvents = [];
+        this._events.forEach((event) => {
+            contingentEvents = contingentEvents.concat(event.generateContingentEvents());
+        });
+        contingentEvents.forEach((event) => this.addEvent(event));
+
+        const replacementEffectWindow = new ReplacementEffectWindow(this.game);
+        replacementEffectWindow.addTriggeringEvents(contingentEvents);
+        replacementEffectWindow.emitEvents();
+        this.queueStep(replacementEffectWindow);
+    }
+
+    private preResolutionEffects() {
+        this._events.forEach((event) => event.preResolutionEffect());
+    }
+
+    protected resolveEvents() {
+        const eventsToResolve = this._events.sort((event) => event.order);
+
+        // we emit triggered abilities here to ensure that they get triggered in case e.g. an ability is blanked during event resolution
+        if (this.triggerHandlingMode !== TriggerHandlingMode.CannotHaveTriggers) {
+            this._triggeredAbilityWindow.addTriggeringEvents(this._events);
+            this._triggeredAbilityWindow.emitEvents(this._events);
+        }
+
+        for (const event of eventsToResolve) {
+            // need to checkCondition here to ensure the event won't fizzle due to another event's resolution
+            event.checkCondition();
+            if (event.canResolve) {
+                this.game.emit(event.name + ':preResolve', event);
+                event.executeHandler();
+                this.game.emit(event.name, event);
+
+                this.resolvedEvents.push(event);
+            }
+        }
+
+        // Run any callbacks deferred from event handlers (e.g. damage-driven defeat checks).
+        // These run after every event in this window has resolved so they see the unit's final
+        // HP, damage, and upgrade state for the batch — preserving simultaneous-resolution semantics.
+        const callbacks = this.postEventResolutionCallbacks;
+        this.postEventResolutionCallbacks = [];
+        for (const callback of callbacks) {
+            callback();
+        }
+    }
+
+    // check for duplicates of unique cards
+    private checkUniqueRule() {
+        this.game.checkUniqueRule();
+    }
+
+    // resolve game state and emit triggers again
+    // this is to catch triggers on cards that entered play or gained abilities during event resolution
+    private resolveGameState() {
+        // TODO: understand if resolveGameState really needs the resolvedEvents array or not
+        this.game.resolveGameState(this.resolvedEvents.some((event) => event.handler), this.resolvedEvents);
+    }
+
+    private postResolutionTriggers() {
+        // emit the events a second time post-resolution for the sake of potential keywords gained during
+        // resolution (such as Ambush) which came online during resolveGameState() and need to register triggers
+        for (const event of this.resolvedEvents) {
+            this.game.emit(event.name + ':postResolve', event);
+        }
+
+        // trigger again here to catch any events for cards that entered play during event resolution
+        if (this.triggerHandlingMode !== TriggerHandlingMode.CannotHaveTriggers) {
+            this._triggeredAbilityWindow.emitEvents(this.resolvedEvents);
+        }
+    }
+
+    // resolve any events queued for a subwindow (typically defeat events)
+    private resolveSubwindowEvents() {
+        if (this.subwindowEvents.length === 0) {
+            return;
+        }
+
+        switch (this.subwindowEventHandlingMode) {
+            case SubwindowEventHandlingMode.ResolvesSubwindowEvents:
+                this.queueStep(new EventWindow(this.game, this.subwindowEvents));
+                break;
+            case SubwindowEventHandlingMode.PassesSubwindowEventsToParentWindow:
+                this.parentWindow.addSubwindowEvents(this.subwindowEvents);
+                this.subwindowEvents = [];
+                break;
+            default:
+                Contract.fail(`Unknown value for subwindowEventHandlingMode: ${this.subwindowEventHandlingMode}`);
+        }
+    }
+
+    // if the effect has an additional "then" or "if you do (not)" step, resolve it
+    private resolveSubAbilityStep() {
+        if (this.subAbilityStepFn == null) {
+            return;
+        }
+
+        const subAbilityStep = this.subAbilityStepFn();
+        if (!!subAbilityStep) {
+            this.game.resolveAbility(subAbilityStep);
+        }
+    }
+
+    protected resolveTriggersIfNecessary() {
+        if (this.triggerHandlingMode === TriggerHandlingMode.ResolvesTriggers) {
+            this.queueStep(this._triggeredAbilityWindow);
+        }
+    }
+
+    private cleanup() {
+        for (const event of this.resolvedEvents) {
+            event.cleanup();
+        }
+
+        if (this.parentWindow) {
+            this.parentWindow.checkEventCondition();
+            this.game.currentEventWindow = this.parentWindow;
+        } else {
+            this.game.currentEventWindow = null;
+        }
+    }
+
+    public override toString() {
+        return `'EventWindow: ${this._events.map((event) => event.name).join(', ')}'`;
+    }
+}

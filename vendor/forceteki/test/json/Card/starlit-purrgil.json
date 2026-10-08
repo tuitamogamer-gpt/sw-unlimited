@@ -1,0 +1,39 @@
+{
+  "title": "Starlit Purrgil",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 5,
+  "power": 4,
+  "text": "Restore 2 (When this unit attacks, heal 2 damage from your base.)\nWhen Played: You may exhaust a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7704416113",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "space",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 92
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 92
+    }
+  ],
+  "internalName": "starlit-purrgil"
+}

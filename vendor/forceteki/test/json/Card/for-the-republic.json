@@ -1,0 +1,40 @@
+{
+  "title": "For The Republic",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 2,
+  "text": "If you control 3 or more Republic units, this upgrade costs 2 resources less to play.\nAttached unit gains: “Coordinate — Restore 2.”",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 2,
+  "upgradeHp": 2,
+  "id": "7884488904",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "republic"
+  ],
+  "keywords": [
+    "coordinate",
+    "restore"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 51
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 51
+    }
+  ],
+  "internalName": "for-the-republic"
+}

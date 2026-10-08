@@ -1,0 +1,40 @@
+{
+  "title": "Ki-Adi-Mundi",
+  "subtitle": "We Must Push On",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "When Played: You may use the Force (lose your Force token). If you do, draw 2 cards.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0531276830",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 146
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 146
+    }
+  ],
+  "internalName": "kiadimundi#we-must-push-on"
+}

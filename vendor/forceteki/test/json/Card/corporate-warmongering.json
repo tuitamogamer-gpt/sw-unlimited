@@ -1,0 +1,37 @@
+{
+  "title": "Corporate Warmongering",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Give a friendly unit +3/+3 for this phase. Give each other friendly unit +1/+1 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9502538432",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 91
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 91
+    }
+  ],
+  "internalName": "corporate-warmongering"
+}

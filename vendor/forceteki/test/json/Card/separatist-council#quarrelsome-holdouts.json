@@ -1,0 +1,39 @@
+{
+  "title": "Separatist Council",
+  "subtitle": "Quarrelsome Holdouts",
+  "cost": 4,
+  "hp": 6,
+  "power": 2,
+  "text": "When Played/On Attack: Choose one:\nCreate a Battle Droid token.\nGive 2 Experience tokens to a Battle Droid token.\n",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7677772050",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 49
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 49
+    }
+  ],
+  "internalName": "separatist-council#quarrelsome-holdouts"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "No Glory, Only Results",
+  "subtitle": "",
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "Take control of a non-leader unit, then defeat it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9810057689",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 43
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 43
+    }
+  ],
+  "internalName": "no-glory-only-results"
+}

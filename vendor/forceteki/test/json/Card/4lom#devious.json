@@ -1,0 +1,41 @@
+{
+  "title": "4-LOM",
+  "subtitle": "Devious",
+  "cost": 5,
+  "hp": 5,
+  "power": 4,
+  "text": "When Played: You may attack with a friendly Bounty Hunter unit, even if it's exhausted. It can't attack bases for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Units that can’t attack bases can still damage bases through other abilities, like Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8950998844",
+  "aspects": [
+    "command",
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "droid",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 65
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 65
+    }
+  ],
+  "internalName": "4lom#devious"
+}

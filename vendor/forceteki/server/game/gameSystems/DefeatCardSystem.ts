@@ -1,0 +1,186 @@
+import type { AbilityContext } from '../core/ability/AbilityContext';
+import { Card } from '../core/card/Card';
+import type { MsgArg } from '../core/chat/GameChat';
+import { AbilityRestriction, CardType, EventName, GameStateChangeRequired, WildcardCardType, ZoneName } from '../core/Constants';
+import { addLastKnownInformationToEvent } from '../core/event/LastKnownInformation';
+import { CardTargetSystem, type ICardTargetSystemProperties } from '../core/gameSystem/CardTargetSystem';
+import type { PlayerOrCard } from '../core/gameSystem/GameSystem';
+import { Contract } from '../core/utils/Contract';
+import { ChatHelpers } from '../core/chat/ChatHelpers';
+import type { IDamageSource, IDefeatSource } from '../IDamageOrDefeatSource';
+import { DefeatSourceType } from '../IDamageOrDefeatSource';
+
+export interface IDefeatCardPropertiesBase extends ICardTargetSystemProperties {
+    defeatSource?: IDamageSource | DefeatSourceType.Ability | DefeatSourceType.UniqueRule | DefeatSourceType.FrameworkEffect;
+
+    /**
+     * By default, when a friendly effect defeats a ready resource, it first swaps ready state with an exhausted resource
+     * (since players may rearrange their resources before one is chosen). Set this to true if the effect specifically
+     * requires the ready resource to be defeated, e.g. "defeat a ready resource you control".
+     */
+    preserveResourceReadyState?: boolean;
+}
+
+export interface IDefeatCardProperties extends IDefeatCardPropertiesBase {
+
+    /**
+     * Identifies the type of effect that triggered the defeat. If the defeat was caused by damage,
+     * just pass in the damage source metadata. Otherwise, the defeat is due to an ability (default).
+     */
+    defeatSource?: IDamageSource | DefeatSourceType.Ability;
+}
+
+export type { ILastKnownInformation } from '../core/event/LastKnownInformation';
+
+export class DefeatCardSystem<TContext extends AbilityContext = AbilityContext, TProperties extends IDefeatCardPropertiesBase = IDefeatCardProperties> extends CardTargetSystem<TContext, TProperties> {
+    public override readonly name = 'defeat';
+    public override readonly eventName = EventName.OnCardDefeated;
+    public override readonly costDescription = 'defeating {0}';
+    public override effectDescription = 'defeat {0}';
+    protected override readonly targetTypeFilter = [WildcardCardType.Unit, WildcardCardType.Upgrade, CardType.Event, CardType.TokenCard];
+
+    protected override readonly defaultProperties: Partial<IDefeatCardPropertiesBase> = {
+        defeatSource: DefeatSourceType.Ability,
+        preserveResourceReadyState: false
+    };
+
+    public static defeatSourceCard(event): Card | undefined {
+        if (!event) {
+            return undefined;
+        }
+
+        Contract.assertTrue(event.name === EventName.OnCardDefeated);
+
+        const defeatSource: IDefeatSource = event.defeatSource;
+        if (defeatSource.type === DefeatSourceType.Attack) {
+            return defeatSource.attack.attacker;
+        } else if (defeatSource.type === DefeatSourceType.NonCombatDamage || defeatSource.type === DefeatSourceType.Ability) {
+            return defeatSource.card;
+        }
+
+        return undefined;
+    }
+
+    public eventHandler(event): void {
+        const card: Card = event.card;
+
+        if (card.zoneName === ZoneName.Resource) {
+            Contract.assertTrue(card.canBeExhausted());
+            if (!event.preserveResourceReadyState) {
+                this.leavesResourceZoneEventHandler(card, event.context);
+            }
+        } else if (card.isUpgrade()) {
+            card.unattach(event);
+        }
+
+        if (card.isToken()) {
+            // move the token out of the play area so that effect cleanup happens, then remove it from all card lists
+            card.moveTo(ZoneName.OutsideTheGame);
+        } else if (card.isDeployableLeader() && card.deployed) {
+            card.undeploy();
+        } else {
+            card.moveTo(ZoneName.Discard);
+        }
+    }
+
+    public override getEffectMessage(context: TContext, additionalProperties?: Partial<TProperties>): [string, any[]] {
+        const properties = this.generatePropertiesFromContext(context, additionalProperties);
+        return ['defeat {0}{1}', [this.getTargetMessage(properties.target, context), ChatHelpers.getTargetLocationMessage(properties.target, context)]];
+    }
+
+    public override getTargetMessage(targets: PlayerOrCard | PlayerOrCard[], context: TContext): MsgArg[] {
+        return super.getTargetMessage(targets, context).map((target) => {
+            if (target instanceof Card && target.canBeExhausted() && target.zoneName === ZoneName.Resource) {
+                return {
+                    format: '{0} {1}',
+                    args: [
+                        target.exhausted ? 'an exhausted' : 'a ready',
+                        target,
+                    ]
+                };
+            }
+            return target;
+        });
+    }
+
+    public override canAffectInternal(card: Card, context: TContext, additionalProperties: Partial<TProperties> = {}, mustChangeGameState = GameStateChangeRequired.None): boolean {
+        if (!(card.isForceToken() || card.isCreditToken()) && card.zoneName !== ZoneName.Resource && (!card.canBeInPlay() || !card.isInPlay())) {
+            return false;
+        }
+        const properties = this.generatePropertiesFromContext(context);
+        if ((properties.isCost || mustChangeGameState !== GameStateChangeRequired.None) && card.hasRestriction(AbilityRestriction.BeDefeated, context)) {
+            return false;
+        }
+        return super.canAffectInternal(card, context);
+    }
+
+    protected override addPropertiesToEvent(event: any, card: Card, context: TContext, additionalProperties?: Partial<TProperties>): void {
+        super.addPropertiesToEvent(event, card, context, additionalProperties);
+        this.addDefeatSourceToEvent(event, card, context);
+
+        const { preserveResourceReadyState } = this.generatePropertiesFromContext(context, additionalProperties);
+        event.preserveResourceReadyState = !!preserveResourceReadyState;
+    }
+
+    /** Generates metadata indicating what the source of the defeat is for relevant effects such as "when [X] attacks and defeats..." */
+    private addDefeatSourceToEvent(event: any, card: Card, context: TContext) {
+        // if this defeat is caused by damage, just use the same source as the damage event
+        const { defeatSource } = this.generatePropertiesFromContext(context);
+
+        const eventDefeatSource = this.buildDefeatSource(defeatSource, event, card, context);
+
+        event.isDefeatedByAttacker = false;
+        event.isDefeatedWhileAttacking = false;
+        event.defeatSource = eventDefeatSource;
+
+        event.isDefeatedWhileAttacking = card.isUnit() && card.isInPlay() && card.isAttacking();
+
+        if (eventDefeatSource.type === DefeatSourceType.Attack) {
+            event.isDefeatedByAttacker = eventDefeatSource.damageDealtBy.includes(eventDefeatSource.attack.attacker);
+        } else if (eventDefeatSource.type === DefeatSourceType.Ability || eventDefeatSource.type === DefeatSourceType.NonCombatDamage) {
+            if (eventDefeatSource.card.isUnit()) {
+                event.isDefeatedByAttacker = eventDefeatSource.card.isInPlay() &&
+                  eventDefeatSource.card.isAttacking() &&
+                  eventDefeatSource.card.activeAttack.targetIsUnit((unit) => unit === card, true);
+            }
+        }
+    }
+
+    protected buildDefeatSource(defeatSource: IDamageSource | DefeatSourceType.Ability | DefeatSourceType.UniqueRule | DefeatSourceType.FrameworkEffect, event: any, card: Card, context: TContext): IDefeatSource {
+        if (typeof defeatSource === 'object') {
+            if (defeatSource.type === DefeatSourceType.Attack) {
+                return {
+                    ...defeatSource,
+                    player: defeatSource.damageDealtBy[0].controller // TODO: See if we can do this without [0]
+                };
+            }
+
+            return {
+                card: context.source,
+                ...defeatSource,
+                event,
+                type: DefeatSourceType.NonCombatDamage,
+            };
+        }
+
+        Contract.assertEqual(defeatSource, DefeatSourceType.Ability);
+
+        // TODO: confirm that this works when the player controlling the ability is different than the player controlling the card (e.g., bounty)
+        return {
+            type: DefeatSourceType.Ability,
+            player: context.player,
+            card: context.source,
+            event,
+        };
+    }
+
+    protected override updateEvent(event, card: Card, context: TContext, additionalProperties: Partial<TProperties>): void {
+        super.updateEvent(event, card, context, additionalProperties);
+
+        if (card.zoneName !== ZoneName.Resource) {
+            this.addLeavesPlayPropertiesToEvent(event, card, context, additionalProperties);
+        } else {
+            addLastKnownInformationToEvent(event, card);
+        }
+    }
+}

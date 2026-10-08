@@ -1,0 +1,36 @@
+{
+  "title": "Renew",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "You may defeat a Condition upgrade.\nHeal 3 damage from your base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4263606084",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 267
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 267
+    }
+  ],
+  "internalName": "renew"
+}

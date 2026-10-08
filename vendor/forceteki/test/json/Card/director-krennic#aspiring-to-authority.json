@@ -1,0 +1,41 @@
+{
+  "title": "Director Krennic",
+  "subtitle": "Aspiring to Authority",
+  "cost": 5,
+  "hp": 7,
+  "power": 2,
+  "text": "Each friendly damaged unit gets +1/+0. ",
+  "deployBox": "Restore 2 (When this unit attacks, heal 2 damage from your base.)\n\nEach friendly damaged unit gets +1/+0.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader. ",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8560666697",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 1
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 1
+    }
+  ],
+  "internalName": "director-krennic#aspiring-to-authority"
+}

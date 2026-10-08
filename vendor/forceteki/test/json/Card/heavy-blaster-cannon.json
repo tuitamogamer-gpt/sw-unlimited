@@ -1,0 +1,37 @@
+{
+  "title": "Heavy Blaster Cannon",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 2,
+  "power": 2,
+  "text": "Attach to a non-Vehicle unit.\nWhen Played: You may deal 1 damage to a ground unit. Then, deal 1 damage to the same unit. Then, deal 1 damage to the same unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Heavy Blaster Cannon’s When Played ability deals 3 instances of damage. If all instances of damage are dealt to a unit with a Shield token, the Shield will only prevent the first damage.\n",
+  "upgradePower": 2,
+  "upgradeHp": 2,
+  "id": "1759165041",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "item",
+    "weapon"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 171
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 171
+    }
+  ],
+  "internalName": "heavy-blaster-cannon"
+}

@@ -1,0 +1,47 @@
+{
+  "title": "Snowtrooper",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 3,
+  "power": 1,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0581968676",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 63
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 63
+    },
+    {
+      "set": "IBH",
+      "number": 77
+    },
+    {
+      "set": "IBH",
+      "number": 87
+    }
+  ],
+  "internalName": "snowtrooper"
+}

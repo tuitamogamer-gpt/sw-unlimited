@@ -1,0 +1,41 @@
+{
+  "title": "Stormtrooper Patrol",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)\nWhile you control another unit that costs 3 or more, this unit gets +2/+0.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3113478203",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 107
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 107
+    }
+  ],
+  "internalName": "stormtrooper-patrol"
+}

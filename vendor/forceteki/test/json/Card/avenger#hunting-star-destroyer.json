@@ -1,0 +1,40 @@
+{
+  "title": "Avenger",
+  "subtitle": "Hunting Star Destroyer",
+  "cost": 9,
+  "hp": 8,
+  "power": 8,
+  "text": "When Played/On Attack: An opponent chooses a non‑leader unit they control. Defeat that unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "If there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8240629990",
+  "aspects": [
+    "villainy",
+    "vigilance"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 40
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 40
+    }
+  ],
+  "internalName": "avenger#hunting-star-destroyer"
+}

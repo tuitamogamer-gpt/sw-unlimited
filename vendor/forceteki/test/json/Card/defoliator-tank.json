@@ -1,0 +1,41 @@
+{
+  "title": "Defoliator Tank",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "Overwhelm\nOn Attack: If the defending unit isn't a Droid or Vehicle, you may pay 2 resources. If you do, give 2 Weakness tokens to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0506599569",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "tank"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 248
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 248
+    }
+  ],
+  "internalName": "defoliator-tank"
+}

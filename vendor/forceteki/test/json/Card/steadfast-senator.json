@@ -1,0 +1,38 @@
+{
+  "title": "Steadfast Senator",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 4,
+  "power": 0,
+  "text": "Action [2 resources, Exhaust]: Attack with a unit. It gets +2/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "If you use Steadfast Senator's ability, you must attack with a unit, if able. Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3258646001",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "republic",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 105
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 105
+    }
+  ],
+  "internalName": "steadfast-senator"
+}

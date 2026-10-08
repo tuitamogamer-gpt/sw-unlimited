@@ -1,0 +1,38 @@
+{
+  "title": "Doctor Pershing",
+  "subtitle": "Experimenting With Life",
+  "cost": 2,
+  "hp": 5,
+  "power": 0,
+  "text": "Action [Exhaust, deal 1 damage to a friendly unit]: Draw a card.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Doctor Pershing can damage himself in order to draw a card, even if he is defeated by that damage.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6722700037",
+  "aspects": [
+    "villainy",
+    "vigilance"
+  ],
+  "traits": [
+    "imperial"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 28
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 28
+    }
+  ],
+  "internalName": "doctor-pershing#experimenting-with-life"
+}

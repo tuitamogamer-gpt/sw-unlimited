@@ -1,0 +1,36 @@
+{
+  "title": "Tusken Camp",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7252516684",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tatooine"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 26
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 26
+    }
+  ],
+  "internalName": "tusken-camp"
+}

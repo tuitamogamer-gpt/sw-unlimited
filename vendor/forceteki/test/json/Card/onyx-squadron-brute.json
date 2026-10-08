@@ -1,0 +1,40 @@
+{
+  "title": "Onyx Squadron Brute",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "When Defeated: Heal 2 damage from a base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1164297413",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 33
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 33
+    }
+  ],
+  "internalName": "onyx-squadron-brute"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Outspoken Representative",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 0,
+  "text": "While you control another Republic unit, this unit gains Sentinel. (Units in this arena can't attack your non-Sentinel units or your base.)\nWhen Defeated: Create a Clone Trooper token.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8919416985",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 43
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 43
+    }
+  ],
+  "internalName": "outspoken-representative"
+}

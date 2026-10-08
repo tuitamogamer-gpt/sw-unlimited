@@ -1,0 +1,37 @@
+{
+  "title": "Cunning",
+  "subtitle": null,
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Choose two, in any order:\n\nReturn a non-leader unit with 4 or less power to its owner's hand.\nGive a unit +4/+0 for this phase.\nExhaust up to 2 units.\nAn opponent discards a random card from their hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\nIf there are multiple opponents, the controlling player chooses which one will be “an opponent.”\nAbilities that return a card to hand must choose a card in play unless otherwise specified.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3789633661",
+  "aspects": [
+    "cunning",
+    "cunning"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 203
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 203
+    }
+  ],
+  "internalName": "cunning"
+}

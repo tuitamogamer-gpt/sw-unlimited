@@ -1,0 +1,42 @@
+{
+  "title": "Darth Sidious",
+  "subtitle": "Move Against the Jedi",
+  "cost": 7,
+  "hp": 8,
+  "power": 5,
+  "text": "Restore 3\nmock ability text",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "darth-sidious#move-against-the-jedi-id",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "separatist",
+    "sith"
+  ],
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 26
+  },
+  "internalName": "darth-sidious#move-against-the-jedi",
+  "arena": "ground",
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 26
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Adept of Anger",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 3,
+  "power": 1,
+  "text": "Action [Exhaust, use the Force (lose your Force token)]: Exhaust a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4024881604",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 178
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 178
+    }
+  ],
+  "internalName": "adept-of-anger"
+}

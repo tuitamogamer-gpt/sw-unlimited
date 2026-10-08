@@ -1,0 +1,89 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Node File",
+      "program": "${file}",
+      "request": "launch",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node",
+      "cwd": "${fileDirname}"
+    },
+    {
+      "name": "Debug dev server",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/server/gamenode/index.js",
+      "preLaunchTask": "build-dev",
+      "console": "internalConsole",
+      "outputCapture": "std",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "NODE_ENV": "development",
+        "NODE_OPTIONS": "--enable-source-maps"
+      },
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "name": "Debug All Jasmine Tests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/jasmine/bin/jasmine.js",
+      "preLaunchTask": "npm: build-test",
+      "args": [
+        "--config=./jasmine.json",
+        "--random=false"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceRoot}",
+      "env": {
+        "NODE_ENV": "test",
+        "NODE_OPTIONS": "--enable-source-maps"
+      },
+      // "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    },
+    {
+      "name": "Debug Open Jasmine Test",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/jasmine/bin/jasmine.js",
+      "preLaunchTask": "npm: build-test",
+      "env": {
+        "NODE_ENV": "test",
+        "NODE_OPTIONS": "--enable-source-maps"
+      },
+      "args": [
+        "--config=./jasmine.json",
+        "--random=false",
+        // Jasmine runs the compiled JS in build/, so translate the open .ts source to its built .js path
+        "${workspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}.js"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      // "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    },
+    {
+      "name": "Debug Open Jasmine Test Parallel",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/jasmine/bin/jasmine.js",
+      "preLaunchTask": "npm: build-test",
+      "env": {
+        "NODE_ENV": "test",
+        "NODE_OPTIONS": "--enable-source-maps"
+      },
+      "args": [
+        "--config=./jasmine.json",
+        "--random=true",
+        "--parallel=2",
+        // Jasmine runs the compiled JS in build/, so translate the open .ts source to its built .js path
+        "${workspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}.js"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      // "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    }
+  ]
+}

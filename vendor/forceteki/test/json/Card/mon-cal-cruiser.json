@@ -1,0 +1,39 @@
+{
+  "title": "Mon Cal Cruiser",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 7,
+  "power": 4,
+  "text": "When Played: Choose one:\nAttack with a unit. It gets +2/+0 for this attack.\nLook at an opponent's hand. You may discard a card from it. If you do, they draw a card.\n",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you choose the first option of Mon Cal Cruiser's \"When Played\" ability, you must attack with a unit, if able. Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2411656991",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 232
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 232
+    }
+  ],
+  "internalName": "mon-cal-cruiser"
+}

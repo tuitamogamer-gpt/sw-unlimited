@@ -1,0 +1,41 @@
+{
+  "title": "Paz Vizsla",
+  "subtitle": "For a Brighter Future",
+  "cost": 5,
+  "hp": 7,
+  "power": 4,
+  "text": "Sentinel\nWhen Defeated: If this unit wasn't defeated by combat damage, create 2 Mandalorian tokens.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "“Combat damage” is only the damage dealt during the “End attack” step of an attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7107655724",
+  "aspects": [
+    "vigilance",
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 28
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 28
+    }
+  ],
+  "internalName": "paz-vizsla#for-a-brighter-future"
+}

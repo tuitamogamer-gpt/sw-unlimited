@@ -1,0 +1,41 @@
+{
+  "title": "Rebel Infiltrators",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "Restore 1 (When this unit attacks, heal 1 damage from your base.)\nSaboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0144344845",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore",
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 256
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 256
+    }
+  ],
+  "internalName": "rebel-infiltrators"
+}

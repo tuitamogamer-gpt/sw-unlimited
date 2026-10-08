@@ -1,0 +1,36 @@
+{
+  "title": "Sweep the Area",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Return up to 2 non-leader units in the same arena with a combined cost 3 or less to their owners' hands.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7039711282",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 233
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 233
+    }
+  ],
+  "internalName": "sweep-the-area"
+}

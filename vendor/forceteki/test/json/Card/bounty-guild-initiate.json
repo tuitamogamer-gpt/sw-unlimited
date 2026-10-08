@@ -1,0 +1,35 @@
+{
+  "title": "Bounty Guild Initiate",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 1,
+  "text": "When Played: If you control another Bounty Hunter unit, you may deal 2 damage to a ground unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4057912610",
+  "aspects": [],
+  "traits": [
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 254
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 254
+    }
+  ],
+  "internalName": "bounty-guild-initiate"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Undercover Operation",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Ready a unit that was played this phase. If it costs 3 or less, create a Spy token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0889609495",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 236
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 236
+    }
+  ],
+  "internalName": "undercover-operation"
+}

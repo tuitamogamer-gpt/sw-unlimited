@@ -1,0 +1,36 @@
+{
+  "title": "Asteroid Sanctuary",
+  "subtitle": null,
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Exhaust an enemy unit.\n\nGive a Shield token to a friendly unit that costs 3 or less.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6901817734",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 218
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 218
+    }
+  ],
+  "internalName": "asteroid-sanctuary"
+}

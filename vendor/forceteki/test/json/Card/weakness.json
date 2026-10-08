@@ -1,0 +1,28 @@
+{
+  "title": "Weakness",
+  "subtitle": "",
+  "cost": 0,
+  "hp": -1,
+  "power": -1,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": -1,
+  "upgradeHp": -1,
+  "id": "7816991190",
+  "aspects": [],
+  "traits": [
+    "condition"
+  ],
+  "keywords": [],
+  "types": [
+    "token",
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW"
+  },
+  "internalName": "weakness"
+}

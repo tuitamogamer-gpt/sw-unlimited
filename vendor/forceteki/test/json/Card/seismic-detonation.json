@@ -1,0 +1,37 @@
+{
+  "title": "Seismic Detonation",
+  "subtitle": "",
+  "cost": 6,
+  "hp": null,
+  "power": null,
+  "text": "Choose an arena. At the start of the next regroup phase, deal 3 damage to each enemy unit in that arena.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6125036698",
+  "aspects": [
+    "aggression",
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 54
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 54
+    }
+  ],
+  "internalName": "seismic-detonation"
+}

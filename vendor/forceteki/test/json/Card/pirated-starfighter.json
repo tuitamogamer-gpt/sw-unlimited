@@ -1,0 +1,41 @@
+{
+  "title": "Pirated Starfighter",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "Raid 1 (This unit gets +1/+0 while attacking.)\n\nWhen Played: Return a friendly non-leader unit to its owner's hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that return a card to hand must choose a card in play unless otherwise specified.\nIf Pirated Starfighter is the only friendly unit in play, it must be chosen by its “When Played” ability.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6028207223",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 209
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 209
+    }
+  ],
+  "internalName": "pirated-starfighter"
+}

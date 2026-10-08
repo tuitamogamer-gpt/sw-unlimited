@@ -1,0 +1,40 @@
+{
+  "title": "Surprise Strike",
+  "subtitle": null,
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a unit. It gets +3/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "You must attack with a unit, if able. Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3809048641",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 231
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 220
+    },
+    {
+      "set": "SHD",
+      "number": 231
+    }
+  ],
+  "internalName": "surprise-strike"
+}

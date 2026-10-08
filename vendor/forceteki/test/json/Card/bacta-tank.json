@@ -1,0 +1,39 @@
+{
+  "title": "Bacta Tank",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 0,
+  "power": 0,
+  "text": "Fortify\nWhen Played: Heal up to 3 damage from a non‑Vehicle unit.\nAction [defeat this upgrade]: Put a non‑Vehicle unit from your discard pile on top of your deck.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "9325516009",
+  "aspects": [
+    "vigilance",
+    "command"
+  ],
+  "traits": [
+    "fortification"
+  ],
+  "keywords": [
+    "fortify"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 37
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 37
+    }
+  ],
+  "internalName": "bacta-tank"
+}

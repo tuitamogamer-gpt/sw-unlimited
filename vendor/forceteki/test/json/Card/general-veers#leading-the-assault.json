@@ -1,0 +1,43 @@
+{
+  "title": "General Veers",
+  "subtitle": "Leading the Assault",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "When Played: If you control a Vigilance unit, deal 2 damage to an enemy base and heal 2 damage from your base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6776733024",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 68
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 68
+    },
+    {
+      "set": "IBH",
+      "number": 88
+    }
+  ],
+  "internalName": "general-veers#leading-the-assault"
+}

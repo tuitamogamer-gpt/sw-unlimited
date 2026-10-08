@@ -1,0 +1,35 @@
+{
+  "title": "Offworld Jawa",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 2,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2221742966",
+  "aspects": [],
+  "traits": [
+    "jawa"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 268
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 268
+    }
+  ],
+  "internalName": "offworld-jawa"
+}

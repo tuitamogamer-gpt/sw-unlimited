@@ -1,0 +1,40 @@
+{
+  "title": "Devastator",
+  "subtitle": "Hunting the Rebellion",
+  "cost": 8,
+  "hp": 6,
+  "power": 9,
+  "text": "You assign all indirect damage you deal to opponents.\nWhen Played: Deal 4 indirect damage to each opponent.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "A player can't assign more indirect damage to a unit than it has remaining HP. Indirect damage is unpreventable and ignores Shields.\nAll damage dealt by Devastator's \"When Played\" ability is dealt simultaneously.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1330473789",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 143
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 143
+    }
+  ],
+  "internalName": "devastator#hunting-the-rebellion"
+}

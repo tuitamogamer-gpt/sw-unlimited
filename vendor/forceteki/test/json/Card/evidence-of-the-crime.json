@@ -1,0 +1,36 @@
+{
+  "title": "Evidence of the Crime",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Take control of an upgrade that costs 3 or less and attach it to an eligible unit of your choice.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6452159858",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 77
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 77
+    }
+  ],
+  "internalName": "evidence-of-the-crime"
+}

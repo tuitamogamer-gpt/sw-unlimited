@@ -1,0 +1,40 @@
+{
+  "title": "Palace Chef Droid",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 0,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)\nThis unit gets +2/+0 while defending.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0408293505",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "underworld",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 73
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 73
+    }
+  ],
+  "internalName": "palace-chef-droid"
+}

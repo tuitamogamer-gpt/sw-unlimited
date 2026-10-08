@@ -1,0 +1,39 @@
+{
+  "title": "Bossk",
+  "subtitle": "Cruel Hunter",
+  "cost": 5,
+  "hp": 5,
+  "power": 4,
+  "text": "Action [Exhaust]: Heal 1 damage from a damaged enemy unit and give a Weakness token to it.",
+  "deployBox": "On Attack: You may deal 2 damage to a unit with a token upgrade on it. (Shield and Weakness tokens are token upgrades.)",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9900684268",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 15
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 15
+    }
+  ],
+  "internalName": "bossk#cruel-hunter"
+}

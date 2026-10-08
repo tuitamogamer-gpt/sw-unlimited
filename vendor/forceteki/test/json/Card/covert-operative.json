@@ -1,0 +1,37 @@
+{
+  "title": "Covert Operative",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 2,
+  "text": "When Played: This unit captures an enemy non-leader unit that costs 2 or less. (Put the captured card facedown under this unit until this unit leaves play.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4054219737",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 253
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 253
+    }
+  ],
+  "internalName": "covert-operative"
+}

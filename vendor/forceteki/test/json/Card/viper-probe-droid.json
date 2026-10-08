@@ -1,0 +1,42 @@
+{
+  "title": "Viper Probe Droid",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "When Played: Look at an opponent's hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8986035098",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 239
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 228
+    },
+    {
+      "set": "SEC",
+      "number": 239
+    }
+  ],
+  "internalName": "viper-probe-droid"
+}

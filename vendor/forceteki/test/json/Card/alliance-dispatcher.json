@@ -1,0 +1,38 @@
+{
+  "title": "Alliance Dispatcher",
+  "subtitle": null,
+  "cost": 1,
+  "hp": 2,
+  "power": 1,
+  "text": "Action [exhaust]: Play a unit from your hand. It costs [1 resource] less.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2756312994",
+  "aspects": [
+    "heroism",
+    "command"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 93
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 93
+    }
+  ],
+  "internalName": "alliance-dispatcher"
+}

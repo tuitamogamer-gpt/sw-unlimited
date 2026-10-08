@@ -1,0 +1,42 @@
+{
+  "title": "Jade Squadron Patrol",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 6,
+  "power": 6,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5488386689",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "resistance",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 49
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 49
+    }
+  ],
+  "internalName": "jade-squadron-patrol"
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Rickety Quadjumper",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "On Attack: You may reveal the top card of your deck. If it's not a unit, give an Experience token to another unit. (Leave the revealed card on top of your deck.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7291903225",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 115
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 57
+    },
+    {
+      "set": "LAW",
+      "number": 115
+    }
+  ],
+  "internalName": "rickety-quadjumper"
+}

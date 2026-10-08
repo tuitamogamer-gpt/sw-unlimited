@@ -1,0 +1,38 @@
+{
+  "title": "Bo-Katan Kryze",
+  "subtitle": "Princess in Exile",
+  "cost": 6,
+  "hp": 7,
+  "power": 4,
+  "text": "Action [Exhaust]: If you attacked with a Mandalorian unit this phase, deal 1 damage to a unit.",
+  "deployBox": "On Attack: You may deal 1 damage to a unit. If you attacked with another Mandalorian unit this phase, you may deal 1 damage to a unit. (The same unit or a different unit.)",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Bo-Katan’s leader ability still can be used as an action even if you didn’t attack with a Mandalorian unit this phase (but it doesn’t deal damage).\nBo-Katan’s “On Attack” ability deals 2 instances of damage. If both instances of instances of damage are dealt to a unit with a Shield token, the Shield will only prevent the first damage.\n(ERRATA) On Attack: You may deal 1 damage to a unit. Then, if you attacked with another Mandalorian unit this phase, you may deal 1 damage to a unit. (The same unit or a different unit.)\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7424360283",
+  "aspects": [
+    "heroism",
+    "aggression"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 12
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 12
+    }
+  ],
+  "internalName": "bokatan-kryze#princess-in-exile"
+}

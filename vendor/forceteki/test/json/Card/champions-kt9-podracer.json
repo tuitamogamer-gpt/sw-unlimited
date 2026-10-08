@@ -1,0 +1,38 @@
+{
+  "title": "Champion's KT9 Podracer",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 2,
+  "text": "When Played: Create a Credit token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6136678864",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "vehicle",
+    "speeder"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 232
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 232
+    }
+  ],
+  "internalName": "champions-kt9-podracer"
+}

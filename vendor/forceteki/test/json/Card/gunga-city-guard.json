@@ -1,0 +1,40 @@
+{
+  "title": "Gunga City Guard",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 2,
+  "text": "Restore 1\nWhile you control another Gungan unit or a Naboo base, this unit gains Shielded.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1446255223",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "gungan"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore",
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 84
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 84
+    }
+  ],
+  "internalName": "gunga-city-guard"
+}

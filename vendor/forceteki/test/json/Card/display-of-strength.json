@@ -1,0 +1,36 @@
+{
+  "title": "Display of Strength",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Give a unit +3/+3 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6866286566",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 136
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 136
+    }
+  ],
+  "internalName": "display-of-strength"
+}

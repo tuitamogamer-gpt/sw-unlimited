@@ -1,0 +1,40 @@
+{
+  "title": "Follower of the Code",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "Restore 1 (When this unit attacks, heal 1 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2830421696",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "droid",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 153
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 153
+    }
+  ],
+  "internalName": "follower-of-the-code"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Valiant Assault Ship",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 3,
+  "text": "Saboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)\nOn Attack: If the defending player controls more resources than you, this unit gets +2/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7922308768",
+  "aspects": [
+    "heroism",
+    "aggression"
+  ],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 151
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 151
+    }
+  ],
+  "internalName": "valiant-assault-ship"
+}

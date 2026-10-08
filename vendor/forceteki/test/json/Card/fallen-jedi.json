@@ -1,0 +1,38 @@
+{
+  "title": "Fallen Jedi",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9380404588",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "jedi"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 230
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 230
+    }
+  ],
+  "internalName": "fallen-jedi"
+}

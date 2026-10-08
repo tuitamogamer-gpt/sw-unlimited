@@ -1,0 +1,37 @@
+{
+  "title": "Always Two",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Choose 2 friendly <uq> Sith units. If you do, give 2 Shield tokens and 2 Experience tokens to each chosen unit. Defeat all other friendly units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0463147975",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "sith"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 42
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 42
+    }
+  ],
+  "internalName": "always-two"
+}

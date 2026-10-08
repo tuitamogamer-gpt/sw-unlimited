@@ -1,0 +1,40 @@
+{
+  "title": "Rho Medical Shuttle",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "When Played/On Attack: You may heal 1 damage from another unit or base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0071409385",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 63
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 63
+    }
+  ],
+  "internalName": "rho-medical-shuttle"
+}

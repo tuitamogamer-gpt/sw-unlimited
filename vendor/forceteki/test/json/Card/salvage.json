@@ -1,0 +1,36 @@
+{
+  "title": "Salvage",
+  "subtitle": "",
+  "cost": 0,
+  "hp": null,
+  "power": null,
+  "text": "Play a Vehicle unit from your discard pile (paying its cost). Then, deal 1 damage to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that let you play a card require you to pay that card’s cost unless specified otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2614693321",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 121
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 121
+    }
+  ],
+  "internalName": "salvage"
+}

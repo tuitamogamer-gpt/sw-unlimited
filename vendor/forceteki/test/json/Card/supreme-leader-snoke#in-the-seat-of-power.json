@@ -1,0 +1,40 @@
+{
+  "title": "Supreme Leader Snoke",
+  "subtitle": "In the Seat of Power",
+  "cost": 6,
+  "hp": 7,
+  "power": 4,
+  "text": "Action [1 resource, Exhaust]: Give an Experience token to the unit with the most power among friendly Villainy units. (If multiple units are tied, choose one.)",
+  "deployBox": "On Attack: Give an Experience token to the unit with the most power among friendly Villainy units.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\nSnoke's ability only considers friendly Villainy units when determining which has the most power, regardless of the power of friendly non-Villainy units.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9919167831",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "first order",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 6
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 6
+    }
+  ],
+  "internalName": "supreme-leader-snoke#in-the-seat-of-power"
+}

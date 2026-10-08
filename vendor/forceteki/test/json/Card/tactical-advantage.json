@@ -1,0 +1,40 @@
+{
+  "title": "Tactical Advantage",
+  "subtitle": null,
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Give a unit +2/+2 for this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2651321164",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 124
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 124
+    },
+    {
+      "set": "TWI",
+      "number": 124
+    }
+  ],
+  "internalName": "tactical-advantage"
+}

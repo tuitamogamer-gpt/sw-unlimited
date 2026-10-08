@@ -1,0 +1,36 @@
+{
+  "title": "Origin Tree",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0240829409",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "kashyyyk"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 24
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 24
+    }
+  ],
+  "internalName": "origin-tree"
+}

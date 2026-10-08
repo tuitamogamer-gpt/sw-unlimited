@@ -1,0 +1,37 @@
+{
+  "title": "Choke on Aspirations",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Deal up to 5 damage to a friendly non-Vehicle unit. If it survives, heal damage from your base equal to the damage dealt this way.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If this event's damage is prevented with a Shield or similar effect, no damage is healed from your base.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2845024854",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 102
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 102
+    }
+  ],
+  "internalName": "choke-on-aspirations"
+}

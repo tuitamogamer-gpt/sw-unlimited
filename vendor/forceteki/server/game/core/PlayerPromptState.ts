@@ -1,0 +1,154 @@
+import type { Card } from './card/Card';
+import type { IBatchTriggerResolutionPromptData, IButton, IDisplayCard, IDistributeAmongTargetsPromptData, INumberPromptData, PromptType, SelectCardMode } from './gameSteps/PromptInterfaces';
+import type { Player } from './Player';
+
+export interface IPlayerPromptStateProperties {
+    buttons?: IButton[];
+    menuTitle: string;
+    promptUuid: string;
+    playerIsNewlyActive?: boolean;
+    promptTitle?: string;
+    promptType?: PromptType;
+
+    selectCardMode?: SelectCardMode;
+    selectOrder?: boolean;
+    selectNumber?: INumberPromptData;
+    distributeAmongTargets?: IDistributeAmongTargetsPromptData;
+    batchTriggerResolution?: IBatchTriggerResolutionPromptData;
+    dropdownListOptions?: string[];
+    displayCards?: IDisplayCard[];
+    perCardButtons?: IButton[];
+    isOpponentEffect?: boolean;
+
+    // not included in the state passed to the FE
+    attackTargetingHighlightAttacker?: Card;
+}
+
+export interface ICardSelectionState {
+    selectable: boolean;
+    selected?: boolean;
+    unselectable?: boolean;
+    order?: number;
+}
+
+export class PlayerPromptState {
+    public selectCardMode? = null;
+    public selectOrder = false;
+    public selectNumber?: INumberPromptData = null;
+    public distributeAmongTargets?: IDistributeAmongTargetsPromptData = null;
+    public batchTriggerResolution?: IBatchTriggerResolutionPromptData = null;
+    public menuTitle = '';
+    public promptTitle = '';
+    public promptUuid = '';
+    public promptType: PromptType | '' | null = '';
+    public buttons = [];
+    public dropdownListOptions: string[] = [];
+    public displayCards: IDisplayCard[] = [];
+    public perCardButtons: IButton[] = [];
+    public isOpponentEffect = null;
+    public playerIsNewlyActive = false;
+
+    // not included in the state passed to the FE
+    public attackTargetingHighlightAttacker?: Card = null;
+
+    private _selectableCards: Card[] = [];
+    private _selectedCards?: Card[] = [];
+
+    public get selectableCards() {
+        return this._selectableCards;
+    }
+
+    public get selectedCards() {
+        return this._selectedCards;
+    }
+
+    public constructor(public player: Player) {}
+
+    public setSelectedCards(cards: Card[]) {
+        this._selectedCards = cards;
+    }
+
+    public clearSelectedCards() {
+        this._selectedCards = [];
+    }
+
+    public setSelectableCards(cards: Card[]) {
+        this._selectableCards = cards;
+    }
+
+    public clearSelectableCards() {
+        this._selectableCards = [];
+    }
+
+    public setPrompt(prompt: IPlayerPromptStateProperties) {
+        this.promptTitle = prompt.promptTitle;
+        this.promptType = prompt.promptType;
+        this.selectCardMode = prompt.selectCardMode;
+        this.selectOrder = prompt.selectOrder ?? false;
+        this.selectNumber = prompt.selectNumber;
+        this.menuTitle = prompt.menuTitle ?? '';
+        this.distributeAmongTargets = prompt.distributeAmongTargets;
+        this.batchTriggerResolution = prompt.batchTriggerResolution;
+        this.dropdownListOptions = prompt.dropdownListOptions ?? [];
+        this.promptUuid = prompt.promptUuid;
+        this.buttons = prompt.buttons ?? [];
+        this.displayCards = prompt.displayCards ?? [];
+        this.perCardButtons = prompt.perCardButtons ?? [];
+        this.isOpponentEffect = prompt.isOpponentEffect;
+        this.playerIsNewlyActive = prompt.playerIsNewlyActive;
+
+        // not included in the state passed to the FE
+        this.attackTargetingHighlightAttacker = prompt.attackTargetingHighlightAttacker;
+    }
+
+    public cancelPrompt() {
+        this.selectCardMode = null;
+        this.menuTitle = '';
+        this.buttons = [];
+        this.clearSelectableCards();
+        this.clearSelectedCards();
+    }
+
+    public getCardSelectionState(card: Card): ICardSelectionState {
+        const selectable = this._selectableCards.includes(card);
+
+        const index = this._selectedCards?.indexOf(card) ?? -1;
+        const selected = index !== -1;
+
+        if (!selectable) {
+            return { selectable, selected: selected ? true : undefined };
+        }
+
+        const order = index !== -1 && this.selectOrder ? index + 1 : undefined;
+
+        const result = {
+            selectable,
+            selected,
+            unselectable: this.selectCardMode && !selectable,
+            order
+        };
+
+        return result;
+    }
+
+    public getState() {
+        return {
+            selectCardMode: this.selectCardMode,
+            selectOrder: this.selectOrder,
+            selectNumber: this.selectNumber,
+            distributeAmongTargets: this.distributeAmongTargets,
+            batchTriggerResolution: this.batchTriggerResolution,
+            dropdownListOptions: this.dropdownListOptions,
+            menuTitle: this.menuTitle,
+            promptTitle: this.promptTitle,
+            buttons: this.buttons,
+            promptUuid: this.promptUuid,
+            promptType: this.promptType,
+            displayCards: this.displayCards,
+            perCardButtons: this.perCardButtons,
+            isOpponentEffect: this.isOpponentEffect,
+            playerIsNewlyActive: this.playerIsNewlyActive,
+            // attackTargetingHighlightAttacker is explicitly not included, it's not for passing to the FE
+        };
+    }
+}

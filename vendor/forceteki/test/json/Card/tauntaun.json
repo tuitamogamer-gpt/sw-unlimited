@@ -1,0 +1,37 @@
+{
+  "title": "Tauntaun",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "When Defeated: You may give a Shield token to a damaged non-Vehicle unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7298144465",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 64
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 64
+    }
+  ],
+  "internalName": "tauntaun"
+}

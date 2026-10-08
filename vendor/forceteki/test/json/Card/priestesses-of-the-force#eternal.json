@@ -1,0 +1,37 @@
+{
+  "title": "Priestesses of the Force",
+  "subtitle": "Eternal",
+  "cost": 7,
+  "hp": 8,
+  "power": 6,
+  "text": "When Played: You may use the Force (lose your Force token). If you do, give a Shield token to each of up to 5 units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7012013186",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "force"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 72
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 72
+    }
+  ],
+  "internalName": "priestesses-of-the-force#eternal"
+}

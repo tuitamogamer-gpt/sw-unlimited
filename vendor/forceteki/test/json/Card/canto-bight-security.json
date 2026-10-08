@@ -1,0 +1,39 @@
+{
+  "title": "Canto Bight Security",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 3,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)\nOn Defense: Create a Credit token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "“On Defense” abilities trigger at the same time as “On Attack” abilities.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8705682181",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "fringe"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 121
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 121
+    }
+  ],
+  "internalName": "canto-bight-security"
+}

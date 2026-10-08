@@ -1,0 +1,42 @@
+{
+  "title": "Finalizer",
+  "subtitle": "Might of the First Order",
+  "cost": 11,
+  "hp": 11,
+  "power": 11,
+  "text": "Overwhelm\nWhen Played: Choose any number of friendly units. Each of those units captures an enemy non-leader unit in the same arena.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\nIf you choose more friendly units than there are enemy units, the extra chosen units do nothing.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9752523457",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "first order",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 92
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 92
+    }
+  ],
+  "internalName": "finalizer#might-of-the-first-order"
+}

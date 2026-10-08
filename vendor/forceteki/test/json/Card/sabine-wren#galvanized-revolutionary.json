@@ -1,0 +1,40 @@
+{
+  "title": "Sabine Wren",
+  "subtitle": "Galvanized Revolutionary",
+  "cost": 4,
+  "hp": 5,
+  "power": 2,
+  "text": "Action [exhaust]: Deal 1 damage to each base.",
+  "deployBox": "On Attack: Deal 1 damage to each enemy base.",
+  "epicAction": "Epic Action: If you control 4 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4841169874",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian",
+    "rebel",
+    "spectre"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 14
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 14
+    }
+  ],
+  "internalName": "sabine-wren#galvanized-revolutionary"
+}

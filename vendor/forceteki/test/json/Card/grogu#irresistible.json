@@ -1,0 +1,38 @@
+{
+  "title": "Grogu",
+  "subtitle": "Irresistible",
+  "cost": 2,
+  "hp": 5,
+  "power": 0,
+  "text": "Action [exhaust]: Exhaust an enemy unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6536128825",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "force"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 196
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 196
+    }
+  ],
+  "internalName": "grogu#irresistible"
+}

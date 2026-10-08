@@ -1,0 +1,40 @@
+{
+  "title": "Loan Shark",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 5,
+  "power": 2,
+  "text": "Ambush (When you play this unit, it may attack an enemy unit.)\nRaid 1 (This unit gets +1/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3155214860",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush",
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 222
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 222
+    }
+  ],
+  "internalName": "loan-shark"
+}

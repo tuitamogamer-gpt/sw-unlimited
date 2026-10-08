@@ -1,0 +1,38 @@
+{
+  "title": "Coruscant Undercity Police",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 5,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2463972264",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "republic",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 167
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 167
+    }
+  ],
+  "internalName": "coruscant-undercity-police"
+}

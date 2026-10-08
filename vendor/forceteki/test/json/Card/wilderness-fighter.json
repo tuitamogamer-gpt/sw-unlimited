@@ -1,0 +1,39 @@
+{
+  "title": "Wilderness Fighter",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "Shielded (When you play this unit, give a Shield token to it.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5264521057",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 64
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 64
+    }
+  ],
+  "internalName": "wilderness-fighter"
+}

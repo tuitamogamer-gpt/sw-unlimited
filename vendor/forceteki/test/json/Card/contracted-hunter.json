@@ -1,0 +1,40 @@
+{
+  "title": "Contracted Hunter",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 4,
+  "text": "Ambush (When you play this unit, it may attack an enemy unit.)\nWhen the regroup phase starts: Defeat this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7489502985",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 216
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 216
+    }
+  ],
+  "internalName": "contracted-hunter"
+}

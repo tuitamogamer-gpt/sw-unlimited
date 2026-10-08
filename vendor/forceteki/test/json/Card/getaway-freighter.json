@@ -1,0 +1,38 @@
+{
+  "title": "Getaway Freighter",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 1,
+  "text": "On Attack: If you control a ground unit, create a Credit token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3545978399",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 155
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 155
+    }
+  ],
+  "internalName": "getaway-freighter"
+}

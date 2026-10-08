@@ -1,0 +1,38 @@
+{
+  "title": "Jyn Erso",
+  "subtitle": "Resisting Oppression",
+  "cost": 6,
+  "hp": 7,
+  "power": 4,
+  "text": "Action [Exhaust]: Attack with a unit. The defender gets -1/-0 for this attack.",
+  "deployBox": "While a friendly unit is attacking, the defender gets -1/-0.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "If you use Jyn’s leader ability, you must attack with a unit, if able. Units must be ready in order to attack.\n(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8244682354",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 18
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 18
+    }
+  ],
+  "internalName": "jyn-erso#resisting-oppression"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Figure of Unity",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 2,
+  "text": "Attach to a <uq> unit.\nAttached unit gains: “While this unit is ready, each other friendly unit gains Overwhelm, Raid 1, and Restore 1.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": 2,
+  "upgradeHp": 2,
+  "id": "8467899467",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [
+    "overwhelm",
+    "raid",
+    "restore"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 104
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 104
+    }
+  ],
+  "internalName": "figure-of-unity"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Partisan Infantry",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "Raid 1 (This unit gets +1/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2643432708",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "rebel",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 154
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 154
+    }
+  ],
+  "internalName": "partisan-infantry"
+}

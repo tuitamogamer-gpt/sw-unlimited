@@ -1,0 +1,38 @@
+{
+  "title": "Cloud-Rider Veteran",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "On Attack: Deal 2 damage to a base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1794819723",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 181
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 181
+    }
+  ],
+  "internalName": "cloudrider-veteran"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Make an Opening",
+  "subtitle": null,
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Give a unit –2/–2 for this phase. Heal 2 damage from your base.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3208391441",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 76
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 76
+    }
+  ],
+  "internalName": "make-an-opening"
+}

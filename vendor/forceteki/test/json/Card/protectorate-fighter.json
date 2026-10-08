@@ -1,0 +1,39 @@
+{
+  "title": "Protectorate Fighter",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 1,
+  "power": 2,
+  "text": "When Played: If you control a <uq> unit, create a Mandalorian token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2808330391",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "mandalorian",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 124
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 124
+    }
+  ],
+  "internalName": "protectorate-fighter"
+}

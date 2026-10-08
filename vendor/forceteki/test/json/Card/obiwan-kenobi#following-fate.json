@@ -1,0 +1,41 @@
+{
+  "title": "Obi-Wan Kenobi",
+  "subtitle": "Following Fate",
+  "cost": 6,
+  "hp": 6,
+  "power": 4,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)\n\nWhen Defeated: Give 2 Experience tokens to another friendly unit. If it's a Force unit, draw a card.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4786320542",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 49
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 49
+    }
+  ],
+  "internalName": "obiwan-kenobi#following-fate"
+}

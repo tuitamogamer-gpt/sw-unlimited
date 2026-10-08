@@ -1,0 +1,39 @@
+{
+  "title": "Heroic ARC-170",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 4,
+  "text": "When Played: If you control a damaged unit, you may deal 2 damage to an enemy unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3469756679",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 254
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 254
+    }
+  ],
+  "internalName": "heroic-arc170"
+}

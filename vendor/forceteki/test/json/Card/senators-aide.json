@@ -1,0 +1,38 @@
+{
+  "title": "Senator's Aide",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 3,
+  "power": 0,
+  "text": "While you have the initiative, this unit gets +2/+0.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4539059769",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "republic",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 108
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 108
+    }
+  ],
+  "internalName": "senators-aide"
+}

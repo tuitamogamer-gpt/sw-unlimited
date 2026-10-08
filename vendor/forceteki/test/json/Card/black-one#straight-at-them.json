@@ -1,0 +1,40 @@
+{
+  "title": "Black One",
+  "subtitle": "Straight At Them",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "While this unit is upgraded, it gets +1/+0.\nOn Attack: If you control Poe Dameron (as a unit, upgrade, or leader), you may deal 1 damage to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3389903389",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "resistance",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 147
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 147
+    }
+  ],
+  "internalName": "black-one#straight-at-them"
+}

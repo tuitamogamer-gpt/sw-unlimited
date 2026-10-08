@@ -1,0 +1,36 @@
+{
+  "title": "Tomb of Eilram",
+  "subtitle": "",
+  "cost": null,
+  "hp": 25,
+  "power": null,
+  "text": "Action [exhaust a friendly unit]: The Force is with you (create your Force token).",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2699176260",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "zeffo"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 28
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 28
+    }
+  ],
+  "internalName": "tomb-of-eilram"
+}

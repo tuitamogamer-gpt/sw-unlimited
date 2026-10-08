@@ -1,0 +1,37 @@
+{
+  "title": "Rehabilitation",
+  "subtitle": "",
+  "cost": 5,
+  "hp": null,
+  "power": null,
+  "text": "Choose a non-leader unit. Give that unit –3/–0 for this phase, then take control of it. At the start of the regroup phase, its owner takes control of it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9550024414",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 200
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 200
+    }
+  ],
+  "internalName": "rehabilitation"
+}

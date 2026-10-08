@@ -1,0 +1,37 @@
+{
+  "title": "I Am the Senate",
+  "subtitle": "",
+  "cost": 6,
+  "hp": null,
+  "power": null,
+  "text": "Create 5 Spy tokens.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6814804824",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "law"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 92
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 92
+    }
+  ],
+  "internalName": "i-am-the-senate"
+}

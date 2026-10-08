@@ -1,0 +1,37 @@
+{
+  "title": "Fear and Dead Men",
+  "subtitle": "",
+  "cost": 7,
+  "hp": null,
+  "power": null,
+  "text": "This card costs 1 resource less to play for each card discarded from your hand this phase.\nDeal 4 damage to each enemy ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1416777483",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 179
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 179
+    }
+  ],
+  "internalName": "fear-and-dead-men"
+}

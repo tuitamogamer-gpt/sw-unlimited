@@ -1,0 +1,38 @@
+{
+  "title": "Vane",
+  "subtitle": "Quarrelsome Pirate",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "Action [Exhaust, defeat a friendly upgrade]: Deal 2 damage to a base.",
+  "deployBox": "On Attack: You may defeat a friendly upgrade. If you do, deal 2 damage to the defending unit or a base.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "A friendly upgrade is any upgrade you put into play or any token upgrade on a friendly unit.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7995596096",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 12
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 12
+    }
+  ],
+  "internalName": "vane#quarrelsome-pirate"
+}

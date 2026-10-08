@@ -1,0 +1,37 @@
+{
+  "title": "Fiery Alliance",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: You may deal 1 damage to another friendly unit and attack with it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you deal 1 damage to a unit, you must attack with it, if able. Units must be ready in order to attack.\n",
+  "upgradePower": 2,
+  "upgradeHp": 2,
+  "id": "0798937437",
+  "aspects": [
+    "command",
+    "aggression"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 25
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 25
+    }
+  ],
+  "internalName": "fiery-alliance"
+}

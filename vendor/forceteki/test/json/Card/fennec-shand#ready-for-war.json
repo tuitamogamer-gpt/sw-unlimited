@@ -1,0 +1,40 @@
+{
+  "title": "Fennec Shand",
+  "subtitle": "Ready for War",
+  "cost": 4,
+  "hp": 4,
+  "power": 3,
+  "text": "Action [1 resource, Exhaust, exhaust a friendly unit]: Play a unit from your hand (paying its cost). It enters play ready.",
+  "deployBox": "Saboteur\nAction [1 resource, exhaust a friendly unit]: Play a unit from your hand. It enters play ready.",
+  "epicAction": "Epic Action: If you control 4 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Abilities that let you play a card require you to pay that card’s cost unless specified otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8844391252",
+  "aspects": [
+    "aggression",
+    "cunning"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 2
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 2
+    }
+  ],
+  "internalName": "fennec-shand#ready-for-war"
+}

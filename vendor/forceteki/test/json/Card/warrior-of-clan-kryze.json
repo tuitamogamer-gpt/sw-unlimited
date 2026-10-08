@@ -1,0 +1,40 @@
+{
+  "title": "Warrior of Clan Kryze",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "While you control another exhausted unit, this unit gains Sentinel. (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7767602903",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "mandalorian",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 120
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 120
+    }
+  ],
+  "internalName": "warrior-of-clan-kryze"
+}

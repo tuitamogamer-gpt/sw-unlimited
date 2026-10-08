@@ -1,0 +1,32 @@
+{
+  "title": "X-Wing",
+  "subtitle": "",
+  "cost": 0,
+  "hp": 2,
+  "power": 2,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9415311381",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "token",
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL"
+  },
+  "internalName": "xwing"
+}

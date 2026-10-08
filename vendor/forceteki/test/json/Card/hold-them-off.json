@@ -1,0 +1,36 @@
+{
+  "title": "Hold Them Off",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Choose a friendly unit. That unit deals damage equal to its power divided as you choose among any number of units in its arena.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\nYou can choose to assign more damage to a unit than it has remaining HP.\nAll damage dealt by Hold Them Off is dealt simultaneously.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0912750156",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 139
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 139
+    }
+  ],
+  "internalName": "hold-them-off"
+}

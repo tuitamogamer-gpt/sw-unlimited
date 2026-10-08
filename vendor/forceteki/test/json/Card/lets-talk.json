@@ -1,0 +1,36 @@
+{
+  "title": "Let's Talk",
+  "subtitle": "",
+  "cost": 9,
+  "hp": null,
+  "power": null,
+  "text": "If a friendly unit left play this phase, this event costs 3 resources less to play.\nEach friendly unit captures an enemy non-leader unit in the same arena.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8619707446",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 131
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 131
+    }
+  ],
+  "internalName": "lets-talk"
+}

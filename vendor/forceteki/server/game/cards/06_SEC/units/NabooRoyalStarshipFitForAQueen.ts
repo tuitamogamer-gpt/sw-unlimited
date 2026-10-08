@@ -1,0 +1,26 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { INonLeaderUnitAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { NonLeaderUnitCard } from '../../../core/card/NonLeaderUnitCard';
+import { KeywordName, RelativePlayer, WildcardCardType } from '../../../core/Constants';
+import { TextHelper } from '../../../core/utils/TextHelper';
+
+export default class NabooRoyalStarshipFitForAQueen extends NonLeaderUnitCard {
+    protected override getImplementationId() {
+        return {
+            id: '2919204327',
+            internalName: 'naboo-royal-starship#fit-for-a-queen',
+        };
+    }
+
+    public override setupCardAbilities(registrar: INonLeaderUnitAbilityRegistrar, abilityHelper: IAbilityHelper) {
+        registrar.addConstantAbility({
+            title: `Each friendly leader unit gains ${TextHelper.Raid(2)} and ${TextHelper.Overwhelm}`,
+            targetController: RelativePlayer.Self,
+            targetCardTypeFilter: WildcardCardType.LeaderUnit,
+            ongoingEffect: [
+                abilityHelper.ongoingEffects.gainKeyword({ keyword: KeywordName.Raid, amount: 2 }),
+                abilityHelper.ongoingEffects.gainKeyword(KeywordName.Overwhelm),
+            ]
+        });
+    }
+}

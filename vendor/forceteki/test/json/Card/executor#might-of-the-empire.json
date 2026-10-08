@@ -1,0 +1,42 @@
+{
+  "title": "Executor",
+  "subtitle": "Might of the Empire",
+  "cost": 11,
+  "hp": 12,
+  "power": 12,
+  "text": "Overwhelm\nWhen Played/On Attack/When Defeated: Create 3 TIE Fighter tokens.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2870117979",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 90
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 90
+    }
+  ],
+  "internalName": "executor#might-of-the-empire"
+}

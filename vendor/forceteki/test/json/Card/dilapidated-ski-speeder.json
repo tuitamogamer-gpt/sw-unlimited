@@ -1,0 +1,39 @@
+{
+  "title": "Dilapidated Ski Speeder",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 7,
+  "power": 3,
+  "text": "When Played: Deal 3 damage to this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5012301077",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "resistance",
+    "vehicle",
+    "speeder"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 248
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 248
+    }
+  ],
+  "internalName": "dilapidated-ski-speeder"
+}

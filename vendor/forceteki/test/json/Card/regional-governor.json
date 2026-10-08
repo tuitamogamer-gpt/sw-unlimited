@@ -1,0 +1,38 @@
+{
+  "title": "Regional Governor",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "When Played: Name a card. While this unit is in play, opponents can't play the named card.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card’s “name” do not include the subtitle of the card.\nUntil Regional Governor leaves play, your opponents can’t play the named card. This effect is not changed if an opponent takes control of Regional Governor.\nIf Regional Governor is captured and then rescued, its \"When Played\" effect does not resume.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3503494534",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 62
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 62
+    }
+  ],
+  "internalName": "regional-governor"
+}

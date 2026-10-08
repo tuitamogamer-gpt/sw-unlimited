@@ -1,0 +1,40 @@
+{
+  "title": "Rey",
+  "subtitle": "Skywalker",
+  "cost": 8,
+  "hp": 9,
+  "power": 9,
+  "text": "Opponents can't take control of this unit.\nThis unit can't be defeated by enemy card abilities.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Rey can’t be defeated directly by card abilities that “defeat a unit”, but can still be defeated as a result of card abilities or game effects, such as abilities that give a unit -X/-X for the phase.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4947826569",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "resistance"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 149
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 149
+    }
+  ],
+  "internalName": "rey#skywalker"
+}

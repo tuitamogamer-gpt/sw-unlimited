@@ -1,0 +1,40 @@
+{
+  "title": "Sith Assassin",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "Hidden (This unit can't be attacked if it was played this phase.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0209941618",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "sith"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 238
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 238
+    }
+  ],
+  "internalName": "sith-assassin"
+}

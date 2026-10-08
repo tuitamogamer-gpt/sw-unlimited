@@ -1,0 +1,40 @@
+{
+  "title": "Bo-Katan Kryze",
+  "subtitle": "For All of Mandalore",
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "While you control another Mandalorian unit, this unit gains Raid 2.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4358572595",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 105
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 105
+    }
+  ],
+  "internalName": "bokatan-kryze#for-all-of-mandalore"
+}

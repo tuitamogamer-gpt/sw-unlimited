@@ -1,0 +1,39 @@
+{
+  "title": "Rhokai Gunship",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 2,
+  "text": "When Defeated: Deal 1 damage to a unit or base.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7351946067",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 164
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 164
+    }
+  ],
+  "internalName": "rhokai-gunship"
+}

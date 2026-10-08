@@ -1,0 +1,42 @@
+{
+  "title": "Mandalorian Flagship",
+  "subtitle": "Captured from the Empire",
+  "cost": 7,
+  "hp": 8,
+  "power": 4,
+  "text": "While you control a leader unit, this unit gains Ambush. (When you play this unit, it may attack an enemy unit.)\nThis unit gets +1/+0 for each other friendly Mandalorian unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. The unit does not have to be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7405707601",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 113
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 113
+    }
+  ],
+  "internalName": "mandalorian-flagship#captured-from-the-empire"
+}

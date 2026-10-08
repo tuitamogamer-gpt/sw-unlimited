@@ -1,0 +1,37 @@
+{
+  "title": "Therm Scissorpunch",
+  "subtitle": "Boastful Gambler",
+  "cost": 2,
+  "hp": 5,
+  "power": 5,
+  "text": "When the action phase starts: Reveal the top card of your deck and an opponent's deck. For each card that costs 3 or more revealed this way, this unit gets –2/–2 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4191948680",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 223
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 223
+    }
+  ],
+  "internalName": "therm-scissorpunch#boastful-gambler"
+}

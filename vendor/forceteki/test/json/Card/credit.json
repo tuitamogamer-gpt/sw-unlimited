@@ -1,0 +1,27 @@
+{
+  "title": "Credit",
+  "subtitle": "",
+  "cost": 0,
+  "hp": null,
+  "power": null,
+  "text": "While paying resources, you may defeat this token. If you do, pay 1 resource less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "You may defeat Credit tokens while paying resources to play cards or use abilities.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8015500527",
+  "aspects": [],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [],
+  "types": [
+    "token"
+  ],
+  "setId": {
+    "set": "LAW"
+  },
+  "internalName": "credit"
+}

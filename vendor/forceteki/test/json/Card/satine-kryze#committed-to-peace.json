@@ -1,0 +1,39 @@
+{
+  "title": "Satine Kryze",
+  "subtitle": "Committed to Peace",
+  "cost": 4,
+  "hp": 6,
+  "power": 0,
+  "text": "Each unit (including enemy units) gains: “Action [Exhaust]: Discard cards from an opponent's deck equal to half this unit's remaining HP, rounded up.”",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Always discard from the top of a deck, unless an ability specifies otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6384086894",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 47
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 47
+    }
+  ],
+  "internalName": "satine-kryze#committed-to-peace"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Eager Escort Fighter",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 1,
+  "power": 4,
+  "text": "Ambush (When you play this unit, it may attack an enemy unit.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2913957813",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "new republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 112
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 112
+    }
+  ],
+  "internalName": "eager-escort-fighter"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Reckless Sacrifice",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Discard a unit from your hand. Deal 5 damage to a unit that costs more than the discarded card.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8814113279",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 163
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 163
+    }
+  ],
+  "internalName": "reckless-sacrifice"
+}

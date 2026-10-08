@@ -1,0 +1,39 @@
+{
+  "title": "C-3PO",
+  "subtitle": "Translation Protocol",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "On Attack: You may give an Experience token to another non-leader unit that shares a Trait with a friendly leader.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4459586752",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "rebel",
+    "underworld",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 152
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 152
+    }
+  ],
+  "internalName": "c3po#translation-protocol"
+}

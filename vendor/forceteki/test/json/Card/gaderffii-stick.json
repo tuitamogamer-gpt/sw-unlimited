@@ -1,0 +1,37 @@
+{
+  "title": "Gaderffii Stick",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 2,
+  "text": "Attach to a non-Vehicle unit with 3 or less power.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": 2,
+  "upgradeHp": 1,
+  "id": "3960334269",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "item",
+    "weapon"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 235
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 235
+    }
+  ],
+  "internalName": "gaderffii-stick"
+}

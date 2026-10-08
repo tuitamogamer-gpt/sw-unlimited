@@ -1,0 +1,38 @@
+{
+  "title": "Reinforcement Walker",
+  "subtitle": null,
+  "cost": 8,
+  "hp": 9,
+  "power": 6,
+  "text": "When Played/On Attack: Look at the top card of your deck. Either draw that card or discard it and heal 3 damage from your base.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "You may choose whether to draw a card or discard a card and heal 3 from your base.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8691800148",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "vehicle",
+    "walker"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 119
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 119
+    }
+  ],
+  "internalName": "reinforcement-walker"
+}

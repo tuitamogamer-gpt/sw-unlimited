@@ -1,0 +1,40 @@
+{
+  "title": "Tribunal",
+  "subtitle": "Grave of the 332nd",
+  "cost": 10,
+  "hp": 8,
+  "power": 6,
+  "text": "This unit costs 2 resources less to play for each other card you played this phase.\nWhen Played: Give each other unit –2/–2 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5729664588",
+  "aspects": [
+    "cunning",
+    "vigilance"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 36
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 36
+    }
+  ],
+  "internalName": "tribunal#grave-of-the-332nd"
+}

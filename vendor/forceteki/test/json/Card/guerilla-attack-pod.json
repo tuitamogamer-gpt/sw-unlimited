@@ -1,0 +1,42 @@
+{
+  "title": "Guerilla Attack Pod",
+  "subtitle": null,
+  "cost": 6,
+  "hp": 6,
+  "power": 4,
+  "text": "Grit (This unit gets +1/+0 for each damage on it.)  \n\nWhen Played: If a base has 15 or more damage on it, ready this unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5335160564",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "walker"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 148
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 148
+    }
+  ],
+  "internalName": "guerilla-attack-pod"
+}

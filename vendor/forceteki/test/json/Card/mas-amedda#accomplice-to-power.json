@@ -1,0 +1,41 @@
+{
+  "title": "Mas Amedda",
+  "subtitle": "Accomplice to Power",
+  "cost": 4,
+  "hp": 4,
+  "power": 3,
+  "text": "When Played: Give an Experience token to each of up to 2 other Official units.\nPlot (When you deploy a leader, you may play this card from your resources, paying its cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7365023470",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "republic",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "plot"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 84
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 84
+    }
+  ],
+  "internalName": "mas-amedda#accomplice-to-power"
+}

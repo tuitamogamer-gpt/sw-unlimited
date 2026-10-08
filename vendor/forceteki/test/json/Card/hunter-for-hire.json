@@ -1,0 +1,38 @@
+{
+  "title": "Hunter For Hire",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 4,
+  "text": "Action [defeat a friendly Credit token]: Take control of this unit. Any player may use this ability.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8170738715",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 156
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 156
+    }
+  ],
+  "internalName": "hunter-for-hire"
+}

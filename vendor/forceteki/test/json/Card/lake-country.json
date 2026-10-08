@@ -1,0 +1,34 @@
+{
+  "title": "Lake Country",
+  "subtitle": "",
+  "cost": null,
+  "hp": 34,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1672815328",
+  "aspects": [],
+  "traits": [
+    "naboo"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 31
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 31
+    }
+  ],
+  "internalName": "lake-country"
+}

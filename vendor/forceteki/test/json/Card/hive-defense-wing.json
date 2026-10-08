@@ -1,0 +1,41 @@
+{
+  "title": "Hive Defense Wing",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "Restore 1 (When this unit attacks, heal 1 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9023764122",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 110
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 110
+    }
+  ],
+  "internalName": "hive-defense-wing"
+}

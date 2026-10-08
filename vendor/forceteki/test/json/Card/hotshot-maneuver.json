@@ -1,0 +1,36 @@
+{
+  "title": "Hotshot Maneuver",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Choose a friendly unit. For each of its “On Attack” abilities, deal 2 damage to a different enemy unit. Then, attack with the chosen unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Each instance of 2 damage must be dealt to a different unit. All damage is dealt simultaneously.\nIf you play Hotshot Maneuvers, you must attack with a unit, if able. Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6544277158",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 174
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 174
+    }
+  ],
+  "internalName": "hotshot-maneuver"
+}

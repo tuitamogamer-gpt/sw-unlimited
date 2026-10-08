@@ -1,0 +1,40 @@
+{
+  "title": "Snapshot Reflexes",
+  "subtitle": null,
+  "cost": 1,
+  "hp": 1,
+  "power": 1,
+  "text": "When Played: You may attack with attached unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "You may only attack with your own units. Units must be ready in order to attack.\n",
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "9985638644",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 223
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 215
+    },
+    {
+      "set": "SHD",
+      "number": 223
+    }
+  ],
+  "internalName": "snapshot-reflexes"
+}

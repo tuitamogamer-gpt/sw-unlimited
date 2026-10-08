@@ -1,0 +1,37 @@
+{
+  "title": "The Sarlacc of Carkoon",
+  "subtitle": "Horror of the Dune Sea",
+  "cost": 8,
+  "hp": 9,
+  "power": 8,
+  "text": "On Attack: Put a unit from your discard pile on the bottom of your deck. Deal damage equal to that unit's power to an enemy ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6089627415",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 163
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 163
+    }
+  ],
+  "internalName": "the-sarlacc-of-carkoon#horror-of-the-dune-sea"
+}

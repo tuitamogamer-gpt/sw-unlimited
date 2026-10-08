@@ -1,0 +1,40 @@
+{
+  "title": "Inferno Four",
+  "subtitle": "Unforgetting",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "When Played/When Defeated: Look at the top 2 cards of your deck. Put any number of them on the bottom of your deck and the rest on top in any order.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9133080458",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 31
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 31
+    }
+  ],
+  "internalName": "inferno-four#unforgetting"
+}

@@ -1,0 +1,34 @@
+{
+  "title": "Last Words",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "If a friendly unit was defeated this phase, give 2 Experience tokens to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4371455331",
+  "aspects": [],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 263
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 263
+    }
+  ],
+  "internalName": "last-words"
+}

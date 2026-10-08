@@ -1,0 +1,37 @@
+{
+  "title": "Long Live the Empire",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Defeat a friendly Imperial unit. If you do, resource the top card of your deck.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Resources enter play exhausted.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9020748123",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 103
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 103
+    }
+  ],
+  "internalName": "long-live-the-empire"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Saw Gerrera's U-Wing",
+  "subtitle": "Breaking the Rules",
+  "cost": 6,
+  "hp": 8,
+  "power": 4,
+  "text": "Saboteur\nWhen this unit completes an attack (and survives): You may attack with another Aggression unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "A unit must survive an attack to trigger its “when this unit completes an attack” abilities.\nUnits must be ready in order to attack.\nWhen Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4593742143",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 174
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 174
+    }
+  ],
+  "internalName": "saw-gerreras-uwing#breaking-the-rules"
+}

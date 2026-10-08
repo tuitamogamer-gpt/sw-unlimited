@@ -1,0 +1,39 @@
+{
+  "title": "Krrsantan",
+  "subtitle": "Santo",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "When Played: You may deal damage equal to the number of resources you control minus 3 to a ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1246255814",
+  "aspects": [
+    "command",
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 46
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 46
+    }
+  ],
+  "internalName": "krrsantan#santo"
+}

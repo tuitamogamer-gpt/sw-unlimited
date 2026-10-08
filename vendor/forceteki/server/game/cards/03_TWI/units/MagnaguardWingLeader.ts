@@ -1,0 +1,38 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { INonLeaderUnitAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { NonLeaderUnitCard } from '../../../core/card/NonLeaderUnitCard';
+import { RelativePlayer, Trait, WildcardCardType } from '../../../core/Constants';
+import { TextHelper } from '../../../core/utils/TextHelper';
+
+export default class MagnaguardWingLeader extends NonLeaderUnitCard {
+    protected override getImplementationId() {
+        return {
+            id: '5630404651',
+            internalName: 'magnaguard-wing-leader',
+        };
+    }
+
+    public override setupCardAbilities(registrar: INonLeaderUnitAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.addActionAbility({
+            title: `Attack with a ${TextHelper.Trait.Droid} unit`,
+            limit: AbilityHelper.limit.perRound(1),
+            targetResolver: {
+                activePromptTitle: `Choose a ${TextHelper.Trait.Droid} unit`,
+                cardTypeFilter: WildcardCardType.Unit,
+                controller: RelativePlayer.Self,
+                cardCondition: (card) => card.hasSomeTrait(Trait.Droid),
+                immediateEffect: AbilityHelper.immediateEffects.attack(),
+            },
+            then: (thenContext) => ({
+                title: `Attack with another ${TextHelper.Trait.Droid} unit`,
+                targetResolver: {
+                    activePromptTitle: `Choose a ${TextHelper.Trait.Droid} unit`,
+                    cardTypeFilter: WildcardCardType.Unit,
+                    controller: RelativePlayer.Self,
+                    cardCondition: (card) => card.hasSomeTrait(Trait.Droid) && card !== thenContext.target,
+                    immediateEffect: AbilityHelper.immediateEffects.attack(),
+                }
+            })
+        });
+    }
+}

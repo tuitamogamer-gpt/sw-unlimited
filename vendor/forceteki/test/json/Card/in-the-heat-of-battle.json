@@ -1,0 +1,39 @@
+{
+  "title": "In the Heat of Battle",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Each unit gains Sentinel and loses Saboteur for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Events only affect units that are in play when the event is played, unless specified otherwise.\nAffected units can't gain Saboteur for this phase.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3272995563",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "disaster"
+  ],
+  "keywords": [
+    "sentinel",
+    "saboteur"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 77
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 77
+    }
+  ],
+  "internalName": "in-the-heat-of-battle"
+}

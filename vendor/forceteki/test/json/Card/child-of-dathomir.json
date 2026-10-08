@@ -1,0 +1,37 @@
+{
+  "title": "Child of Dathomir",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 1,
+  "text": "While you control 3 or more units (including this one), this unit gets +2/+0.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5972134565",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "night"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 129
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 129
+    }
+  ],
+  "internalName": "child-of-dathomir"
+}

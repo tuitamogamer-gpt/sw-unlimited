@@ -1,0 +1,38 @@
+{
+  "title": "Grav Charge",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 0,
+  "power": 0,
+  "text": "When attached unit's attack ends: Deal 4 damage to it and defeat this upgrade.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "When Attack Ends abilities trigger at the same time as units deal combat damage.\n",
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "2899934918",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "condition",
+    "item",
+    "weapon"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 85
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 85
+    }
+  ],
+  "internalName": "grav-charge"
+}

@@ -1,0 +1,248 @@
+import type { IModerationAction, IUserDataEntity, IUserPreferences, ModerationFieldState } from '../../services/DynamoDBInterfaces';
+
+/**
+ * Abstract base User class
+ */
+export abstract class User {
+    /**
+     * Checks if the user is authenticated (has an account)
+     */
+    public abstract isAuthenticatedUser(): boolean;
+
+    /**
+     * Checks if the user isn't authenticated (is anonymous)
+     */
+    public abstract isAnonymousUser(): boolean;
+
+    /**
+     * Checks if the user is a local dev test user
+     */
+    public abstract isDevTestUser(): boolean;
+
+    /**
+     * Gets the user's ID (either authenticated user ID or anonymous ID)
+     */
+    public abstract getId(): string;
+
+    /**
+     * Gets the user's username
+     */
+    public abstract getUsername(): string;
+
+    /**
+     * Gets a users welcomeMessage status
+     */
+    public abstract getShowWelcomeMessage(): boolean;
+
+    /**
+     * Gets a users welcomeMessage status
+     */
+    public abstract getUndoPopupSeenDate(): Date | null;
+
+    /**
+     * Gets the date the user last saw the timer tutorial popup
+     */
+    public abstract getTimerPopupSeenDate(): Date | null;
+
+    /**
+     * Gets the user's preferences
+     */
+    public abstract getPreferences(): IUserPreferences;
+
+    /**
+     * Sets the user's preferences
+     */
+    public abstract setPreferences(preferences: IUserPreferences): void;
+
+    /**
+     * Gets the object representation of the user for sending to the client
+     */
+    public abstract toJSON(): Record<string, any>;
+
+    public abstract needsUsernameChange(): boolean;
+
+    public abstract mustRequestUsernameChange(): ModerationFieldState | null;
+
+    public abstract reportingDisabled(): ModerationFieldState | null;
+
+    /**
+     * Gets the user's moderation status
+     */
+    public abstract getModeration(): IModerationAction | null;
+
+    /**
+     * Whether this user has a client-provided ID (as opposed to a server-generated UUID).
+     * Used for DAU tracking to avoid counting manufactured anonymous IDs.
+     */
+    public hasClientProvidedId(): boolean {
+        return true;
+    }
+}
+
+/**
+ * Represents an authenticated user with a full account
+ */
+export class AuthenticatedUser extends User {
+    public userData: IUserDataEntity;
+
+    public constructor(userData: IUserDataEntity) {
+        super();
+        this.userData = userData;
+    }
+
+    public isAuthenticatedUser(): boolean {
+        return true;
+    }
+
+    public isAnonymousUser(): boolean {
+        return false;
+    }
+
+    public isDevTestUser(): boolean {
+        return false;
+    }
+
+    public getId(): string {
+        return this.userData.id;
+    }
+
+    public getShowWelcomeMessage(): boolean {
+        return this.userData.showWelcomeMessage;
+    }
+
+    public getUndoPopupSeenDate(): Date | null {
+        return this.userData.undoPopupSeenDate ? new Date(this.userData.undoPopupSeenDate) : null;
+    }
+
+    public getTimerPopupSeenDate(): Date | null {
+        return this.userData.timerPopupSeenDate ? new Date(this.userData.timerPopupSeenDate) : null;
+    }
+
+    public getUsername(): string {
+        return this.userData.username;
+    }
+
+    public getPreferences(): IUserPreferences {
+        return this.userData.preferences;
+    }
+
+    public setPreferences(preferences: IUserPreferences) {
+        this.userData.preferences = preferences;
+    }
+
+    public needsUsernameChange(): boolean {
+        // undefined = false
+        return !!this.userData.needsUsernameChange;
+    }
+
+    public mustRequestUsernameChange(): ModerationFieldState | null {
+        return this.userData.mustRequestUsernameChange ?? null;
+    }
+
+    public reportingDisabled(): ModerationFieldState | null {
+        return this.userData.reportingDisabled ?? null;
+    }
+
+    public getModeration(): IModerationAction | null {
+        return this.userData.moderation ?? null;
+    }
+
+    public toJSON(): Record<string, any> {
+        return {
+            id: this.getId(),
+            username: this.getUsername(),
+            isAuthenticated: this.isAuthenticatedUser(),
+            isAnonymousUser: this.isAnonymousUser(),
+            preferences: this.getPreferences(),
+        };
+    }
+}
+
+/**
+ * Represents an anonymous user without an account
+ */
+export class AnonymousUser extends User {
+    public id: string;
+    public username: string;
+    private readonly _hasClientProvidedId: boolean;
+
+    public constructor(id: string, username: string = 'Anonymous', hasClientProvidedId: boolean = false) {
+        super();
+        this.id = id;
+        this.username = username;
+        this._hasClientProvidedId = hasClientProvidedId;
+    }
+
+    public override hasClientProvidedId(): boolean {
+        return this._hasClientProvidedId;
+    }
+
+    public isAuthenticatedUser(): boolean {
+        return false;
+    }
+
+    public isAnonymousUser(): boolean {
+        return true;
+    }
+
+    public isDevTestUser(): boolean {
+        if (process.env.ENVIRONMENT === 'development') {
+            return this.id === 'exe66' || this.id === 'th3w4y';
+        }
+        return false;
+    }
+
+    public getId(): string {
+        return this.id;
+    }
+
+    public needsUsernameChange(): boolean {
+        return false;
+    }
+
+    public mustRequestUsernameChange(): ModerationFieldState | null {
+        return null;
+    }
+
+    public reportingDisabled(): ModerationFieldState | null {
+        return null;
+    }
+
+    public getUsername(): string {
+        return this.username;
+    }
+
+    public getPreferences(): IUserPreferences {
+        return null;
+    }
+
+    public setPreferences(_preferences: IUserPreferences) {
+        throw new Error('Anonymous users do not support preferences.');
+    }
+
+    public override getShowWelcomeMessage(): boolean {
+        return false;
+    }
+
+    public override getUndoPopupSeenDate(): Date | null {
+        return null;
+    }
+
+    public override getTimerPopupSeenDate(): Date | null {
+        return null;
+    }
+
+    public getModeration(): IModerationAction | null {
+        return null;
+    }
+
+    public toJSON(): Record<string, any> {
+        return {
+            id: this.getId(),
+            username: this.getUsername(),
+            isAuthenticated: this.isAuthenticatedUser(),
+            isAnonymousUser: this.isAnonymousUser(),
+            preferences: this.getPreferences(),
+        };
+    }
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Jedi Holocron",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 1,
+  "text": "Attach to a Force unit. \nAttached unit gains: “On Attack: You may heal 3 damage from another unit.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "7377298352",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "jedi",
+    "item"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 51
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 51
+    }
+  ],
+  "internalName": "jedi-holocron"
+}

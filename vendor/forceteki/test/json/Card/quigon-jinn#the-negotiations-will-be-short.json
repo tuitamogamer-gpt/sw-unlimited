@@ -1,0 +1,42 @@
+{
+  "title": "Qui-Gon Jinn",
+  "subtitle": "The Negotiations Will Be Short",
+  "cost": 7,
+  "hp": 5,
+  "power": 7,
+  "text": "Ambush\nWhen Defeated: You may choose a non-leader ground unit. Its owner puts it on the top or bottom of their deck.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as \"When Played\" abilities. If there is no enemy unit that can be attacked, the unit does not ready.\nThe owner of the unit chosen with Qui-Gon's \"When Defeated\" ability decides whether to put it on the top or on the bottom of their deck.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1270747736",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 200
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 200
+    }
+  ],
+  "internalName": "quigon-jinn#the-negotiations-will-be-short"
+}

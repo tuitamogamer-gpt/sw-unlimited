@@ -1,0 +1,39 @@
+{
+  "title": "Street Gang Recruiter",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 4,
+  "power": 4,
+  "text": "When Played: You may return an Underworld card from your discard pile to your hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Street Gang Recruiter can return itself to hand if defeated before its “When Played” is resolved.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2090698177",
+  "aspects": [],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 261
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 260
+    },
+    {
+      "set": "LAW",
+      "number": 261
+    }
+  ],
+  "internalName": "street-gang-recruiter"
+}

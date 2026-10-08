@@ -1,0 +1,39 @@
+{
+  "title": "General's Guardian",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "When this unit is attacked: Create a Battle Droid token.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "“When this unit is attacked” triggers at the same time as “On Attack” abilities.\nOn Defense abilities trigger when this unit is chosen as the defender for an attack, in the same window as the attacker's On Attack abilities.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3876951742",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 83
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 83
+    }
+  ],
+  "internalName": "generals-guardian"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Imperial Loyalist",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1379910767",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 239
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 239
+    }
+  ],
+  "internalName": "imperial-loyalist"
+}

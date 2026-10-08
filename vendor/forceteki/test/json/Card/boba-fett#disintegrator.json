@@ -1,0 +1,39 @@
+{
+  "title": "Boba Fett",
+  "subtitle": "Disintegrator",
+  "cost": 3,
+  "hp": 5,
+  "power": 3,
+  "text": "On Attack: If this unit is attacking an exhausted unit that didn't enter play this round, deal 3 damage to the defender.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Boba Fett’s ability will not deal damage to an exhausted leader unit the turn that leader deploys, since leader units are considered to enter play.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4156799805",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 179
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 179
+    }
+  ],
+  "internalName": "boba-fett#disintegrator"
+}

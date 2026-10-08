@@ -1,0 +1,38 @@
+{
+  "title": "Children of the Watch",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 3,
+  "power": 3,
+  "text": "When Played: Create 2 Mandalorian tokens.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5980742717",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 111
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 111
+    }
+  ],
+  "internalName": "children-of-the-watch"
+}

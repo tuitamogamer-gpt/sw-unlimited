@@ -1,0 +1,729 @@
+import type { AbilityContext } from './core/ability/AbilityContext';
+import type { TriggeredAbilityContext } from './core/ability/TriggeredAbilityContext';
+import type { GameSystem } from './core/gameSystem/GameSystem';
+import type { Card } from './core/card/Card';
+import type { Aspect, DamageModificationType, Duration, RelativePlayerFilter, StandardTriggeredAbilityType, SwuGameFormat, Trait } from './core/Constants';
+import { type RelativePlayer, type CardType, type EventName, type PhaseName, type ZoneFilter, type KeywordName, type AbilityType, type CardTypeFilter } from './core/Constants';
+import type { GameEvent } from './core/event/GameEvent';
+import type { IActionTargetResolver, IActionTargetsResolver, ICardTargetResolver, ITriggeredAbilityTargetResolver, ITriggeredAbilityTargetsResolver } from './TargetInterfaces';
+import type { IReplacementEffectSystemProperties } from './gameSystems/ReplacementEffectSystem';
+import type { ICost } from './core/cost/ICost';
+import type { Game } from './core/Game';
+import type { PlayerOrCardAbility } from './core/ability/PlayerOrCardAbility';
+import type { Player } from './core/Player';
+import type { OngoingCardEffect } from './core/ongoingEffect/OngoingCardEffect';
+import type { OngoingPlayerEffect } from './core/ongoingEffect/OngoingPlayerEffect';
+import type { BaseZone } from './core/zone/BaseZone';
+import type { DeckZone } from './core/zone/DeckZone';
+import type { DiscardZone } from './core/zone/DiscardZone';
+import type { HandZone } from './core/zone/HandZone';
+import type { OutsideTheGameZone } from './core/zone/OutsideTheGameZone';
+import type { ResourceZone } from './core/zone/ResourceZone';
+import type { GroundArenaZone } from './core/zone/GroundArenaZone';
+import type { SpaceArenaZone } from './core/zone/SpaceArenaZone';
+import type { CaptureZone } from './core/zone/CaptureZone';
+import type { IUnitCard } from './core/card/propertyMixins/UnitProperties';
+import type { DelayedEffectType } from './gameSystems/DelayedEffectSystem';
+import type { IUpgradeCard } from './core/card/CardInterfaces';
+import type { IInitiateAttackProperties } from './gameSystems/InitiateAttackSystem';
+import type { FormatMessage } from './core/chat/GameChat';
+import type { ISnapshotSettingsBase } from './core/snapshot/SnapshotInterfaces';
+import type { Lobby, MatchmakingType } from '../gamenode/Lobby';
+import type { DamageSourceType } from './IDamageOrDefeatSource';
+import type { IInPlayCard } from './core/card/baseClasses/InPlayCard';
+import type { IOngoingAllCardsForPlayerEffectProps, OngoingAllCardsForPlayerEffect } from './core/ongoingEffect/OngoingAllCardsForPlayerEffect';
+
+// allow block comments without spaces so we can have compact jsdoc descriptions in this file
+/* eslint @stylistic/lines-around-comment: off */
+
+// ********************************************** EXPORTED TYPES **********************************************
+
+export type PropsFactory<Props, TContext extends AbilityContext = AbilityContext> = Props | ((context: TContext) => Props);
+
+/** Interface definition for addTriggeredAbility */
+export type ITriggeredAbilityProps<TSource extends Card = Card> = ITriggeredAbilityWhenProps<TSource> | ITriggeredAbilityAggregateWhenProps<TSource>;
+export type IReplacementEffectAbilityProps<TSource extends Card = Card> = IReplacementEffectAbilityWhenProps<TSource> | IReplacementEffectAbilityAggregateWhenProps<TSource>;
+export type IDamageModificationAbilityProps<TSource extends Card = Card> = Omit<IReplacementEffectAbilityBaseProps<TSource>, 'when' | 'onlyIfYouDoEffect'> & {
+    modificationType: DamageModificationType;
+    onlyFromPlayer?: RelativePlayer; // TSTODO - update to accept an array
+    damageOfType?: DamageSourceType;
+    amount?: number;
+    replaceWithEffect?: GameSystem<TriggeredAbilityContext>;
+
+    /**
+     * This can be used to override the default assumption that modification applies to context.source
+     * @param card
+     * @param context
+     * @returns True if the card meets the defined condition
+     */
+    shouldCardHaveDamageModification?: (card: Card, context?: TriggeredAbilityContext) => boolean;
+
+    /**
+     * This is used for damage modification that requires some other system to resolve before modifying the damage, such as defeating a unit
+     */
+    onlyIfYouDoEffect?: GameSystem<TriggeredAbilityContext<TSource>>;
+
+    /**
+     * If true, the modification is applied when the initiating ability resolves rather than to each
+     * damage event. The trigger fires once on ability initiation (all-or-nothing) and the amount is
+     * added to the ability's total damage output: each damage event for per-target effects, or the
+     * total amount before distribution for indirect / distribute-damage effects.
+     */
+    applyAtAbilityInitiation?: boolean;
+};
+
+export type IWhenAttackEndsAbilityProps<TSource extends Card = Card> = ITriggeredAbilityProps<TSource> & {
+    /** Indicates that the attacker must survive the attack for the trigger to happen. Defaults to false. */
+    attackerMustSurvive?: boolean;
+};
+
+/** Interface definition for addActionAbility */
+export type IActionAbilityProps<TSource extends Card = Card> = Exclude<IAbilityPropsWithSystems<AbilityContext<TSource>>, 'optional'> & {
+    condition?: (context?: AbilityContext<TSource>) => boolean;
+    cost?: ICost<AbilityContext<TSource>> | ICost<AbilityContext<TSource>>[] |
+      ((context: AbilityContext<TSource>) => ICost<AbilityContext<TSource>> | ICost<AbilityContext<TSource>>[]);
+
+    /**
+     * If true, any player can trigger the ability. If false, only the card's controller can trigger it.
+     */
+    anyPlayer?: boolean;
+    phase?: PhaseName | 'any';
+
+    // If true, the action will not be automatically triggered when it's the only one available.
+    requiresConfirmation?: boolean;
+};
+
+export interface IOngoingEffectProps<TTarget> {
+    targetZoneFilter?: ZoneFilter;
+    sourceZoneFilter?: ZoneFilter | ZoneFilter[];
+    targetCardTypeFilter?: any;
+    matchTarget?: TTarget | ((target: TTarget, context: AbilityContext) => boolean);
+    canChangeZoneOnce?: boolean;
+    canChangeZoneNTimes?: number;
+    duration?: Duration;
+    condition?: (context: AbilityContext) => boolean;
+    until?: WhenType;
+    ability?: PlayerOrCardAbility;
+    target?: TTarget | TTarget[];
+    cannotBeCancelled?: boolean;
+    optional?: boolean;
+    delayedEffectType?: DelayedEffectType;
+    isLastingEffect?: boolean;
+    gainAbilitySource?: Card;
+}
+
+export type IOngoingCardOrPlayerEffectProps<TTarget extends Card | Player> = TTarget extends Card ? IOngoingCardEffectProps : IOngoingPlayerEffectProps;
+
+export interface IOngoingPlayerEffectProps extends IOngoingEffectProps<Player> {
+    targetController?: RelativePlayerFilter;
+}
+
+export interface IOngoingCardEffectProps extends IOngoingEffectProps<Card> {
+    targetController?: RelativePlayerFilter;
+}
+
+// TODO: since many of the files that use this are JS, it's hard to know if it's fully correct.
+// for example, there's ambiguity between IAbilityProps and ITriggeredAbilityProps at the level of PlayerOrCardAbility
+/** Base interface for triggered and action ability definitions */
+export interface IAbilityProps<TContext extends AbilityContext> {
+    title: string;
+    contextTitle?: (context: TContext) => string;
+
+    /**
+     * When an ability is triggered multiple times in the same window, the trigger resolution prompt
+     * normally appends the affected card's name to each choice to differentiate them. If `contextTitle`
+     * is set it usually already differentiates the choices, so the appended name is suppressed. Set this
+     * to `true` to force the name to be appended anyway (e.g. when `contextTitle` does not name the card).
+     */
+    appendOverrideTitle?: boolean;
+
+    zoneFilter?: ZoneFilter | ZoneFilter[];
+    limit?: any;
+    cardName?: string;
+
+    /**
+     * Indicates if triggering the ability is optional (in which case the player will be offered the
+     * 'Pass' button on resolution) or if it is mandatory
+     */
+    optional?: boolean;
+
+    /**
+     * If true, disables automatic cost reordering in AbilityResolver
+     */
+    disableCostReordering?: boolean;
+
+    /**
+     * If optional is true, indicates which player will make the choice to resolve the optional ability (defaults to RelativePlayer.Self)
+     */
+    playerChoosingOptional?: RelativePlayer;
+
+    /**
+     * Override the default 'Pass' button text
+     */
+    optionalButtonTextOverride?: string;
+
+    /** Indicates which player can activate this ability (e.g. for Bounty abilities, it is the opponent) */
+    // TODO: Update this property's interaction with SubSteps (then/ifYouDo) and the card A New Adventure
+    canBeTriggeredBy?: RelativePlayerFilter;
+
+    /** If this is a gained ability, gives the source card that is giving the ability */
+    gainAbilitySource?: Card;
+
+    printedAbility?: boolean;
+    cannotTargetFirst?: boolean;
+    effect?: string;
+    effectArgs?: EffectArg | ((context: TContext) => EffectArg);
+    then?: ((context?: TContext) => IThenAbilityPropsWithSystems<TContext>) | IThenAbilityPropsWithSystems<TContext>;
+    ifYouDo?: ((context?: TContext) => IIfYouDoAbilityPropsWithSystems<TContext>) | IIfYouDoAbilityPropsWithSystems<TContext>;
+    ifYouDoNot?: ((context?: TContext) => IAbilityPropsWithSystems<TContext>) | IAbilityPropsWithSystems<TContext>;
+}
+
+export interface IAbilityPropsWithSystems<TContext extends AbilityContext> extends IAbilityProps<TContext> {
+    targetResolver?: IActionTargetResolver<TContext>;
+    targetResolvers?: IActionTargetsResolver<TContext>;
+    immediateEffect?: GameSystem<TContext>;
+    handler?: (context: TContext) => void;
+
+    customConfirmation?: (context: TContext) => string | null;
+
+    /**
+     * Indicates that an attack should be triggered from a friendly unit.
+     * Shorthand for `AbilityHelper.immediateEffects.attack(AttackSelectionMode.SelectAttackerAndTarget)`.
+     * Can either be an {@link IInitiateAttackProperties} property object or a function that creates one from
+     * an {@link AbilityContext}.
+     */
+    initiateAttack?: IInitiateAttackProperties | ((context: TContext) => IInitiateAttackProperties);
+}
+
+/**
+ * Enforces that exactly one of two mutually-exclusive shapes is supplied, by marking the properties
+ * unique to each side as `never` on the other (a plain union would allow properties from both, since
+ * excess-property checks pass a property that exists in any union member). Nest to combine more than
+ * two shapes, e.g. `ExclusiveUnion<A, ExclusiveUnion<B, C>>`.
+ */
+type PropsNotIn<T, U> = { [P in Exclude<keyof T, keyof U>]?: never };
+type ExclusiveUnion<T, U> = (T & PropsNotIn<U, T>) | (U & PropsNotIn<T, U>);
+
+/** Shared properties for the play-cost variants below. */
+interface IPlayCostPropertiesBase {
+    /** Title for the play action this cost is surfaced under. */
+    title?: string;
+}
+
+/** Provide a fully-formed cost (or costs) directly. */
+interface ICostPlayCostProperties<TSource extends Card = Card> extends IPlayCostPropertiesBase {
+    cost: ICost<AbilityContext<TSource>> | ICost<AbilityContext<TSource>>[];
+}
+
+/** Derive the cost from a game system that must be resolvable to pay the cost. */
+interface IImmediateEffectPlayCostProperties<TSource extends Card = Card> extends IPlayCostPropertiesBase {
+    immediateEffect: GameSystem<AbilityContext<TSource>>;
+    costName?: string;
+}
+
+/** Derive the cost from a card-selection target whose immediate effect must be resolvable to pay the cost. */
+interface ITargetResolverPlayCostProperties<TSource extends Card = Card> extends IPlayCostPropertiesBase {
+    targetResolver: ICardTargetResolver<AbilityContext<TSource>>;
+    costName?: string;
+}
+
+/**
+ * Interface definition for addAdditionalPlayCost and addAlternatePlayCost abilities. Exactly one of
+ * `cost`, `immediateEffect`, or `targetResolver` must be supplied.
+ */
+export type IPlayCostProperties<TSource extends Card = Card> = ExclusiveUnion<
+    ICostPlayCostProperties<TSource>,
+    ExclusiveUnion<IImmediateEffectPlayCostProperties<TSource>, ITargetResolverPlayCostProperties<TSource>>
+>;
+
+/** Interface definition for addConstantAbility */
+export interface IConstantAbilityProps<TSource extends Card = Card> {
+    title: string;
+    contextTitle?: (context: AbilityContext<TSource>) => string;
+    sourceZoneFilter?: ZoneFilter | ZoneFilter[];
+
+    /** A handler to enable or disable the ability's effects depending on game context */
+    condition?: (context: AbilityContext<TSource>) => boolean;
+
+    /** A handler to determine if a specific card is impacted by the ability effect */
+    matchTarget?: (card: Card, context?: AbilityContext<TSource>) => boolean;
+    targetController?: RelativePlayerFilter;
+    targetZoneFilter?: ZoneFilter;
+    targetCardTypeFilter?: CardTypeFilter | CardTypeFilter[];
+    cardName?: string;
+    ongoingEffect: IOngoingEffectGenerator | IOngoingEffectGenerator[];
+    abilityIdentifier?: string;
+    printedAbility?: boolean;
+
+    /** If this is a gained ability, gives the source card that is giving the ability */
+    gainAbilitySource?: Card;
+
+    /**
+     * When true, effects registered by this ability are omitted from the ongoing effect summary sent to
+     * the client. Set on abilities whose effects don't describe the board, such as self cost adjusters
+     * that only change the cost to play the source card itself.
+     */
+    omitFromOngoingEffectSummary?: boolean;
+}
+
+export type ITriggeredAbilityPropsWithType<TSource extends Card = Card> = ITriggeredAbilityProps<TSource> & {
+    type: AbilityType.Triggered;
+};
+
+export type IActionAbilityPropsWithType<TSource extends Card = Card> = IActionAbilityProps<TSource> & {
+    type: AbilityType.Action;
+};
+
+export type IConstantAbilityPropsWithType<TSource extends Card = Card> = IConstantAbilityProps<TSource> & {
+    type: AbilityType.Constant;
+};
+
+export type IReplacementEffectAbilityPropsWithType<TSource extends Card = Card> = IReplacementEffectAbilityProps<TSource> & {
+    type: AbilityType.ReplacementEffect;
+};
+
+export type IDamageModificationEffectAbilityPropsWithType<TSource extends Card = Card> = IDamageModificationAbilityProps<TSource> & {
+    type: AbilityType.DamageModification;
+};
+
+export interface IPlayRestrictionAbilityProps {
+    title: string;
+    restrictedActionCondition?: (context: AbilityContext, source: Card) => boolean;
+}
+
+/** Ability types with gain contdition */
+export type IConstantAbilityPropsWithGainCondition<TSource extends IUpgradeCard, TTarget extends Card> = IConstantAbilityProps<TTarget> & IGainCondition<TSource>;
+export type ITriggeredAbilityPropsWithGainCondition<TSource extends IUpgradeCard, TTarget extends Card> = ITriggeredAbilityProps<TTarget> & IGainCondition<TSource>;
+export type ITriggeredAbilityBasePropsWithGainCondition<TSource extends IUpgradeCard, TTarget extends Card> = ITriggeredAbilityBaseProps<TTarget> & IGainCondition<TSource>;
+export type IActionAbilityPropsWithGainCondition<TSource extends IUpgradeCard, TTarget extends Card> = IActionAbilityProps<TTarget> & IGainCondition<TSource>;
+export type IReplacementEffectAbilityPropsWithGainCondition<TSource extends IUpgradeCard, TTarget extends Card> = IReplacementEffectAbilityProps<TTarget> & IGainCondition<TSource>;
+export type IDamageModificationEffectAbilityPropsWithGainCondition<TSource extends IUpgradeCard, TTarget extends Card> = IDamageModificationAbilityProps<TTarget> & IGainCondition<TSource>;
+
+export type IAbilityPropsWithType<TSource extends Card = Card> =
+  ITriggeredAbilityPropsWithType<TSource> |
+  IActionAbilityPropsWithType<TSource> |
+  IConstantAbilityPropsWithType<TSource> |
+  IReplacementEffectAbilityPropsWithType<TSource> |
+  IDamageModificationEffectAbilityPropsWithType<TSource>;
+
+// exported for use in situations where we need to exclude "when" and "aggregateWhen"
+export type ITriggeredAbilityBaseProps<TSource extends Card = Card> = IAbilityPropsWithSystems<TriggeredAbilityContext<TSource>> & {
+    collectiveTrigger?: boolean;
+    targetResolver?: ITriggeredAbilityTargetResolver<TriggeredAbilityContext<TSource>>;
+    targetResolvers?: ITriggeredAbilityTargetsResolver<TriggeredAbilityContext<TSource>>;
+    immediateEffect?: GameSystem<TriggeredAbilityContext<TSource>>;
+    handler?: (context: TriggeredAbilityContext) => void;
+    then?: ((context?: TriggeredAbilityContext<TSource>) => IThenAbilityPropsWithSystems<TriggeredAbilityContext<TSource>>) | IThenAbilityPropsWithSystems<TriggeredAbilityContext<TSource>>;
+    ifYouDo?: ((context?: TriggeredAbilityContext<TSource>) => IAbilityPropsWithSystems<TriggeredAbilityContext<TSource>>) | IAbilityPropsWithSystems<TriggeredAbilityContext<TSource>>;
+    ifYouDoNot?: ((context?: TriggeredAbilityContext<TSource>) => IAbilityPropsWithSystems<TriggeredAbilityContext<TSource>>) | IAbilityPropsWithSystems<TriggeredAbilityContext<TSource>>;
+};
+
+/** Interface definition for setEventAbility */
+export type IEventAbilityProps<TSource extends Card = Card> = IAbilityPropsWithSystems<AbilityContext<TSource>>;
+
+/** Interface definition for setEpicActionAbility */
+export type IEpicActionProps<TSource extends Card = Card> = Omit<IActionAbilityProps<TSource>, 'limit' | 'handler'>;
+
+export type IKeywordProperties =
+  | IAmbushKeywordProperties
+  | IBountyKeywordProperties
+  | ICoordinateKeywordProperties
+  | IExploitKeywordProperties
+  | IFortifyKeywordProperties
+  | IGritKeywordProperties
+  | IHiddenKeywordProperties
+  | IOverwhelmKeywordProperties
+  | IPilotingKeywordProperties
+  | IPlotKeywordProperties
+  | IRaidKeywordProperties
+  | IRestoreKeywordProperties
+  | ISaboteurKeywordProperties
+  | ISentinelKeywordProperties
+  | IShieldedKeywordProperties
+  | ISmuggleKeywordProperties
+  | ISupportKeywordProperties;
+
+export type KeywordNameOrProperties = IKeywordProperties | NonParameterKeywordName;
+
+export type Zone =
+  | BaseZone
+  | CaptureZone
+  | DeckZone
+  | DiscardZone
+  | GroundArenaZone
+  | HandZone
+  | OutsideTheGameZone
+  | ResourceZone
+  | SpaceArenaZone;
+
+export interface IStateListenerProperties<TState> {
+    when: WhenType;
+    update: (currentState: TState, event: any) => TState;
+}
+
+export interface IStateListenerResetProperties {
+    when: WhenType;
+}
+
+export type traitLimit = Record<string, number>;
+
+export type EffectArg =
+  | number
+  | string
+  | RelativePlayer
+  | Card
+  | FormatMessage
+  | { id: string; label: string; name: string; facedown: boolean; type: CardType }
+  | EffectArg[];
+
+export type WhenType<TSource extends Card = Card> = {
+    [EventNameValue in EventName]?: (event: any, context?: TriggeredAbilityContext<TSource>) => boolean;
+};
+
+export type WhenTypeOrStandard<TSource extends Card = Card> = WhenType<TSource> & {
+    [StandardTriggeredAbilityTypeValue in StandardTriggeredAbilityType]?: true;
+};
+
+export type IOngoingCardOrPlayerEffect<TTarget extends Card | Player> = TTarget extends Card ? OngoingCardEffect : OngoingPlayerEffect;
+
+export type IOngoingCardOrPlayerEffectGenerator<TTarget extends Card | Player> = (game: Game, source: Card, props: IOngoingCardOrPlayerEffectProps<TTarget>) => IOngoingCardOrPlayerEffect<TTarget>;
+export type IOngoingCardEffectGenerator = IOngoingCardOrPlayerEffectGenerator<Card>;
+export type IOngoingPlayerEffectGenerator = IOngoingCardOrPlayerEffectGenerator<Player>;
+export type IOngoingEffectGenerator = IOngoingCardEffectGenerator | IOngoingPlayerEffectGenerator;
+export type IOngoingAllCardsForPlayerEffectGenerator = (game: Game, source: Card, props: IOngoingAllCardsForPlayerEffectProps) => OngoingAllCardsForPlayerEffect;
+
+export type IOngoingEffectFactory<TTarget> = IOngoingEffectProps<TTarget> & {
+    ongoingEffect: any; // IOngoingEffectGenerator | IOngoingEffectGenerator[]
+};
+
+export type IThenAbilityPropsWithSystems<TContext extends AbilityContext> = IAbilityPropsWithSystems<TContext> & {
+    thenCondition?: (context?: TContext) => boolean;
+};
+
+export type IIfYouDoAbilityPropsWithSystems<TContext extends AbilityContext> = IAbilityPropsWithSystems<TContext> & {
+    ifYouDoCondition?: (context?: TContext) => boolean;
+};
+
+export interface IGainCondition<TSource extends IUpgradeCard> {
+    gainCondition?: (context: AbilityContext<TSource>) => boolean;
+}
+
+export interface IAttachCardContext<TSource extends IInPlayCard> {
+    /**
+     * The card that is the source of the attach condition
+     */
+    source: TSource;
+
+    /**
+     * The player who will control the upgrade at the time of attachment
+     */
+    controllingPlayer: Player;
+
+    /**
+     * The card being targeted for attachment
+     */
+    attachTarget: Card;
+}
+
+export type IKeywordPropertiesWithGainCondition<TSource extends IUpgradeCard> = IKeywordProperties & IGainCondition<TSource>;
+
+export interface IClientUIProperties {
+    lastPlayedCard?: ISetId;
+}
+
+export interface ISetId {
+    set: string;
+    number: number;
+}
+
+export type ISerializationError = Record<string, string>;
+
+export interface IResourceState {
+    readyCount: number;
+    exhaustedCount: number;
+}
+
+type ISafeSerializedType<T> = T | ISerializationError;
+type ISafeSerializedArrayType<T> = (T | ISerializationError)[] | ISerializationError;
+
+export interface ISerializedUpgradeState {
+    card: string;
+    ownerAndController: ISafeSerializedType<string>;
+}
+
+export interface ISerializedCapturedCardState {
+    card: string;
+    owner: ISafeSerializedType<string>;
+}
+
+/* Serialized state retrieving interfaces */
+export interface ISerializedCardState {
+    card: string;
+    damage?: ISafeSerializedType<number>;
+    upgrades?: ISafeSerializedArrayType<ISerializedUpgradeState | string>;
+    deployed?: ISafeSerializedType<boolean>;
+    exhausted?: ISafeSerializedType<boolean>;
+    capturedUnits?: ISafeSerializedArrayType<ISerializedCapturedCardState | string>;
+    flipped?: ISafeSerializedType<boolean>;
+    owner?: ISafeSerializedType<string>;
+}
+
+export interface IPlayerSerializedState {
+    hand?: number | string[];
+    groundArena?: ISafeSerializedArrayType<string | ISerializedCardState>;
+    spaceArena?: ISafeSerializedArrayType<string | ISerializedCardState>;
+    discard?: ISafeSerializedArrayType<string>;
+    resources?: ISafeSerializedType<number | IResourceState> | ISafeSerializedArrayType<(string | ISerializedCardState)>;
+    base?: ISafeSerializedType<string | ISerializedCardState>;
+    leader?: ISafeSerializedType<string | ISerializedCardState>;
+    secondLeader?: ISafeSerializedType<string | ISerializedCardState>;
+    deck?: ISafeSerializedType<number> | ISafeSerializedArrayType<string>;
+    hasInitiative?: ISafeSerializedType<boolean>;
+    hasForceToken?: ISafeSerializedType<boolean>;
+    credits?: ISafeSerializedType<number>;
+}
+
+export interface ISerializedGameState {
+    phase?: string;
+    reportingPlayer?: ISafeSerializedType<IPlayerSerializedState>;
+    opponent?: ISafeSerializedType<IPlayerSerializedState>;
+    player1?: ISafeSerializedType<IPlayerSerializedState>;
+    player2?: ISafeSerializedType<IPlayerSerializedState>;
+    error?: string;
+}
+
+export type MessageText = string | (string | number)[];
+
+export interface ISerializedMessage {
+    date: Date;
+    message: MessageText | { alert: { type: string; message: string | string[] } };
+}
+
+export enum PlayerReportType {
+    OffensiveUsername = 'offensiveUsername',
+    ChatHarrasment = 'chatHarrasment',
+    AbusingMechanics = 'abusingMechanics',
+    Other = 'other'
+}
+
+export enum ReportType {
+    BugReport = 'bugReport',
+    PlayerReport = 'playerReport'
+}
+
+export interface IReportPlayer {
+    id: string;
+    username: string;
+    playerInGameState: string;
+}
+
+export interface ISerializedReportState {
+    description: string;
+    gameState: ISerializedGameState;
+    playerReportType: PlayerReportType;
+    reporter: IReportPlayer;
+    opponent: IReportPlayer;
+    lobbyId: string;
+    timestamp: string;
+    messages: ISerializedMessage[];
+    chatMessages?: ISerializedMessage[];
+    gameStepsSinceLastUndo: string;
+    gameId?: string;
+    screenResolution?: { width: number; height: number } | null;
+    viewport?: { width: number; height: number } | null;
+    gameFormat: SwuGameFormat;
+    matchType: MatchmakingType;
+}
+
+export interface ISerializedUndoFailureState {
+    lobbyId: Lobby['id'];
+    gameId: Game['id'];
+    settings: ISnapshotSettingsBase;
+    preUndoState: ISerializedGameState;
+}
+
+export interface IEventRegistration<Handler = () => void> {
+    name: string;
+    handler: Handler;
+}
+
+// ********************************************** INTERNAL TYPES **********************************************
+interface IReplacementEffectAbilityBaseProps<TSource extends Card = Card> extends Omit<ITriggeredAbilityBaseProps<TSource>,
+        'immediateEffect' | 'targetResolver' | 'targetResolvers' | 'handler' | 'then' | 'ifYouDo' | 'ifYouDoNot'
+> {
+    replaceWith?: PropsFactory<IReplacementEffectSystemProperties<TriggeredAbilityContext<TSource>>, TriggeredAbilityContext<TSource>>;
+    onlyIfYouDoEffect?: GameSystem<TriggeredAbilityContext<TSource>>;
+}
+
+type ITriggeredAbilityWhenProps<TSource extends Card> = ITriggeredAbilityBaseProps<TSource> & {
+    when: WhenTypeOrStandard<TSource>;
+};
+
+type ITriggeredAbilityAggregateWhenProps<TSource extends Card> = ITriggeredAbilityBaseProps<TSource> & {
+    aggregateWhen: (events: GameEvent[], context: TriggeredAbilityContext) => boolean;
+};
+
+interface IReplacementEffectAbilityWhenProps<TSource extends Card> extends IReplacementEffectAbilityBaseProps<TSource> {
+    when: WhenType<TSource>;
+}
+
+interface IReplacementEffectAbilityAggregateWhenProps<TSource extends Card> extends IReplacementEffectAbilityBaseProps<TSource> {
+    aggregateWhen: (events: GameEvent[], context: TriggeredAbilityContext) => boolean;
+}
+
+interface IKeywordPropertiesBase {
+    keyword: KeywordName;
+}
+
+export interface INumericKeywordProperties extends IKeywordPropertiesBase {
+    amount: number;
+}
+
+interface IKeywordWithCostProperties extends IKeywordPropertiesBase {
+    cost: number;
+    aspects: Aspect[];
+}
+
+interface IKeywordWithAbilityDefinitionProperties<TSource extends Card = Card> extends IKeywordPropertiesBase {
+    ability: IAbilityPropsWithSystems<AbilityContext<TSource>>;
+}
+
+interface IAmbushKeywordProperties extends IKeywordPropertiesBase {
+    keyword: KeywordName.Ambush;
+}
+
+interface IBountyKeywordProperties<TSource extends IUnitCard = IUnitCard> extends IKeywordWithAbilityDefinitionProperties<TSource> {
+    keyword: KeywordName.Bounty;
+    ability: Omit<ITriggeredAbilityBaseProps<TSource>, 'canBeTriggeredBy'>;
+}
+
+interface ICoordinateKeywordProperties<TSource extends IUnitCard = IUnitCard> extends IKeywordWithAbilityDefinitionProperties<TSource> {
+    keyword: KeywordName.Coordinate;
+    ability: IAbilityPropsWithType<TSource>;
+}
+
+interface IExploitKeywordProperties extends INumericKeywordProperties {
+    keyword: KeywordName.Exploit;
+}
+
+interface IFortifyKeywordProperties extends IKeywordPropertiesBase {
+    keyword: KeywordName.Fortify;
+}
+
+interface IGritKeywordProperties extends IKeywordPropertiesBase {
+    keyword: KeywordName.Grit;
+}
+
+interface IHiddenKeywordProperties extends IKeywordPropertiesBase {
+    keyword: KeywordName.Hidden;
+}
+
+interface IOverwhelmKeywordProperties extends IKeywordPropertiesBase {
+    keyword: KeywordName.Overwhelm;
+}
+
+interface IPilotingKeywordProperties extends IKeywordWithCostProperties {
+    keyword: KeywordName.Piloting;
+}
+
+interface IPlotKeywordProperties extends IKeywordPropertiesBase {
+    keyword: KeywordName.Plot;
+}
+
+interface IRaidKeywordProperties extends INumericKeywordProperties {
+    keyword: KeywordName.Raid;
+}
+
+interface IRestoreKeywordProperties extends INumericKeywordProperties {
+    keyword: KeywordName.Restore;
+}
+
+interface ISaboteurKeywordProperties extends IKeywordPropertiesBase {
+    keyword: KeywordName.Saboteur;
+}
+
+interface ISentinelKeywordProperties extends IKeywordPropertiesBase {
+    keyword: KeywordName.Sentinel;
+}
+
+interface ISmuggleKeywordProperties extends IKeywordWithCostProperties {
+    keyword: KeywordName.Smuggle;
+}
+
+interface IShieldedKeywordProperties extends IKeywordPropertiesBase {
+    keyword: KeywordName.Shielded;
+}
+
+interface ISupportKeywordProperties extends IKeywordPropertiesBase {
+    keyword: KeywordName.Support;
+}
+
+/** List of keywords that don't have any additional parameters */
+export type NonParameterKeywordName =
+  | KeywordName.Ambush
+  | KeywordName.Fortify
+  | KeywordName.Grit
+  | KeywordName.Hidden
+  | KeywordName.Overwhelm
+  | KeywordName.Plot
+  | KeywordName.Saboteur
+  | KeywordName.Sentinel
+  | KeywordName.Shielded
+  | KeywordName.Support;
+
+export type NonNumericKeywordName =
+  | KeywordName.Ambush
+  | KeywordName.Bounty
+  | KeywordName.Coordinate
+  | KeywordName.Fortify
+  | KeywordName.Grit
+  | KeywordName.Hidden
+  | KeywordName.Overwhelm
+  | KeywordName.Piloting
+  | KeywordName.Plot
+  | KeywordName.Saboteur
+  | KeywordName.Sentinel
+  | KeywordName.Shielded
+  | KeywordName.Smuggle
+  | KeywordName.Support;
+
+export type NumericKeywordName =
+  | KeywordName.Raid
+  | KeywordName.Restore
+  | KeywordName.Exploit;
+
+export type CostKeywordName =
+  | KeywordName.Smuggle
+  | KeywordName.Piloting;
+
+export type AbilityDefinitionKeywordName =
+  | KeywordName.Bounty
+  | KeywordName.Coordinate;
+
+export interface ICardAttributes {
+    // TODO: Add more attributes as needed
+    traits: Set<Trait>;
+}
+
+/* Ongoing effects */
+export interface IOngoingEffectSourceSummary {
+    setId: { set: string; number: number };
+    type?: string;
+    controllerId: string;
+    sourceZone?: string;
+    sourceTitle: string;
+    sourceSubtitle?: string;
+    effectDescription?: string;
+}
+
+export interface IOngoingEffectSummary {
+    sourceCardUuid: string;
+    source: IOngoingEffectSourceSummary;
+    targets: string[];
+
+    /**
+     * True when this effect's source is in a zone the controller's opponent can't see (e.g. hand), so the
+     * summary is only sent to the controller. Lets the FE reassure the player no hidden info has been leaked.
+     */
+    hiddenFromOpponent?: boolean;
+}

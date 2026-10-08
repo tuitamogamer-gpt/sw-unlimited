@@ -1,0 +1,31 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { INonLeaderUnitAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { NonLeaderUnitCard } from '../../../core/card/NonLeaderUnitCard';
+import { TextHelper } from '../../../core/utils/TextHelper';
+
+export default class BlueLeaderScarifAirSupport extends NonLeaderUnitCard {
+    protected override getImplementationId () {
+        return {
+            id: '2388374331',
+            internalName: 'blue-leader#scarif-air-support',
+        };
+    }
+
+    public override setupCardAbilities(registrar: INonLeaderUnitAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.addWhenPlayedAbility({
+            title: `Pay ${TextHelper.resource(2)} to move this unit to the ground arena and give 2 Experience tokens to it`,
+            optional: true,
+            immediateEffect: AbilityHelper.immediateEffects.payResources((context) => ({
+                amount: 2,
+                target: context.player
+            })),
+            ifYouDo: {
+                title: 'Move this unit to the ground arena and give 2 Experience tokens to it',
+                immediateEffect: AbilityHelper.immediateEffects.simultaneous([
+                    AbilityHelper.immediateEffects.moveUnitFromSpaceToGround(),
+                    AbilityHelper.immediateEffects.giveExperience({ amount: 2 })
+                ])
+            }
+        });
+    }
+}

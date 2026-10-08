@@ -1,0 +1,39 @@
+{
+  "title": "Rey",
+  "subtitle": "Keeping the Past",
+  "cost": 5,
+  "hp": 7,
+  "power": 4,
+  "text": "While playing this unit, ignore her Heroism aspect penalty if you control Kylo Ren.\nOn Attack: You may heal 2 damage from a unit. If it's a non-Heroism unit, give a Shield token to it.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "You do not have to heal damage in order to give the Shield token.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0196346374",
+  "aspects": [
+    "heroism",
+    "vigilance"
+  ],
+  "traits": [
+    "force",
+    "resistance"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 46
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 46
+    }
+  ],
+  "internalName": "rey#keeping-the-past"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Rune Haako",
+  "subtitle": "Scheming Second",
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "When Played: If a friendly unit was defeated this phase, you may give a unit –1/–1 for this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5333016146",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 31
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 31
+    }
+  ],
+  "internalName": "rune-haako#scheming-second"
+}

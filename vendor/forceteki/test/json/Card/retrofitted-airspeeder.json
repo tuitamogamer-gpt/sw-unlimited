@@ -1,0 +1,38 @@
+{
+  "title": "Retrofitted Airspeeder",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "Ambush\nThis unit can attack space units.\nWhile attacking a space unit, this unit gets –1/–0.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9667260960",
+  "aspects": [],
+  "traits": [
+    "vehicle",
+    "speeder"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 259
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 259
+    }
+  ],
+  "internalName": "retrofitted-airspeeder"
+}

@@ -1,0 +1,26 @@
+import type { IAbilityHelper } from '../../../AbilityHelper';
+import type { INonLeaderUnitAbilityRegistrar } from '../../../core/card/AbilityRegistrationInterfaces';
+import { NonLeaderUnitCard } from '../../../core/card/NonLeaderUnitCard';
+import { Aspect, Conjunction } from '../../../core/Constants';
+import { TextHelper } from '../../../core/utils/TextHelper';
+
+export default class ChopperSpectreThree extends NonLeaderUnitCard {
+    protected override getImplementationId() {
+        return {
+            id: '8351458392',
+            internalName: 'chopper#spectre-three',
+        };
+    }
+
+    public override setupCardAbilities(registrar: INonLeaderUnitAbilityRegistrar, AbilityHelper: IAbilityHelper) {
+        registrar.addWhenPlayedAbility({
+            title: `Give an experience token to this unit. If you control a ${TextHelper.aspectList([Aspect.Cunning, Aspect.Vigilance], Conjunction.Or)} unit, give two experience tokens to him instead`,
+            contextTitle: (context) => `Give ${context.player.isAspectInPlay([Aspect.Cunning, Aspect.Vigilance], context.source) ? 'two experience tokens' : 'an experience token'} to ${context.source.title}`,
+            immediateEffect: AbilityHelper.immediateEffects.conditional({
+                condition: (context) => context.player.isAspectInPlay([Aspect.Cunning, Aspect.Vigilance], context.source),
+                onTrue: AbilityHelper.immediateEffects.giveExperience({ amount: 2 }),
+                onFalse: AbilityHelper.immediateEffects.giveExperience()
+            }),
+        });
+    }
+}

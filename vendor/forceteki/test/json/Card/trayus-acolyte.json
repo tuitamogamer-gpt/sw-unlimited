@@ -1,0 +1,39 @@
+{
+  "title": "Trayus Acolyte",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 2,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9592786976",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "sith"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 28
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 28
+    }
+  ],
+  "internalName": "trayus-acolyte"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "AT-ST",
+  "subtitle": null,
+  "cost": 6,
+  "hp": 7,
+  "power": 6,
+  "text": "Overwhelm (When attacking an enemy unit, deal excess damage to the opponent's base.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6072239164",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "walker"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 232
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 232
+    }
+  ],
+  "internalName": "atst"
+}

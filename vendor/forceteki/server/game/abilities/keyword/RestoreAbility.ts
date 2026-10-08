@@ -1,0 +1,35 @@
+import { TriggeredAbilityBase } from '../../core/ability/TriggeredAbility';
+import type { Card } from '../../core/card/Card';
+import { KeywordName, WildcardZoneName } from '../../core/Constants';
+import type { Game } from '../../core/Game';
+import { Contract } from '../../core/utils/Contract';
+import * as GameSystemLibrary from '../../gameSystems/GameSystemLibrary';
+import type { ITriggeredAbilityProps } from '../../Interfaces';
+
+import { registerState } from '../../core/GameObjectUtils';
+
+@registerState()
+export class RestoreAbility extends TriggeredAbilityBase {
+    public readonly keyword: KeywordName = KeywordName.Restore;
+
+    public static buildRestoreAbilityProperties<TSource extends Card = Card>(restoreAmount: number): ITriggeredAbilityProps<TSource> {
+        return {
+            title: `Restore ${restoreAmount}`,
+            when: { onAttackDeclared: (event, context) => event.attack.attacker === context.source },
+            zoneFilter: WildcardZoneName.AnyArena,
+            immediateEffect: GameSystemLibrary.heal((context) => ({
+                amount: restoreAmount,
+                target: context.player.base
+            }))
+        };
+    }
+
+    public constructor(game: Game, card: Card, restoreAmount: number) {
+        Contract.assertTrue(card.isUnit());
+        Contract.assertNonNegative(restoreAmount);
+
+        const properties = RestoreAbility.buildRestoreAbilityProperties(restoreAmount);
+
+        super(game, card, properties);
+    }
+}

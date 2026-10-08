@@ -1,0 +1,101 @@
+describe('Salacious Crumb, Obnoxious Pet', function() {
+    integration(function(contextRef) {
+        describe('Crumb\'s when played ability', function() {
+            beforeEach(function () {
+                return contextRef.setupTestAsync({
+                    phase: 'action',
+                    player1: {
+                        hand: ['salacious-crumb#obnoxious-pet']
+                    }
+                });
+            });
+
+            it('should heal 1 from friendly base', function () {
+                const { context } = contextRef;
+
+                context.setDamage(context.p1Base, 5);
+                context.player1.clickCard(context.salaciousCrumb);
+                expect(context.salaciousCrumb).toBeInZone('groundArena');
+
+                expect(context.p1Base.damage).toBe(4);
+            });
+
+            it('should heal 0 from base if base has no damage', function () {
+                const { context } = contextRef;
+
+                context.player1.clickCard(context.salaciousCrumb);
+                expect(context.salaciousCrumb).toBeInZone('groundArena');
+
+                expect(context.p1Base.damage).toBe(0);
+            });
+        });
+
+        describe('Crumb\'s action ability', function() {
+            it('should deal 1 damage to any selected ground unit', async function () {
+                await contextRef.setupTestAsync({
+                    phase: 'action',
+                    player1: {
+                        groundArena: ['salacious-crumb#obnoxious-pet', 'wampa'],
+                    },
+                    player2: {
+                        groundArena: ['frontier-atrt'],
+                        spaceArena: ['cartel-spacer']
+                    }
+                });
+
+                const { context } = contextRef;
+
+                context.player1.clickCard(context.salaciousCrumb);
+                context.player1.clickPrompt('Deal 1 damage to a ground unit');
+
+                // can target any ground unit
+                expect(context.player1).toBeAbleToSelectExactly([context.frontierAtrt, context.wampa]);
+
+                context.player1.clickCard(context.frontierAtrt);
+                expect(context.frontierAtrt.damage).toBe(1);
+                expect(context.salaciousCrumb).toBeInZone('hand');
+                expect(context.getChatLogs(1)).toContain(
+                    'player1 uses Salacious Crumb, exhausting Salacious Crumb and returning Salacious Crumb to their hand to deal 1 damage to Frontier AT-RT'
+                );
+            });
+
+            it('should work when there is a "damage dealt this phase" watcher active', async function () {
+                await contextRef.setupTestAsync({
+                    phase: 'action',
+                    player1: {
+                        groundArena: ['salacious-crumb#obnoxious-pet'],
+                    },
+                    player2: {
+                        groundArena: ['death-star-stormtrooper'],
+                        hand: ['decimator-of-dissidents'],
+                    }
+                });
+
+                const { context } = contextRef;
+
+                context.player1.clickCard(context.salaciousCrumb);
+                context.player1.clickPrompt('Deal 1 damage to a ground unit');
+                context.player1.clickCard(context.deathStarStormtrooper);
+
+                expect(context.deathStarStormtrooper).toBeInZone('discard');
+                expect(context.salaciousCrumb).toBeInZone('hand');
+            });
+
+            it('should not be available if Crumb is exhausted', async function () {
+                await contextRef.setupTestAsync({
+                    phase: 'action',
+                    player1: {
+                        groundArena: [{ card: 'salacious-crumb#obnoxious-pet', exhausted: true }, 'wampa'],
+                    },
+                    player2: {
+                        groundArena: ['frontier-atrt'],
+                        spaceArena: ['cartel-spacer']
+                    }
+                });
+
+                const { context } = contextRef;
+                expect(context.salaciousCrumb).not.toHaveAvailableActionWhenClickedBy(context.player1);
+            });
+        });
+    });
+});

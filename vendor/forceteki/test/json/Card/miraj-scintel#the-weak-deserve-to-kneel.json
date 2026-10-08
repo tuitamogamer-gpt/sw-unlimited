@@ -1,0 +1,41 @@
+{
+  "title": "Miraj Scintel",
+  "subtitle": "The Weak Deserve to Kneel",
+  "cost": 5,
+  "hp": 7,
+  "power": 3,
+  "text": "While a friendly unit is attacking a damaged unit, the attacker gains Overwhelm.\nWhen Played: You may deal 3 damage to an undamaged unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7275929811",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 139
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 139
+    }
+  ],
+  "internalName": "miraj-scintel#the-weak-deserve-to-kneel"
+}

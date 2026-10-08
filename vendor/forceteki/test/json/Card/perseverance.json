@@ -1,0 +1,36 @@
+{
+  "title": "Perseverance",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Heal 3 damage from a unit and give a Shield token to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9609892500",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 89
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 89
+    }
+  ],
+  "internalName": "perseverance"
+}

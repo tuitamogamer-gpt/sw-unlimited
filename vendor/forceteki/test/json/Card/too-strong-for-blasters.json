@@ -1,0 +1,40 @@
+{
+  "title": "Too Strong for Blasters",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Heal 2 damage from a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7014669428",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 66
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 66
+    },
+    {
+      "set": "IBH",
+      "number": 91
+    }
+  ],
+  "internalName": "too-strong-for-blasters"
+}

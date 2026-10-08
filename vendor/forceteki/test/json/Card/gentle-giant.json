@@ -1,0 +1,40 @@
+{
+  "title": "Gentle Giant",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 8,
+  "power": 2,
+  "text": "Grit (This unit gets +1/+0 for each damage on it.)\nOn Attack: You may heal damage from another unit equal to the damage on this unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "If the chosen unit has less damage on it than Gentle Giant, heal all damage on it.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8190373087",
+  "aspects": [
+    "heroism",
+    "vigilance"
+  ],
+  "traits": [
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 48
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 48
+    }
+  ],
+  "internalName": "gentle-giant"
+}

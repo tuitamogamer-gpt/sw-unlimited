@@ -1,0 +1,39 @@
+{
+  "title": "Dragonboat Freighter",
+  "subtitle": "",
+  "cost": 6,
+  "hp": 5,
+  "power": 5,
+  "text": "When Played: You may give a Weakness token to a unit. If it's a <uq> unit, exhaust it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0148750669",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 231
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 231
+    }
+  ],
+  "internalName": "dragonboat-freighter"
+}

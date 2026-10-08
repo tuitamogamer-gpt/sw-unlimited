@@ -1,0 +1,36 @@
+{
+  "title": "Legal Authority",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 0,
+  "text": "Attach to a friendly unit.\nWhen Played: Attached unit captures an enemy non-leader unit with less power than it. (Put the captured card facedown under attached unit until attached unit leaves play.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": 0,
+  "upgradeHp": 2,
+  "id": "8877249477",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "law"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 124
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 124
+    }
+  ],
+  "internalName": "legal-authority"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Ruthless Raider",
+  "subtitle": null,
+  "cost": 6,
+  "hp": 6,
+  "power": 4,
+  "text": "When Played/When Defeated: Deal 2 damage to an enemy base and 2 damage to an enemy unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1047592361",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 134
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 134
+    }
+  ],
+  "internalName": "ruthless-raider"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Captain Typho",
+  "subtitle": "Protecting the Senator",
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "When Played/On Attack: Give a unit Sentinel for this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3033790509",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "naboo",
+    "republic",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 46
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 46
+    }
+  ],
+  "internalName": "captain-typho#protecting-the-senator"
+}

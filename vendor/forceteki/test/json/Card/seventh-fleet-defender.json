@@ -1,0 +1,42 @@
+{
+  "title": "Seventh Fleet Defender",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 2,
+  "power": 3,
+  "text": "Shielded (When you play this unit, give a Shield token to it.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9950828238",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 180
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 180
+    }
+  ],
+  "internalName": "seventh-fleet-defender"
+}

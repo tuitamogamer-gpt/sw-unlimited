@@ -1,0 +1,37 @@
+{
+  "title": "Ardent Sympathizer",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "While you have the initiative, this unit gets +2/+0.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6348804504",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 161
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 161
+    }
+  ],
+  "internalName": "ardent-sympathizer"
+}

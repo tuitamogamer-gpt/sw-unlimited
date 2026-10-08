@@ -1,0 +1,42 @@
+{
+  "title": "Lurking TIE Phantom",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 2,
+  "power": 2,
+  "text": "Raid 2 (This unit gets +2/+0 while attacking.)\nThis unit can't be captured, damaged, or defeated by enemy card abilities.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Lurking TIE Phantom can’t be defeated directly by card abilities that “defeat a unit”, but it can still be defeated as a result of card abilities, such as abilities that give a unit -X/-X for the phase.\nLurking TIE Phantom can’t be damaged directly by card abilities that deal damage, regardless of how those abilities deal damage.\nLurking TIE Phantom can be dealt combat damage during an attack, even if that attack occurs as part of an ability.\nLurking TIE Phantom's ability is a \"prevent\" effect, so it still can be damaged by unpreventable damage.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1810342362",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 187
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 187
+    }
+  ],
+  "internalName": "lurking-tie-phantom"
+}

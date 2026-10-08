@@ -1,0 +1,39 @@
+{
+  "title": "Jedi Lightsaber",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "Attach to a non-VEHICLE unit.\n\nIf attached unit is a FORCE unit, it gains: “On Attack: Give the defender –2/–2 for this phase.”",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": 3,
+  "upgradeHp": 3,
+  "id": "8495694166",
+  "aspects": [
+    "heroism",
+    "vigilance"
+  ],
+  "traits": [
+    "item",
+    "weapon",
+    "lightsaber"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 54
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 54
+    }
+  ],
+  "internalName": "jedi-lightsaber"
+}

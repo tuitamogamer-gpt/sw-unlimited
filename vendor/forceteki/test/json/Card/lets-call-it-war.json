@@ -1,0 +1,36 @@
+{
+  "title": "Let's Call It War",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Deal 3 damage to a unit. Then, if you have the initiative, you may deal 2 damage to another unit in the same arena.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8330828981",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 180
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 180
+    }
+  ],
+  "internalName": "lets-call-it-war"
+}

@@ -1,0 +1,28 @@
+bower_components
+node_modules
+public
+typings
+*.log
+server/events.txt
+.DS_Store
+config/local*
+server/logs/*.gz
+build/
+.idea/
+test/**/json/
+test/gameSetups/*.json
+.env
+*.zip
+Dockerfile.test
+
+# Claude Code: project config under .claude/ is shared (settings.json, commands/,
+# agents/, skills/), personal overrides and generated state are not
+.claude/settings.local.json
+.claude/*.local.json
+.claude/worktrees/
+.claude/agent-memory/
+CLAUDE.local.md
+
+# Local agent memory vaults (e.g. ECC), personal and never shared
+.ecc/
+*.code-workspace

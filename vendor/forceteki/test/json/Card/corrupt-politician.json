@@ -1,0 +1,41 @@
+{
+  "title": "Corrupt Politician",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 2,
+  "power": 2,
+  "text": "While you control more units than an opponent, this unit gains Sentinel.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8854921497",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "republic",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 79
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 79
+    }
+  ],
+  "internalName": "corrupt-politician"
+}

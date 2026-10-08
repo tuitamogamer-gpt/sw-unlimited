@@ -1,0 +1,39 @@
+{
+  "title": "Cassian Andor",
+  "subtitle": "Everything For the Rebellion",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "When a friendly unit's attack ends: If the defending unit was defeated, deal 2 damage to a base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "\"When Attack Ends\" abilities trigger at the same time the attacking unit deals combat damage. The attacking unit doesn't need to survive the attack in order to deal damage to a base.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0277371740",
+  "aspects": [
+    "command",
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 56
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 56
+    }
+  ],
+  "internalName": "cassian-andor#everything-for-the-rebellion"
+}

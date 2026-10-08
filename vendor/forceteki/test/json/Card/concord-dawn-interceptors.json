@@ -1,0 +1,42 @@
+{
+  "title": "Concord Dawn Interceptors",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 4,
+  "power": 1,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)\nThis unit gets +2/+0 while defending.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7486516061",
+  "aspects": [
+    "heroism",
+    "vigilance"
+  ],
+  "traits": [
+    "mandalorian",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 42
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 42
+    }
+  ],
+  "internalName": "concord-dawn-interceptors"
+}

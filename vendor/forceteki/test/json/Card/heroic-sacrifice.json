@@ -1,0 +1,37 @@
+{
+  "title": "Heroic Sacrifice",
+  "subtitle": null,
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Draw a card, then attack with a unit. For this attack, it gets +2/+0 and gains: \"When this unit deals combat damage: Defeat it.\"",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "You must attack with a unit, if able. Units must be ready in order to attack.\n“Combat damage” is only the damage dealt during the “deal combat damage” step of an attack.\nWhen Attack Ends abilities trigger when combat damage is dealt. The attacker doesn’t need to survive for the ability to trigger unless the ability says otherwise. The unit isn’t considered to be attacking when these abilities resolve.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6954704048",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 150
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 150
+    }
+  ],
+  "internalName": "heroic-sacrifice"
+}

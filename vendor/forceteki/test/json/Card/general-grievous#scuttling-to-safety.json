@@ -1,0 +1,41 @@
+{
+  "title": "General Grievous",
+  "subtitle": "Scuttling to Safety",
+  "cost": 2,
+  "hp": 3,
+  "power": 3,
+  "text": "Hidden (This unit can't be attacked if he was played this phase.)\nWhen this unit is attacked: Return him to his owner's hand (before damage is dealt).",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "“When this unit is attacked” triggers at the same time as “On Attack” abilities.\nGrievous can only be returned to hand by his ability if he is in play when it is resolves.\nIf a unit with Overwhelm attacks General Grievous and he returns to his owner's hand, all combat damage is considered excess damage and dealt to the defending player's base.\nOn Defense abilities trigger when this unit is chosen as the defender for an attack, in the same window as the attacker's On Attack abilities.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1759702973",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 187
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 187
+    }
+  ],
+  "internalName": "general-grievous#scuttling-to-safety"
+}

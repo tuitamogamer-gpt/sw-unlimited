@@ -1,0 +1,42 @@
+{
+  "title": "The Ghost",
+  "subtitle": "Home of the Spectres",
+  "cost": 6,
+  "hp": 4,
+  "power": 4,
+  "text": "When Played: You may give an Experience token and a Shield token to a unit. If you control a Vigilance or Aggression unit, you may give an Experience token and a Shield token to each of up to 2 units instead.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8641698344",
+  "aspects": [
+    "command",
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "transport",
+    "spectre"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 69
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 69
+    }
+  ],
+  "internalName": "the-ghost#home-of-the-spectres"
+}

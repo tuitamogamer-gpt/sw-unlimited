@@ -1,0 +1,41 @@
+{
+  "title": "Flanking TIE Interceptor",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "Support (When you play this unit, you may attack with another unit. It gains this unit's other abilities for this attack.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8239713162",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "support"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 215
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 215
+    }
+  ],
+  "internalName": "flanking-tie-interceptor"
+}

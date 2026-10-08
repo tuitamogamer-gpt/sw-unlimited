@@ -1,0 +1,36 @@
+{
+  "title": "Jedha City",
+  "subtitle": null,
+  "cost": null,
+  "hp": 25,
+  "power": null,
+  "text": "Epic Action: Give a non-leader unit -4/-0 for this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2569134232",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "jedha"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 28
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 28
+    }
+  ],
+  "internalName": "jedha-city"
+}

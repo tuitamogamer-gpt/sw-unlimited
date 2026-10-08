@@ -1,0 +1,36 @@
+{
+  "title": "Lightspeed Assault",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Defeat a friendly space unit and deal damage equal to its power to an enemy space unit. If you do, deal indirect damage equal to the enemy unit's power to its controller.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "When determining a defeated unit's power, include any modifiers to its power when it was defeated.\nLightspeed Assault still does indirect damage even if the enemy unit is defeated.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8606123385",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "gambit"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 127
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 127
+    }
+  ],
+  "internalName": "lightspeed-assault"
+}

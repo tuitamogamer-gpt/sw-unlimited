@@ -1,0 +1,40 @@
+{
+  "title": "Take Captive",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "A friendly unit captures an enemy non-leader unit in the same arena. (Put the captured card facedown under that unit until that unit leaves play.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3765912000",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 128
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 131
+    },
+    {
+      "set": "TWI",
+      "number": 128
+    }
+  ],
+  "internalName": "take-captive"
+}

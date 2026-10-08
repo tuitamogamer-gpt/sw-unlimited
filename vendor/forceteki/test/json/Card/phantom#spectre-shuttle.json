@@ -1,0 +1,41 @@
+{
+  "title": "Phantom",
+  "subtitle": "Spectre Shuttle",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: You may play a Heroism unit from your hand (paying its cost) and give an Experience token to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that let you play a card require you to pay that card’s cost unless specified otherwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1739891839",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "transport",
+    "spectre"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 144
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 144
+    }
+  ],
+  "internalName": "phantom#spectre-shuttle"
+}

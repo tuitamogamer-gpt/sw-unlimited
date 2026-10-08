@@ -1,0 +1,39 @@
+{
+  "title": "Desperate Nantex",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5508530442",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 178
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 178
+    }
+  ],
+  "internalName": "desperate-nantex"
+}

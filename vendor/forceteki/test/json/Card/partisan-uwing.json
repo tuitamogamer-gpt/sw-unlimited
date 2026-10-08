@@ -1,0 +1,39 @@
+{
+  "title": "Partisan U-Wing",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 3,
+  "text": "When Played: If a friendly unit was defeated this phase, create a Credit token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8203697919",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 161
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 161
+    }
+  ],
+  "internalName": "partisan-uwing"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Green Squadron A-Wing",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "Raid 2 (This unit gets +2/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7495752423",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 141
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 141
+    }
+  ],
+  "internalName": "green-squadron-awing"
+}

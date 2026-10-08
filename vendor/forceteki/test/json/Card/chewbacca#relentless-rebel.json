@@ -1,0 +1,39 @@
+{
+  "title": "Chewbacca",
+  "subtitle": "Relentless Rebel",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "Action [2 resources, Exhaust]: Attack with a unit, even if it's exhausted. It can't attack bases for this attack.",
+  "deployBox": "Action: Attack with a unit, even if it's exhausted. It can't attack bases for this attack. Use this ability only once each round.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "If you use Chewbacca’s ability, you must attack with a unit, if able.\nChewbacca's action ability cannot be used as an action if you can't attack with a unit, as it would not change the game state.\nUnits that can’t attack bases can still damage bases through other abilities, like Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8052149677",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "wookiee"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 9
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 9
+    }
+  ],
+  "internalName": "chewbacca#relentless-rebel"
+}

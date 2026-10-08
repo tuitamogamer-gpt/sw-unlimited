@@ -1,0 +1,36 @@
+{
+  "title": "Old Access Codes",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 0,
+  "power": 1,
+  "text": "When Played: If an opponent controls more units than you, draw a card.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 0,
+  "id": "3840495762",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "item"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 168
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 168
+    }
+  ],
+  "internalName": "old-access-codes"
+}

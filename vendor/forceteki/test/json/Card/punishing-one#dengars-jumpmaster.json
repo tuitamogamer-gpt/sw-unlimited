@@ -1,0 +1,40 @@
+{
+  "title": "Punishing One",
+  "subtitle": "Dengar's Jumpmaster",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "When an upgraded enemy unit is defeated: You may ready this unit. Use this ability only once each round.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8687233791",
+  "aspects": [
+    "villainy",
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 137
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 137
+    }
+  ],
+  "internalName": "punishing-one#dengars-jumpmaster"
+}

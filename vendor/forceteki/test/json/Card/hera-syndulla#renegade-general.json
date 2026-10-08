@@ -1,0 +1,41 @@
+{
+  "title": "Hera Syndulla",
+  "subtitle": "Renegade General",
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "When Attack Ends: If this unit dealt combat damage to a base, heal that much damage from your base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "“Combat damage” is only the damage dealt during the “End attack” step of an attack.\nWhen Attack Ends abilities trigger at the same time as units deal combat damage. Hera does not need to survive the attack in order to heal damage from your base.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5557320306",
+  "aspects": [
+    "vigilance",
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "new republic",
+    "twi'lek",
+    "spectre"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 31
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 31
+    }
+  ],
+  "internalName": "hera-syndulla#renegade-general"
+}

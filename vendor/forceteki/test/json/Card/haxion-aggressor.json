@@ -1,0 +1,40 @@
+{
+  "title": "Haxion Aggressor",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "Raid 2 (This unit gets +2/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8733705817",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 190
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 190
+    }
+  ],
+  "internalName": "haxion-aggressor"
+}

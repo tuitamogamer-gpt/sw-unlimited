@@ -1,0 +1,38 @@
+{
+  "title": "Filthy Dianoga",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 5,
+  "power": 5,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7827651708",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 155
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 155
+    }
+  ],
+  "internalName": "filthy-dianoga"
+}

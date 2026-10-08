@@ -1,0 +1,39 @@
+{
+  "title": "Fennec Shand",
+  "subtitle": "A Ship For A Life",
+  "cost": 1,
+  "hp": 4,
+  "power": 0,
+  "text": "Raid 2 (This unit gets +1/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6726014005",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 175
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 175
+    }
+  ],
+  "internalName": "fennec-shand#a-ship-for-a-life"
+}

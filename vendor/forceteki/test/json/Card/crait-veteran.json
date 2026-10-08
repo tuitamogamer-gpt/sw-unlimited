@@ -1,0 +1,38 @@
+{
+  "title": "Crait Veteran",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 4,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8238197441",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "resistance",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 251
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 251
+    }
+  ],
+  "internalName": "crait-veteran"
+}

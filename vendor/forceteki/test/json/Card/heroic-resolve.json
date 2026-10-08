@@ -1,0 +1,39 @@
+{
+  "title": "Heroic Resolve",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 1,
+  "text": "Attached unit gains: “Action [2 resources, defeat a Heroic Resolve on this unit]: Attack with this unit. It gets +4/+0 and gains Overwhelm for this attack.”",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "If you use Heroic Resolve’s ability, you must attack with the unit, if able. Units must be ready in order to attack.\nShields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "4085341914",
+  "aspects": [
+    "heroism",
+    "aggression"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 155
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 155
+    }
+  ],
+  "internalName": "heroic-resolve"
+}

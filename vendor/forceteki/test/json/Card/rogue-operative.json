@@ -1,0 +1,42 @@
+{
+  "title": "Rogue Operative",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 4,
+  "power": 2,
+  "text": "Saboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)\n\nRaid 2 (This unit gets +2/+0 while attacking.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1017822723",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur",
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 194
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 194
+    }
+  ],
+  "internalName": "rogue-operative"
+}

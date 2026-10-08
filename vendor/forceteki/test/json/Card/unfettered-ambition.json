@@ -1,0 +1,36 @@
+{
+  "title": "Unfettered Ambition",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 1,
+  "text": "When Played: For each upgrade on attached unit not named Advantage (including this one), give an Advantage token to attached unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "3431725769",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 182
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 182
+    }
+  ],
+  "internalName": "unfettered-ambition"
+}

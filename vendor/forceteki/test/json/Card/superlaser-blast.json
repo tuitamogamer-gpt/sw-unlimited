@@ -1,0 +1,38 @@
+{
+  "title": "Superlaser Blast",
+  "subtitle": null,
+  "cost": 8,
+  "hp": null,
+  "power": null,
+  "text": "Defeat all units.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1353201082",
+  "aspects": [
+    "villainy",
+    "vigilance"
+  ],
+  "traits": [
+    "tactic",
+    "disaster"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 43
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 43
+    }
+  ],
+  "internalName": "superlaser-blast"
+}

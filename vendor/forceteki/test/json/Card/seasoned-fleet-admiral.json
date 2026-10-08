@@ -1,0 +1,41 @@
+{
+  "title": "Seasoned Fleet Admiral",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "Raid 1\nWhen an opponent draws 1 or more cards during the action phase: You may give an Experience token to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8247495024",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "rebel",
+    "twi'lek",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 111
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 111
+    }
+  ],
+  "internalName": "seasoned-fleet-admiral"
+}

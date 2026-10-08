@@ -1,0 +1,38 @@
+{
+  "title": "Cunning Ploy",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "mock ability text",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "cunning-ploy-id",
+  "aspects": [
+    "cunning",
+    "cunning"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 168
+  },
+  "internalName": "cunning-ploy",
+  "arena": null,
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 168
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Guarding the Way",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Give a unit Sentinel for this phase. (Units in its arena can't attack your non-Sentinel units or your base.)\nIf you have the initiative, also give that unit +2/+2 for this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2359136621",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 74
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 74
+    }
+  ],
+  "internalName": "guarding-the-way"
+}

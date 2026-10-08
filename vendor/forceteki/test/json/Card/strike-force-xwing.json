@@ -1,0 +1,42 @@
+{
+  "title": "Strike Force X-Wing",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 2,
+  "power": 3,
+  "text": "When Played: You may deal 2 damage to a ready unit.\nPlot (When you deploy a leader, you may play this card from your resources, paying its cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1501441701",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "plot"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 152
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 152
+    }
+  ],
+  "internalName": "strike-force-xwing"
+}

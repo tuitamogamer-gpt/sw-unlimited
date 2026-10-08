@@ -1,0 +1,38 @@
+{
+  "title": "Lom Pyke",
+  "subtitle": "Making a Withdrawal",
+  "cost": 5,
+  "hp": 5,
+  "power": 5,
+  "text": "When Played: In player order, each opponent may heal 5 damage from their base. For each player that does, give 2 Experience tokens to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "\"Player order\" begins with the player to the active player's left and continues clockwise.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4392072397",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 51
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 51
+    }
+  ],
+  "internalName": "lom-pyke#making-a-withdrawal"
+}

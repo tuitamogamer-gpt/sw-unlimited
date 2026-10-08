@@ -1,0 +1,42 @@
+{
+  "title": "Patrolling V-Wing",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 1,
+  "power": 1,
+  "text": "When Played: Draw a card.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4721628683",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 107
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 111
+    },
+    {
+      "set": "TWI",
+      "number": 107
+    }
+  ],
+  "internalName": "patrolling-vwing"
+}

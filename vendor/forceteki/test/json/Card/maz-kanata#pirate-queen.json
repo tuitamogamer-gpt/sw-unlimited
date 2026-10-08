@@ -1,0 +1,38 @@
+{
+  "title": "Maz Kanata",
+  "subtitle": "Pirate Queen",
+  "cost": 1,
+  "hp": 1,
+  "power": 1,
+  "text": "When you play another unit: Give an Experience token to this unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9850906885",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 96
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 96
+    }
+  ],
+  "internalName": "maz-kanata#pirate-queen"
+}

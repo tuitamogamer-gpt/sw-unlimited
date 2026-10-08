@@ -1,0 +1,88 @@
+describe('Raid keyword', function() {
+    integration(function(contextRef) {
+        describe('When a unit with the Raid keyword', function() {
+            beforeEach(function () {
+                return contextRef.setupTestAsync({
+                    phase: 'action',
+                    player1: {
+                        groundArena: ['cantina-braggart'],
+                    },
+                    player2: {
+                        groundArena: ['battlefield-marine'],
+                        hand: ['waylay']
+                    },
+
+                    // IMPORTANT: this is here for backwards compatibility of older tests, don't use in new code
+                    autoSingleTarget: true
+                });
+            });
+
+            it('attacks, power should be increased by raid amount', function () {
+                const { context } = contextRef;
+
+                context.player1.clickCard(context.cantinaBraggart);
+                context.player1.clickCard(context.p2Base);
+                expect(context.cantinaBraggart.exhausted).toBe(true);
+                expect(context.cantinaBraggart.getPower()).toBe(0);
+                expect(context.p2Base.damage).toBe(2);
+
+                context.readyCard(context.cantinaBraggart);
+                context.player2.passAction();
+
+                context.player1.clickCard(context.cantinaBraggart);
+                context.player1.clickCard(context.p2Base);
+                expect(context.cantinaBraggart.getPower()).toBe(0);
+                expect(context.p2Base.damage).toBe(4);
+            });
+
+            it('defends, power should not be increased by raid amount', function () {
+                const { context } = contextRef;
+
+                context.player2.setActivePlayer();
+                context.player2.clickCard(context.battlefieldMarine);
+                context.player2.clickCard(context.cantinaBraggart);
+
+                expect(context.battlefieldMarine.damage).toBe(0);
+                expect(context.cantinaBraggart).toBeInZone('discard');
+            });
+
+            it('is removed from play and played again it shouldn\'t have an additional raid.', function () {
+                const { context } = contextRef;
+                context.player1.passAction();
+                context.player2.clickCard(context.waylay);
+                context.player2.clickCard(context.cantinaBraggart);
+
+                context.player1.clickCard(context.cantinaBraggart);
+                context.readyCard(context.cantinaBraggart);
+                context.player2.passAction();
+
+                context.player1.clickCard(context.cantinaBraggart);
+                context.player1.clickCard(context.p2Base);
+                expect(context.cantinaBraggart.exhausted).toBe(true);
+                expect(context.cantinaBraggart.getPower()).toBe(0);
+                expect(context.p2Base.damage).toBe(2);
+            });
+        });
+
+        describe('When a unit with the Raid keyword and a gained Raid ability', function() {
+            beforeEach(function () {
+                return contextRef.setupTestAsync({
+                    phase: 'action',
+                    player1: {
+                        spaceArena: ['red-three#unstoppable', 'green-squadron-awing']
+                    },
+
+                    // IMPORTANT: this is here for backwards compatibility of older tests, don't use in new code
+                    autoSingleTarget: true
+                });
+            });
+
+            it('attacks, base should have the cumulative raid amount', function () {
+                const { context } = contextRef;
+
+                context.player1.clickCard(context.greenSquadronAwing);
+                expect(context.p2Base.damage).toBe(4);
+            });
+        });
+    });
+});

@@ -1,0 +1,40 @@
+{
+  "title": "Victor Squadron",
+  "subtitle": "In Attack Formation",
+  "cost": 6,
+  "hp": 5,
+  "power": 5,
+  "text": "This unit enters play ready.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8195968327",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 203
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 203
+    }
+  ],
+  "internalName": "victor-squadron#in-attack-formation"
+}

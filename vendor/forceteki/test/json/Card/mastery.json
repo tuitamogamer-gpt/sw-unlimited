@@ -1,0 +1,36 @@
+{
+  "title": "Mastery",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 3,
+  "text": "This upgrade costs 1 resource less to play on a <uq> unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 3,
+  "upgradeHp": 3,
+  "id": "5102721039",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 129
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 129
+    }
+  ],
+  "internalName": "mastery"
+}

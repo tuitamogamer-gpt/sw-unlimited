@@ -1,0 +1,39 @@
+{
+  "title": "Boba Fett",
+  "subtitle": "For a Price",
+  "cost": 5,
+  "hp": 5,
+  "power": 6,
+  "text": "When Played/On Attack: You may pay 1 resource. If you do, deal 3 damage to a ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2562671677",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 214
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 214
+    }
+  ],
+  "internalName": "boba-fett#for-a-price"
+}

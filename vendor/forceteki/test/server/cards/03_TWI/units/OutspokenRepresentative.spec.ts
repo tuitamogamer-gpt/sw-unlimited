@@ -1,0 +1,59 @@
+describe('Outspoken Representative', function () {
+    integration(function (contextRef) {
+        it('should gain Sentinel and create a Clone Trooper token when defeated', async function () {
+            await contextRef.setupTestAsync({
+                phase: 'action',
+                player1: {
+                    hand: ['clone-heavy-gunner'],
+                    groundArena: ['outspoken-representative'],
+                },
+                player2: {
+                    groundArena: ['specforce-soldier', 'volunteer-soldier'],
+                    hasInitiative: true,
+                },
+            });
+            const { context } = contextRef;
+
+            // Check if sentinel is not yet active
+            context.player2.clickCard(context.specforceSoldier);
+            expect(context.player2).toBeAbleToSelectExactly([context.outspokenRepresentative, context.p1Base]);
+            context.player2.clickCard(context.outspokenRepresentative);
+
+            // Check if sentinel is now active
+            context.player1.clickCard(context.cloneHeavyGunner);
+            context.player2.clickCard(context.volunteerSoldier);
+            expect(context.player2).toBeAbleToSelectExactly([context.outspokenRepresentative]);
+
+            // Check if clone token is created when defeated
+            context.player2.clickCard(context.outspokenRepresentative);
+            const cloneTrooper = context.player1.findCardsByName('clone-trooper');
+            expect(cloneTrooper.length).toBe(1);
+            expect(cloneTrooper[0]).toBeInZone('groundArena');
+        });
+
+        it('should create the Clone Trooper token for the opponent when defeated with No Glory, Only Results', async function () {
+            await contextRef.setupTestAsync({
+                phase: 'action',
+                player1: {
+                    groundArena: ['outspoken-representative'],
+                },
+                player2: {
+                    hand: ['no-glory-only-results'],
+                    hasInitiative: true,
+                },
+            });
+            const { context } = contextRef;
+
+            context.player2.clickCard(context.noGloryOnlyResults);
+            context.player2.clickCard(context.outspokenRepresentative);
+
+            expect(context.outspokenRepresentative).toBeInZone('discard', context.player1);
+            expect(context.player1.findCardsByName('clone-trooper').length).toBe(0);
+
+            const cloneTrooper = context.player2.findCardsByName('clone-trooper');
+            expect(cloneTrooper.length).toBe(1);
+            expect(cloneTrooper[0]).toBeInZone('groundArena', context.player2);
+            expect(context.player1).toBeActivePlayer();
+        });
+    });
+});

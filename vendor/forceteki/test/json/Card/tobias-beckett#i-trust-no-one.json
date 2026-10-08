@@ -1,0 +1,39 @@
+{
+  "title": "Tobias Beckett",
+  "subtitle": "I Trust No One",
+  "cost": 4,
+  "hp": 5,
+  "power": 4,
+  "text": "When you play a non-unit card: You may exhaust a unit that costs the same as or less than the card you played. Use this ability only once each round.\nSmuggle [5 resources Vigilance]",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3010720738",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "smuggle"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 217
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 217
+    }
+  ],
+  "internalName": "tobias-beckett#i-trust-no-one"
+}

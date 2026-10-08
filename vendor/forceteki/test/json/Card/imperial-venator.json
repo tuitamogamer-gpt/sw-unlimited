@@ -1,0 +1,43 @@
+{
+  "title": "Imperial Venator",
+  "subtitle": "",
+  "cost": 7,
+  "hp": 6,
+  "power": 7,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)\nGrit (This unit gets +1/+0 for each damage on it.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5923525862",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel",
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 69
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 69
+    }
+  ],
+  "internalName": "imperial-venator"
+}

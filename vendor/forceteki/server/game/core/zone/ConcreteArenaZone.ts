@@ -1,0 +1,46 @@
+import type { IInPlayCard } from '../card/baseClasses/InPlayCard';
+import type { ZoneName } from '../Constants';
+import type { Game } from '../Game';
+import { registerStateBase } from '../GameObjectUtils';
+import type { IInPlayZoneCardFilterProperties } from './ConcreteOrMetaArenaZone';
+import { ConcreteOrMetaArenaZone } from './ConcreteOrMetaArenaZone';
+import type { IAddRemoveZone } from './ZoneAbstract';
+
+/**
+ * Base class for the "concrete" arena zones - ground and space - which are not the meta-zone AllArenasZone
+ */
+@registerStateBase()
+export abstract class ConcreteArenaZone extends ConcreteOrMetaArenaZone implements IAddRemoveZone {
+    public declare readonly hiddenForPlayers: null;
+    public abstract override readonly name: ZoneName;
+
+    public constructor(owner: Game) {
+        super(owner);
+
+        this.hiddenForPlayers = null;
+    }
+
+    public override getCards(filter?: IInPlayZoneCardFilterProperties): IInPlayCard[] {
+        const filterFn = this.buildFilterFn(filter);
+
+        let cards = this.cards;
+        if (filter?.controller) {
+            cards = cards.filter((card) => card.controller === filter.controller);
+        }
+
+        return cards.filter(filterFn);
+    }
+
+    public override hasSomeCard(filter: IInPlayZoneCardFilterProperties): boolean {
+        const filterFn = this.buildFilterFn(filter);
+        for (const card of this.cards) {
+            if (filter?.controller && card.controller !== filter.controller) {
+                continue;
+            }
+            if (filterFn(card)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}

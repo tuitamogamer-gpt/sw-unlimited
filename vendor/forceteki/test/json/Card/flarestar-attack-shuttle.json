@@ -1,0 +1,39 @@
+{
+  "title": "Flarestar Attack Shuttle",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 2,
+  "text": "When Played/When Defeated: You may give an Advantage token to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7534790849",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 167
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 167
+    }
+  ],
+  "internalName": "flarestar-attack-shuttle"
+}

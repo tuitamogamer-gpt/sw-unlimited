@@ -1,0 +1,38 @@
+{
+  "title": "Stolen Starpath Unit",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 1,
+  "text": "Attached unit gains: “On Attack: Name a card. The defending player reveals their hand. For each card in their hand with that name, create a Spy token.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s “name” do not include the subtitle of the card.\n",
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "4966696528",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "item",
+    "modification"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 210
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 210
+    }
+  ],
+  "internalName": "stolen-starpath-unit"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Trust Yourself",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Give a Shield token to a unit.\nSearch the top 3 cards of your deck for a card and draw it. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8889497602",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 101
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 101
+    }
+  ],
+  "internalName": "trust-yourself"
+}

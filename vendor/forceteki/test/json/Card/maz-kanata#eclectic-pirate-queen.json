@@ -1,0 +1,40 @@
+{
+  "title": "Maz Kanata",
+  "subtitle": "Eclectic Pirate Queen",
+  "cost": 6,
+  "hp": 4,
+  "power": 4,
+  "text": "Action [Exhaust]: Play a Fringe or Underworld unit from your hand. It costs 1 resource less. Give a Weakness token to it.",
+  "deployBox": "Hidden (This unit can't be attacked if she was deployed this phase.)\nAction: Play a Fringe or Underworld unit from your hand. It costs 1 resource less. Give a Weakness token to it.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Maz's action ability cannot be used as an action if you don't play a unit, as it would not change the game state.\nIf a unit has Hidden and Sentinel at the same time, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3127897445",
+  "aspects": [
+    "command",
+    "cunning"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 2
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 2
+    }
+  ],
+  "internalName": "maz-kanata#eclectic-pirate-queen"
+}

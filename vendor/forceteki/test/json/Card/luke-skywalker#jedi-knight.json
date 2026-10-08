@@ -1,0 +1,42 @@
+{
+  "title": "Luke Skywalker",
+  "subtitle": "Jedi Knight",
+  "cost": 7,
+  "hp": 7,
+  "power": 6,
+  "text": "Restore 3\n\nWhen Played: Give an enemy unit –3/–3 for this phase. If a friendly unit was defeated this phase, give that enemy unit –6/–6 for this phase instead.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7109944284",
+  "aspects": [
+    "heroism",
+    "vigilance"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 51
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 51
+    }
+  ],
+  "internalName": "luke-skywalker#jedi-knight"
+}

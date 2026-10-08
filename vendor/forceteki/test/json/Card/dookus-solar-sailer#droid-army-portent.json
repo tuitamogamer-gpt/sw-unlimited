@@ -1,0 +1,40 @@
+{
+  "title": "Dooku's Solar Sailer",
+  "subtitle": "Droid Army Portent",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "When Played: If you control a unit that costs 1 or less, each opponent discards a card from their hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4824728633",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 154
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 154
+    }
+  ],
+  "internalName": "dookus-solar-sailer#droid-army-portent"
+}

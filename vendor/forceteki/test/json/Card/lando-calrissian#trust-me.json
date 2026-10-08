@@ -1,0 +1,40 @@
+{
+  "title": "Lando Calrissian",
+  "subtitle": "Trust Me",
+  "cost": 7,
+  "hp": 8,
+  "power": 6,
+  "text": "Grit\nWhen Played: You may choose an enemy unit and another friendly non-leader unit. If you do, heal 6 damage from your base and the enemy unit captures the friendly unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4946042773",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "fringe",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "grit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 68
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 68
+    }
+  ],
+  "internalName": "lando-calrissian#trust-me"
+}

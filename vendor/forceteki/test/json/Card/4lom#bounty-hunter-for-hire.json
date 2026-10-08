@@ -1,0 +1,42 @@
+{
+  "title": "4-LOM",
+  "subtitle": "Bounty Hunter for Hire",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "Ambush (When you play this unit, it may ready and attack an enemy unit.)\nEach friendly unit named Zuckuss gets +1/+1 and gains Ambush.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6097248635",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "droid",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 188
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 188
+    }
+  ],
+  "internalName": "4lom#bounty-hunter-for-hire"
+}

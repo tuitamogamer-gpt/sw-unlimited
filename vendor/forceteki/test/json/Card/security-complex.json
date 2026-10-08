@@ -1,0 +1,36 @@
+{
+  "title": "Security Complex",
+  "subtitle": null,
+  "cost": null,
+  "hp": 25,
+  "power": null,
+  "text": "Epic Action: Give a Shield token to a non-leader unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2429341052",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "scarif"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 19
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 19
+    }
+  ],
+  "internalName": "security-complex"
+}

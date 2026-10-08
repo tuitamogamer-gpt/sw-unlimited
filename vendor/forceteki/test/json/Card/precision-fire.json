@@ -1,0 +1,38 @@
+{
+  "title": "Precision Fire",
+  "subtitle": null,
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a unit. It gains Saboteur for this attack. If it's a TROOPER, it also gets +2/+0 for this attack. (Ignore Sentinel and defeat the defender's Shields.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "You must attack with a unit, if able. Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9210902604",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 168
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 168
+    }
+  ],
+  "internalName": "precision-fire"
+}

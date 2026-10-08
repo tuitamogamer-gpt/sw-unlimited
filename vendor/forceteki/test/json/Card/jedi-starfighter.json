@@ -1,0 +1,41 @@
+{
+  "title": "Jedi Starfighter",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 1,
+  "text": "On Attack: You may deal 1 damage to a space unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3363314608",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "jedi",
+    "republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 144
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 144
+    }
+  ],
+  "internalName": "jedi-starfighter"
+}

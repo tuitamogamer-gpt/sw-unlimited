@@ -1,0 +1,38 @@
+{
+  "title": "Grievous's Wheel Bike",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 3,
+  "text": "While playing this upgrade on General Grievous, it costs 2 resources less to play.\nAttach to a non-Vehicle unit.\nAttached unit gains Overwhelm.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": 3,
+  "upgradeHp": 3,
+  "id": "0875550518",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "vehicle"
+  ],
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 236
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 236
+    }
+  ],
+  "internalName": "grievouss-wheel-bike"
+}

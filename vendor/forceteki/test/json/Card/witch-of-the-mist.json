@@ -1,0 +1,40 @@
+{
+  "title": "Witch of the Mist",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 3,
+  "power": 1,
+  "text": "Hidden (This unit can't be attacked if it was played this phase.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If a unit has Hidden and Sentinel at the same time, it can be attacked.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2897264390",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "force",
+    "night"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 154
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 154
+    }
+  ],
+  "internalName": "witch-of-the-mist"
+}

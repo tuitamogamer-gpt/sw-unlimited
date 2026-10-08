@@ -1,0 +1,41 @@
+{
+  "title": "Dedra Meero",
+  "subtitle": "With Verifiable Data",
+  "cost": 6,
+  "hp": 5,
+  "power": 5,
+  "text": "Ambush (When you play this unit, it may attack an enemy unit.)\nOn Attack: Create a Spy token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8167114067",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 87
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 87
+    }
+  ],
+  "internalName": "dedra-meero#with-verifiable-data"
+}

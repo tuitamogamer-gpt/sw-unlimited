@@ -1,0 +1,39 @@
+{
+  "title": "Abandoned the Order",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 1,
+  "power": 1,
+  "text": "Attached unit loses the Jedi trait and gains Restore 1.\nWhen Played: You may return a non-leader unit to its owner's hand.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that return a card to hand must choose a card in play unless otherwise specified.\nLosing the Jedi trait means the attached unit also can't gain the Jedi trait.\n",
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "8767791219",
+  "aspects": [
+    "cunning",
+    "vigilance"
+  ],
+  "traits": [
+    "learned"
+  ],
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "TS26",
+    "number": 37
+  },
+  "setCodes": [
+    {
+      "set": "TS26",
+      "number": 37
+    }
+  ],
+  "internalName": "abandoned-the-order"
+}

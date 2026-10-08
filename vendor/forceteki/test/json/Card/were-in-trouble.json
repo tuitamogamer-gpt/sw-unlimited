@@ -1,0 +1,40 @@
+{
+  "title": "We're In Trouble",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Deal 3 damage to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7524197668",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "IBH",
+    "number": 61
+  },
+  "setCodes": [
+    {
+      "set": "IBH",
+      "number": 61
+    },
+    {
+      "set": "IBH",
+      "number": 86
+    }
+  ],
+  "internalName": "were-in-trouble"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Covert Believers",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 4,
+  "text": "When Defeated: Create a Mandalorian token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8817340309",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 80
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 80
+    }
+  ],
+  "internalName": "covert-believers"
+}

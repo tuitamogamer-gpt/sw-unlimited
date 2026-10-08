@@ -1,0 +1,38 @@
+{
+  "title": "Commission",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Search the top 10 cards of your deck for a Bounty Hunter, Item, or Transport card, reveal it, and draw it. (Put the other cards on the bottom of your deck in a random order.)\nSmuggle [3 resources Command]",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1141018768",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "supply"
+  ],
+  "keywords": [
+    "smuggle"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 127
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 127
+    }
+  ],
+  "internalName": "commission"
+}

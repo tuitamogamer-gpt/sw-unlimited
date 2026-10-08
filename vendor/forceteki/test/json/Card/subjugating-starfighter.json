@@ -1,0 +1,41 @@
+{
+  "title": "Subjugating Starfighter",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 3,
+  "text": "Ambush (When you play this unit, it may ready and attack an enemy unit.)\nWhen Played: If you have the initiative, create a Battle Droid token.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4824842849",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "separatist",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 112
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 112
+    }
+  ],
+  "internalName": "subjugating-starfighter"
+}

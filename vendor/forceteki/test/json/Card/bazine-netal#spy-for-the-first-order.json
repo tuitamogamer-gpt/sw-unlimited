@@ -1,0 +1,40 @@
+{
+  "title": "Bazine Netal",
+  "subtitle": "Spy for the First Order",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "When Played: Look at an opponent's hand. You may discard 1 of those cards. If you do, that player draws a card.\nSmuggle [4 resources Cunning Villainy]",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5830140660",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "smuggle"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 184
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 184
+    }
+  ],
+  "internalName": "bazine-netal#spy-for-the-first-order"
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Paladin Training Corvette",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 3,
+  "text": "When Played: You may give an Experience token to each of up to 3 Force units.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7012130030",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "jedi",
+    "republic",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 99
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 99
+    }
+  ],
+  "internalName": "paladin-training-corvette"
+}

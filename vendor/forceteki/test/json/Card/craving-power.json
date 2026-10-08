@@ -1,0 +1,37 @@
+{
+  "title": "Craving Power",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 2,
+  "power": 2,
+  "text": "Attach to a friendly unit.\nWhen Played: Deal damage to an enemy unit equal to attached unit's power.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers (and, in this case, the power given by Craving Power).\n",
+  "upgradePower": 2,
+  "upgradeHp": 2,
+  "id": "3848295601",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 91
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 91
+    }
+  ],
+  "internalName": "craving-power"
+}

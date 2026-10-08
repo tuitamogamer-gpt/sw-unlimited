@@ -1,0 +1,30 @@
+import type { AbilityContext } from '../core/ability/AbilityContext';
+import { EpicActionLimit } from '../core/ability/AbilityLimit';
+import { ActionAbilityBase } from '../core/ability/ActionAbility';
+import type { Card } from '../core/card/Card';
+import type { Game } from '../core/Game';
+import type { Player } from '../core/Player';
+import type { IEpicActionProps } from '../Interfaces';
+import { registerState } from '../core/GameObjectUtils';
+
+@registerState()
+export class EpicActionAbility extends ActionAbilityBase {
+    public constructor(game: Game, card: Card, properties: IEpicActionProps) {
+        super(game, card, { ...properties, limit: new EpicActionLimit(game) });
+
+        this.canResolveWithoutLegalTargets = true;
+    }
+
+    // eslint-disable-next-line @typescript-eslint/class-literal-property-style
+    public override get isEpicAction(): boolean {
+        return true;
+    }
+
+    public isSpent(player: Player): boolean {
+        return this.limit.isAtMax(player);
+    }
+
+    public override meetsRequirements(context: AbilityContext, ignoredRequirements: string[] = [], thisStepOnly: boolean = false): string {
+        return super.meetsRequirements(context, [...ignoredRequirements, 'gameStateChange'], thisStepOnly);
+    }
+}

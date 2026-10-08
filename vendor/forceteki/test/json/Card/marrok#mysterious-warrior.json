@@ -1,0 +1,43 @@
+{
+  "title": "Marrok",
+  "subtitle": "Mysterious Warrior",
+  "cost": 3,
+  "hp": 6,
+  "power": 2,
+  "text": "Sentinel\nWhile this unit is upgraded, he loses Sentinel and gains Saboteur.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Losing Sentinel while upgraded means Marrok also can't gain Sentinel while upgraded.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3039970869",
+  "aspects": [
+    "vigilance",
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "force",
+    "inquisitor"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel",
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 30
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 30
+    }
+  ],
+  "internalName": "marrok#mysterious-warrior"
+}

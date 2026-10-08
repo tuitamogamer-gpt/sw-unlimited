@@ -1,0 +1,40 @@
+{
+  "title": "FN Trooper Corps",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 5,
+  "power": 4,
+  "text": "When Played: Give an Experience token to another friendly unit.\nPlot (When you deploy a leader, you may play this card from your resources, paying its cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7248761207",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "first order",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "plot"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 243
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 243
+    }
+  ],
+  "internalName": "fn-trooper-corps"
+}

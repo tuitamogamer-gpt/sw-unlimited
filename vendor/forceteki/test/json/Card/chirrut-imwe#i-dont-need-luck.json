@@ -1,0 +1,42 @@
+{
+  "title": "Chirrut Îmwe",
+  "subtitle": "I Don't Need Luck",
+  "cost": 6,
+  "hp": 6,
+  "power": 8,
+  "text": "Saboteur\nWhen Attack Ends: If this unit dealt combat damage to a base, you may heal 4 damage from another unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "\"When Attack Ends\" abilities trigger at the same time the attacking unit deals combat damage. Chirrut does not need to survive the attack in order to heal 4 damage from another unit.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5539492404",
+  "aspects": [
+    "vigilance",
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 46
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 46
+    }
+  ],
+  "internalName": "chirrut-imwe#i-dont-need-luck"
+}

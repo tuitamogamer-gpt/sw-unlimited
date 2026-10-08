@@ -1,0 +1,39 @@
+{
+  "title": "Teeka",
+  "subtitle": "You're in Luck",
+  "cost": 1,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: Choose one:\nGive a unit Sentinel for this phase.\nA unit loses Sentinel for this phase.\n",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Losing Sentinel means the chosen unit also can't gain Sentinel for this phase.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2288296841",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "jawa"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 221
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 221
+    }
+  ],
+  "internalName": "teeka#youre-in-luck"
+}

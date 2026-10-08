@@ -1,0 +1,40 @@
+{
+  "title": "Scorch",
+  "subtitle": "Imperial Commando",
+  "cost": 3,
+  "hp": 5,
+  "power": 3,
+  "text": "On Attack: You may deal 1 damage to an upgraded unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6775288707",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "clone",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 64
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 64
+    }
+  ],
+  "internalName": "scorch#imperial-commando"
+}

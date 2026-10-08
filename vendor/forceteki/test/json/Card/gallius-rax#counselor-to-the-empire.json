@@ -1,0 +1,39 @@
+{
+  "title": "Gallius Rax",
+  "subtitle": "Counselor to the Empire",
+  "cost": 6,
+  "hp": 7,
+  "power": 4,
+  "text": "Other friendly units with 2 or more different keywords get +2/+2.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "\"\"Different\"\" keywords means different words, regardless of numbers that might follow them. \"\"Raid 1\"\" and \"\"Raid 2\"\" do not count as different keywords.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7588520146",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 100
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 100
+    }
+  ],
+  "internalName": "gallius-rax#counselor-to-the-empire"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Principled Outlaw",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "On Attack: You may exhaust a ground unit.\nSmuggle [6 resources Cunning Heroism] (If this card is a resource, you may play it for its smuggle cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9040137775",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "underworld"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "smuggle"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 201
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 201
+    }
+  ],
+  "internalName": "principled-outlaw"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Wartime Trade Official",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "When Defeated: Create a Battle Droid token.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0677558416",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 32
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 32
+    }
+  ],
+  "internalName": "wartime-trade-official"
+}

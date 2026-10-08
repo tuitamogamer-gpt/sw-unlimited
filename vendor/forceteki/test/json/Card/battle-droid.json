@@ -1,0 +1,33 @@
+{
+  "title": "Battle Droid",
+  "subtitle": "",
+  "cost": 0,
+  "hp": 1,
+  "power": 1,
+  "text": "",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3463348370",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "droid",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "token",
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI"
+  },
+  "internalName": "battle-droid"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Osi Sobeck",
+  "subtitle": "Warden of the Citadel",
+  "cost": 6,
+  "hp": 6,
+  "power": 3,
+  "text": "Exploit 3\nWhen Played: This unit captures an enemy non-leader ground unit with cost equal to or less than the number of resources paid to play this unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Abilities that refer to a card's cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2041344712",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "separatist"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "exploit"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 115
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 115
+    }
+  ],
+  "internalName": "osi-sobeck#warden-of-the-citadel"
+}

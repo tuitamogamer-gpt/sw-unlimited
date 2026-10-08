@@ -1,0 +1,271 @@
+import type { AbilityContext } from '../core/ability/AbilityContext';
+import type { Card } from '../core/card/Card';
+import type { CardTypeFilter, ZoneFilter, RelativePlayerFilter, TokenUpgradeName } from '../core/Constants';
+import { CardType, RelativePlayer, TargetMode, WildcardCardType } from '../core/Constants';
+import { type ICardTargetSystemProperties, CardTargetSystem } from '../core/gameSystem/CardTargetSystem';
+import * as CardSelectorFactory from '../core/cardSelector/CardSelectorFactory';
+import { BaseCardSelector } from '../core/cardSelector/BaseCardSelector';
+import type { GameEvent } from '../core/event/GameEvent';
+import type { DistributePromptType, IDistributeAmongTargetsPromptProperties, IDistributeAmongTargetsPromptMapResults } from '../core/gameSteps/PromptInterfaces';
+import type { DamageSystem } from './DamageSystem';
+import type { HealSystem } from './HealSystem';
+import { Contract } from '../core/utils/Contract';
+import { Helpers } from '../core/utils/Helpers';
+import type { GiveTokenUpgradeSystem } from './GiveTokenUpgradeSystem';
+import type { FormatMessage } from '../core/chat/GameChat';
+import { ChatHelpers } from '../core/chat/ChatHelpers';
+
+export interface IDistributeAmongTargetsSystemProperties<TContext extends AbilityContext = AbilityContext> extends ICardTargetSystemProperties {
+    amountToDistribute: number | ((context: TContext) => number);
+
+    /**
+     * If true, the player can choose to target 0 cards with the ability.
+     * This needs to be set for any card that says "choose among any number of units" in its effect text.
+     */
+    canChooseNoTargets: boolean;
+
+    /** If true, the amount distributed can be less than `amountToDistribute` */
+    canDistributeLess?: boolean;
+
+    activePromptTitle?: string;
+    player?: RelativePlayer;
+    cardTypeFilter?: CardTypeFilter | CardTypeFilter[];
+    controller?: RelativePlayerFilter;
+    zoneFilter?: ZoneFilter | ZoneFilter[];
+    cardCondition?: (card: Card, context: TContext) => boolean;
+    selector?: BaseCardSelector<TContext>;
+    maxTargets?: number;
+}
+
+export abstract class DistributeAmongTargetsSystem<
+    TContext extends AbilityContext = AbilityContext,
+    TProperties extends IDistributeAmongTargetsSystemProperties<TContext> = IDistributeAmongTargetsSystemProperties<TContext>
+> extends CardTargetSystem<TContext, TProperties> {
+    protected override readonly targetTypeFilter = [WildcardCardType.Unit, CardType.Base];
+    protected override defaultProperties: IDistributeAmongTargetsSystemProperties<TContext> = {
+        amountToDistribute: null,
+        cardCondition: () => true,
+        canChooseNoTargets: null,
+        canDistributeLess: this.canDistributeLessDefault(),
+        maxTargets: null,
+    };
+
+    public abstract promptType: DistributePromptType;
+    protected abstract canDistributeLessDefault(): boolean;
+    protected abstract generateEffectSystem(target?: Card, amount?: number, properties?): DamageSystem | HealSystem | GiveTokenUpgradeSystem;
+    protected abstract getDistributedAmountFromEvent(event: any): number;
+
+    /**
+     * Singular and plural noun for the distributed resource, e.g. `{ singular: 'Weakness token', plural: 'Weakness tokens' }`
+     * or just `{ singular: 'damage' }` for uncountable nouns. Used to build the counted phrases in chat messages.
+     */
+    protected abstract getDistributionNouns(context: TContext): { singular: string; plural?: string };
+
+    /** The counted noun phrase used in chat messages, e.g. '3 damage' / '1 Weakness token' / '2 Weakness tokens'. */
+    private getCountedDistributionType(amount: number, context: TContext): string | FormatMessage {
+        const nouns = this.getDistributionNouns(context);
+        return ChatHelpers.pluralize(amount, `1 ${nouns.singular}`, nouns.plural ?? nouns.singular);
+    }
+
+    protected getDistributionVerb(): string {
+        return 'distribute';
+    }
+
+    /** The token upgrade being distributed, surfaced on the prompt so it (and the FE) can render the specific token. Only relevant for token-upgrade distributions. */
+    protected getPromptTokenType(context: TContext): TokenUpgradeName | undefined {
+        return undefined;
+    }
+
+    protected preferLogGameMessageBeforeEventResolution(): boolean {
+        return false;
+    }
+
+    public eventHandler(event): void {
+        const context: TContext = event.context;
+        event.totalDistributed =
+            (event.individualEvents as GameEvent[])
+                .flatMap((event) => event.resolvedEvents.filter((resolvedEvent) => resolvedEvent.name === event.name))
+                .reduce((total, individualEvent) => total + this.getDistributedAmountFromEvent(individualEvent), 0);
+
+        if (!this.preferLogGameMessageBeforeEventResolution()) {
+            this.generateDistributedEffectMessage(event.individualEvents, context, event.additionalProperties, true);
+        }
+    }
+
+    protected getChatMessage(): string {
+        return `{0} uses {1} to ${this.getDistributionVerb()} {2}`;
+    }
+
+    protected getChatMessageArgs(
+        individualEvents: any[],
+        context: TContext,
+        additionalProperties: Partial<TProperties>,
+        enforceResolvedEvents: boolean = true
+    ): any[] {
+        const targets: FormatMessage[] = [];
+        const eventsToConsider = enforceResolvedEvents
+            ? individualEvents.flatMap((event) => event.resolvedEvents.filter((resolvedEvent: GameEvent) => resolvedEvent.name === event.name))
+            : individualEvents;
+
+        for (const individualEvent of eventsToConsider) {
+            const amount = enforceResolvedEvents
+                ? this.getDistributedAmountFromEvent(individualEvent)
+                : individualEvent.amount;
+
+            if (amount !== 0) {
+                targets.push({
+                    format: '{0} to {1}',
+                    args: [this.getCountedDistributionType(amount, context), this.getTargetMessage(individualEvent.card, context)],
+                });
+            }
+        }
+
+        if (targets.length === 0) {
+            const nouns = this.getDistributionNouns(context);
+            targets.push({
+                format: 'no effective {0}',
+                args: [nouns.plural ?? nouns.singular],
+            });
+        }
+
+        return [
+            context.player,
+            context.source,
+            targets,
+        ];
+    }
+
+    private generateDistributedEffectMessage(
+        individualEvents: GameEvent[],
+        context: TContext,
+        additionalProperties: Partial<TProperties>,
+        enforceResolvedEvents: boolean = true
+    ) {
+        context.game.addMessage(this.getChatMessage(), ...this.getChatMessageArgs(individualEvents, context, additionalProperties, enforceResolvedEvents));
+    }
+
+    public override getEffectMessage(context: TContext, additionalProperties?: Partial<TProperties>): [string, any[]] {
+        const properties = this.generatePropertiesFromContext(context, additionalProperties);
+
+        const amountToDistribute = Helpers.derive(properties.amountToDistribute, context);
+        const amountDescription = properties.canDistributeLess ? 'up to ' : '';
+
+        if (properties.maxTargets && properties.maxTargets === 1) {
+            const filterDescription = BaseCardSelector.cardTypeFilterDescription(properties.cardTypeFilter || [], false);
+            const controllerDescriptor = properties.controller === RelativePlayer.Self ? 'a friendly' : properties.controller === RelativePlayer.Opponent ? 'an enemy' : filterDescription.article;
+            return [
+                'distribute {0}{1} to {2} {3}',
+                [amountDescription, this.getCountedDistributionType(amountToDistribute, context), controllerDescriptor, filterDescription.description],
+            ];
+        }
+
+        const filterDescription = BaseCardSelector.cardTypeFilterDescription(properties.cardTypeFilter || [], true);
+        const controllerDescriptor = properties.controller === RelativePlayer.Self ? 'friendly ' : properties.controller === RelativePlayer.Opponent ? 'enemy ' : '';
+
+        return [
+            'distribute {0}{1} among {2}{3}',
+            [amountDescription, this.getCountedDistributionType(amountToDistribute, context), controllerDescriptor, filterDescription.description],
+        ];
+    }
+
+    public override queueGenerateEventGameSteps(events: GameEvent[], context: TContext, additionalProperties: Partial<TProperties> = {}): void {
+        const properties = this.generatePropertiesFromContext(context, additionalProperties);
+        if (properties.player === RelativePlayer.Opponent && !context.player.opponent) {
+            return;
+        }
+        const player = properties.player === RelativePlayer.Opponent ? context.player.opponent : context.player;
+        const amountToDistribute = Helpers.derive(properties.amountToDistribute, context);
+
+        if (amountToDistribute === 0) {
+            return;
+        }
+
+        if (!properties.selector.hasEnoughTargets(context)) {
+            return;
+        }
+
+        const legalTargets = properties.selector.getAllLegalTargets(context);
+
+        // generate the meta-event for the entire distribution effect
+        const distributeEvent = this.generateEvent(context) as any;
+        distributeEvent.individualEvents = [];
+        distributeEvent.checkCondition = () => true;
+        events.push(distributeEvent);
+
+        // Auto-select if there's only one legal target and the player isn't allowed to choose 0 targets.
+        // The canChooseNoTargets guard also excludes any "distribute less" case (canDistributeLess implies
+        // canChooseNoTargets, enforced below), so this only fires when the full amount must go to the one
+        // target - a decision-free case that always auto-resolves regardless of the autoSingleTarget setting
+        // (which only governs single card target selection).
+        if ((!properties.canChooseNoTargets && !context.ability.optional) && legalTargets.length === 1) {
+            distributeEvent.card = legalTargets[0];
+            const event = this.generateEffectEvent(legalTargets[0], distributeEvent, context, amountToDistribute);
+            if (this.preferLogGameMessageBeforeEventResolution()) {
+                this.generateDistributedEffectMessage([event], context, additionalProperties, false);
+            }
+            events.push(event);
+            return;
+        }
+
+        // build prompt with handler that will push damage / heal events into execution window on prompt resolution
+        const promptProperties: IDistributeAmongTargetsPromptProperties = {
+            type: this.promptType,
+            tokenType: this.getPromptTokenType(context),
+            legalTargets,
+            canChooseNoTargets: properties.canChooseNoTargets || context.ability.optional,
+            canDistributeLess: properties.canDistributeLess,
+            maxTargets: properties.maxTargets,
+            source: context.source,
+            amount: amountToDistribute,
+            resultsHandler: (results: IDistributeAmongTargetsPromptMapResults) => {
+                const individualEvents = Array.from(results.valueDistribution.entries())
+                    .map(([card, amount]) => this.generateEffectEvent(card, distributeEvent, context, amount));
+
+                if (this.preferLogGameMessageBeforeEventResolution()) {
+                    // Immediately log the distributed effect message after selection so players resolving replacement effects
+                    // can see the amounts and make decisions accordingly.
+                    this.generateDistributedEffectMessage(individualEvents, context, additionalProperties, false);
+                }
+
+                events.push(...individualEvents);
+            }
+        };
+
+        context.game.promptDistributeAmongTargets(player, promptProperties);
+    }
+
+    public override generatePropertiesFromContext(context: TContext, additionalProperties: Partial<TProperties> = {}) {
+        const properties = super.generatePropertiesFromContext(context, additionalProperties);
+
+        Contract.assertFalse(properties.canDistributeLess && !properties.canChooseNoTargets, 'Must set properties.canDistributeLess to true if properties.canChooseNoTargets is true');
+
+        if (!properties.selector) {
+            const effectSystem = this.generateEffectSystem(null, 1, properties);
+            const cardCondition = (card, context) =>
+                effectSystem.canAffect(card, context) && properties.cardCondition(card, context);
+            properties.selector = CardSelectorFactory.create(Object.assign({}, properties, { cardCondition, mode: TargetMode.Unlimited }));
+        }
+        return properties;
+    }
+
+    public override canAffectInternal(card: Card, context: TContext, additionalProperties: Partial<TProperties> = {}): boolean {
+        const properties = this.generatePropertiesFromContext(context, additionalProperties);
+        return properties.selector.canTarget(card, context);
+    }
+
+    public override hasLegalTarget(context: TContext, additionalProperties: Partial<TProperties> = {}): boolean {
+        const properties = this.generatePropertiesFromContext(context, additionalProperties);
+        return properties.selector.hasEnoughTargets(context);
+    }
+
+    private generateEffectEvent(card: Card, distributeEvent: any, context: TContext, amount: number) {
+        const properties = this.generatePropertiesFromContext(context);
+        const effectSystem = this.generateEffectSystem(card, amount, properties);
+
+        const individualEvent = effectSystem.generateEvent(context);
+        individualEvent.order = distributeEvent.order - 1;
+        distributeEvent.individualEvents.push(individualEvent);
+
+        return individualEvent;
+    }
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Friendly Eopie",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 4,
+  "power": 0,
+  "text": "Restore 2 (When this unit attacks, heal 2 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5297853994",
+  "aspects": [],
+  "traits": [
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 269
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 269
+    }
+  ],
+  "internalName": "friendly-eopie"
+}

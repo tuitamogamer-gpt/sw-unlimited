@@ -1,0 +1,42 @@
+{
+  "title": "Hunter of the Haxion Brood",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 4,
+  "text": "While an enemy unit has a Bounty, this unit gains Shielded. (When you play this unit, give a Shield token to it.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6939947927",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "bounty",
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 186
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 186
+    }
+  ],
+  "internalName": "hunter-of-the-haxion-brood"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Scavenging Sandcrawler",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 7,
+  "power": 1,
+  "text": "On Attack: You may put a card from your discard pile on the bottom of your deck. If you do, create a Credit token.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2471168752",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "vehicle",
+    "transport"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 238
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 238
+    }
+  ],
+  "internalName": "scavenging-sandcrawler"
+}

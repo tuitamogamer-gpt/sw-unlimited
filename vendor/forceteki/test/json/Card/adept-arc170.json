@@ -1,0 +1,41 @@
+{
+  "title": "Adept ARC-170",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 4,
+  "power": 3,
+  "text": "Restore 2 (When this unit attacks, heal 2 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7500360419",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 114
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 114
+    }
+  ],
+  "internalName": "adept-arc170"
+}

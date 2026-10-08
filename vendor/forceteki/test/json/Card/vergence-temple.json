@@ -1,0 +1,36 @@
+{
+  "title": "Vergence Temple",
+  "subtitle": "",
+  "cost": null,
+  "hp": 25,
+  "power": null,
+  "text": "When the regroup phase starts: If you control a unit with 4 or more remaining HP, the Force is with you (create your Force token).",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7204128611",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "lothal"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 19
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 19
+    }
+  ],
+  "internalName": "vergence-temple"
+}

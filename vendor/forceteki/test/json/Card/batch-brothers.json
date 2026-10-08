@@ -1,0 +1,40 @@
+{
+  "title": "Batch Brothers",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 1,
+  "power": 2,
+  "text": "When Played: Create a Clone Trooper token.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6969421569",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "republic",
+    "clone",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 144
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 144
+    }
+  ],
+  "internalName": "batch-brothers"
+}

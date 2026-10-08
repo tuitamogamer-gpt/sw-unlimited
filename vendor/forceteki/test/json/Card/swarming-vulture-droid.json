@@ -1,0 +1,38 @@
+{
+  "title": "Swarming Vulture Droid",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "A deck can have up to 15 copies of this card.\nThis unit gets +1/+0 for each other friendly Swarming Vulture Droid.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2177194044",
+  "aspects": [],
+  "traits": [
+    "separatist",
+    "droid",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 256
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 256
+    }
+  ],
+  "internalName": "swarming-vulture-droid"
+}

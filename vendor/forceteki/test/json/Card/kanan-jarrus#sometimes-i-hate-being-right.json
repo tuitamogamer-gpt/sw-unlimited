@@ -1,0 +1,41 @@
+{
+  "title": "Kanan Jarrus",
+  "subtitle": "Sometimes I Hate Being Right",
+  "cost": 6,
+  "hp": 7,
+  "power": 8,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "kanan-jarrus#sometimes-i-hate-being-right-id",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "rebel",
+    "spectre"
+  ],
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 121
+  },
+  "internalName": "kanan-jarrus#sometimes-i-hate-being-right",
+  "arena": "ground",
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 121
+    }
+  ]
+}

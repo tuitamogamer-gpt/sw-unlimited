@@ -1,0 +1,42 @@
+{
+  "title": "The Chancellor's Shuttle",
+  "subtitle": "Grim Harbinger",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "Restore 1\nWhen Defeated: If you control Chancellor Palpatine (as a leader or unit), you may give an Experience token to a unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3052170248",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "republic",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 27
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 27
+    }
+  ],
+  "internalName": "the-chancellors-shuttle#grim-harbinger"
+}

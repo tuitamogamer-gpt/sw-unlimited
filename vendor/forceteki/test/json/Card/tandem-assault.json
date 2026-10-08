@@ -1,0 +1,36 @@
+{
+  "title": "Tandem Assault",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a space unit. If you do, attack with a ground unit, and that ground unit gets +2/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you play Tandem Assault, you must attack with a space unit, if able. If you do, you must attack with a ground unit, if able. Units must be ready in order to attack.\nFully resolve the first attack, including all triggers, before beginning the second attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4334684518",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 124
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 124
+    }
+  ],
+  "internalName": "tandem-assault"
+}

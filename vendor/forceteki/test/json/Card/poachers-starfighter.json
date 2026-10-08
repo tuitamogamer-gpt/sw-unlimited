@@ -1,0 +1,40 @@
+{
+  "title": "Poacher's Starfighter",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 1,
+  "power": 3,
+  "text": "When Played: You may defeat this unit. If you do, create a Beast token and deal 1 damage to it.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5492335894",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 153
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 153
+    }
+  ],
+  "internalName": "poachers-starfighter"
+}

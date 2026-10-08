@@ -1,0 +1,39 @@
+{
+  "title": "Nowhere to Hide",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 0,
+  "power": -2,
+  "text": "Attached unit gains Sentinel. (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": -2,
+  "upgradeHp": 0,
+  "id": "9653971462",
+  "aspects": [
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "condition"
+  ],
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 198
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 198
+    }
+  ],
+  "internalName": "nowhere-to-hide"
+}

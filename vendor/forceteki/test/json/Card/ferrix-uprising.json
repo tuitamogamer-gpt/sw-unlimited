@@ -1,0 +1,36 @@
+{
+  "title": "Ferrix Uprising",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Deal damage to a unit equal to twice the number of units you control in its arena.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8492928317",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 130
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 130
+    }
+  ],
+  "internalName": "ferrix-uprising"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Pounce",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Attack with a Creature unit. It gets +4/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "If you play Pounce, you must attack with a Creature unit, if able. Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3591040205",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "trick"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 224
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 224
+    },
+    {
+      "set": "HMW",
+      "number": 239
+    }
+  ],
+  "internalName": "pounce"
+}

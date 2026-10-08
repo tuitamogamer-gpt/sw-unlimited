@@ -1,0 +1,39 @@
+{
+  "title": "Force Illusion",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Exhaust an enemy unit. A friendly unit gains Sentinel for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1906860379",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "force",
+    "trick"
+  ],
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 223
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 223
+    }
+  ],
+  "internalName": "force-illusion"
+}

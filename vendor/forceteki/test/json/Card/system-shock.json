@@ -1,0 +1,36 @@
+{
+  "title": "System Shock",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Defeat a non-leader upgrade attached to a unit. If you do, deal 1 damage to that unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2454329668",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 175
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 175
+    }
+  ],
+  "internalName": "system-shock"
+}

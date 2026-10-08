@@ -1,0 +1,39 @@
+{
+  "title": "Salacious Crumb",
+  "subtitle": "Obnoxious Pet",
+  "cost": 1,
+  "hp": 3,
+  "power": 1,
+  "text": "When Played: Heal 1 damage from your base.\nAction [Exhaust, return this unit to his owner's hand]: Deal 1 damage to a ground unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2744523125",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "creature"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 80
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 80
+    }
+  ],
+  "internalName": "salacious-crumb#obnoxious-pet"
+}

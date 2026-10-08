@@ -1,0 +1,9 @@
+node_modules
+dist
+.git
+vendor/forceteki/node_modules
+vendor/forceteki/build
+vendor/forceteki/.git
+test-results
+playwright-report
+*.log

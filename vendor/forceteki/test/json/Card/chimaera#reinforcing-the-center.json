@@ -1,0 +1,40 @@
+{
+  "title": "Chimaera",
+  "subtitle": "Reinforcing the Center",
+  "cost": 6,
+  "hp": 6,
+  "power": 5,
+  "text": "When Played: You may use a “When Defeated” ability on another friendly unit.\nWhen Defeated: Create 2 TIE Fighter tokens.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Any ability whose trigger starts with \"When defeated…\" is considered a \"When Defeated\" ability.",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5184505570",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 39
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 39
+    }
+  ],
+  "internalName": "chimaera#reinforcing-the-center"
+}

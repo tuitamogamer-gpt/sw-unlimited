@@ -1,0 +1,36 @@
+{
+  "title": "Haymaker",
+  "subtitle": "",
+  "cost": 4,
+  "hp": null,
+  "power": null,
+  "text": "Give an Experience token to a friendly unit. That unit deals damage equal to its power to an enemy unit in the same arena.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s power include temporary modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6417951289",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 168
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 168
+    }
+  ],
+  "internalName": "haymaker"
+}

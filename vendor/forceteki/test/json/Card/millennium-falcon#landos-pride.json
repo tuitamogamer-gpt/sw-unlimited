@@ -1,0 +1,43 @@
+{
+  "title": "Millennium Falcon",
+  "subtitle": "Lando's Pride",
+  "cost": 6,
+  "hp": 5,
+  "power": 5,
+  "text": "If you play this unit from your hand, it gains Ambush.\nSmuggle [6 resources Cunning Heroism] (If this card is a resource, you may play her for her smuggle cost. Replace her with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n(ERRATA) If you play this unit from your hand, it gains Ambush for this phase.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5752414373",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [
+    "ambush",
+    "smuggle"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 204
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 204
+    }
+  ],
+  "internalName": "millennium-falcon#landos-pride"
+}

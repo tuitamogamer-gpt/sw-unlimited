@@ -1,0 +1,39 @@
+{
+  "title": "Jedi Knight",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "When Played: If you have the initiative, deal 2 damage to an enemy ground unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5737712611",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "force",
+    "jedi"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 145
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 145
+    }
+  ],
+  "internalName": "jedi-knight"
+}

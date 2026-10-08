@@ -1,0 +1,41 @@
+{
+  "title": "Shadow Crawler",
+  "subtitle": "",
+  "cost": 7,
+  "hp": 7,
+  "power": 6,
+  "text": "Ambush (When you play this unit, it may attack an enemy unit.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Ambush is an ability that triggers at the same time as “When Played” abilities. If there is no enemy unit that can be attacked, the unit does not ready.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7628909412",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "fringe",
+    "vehicle",
+    "walker"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "ambush"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 121
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 121
+    }
+  ],
+  "internalName": "shadow-crawler"
+}

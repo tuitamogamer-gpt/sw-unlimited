@@ -1,0 +1,39 @@
+{
+  "title": "Shadow Caster",
+  "subtitle": "Just Business",
+  "cost": 6,
+  "hp": 7,
+  "power": 4,
+  "text": "When a friendly unit is defeated: You may use all of its “When Defeated” abilities again.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Any ability whose trigger starts with \"When defeated…\" is considered a \"When Defeated\" ability.",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9033398895",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 169
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 169
+    }
+  ],
+  "internalName": "shadow-caster#just-business"
+}

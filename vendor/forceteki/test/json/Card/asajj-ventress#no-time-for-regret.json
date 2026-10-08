@@ -1,0 +1,42 @@
+{
+  "title": "Asajj Ventress",
+  "subtitle": "No Time For Regret",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "Action [Exhaust]: Attack with a unit. For this attack, replace any Raid it has or gains with Restore, or vice versa.",
+  "deployBox": "Restore 2\nAction: Attack with a unit. For this attack, replace any Raid it has or gains with Restore, or vice versa.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "If you use Asajj’s ability, you must attack with a unit, if able. Units must be ready in order to attack.\nAsajj's unit side action ability cannot be used as an action if you can't attack with a unit, as it would not change the game state.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8487171598",
+  "aspects": [
+    "vigilance",
+    "aggression"
+  ],
+  "traits": [
+    "force",
+    "night"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid",
+    "restore"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 1
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 1
+    }
+  ],
+  "internalName": "asajj-ventress#no-time-for-regret"
+}

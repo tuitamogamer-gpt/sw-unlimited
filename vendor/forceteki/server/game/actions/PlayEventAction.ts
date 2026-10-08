@@ -1,0 +1,178 @@
+import { AbilityRestriction, EffectName, PlayType, RelativePlayer, ZoneName } from '../core/Constants.js';
+import type { Restriction } from '../core/ongoingEffect/effectImpl/Restriction.js';
+import { Contract } from '../core/utils/Contract.js';
+import type { PlayCardContext, IPlayCardActionProperties } from '../core/ability/PlayCardAction.js';
+import { PlayCardAction } from '../core/ability/PlayCardAction.js';
+import { AbilityResolver } from '../core/gameSteps/AbilityResolver.js';
+import type { AbilityContext } from '../core/ability/AbilityContext.js';
+import type { IEventCard } from '../core/card/EventCard.js';
+import type { ITargetResult } from '../core/ability/abilityTargets/TargetResolver.js';
+import type { EventAbility } from '../core/ability/EventAbility';
+import type { Player } from '../core/Player';
+import { registerState, registerStateBase } from '../core/GameObjectUtils';
+
+@registerStateBase()
+export abstract class PlayEventActionBase extends PlayCardAction {
+    private earlyTargetResults?: ITargetResult;
+
+    public override executeHandler(context: PlayCardContext): void {
+        Contract.assertTrue(context.source.isEvent());
+
+        this.checkAndRearrangeResources(context);
+
+        this.moveEventToDiscard(context);
+
+        const eventAbility = context.source.getEventAbility();
+        const abilityContext = this.generateEventAbilityContext(eventAbility, context.player);
+        abilityContext.playType = context.playType;
+        if (this.earlyTargetResults) {
+            this.copyContextTargets(context, abilityContext);
+        }
+
+        const abilityResolver = new AbilityResolver(context.game, abilityContext, false, null, this.earlyTargetResults, ['player']);
+
+        context.game.queueStep(abilityResolver);
+        context.game.queueSimpleStep(() => {
+            // If the ability was cancelled it won't appears in the chat log so we need to log the message here
+            if (abilityResolver.cancelled && abilityResolver.resolutionCommitted) {
+                this.game.addMessage('{0} plays {1}', context.player, context.source);
+            }
+        }, 'log play event action for cancelled resolutions');
+    }
+
+    public override clone(overrideProperties: Partial<Omit<IPlayCardActionProperties, 'playType'>>) {
+        return new PlayEventAction(this.game, this.card, { ...this.createdWithProperties, ...overrideProperties });
+    }
+
+    /**
+     * Check if playing an event card is restricted for the given player and card.
+     * @param player The player attempting to play the event
+     * @param card The event card being played
+     * @param context The context for restriction checks
+     * @returns The AbilityRestriction blocking play, or null if not restricted
+     */
+    public static getPlayRestriction(player: Player, card: IEventCard, context: AbilityContext): Restriction | null {
+        return player.getMatchingRestrictions([AbilityRestriction.Play, AbilityRestriction.PlayEvent], context)[0] ??
+          card.getMatchingRestrictions(AbilityRestriction.Play, context)[0] ??
+          null;
+    }
+
+    public override meetsRequirements(context = this.createContext(), ignoredRequirements: string[] = []): string {
+        if (PlayEventAction.getPlayRestriction(context.player, context.source as IEventCard, context) != null) {
+            return 'restriction';
+        }
+        return super.meetsRequirements(context, ignoredRequirements);
+    }
+
+    public override promptCustomConfirmation(context: PlayCardContext, cancelHandler: () => void) {
+        Contract.assertTrue(context.source.isEvent());
+
+        const eventAbility = context.source.getEventAbility();
+
+        if (eventAbility.customConfirmation) {
+            const confirmationMessage = eventAbility.customConfirmation(context);
+            if (!confirmationMessage) {
+                return;
+            }
+
+            this.game.promptWithHandlerMenu(context.player, {
+                activePromptTitle: confirmationMessage,
+                choices: ['Continue', 'Cancel'],
+                handlers: [
+                    () => undefined,
+                    () => cancelHandler()
+                ]
+            });
+        }
+    }
+
+    /** Override that allows doing the card selection / prompting for an event card _before_ it is moved to discard for play so we can present a cancel option */
+    public override resolveEarlyTargets(context: PlayCardContext, passHandler = null, canCancel = false) {
+        Contract.assertTrue(context.source.isEvent());
+
+        const eventAbility = context.source.getEventAbility();
+
+        // if the ability is optional, then we need to do play in the correct order (i.e. move to discard first, then select)
+        if (
+            eventAbility.playerChoosingOptional === RelativePlayer.Opponent ||
+            eventAbility.optional ||
+            this.usesExploit(context as unknown as AbilityContext<IEventCard>) ||
+            eventAbility.cannotTargetFirst
+        ) {
+            return this.getDefaultTargetResults(context);
+        }
+
+        const eventAbilityContext = this.generateEventAbilityContext(eventAbility, context.player);
+        eventAbilityContext.playType = context.playType;
+
+        this.copyContextTargets(context, eventAbilityContext);
+        this.earlyTargetResults = eventAbility.resolveEarlyTargets(eventAbilityContext, passHandler, canCancel);
+
+        this.game.queueSimpleStep(() => this.copyContextTargets(eventAbilityContext, context), 'copy event targets to play context');
+
+        this.game.queueSimpleStep(() => {
+            if (this.earlyTargetResults.cancelled || !this.earlyTargetResults.canCancel) {
+                return;
+            }
+
+            const requirements = eventAbility.meetsRequirements(eventAbilityContext, ['player', 'zone'], true);
+            if (requirements === '' && !context.source.isBlank() && context.source.isImplemented) {
+                return;
+            }
+
+            let reason = '';
+            if (context.source.isBlank()) {
+                const blankSource = context.source.getOngoingEffectSources(EffectName.Blank);
+                reason = `due to an ongoing effect of ${blankSource[0].title}`;
+            } else if (!context.source.isImplemented) {
+                reason = 'because the card is not implemented yet';
+            }
+
+            this.game.promptWithHandlerMenu(context.player, {
+                activePromptTitle: `Playing ${context.source.title} will have no effect${reason.length > 0 ? ` ${reason}` : ''}. Are you sure you want to play it?`,
+                choices: ['Play anyway', 'Cancel'],
+                handlers: [
+                    () => undefined,
+                    () => {
+                        this.earlyTargetResults.cancelled = true;
+                    }
+                ]
+            });
+        }, 'check if played event has any effect');
+
+        return this.earlyTargetResults;
+    }
+
+    private copyContextTargets(from: AbilityContext, to: AbilityContext) {
+        to.target = from.target;
+        to.targets = from.targets;
+        to.select = from.select;
+        to.selects = from.selects;
+    }
+
+    public moveEventToDiscard(context: PlayCardContext) {
+        const cardPlayedEvent = this.generateOnPlayEvent(context, {
+            resolver: this,
+            handler: () => context.source.moveTo(ZoneName.Discard)
+        });
+
+        const events = [cardPlayedEvent];
+
+        if (context.playType === PlayType.Smuggle) {
+            this.addSmuggleEvent(events, context);
+        }
+
+        context.game.openEventWindow(events);
+    }
+
+    private generateEventAbilityContext(eventAbility: EventAbility, player: Player) {
+        return eventAbility.createContext(player);
+    }
+}
+
+@registerState()
+export class PlayEventAction extends PlayEventActionBase {
+    public override getGameObjectName() {
+        return 'PlayEventAction';
+    }
+}

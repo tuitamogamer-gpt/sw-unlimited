@@ -1,0 +1,38 @@
+{
+  "title": "Battered Haulcraft",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "When Played: Deal 1 damage to this unit and 1 damage to an enemy space unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3515403989",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "vehicle",
+    "transport"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 71
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 71
+    }
+  ],
+  "internalName": "battered-haulcraft"
+}

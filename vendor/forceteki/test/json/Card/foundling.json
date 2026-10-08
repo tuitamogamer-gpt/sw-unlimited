@@ -1,0 +1,36 @@
+{
+  "title": "Foundling",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 1,
+  "text": "Attached unit gains the Mandalorian trait.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "7687006104",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "mandalorian"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 69
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 69
+    }
+  ],
+  "internalName": "foundling"
+}

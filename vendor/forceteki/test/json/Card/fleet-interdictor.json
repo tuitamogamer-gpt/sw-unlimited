@@ -1,0 +1,42 @@
+{
+  "title": "Fleet Interdictor",
+  "subtitle": "",
+  "cost": 7,
+  "hp": 6,
+  "power": 6,
+  "text": "Sentinel (Units in this arena can't attack your non-Sentinel units or your base.)\nWhen Defeated: You may defeat a space unit that costs 3 or less.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "0235116526",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "capital ship"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 40
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 40
+    }
+  ],
+  "internalName": "fleet-interdictor"
+}

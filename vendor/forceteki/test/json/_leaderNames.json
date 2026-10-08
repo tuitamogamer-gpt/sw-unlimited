@@ -1,0 +1,872 @@
+[
+  {
+    "name": "Darth Vader",
+    "id": "IC27_001",
+    "subtitle": "No One to Stop Us"
+  },
+  {
+    "name": "Princess Leia",
+    "id": "IC27_008",
+    "subtitle": "On a Diplomatic Mission"
+  },
+  {
+    "name": "Luke Skywalker",
+    "id": "SOR_005",
+    "subtitle": "Faithful Friend"
+  },
+  {
+    "name": "Darth Vader",
+    "id": "SOR_010",
+    "subtitle": "Dark Lord of the Sith"
+  },
+  {
+    "name": "Director Krennic",
+    "id": "SOR_001",
+    "subtitle": "Aspiring to Authority"
+  },
+  {
+    "name": "Chewbacca",
+    "id": "SOR_003",
+    "subtitle": "Walking Carpet"
+  },
+  {
+    "name": "Grand Moff Tarkin",
+    "id": "SOR_007",
+    "subtitle": "Oversector Governor"
+  },
+  {
+    "name": "Leia Organa",
+    "id": "SOR_009",
+    "subtitle": "Alliance General"
+  },
+  {
+    "name": "Grand Inquisitor",
+    "id": "SOR_011",
+    "subtitle": "Hunting the Jedi"
+  },
+  {
+    "name": "Sabine Wren",
+    "id": "SOR_014",
+    "subtitle": "Galvanized Revolutionary"
+  },
+  {
+    "name": "Boba Fett",
+    "id": "SOR_015",
+    "subtitle": "Collecting the Bounty"
+  },
+  {
+    "name": "Han Solo",
+    "id": "SOR_017",
+    "subtitle": "Audacious Smuggler"
+  },
+  {
+    "name": "Grand Admiral Thrawn",
+    "id": "SOR_016",
+    "subtitle": "Patient and Insightful"
+  },
+  {
+    "name": "Iden Versio",
+    "id": "SOR_002",
+    "subtitle": "Inferno Squad Commander"
+  },
+  {
+    "name": "Chirrut Îmwe",
+    "id": "SOR_004",
+    "subtitle": "One With The Force"
+  },
+  {
+    "name": "Emperor Palpatine",
+    "id": "SOR_006",
+    "subtitle": "Galactic Ruler"
+  },
+  {
+    "name": "Hera Syndulla",
+    "id": "SOR_008",
+    "subtitle": "Spectre Two"
+  },
+  {
+    "name": "IG-88",
+    "id": "SOR_012",
+    "subtitle": "Ruthless Bounty Hunter"
+  },
+  {
+    "name": "Cassian Andor",
+    "id": "SOR_013",
+    "subtitle": "Dedicated to the Rebellion"
+  },
+  {
+    "name": "Jyn Erso",
+    "id": "SOR_018",
+    "subtitle": "Resisting Oppression"
+  },
+  {
+    "name": "Moff Gideon",
+    "id": "SHD_007",
+    "subtitle": "Formidable Commander"
+  },
+  {
+    "name": "The Mandalorian",
+    "id": "SHD_018",
+    "subtitle": "Sworn To The Creed"
+  },
+  {
+    "name": "Jabba the Hutt",
+    "id": "SHD_006",
+    "subtitle": "His High Exaltedness"
+  },
+  {
+    "name": "Hunter",
+    "id": "SHD_009",
+    "subtitle": "Outcast Sergeant"
+  },
+  {
+    "name": "Bo-Katan Kryze",
+    "id": "SHD_012",
+    "subtitle": "Princess in Exile"
+  },
+  {
+    "name": "Gar Saxon",
+    "id": "SHD_001",
+    "subtitle": "Viceroy of Mandalore"
+  },
+  {
+    "name": "Qi'ra",
+    "id": "SHD_002",
+    "subtitle": "I Alone Survived"
+  },
+  {
+    "name": "Finn",
+    "id": "SHD_003",
+    "subtitle": "This is a Rescue"
+  },
+  {
+    "name": "Rey",
+    "id": "SHD_004",
+    "subtitle": "More Than a Scavenger"
+  },
+  {
+    "name": "Hondo Ohnaka",
+    "id": "SHD_005",
+    "subtitle": "That's Good Business"
+  },
+  {
+    "name": "Boba Fett",
+    "id": "SHD_008",
+    "subtitle": "Daimyo"
+  },
+  {
+    "name": "Bossk",
+    "id": "SHD_010",
+    "subtitle": "Hunting His Prey"
+  },
+  {
+    "name": "Kylo Ren",
+    "id": "SHD_011",
+    "subtitle": "Rash and Deadly"
+  },
+  {
+    "name": "Han Solo",
+    "id": "SHD_013",
+    "subtitle": "Worth the Risk"
+  },
+  {
+    "name": "Cad Bane",
+    "id": "SHD_014",
+    "subtitle": "He Who Needs No Introduction"
+  },
+  {
+    "name": "Doctor Aphra",
+    "id": "SHD_015",
+    "subtitle": "Rapacious Archaeologist"
+  },
+  {
+    "name": "Fennec Shand",
+    "id": "SHD_016",
+    "subtitle": "Honoring the Deal"
+  },
+  {
+    "name": "Lando Calrissian",
+    "id": "SHD_017",
+    "subtitle": "With Impeccable Taste"
+  },
+  {
+    "name": "Ahsoka Tano",
+    "id": "TWI_011",
+    "subtitle": "Snips"
+  },
+  {
+    "name": "General Grievous",
+    "id": "TWI_015",
+    "subtitle": "General of the Droid Armies"
+  },
+  {
+    "name": "Nala Se",
+    "id": "TWI_001",
+    "subtitle": "Clone Engineer"
+  },
+  {
+    "name": "Nute Gunray",
+    "id": "TWI_002",
+    "subtitle": "Vindictive Viceroy"
+  },
+  {
+    "name": "Obi-Wan Kenobi",
+    "id": "TWI_003",
+    "subtitle": "Patient Mentor"
+  },
+  {
+    "name": "Yoda",
+    "id": "TWI_004",
+    "subtitle": "Sensing Darkness"
+  },
+  {
+    "name": "Count Dooku",
+    "id": "TWI_005",
+    "subtitle": "Face of the Confederacy"
+  },
+  {
+    "name": "Wat Tambor",
+    "id": "TWI_006",
+    "subtitle": "Techno Union Foreman"
+  },
+  {
+    "name": "Captain Rex",
+    "id": "TWI_007",
+    "subtitle": "Fighting For His Brothers"
+  },
+  {
+    "name": "Padmé Amidala",
+    "id": "TWI_008",
+    "subtitle": "Serving the Republic"
+  },
+  {
+    "name": "Maul",
+    "id": "TWI_009",
+    "subtitle": "A Rival in Darkness"
+  },
+  {
+    "name": "Pre Vizsla",
+    "id": "TWI_010",
+    "subtitle": "Pursuing the Throne"
+  },
+  {
+    "name": "Anakin Skywalker",
+    "id": "TWI_012",
+    "subtitle": "What it Takes to Win"
+  },
+  {
+    "name": "Mace Windu",
+    "id": "TWI_013",
+    "subtitle": "Vaapad Form Master"
+  },
+  {
+    "name": "Asajj Ventress",
+    "id": "TWI_014",
+    "subtitle": "Unparalleled Adversary"
+  },
+  {
+    "name": "Jango Fett",
+    "id": "TWI_016",
+    "subtitle": "Concealing the Conspiracy"
+  },
+  {
+    "name": "Chancellor Palpatine",
+    "id": "TWI_017",
+    "subtitle": "Playing Both Sides"
+  },
+  {
+    "name": "Quinlan Vos",
+    "id": "TWI_018",
+    "subtitle": "Sticking the Landing"
+  },
+  {
+    "name": "Asajj Ventress",
+    "id": "JTL_001",
+    "subtitle": "I Work Alone"
+  },
+  {
+    "name": "Grand Admiral Thrawn",
+    "id": "JTL_002",
+    "subtitle": "...How Unfortunate"
+  },
+  {
+    "name": "Lando Calrissian",
+    "id": "JTL_003",
+    "subtitle": "Buying Time"
+  },
+  {
+    "name": "Rose Tico",
+    "id": "JTL_004",
+    "subtitle": "Saving What We Love"
+  },
+  {
+    "name": "Admiral Piett",
+    "id": "JTL_005",
+    "subtitle": "Commanding the Armada"
+  },
+  {
+    "name": "Darth Vader",
+    "id": "JTL_006",
+    "subtitle": "Victor Squadron Leader"
+  },
+  {
+    "name": "Admiral Holdo",
+    "id": "JTL_007",
+    "subtitle": "We're Not Alone"
+  },
+  {
+    "name": "Wedge Antilles",
+    "id": "JTL_008",
+    "subtitle": "Leader of Red Squadron"
+  },
+  {
+    "name": "Boba Fett",
+    "id": "JTL_009",
+    "subtitle": "Any Methods Necessary"
+  },
+  {
+    "name": "Captain Phasma",
+    "id": "JTL_010",
+    "subtitle": "Chrome Dome"
+  },
+  {
+    "name": "Major Vonreg",
+    "id": "JTL_011",
+    "subtitle": "Red Baron"
+  },
+  {
+    "name": "Luke Skywalker",
+    "id": "JTL_012",
+    "subtitle": "Hero of Yavin"
+  },
+  {
+    "name": "Poe Dameron",
+    "id": "JTL_013",
+    "subtitle": "I Can Fly Anything"
+  },
+  {
+    "name": "Admiral Trench",
+    "id": "JTL_014",
+    "subtitle": "Chk-chk-chk-chk"
+  },
+  {
+    "name": "Rio Durant",
+    "id": "JTL_015",
+    "subtitle": "Wisecracking Wheelman"
+  },
+  {
+    "name": "Admiral Ackbar",
+    "id": "JTL_016",
+    "subtitle": "It's A Trap!"
+  },
+  {
+    "name": "Han Solo",
+    "id": "JTL_017",
+    "subtitle": "Never Tell Me the Odds"
+  },
+  {
+    "name": "Kazuda Xiono",
+    "id": "JTL_018",
+    "subtitle": "Best Pilot in the Galaxy"
+  },
+  {
+    "name": "Kylo Ren",
+    "id": "LOF_001",
+    "subtitle": "We're Not Done Yet"
+  },
+  {
+    "name": "Mother Talzin",
+    "id": "LOF_002",
+    "subtitle": "Power Through Magick"
+  },
+  {
+    "name": "Ahsoka Tano",
+    "id": "LOF_003",
+    "subtitle": "Fighting For Peace"
+  },
+  {
+    "name": "Kanan Jarrus",
+    "id": "LOF_004",
+    "subtitle": "Help Us Survive"
+  },
+  {
+    "name": "Morgan Elsbeth",
+    "id": "LOF_005",
+    "subtitle": "Following the Call"
+  },
+  {
+    "name": "Supreme Leader Snoke",
+    "id": "LOF_006",
+    "subtitle": "In the Seat of Power"
+  },
+  {
+    "name": "Avar Kriss",
+    "id": "LOF_007",
+    "subtitle": "Marshal of Starlight"
+  },
+  {
+    "name": "Obi-Wan Kenobi",
+    "id": "LOF_008",
+    "subtitle": "Courage Makes Heroes"
+  },
+  {
+    "name": "Darth Maul",
+    "id": "LOF_009",
+    "subtitle": "Sith Revealed"
+  },
+  {
+    "name": "Third Sister",
+    "id": "LOF_010",
+    "subtitle": "Seething With Ambition"
+  },
+  {
+    "name": "Kit Fisto",
+    "id": "LOF_011",
+    "subtitle": "Focused Jedi Master"
+  },
+  {
+    "name": "Rey",
+    "id": "LOF_012",
+    "subtitle": "Nobody"
+  },
+  {
+    "name": "Barriss Offee",
+    "id": "LOF_013",
+    "subtitle": "We Have Become Villains"
+  },
+  {
+    "name": "Grand Inquisitor",
+    "id": "LOF_014",
+    "subtitle": "Stories Travel Quickly"
+  },
+  {
+    "name": "Cal Kestis",
+    "id": "LOF_015",
+    "subtitle": "I Can't Keep Hiding"
+  },
+  {
+    "name": "Qui-Gon Jinn",
+    "id": "LOF_016",
+    "subtitle": "Student of the Living Force"
+  },
+  {
+    "name": "Darth Revan",
+    "id": "LOF_017",
+    "subtitle": "Scourge of the Old Republic"
+  },
+  {
+    "name": "Anakin Skywalker",
+    "id": "LOF_018",
+    "subtitle": "Tempted by the Dark Side"
+  },
+  {
+    "name": "Leia Organa",
+    "id": "IBH_001",
+    "subtitle": "Get to Your Transports!"
+  },
+  {
+    "name": "Darth Vader",
+    "id": "IBH_053",
+    "subtitle": "Don't Fail Me Again"
+  },
+  {
+    "name": "Chancellor Palpatine",
+    "id": "SEC_001",
+    "subtitle": "How Liberty Dies"
+  },
+  {
+    "name": "Jabba the Hutt",
+    "id": "SEC_002",
+    "subtitle": "Wonderful Human Being"
+  },
+  {
+    "name": "Lama Su",
+    "id": "SEC_003",
+    "subtitle": "We Modified Their Genetics"
+  },
+  {
+    "name": "Leia Organa",
+    "id": "SEC_004",
+    "subtitle": "Of A Secret Bloodline"
+  },
+  {
+    "name": "Satine Kryze",
+    "id": "SEC_005",
+    "subtitle": "Standing on Principles"
+  },
+  {
+    "name": "Colonel Yularen",
+    "id": "SEC_006",
+    "subtitle": "This Is Why We Plan"
+  },
+  {
+    "name": "Dryden Vos",
+    "id": "SEC_007",
+    "subtitle": "I Never Ask Twice"
+  },
+  {
+    "name": "Bail Organa",
+    "id": "SEC_008",
+    "subtitle": "Doing Everything He Can"
+  },
+  {
+    "name": "Mon Mothma",
+    "id": "SEC_009",
+    "subtitle": "Forming a Coalition"
+  },
+  {
+    "name": "Dedra Meero",
+    "id": "SEC_010",
+    "subtitle": "Not Wasting Time"
+  },
+  {
+    "name": "Governor Pryce",
+    "id": "SEC_011",
+    "subtitle": "Tyrant of Lothal"
+  },
+  {
+    "name": "Cassian Andor",
+    "id": "SEC_012",
+    "subtitle": "Climb!"
+  },
+  {
+    "name": "Luthen Rael",
+    "id": "SEC_013",
+    "subtitle": "Don't You Want to Fight For Real?"
+  },
+  {
+    "name": "Sly Moore",
+    "id": "SEC_014",
+    "subtitle": "Cipher in the Dark"
+  },
+  {
+    "name": "C-3PO",
+    "id": "SEC_015",
+    "subtitle": "Human-Cyborg Relations"
+  },
+  {
+    "name": "Padmé Amidala",
+    "id": "SEC_016",
+    "subtitle": "What Do You Have to Hide?"
+  },
+  {
+    "name": "Sabé",
+    "id": "SEC_017",
+    "subtitle": "Queen's Shadow"
+  },
+  {
+    "name": "DJ",
+    "id": "SEC_018",
+    "subtitle": "Need a Lift?"
+  },
+  {
+    "name": "Saw Gerrera",
+    "id": "LAW_001",
+    "subtitle": "Bring Down the Empire"
+  },
+  {
+    "name": "Tobias Beckett",
+    "id": "LAW_002",
+    "subtitle": "People are Predictable"
+  },
+  {
+    "name": "Agent Kallus",
+    "id": "LAW_003",
+    "subtitle": "Reconsider Your Allegiance"
+  },
+  {
+    "name": "Aurra Sing",
+    "id": "LAW_004",
+    "subtitle": "Assassin"
+  },
+  {
+    "name": "Jyn Erso",
+    "id": "LAW_005",
+    "subtitle": "Time to Fight"
+  },
+  {
+    "name": "Vel Sartha",
+    "id": "LAW_006",
+    "subtitle": "Aldhani Insurgent"
+  },
+  {
+    "name": "Boba Fett",
+    "id": "LAW_007",
+    "subtitle": "Krayt's Claw Commander"
+  },
+  {
+    "name": "Director Krennic",
+    "id": "LAW_008",
+    "subtitle": "Amidst My Achievement"
+  },
+  {
+    "name": "Hera Syndulla",
+    "id": "LAW_009",
+    "subtitle": "Not Fighting Alone"
+  },
+  {
+    "name": "Leia Organa",
+    "id": "LAW_010",
+    "subtitle": "Someone Who Loves You"
+  },
+  {
+    "name": "Darth Vader",
+    "id": "LAW_011",
+    "subtitle": "Unstoppable"
+  },
+  {
+    "name": "Sebulba",
+    "id": "LAW_012",
+    "subtitle": "Especially Dangerous Dug"
+  },
+  {
+    "name": "Chewbacca",
+    "id": "LAW_013",
+    "subtitle": "Hero of Kessel"
+  },
+  {
+    "name": "Enfys Nest",
+    "id": "LAW_014",
+    "subtitle": "Until We Can Go No Higher"
+  },
+  {
+    "name": "Jabba the Hutt",
+    "id": "LAW_015",
+    "subtitle": "Crime Boss"
+  },
+  {
+    "name": "The Client",
+    "id": "LAW_016",
+    "subtitle": "Please Lower Your Blaster"
+  },
+  {
+    "name": "Han Solo",
+    "id": "LAW_017",
+    "subtitle": "I Got a Really Good Feeling"
+  },
+  {
+    "name": "Lando Calrissian",
+    "id": "LAW_018",
+    "subtitle": "Full Sabacc"
+  },
+  {
+    "name": "Count Dooku",
+    "id": "TS26_001",
+    "subtitle": "Offering Aid"
+  },
+  {
+    "name": "Anakin Skywalker",
+    "id": "TS26_002",
+    "subtitle": "Protect Her At All Costs"
+  },
+  {
+    "name": "Maul",
+    "id": "TS26_003",
+    "subtitle": "Collective Ambition"
+  },
+  {
+    "name": "Padmé Amidala",
+    "id": "TS26_004",
+    "subtitle": "Follow My Lead"
+  },
+  {
+    "name": "Savage Opress",
+    "id": "TS26_005",
+    "subtitle": "You Must Have Your Revenge"
+  },
+  {
+    "name": "Rex",
+    "id": "TS26_006",
+    "subtitle": "No Other Option"
+  },
+  {
+    "name": "Asajj Ventress",
+    "id": "TS26_007",
+    "subtitle": "Ambitious Apprentice"
+  },
+  {
+    "name": "Ahsoka Tano",
+    "id": "TS26_008",
+    "subtitle": "I Have an Idea"
+  },
+  {
+    "name": "The Armorer",
+    "id": "ASH_001",
+    "subtitle": "Steel Shapes Us"
+  },
+  {
+    "name": "Fennec Shand",
+    "id": "ASH_002",
+    "subtitle": "Ready for War"
+  },
+  {
+    "name": "Baylan Skoll",
+    "id": "ASH_003",
+    "subtitle": "Power Beyond Dream"
+  },
+  {
+    "name": "Grand Admiral Thrawn",
+    "id": "ASH_004",
+    "subtitle": "Victory is Mine"
+  },
+  {
+    "name": "Luke Skywalker",
+    "id": "ASH_005",
+    "subtitle": "I Can Save Him"
+  },
+  {
+    "name": "Sabine Wren",
+    "id": "ASH_006",
+    "subtitle": "Bargaining on Belief"
+  },
+  {
+    "name": "Grand Admiral Sloane",
+    "id": "ASH_007",
+    "subtitle": "Holding the Empire Together"
+  },
+  {
+    "name": "Moff Gideon",
+    "id": "ASH_008",
+    "subtitle": "Indomitable Warlord"
+  },
+  {
+    "name": "Ahsoka Tano",
+    "id": "ASH_009",
+    "subtitle": "Trust in the Force"
+  },
+  {
+    "name": "Bo-Katan Kryze",
+    "id": "ASH_010",
+    "subtitle": "Reclaiming Mandalore"
+  },
+  {
+    "name": "Cad Bane",
+    "id": "ASH_011",
+    "subtitle": "Still Faster than You"
+  },
+  {
+    "name": "Vane",
+    "id": "ASH_012",
+    "subtitle": "Quarrelsome Pirate"
+  },
+  {
+    "name": "Ezra Bridger",
+    "id": "ASH_013",
+    "subtitle": "It's Now or Never"
+  },
+  {
+    "name": "The Mandalorian",
+    "id": "ASH_014",
+    "subtitle": "We Can't Keep Running"
+  },
+  {
+    "name": "Emperor Palpatine",
+    "id": "ASH_015",
+    "subtitle": "According to My Design"
+  },
+  {
+    "name": "Shin Hati",
+    "id": "ASH_016",
+    "subtitle": "Eager Adversary"
+  },
+  {
+    "name": "Greef Karga",
+    "id": "ASH_017",
+    "subtitle": "Gracious Magistrate"
+  },
+  {
+    "name": "Grogu",
+    "id": "ASH_018",
+    "subtitle": "Charming Companion"
+  },
+  {
+    "name": "Asajj Ventress",
+    "id": "HMW_001",
+    "subtitle": "No Time For Regret"
+  },
+  {
+    "name": "Maz Kanata",
+    "id": "HMW_002",
+    "subtitle": "Eclectic Pirate Queen"
+  },
+  {
+    "name": "Doctor Hemlock",
+    "id": "HMW_003",
+    "subtitle": "Emotion Has No Place Here"
+  },
+  {
+    "name": "Grand Moff Tarkin",
+    "id": "HMW_004",
+    "subtitle": "Tyrant of the Outer Rim"
+  },
+  {
+    "name": "Jar Jar Binks",
+    "id": "HMW_005",
+    "subtitle": "Bombad General"
+  },
+  {
+    "name": "Omega",
+    "id": "HMW_006",
+    "subtitle": "Close Your Eyes and Focus"
+  },
+  {
+    "name": "Darth Vader",
+    "id": "HMW_007",
+    "subtitle": "Might of the Empire"
+  },
+  {
+    "name": "General Grievous",
+    "id": "HMW_008",
+    "subtitle": "Separatist Warlord"
+  },
+  {
+    "name": "Chewbacca",
+    "id": "HMW_009",
+    "subtitle": "Relentless Rebel"
+  },
+  {
+    "name": "Tarfful",
+    "id": "HMW_010",
+    "subtitle": "Fighting from the Shadowlands"
+  },
+  {
+    "name": "Darth Sidious",
+    "id": "HMW_011",
+    "subtitle": "There Is No Mercy"
+  },
+  {
+    "name": "Poggle the Lesser",
+    "id": "HMW_012",
+    "subtitle": "Let the Executions Begin"
+  },
+  {
+    "name": "Cham Syndulla",
+    "id": "HMW_013",
+    "subtitle": "Hammer of Ryloth"
+  },
+  {
+    "name": "Wicket",
+    "id": "HMW_014",
+    "subtitle": "Few Greater Battles to Fight"
+  },
+  {
+    "name": "Bossk",
+    "id": "HMW_015",
+    "subtitle": "Cruel Hunter"
+  },
+  {
+    "name": "Maul",
+    "id": "HMW_016",
+    "subtitle": "Old Master"
+  },
+  {
+    "name": "Osha",
+    "id": "HMW_017",
+    "subtitle": "Haunted By Her Past"
+  },
+  {
+    "name": "The Warrior",
+    "id": "HMW_018",
+    "subtitle": "Deft Duelist"
+  }
+]

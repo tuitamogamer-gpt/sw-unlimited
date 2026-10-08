@@ -1,0 +1,38 @@
+{
+  "title": "Arihnda Pryce",
+  "subtitle": "On the Road to Power",
+  "cost": 4,
+  "hp": 4,
+  "power": 4,
+  "text": "When Defeated: You may defeat another friendly unit. If you do, deal 4 damage to each enemy base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6876928415",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 136
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 136
+    }
+  ],
+  "internalName": "arihnda-pryce#on-the-road-to-power"
+}

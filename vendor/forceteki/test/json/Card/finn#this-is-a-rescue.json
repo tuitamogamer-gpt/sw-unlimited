@@ -1,0 +1,39 @@
+{
+  "title": "Finn",
+  "subtitle": "This is a Rescue",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "Action [Exhaust]: Defeat a friendly upgrade on a unit. If you do, give a Shield token to that unit.",
+  "deployBox": "On Attack: You may defeat a friendly upgrade on a unit. If you do, give a Shield token to that unit.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9596662994",
+  "aspects": [
+    "heroism",
+    "vigilance"
+  ],
+  "traits": [
+    "fringe",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 3
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 3
+    }
+  ],
+  "internalName": "finn#this-is-a-rescue"
+}

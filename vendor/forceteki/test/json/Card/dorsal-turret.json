@@ -1,0 +1,37 @@
+{
+  "title": "Dorsal Turret",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 0,
+  "power": 0,
+  "text": "Attach to a Vehicle unit.\nAttached unit gains: “When this unit deals combat damage to a unit while attacking: Defeat that unit.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "“Combat damage” is only the damage dealt during the “deal combat damage” step of an attack.\n",
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "9338356823",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "modification",
+    "weapon"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 120
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 120
+    }
+  ],
+  "internalName": "dorsal-turret"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Nabat Village",
+  "subtitle": "",
+  "cost": null,
+  "hp": 27,
+  "power": null,
+  "text": "Draw 3 more cards in your starting hand. You can't take a mulligan.\nWhen the first action phase starts: Put 3 cards from your hand on the bottom of your deck in any order.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Nabat Village's triggered ability is resolved at the start of the first action phase, after setup but before the player with initiative has taken their first action.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9586661707",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "ryloth"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 28
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 28
+    }
+  ],
+  "internalName": "nabat-village"
+}

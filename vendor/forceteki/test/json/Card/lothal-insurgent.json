@@ -1,0 +1,38 @@
+{
+  "title": "Lothal Insurgent",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 2,
+  "power": 3,
+  "text": "When Played: If you played another card this phase, each opponent draws a card then discards a random card from their hand.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "If Lothal Insurgent is played by an event, that event counts as another card played this phase.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1880931426",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 190
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 190
+    }
+  ],
+  "internalName": "lothal-insurgent"
+}

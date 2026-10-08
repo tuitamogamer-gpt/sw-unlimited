@@ -1,0 +1,44 @@
+{
+  "title": "Prototype TIE Advanced",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 3,
+  "power": 4,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8746311599",
+  "aspects": [
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 175
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 136
+    },
+    {
+      "set": "LAW",
+      "number": 175
+    }
+  ],
+  "internalName": "prototype-tie-advanced"
+}

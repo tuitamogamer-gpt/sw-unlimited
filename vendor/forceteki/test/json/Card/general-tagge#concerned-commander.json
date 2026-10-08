@@ -1,0 +1,43 @@
+{
+  "title": "General Tagge",
+  "subtitle": "Concerned Commander",
+  "cost": 2,
+  "hp": 2,
+  "power": 2,
+  "text": "When Played: Give an Experience token to each of up to 3 TROOPER units.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7929181061",
+  "aspects": [
+    "villainy",
+    "command"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 81
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 80
+    },
+    {
+      "set": "SHD",
+      "number": 81
+    }
+  ],
+  "internalName": "general-tagge#concerned-commander"
+}

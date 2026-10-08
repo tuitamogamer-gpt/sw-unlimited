@@ -1,0 +1,42 @@
+{
+  "title": "Krrsantan",
+  "subtitle": "Muscle for Hire",
+  "cost": 5,
+  "hp": 7,
+  "power": 3,
+  "text": "When Played: If an enemy unit has a Bounty, you may ready this unit.\nOn Attack: Choose a ground unit. You may deal 1 damage to it for each damage on this unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3622749641",
+  "aspects": [
+    "villainy",
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "wookiee",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "bounty"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 139
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 139
+    }
+  ],
+  "internalName": "krrsantan#muscle-for-hire"
+}

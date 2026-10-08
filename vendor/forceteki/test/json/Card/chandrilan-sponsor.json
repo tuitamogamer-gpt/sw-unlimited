@@ -1,0 +1,40 @@
+{
+  "title": "Chandrilan Sponsor",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "Restore 2 (When this unit attacks, heal 2 damage from your base.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2720042002",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "restore"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 43
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 43
+    }
+  ],
+  "internalName": "chandrilan-sponsor"
+}

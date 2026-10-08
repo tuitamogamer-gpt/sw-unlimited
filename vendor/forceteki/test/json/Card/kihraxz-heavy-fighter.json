@@ -1,0 +1,40 @@
+{
+  "title": "Kihraxz Heavy Fighter",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 3,
+  "power": 3,
+  "text": "Overwhelm (When attacking an enemy unit, deal excess damage to the opponent's base.)\nOn Attack: You may exhaust another friendly unit. If you do, this unit gets +3/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Shields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4721657243",
+  "aspects": [
+    "command"
+  ],
+  "traits": [
+    "vehicle",
+    "fighter"
+  ],
+  "arena": "space",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 118
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 118
+    }
+  ],
+  "internalName": "kihraxz-heavy-fighter"
+}

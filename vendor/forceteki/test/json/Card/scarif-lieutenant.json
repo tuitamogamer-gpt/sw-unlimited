@@ -1,0 +1,39 @@
+{
+  "title": "Scarif Lieutenant",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 2,
+  "text": "When Defeated: Give an Experience token to a friendly Rebel unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7681849188",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 142
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 142
+    }
+  ],
+  "internalName": "scarif-lieutenant"
+}

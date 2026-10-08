@@ -1,0 +1,39 @@
+{
+  "title": "Luke's Lightsaber",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 1,
+  "power": 3,
+  "text": "Attach to a non-Vehicle unit.\n\nWhen Played: If attached unit is Luke Skywalker, heal all damage from him and give a Shield token to him.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": 3,
+  "upgradeHp": 1,
+  "id": "6903722220",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "item",
+    "weapon",
+    "lightsaber"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 53
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 53
+    }
+  ],
+  "internalName": "lukes-lightsaber"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Grand Admiral Thrawn",
+  "subtitle": "Listen to Me Carefully",
+  "cost": 6,
+  "hp": 4,
+  "power": 4,
+  "text": "mock ability text",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "grand-admiral-thrawn#listen-to-me-carefully-id",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "imperial",
+    "official"
+  ],
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "IC27",
+    "number": 24
+  },
+  "internalName": "grand-admiral-thrawn#listen-to-me-carefully",
+  "arena": "ground",
+  "setCodes": [
+    {
+      "set": "IC27",
+      "number": 24
+    }
+  ]
+}

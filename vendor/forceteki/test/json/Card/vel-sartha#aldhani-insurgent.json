@@ -1,0 +1,38 @@
+{
+  "title": "Vel Sartha",
+  "subtitle": "Aldhani Insurgent",
+  "cost": 6,
+  "hp": 7,
+  "power": 4,
+  "text": "Action [Exhaust]: Give an Experience token to a unit. An opponent creates a Credit token.",
+  "deployBox": "On Attack: You may give an Experience token to a unit. If you do, an opponent creates a Credit token.",
+  "epicAction": "Epic Action: If you control 6 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "If there are multiple opponents, the controlling player chooses which one will be “an opponent.”\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2626264815",
+  "aspects": [
+    "vigilance",
+    "heroism"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 6
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 6
+    }
+  ],
+  "internalName": "vel-sartha#aldhani-insurgent"
+}

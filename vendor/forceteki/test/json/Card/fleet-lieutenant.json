@@ -1,0 +1,38 @@
+{
+  "title": "Fleet Lieutenant",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 3,
+  "power": 3,
+  "text": "When Played: You may attack with a unit. If it's a Rebel unit, it gets +2/+0 for this attack.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": "Units must be ready in order to attack.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "3038238423",
+  "aspects": [
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 240
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 240
+    }
+  ],
+  "internalName": "fleet-lieutenant"
+}

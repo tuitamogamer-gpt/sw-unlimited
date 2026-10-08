@@ -1,0 +1,36 @@
+{
+  "title": "Shoot Down",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Deal 3 damage to a space unit. If that unit is defeated this way, you may deal 2 damage to a base.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7730475388",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "tactic"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "JTL",
+    "number": 176
+  },
+  "setCodes": [
+    {
+      "set": "JTL",
+      "number": 176
+    }
+  ],
+  "internalName": "shoot-down"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Graceful Purrgil",
+  "subtitle": "",
+  "cost": 5,
+  "hp": 7,
+  "power": 2,
+  "text": "Sentinel (Enemy units in this arena must attack a Sentinel when they attack you.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "9213315483",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "creature"
+  ],
+  "arena": "space",
+  "keywords": [
+    "sentinel"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 69
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 69
+    }
+  ],
+  "internalName": "graceful-purrgil"
+}

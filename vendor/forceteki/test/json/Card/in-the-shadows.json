@@ -1,0 +1,38 @@
+{
+  "title": "In the Shadows",
+  "subtitle": "",
+  "cost": 2,
+  "hp": null,
+  "power": null,
+  "text": "Give an Experience token to each of up to 3 friendly units with Hidden.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6553590382",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [
+    "hidden"
+  ],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 241
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 241
+    }
+  ],
+  "internalName": "in-the-shadows"
+}

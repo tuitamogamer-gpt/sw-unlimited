@@ -1,0 +1,37 @@
+{
+  "title": "Condemn",
+  "subtitle": "",
+  "cost": 3,
+  "hp": 0,
+  "power": 0,
+  "text": "While attached unit is attacking, it gains: “On Attack: The defending player may disclose VigilanceVillainy. If they do, this unit gets –6/–0 for this attack” and loses all other abilities.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "The attached unit can't gain abilities while attacking.\n",
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "3056375127",
+  "aspects": [
+    "vigilance",
+    "villainy"
+  ],
+  "traits": [
+    "condition"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 38
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 38
+    }
+  ],
+  "internalName": "condemn"
+}

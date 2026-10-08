@@ -1,0 +1,36 @@
+{
+  "title": "Citadel Research Center",
+  "subtitle": "",
+  "cost": null,
+  "hp": 26,
+  "power": null,
+  "text": "Epic Action [1 resource]: Return a friendly resource to its owner's hand. If you do, resource the top card of your deck.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "Resources enter play exhausted.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5020758299",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "scarif"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 29
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 29
+    }
+  ],
+  "internalName": "citadel-research-center"
+}

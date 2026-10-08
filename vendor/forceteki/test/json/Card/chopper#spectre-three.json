@@ -1,0 +1,43 @@
+{
+  "title": "Chopper",
+  "subtitle": "Spectre Three",
+  "cost": 2,
+  "hp": 2,
+  "power": 1,
+  "text": "Raid 1 (This unit gets +1/+0 while attacking.)\nWhen Played: Give an Experience token to this unit. If you control a Cunning or Vigilance unit, give 2 Experience tokens to him instead.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8351458392",
+  "aspects": [
+    "command",
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "droid",
+    "spectre"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "raid"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 55
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 55
+    }
+  ],
+  "internalName": "chopper#spectre-three"
+}

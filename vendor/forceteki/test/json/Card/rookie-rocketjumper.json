@@ -1,0 +1,38 @@
+{
+  "title": "Rookie Rocket-jumper",
+  "subtitle": "",
+  "cost": 1,
+  "hp": 1,
+  "power": 2,
+  "text": "When Played: You may pay 1 resource. If you do, give a Shield token to this unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5626708588",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "underworld",
+    "twi'lek"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 227
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 227
+    }
+  ],
+  "internalName": "rookie-rocketjumper"
+}

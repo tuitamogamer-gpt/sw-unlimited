@@ -1,0 +1,40 @@
+{
+  "title": "AT-AT Suppressor",
+  "subtitle": null,
+  "cost": 8,
+  "hp": 8,
+  "power": 8,
+  "text": "When Played: Exhaust all ground units.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "6663619377",
+  "aspects": [
+    "villainy",
+    "vigilance"
+  ],
+  "traits": [
+    "imperial",
+    "vehicle",
+    "walker"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 39
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 39
+    }
+  ],
+  "internalName": "atat-suppressor"
+}

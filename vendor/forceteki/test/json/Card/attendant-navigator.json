@@ -1,0 +1,37 @@
+{
+  "title": "Attendant Navigator",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 2,
+  "text": "When Played: You may give 2 Advantage tokens to a space unit.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "4232049843",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "first order"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 238
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 238
+    }
+  ],
+  "internalName": "attendant-navigator"
+}

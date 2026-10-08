@@ -1,0 +1,39 @@
+{
+  "title": "General Grievous",
+  "subtitle": "Separatist Warlord",
+  "cost": 5,
+  "hp": 6,
+  "power": 3,
+  "text": "Action [Exhaust]: Play 2 units from your hand (one at a time, paying their costs).",
+  "deployBox": "While you control more units than an opponent, this unit gets +3/+0.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": "Abilities that let you play a card require you to pay that card’s cost unless specified otherwise.\nFully resolve playing the first unit, including all triggers, before playing the second unit.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8755852999",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "official"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 8
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 8
+    }
+  ],
+  "internalName": "general-grievous#separatist-warlord"
+}

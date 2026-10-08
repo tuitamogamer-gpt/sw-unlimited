@@ -1,0 +1,382 @@
+import type { CostKeywordName, IKeywordProperties, KeywordNameOrProperties, NumericKeywordName } from '../../Interfaces';
+import type { Card } from '../card/Card';
+import type { PlayType } from '../Constants';
+import { Aspect, KeywordName } from '../Constants';
+import { Contract } from '../utils/Contract';
+import { Helpers } from '../utils/Helpers';
+import { EnumHelpers } from '../utils/EnumHelpers';
+import { BountyKeywordInstance, KeywordInstance, KeywordWithAbilityDefinition, KeywordWithCostValues, KeywordWithNumericValue } from './KeywordInstance';
+import type { PlayCardAction } from './PlayCardAction';
+import type { IReplaceKeywordProperties } from '../ongoingEffect/effectImpl/ReplaceKeyword';
+
+export function parseKeywords(
+    card: Card,
+    expectedKeywordsRaw: string[],
+    cardText: string,
+    pilotText: string
+): KeywordInstance[] {
+    const expectedKeywords = EnumHelpers.checkConvertToEnum(expectedKeywordsRaw, KeywordName);
+
+    const keywords: KeywordInstance[] = [];
+
+    for (const keywordName of expectedKeywords) {
+        if (isNumericType[keywordName]) {
+            const keywordValueOrNull = parseNumericKeywordValueIfEnabled(keywordName, cardText, card.internalName);
+            if (keywordValueOrNull != null) {
+                keywords.push(new KeywordWithNumericValue(keywordName as NumericKeywordName, card, keywordValueOrNull));
+            }
+        } else if (keywordName === KeywordName.Piloting) {
+            const pilotingValuesOrNull = parseKeywordWithCostValuesIfEnabled(KeywordName.Piloting, pilotText, card);
+            if (pilotingValuesOrNull != null) {
+                keywords.push(pilotingValuesOrNull);
+            }
+        } else if (keywordName === KeywordName.Smuggle) {
+            const smuggleValuesOrNull = parseKeywordWithCostValuesIfEnabled(KeywordName.Smuggle, cardText, card);
+            if (smuggleValuesOrNull != null) {
+                keywords.push(smuggleValuesOrNull);
+            }
+        } else if (keywordName === KeywordName.Bounty) {
+            if (isKeywordEnabled(keywordName, cardText, card.internalName)) {
+                keywords.push(new BountyKeywordInstance(keywordName, card));
+            }
+        } else if (keywordName === KeywordName.Coordinate) {
+            if (isKeywordEnabled(keywordName, cardText, card.internalName)) {
+                keywords.push(new KeywordWithAbilityDefinition(keywordName, card));
+            }
+        } else { // default case is a keyword with no params
+            if (isKeywordEnabled(keywordName, cardText, card.internalName)) {
+                keywords.push(new KeywordInstance(keywordName, card));
+            }
+        }
+    }
+
+    return keywords;
+}
+
+/**
+ * Applies any keyword replacement effects (e.g. "replace any Raid it has or gains with Restore")
+ * to the passed keyword instances. Each instance is replaced at most once, so two replacement
+ * effects can't chain into each other.
+ *
+ * @param card The card whose keyword list is being replaced; used as the owning card for any new instances created here.
+ */
+export function applyKeywordReplacements(instances: KeywordInstance[], replacements: IReplaceKeywordProperties[], card: Card): KeywordInstance[] {
+    if (replacements.length === 0) {
+        return instances;
+    }
+
+    return instances.map((instance) => {
+        const replacement = replacements.find((replacementProps) => replacementProps.from === instance.name);
+        if (replacement == null) {
+            return instance;
+        }
+
+        return buildReplacementKeywordInstance(instance, replacement.to, card);
+    });
+}
+
+function buildReplacementKeywordInstance(instance: KeywordInstance, replacementName: KeywordName, card: Card): KeywordInstance {
+    Contract.assertFalse(
+        instance.hasCostValue() || instance.hasAbilityDefinition(),
+        `Cannot replace keyword ${instance.name} on ${card.internalName} as it has cost values or an ability definition`
+    );
+
+    if (instance.hasNumericValue()) {
+        Contract.assertTrue(
+            isNumericType[replacementName],
+            `Cannot replace numeric keyword ${instance.name} on ${card.internalName} with non-numeric keyword ${replacementName}`
+        );
+
+        return new KeywordWithNumericValue(replacementName as NumericKeywordName, card, instance.value);
+    }
+
+    Contract.assertFalse(
+        isNumericType[replacementName],
+        `Cannot replace non-numeric keyword ${instance.name} on ${card.internalName} with numeric keyword ${replacementName}`
+    );
+
+    return new KeywordInstance(replacementName, card);
+}
+
+/**
+ * Deduplicates keyword instances per CR 7.5.4 stacking rules:
+ * - Non-stacking keywords (Ambush, Grit, Hidden, Overwhelm, Plot, Saboteur, Sentinel, Shielded, Support):
+ *   collapse to a single instance per name.
+ * - Numeric-stacking keywords (Raid, Restore, Exploit): collapse to a single instance per name with summed value.
+ * - Cost-bearing keywords (Smuggle, Piloting) and ability-definition keywords (Bounty, Coordinate):
+ *   each instance is its own independent ability, so all are kept.
+ *
+ * @param card The card whose keyword list is being deduped; used as the owning card for any new instances created here.
+ */
+export function dedupeKeywords(instances: KeywordInstance[], card: Card): KeywordInstance[] {
+    const result: KeywordInstance[] = [];
+    const seenNonStacking = new Set<KeywordName>();
+    const numericTotals = new Map<NumericKeywordName, number>();
+
+    for (const instance of instances) {
+        if (instance.hasNumericValue()) {
+            const existing = numericTotals.get(instance.name);
+            numericTotals.set(instance.name, (existing ?? 0) + instance.value);
+            continue;
+        }
+
+        if (instance.hasCostValue() || instance.hasAbilityDefinition()) {
+            result.push(instance);
+            continue;
+        }
+
+        if (seenNonStacking.has(instance.name)) {
+            continue;
+        }
+        seenNonStacking.add(instance.name);
+        result.push(instance);
+    }
+
+    for (const [name, sum] of numericTotals) {
+        result.push(new KeywordWithNumericValue(name, card, sum));
+    }
+
+    return result;
+}
+
+export function keywordFromProperties(properties: IKeywordProperties, card: Card) {
+    switch (properties.keyword) {
+        case KeywordName.Restore:
+        case KeywordName.Raid:
+        case KeywordName.Exploit:
+            return new KeywordWithNumericValue(properties.keyword, card, properties.amount);
+
+        case KeywordName.Bounty:
+            return new BountyKeywordInstance(properties.keyword, card, properties.ability);
+
+        case KeywordName.Smuggle:
+        case KeywordName.Piloting:
+            return new KeywordWithCostValues(properties.keyword, card, properties.cost, properties.aspects, false);
+
+        case KeywordName.Coordinate:
+            return new KeywordWithAbilityDefinition(properties.keyword, card, properties.ability);
+
+        case KeywordName.Ambush:
+        case KeywordName.Fortify:
+        case KeywordName.Grit:
+        case KeywordName.Hidden:
+        case KeywordName.Overwhelm:
+        case KeywordName.Plot:
+        case KeywordName.Saboteur:
+        case KeywordName.Sentinel:
+        case KeywordName.Shielded:
+        case KeywordName.Support:
+            return new KeywordInstance(properties.keyword, card);
+
+        default:
+            // eslint-disable-next-line forceteki/no-raw-token-text
+            throw new Error(`Keyword '${(properties as any).keyword}' is not implemented yet`);
+    }
+}
+
+export const isNumericType: Record<KeywordName, boolean> = {
+    [KeywordName.Ambush]: false,
+    [KeywordName.Bounty]: false,
+    [KeywordName.Coordinate]: false,
+    [KeywordName.Exploit]: true,
+    [KeywordName.Fortify]: false,
+    [KeywordName.Grit]: false,
+    [KeywordName.Hidden]: false,
+    [KeywordName.Overwhelm]: false,
+    [KeywordName.Piloting]: false,
+    [KeywordName.Plot]: false,
+    [KeywordName.Raid]: true,
+    [KeywordName.Restore]: true,
+    [KeywordName.Saboteur]: false,
+    [KeywordName.Sentinel]: false,
+    [KeywordName.Shielded]: false,
+    [KeywordName.Smuggle]: false,
+    [KeywordName.Support]: false
+};
+
+export const hasWhileInPlayAbility: Record<KeywordName, boolean> = {
+    [KeywordName.Ambush]: false,
+    [KeywordName.Bounty]: false,
+    [KeywordName.Coordinate]: true,
+    [KeywordName.Exploit]: false,
+    [KeywordName.Fortify]: false,
+    [KeywordName.Grit]: false,
+    [KeywordName.Hidden]: true,
+    [KeywordName.Overwhelm]: false,
+    [KeywordName.Piloting]: false,
+    [KeywordName.Plot]: false,
+    [KeywordName.Raid]: false,
+    [KeywordName.Restore]: false,
+    [KeywordName.Saboteur]: false,
+    [KeywordName.Sentinel]: false,
+    [KeywordName.Shielded]: false,
+    [KeywordName.Smuggle]: false,
+    [KeywordName.Support]: false
+};
+
+/**
+ * Checks if the specific keyword is "enabled" in the text, i.e., if it is on by default
+ * or is enabled as part of an ability effect.
+ *
+ * Should not be used for "numeric" keywords like raid and restore, see {@link parseNumericKeywordValueIfEnabled}.
+ *
+ * @returns null if the keyword is not enabled, or the numeric value if enabled
+ */
+function isKeywordEnabled(keyword: KeywordName, cardText: string, cardName: string): boolean {
+    const regex = getRegexForKeyword(keyword);
+    const matchIter = cardText.matchAll(regex);
+
+    const match = matchIter.next();
+    if (match.done) {
+        return false;
+    }
+
+    if (matchIter.next().done !== true) {
+        throw new Error(`Expected to match at most one instance of enabled keyword ${keyword} in card ${cardName}, but found multiple`);
+    }
+
+    return true;
+}
+
+/**
+ * Checks if the specific keyword is "enabled" in the text, i.e., if it is on by default
+ * or is enabled as part of an ability effect. Only checks for "numeric" keywords, meaning
+ * keywords that have a numberic value like "Raid 2" or "Restore 1".
+ *
+ * @returns null if the keyword is not enabled, or the numeric value if enabled
+ */
+function parseNumericKeywordValueIfEnabled(keyword: KeywordName, cardText: string, cardName: string): number | null {
+    Contract.assertTrue([KeywordName.Exploit, KeywordName.Raid, KeywordName.Restore].includes(keyword));
+
+    const regex = getRegexForKeyword(keyword);
+    const matchIter = cardText.matchAll(regex);
+
+    const match = matchIter.next();
+    if (match.done) {
+        return null;
+    }
+
+    if (matchIter.next().done !== true) {
+        throw new Error(`Expected to match at most one instance of enabled keyword ${keyword} in card ${cardName}, but found multiple`);
+    }
+
+    // regex capture group will be numeric keyword value
+    return Number(match.value[1]);
+}
+
+/**
+ * Checks if the Smuggle keyword is enabled and returns
+ *
+ * @returns null if the keyword is not enabled, or the numeric value if enabled
+ */
+function parseKeywordWithCostValuesIfEnabled(keyword: CostKeywordName, cardText: string, card: Card): KeywordWithCostValues {
+    const regex = getRegexForKeyword(keyword);
+    const matchIter = cardText.matchAll(regex);
+
+    const match = matchIter.next();
+
+    if (match.done) {
+        return null;
+    }
+
+    if (matchIter.next().done !== true) {
+        throw new Error(`Expected to match at most one instance of enabled keyword ${keyword} in card ${card.internalName}, but found multiple`);
+    }
+
+    const cost = Number(match.value[1]);
+    const aspectString = match.value[2];
+
+    let aspects: Aspect[] = [];
+    if (aspectString && aspectString.length > 0) {
+        aspects = EnumHelpers.checkConvertToEnum(aspectString.toLowerCase().split(' '), Aspect);
+    }
+
+    const additionalCosts = match.value[3] !== undefined;
+
+    // regex capture group will be keyword value with costs
+    return new KeywordWithCostValues(keyword, card, cost, aspects, additionalCosts);
+}
+
+function getRegexForKeyword(keyword: KeywordName) {
+    // these regexes check that the keyword is starting on its own line, indicating that it's not part of an ability text.
+    // For numeric keywords, the regex also grabs the numeric value after the keyword as a capture group.
+    // For Smuggle, this also captures the aspects that are part of the Smuggle cost.
+    // Does not capture any ability text for Bounty or Coordinate since that must provided explicitly in the card implementation.
+
+    switch (keyword) {
+        case KeywordName.Ambush:
+            return /(?:^|(?:\n))Ambush/g;
+        case KeywordName.Bounty:
+            return /(?:^|(?:\n))Bounty/g;
+        case KeywordName.Coordinate:
+            return /(?:^|(?:\n))Coordinate/g;
+        case KeywordName.Exploit:
+            return /(?:^|(?:\n))Exploit ([\d]+)/g;
+        case KeywordName.Fortify:
+            return /(?:^|(?:\n))Fortify/g;
+        case KeywordName.Grit:
+            return /(?:^|(?:\n))Grit/g;
+        case KeywordName.Hidden:
+            return /(?:^|(?:\n))Hidden/g;
+        case KeywordName.Overwhelm:
+            return /(?:^|(?:\n))Overwhelm/g;
+        case KeywordName.Piloting:
+            return /Piloting\s\[\s*(\d+)\s+resource(?:s)?\s*([\w\s]*)\]/g;
+        case KeywordName.Plot:
+            return /(?:^|(?:\n))Plot/g;
+        case KeywordName.Raid:
+            return /(?:^|(?:\n))Raid ([\d]+)/g;
+        case KeywordName.Restore:
+            return /(?:^|(?:\n))Restore ([\d]+)/g;
+        case KeywordName.Saboteur:
+            return /(?:^|(?:\n))Saboteur/g;
+        case KeywordName.Sentinel:
+            return /(?:^|(?:\n))Sentinel/g;
+        case KeywordName.Shielded:
+            return /(?:^|(?:\n))Shielded/g;
+        case KeywordName.Smuggle:
+            return /(?:\n)?Smuggle\s\[\s*(\d+)\s+resources(?:,\s*|\s+)([\w\s]+)(,.*)?\]/g;
+        case KeywordName.Support:
+            return /(?:^|(?:\n))Support/g;
+        default:
+            // eslint-disable-next-line forceteki/no-raw-token-text
+            throw new Error(`Keyword '${keyword}' is not implemented yet`);
+    }
+}
+
+export function getCheapestPlayAction<TAbility extends PlayCardAction>(playType: PlayType, actions: TAbility[]): PlayCardAction | null {
+    const nonMatchingActions = actions.filter((action) => action.playType !== playType);
+    Contract.assertTrue(nonMatchingActions.length === 0, `Found at least one action that is not a ${playType} play action`);
+
+    if (actions.length === 0) {
+        return null;
+    }
+    if (actions.length === 1) {
+        return actions[0];
+    }
+
+    let cheapestAction = null;
+    let cheapestAmount = Infinity;
+    for (const action of actions) {
+        Contract.assertTrue(action.isPlayCardAbility());
+        const cost = action.getAdjustedCost(action.createContext());
+        if (cost < cheapestAmount) {
+            cheapestAmount = cost;
+            cheapestAction = action;
+        }
+    }
+
+    return cheapestAction;
+}
+
+export function keywordDescription(keyword: KeywordNameOrProperties): string {
+    if (typeof keyword === 'string') {
+        return Helpers.capitalize(keyword);
+    }
+
+    if ('amount' in keyword) {
+        return `${Helpers.capitalize(keyword.keyword)} ${keyword.amount}`;
+    }
+
+    return Helpers.capitalize(keyword.keyword);
+}

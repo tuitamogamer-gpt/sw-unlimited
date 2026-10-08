@@ -1,0 +1,36 @@
+{
+  "title": "Force Slow",
+  "subtitle": "",
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Give an exhausted unit –8/–0 for this phase.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7030628730",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "force"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 217
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 217
+    }
+  ],
+  "internalName": "force-slow"
+}

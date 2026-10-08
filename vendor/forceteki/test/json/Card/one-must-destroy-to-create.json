@@ -1,0 +1,36 @@
+{
+  "title": "One Must Destroy to Create",
+  "subtitle": "",
+  "cost": 3,
+  "hp": null,
+  "power": null,
+  "text": "Defeat a friendly non-leader unit. Then, you may play that unit from your discard pile for free.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": "“Play for free” ignores all resource costs, including the aspect penalty, but not other additional costs.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8188741082",
+  "aspects": [
+    "villainy"
+  ],
+  "traits": [
+    "plan"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 247
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 247
+    }
+  ],
+  "internalName": "one-must-destroy-to-create"
+}

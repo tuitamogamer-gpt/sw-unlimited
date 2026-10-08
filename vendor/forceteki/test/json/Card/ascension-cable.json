@@ -1,0 +1,38 @@
+{
+  "title": "Ascension Cable",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "Attach to a non-Vehicle unit.\nAttached unit gains Saboteur. (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 3,
+  "id": "6128668392",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "item"
+  ],
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 215
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 215
+    }
+  ],
+  "internalName": "ascension-cable"
+}

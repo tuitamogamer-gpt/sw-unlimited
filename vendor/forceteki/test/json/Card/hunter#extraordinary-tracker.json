@@ -1,0 +1,41 @@
+{
+  "title": "Hunter",
+  "subtitle": "Extraordinary Tracker",
+  "cost": 6,
+  "hp": 6,
+  "power": 7,
+  "text": "Saboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)\nOn Attack: If the defender is exhausted, it gets –4/–0 for this attack.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "(ERRATA) Templating update: “Defender” becomes “defending unit”.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7027608849",
+  "aspects": [
+    "cunning",
+    "heroism"
+  ],
+  "traits": [
+    "fringe",
+    "clone"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SEC",
+    "number": 208
+  },
+  "setCodes": [
+    {
+      "set": "SEC",
+      "number": 208
+    }
+  ],
+  "internalName": "hunter#extraordinary-tracker"
+}

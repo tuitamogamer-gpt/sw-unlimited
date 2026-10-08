@@ -1,0 +1,36 @@
+{
+  "title": "Smuggling Compartment",
+  "subtitle": null,
+  "cost": 1,
+  "hp": 1,
+  "power": 1,
+  "text": "Attach to a VEHICLE unit.\n\nAttached unit gains: \"On Attack: Ready a resource.\"",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 1,
+  "upgradeHp": 1,
+  "id": "7280213969",
+  "aspects": [
+    "cunning"
+  ],
+  "traits": [
+    "modification"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 214
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 214
+    }
+  ],
+  "internalName": "smuggling-compartment"
+}

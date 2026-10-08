@@ -1,0 +1,36 @@
+{
+  "title": "Moment of Peace",
+  "subtitle": null,
+  "cost": 1,
+  "hp": null,
+  "power": null,
+  "text": "Give a Shield token to a unit.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8981523525",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "innate"
+  ],
+  "keywords": [],
+  "types": [
+    "event"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 73
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 73
+    }
+  ],
+  "internalName": "moment-of-peace"
+}

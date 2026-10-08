@@ -1,0 +1,39 @@
+{
+  "title": "Kraken",
+  "subtitle": "Confederate Tactician",
+  "cost": 5,
+  "hp": 5,
+  "power": 2,
+  "text": "When Played: Create 2 Battle Droid tokens.\nOn Attack: Give each friendly token unit +1/+1 for this phase.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7979348081",
+  "aspects": [
+    "command",
+    "villainy"
+  ],
+  "traits": [
+    "separatist",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "TWI",
+    "number": 84
+  },
+  "setCodes": [
+    {
+      "set": "TWI",
+      "number": 84
+    }
+  ],
+  "internalName": "kraken#confederate-tactician"
+}

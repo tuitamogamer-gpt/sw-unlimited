@@ -1,0 +1,41 @@
+{
+  "title": "Bossk",
+  "subtitle": "Hunting His Prey",
+  "cost": 5,
+  "hp": 6,
+  "power": 4,
+  "text": "Action [Exhaust]: Deal 1 damage to a unit with a Bounty. You may give it +1/+0 for this phase.",
+  "deployBox": "When you collect a bounty: You may collect that bounty again. Use this ability only once each round.",
+  "epicAction": "Epic Action: If you control 5 or more resources, deploy this leader.",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "2526288781",
+  "aspects": [
+    "villainy",
+    "aggression"
+  ],
+  "traits": [
+    "underworld",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "bounty"
+  ],
+  "types": [
+    "leader"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 10
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 10
+    }
+  ],
+  "internalName": "bossk#hunting-his-prey"
+}

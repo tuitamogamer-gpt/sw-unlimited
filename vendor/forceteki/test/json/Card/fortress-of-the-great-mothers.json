@@ -1,0 +1,36 @@
+{
+  "title": "Fortress of the Great Mothers",
+  "subtitle": "",
+  "cost": null,
+  "hp": 30,
+  "power": null,
+  "text": "",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7349221421",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "peridea"
+  ],
+  "keywords": [],
+  "types": [
+    "base"
+  ],
+  "setId": {
+    "set": "ASH",
+    "number": 19
+  },
+  "setCodes": [
+    {
+      "set": "ASH",
+      "number": 19
+    }
+  ],
+  "internalName": "fortress-of-the-great-mothers"
+}

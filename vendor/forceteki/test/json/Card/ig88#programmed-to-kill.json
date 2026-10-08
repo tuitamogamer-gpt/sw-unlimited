@@ -1,0 +1,43 @@
+{
+  "title": "IG-88",
+  "subtitle": "Programmed to Kill",
+  "cost": 4,
+  "hp": 3,
+  "power": 6,
+  "text": "Shielded",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "7869992131",
+  "aspects": [
+    "vigilance",
+    "aggression",
+    "villainy"
+  ],
+  "traits": [
+    "underworld",
+    "droid",
+    "bounty hunter"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "shielded"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 42
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 42
+    }
+  ],
+  "internalName": "ig88#programmed-to-kill"
+}

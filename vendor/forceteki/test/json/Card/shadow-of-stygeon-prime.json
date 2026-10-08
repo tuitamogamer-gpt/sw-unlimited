@@ -1,0 +1,38 @@
+{
+  "title": "Shadow of Stygeon Prime",
+  "subtitle": "",
+  "cost": 4,
+  "hp": 0,
+  "power": 0,
+  "text": "Attach to a non-leader unit.\nAttached unit can't ready. It gains: “When the regroup phase starts: Deal 2 damage to your base.”",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": false,
+  "rules": null,
+  "upgradePower": 0,
+  "upgradeHp": 0,
+  "id": "3645451698",
+  "aspects": [
+    "aggression",
+    "cunning",
+    "villainy"
+  ],
+  "traits": [
+    "condition"
+  ],
+  "keywords": [],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 77
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 77
+    }
+  ],
+  "internalName": "shadow-of-stygeon-prime"
+}

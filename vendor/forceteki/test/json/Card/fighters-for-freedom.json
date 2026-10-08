@@ -1,0 +1,41 @@
+{
+  "title": "Fighters for Freedom",
+  "subtitle": null,
+  "cost": 3,
+  "hp": 4,
+  "power": 3,
+  "text": "Saboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)\n\nWhen you play another [Aggression] card: You may deal 1 damage to a base.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5907868016",
+  "aspects": [
+    "aggression",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "trooper"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 143
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 143
+    }
+  ],
+  "internalName": "fighters-for-freedom"
+}

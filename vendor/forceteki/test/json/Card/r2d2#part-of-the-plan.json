@@ -1,0 +1,39 @@
+{
+  "title": "R2-D2",
+  "subtitle": "Part of the Plan",
+  "cost": 2,
+  "hp": 3,
+  "power": 1,
+  "text": "When Played: Search the top 5 cards of your deck for a unit that shares an aspect with a friendly unit, reveal it, and draw it. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "8106453944",
+  "aspects": [
+    "command",
+    "heroism"
+  ],
+  "traits": [
+    "rebel",
+    "droid"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LAW",
+    "number": 145
+  },
+  "setCodes": [
+    {
+      "set": "LAW",
+      "number": 145
+    }
+  ],
+  "internalName": "r2d2#part-of-the-plan"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Armed to the Teeth",
+  "subtitle": "",
+  "cost": 2,
+  "hp": 0,
+  "power": 2,
+  "text": "Attached unit gains: “On Attack: Give another friendly unit +2/+0 for this phase.”\nSmuggle [4 resources Aggression] (If this card is a resource, you may play it for its smuggle cost. Replace it with the top card of your deck.)",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": 2,
+  "upgradeHp": 0,
+  "id": "1938453783",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "supply",
+    "weapon"
+  ],
+  "keywords": [
+    "smuggle"
+  ],
+  "types": [
+    "upgrade"
+  ],
+  "setId": {
+    "set": "SHD",
+    "number": 175
+  },
+  "setCodes": [
+    {
+      "set": "SHD",
+      "number": 175
+    }
+  ],
+  "internalName": "armed-to-the-teeth"
+}

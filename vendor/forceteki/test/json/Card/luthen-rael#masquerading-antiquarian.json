@@ -1,0 +1,37 @@
+{
+  "title": "Luthen Rael",
+  "subtitle": "Masquerading Antiquarian",
+  "cost": 4,
+  "hp": 5,
+  "power": 4,
+  "text": "On Attack: Search the top 5 cards of your deck for an Item upgrade, reveal it, and draw it. (Put the other cards on the bottom of your deck in a random order.)",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "After searching, put any cards not chosen on the bottom of your deck in a random order.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5472129982",
+  "aspects": [
+    "vigilance"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "LOF",
+    "number": 68
+  },
+  "setCodes": [
+    {
+      "set": "LOF",
+      "number": 68
+    }
+  ],
+  "internalName": "luthen-rael#masquerading-antiquarian"
+}

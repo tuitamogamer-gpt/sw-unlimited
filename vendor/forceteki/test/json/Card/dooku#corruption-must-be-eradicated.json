@@ -1,0 +1,42 @@
+{
+  "title": "Dooku",
+  "subtitle": "Corruption Must Be Eradicated",
+  "cost": 8,
+  "hp": 7,
+  "power": 8,
+  "text": "Overwhelm\nWhen Played: You may ready another unit. If you do, heal damage from a base equal to that unit's cost.",
+  "deployBox": null,
+  "epicAction": "",
+  "unique": true,
+  "rules": "Abilities that refer to a card’s cost always refer to its printed cost, regardless of modifiers.\nShields prevent all damage from a unit with Overwhelm. There is no excess damage since the defender is not defeated.\nIf the defender is defeated during an attack before combat damage is dealt, all combat damage is considered excess damage for Overwhelm.\n",
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "5738669570",
+  "aspects": [
+    "vigilance",
+    "aggression"
+  ],
+  "traits": [
+    "force",
+    "jedi",
+    "republic"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "overwhelm"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "HMW",
+    "number": 42
+  },
+  "setCodes": [
+    {
+      "set": "HMW",
+      "number": 42
+    }
+  ],
+  "internalName": "dooku#corruption-must-be-eradicated"
+}

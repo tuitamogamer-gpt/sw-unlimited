@@ -1,0 +1,39 @@
+{
+  "title": "Jedha Agitator",
+  "subtitle": null,
+  "cost": 2,
+  "hp": 1,
+  "power": 2,
+  "text": "Saboteur (When this unit attacks, ignore Sentinel and defeat the defender's Shields.)\n\nOn Attack: If you control a leader unit, deal 2 damage to a ground unit or a base.",
+  "deployBox": null,
+  "epicAction": null,
+  "unique": false,
+  "rules": null,
+  "upgradePower": null,
+  "upgradeHp": null,
+  "id": "1746195484",
+  "aspects": [
+    "aggression"
+  ],
+  "traits": [
+    "rebel"
+  ],
+  "arena": "ground",
+  "keywords": [
+    "saboteur"
+  ],
+  "types": [
+    "unit"
+  ],
+  "setId": {
+    "set": "SOR",
+    "number": 158
+  },
+  "setCodes": [
+    {
+      "set": "SOR",
+      "number": 158
+    }
+  ],
+  "internalName": "jedha-agitator"
+}
