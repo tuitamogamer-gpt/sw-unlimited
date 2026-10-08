@@ -946,6 +946,14 @@ const catalogCopy: Array<[string, string, ...string[]]> = [
 
 
 const customDeckCopy: Array<[string, string, ...string[]]> = [
+  ['Deck input must be 100 KB or smaller.', 'Uneti špil mora biti veličine do 100 KB.'],
+  ['Supported text format', 'Podržani tekstualni format'],
+  ['Use section headings, then a quantity and card code on each line. Official card names are also accepted when unambiguous.', 'Koristi naslove odeljaka, pa u svakom redu navedi količinu i oznaku karte. Zvanični nazivi karata takođe se prihvataju kada su jednoznačni.'],
+  ['This is an excerpt. Add the remaining cards for a main deck of at least 50 cards.', 'Ovo je deo spiska. Dodaj preostale karte da glavni špil ima najmanje 50 karata.'],
+  ['Every card is recognized and its rules are supported.', 'Svaka karta je prepoznata i njena pravila su podržana.'],
+  ['An imported Solo Premier deck, validated for solo play.', 'Uvezeni Solo Premier špil, proveren za solo igru.'],
+  ['{count} sideboard cards are stored and validated, but are not used in this single-game match.', '{count} karata iz rezerve je sačuvano i provereno, ali se ne koriste u ovoj pojedinačnoj partiji.'],
+
   ['Your collection', 'Tvoja kolekcija'], ['This deck could not be removed.', 'Špil nije mogao biti uklonjen.'],
   ['Start a game with an imported deck recipe.', 'Za početak partije upotrebi uvezeni sastav špila.'],
   ['Card library', 'Biblioteka karata'], ['Import a deck', 'Uvezi špil'], ['YOUR COLLECTION', 'TVOJA KOLEKCIJA'],
