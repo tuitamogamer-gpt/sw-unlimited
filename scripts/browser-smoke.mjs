@@ -16,12 +16,20 @@ try {
   await page.screenshot({ path: 'docs/screenshots/command.png' });
   await page.getByRole('button', { name: 'Započni bitku', exact: true }).click();
   await page.locator('.game-shell').waitFor();
-  await page.locator('.hand-card .card-inspect').first().click();
+  // Leaders are visible before the initiative choice; hands are dealt afterward.
+  await page.locator('.leader-mini .icon-button').first().click();
   await page.getByRole('dialog').waitFor();
   await page.keyboard.press('Escape');
   const id = await page.evaluate(() => localStorage.getItem('swu-command-session'));
   const sessionToken = await page.evaluate(id => localStorage.getItem(`swu-command-state:${id}`), id);
-  let view = await (await page.request.post(`${origin}/api/games/${id}/state`, { data: { sessionToken } })).json();
+  let view = await page.evaluate(async ({ id, sessionToken }) => {
+    const response = await fetch(`/api/games/${id}/state`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ sessionToken }),
+    });
+    if (!response.ok) throw new Error(`Resume failed: ${response.status}`);
+    return response.json();
+  }, { id, sessionToken });
   const memory = {};
   let steps = 0;
   while (!view.winnerIds.length && steps < 400) {
