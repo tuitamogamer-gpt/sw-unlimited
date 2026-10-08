@@ -12,9 +12,11 @@ jobs:
       - run: npm ci
       - run: npm run engine:setup
       - run: npm run cards:check
+      - run: npm run cards:catalog-check
       - run: npm test
         env:
           NODE_OPTIONS: --no-experimental-require-module
       - run: npm run build
       - run: npx playwright install --with-deps chromium
       - run: npm run test:ui
+      - run: npm run test:custom-ui

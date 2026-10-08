@@ -24,6 +24,25 @@ and a base:
 | Ashes of Empire | Luke Skywalker, Emperor Palpatine |
 | Intro Battle: Hoth | Leia Organa, Darth Vader — 20 HP bases |
 
+## Custom decks and card library
+
+Choose **Import a deck** to paste a SWUDB JSON export, a text list, or a public
+SWUDB deck link, or upload a `.json` / `.txt` file. Review the card list and
+validation results, then save it for yourself or the AI. Saved custom decks
+can be selected, inspected, exported, and removed in your browser collection.
+See [import formats and validation](docs/custom-decks.md).
+
+The searchable **Card library** contains 2,600 normal printing records across
+12 sets, including reprints and tokens. Of these, 2,579 have complete data and
+implemented engine rules; 21 incomplete IC27 preview entries remain unavailable
+for play. Alternate art and promo codes resolve to their corresponding game
+identities. Homeworlds is explicitly marked as preview data at the October 8,
+2026 snapshot cutoff. See [full card inventory and coverage](docs/card-catalog.md).
+
+Custom matches use Solo Premier construction rules with all available sets;
+tournament rotation and suspensions are not enforced. Sideboards are validated
+and saved but are not used during a single game.
+
 ## Playing
 
 Choose your deck, an opponent deck, and an AI difficulty. During setup, keep or
@@ -102,6 +121,8 @@ npm run test:smoke
 npm run cards:check
 npm run build
 npm run test:ui
+npm run test:custom-ui
+node scripts/sync-card-catalog.cjs --check
 ```
 
 The UI check requires Chromium (`npx playwright install chromium`) and uses a
@@ -116,6 +137,12 @@ information privacy, illegal action rejection, and restoration of encrypted
 checkpoints. The upstream engine includes its own detailed rules tests under
 `vendor/forceteki/test`.
 
+The custom-deck checks cover invalid lists, alternate printing identities,
+special deck-building rules, real matches from ten expansion pools, and
+restoration on a fresh server with no custom-deck library. The browser test
+imports files and text, selects both custom decks, plays a unit, and restores
+the match after removing the saved deck lists.
+
 ## Saved games and hosting
 
 Games are stored as encrypted browser checkpoints for six hours from creation.
@@ -128,6 +155,9 @@ The client saves the checkpoint and its version together, limits request wait
 times, and attempts a read-only restore if an action response is lost. It never
 automatically repeats an uncertain action. Connection and browser-storage
 problems are shown with a recovery message.
+
+Custom deck recipes are included inside the encrypted game checkpoint, so
+removing a deck from the collection does not prevent resuming that game.
 
 See [deployment](docs/deployment.md) for Vercel build and environment settings.
 The AI is a local tactical system and needs no LLM service or API key.

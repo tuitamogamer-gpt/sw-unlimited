@@ -27,6 +27,12 @@ Play/deploy labels use native play-action identity before leader deployment labe
 
 Visible cards expose `pilotText`, `upgradePower`, and `upgradeHp`. An attached pilot's active `text` is its piloting text, while `frontText` preserves the unit text. Native summaries supply current power, HP, and damage, including attachments and effects; `remainingHp` is current HP minus damage. Shield, Experience, and Advantage tokens remain inspectable entries in `upgrades`. Current `keywords` come from the engine after gained effects, removal, and numeric keyword aggregation. Leader deployment availability is represented by legal actions, and the native `epicDeployActionSpent` field reports whether deployment has been used.
 
+Base attachments use the same `upgrades` tree, including Fortify cards. Base captures use `captured`; each child still passes through normal visibility checks. Base cards never access the damage/power methods reserved for arena units.
+
+`normalizeDeckRecipe(recipe)` validates custom recipes before native deck construction. It resolves known set-number aliases, merges entries by the engine's shared card identity, and counts main deck plus sideboard copies together. One leader and one base are required; token cards and misplaced card types are rejected. Printed construction exceptions are preserved: Swarming Vulture Droid allows 15 copies, Thermal Oscillator requires at least 45 main-deck cards, and Data Vault requires 60. Other cards/decks use the normal three-copy and 50-card limits. Game creation runs this same validation, so the native `Deck` map cannot silently discard duplicate rows.
+
+Custom solo play uses all complete supported sets without applying tournament rotation or suspension lists. These are separate from scripting support: the compiled registry already loads every card implementation in the pinned engine. Cards needing only standard keywords or no abilities are supported by native base classes. Synthetic preview definitions containing mock data are rejected even if a corresponding script exists. Input-size, main-deck maximum, and sideboard-size limits are enforced by the HTTP product layer.
+
 ## Scope and verification
 
 All 18 imported decks currently pass the implementation audit. The Intro Battle: Hoth bases retain their verified 20 HP definition and are labeled as that variant; the adapter does not silently replace them with 30 HP. It likewise preserves printed 28 HP LOF and 27 HP LAW bases.

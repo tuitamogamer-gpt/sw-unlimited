@@ -35,8 +35,16 @@ def main():
             if not parsed.get("data"):
                 raise ValueError(f"Empty card response: {url}")
             path.write_bytes(payload)
+    # The app now has a full card catalog. Rebuilding starter recipes must not
+    # discard images from non-starter sets or promotional printing aliases.
+    for path in sorted((DATA / "card-api").glob("*.json")):
+        parsed = json.loads(path.read_bytes())
+        if not isinstance(parsed, dict) or not isinstance(parsed.get("data"), list):
+            continue
+        set_code = path.stem
+        url = manifest["api"].replace("{set}", set_code)
         raw = path.read_bytes()
-        records = json.loads(raw)["data"]
+        records = parsed["data"]
         snapshots.append({"set": set_code.upper(), "url": url, "records": len(records), "sha256": hashlib.sha256(raw).hexdigest()})
         for card in records:
             code = f'{card["Set"]}_{card["Number"].zfill(3)}'
@@ -74,8 +82,8 @@ def main():
         decks.append(deck)
     assert len({d["id"] for d in decks}) == len(decks)
     write_json(DATA / "decks.json", decks)
-    write_json(DATA / "card-images.json", images)
-    write_json(DATA / "card-back-images.json", backs)
+    write_json(DATA / "card-images.json", dict(sorted(images.items())))
+    write_json(DATA / "card-back-images.json", dict(sorted(backs.items())))
     write_json(DATA / "card-api-provenance.json", {"retrievedAt": manifest["retrievedAt"], "snapshots": snapshots})
     print(f"Validated and rebuilt {len(decks)} decks, {len(cards)} normal card records, {len(images)} image aliases.")
 

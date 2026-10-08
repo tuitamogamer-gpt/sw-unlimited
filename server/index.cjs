@@ -4,6 +4,8 @@ const path = require('node:path');
 const { listDeckStatus } = require('./engine.cjs');
 const { chooseAction } = require('./bot.cjs');
 const { createRecord, applyAction, sealRecord, decodeRecord, restoreRecord } = require('./replay.cjs');
+const { importCustomDeck } = require('./custom-decks.cjs');
+const { searchCards } = require('./card-catalog.cjs');
 
 const root = path.resolve(__dirname, '..');
 const app = express();
@@ -107,6 +109,12 @@ async function playBot(entry) {
 }
 
 app.get('/api/health', (_req, res) => res.json({ ok: true, engine: 'Forceteki', ready: Boolean(deckCatalog), sessions: sessions.size }));
+app.get('/api/cards', asyncRoute(async (req, res) => res.json(await searchCards(req.query))));
+app.post('/api/decks/import', asyncRoute(async (req, res) => {
+  const { input, name } = req.body || {};
+  const { status, ...result } = await importCustomDeck(input, { name });
+  res.status(status).json(result);
+}));
 app.get('/api/decks', asyncRoute(async (_req, res) => {
   await initialize();
   res.json({ decks: deckCatalog, engineVersion: '1f0e9783c4743acdc67df0c4ab3f3610a349c32a',
@@ -124,8 +132,21 @@ app.post('/api/games', asyncRoute(async (req, res) => {
   await initialize();
   const { deckId, opponentDeckId, difficulty = 'normal' } = req.body || {};
   if (!difficulties.has(difficulty)) fail(400, 'Unknown opponent difficulty.');
-  const playerDeck = deckRecipes.find(deck => deck.id === deckId);
-  const botDeck = deckRecipes.find(deck => deck.id === opponentDeckId);
+  let playerDeck = deckRecipes.find(deck => deck.id === deckId);
+  let botDeck = deckRecipes.find(deck => deck.id === opponentDeckId);
+  for (const [key, seat] of [['playerDeck', 'human'], ['opponentDeck', 'bot']]) {
+    if (req.body?.[key] === undefined) continue;
+    if (!req.body[key] || typeof req.body[key] !== 'object' || Array.isArray(req.body[key])) {
+      return res.status(400).json({ error: 'Start a game with an imported deck recipe.', errors: ['Start a game with an imported deck recipe.'], warnings: [], seat });
+    }
+    const validated = await importCustomDeck(req.body[key], { allowUrl: false });
+    if (validated.errors.length) {
+      const { status, ...diagnostics } = validated;
+      return res.status(status).json({ ...diagnostics, error: validated.errors[0], seat });
+    }
+    if (seat === 'human') playerDeck = validated.deck.recipe;
+    else botDeck = validated.deck.recipe;
+  }
   if (!playerDeck || !botDeck) fail(400, 'Choose two available starter decks.');
   for (const deck of [playerDeck, botDeck]) {
     if (deckCatalog.find(item => item.id === deck.id)?.supported === false) fail(400, `Deck ${deck.name} contains unsupported cards.`);

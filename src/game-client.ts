@@ -24,12 +24,14 @@ export class GameClientError extends Error {
   status?: number;
   code: string;
   requiresRefresh: boolean;
-  constructor(message: string, options: { status?: number; code?: string; requiresRefresh?: boolean } = {}) {
+  details?: unknown;
+  constructor(message: string, options: { status?: number; code?: string; requiresRefresh?: boolean; details?: unknown } = {}) {
     super(message);
     this.name = 'GameClientError';
     this.status = options.status;
     this.code = options.code || 'REQUEST_FAILED';
     this.requiresRefresh = options.requiresRefresh || false;
+    this.details = options.details;
   }
 }
 
@@ -153,7 +155,7 @@ export function createGameClient(options: ClientOptions = {}) {
         if (!response.ok) {
           const error = data as { error?: unknown; message?: unknown } | null;
           const message = typeof error?.error === 'string' ? error.error : typeof error?.message === 'string' ? error.message : CLIENT_MESSAGES.unavailable;
-          throw new GameClientError(message, { status: response.status });
+          throw new GameClientError(message, { status: response.status, details: data });
         }
         return data;
       })()]);

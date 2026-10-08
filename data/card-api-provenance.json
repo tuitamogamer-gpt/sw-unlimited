@@ -2,22 +2,100 @@
   "retrievedAt": "2026-10-08",
   "snapshots": [
     {
-      "set": "SOR",
-      "url": "https://api.swu-db.com/cards/sor",
-      "records": 950,
-      "sha256": "725589edad8d58679876ebb2bb618469695d0f83dbb77da19a6346b906ad875d"
+      "set": "ASH",
+      "url": "https://api.swu-db.com/cards/ash",
+      "records": 931,
+      "sha256": "df7201e3ff2dd4ea60c7978130b0bc04122d5d309d536624cf2cf04d9de52bf2"
     },
     {
-      "set": "SHD",
-      "url": "https://api.swu-db.com/cards/shd",
-      "records": 962,
-      "sha256": "8a120997da5e2228e11851f9b2840171fda50ad6f3f2c1681cb0111542ee78ac"
+      "set": "ASHOP",
+      "url": "https://api.swu-db.com/cards/ashop",
+      "records": 40,
+      "sha256": "d147bf0e0ba45cdb73920432f880a4cd103596ad943bccd13b75465afca4be5b"
     },
     {
-      "set": "TWI",
-      "url": "https://api.swu-db.com/cards/twi",
-      "records": 957,
-      "sha256": "c4fc1e8304c2123c4c44930dcd180c64ccefeea1464125b5051615beb9b3fca0"
+      "set": "C24",
+      "url": "https://api.swu-db.com/cards/c24",
+      "records": 6,
+      "sha256": "67fd9427f14ee4d2d0f2cc08eac89f5bc8e8e10a28fe0d9c1be5200095afc820"
+    },
+    {
+      "set": "C25",
+      "url": "https://api.swu-db.com/cards/c25",
+      "records": 6,
+      "sha256": "6b4ffe1203fce6be6f8534bc31ecbeca7924ceb8afa0850a8f953af1220aa746"
+    },
+    {
+      "set": "C26",
+      "url": "https://api.swu-db.com/cards/c26",
+      "records": 6,
+      "sha256": "e097d624d84bd793a67013c3bf96aea177299bec0b17bb41d753da82c3743015"
+    },
+    {
+      "set": "CST",
+      "url": "https://api.swu-db.com/cards/cst",
+      "records": 2,
+      "sha256": "a53dbd1321fb43451fa3463b5b0660689a2c879309d1d1b301e253f350561275"
+    },
+    {
+      "set": "ESHD",
+      "url": "https://api.swu-db.com/cards/eshd",
+      "records": 1,
+      "sha256": "6ab4986e84b50612282843fda29c0f4c3ed4fcac49366fa26a0503f025c50b6f"
+    },
+    {
+      "set": "ESOR",
+      "url": "https://api.swu-db.com/cards/esor",
+      "records": 2,
+      "sha256": "44f26ba557cef74d326c4ed09cf209ec866938e074cd4eadb21a6be43a6feeb9"
+    },
+    {
+      "set": "G25",
+      "url": "https://api.swu-db.com/cards/g25",
+      "records": 3,
+      "sha256": "f304910c54f128c7460cac2caee219cc9342aa4f3a4356c842b4691fce519934"
+    },
+    {
+      "set": "GG",
+      "url": "https://api.swu-db.com/cards/gg",
+      "records": 6,
+      "sha256": "a4046f9df41f02123ede912cc2ee39912881ddd6106e3dd3a36217476adc5023"
+    },
+    {
+      "set": "HMW",
+      "url": "https://api.swu-db.com/cards/hmw",
+      "records": 954,
+      "sha256": "e7a5c610393e0ac41912c5804431ab6ad1b18d72dbefa5c8c53cd1c4210d0923"
+    },
+    {
+      "set": "HMWP",
+      "url": "https://api.swu-db.com/cards/hmwp",
+      "records": 40,
+      "sha256": "d7ae7438e023985af84291d7adb047413f1cb87ab32fdb90fbd819caab9e7636"
+    },
+    {
+      "set": "IBH",
+      "url": "https://api.swu-db.com/cards/ibh",
+      "records": 104,
+      "sha256": "c9e043d62d991ace645bc7acf1ea4d78d896b61e18f3f4877982562384989749"
+    },
+    {
+      "set": "IC27",
+      "url": "https://api.swu-db.com/cards/ic27",
+      "records": 9,
+      "sha256": "42781a0c81045480ff95fb365f295eae5ed5aed450478a10de9593c150621ca8"
+    },
+    {
+      "set": "J24",
+      "url": "https://api.swu-db.com/cards/j24",
+      "records": 6,
+      "sha256": "20cab92ade6521cc1785626abd9620a6e2c162ee66b5c5cd39351cc321d182b1"
+    },
+    {
+      "set": "J25",
+      "url": "https://api.swu-db.com/cards/j25",
+      "records": 19,
+      "sha256": "1144afcbe7bcdfedbe4266c71a5521afdf9eef25403e9fddeec2f8555cdd943e"
     },
     {
       "set": "JTL",
@@ -26,16 +104,10 @@
       "sha256": "a67ff2561aef8c0fc669084312eb304d3313e023f542233be6e6fbadf88f7198"
     },
     {
-      "set": "LOF",
-      "url": "https://api.swu-db.com/cards/lof",
-      "records": 1166,
-      "sha256": "4b5c211d0cd088ef88221824d23efabb4bc43177b608973b8d5d773b887c13aa"
-    },
-    {
-      "set": "SEC",
-      "url": "https://api.swu-db.com/cards/sec",
-      "records": 1155,
-      "sha256": "c4821eaa50f760b9b4079174e457dc8707f467465aadaa23819465c0a67407b1"
+      "set": "JTLOP",
+      "url": "https://api.swu-db.com/cards/jtlop",
+      "records": 40,
+      "sha256": "1674f8d0c89af6d4442b4ccd46551d63add1ffecf475794731f0c7df15256e30"
     },
     {
       "set": "LAW",
@@ -44,16 +116,196 @@
       "sha256": "ead8d01cd47db6d6b6a813955ce8eb9271b62bda4aef9133007ac4dfc8c76a52"
     },
     {
-      "set": "ASH",
-      "url": "https://api.swu-db.com/cards/ash",
-      "records": 931,
-      "sha256": "df7201e3ff2dd4ea60c7978130b0bc04122d5d309d536624cf2cf04d9de52bf2"
+      "set": "LAWP",
+      "url": "https://api.swu-db.com/cards/lawp",
+      "records": 40,
+      "sha256": "a02eaaa1dd1dec631e735a781ff916390a9972955ba2b828c81348f8304259b9"
     },
     {
-      "set": "IBH",
-      "url": "https://api.swu-db.com/cards/ibh",
-      "records": 104,
-      "sha256": "c9e043d62d991ace645bc7acf1ea4d78d896b61e18f3f4877982562384989749"
+      "set": "LOF",
+      "url": "https://api.swu-db.com/cards/lof",
+      "records": 1166,
+      "sha256": "4b5c211d0cd088ef88221824d23efabb4bc43177b608973b8d5d773b887c13aa"
+    },
+    {
+      "set": "LOFOP",
+      "url": "https://api.swu-db.com/cards/lofop",
+      "records": 40,
+      "sha256": "195ad6c7277e380bb51809b3f8df7a9b5e4701571b279991f110a662a6506b52"
+    },
+    {
+      "set": "MV26",
+      "url": "https://api.swu-db.com/cards/mv26",
+      "records": 2,
+      "sha256": "9f93908d8795cdb37526783e8fd7ca52c813ce54ec27e32de38a6548f2f47a39"
+    },
+    {
+      "set": "P25",
+      "url": "https://api.swu-db.com/cards/p25",
+      "records": 178,
+      "sha256": "f88ffdbed0b0fcbdf72f189fa07e7a7424ec10834d6b0abe2251e79b9d316ea7"
+    },
+    {
+      "set": "P26",
+      "url": "https://api.swu-db.com/cards/p26",
+      "records": 236,
+      "sha256": "aa1ba7cba88646e15c62a5ddaa280d9f6ca96d4086c667d61b7e5775865caac2"
+    },
+    {
+      "set": "PSHD",
+      "url": "https://api.swu-db.com/cards/pshd",
+      "records": 2,
+      "sha256": "184abc753cb030e2bed863cf9b896e2ee4866f6a3499c538d13c10b902cb14eb"
+    },
+    {
+      "set": "PSHDJ",
+      "url": "https://api.swu-db.com/cards/pshdj",
+      "records": 2,
+      "sha256": "b1c549c78c1221065b6eaf2a944c5ee283d81e78af67b7f3d9602efce37b6745"
+    },
+    {
+      "set": "PSOR",
+      "url": "https://api.swu-db.com/cards/psor",
+      "records": 2,
+      "sha256": "2a06c886ff3daa2274695c99f819b2e67e313282020b5a8fd344cf6c54dc1c7c"
+    },
+    {
+      "set": "PSORJ",
+      "url": "https://api.swu-db.com/cards/psorj",
+      "records": 2,
+      "sha256": "dd22fb707ee343126f473d62a3dd6ec1f08364f76141c9966cfd996ab0469fa9"
+    },
+    {
+      "set": "PTWI",
+      "url": "https://api.swu-db.com/cards/ptwi",
+      "records": 2,
+      "sha256": "6a4be1961a1d0eb782e5bf7096bd3de3acb31b20b45ae1a97ff6cc54e6016438"
+    },
+    {
+      "set": "PTWIJ",
+      "url": "https://api.swu-db.com/cards/ptwij",
+      "records": 2,
+      "sha256": "bc9162686177e2d4dc20cbcc6ea7d6dc4cd8ae7e6073515cb8328d2f2fe3a0c0"
+    },
+    {
+      "set": "SEC",
+      "url": "https://api.swu-db.com/cards/sec",
+      "records": 1155,
+      "sha256": "c4821eaa50f760b9b4079174e457dc8707f467465aadaa23819465c0a67407b1"
+    },
+    {
+      "set": "SECOP",
+      "url": "https://api.swu-db.com/cards/secop",
+      "records": 40,
+      "sha256": "0431b617d33c13dfd7f5f6b2475aca81063db685afc17bf7d9e8a44ededd8726"
+    },
+    {
+      "set": "SHD",
+      "url": "https://api.swu-db.com/cards/shd",
+      "records": 962,
+      "sha256": "8a120997da5e2228e11851f9b2840171fda50ad6f3f2c1681cb0111542ee78ac"
+    },
+    {
+      "set": "SHDOP",
+      "url": "https://api.swu-db.com/cards/shdop",
+      "records": 28,
+      "sha256": "71ca2add2a2a1656c35dcf8dd6212947495520a11c705429dac8086011d25f6e"
+    },
+    {
+      "set": "SHDPQ",
+      "url": "https://api.swu-db.com/cards/shdpq",
+      "records": 6,
+      "sha256": "95ac1eb63462420785f69c153f0b5c8c14deb07aa0406800d3cb961a3d639fc5"
+    },
+    {
+      "set": "SHDPQJ",
+      "url": "https://api.swu-db.com/cards/shdpqj",
+      "records": 1,
+      "sha256": "28b68341528fba0112fc9dd3b064d3bc7b026b5baa937703a6e16f653a4de287"
+    },
+    {
+      "set": "SOR",
+      "url": "https://api.swu-db.com/cards/sor",
+      "records": 950,
+      "sha256": "725589edad8d58679876ebb2bb618469695d0f83dbb77da19a6346b906ad875d"
+    },
+    {
+      "set": "SOROP",
+      "url": "https://api.swu-db.com/cards/sorop",
+      "records": 29,
+      "sha256": "5a378e5905cc7eb9fb1db7c3f547856af6862c1f08ae6c91f33edb90118dc4a9"
+    },
+    {
+      "set": "SOROPJ",
+      "url": "https://api.swu-db.com/cards/soropj",
+      "records": 0,
+      "sha256": "fe217faf2c5168fe44a41b9ecffde56be380091f39c5e44071d75245148e9395"
+    },
+    {
+      "set": "SS1",
+      "url": "https://api.swu-db.com/cards/ss1",
+      "records": 5,
+      "sha256": "f63533fa0e5fbd9438a31428e5521201d25ba2f510bb4c4e3981ed36463476a8"
+    },
+    {
+      "set": "SS1J",
+      "url": "https://api.swu-db.com/cards/ss1j",
+      "records": 1,
+      "sha256": "ea14458cacb2d4d69b7b7771eceec36d0e8bbf876dbc6615596d33d553b5c7a8"
+    },
+    {
+      "set": "SS2",
+      "url": "https://api.swu-db.com/cards/ss2",
+      "records": 5,
+      "sha256": "aae6f71cb6d06f27ffe8e465e405999b7a175e245ba28f6fdf4ed4ee608759a3"
+    },
+    {
+      "set": "SS2J",
+      "url": "https://api.swu-db.com/cards/ss2j",
+      "records": 1,
+      "sha256": "263950f6538e92d8cebfc56a18236124e8b96b394f1bab821caac38316fbd7d5"
+    },
+    {
+      "set": "TS26",
+      "url": "https://api.swu-db.com/cards/ts26",
+      "records": 88,
+      "sha256": "73e13a60b3ace24a81729164817c194f772f21cc7df69e1a1f15c1e46e03d534"
+    },
+    {
+      "set": "TWI",
+      "url": "https://api.swu-db.com/cards/twi",
+      "records": 957,
+      "sha256": "c4fc1e8304c2123c4c44930dcd180c64ccefeea1464125b5051615beb9b3fca0"
+    },
+    {
+      "set": "TWIOP",
+      "url": "https://api.swu-db.com/cards/twiop",
+      "records": 30,
+      "sha256": "919d8b341297202a24de118a99318e6990c45febe00884eb3d95f68759eaa7a4"
+    },
+    {
+      "set": "TWIPQ",
+      "url": "https://api.swu-db.com/cards/twipq",
+      "records": 6,
+      "sha256": "eefd972e3370bd4360454906a2191640282ad605d86460a1a2e2c1c712697055"
+    },
+    {
+      "set": "TWIPQJ",
+      "url": "https://api.swu-db.com/cards/twipqj",
+      "records": 1,
+      "sha256": "64fdfc7fb4dd2777af1fd2d830a5e5d492d51b873f28163c06865b1f0cdcb351"
+    },
+    {
+      "set": "TWISS",
+      "url": "https://api.swu-db.com/cards/twiss",
+      "records": 5,
+      "sha256": "1ecaf72aabfd06e9132b2e47b5f956b302f4d6d65437b7bc386e5ee06785cca3"
+    },
+    {
+      "set": "TWISSJ",
+      "url": "https://api.swu-db.com/cards/twissj",
+      "records": 1,
+      "sha256": "77edd047321143fd71de2ddf3e326cee1ea1ce4f8afbcc50f9f99c320330ec4c"
     }
   ]
 }

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "overrides": [
+    {
+      "sourceCode": "P25_019",
+      "targetCode": "LOF_238",
+      "expectedApiId": "6195655899",
+      "reason": "SWU-DB promo title incorrectly says Lightsaber (singular). The inspected card image says Darth Revan's Lightsabers and matches LOF_238's cost, aspects, stats and rules text.",
+      "sourceImage": "https://cdn.swu-db.com/images/cards/P25/19.png"
+    },
+    {
+      "sourceCode": "P25_020",
+      "targetCode": "LOF_238",
+      "expectedApiId": "2306523287",
+      "reason": "SWU-DB judge promo title incorrectly says Lightsaber (singular). The inspected card image says Darth Revan's Lightsabers and matches LOF_238's cost, aspects, stats and rules text.",
+      "sourceImage": "https://cdn.swu-db.com/images/cards/P25/20.png"
+    }
+  ]
+}

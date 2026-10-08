@@ -8,6 +8,7 @@
 const { randomBytes, randomUUID, createHash, createCipheriv, createDecipheriv } = require('node:crypto');
 const { deflateRawSync, inflateRawSync } = require('node:zlib');
 const { createGame } = require('./engine.cjs');
+const { compactRecipe, isStoredCustomRecipe } = require('./custom-decks.cjs');
 
 const FORMAT = 1;
 const ENGINE_VERSION = '1f0e9783c4743acdc67df0c4ab3f3610a349c32a';
@@ -49,6 +50,11 @@ function validateRecord(record, expectedId) {
         || !Array.isArray(record.botHistory) || record.botHistory.length > 100) {
         throw sessionError('Nevažeća spremljena partija. Pokreni novu partiju.');
     }
+    for (const [field, deckId] of [['playerDeck', record.deckId], ['opponentDeck', record.opponentDeckId]]) {
+        if (record[field] !== undefined && !isStoredCustomRecipe(record[field], deckId)) {
+            throw sessionError('Invalid saved custom deck. Start a new game.');
+        }
+    }
     if (record.expiresAt <= Date.now()) throw sessionError('Spremljena partija je istekla. Pokreni novu partiju.', 'SESSION_EXPIRED', 410);
     for (const item of record.actions) {
         const action = item?.action;
@@ -71,6 +77,8 @@ async function createRecord({ playerDeck, botDeck, difficulty = 'normal', seed =
         deckId: playerDeck.id, opponentDeckId: botDeck.id, difficulty, seed: String(seed),
         createdAt, expiresAt: createdAt + SESSION_TTL,
         actions: [], memory: {}, botHistory: [], warning: null,
+        ...(playerDeck.custom ? { playerDeck: compactRecipe(playerDeck) } : {}),
+        ...(botDeck.custom ? { opponentDeck: compactRecipe(botDeck) } : {}),
     };
     validateRecord(record);
     const game = await createGame({ id: record.id, playerDeck, botDeck, difficulty, seed: record.seed });
@@ -125,8 +133,8 @@ function decodeRecord(token, { id } = {}) {
 
 async function restoreRecord(token, { decks, id } = {}) {
     const record = decodeRecord(token, { id });
-    const playerDeck = decks?.find((deck) => deck.id === record.deckId);
-    const botDeck = decks?.find((deck) => deck.id === record.opponentDeckId);
+    const playerDeck = record.playerDeck || decks?.find((deck) => deck.id === record.deckId);
+    const botDeck = record.opponentDeck || decks?.find((deck) => deck.id === record.opponentDeckId);
     if (!playerDeck || !botDeck) throw sessionError('Špil spremljene partije više nije dostupan.', 'SESSION_EXPIRED', 410);
     const game = await createGame({ id: record.id, playerDeck, botDeck, difficulty: record.difficulty, seed: record.seed });
     try {

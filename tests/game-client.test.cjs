@@ -34,6 +34,20 @@ function response(data, status = 200) { return { ok: status >= 200 && status < 3
 function deferred() { let resolve; const promise = new Promise(done => { resolve = done; }); return { promise, resolve }; }
 function client(options = {}) { return createGameClient({ storage: storage(), locks: null, timeoutMs: 100, recoveryTimeoutMs: 100, recoveryDelayMs: 0, ...options }); }
 
+test('deck validation errors retain their structured preview without changing game checkpoints', async () => {
+  const disk = storage();
+  const details = { error: 'Deck validation failed.', deck: { name: 'My fleet', supported: false }, errors: ['Missing a leader.'], warnings: [] };
+  const c = client({ storage: disk, fetch: async () => response(details, 422) });
+  c.rememberGame(game(2));
+  const checkpoint = disk.getItem(checkpointKey);
+  await assert.rejects(c.api('/api/decks/import', { input: '{}' }), error => {
+    assert.equal(error.status, 422);
+    assert.deepEqual(error.details, details);
+    return true;
+  });
+  assert.equal(disk.getItem(checkpointKey), checkpoint);
+});
+
 test('a timed-out fetch cannot hang or commit a late successful response', async () => {
   const disk = storage();
   const delayed = deferred();

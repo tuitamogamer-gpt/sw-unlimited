@@ -24,6 +24,8 @@ async function runtime() {
         const { Deck } = require('../vendor/forceteki/build/server/utils/deck/Deck.js');
         const { LocalFolderCardDataGetter } = require('../vendor/forceteki/build/server/utils/cardData/LocalFolderCardDataGetter.js');
         const { getUserWithDefaultsSet } = require('../vendor/forceteki/build/server/Settings.js');
+        const { Card } = require('../vendor/forceteki/build/server/game/core/card/Card.js');
+        const { cards, overrideNotImplementedCards } = require('../vendor/forceteki/build/server/game/cards/Index.js');
         const getter = await LocalFolderCardDataGetter.createAsync(path.join(ROOT, 'test/json'));
         // Card definitions are immutable input. Cache the JSON, returning a fresh
         // copy to the engine; replay must not issue hundreds of filesystem reads.
@@ -34,7 +36,7 @@ async function runtime() {
             }
             return structuredClone(cardDefinitions.get(relativePath));
         };
-        return { Game, Deck, getter, getUserWithDefaultsSet };
+        return { Game, Deck, getter, getUserWithDefaultsSet, Card, cards, overrideNotImplementedCards };
     })();
     return runtimePromise;
 }
@@ -96,12 +98,68 @@ function plainMessage(value) {
     return value.name || value.title || plainMessage(value.message);
 }
 
-function normalizeDeck(deck) {
-    if (!deck || !deck.leader?.id || !deck.base?.id || !Array.isArray(deck.deck)) throw new ActionError('A complete starter deck is required.', 'INVALID_DECK');
-    if (deck.deck.some((entry) => !entry.id || !Number.isInteger(entry.count) || entry.count < 1 || entry.count > 3)) throw new ActionError('Invalid card quantities.', 'INVALID_DECK');
-    const size = deck.deck.reduce((sum, card) => sum + card.count, 0);
-    if (size < 50) throw new ActionError(`Premier decks require at least 50 cards; received ${size}.`, 'INVALID_DECK');
-    return { ...deck, metadata: { ...deck.metadata, name: deck.metadata?.name || deck.name }, sideboard: deck.sideboard || [] };
+async function normalizeDeckRecipe(deck, { allowUnsupported = false } = {}) {
+    const { getter, Card, cards, overrideNotImplementedCards } = await runtime();
+    const invalid = (message) => { throw new ActionError(message, 'INVALID_DECK'); };
+    if (!deck || !deck.leader?.id || !deck.base?.id || !Array.isArray(deck.deck)) invalid('A leader, base, and main deck are required.');
+    if (deck.secondleader != null || deck.secondLeader != null) invalid('Solo 1v1 decks require exactly one leader.');
+    if (deck.sideboard != null && !Array.isArray(deck.sideboard)) invalid('The sideboard must be a card list.');
+    const identities = new Map();
+    const totals = new Map();
+    async function resolve(entry, slot) {
+        if (!entry || typeof entry.id !== 'string') invalid('Every card must have a set-and-number ID.');
+        const match = entry.id.trim().toUpperCase().match(/^([A-Z0-9]+)_(\d+)$/);
+        const code = match ? `${match[1]}_${match[2].padStart(3, '0')}` : null;
+        const identity = code && getter.setCodeMap.get(code);
+        if (!identity) invalid(`Unknown card ID: ${entry.id}.`);
+        const data = await getter.getCardBySetCodeAsync(code);
+        const validType = !data.types.includes('token') && (slot === 'leader' ? data.types.includes('leader')
+            : slot === 'base' ? data.types.includes('base')
+            : data.types.some((type) => ['unit', 'event', 'upgrade'].includes(type)) && !data.types.includes('leader'));
+        if (!validType) invalid(`${data.title} cannot be used in the ${slot === 'main' ? 'main deck or sideboard' : slot} slot.`);
+        // Upstream preview fixtures can have scripts but only mock printed data.
+        // Such fixtures are not complete, verifiable cards for a custom deck.
+        if (!/^\d{10}$/.test(data.id) || /mock ability text/i.test([data.text, data.pilotText, data.deployBox, data.epicAction].join(' '))) {
+            invalid(`${data.title} has incomplete preview data and is not available for play.`);
+        }
+        const implemented = !overrideNotImplementedCards.has(data.id) && (cards.has(data.id) || !Card.checkHasNonKeywordAbilityText(data));
+        if (!allowUnsupported && !implemented) throw new ActionError(`${data.title} is not fully scripted in this engine.`, 'UNSUPPORTED_CARDS');
+        if (!identities.has(identity)) identities.set(identity, { code, data });
+        return { identity, ...identities.get(identity) };
+    }
+    async function slot(entry, name) {
+        if (entry.count !== undefined && entry.count !== 1) invalid(`The ${name} slot must contain exactly one card.`);
+        const card = await resolve(entry, name);
+        return { id: card.code, count: 1, data: card.data };
+    }
+    const leader = await slot(deck.leader, 'leader');
+    const base = await slot(deck.base, 'base');
+    async function cardList(entries) {
+        const aggregated = new Map();
+        for (const entry of entries) {
+            if (!entry || !Number.isSafeInteger(entry.count) || entry.count < 1) invalid('Card quantities must be positive whole numbers.');
+            const card = await resolve(entry, 'main');
+            const combined = (totals.get(card.identity) || 0) + entry.count;
+            // These construction exceptions mirror the pinned native
+            // DeckValidator. Count all reprints across main deck and sideboard.
+            const maxCopies = card.data.id === '2177194044' ? 15 : 3;
+            if (combined > maxCopies) invalid(`${card.data.title} allows at most ${maxCopies} copies across the main deck and sideboard; received ${combined}.`);
+            totals.set(card.identity, combined);
+            aggregated.set(card.code, (aggregated.get(card.code) || 0) + entry.count);
+        }
+        return [...aggregated].map(([id, count]) => ({ id, count }));
+    }
+    const main = await cardList(deck.deck);
+    const sideboard = await cardList(deck.sideboard || []);
+    const minimum = 50 + ({ '4301437393': -5, '4028826022': 10 }[base.data.id] || 0);
+    const size = main.reduce((sum, card) => sum + card.count, 0);
+    if (size < minimum) invalid(`${base.data.title} requires at least ${minimum} main-deck cards; received ${size}.`);
+    return {
+        ...(typeof deck.id === 'string' ? { id: deck.id } : {}),
+        ...(typeof deck.name === 'string' ? { name: deck.name } : {}),
+        metadata: { name: typeof deck.metadata?.name === 'string' ? deck.metadata.name : typeof deck.name === 'string' ? deck.name : 'Custom deck' },
+        leader: { id: leader.id, count: 1 }, base: { id: base.id, count: 1 }, deck: main, sideboard,
+    };
 }
 
 async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficulty = 'tactical', allowUnsupported = false, id = randomUUID() }) {
@@ -127,8 +185,8 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
     }, { router });
     game.setRandomSeed(String(seed));
     try {
-        game.selectDeck('human', new Deck(normalizeDeck(playerDeck), getter));
-        game.selectDeck('bot', new Deck(normalizeDeck(botDeck), getter));
+        game.selectDeck('human', new Deck(await normalizeDeckRecipe(playerDeck, { allowUnsupported }), getter));
+        game.selectDeck('bot', new Deck(await normalizeDeckRecipe(botDeck, { allowUnsupported }), getter));
         await game.initialiseAsync();
     } catch (error) { scheduler.close(); throw error; }
 
@@ -209,9 +267,14 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
         if (card.isUpgrade?.() && data.pilotText) result.text = data.pilotText;
         if (deployedLeader && backImage) result.image = backImage;
         if (typeof result.hp === 'number') result.remainingHp = result.hp - result.damage;
-        if (depth < 2 && card.isUnit?.() && card.isInPlay?.()) {
-            result.attacking = card.isAttacking();
-            result.attackPower = card.getPower() + (result.attacking ? 0 : card.getNumericKeywordTotal('raid'));
+        const inPlayUnit = card.isUnit?.() && card.isInPlay?.();
+        if (depth < 2 && (inPlayUnit || card.isBase?.())) {
+            if (inPlayUnit) {
+                result.attacking = card.isAttacking();
+                result.attackPower = card.getPower() + (result.attacking ? 0 : card.getNumericKeywordTotal('raid'));
+            }
+            // Fortify upgrades and cards captured by a base need the same
+            // inspectable public attachment tree as arena units.
             result.upgrades = (card.upgrades || []).map((upgrade) => summarizeCard(upgrade, viewer, false, depth + 1));
             result.captured = (card.capturedUnits || []).map((unit) => summarizeCard(unit, viewer, false, depth + 1));
         }
@@ -283,7 +346,7 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
             phase: 'Cards can be played during the action phase.',
             notYourAction: 'Wait for your next action before playing a card.',
             cost: 'You cannot pay this card’s cost with the available resources and payment options.',
-            attachTarget: 'There is no legal unit to attach this card to.',
+            attachTarget: 'There is no legal target to attach this card to.',
             gameStateChange: 'This card has no legal effect right now.',
             restriction: 'An active card effect prevents this card from being played.',
             cannotTrigger: 'An active card effect prevents this card from being played.',
@@ -476,4 +539,4 @@ async function listDeckStatus(decks) {
     return result;
 }
 
-module.exports = { createGame, listDeckStatus, loadCard, ActionError, ENGINE_ROOT: ROOT };
+module.exports = { createGame, listDeckStatus, loadCard, normalizeDeckRecipe, ActionError, ENGINE_ROOT: ROOT };

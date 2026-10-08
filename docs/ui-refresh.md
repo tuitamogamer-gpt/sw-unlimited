@@ -50,9 +50,16 @@ an action response after the HTTP server accepts it, verifies read-only
 recovery, and checks that exactly one mutation was sent. Reports and
 screenshots go to `/tmp/swu-ui-regression`, or `SWU_SCREENSHOTS` if set.
 
-`npm test` covers 94 engine, bot, metadata, privacy, legality, checkpoint, and
+`npm test` covers 130 engine, bot, metadata, privacy, legality, checkpoint, and
 browser-client cases, including four focused human-flow regressions. The
 Droid Deployment regression checks that its name does not cause its Play
 action to be misclassified as leader deployment. `scripts/browser-smoke.mjs`
 also drives a complete match through the visible interface and verifies that
 the finished mobile battlefield does not overflow horizontally or vertically.
+
+The [custom-deck import](custom-decks.md) and full card library have a separate
+browser regression, `npm run test:custom-ui`. It verifies JSON file and text
+imports, invalid counts, saved collections, both custom seats, a real card
+play, and resuming after removing both local deck lists and evicting the
+server's in-memory session. It also checks card-library search, filtering,
+inspection, and mobile modal bounds.

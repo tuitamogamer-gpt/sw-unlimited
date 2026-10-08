@@ -192,7 +192,8 @@ body:has(.app.in-game){overflow:hidden;overscroll-behavior:none}
 .log-entry div>span{font-size:7px;color:#7f98ad;letter-spacing:.6px}
 .sidebar-footer{font-size:8px;line-height:1.4;color:#92a7b9;padding:12px 0;margin-top:8px}
 .modal{border-radius:10px;max-height:calc(100dvh - 40px)}
-.modal-header{padding:19px 24px}
+.modal-header{padding:19px 24px;position:sticky;top:0;z-index:20}
+.modal{scroll-padding-top:100px}
 .modal-header h2{font-size:28px}
 .modal-header .icon-button{border-radius:5px}
 .modal-scrim{overscroll-behavior:contain}

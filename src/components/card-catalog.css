@@ -1,0 +1,31 @@
+.card-catalog{padding:22px 26px;color:#d8e1e8}
+.catalog-intro{font-size:13px;line-height:1.6;color:#9bafbf;margin:0 0 18px}
+.catalog-summary{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.catalog-summary>span{display:flex;align-items:center;gap:8px;border:1px solid #344a5e;background:#152635;padding:10px 12px;font-size:11px;border-radius:5px}
+.catalog-summary strong{font-size:17px;color:#ebce91;font-variant-numeric:tabular-nums}
+.catalog-summary svg{color:#77c9c3}.catalog-summary .catalog-missing{color:#d8ac7e}
+.catalog-filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.catalog-filters label{display:flex;flex-direction:column;gap:6px;min-width:0;font-size:10px;color:#9bafbf}
+.catalog-filters .catalog-search{grid-column:1/-1;position:relative;display:block}
+.catalog-search svg{position:absolute;top:13px;left:13px;color:#8296a7}
+.catalog-filters input,.catalog-filters select{width:100%;min-width:0;min-height:43px;border:1px solid #3a5064;border-radius:5px;background:#0b1723;color:#d9e3eb;font:inherit;font-size:12px;padding:10px}
+.catalog-filters input{padding-left:39px}.catalog-filters input:focus,.catalog-filters select:focus{outline:2px solid #74d5cb;outline-offset:1px}
+.catalog-results-heading{display:flex;align-items:center;justify-content:space-between;min-height:46px;font-size:11px;color:#9bafbf}
+.catalog-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.catalog-card{min-width:0;border:1px solid #31485c;border-radius:6px;overflow:hidden;padding:0;text-align:left;background:#102232;display:flex;flex-direction:column;transition:border-color .15s,transform .15s}
+.catalog-card:hover{border-color:#bfa576;transform:translateY(-2px)}.catalog-card:focus-visible{outline:2px solid #74d5cb;outline-offset:3px}
+.catalog-art{height:210px;display:flex;align-items:center;justify-content:center;padding:10px;background:radial-gradient(ellipse at center,#21374b,#0b1722)}
+.catalog-art img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 5px 7px #0008)}
+.catalog-art .inspector-art-fallback{width:100%;height:100%;min-height:0;font-size:11px}
+.catalog-card-copy{padding:10px;display:flex;flex-direction:column;gap:5px;flex:1;width:100%}
+.catalog-code{display:flex;align-items:center;justify-content:space-between;gap:3px;color:#90a7b9;font-size:9px;letter-spacing:.6px}
+.catalog-code em{font-style:normal;letter-spacing:0;background:#634a23;color:#ffdeb0;font-size:8px;padding:2px 4px;border-radius:3px}
+.catalog-card-copy strong{font-family:var(--font-display,'Barlow Condensed',sans-serif);font-size:20px;font-weight:500;line-height:1.15;color:#e2e9ed}
+.catalog-card-copy small{font-size:10px;line-height:1.4;color:#a0b1bf}
+.catalog-support{font-size:9px;color:#e9af8b;padding-top:8px;margin-top:auto}.catalog-support.ready{color:#8fcdc0}
+.catalog-card-pending{border-color:#6e5040}.catalog-empty{padding:30px 10px;text-align:center;color:#a2b6c8;font-size:13px}.catalog-empty>svg{margin:auto}
+.catalog-empty .secondary-button{margin:15px auto 0}.catalog-pagination{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:22px;font-size:11px;color:#a7bac8}
+.catalog-pagination button{min-height:40px;font-size:11px;padding:10px 13px;gap:6px}.catalog-pagination button:disabled{opacity:.4;cursor:default}
+.catalog-snapshot{margin:20px 0 0;font-size:10px;line-height:1.5;color:#8fa5b6}
+@media(max-width:600px){.card-catalog{padding:17px}.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.catalog-art{height:180px;padding:8px}.catalog-card-copy strong{font-size:19px}.catalog-filters{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.catalog-filters>label:last-child{grid-column:1/-1}.catalog-summary{gap:7px;margin-bottom:17px}.catalog-summary>span{padding:8px;font-size:10px;gap:6px}.catalog-summary strong{font-size:16px}.catalog-intro{font-size:12px}.catalog-pagination{gap:7px}.catalog-pagination button{padding:9px;font-size:10px}.catalog-filters input,.catalog-filters select{font-size:16px}}
+@media(max-width:360px){.catalog-art{height:155px}.catalog-code{font-size:8px}.catalog-card-copy{padding:8px}}

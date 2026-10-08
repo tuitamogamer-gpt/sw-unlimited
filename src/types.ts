@@ -12,6 +12,7 @@ export interface Card {
 export interface Deck {
   id: string; name: string; set: string; setName?: string; description?: string;
   leader: Card; base?: Card; cards?: { count: number; card: Card }[];
+  custom?: boolean; sideboardCards?: { count: number; card: Card }[];
   aspects?: string[]; supported?: boolean; product?: string; count?: number; format?: string; baseHealth?: number; playstyle?: string;
   coverage?: { implemented?: number; total?: number; missing?: string[] };
 }
@@ -47,4 +48,33 @@ export interface GameView {
   legalActions: GameAction[]; log: (LogEntry | string)[]; botReason?: string; botThinking?: BotThinking;
   ai?: { reason?: string; lastDecision?: BotThinking; decisions?: BotThinking[] }; difficulty?: string;
   botHistory?: BotThinking[]; warnings?: string[];
+}
+
+export interface CustomDeckRecipe {
+  custom: true;
+  id: string;
+  name: string;
+  metadata: { name: string; [key: string]: unknown };
+  leader: { id: string; count: number };
+  base: { id: string; count: number };
+  deck: { id: string; count: number }[];
+  sideboard: { id: string; count: number }[];
+}
+export interface DeckValidationIssue {
+  code: string;
+  message: string;
+  params?: Record<string, string | number>;
+  severity: 'error' | 'warning';
+}
+export interface ImportedDeck extends Deck {
+  custom: true;
+  recipe: CustomDeckRecipe;
+  validation: { valid: boolean; errors: string[]; warnings: string[] };
+}
+export interface SavedCustomDeck extends ImportedDeck { savedAt: number }
+export interface DeckImportResponse {
+  deck?: ImportedDeck;
+  errors: string[];
+  warnings: string[];
+  issues?: DeckValidationIssue[];
 }

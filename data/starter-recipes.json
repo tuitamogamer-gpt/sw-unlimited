@@ -3239,7 +3239,7 @@
       "baseHealth": 20,
       "sourceArchive": null,
       "provenance": "Official numbered card inventory IBH 1–52 / 53–104; quantities independently cross-checked.",
-      "description": "Intro Battle: Hoth — 50 karata, baza 20 HP. Igra se s uobičajenim miješanjem špila."
+      "description": "Intro Battle: Hoth — 50 cards, 20 HP base. Played with a normally shuffled deck."
     },
     {
       "id": "ibh-darth-vader",
@@ -3421,7 +3421,7 @@
       "baseHealth": 20,
       "sourceArchive": null,
       "provenance": "Official numbered card inventory IBH 1–52 / 53–104; quantities independently cross-checked.",
-      "description": "Intro Battle: Hoth — 50 karata, baza 20 HP. Igra se s uobičajenim miješanjem špila."
+      "description": "Intro Battle: Hoth — 50 cards, 20 HP base. Played with a normally shuffled deck."
     }
   ],
   "excluded": [
