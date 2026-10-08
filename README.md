@@ -40,6 +40,14 @@ optional; you can keep your entire hand.
 On a phone, Ground and Space are tabs within a single-screen battlefield. Your
 hand and current decision stay visible. Base and leader cards have artwork and
 inspection controls; the battle log and reference information open separately.
+Landscape phones use a side panel for the hand and commands. Damage, newly
+played units, and the latest move receive brief visual feedback. Crowded rows
+show when more cards are available by scrolling.
+
+Inspect a card to read its rules, zoom its artwork, view attachments, and use
+its currently legal action. Deck details include a searchable card list,
+type filters, and a cost curve. Starting another game asks before replacing an
+unfinished match.
 
 The AI uses the same legal action system as the human. It evaluates lethal
 attacks, base defense, unit trades, Sentinel, shields, its resource curve,
@@ -98,8 +106,10 @@ npm run test:ui
 
 The UI check requires Chromium (`npx playwright install chromium`) and uses a
 local HTTP server with a deterministic, encrypted game checkpoint. It checks
-manual card plays, loaded base artwork, mobile viewport bounds, arena tabs,
-initiative confirmation, language persistence, and game restoration.
+manual card plays (including from the card inspector), artwork and zoom,
+searchable deck details, loaded base artwork, portrait and landscape viewport
+bounds, arena tabs, confirmation dialogs, language persistence, and game
+restoration after a lost action response.
 
 Tests exercise real games, manual human play from setup through regroup,
 information privacy, illegal action rejection, and restoration of encrypted
@@ -113,6 +123,11 @@ The host can restore a game after its server instance changes without exposing
 hidden cards. Use one browser tab per game. For local persistence across server
 restarts, configure a stable `SWU_SESSION_SECRET`; development otherwise uses a
 temporary key.
+
+The client saves the checkpoint and its version together, limits request wait
+times, and attempts a read-only restore if an action response is lost. It never
+automatically repeats an uncertain action. Connection and browser-storage
+problems are shown with a recovery message.
 
 See [deployment](docs/deployment.md) for Vercel build and environment settings.
 The AI is a local tactical system and needs no LLM service or API key.

@@ -1,6 +1,7 @@
 export interface Card {
   uuid: string; id?: string; code?: string; name?: string; subtitle?: string; image?: string;
   cost?: number; power?: number; hp?: number; damage?: number; remainingHp?: number;
+  pilotText?: string; upgradePower?: number | null; upgradeHp?: number | null;
   playCost?: number | null; playable?: boolean; playBlockedReason?: string | null;
   playOptions?: { title: string; cost: number; legal: boolean; reasonCode: string | null; reason: string | null }[];
   exhausted?: boolean; zone?: string; controllerId?: string; ownerId?: string;

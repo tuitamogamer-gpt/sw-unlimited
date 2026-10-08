@@ -50,7 +50,8 @@ function catalogCard(data) {
         image: CARD_IMAGES[code] || null,
         backImage: CARD_BACK_IMAGES[code] || null,
         cost: data.cost ?? null, power: data.power ?? null, hp: data.hp ?? null,
-        text: data.text || '', deployText: data.deployBox || '', epicAction: data.epicAction || '',
+        upgradePower: data.upgradePower ?? null, upgradeHp: data.upgradeHp ?? null,
+        text: data.text || '', pilotText: data.pilotText || '', deployText: data.deployBox || '', epicAction: data.epicAction || '',
         types: data.types, type: data.types?.join(' '), aspects: data.aspects || [],
         traits: data.traits || [], keywords: data.keywords || [], arena: data.arena,
         unique: !!data.unique, internalName: data.internalName,
@@ -203,6 +204,9 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
         result.deployed = deployedLeader;
         result.frontText = data.text || '';
         if (deployedLeader) result.text = data.deployBox || data.text || '';
+        // A unit played with Piloting uses its attached ability text. Keep the
+        // original unit text available in frontText for the card inspector.
+        if (card.isUpgrade?.() && data.pilotText) result.text = data.pilotText;
         if (deployedLeader && backImage) result.image = backImage;
         if (typeof result.hp === 'number') result.remainingHp = result.hp - result.damage;
         if (depth < 2 && card.isUnit?.() && card.isInPlay?.()) {
@@ -228,7 +232,10 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
                     ? openPrompt.getCardLegalActions(card, viewer).map((ability, index) => {
                         const context = ability.createContext(viewer);
                         const title = ability.getTitle(context);
-                        return { index, title, type: ability.isAttackAction?.() ? 'attack' : /deploy/i.test(title) ? 'deploy' : ability.isPlayCardAbility?.() ? 'play' : 'action', cost: ability.getAdjustedCost?.(context) ?? null };
+                        // Names such as "Droid Deployment" are still ordinary
+                        // plays. Native ability predicates take precedence.
+                        return { index, title, type: ability.isAttackAction?.() ? 'attack' : ability.isPlayCardAbility?.() ? 'play'
+                            : card.isDeployableLeader?.() && /^Deploy\b/.test(title) ? 'deploy' : 'action', cost: ability.getAdjustedCost?.(context) ?? null };
                     }) : undefined;
                 const visible = card.getSummary(viewer).id;
                 const label = visible ? card.title : 'Face-down card';

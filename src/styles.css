@@ -610,3 +610,161 @@ body:has(.app.in-game){overflow:hidden;overscroll-behavior:none}
   .hand-cards{scroll-snap-type:x proximity}
   .hand-card{scroll-snap-align:start}
 }
+
+/* Touch inspection stays distinct from the card's Play / Attack surface. */
+@media(pointer:coarse),(max-width:1100px){
+  .game-card .card-inspect,.leader-mini>.icon-button{width:32px;height:32px;top:0;right:0;border:0;background:transparent;border-radius:5px;z-index:5}
+  .game-card .card-inspect:before,.leader-mini>.icon-button:before{content:'';position:absolute;inset:4px;border:1px solid #bbd4e582;border-radius:4px;background:#071624e8;z-index:-1}
+  .game-card .card-inspect>svg,.leader-mini>.icon-button>svg{height:14px;width:14px}
+  .game-card .card-inspect:hover,.leader-mini>.icon-button:hover{background:#93cad618}
+}
+.hand-cards,.arena-side{scrollbar-color:#7cbbc77a #122332;scrollbar-width:thin;outline-offset:-2px}
+.hand-cards.can-scroll-left,.arena-side.can-scroll-left{box-shadow:inset 10px 0 9px -10px #9ae5ef,inset 18px 0 18px -14px #07111de8}
+.hand-cards.can-scroll-right,.arena-side.can-scroll-right{box-shadow:inset -10px 0 9px -10px #9ae5ef,inset -18px 0 18px -14px #07111de8}
+.hand-cards.can-scroll-left.can-scroll-right,.arena-side.can-scroll-left.can-scroll-right{box-shadow:inset 10px 0 9px -10px #9ae5ef,inset 18px 0 18px -14px #07111de8,inset -10px 0 9px -10px #9ae5ef,inset -18px 0 18px -14px #07111de8}
+.hand-overflow-cue{color:#bad8e4!important;font-size:9px!important;letter-spacing:.25px;white-space:nowrap}
+.battle-update{display:flex;align-items:center;gap:5px;flex:1;min-width:0;max-width:73%;background:transparent;color:#bdcedb;font-size:10px;font-weight:400;padding:3px 0 3px 5px;text-align:right;justify-content:flex-end;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.battle-update>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.battle-update>svg{flex:0 0 auto;width:12px;height:12px;color:var(--gold)}
+.battle-update:hover{color:#f2cf89}
+.game-card.is-new{animation:card-arrived .6s ease-out}
+.game-card.is-damaged,.base-panel.has-damage-change{animation:damage-changed .65s ease-out}
+@keyframes card-arrived{0%{box-shadow:0 0 0 2px #b5faf0,0 0 22px #75dfe888;filter:brightness(1.35)}100%{filter:brightness(1)}}
+@keyframes damage-changed{0%,35%{box-shadow:inset 0 0 22px #f0756860,0 0 0 2px #ff9b89,0 0 15px #f46e5260}100%{box-shadow:0 3px 10px #0004}}
+@media(max-width:720px){
+  .resource-mini>span{font-size:7px;line-height:1.1;max-width:48px;letter-spacing:0}
+  .pile-stat>span{font-size:7px;letter-spacing:0}
+  .opponent-hand>span{font-size:8px;line-height:1.15}
+  .resource-mini{min-width:43px}
+  .resource-mini>.resource-pips{margin-top:2px}
+  .hand-heading{gap:5px}
+  .battle-update{font-size:9px;max-width:76%;padding-top:2px;padding-bottom:2px}
+  .hand-cards::-webkit-scrollbar,.arena-side::-webkit-scrollbar{display:block;height:3px}
+  .hand-cards::-webkit-scrollbar-thumb,.arena-side::-webkit-scrollbar-thumb{background:#567f9473;border-radius:3px}
+}
+
+/* Landscape tablets recover the redundant header and sidebar space for units. */
+@media(min-width:721px) and (max-height:650px) and (max-width:1280px){
+  :root{--battle-header:0px;--battle-card-height:76px;--hand-card-height:96px}
+  .in-game .site-header{display:none}
+  .game-shell{height:100dvh;padding:0 10px max(6px,env(safe-area-inset-bottom))}
+  .game-topbar{height:35px;min-height:35px;flex-basis:35px}
+  .game-topbar .language-select{display:block}
+  .mobile-log-button{display:inline-flex!important}
+  .desktop-log-button{display:none!important}
+  .battle-layout,.without-log .battle-layout{display:flex;gap:0}
+  .battle-layout>.command-sidebar{display:none}
+  .battlefield{flex:1}
+  .commander-row,.friendly-row{padding:6px 0;gap:14px}
+  .player-panel{max-width:320px}
+  .leader-mini,.base-panel{height:44px}
+  .player-name{font-size:8px;margin-bottom:3px}
+  .commander-meta{gap:20px}
+  .opponent-hand{max-width:125px}
+  .opponent-hand .card-back{height:33px}
+  .arena-side{padding:4px 8px}
+  .unit-card,.compact .unit-card{height:min(var(--battle-card-height),100%);max-height:100%}
+  .hand-section{padding-top:3px}
+  .hand-cards,.compact .hand-cards{height:calc(var(--hand-card-height) + 10px);padding-top:3px;padding-bottom:7px}
+  .hand-heading{min-height:18px}
+  .prompt-main{min-height:65px;padding:8px 11px}
+  .prompt-buttons{max-width:55%}
+}
+
+/* In phone landscape, hand and commands use a side column instead of crushing arenas. */
+@media(min-width:721px) and (max-height:520px) and (max-width:1280px){
+  :root{--battle-card-height:clamp(54px,18.5dvh,76px);--hand-card-height:clamp(94px,31dvh,138px)}
+  .game-shell{padding-left:8px;padding-right:8px}
+  .game-topbar{height:34px;min-height:34px;flex-basis:34px}
+  .battlefield{display:grid;grid-template-columns:minmax(0,1fr) clamp(210px,27vw,280px);grid-template-rows:repeat(10,minmax(0,1fr));column-gap:12px;position:relative;height:100%}
+  .commander-row,.friendly-row{min-height:0;min-width:0;padding:3px 0;gap:8px;align-self:center;width:100%}
+  .opponent-row{grid-column:1;grid-row:1/3}
+  .friendly-row{grid-column:1;grid-row:9/11}
+  .commander-row .player-panel{min-width:200px;max-width:265px;flex:1}
+  .commander-meta{gap:10px}
+  .commander-row .opponent-hand{display:none}
+  .commander-row .initiative{min-width:30px;width:30px}
+  .commander-row .initiative>div{height:21px;width:21px;margin-bottom:6px}
+  .commander-row .initiative>div>svg{height:15px;width:15px}
+  .commander-row .initiative>span,.commander-row .initiative>small{font-size:5px}
+  .commander-row .leader-mini,.commander-row .base-panel{height:42px}
+  .commander-row .player-name{font-size:7px;margin-bottom:3px}
+  .commander-row .leader-mini>button:first-child>span{font-size:12px}
+  .commander-row .base-name{font-size:8px}
+  .commander-row .base-panel strong{font-size:23px}
+  .commander-row .resource-mini{min-width:52px}
+  .commander-row .resource-mini>strong{font-size:24px}
+  .commander-row .resource-mini>span{font-size:6px;max-width:55px;white-space:normal}
+  .commander-row .pile-panel{gap:8px}
+  .commander-row .pile-stat>strong{font-size:18px}
+  .commander-row .pile-stat>span{font-size:6px}
+  .arenas{grid-column:1;grid-row:3/9;min-height:0;height:100%;gap:8px}
+  .arena-label{min-height:21px;flex-basis:21px;padding:4px 7px;font-size:7px;letter-spacing:.7px}
+  .arena-label small{font-size:6px}
+  .arena-label>svg{height:11px;width:11px}
+  .arena-side{padding:4px 6px;gap:7px}
+  .arena-midline{flex-basis:7px;padding:0 7px}
+  .arena-midline>span{font-size:5px}
+  .game-card .game-card-name{font-size:10px;bottom:19px}
+  .game-card .unit-stats{height:18px;font-size:11px;padding:2px 3px}
+  .unit-card .card-action-label{bottom:18px;font-size:6px;min-height:12px}
+  .unit-card:has(.card-action-label) .game-card-name{bottom:32px}
+  .game-card .card-cost{width:17px;min-width:17px;height:17px;font-size:9px}
+  .arena-empty>small{font-size:6px;letter-spacing:.8px}
+  .arena-empty>span{width:10px}
+  .hand-section{grid-column:2;grid-row:1/7;display:flex;flex-direction:column;min-height:0;padding:6px 0 0;border-left:1px solid #33506466;padding-left:10px}
+  .hand-heading{min-height:22px;flex:0 0 22px;flex-wrap:wrap;align-content:flex-start;row-gap:1px}
+  .hand-heading>.eyebrow{font-size:7px;letter-spacing:.5px}
+  .hand-heading>span:last-child,.hand-overflow-cue{font-size:7px!important;letter-spacing:0}
+  .hand-heading>.battle-update{font-size:8px;max-width:65%;padding:1px 0 0 3px}
+  .hand-cards,.compact .hand-cards{flex:1;min-height:0;height:auto;padding:5px 2px 8px;gap:7px;align-items:center;justify-content:flex-start}
+  .hand-card,.compact .hand-card{height:var(--hand-card-height);width:calc(var(--hand-card-height) * .715);max-height:100%}
+  .hand-card .game-card-name{font-size:12px;bottom:6px}
+  .hand-card:has(.card-action-label) .game-card-name{bottom:23px}
+  .hand-card .card-cost{height:21px;min-width:21px;font-size:11px}
+  .card-action-label{min-height:18px;font-size:8px}
+  .command-dock{grid-column:2;grid-row:7/11;align-self:end;max-height:100%;margin:0;border-radius:6px}
+  .prompt-main{min-height:0;flex-wrap:wrap;padding:8px;gap:6px}
+  .prompt-symbol{display:none}
+  .prompt-copy{flex:auto;width:100%}
+  .prompt-copy>.eyebrow{font-size:6px}
+  .prompt-copy>h3{font-size:17px}
+  .prompt-copy>p,.prompt-copy>small,.context-banner{font-size:8px;line-height:1.25}
+  .prompt-buttons{width:100%;max-width:none;gap:4px;justify-content:flex-start}
+  .prompt-buttons button{min-height:35px;padding:0 7px;font-size:9px;flex:1}
+  .prompt-buttons .initiative-button{flex:1.5}
+  .prompt-buttons .initiative-button>svg{width:11px;height:11px}
+  .prompt-buttons .initiative-button small{font-size:6px}
+  .token-controls{padding:4px 7px;gap:8px}
+  .token-controls .eyebrow{font-size:6px}
+  .token-button{font-size:8px;padding:4px 6px}
+  .card-notice{font-size:8px;padding:4px 5px}
+}
+@media(prefers-reduced-motion:reduce){
+  .game-card.is-new,.game-card.is-damaged,.base-panel.has-damage-change{animation:none}
+  .game-card.is-new{outline:1px solid #9ce8dc;outline-offset:1px}
+  .game-card.is-damaged,.base-panel.has-damage-change{outline:1px solid #f09a87;outline-offset:1px}
+}
+.connection-notice{display:flex;align-items:center;gap:9px;padding:10px 12px;background:#15313eea;border:1px solid #669caca8;border-radius:7px;color:#dcf1f4;box-shadow:0 8px 30px #0006;font-size:12px;line-height:1.4;z-index:300}
+.connection-notice>svg{flex:0 0 auto;color:#8ad6e2}
+.connection-notice>span{flex:1;min-width:0}
+.connection-notice>button,.connection-notice .notice-actions>button{min-height:32px;padding:5px 9px;background:#254c5c;border:1px solid #699aa7;border-radius:4px;color:#e1f3f7;font-size:11px;display:flex;align-items:center;justify-content:center;gap:4px;flex:0 0 auto}
+.connection-notice .notice-actions{display:flex;align-items:center;gap:5px}
+.in-game .connection-notice,.in-game .error-banner{position:fixed;top:calc(var(--battle-header) + 44px);right:10px;left:auto;width:min(560px,calc(100vw - 20px));margin:0;transform:none;max-height:min(160px,40dvh);overflow:auto;z-index:300;box-shadow:0 8px 30px #0007}
+.in-game .error-banner{border-radius:7px;gap:9px;font-size:12px;line-height:1.4;padding:10px 12px}
+.in-game .error-banner>span{min-width:0;flex:1}
+.in-game .error-banner>button{min-height:32px;min-width:30px;padding:5px 8px;border:1px solid #d4aa815e;border-radius:4px;background:#9c64451f;color:#ffe4d1;font-size:11px;line-height:1.2;align-items:center;justify-content:center;flex:0 0 auto}
+@media(max-width:720px){
+  .in-game .connection-notice,.in-game .error-banner{top:44px;right:7px;width:calc(100vw - 14px);padding:8px 9px;gap:7px;font-size:11px;max-height:min(150px,35dvh)}
+  .connection-notice>button,.connection-notice .notice-actions>button,.in-game .error-banner>button{min-height:32px;padding:5px 7px;font-size:10px}
+}
+@media(min-width:721px) and (min-height:521px) and (max-height:650px) and (max-width:1280px){:root{--battle-card-height:82px}}
+@media(min-width:721px) and (max-height:520px) and (max-width:1280px){:root{--battle-card-height:clamp(54px,19.8dvh,82px)}}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+.base-delta{display:inline-flex;align-items:center;justify-content:center;font-family:'Barlow',Arial,sans-serif;font-size:11px;font-style:normal;font-weight:700;line-height:1;padding:3px 4px;border-radius:3px;color:#ffda8c;background:#3a2f1eda;border:1px solid #b795586f;text-shadow:none;vertical-align:middle}
+.hand-overflow-cue{display:inline-flex;align-items:center;gap:4px}
+.hand-overflow-cue>svg{width:10px;height:10px;flex:0 0 auto}
+.hand-heading>.play-hand-cue,.hand-heading>.resource-hand-cue{display:flex;align-items:center;gap:4px;font-size:8px;color:#9aafbf;line-height:1.2}
+.hand-heading>.play-hand-cue>svg,.hand-heading>.resource-hand-cue>svg{width:11px;height:11px}
+@media(max-width:720px){.base-delta{font-size:9px;padding:2px 3px}.hand-heading>.play-hand-cue,.hand-heading>.resource-hand-cue{font-size:8px}}
+@media(min-width:721px) and (max-height:520px) and (max-width:1280px){.hand-heading>.play-hand-cue,.hand-heading>.resource-hand-cue{font-size:7px}.base-delta{font-size:9px;padding:2px 3px}}

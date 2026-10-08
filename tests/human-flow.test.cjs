@@ -67,6 +67,46 @@ test('hand play costs include real aspect penalties without exposing opponent pl
   } finally { game.close(); }
 });
 
+test('Droid Deployment is an affordable play action and creates two Battle Droids', async () => {
+  const game = await createGame({
+    playerDeck: decks.find(deck => deck.id === 'twi-general-grievous'),
+    botDeck: options.playerDeck, seed: 1,
+  });
+  try {
+    const initiative = ['human', 'bot'].map(seat => game.view(seat)).find(view => view.prompt.active);
+    const choice = initiative.legalActions.find(action => action.label === (initiative.viewerId === 'human' ? 'Yourself' : 'Opponent'));
+    game.submit(choice, initiative.viewerId);
+    for (let step = 0; step < 12; step++) {
+      const view = ['human', 'bot'].map(seat => game.view(seat)).find(view => view.prompt.active);
+      if (view.prompt.stage === 'action') break;
+      const action = view.legalActions.find(action => action.arg === 'keep')
+        || view.legalActions.find(action => action.arg === 'done')
+        || view.legalActions.find(action => action.type === 'card'
+          && action.label !== 'Droid Deployment' && !view.prompt.selectedCardIds.includes(action.cardId));
+      assert.ok(action, `Expected a setup choice during ${view.prompt.title}.`);
+      game.submit(action, view.viewerId);
+    }
+    const view = game.view('human');
+    assert.equal(view.prompt.stage, 'action');
+    assert.equal(view.players.human.readyResources, 2);
+    const card = view.players.human.hand.find(card => card.name === 'Droid Deployment');
+    assert.ok(card, 'The seeded opening hand includes Droid Deployment.');
+    assert.equal(card.playCost, 2);
+    assert.equal(card.playable, true, 'A card name containing Deployment must not be mistaken for a leader deployment.');
+    assert.equal(card.playBlockedReason, null);
+    assert.deepEqual(card.playOptions, [{ title: 'Play Droid Deployment', cost: 2, legal: true, reasonCode: null, reason: null }]);
+    const action = cardAction(view, card.name);
+    assert.equal(action.intent, 'play');
+    assert.equal(action.displayLabel, 'Play Droid Deployment');
+    assert.equal(action.abilities[0].type, 'play');
+    const after = game.submit(action, 'human');
+    assert.equal(after.players.human.readyResources, 0);
+    assert.equal(after.players.human.resourceCount, 2);
+    assert.equal(after.players.human.ground.filter(unit => unit.name === 'Battle Droid').length, 2);
+    assert.ok(after.players.human.discard.some(discarded => discarded.uuid === card.uuid));
+  } finally { game.close(); }
+});
+
 // Human actions below are deliberate button/card selections, never chooseAction().
 // The only automated strategy is the opposing bot, matching production autoplay.
 async function playTwoHumanTurns(client, t) {

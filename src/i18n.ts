@@ -30,6 +30,25 @@ const subscribe = (listener: () => void) => { subscribers.add(listener); return 
 // Each row is [English, Serbian Latin, optional legacy interface wording].
 // Unknown strings (including official card titles and rules text) remain intact.
 const copy: Array<[string, string, ...string[]]> = [
+  ['Start a new game?', 'Započni novu partiju?'],
+  ['Your current saved game will be replaced. Keep playing to return to it.', 'Trenutna sačuvana partija biće zamenjena. Izaberi „Nastavi da igraš” da joj se vratiš.'],
+  ['Start new game', 'Započni novu partiju'],
+  ['Reconnected. Your saved game is ready.', 'Veza je obnovljena. Sačuvana partija je spremna.'],
+  ['Reconnect', 'Poveži se ponovo'], ['Swipe for more', 'Prevuci za još'], ['Latest move', 'Poslednji potez'],
+  ['Your units', 'Tvoje jedinice'], ['Opponent units', 'Protivničke jedinice'], ['Health change', 'Promena života'],
+
+  ['The request timed out. The server may still be processing it.', 'Zahtev je prekoračio vreme čekanja. Server ga možda još obrađuje.'],
+  ['The request was cancelled. An action already sent may still finish on the server.', 'Zahtev je otkazan. Već poslata akcija možda će ipak biti završena na serveru.'],
+  ['The connection was interrupted. Check your connection and reconnect.', 'Veza je prekinuta. Proveri vezu i poveži se ponovo.'],
+  ['The server returned an incomplete response. Your saved game has been kept.', 'Server je vratio nepotpun odgovor. Sačuvana partija je zadržana.'],
+  ['This game is being updated in another request or tab. Wait a moment, then reconnect.', 'Partija se ažurira drugim zahtevom ili u drugoj kartici. Sačekaj trenutak, pa se poveži ponovo.'],
+  ['A newer saved turn was found. The board was refreshed; review it before choosing another action.', 'Pronađen je noviji sačuvani potez. Bojište je osveženo; proveri ga pre sledeće akcije.'],
+  ['The response was interrupted. A saved board was recovered; your last action may not be included. Review the board before continuing.', 'Odgovor je prekinut. Sačuvano bojište je vraćeno; poslednja akcija možda nije uključena. Proveri bojište pre nastavka.'],
+  ['The action could not be confirmed. Reconnect before choosing another action; it will not be sent again automatically.', 'Nije moguće potvrditi akciju. Poveži se ponovo pre sledeće akcije; prethodna neće biti automatski ponovljena.'],
+  ['The saved board was refreshed. Review it before choosing another action.', 'Sačuvano bojište je osveženo. Proveri ga pre sledeće akcije.'],
+  ['Browser storage is unavailable. Your game is kept in this tab; keep it open to continue.', 'Skladište pregledača nije dostupno. Partija se čuva u ovoj kartici; ostavi je otvorenu da bi nastavio igru.'],
+  ['The server is unavailable. Try reconnecting.', 'Server nije dostupan. Pokušaj ponovo da se povežeš.'],
+
   ['NO PLAYABLE CARDS', 'NEMA DOSTUPNIH KARATA ZA IGRANJE'],
   ['NEED +{count}', 'NEDOSTAJE {count}'],
   ['No cards can be played now. Use a ready unit or ability, or pass.', 'Sada ne možeš odigrati kartu. Upotrebi spremnu jedinicu ili sposobnost, ili preskoči akciju.'],
@@ -858,8 +877,59 @@ const serverCopy: Array<[string, string, ...string[]]> = [
   ]
 ];
 
+
+const inspectorCopy: Array<[string, string, ...string[]]> = [
+  ['This card is not visible to you.', 'Ova karta ti nije vidljiva.'],
+  ['Back', 'Nazad'], ['Back to previous card', 'Nazad na prethodnu kartu'],
+  ['Card artwork', 'Slika karte'], ['Zoom out', 'Umanji'], ['Zoom in', 'Uvećaj'],
+  ['Card side', 'Strana karte'], ['Leader side', 'Strana vođe'], ['Unit side', 'Strana jedinice'], ['Front', 'Prednja strana'],
+  ['Scroll or drag to explore the artwork.', 'Pomeraj sliku da pregledaš detalje.'], ['Tap artwork to zoom', 'Dodirni sliku da je uvećaš'],
+  ['In play: {side}', 'U igri: {side}'], ['Aspects', 'Aspekti'],
+  ['Deploy threshold', 'Prag za raspoređivanje'], ['Printed: {cost}', 'Odštampano: {cost}'],
+  ['Power', 'Snaga'], ['Health', 'Život'], ['{count} damage', '{count} štete'],
+  ['Current state', 'Trenutno stanje'], ['Your card', 'Tvoja karta'], ['Opponent card', 'Protivnička karta'],
+  ['Card abilities', 'Sposobnosti karte'], ['Abilities', 'Sposobnosti'], ['No additional rules text.', 'Nema dodatnog teksta pravila.'],
+  ['Play options', 'Načini igranja'], ['This card has no available script in the game engine.', 'Ova karta nema dostupnu skriptu u sistemu igre.'],
+  ['AVAILABLE NOW', 'TRENUTNO DOSTUPNO'], ['This puts the card into your resource zone.', 'Ovo postavlja kartu u tvoju zonu resursa.'],
+  ['Choose this card for the current effect.', 'Izaberi ovu kartu za trenutni efekat.'], ['Continue with this card on the battlefield.', 'Nastavi sa ovom kartom na bojištu.'],
+  ['Make a resource', 'Pretvori u resurs'], ['Play this card', 'Odigraj ovu kartu'], ['Attack with this unit', 'Napadni ovom jedinicom'],
+  ['Deploy this leader', 'Rasporedi ovog vođu'], ['Use this ability', 'Upotrebi ovu sposobnost'], ['Select this card', 'Izaberi ovu kartu'],
+  ['Hand', 'Ruka'], ['Ground arena', 'Kopnena arena'], ['Space arena', 'Svemirska arena'], ['Discard pile', 'Odbačena hrpa'],
+  ['Base zone', 'Zona baze'], ['Captured', 'Zarobljeno'], ['Outside the game', 'Van igre'], ['Unit', 'Jedinica'], ['Event', 'Događaj'], ['Upgrade', 'Nadogradnja'],
+  ['Attached upgrades', 'Priključene nadogradnje'],
+  ['Vigilance', 'Budnost'], ['Command', 'Komanda'], ['Aggression', 'Agresija'], ['Cunning', 'Lukavstvo'], ['Heroism', 'Herojstvo'], ['Villainy', 'Zlikovstvo'],
+  ['Leader and base', 'Vođa i baza'], ['LEADER', 'VOĐA'], ['HP', 'HP'], ['base HP', 'HP baze'],
+  ['Your last line of defense.', 'Tvoja poslednja linija odbrane.'], ['An official preconstructed deck, ready to play.', 'Zvanični unapred složen špil, spreman za igru.'],
+  ['Deck aspects', 'Aspekti špila'], ['Deck statistics', 'Statistika špila'], ['CARDS', 'KARTE'], ['AVG. COST', 'PROS. CENA'],
+  ['Resource curve', 'Kriva troškova'], ['Tap a cost to filter', 'Dodirni cenu za filtriranje'], ['Resource cost distribution', 'Raspodela troškova u resursima'],
+  ['{cost} cost: {count} cards', 'Cena {cost}: {count} karata'], ['Deck contents', 'Sadržaj špila'],
+  ['Search cards or rules…', 'Pretraži karte ili pravila…'], ['Search deck cards', 'Pretraži karte špila'], ['Clear search', 'Obriši pretragu'],
+  ['Sort cards', 'Poređaj karte'], ['By cost', 'Po ceni'], ['By name', 'Po imenu'], ['By type', 'Po tipu'], ['Filter card type', 'Filtriraj tip karte'],
+  ['All cards', 'Sve karte'], ['Units', 'Jedinice'], ['Events', 'Događaji'],
+  ['{shown} of {total} cards', '{shown} od {total} karata'], ['Clear cost filter', 'Ukloni filter cene'], ['No matching cards', 'Nema odgovarajućih karata'],
+  ['Try a different name, rule, type, or cost.', 'Pokušaj drugo ime, pravilo, tip ili cenu.'], ['This deck has no card list available.', 'Spisak karata ovog špila nije dostupan.'],
+  ['This deck includes cards whose scripts are unavailable.', 'Špil sadrži karte čije skripte nisu dostupne.'],
+  ['Use selected deck', 'Koristi izabrani špil'], ['Use this deck', 'Koristi ovaj špil'],
+  ['Shielded Rebels · protect units and win efficient trades', 'Pobunjenici sa štitovima · zaštiti jedinice i ostvari povoljne razmene'],
+  ['Imperial midrange · resource ramp, removal, and heavy hitters', 'Imperijalna snaga · ubrzaj resurse, uklanjaj pretnje i uvedi snažne jedinice'],
+  ['Imperial tempo · efficient trades and resource ramp', 'Imperijalni tempo · povoljne razmene i ubrzan razvoj resursa'],
+  ['Upgrade tempo · exhaust threats and protect key units', 'Tempo nadogradnji · iscrpljuj pretnje i štiti ključne jedinice'],
+  ['Republic swarm · coordinate and clone tokens', 'Brojne jedinice Republike · koordinacija i žetoni klonova'],
+  ['Droid swarm · exploit and sacrifice synergies', 'Brojni droidi · iskoristi sinergije žrtvovanja'],
+  ['Indirect damage · bounty hunters and aggressive piloting', 'Indirektna šteta · lovci na ucene i agresivno pilotiranje'],
+  ['Space tempo · pilots, vehicles, and surprise attacks', 'Svemirski tempo · piloti, vozila i iznenadni napadi'],
+  ['Force tempo · bounce, replay, and Jedi synergies', 'Tempo Sile · vraćaj i ponovo igraj karte uz sinergije Džedaja'],
+  ['Sith aggression · damage, drain, and Force units', 'Agresija Sita · šteta, iscrpljivanje i jedinice Sile'],
+  ['Political control · reveal information and outlast opponents', 'Politička kontrola · otkrivaj informacije i nadživi protivnika'],
+  ['Conspiracy control · discard, politics, and durable units', 'Kontrola zaverom · odbacivanje, politika i izdržljive jedinice'],
+  ['Multi-aspect Rebels · build a board and coordinate attacks', 'Pobunjenici sa više aspekata · razvijaj bojište i usklađuj napade'],
+  ['Underworld economy · credits, large threats, and value', 'Ekonomija podzemlja · krediti, velike pretnje i vredne akcije'],
+  ['Advantage swarm · support attacks and Imperial reinforcements', 'Brojne jedinice sa Advantage · podržavaj napade i uvedi imperijalna pojačanja'],
+  ['Healing midrange · support attacks and lasting board presence', 'Lečenje i razvoj · podržavaj napade i održavaj jedinice na bojištu'],
+];
+
 const translations = new Map<string, { en: string; sr: string }>();
-for (const [en, sr, ...aliases] of [...copy, ...serverCopy]) for (const key of [en, ...aliases]) translations.set(key, { en, sr });
+for (const [en, sr, ...aliases] of [...copy, ...inspectorCopy, ...serverCopy]) for (const key of [en, ...aliases]) translations.set(key, { en, sr });
 
 // Anchored templates cover variable prompts and legacy checkpoints without
 // replacing fragments of official card names or ability text.

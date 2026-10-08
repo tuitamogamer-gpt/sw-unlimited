@@ -21,13 +21,38 @@ Official card names and printed card text stay in English. Earlier checkpoints
 containing legacy interface wording remain readable through the translation
 mapping.
 
-Reproduce with `npm run build && npm run test:ui`. The test checks 375 × 667,
-390 × 844, 430 × 932, and 1440 × 900, plus the Serbian interface at 375 × 667.
-It verifies actual loaded base images, two human card plays, both arena tabs,
-initiative confirmation/cancellation, and resume after page refresh. Reports
-and screenshots go to `/tmp/swu-ui-regression`, or `SWU_SCREENSHOTS` if set.
+Card inspection separates readable rules and current state from zoomable
+artwork. It shows the card's current legal action and blocking reason, supports
+leader faces, and lets players navigate attachments and captured cards. Pilot
+upgrades display their active pilot text and stat bonuses. Deck inspection
+supports searching, type filters, sorting, and a quantity-weighted cost curve;
+closing a card returns to the same filtered deck list.
 
-`npm test` covers 76 engine, bot, privacy, legality, and checkpoint assertions,
-including three focused human-flow regressions. `scripts/browser-smoke.mjs`
+Short landscape screens place the hand and commands beside the battlefield.
+Damage and new units receive brief visual feedback, and the latest public move
+appears above the hand. Overflow cues appear only when a card row has hidden
+content. Arena tabs support keyboard navigation. Replacing an unfinished game
+requires confirmation.
+
+The browser client writes a versioned checkpoint atomically and bounds both
+network and response-body waits. An uncertain mutation triggers read-only
+recovery, never an automatic mutation retry. A failed recovery requires a
+refresh attempt before another action; storage failures produce a visible
+notice. Cross-tab locking is used where available, but a game should still be
+played in one tab.
+
+Reproduce with `npm run build && npm run test:ui`. The test checks 375 × 667,
+390 × 844, 430 × 932, 844 × 390, 1024 × 600, and 1440 × 900, plus the Serbian
+interface at 375 × 667. It verifies loaded base images, two human card plays
+(one through the inspector), artwork zoom, deck search retention, both arena
+tabs, confirmation/cancellation, and resume after page refresh. It also drops
+an action response after the HTTP server accepts it, verifies read-only
+recovery, and checks that exactly one mutation was sent. Reports and
+screenshots go to `/tmp/swu-ui-regression`, or `SWU_SCREENSHOTS` if set.
+
+`npm test` covers 94 engine, bot, metadata, privacy, legality, checkpoint, and
+browser-client cases, including four focused human-flow regressions. The
+Droid Deployment regression checks that its name does not cause its Play
+action to be misclassified as leader deployment. `scripts/browser-smoke.mjs`
 also drives a complete match through the visible interface and verifies that
 the finished mobile battlefield does not overflow horizontally or vertically.

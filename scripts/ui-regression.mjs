@@ -23,7 +23,7 @@ page.on('pageerror', error => errors.push(error.message));
 const decks = readDecks();
 let fixture;
 let view;
-const report = { passed: false, manualPlays: [], viewports: [], baseImages: false, englishDefault: false, serbianPersists: false, refreshResume: false };
+const report = { passed: false, manualPlays: [], viewports: [], baseImages: false, englishDefault: false, serbianPersists: false, refreshResume: false, inspectorAndDeckTools: false, lostResponseRecovered: false, newGameProtected: false };
 
 async function checkViewport(label) {
   const layout = await page.evaluate(() => {
@@ -35,6 +35,11 @@ async function checkViewport(label) {
   assert.ok(layout.scrollHeight <= layout.height + 1, `${label}: page scrolls vertically: ${JSON.stringify(layout)}`);
   assert.ok(layout.scrollWidth <= layout.width + 1, `${label}: page scrolls horizontally`);
   for (const element of layout.elements) assert.ok(element.top >= -1 && element.bottom <= layout.height + 1 && element.height > 0, `${label}: ${element.selector} is outside the screen`);
+  const clipped = await page.evaluate(() => [...document.querySelectorAll('.arena-side .unit-card')].filter(card => {
+    const box = card.getBoundingClientRect(), lane = card.closest('.arena-side').getBoundingClientRect();
+    return box.height > 0 && (box.top < lane.top - 2 || box.bottom > lane.bottom + 2);
+  }).map(card => card.textContent));
+  assert.deepEqual(clipped, [], `${label}: unit cards must fit within their arena lanes`);
   report.viewports.push({ label, width: layout.width, height: layout.height, fits: true });
 }
 
@@ -70,6 +75,23 @@ try {
   assert.ok(!(await page.locator('body').innerText()).includes('karata'));
   report.englishDefault = true;
 
+  await page.locator('.deck-tile-footer button').first().click();
+  await page.locator('.di-root').waitFor();
+  assert.match(await page.locator('.di-stat-grid').innerText(), /50/);
+  assert.equal(await page.locator('.di-curve-bars button').count(), 9);
+  await page.getByRole('searchbox', { name: 'Search deck cards', exact: true }).fill('R2-D2');
+  assert.equal(await page.locator('.di-card-row').count(), 1);
+  await page.locator('.di-card-row').click();
+  await page.locator('.ci-root').waitFor();
+  await page.locator('.ci-art-button').click();
+  assert.equal(await page.locator('.ci-art-stage.is-zoomed').count(), 1);
+  await page.keyboard.press('Escape');
+  assert.equal(await page.locator('.ci-art-stage.is-zoomed').count(), 0);
+  await page.keyboard.press('Escape');
+  assert.equal(await page.locator('.di-card-row').count(), 1, 'Deck search is preserved when card inspection closes.');
+  await page.keyboard.press('Escape');
+  report.inspectorAndDeckTools = true;
+
   // A deterministic, signed checkpoint uses the same process key as this local
   // HTTP worker. No test-only endpoint or seed control is added to production.
   fixture = await createRecord({ playerDeck: decks.find(deck => deck.id === 'sor-luke-skywalker'),
@@ -89,7 +111,21 @@ try {
   await page.waitForFunction(() => [...document.querySelectorAll('.base-art img')].length === 2 && [...document.querySelectorAll('.base-art img')].every(img => img.complete && img.naturalWidth > 0));
   report.baseImages = true;
 
-  await action(() => clickButton('keep'));
+  // The server accepts the action, but the browser loses its response. Recovery
+  // must read the board, not silently send the human action a second time.
+  const actionUrl = `${origin}/api/games/${view.id}/actions`;
+  let sends = 0;
+  const interruptResponse = async route => { sends++; await route.fetch(); await route.abort('failed'); };
+  await page.route(actionUrl, interruptResponse);
+  const recovered = page.waitForResponse(response => response.url().endsWith(`/api/games/${view.id}/state`));
+  await clickButton('keep');
+  view = await (await recovered).json();
+  await page.locator('.prompt-panel[aria-busy="false"]').waitFor();
+  await page.unroute(actionUrl, interruptResponse);
+  assert.equal(sends, 1, 'A lost response must never cause a mutation retry.');
+  assert.match(await page.locator('.connection-notice').innerText(), /interrupted|recovered/i);
+  await page.locator('.connection-notice button').click();
+  report.lostResponseRecovered = true;
   assert.equal(view.prompt.stage, 'resource');
   assert.match(await page.locator('.prompt-panel').innerText(), /starting resources|Choose 2/i);
   await action(() => clickCard('Obi-Wan Kenobi'));
@@ -103,7 +139,10 @@ try {
   assert.match(await page.locator(`.hand-card:has([data-card-id="${droid.uuid}"]) .card-action-label`).innerText(), /play/i);
   await clickCard('Yoda');
   assert.match(await page.locator('.card-notice').innerText(), /cost|resource/i);
-  await action(() => clickCard('2-1B Surgical Droid'));
+  await page.locator(`.hand-card:has([data-card-id="${droid.uuid}"]) .card-inspect`).click();
+  assert.match(await page.locator('.ci-kicker').innerText(), /Unit/i);
+  assert.equal(await page.locator('.ci-root.ci-portrait').count(), 1);
+  await action(() => page.getByRole('button', { name: 'Play this card', exact: true }).click());
   assert.ok(view.players.human.ground.some(card => card.uuid === droid.uuid));
   assert.ok(!view.players.human.resources.some(card => card.uuid === droid.uuid));
   report.manualPlays.push(droid.name);
@@ -138,11 +177,18 @@ try {
   const doneDrawing = view.prompt.buttons.find(button => button.text === 'Done');
   assert.ok(doneDrawing, 'The human confirms Yoda’s draw choice.');
   await action(() => clickButton(doneDrawing.arg));
-  for (const size of [{ width: 375, height: 667 }, { width: 390, height: 844 }, { width: 430, height: 932 }, { width: 1440, height: 900 }]) {
+  for (const size of [{ width: 375, height: 667 }, { width: 390, height: 844 }, { width: 430, height: 932 }, { width: 1024, height: 600 }, { width: 844, height: 390 }, { width: 1440, height: 900 }]) {
     await page.setViewportSize(size);
     await checkViewport('round two');
     await page.screenshot({ path: `${output}/battle-${size.width}.png` });
   }
+  await page.getByRole('button', { name: 'Start a new game', exact: true }).click();
+  const confirmation = page.getByRole('dialog', { name: 'Start a new game?', exact: true });
+  await confirmation.waitFor();
+  assert.match(await confirmation.innerText(), /saved game will be replaced/);
+  await confirmation.getByRole('button', { name: 'Keep playing', exact: true }).click();
+  assert.equal(await page.evaluate(() => localStorage.getItem('swu-command-session')), view.id);
+  report.newGameProtected = true;
   await page.setViewportSize({ width: 375, height: 667 });
   await page.locator('.game-topbar .language-select').selectOption('sr');
   assert.equal(await page.locator('html').getAttribute('lang'), 'sr-Latn');

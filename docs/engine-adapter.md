@@ -23,6 +23,10 @@ Submit an exact current legal action. Actions are `card`, `button`, `perCard`, o
 
 The adapter normalizes button arguments to strings for the browser and restores native numeric menu indices when dispatching. This distinction matters for upstream `HandlerMenuPrompt`. Pilots attached as upgrades use native summary fields, avoiding invalid unit-damage access. Numeric keyword values and adjusted action resource costs are exposed to the bot. `attackPower` includes current modifiers and Raid; target-dependent effects still resolve through the engine.
 
+Play/deploy labels use native play-action identity before leader deployment labels, so names such as Droid Deployment remain normal card plays. Own-hand `playable` and `playOptions[].legal` follow the engine's current legal actions. `playCost` is the lowest native adjusted resource cost of a legal play option, or the lowest available option when none is currently legal. It includes aspect penalties and may assume optional payment choices such as Exploit; the engine still prompts for those choices before payment. It is not a promise that no additional choice or cost is required.
+
+Visible cards expose `pilotText`, `upgradePower`, and `upgradeHp`. An attached pilot's active `text` is its piloting text, while `frontText` preserves the unit text. Native summaries supply current power, HP, and damage, including attachments and effects; `remainingHp` is current HP minus damage. Shield, Experience, and Advantage tokens remain inspectable entries in `upgrades`. Current `keywords` come from the engine after gained effects, removal, and numeric keyword aggregation. Leader deployment availability is represented by legal actions, and the native `epicDeployActionSpent` field reports whether deployment has been used.
+
 ## Scope and verification
 
 All 18 imported decks currently pass the implementation audit. The Intro Battle: Hoth bases retain their verified 20 HP definition and are labeled as that variant; the adapter does not silently replace them with 30 HP. It likewise preserves printed 28 HP LOF and 27 HP LAW bases.
