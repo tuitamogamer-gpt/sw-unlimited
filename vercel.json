@@ -8,11 +8,17 @@
     "api/index.js": {
       "maxDuration": 60,
       "includeFiles": "{server/**,data/**,vendor/forceteki/build/server/**,vendor/forceteki/test/json/**}",
-      "excludeFiles": "{docs/**,tests/**,scripts/**,vendor/forceteki/server/**,vendor/forceteki/test/{server,scenarios,helpers,gameSetups}/**,vendor/forceteki/build/test/**,vendor/forceteki/docs/**,vendor/forceteki/scripts/**,vendor/forceteki/.github/**,vendor/forceteki/.claude/**}"
+      "excludeFiles": "{docs/**,tests/**,scripts/**,vendor/forceteki/{server,docs,scripts,.github,.claude,build/test,test/{server,scenarios,helpers,gameSetups}}/**}"
     }
   },
   "rewrites": [
-    { "source": "/api/:path*", "destination": "/api/index" },
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    {
+      "source": "/api/:path*",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
   ]
 }
