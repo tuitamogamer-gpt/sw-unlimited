@@ -1,6 +1,10 @@
 # Local Forceteki patches
 
-Upstream baseline: `SWU-Karabast/forceteki`, commit `1f0e9783c4743acdc67df0c4ab3f3610a349c32a` (MIT). The vendored tree includes the following narrowly scoped correctness fix.
+Upstream baseline: `SWU-Karabast/forceteki`, commit `1f0e9783c4743acdc67df0c4ab3f3610a349c32a` (MIT). The vendored tree includes the following correctness and hosting compatibility fixes.
+
+## Use the CommonJS-compatible UUID package
+
+The vendor manifest and lockfile pin `uuid` to `11.1.0`. Upstream's version 14 is ESM-only, while the compiled engine uses CommonJS `require()` for prompt UUIDs. Vercel's function loader rejects that ESM import even with Node 24 selected. Version 11 retains the same UUID v1/v4 APIs used by the engine and provides a native CommonJS export. The app's Node version is pinned to `24.x` for consistent builds. Validate compatibility with `NODE_OPTIONS=--no-experimental-require-module npm test`.
 
 ## Complete grouped trigger windows through the normal pipeline
 

@@ -4,6 +4,8 @@ Browser igra za jednog igrača protiv taktičkog AI protivnika, s automatizirani
 Star Wars: Unlimited pravilima i službenim starter / Spotlight špilovima.
 Sučelje je na hrvatskom; nazivi karata i odluke enginea koriste izvorni engleski.
 
+[Otvori igru](https://sw-unlimited-mu.vercel.app)
+
 Uvezeno je **18 špilova**, svaki s 50 glavnih karata, vođom i bazom:
 
 | Proizvod | Vođe |
@@ -20,7 +22,7 @@ Uvezeno je **18 špilova**, svaki s 50 glavnih karata, vođom i bazom:
 
 ## Pokretanje
 
-Potreban je Node.js 22 ili noviji (provjereno na Node.js 24).
+Potreban je Node.js 24.
 
 ```sh
 npm ci
