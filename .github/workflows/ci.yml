@@ -22,3 +22,4 @@ jobs:
       - run: npm run test:custom-ui
       - run: npm run test:motion-ui
       - run: npm run test:preview-ui
+      - run: npm run test:ambush-hover-ui

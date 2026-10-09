@@ -56,6 +56,14 @@ be played explains why. Claiming initiative ends your actions for the round and
 gives you the first action next round. At regroup, adding one resource is
 optional; you can keep your entire hand.
 
+When Ambush is available, choose **Use Ambush** (or click the marked unit), then
+choose a highlighted enemy unit. **Skip Ambush** declines this attack. The unit
+can attack while exhausted; Ambush does not ready it. See [Ambush](docs/ambush.md).
+
+On desktop, hover over a visible card for a compact artwork preview without
+clicking. This works in your hand, on the battlefield, and in deck lists and the
+card library. Clicking retains the card's normal action or inspection behavior.
+
 On a phone, Ground and Space are tabs within a single-screen battlefield. Your
 hand and current decision stay visible. Base and leader cards have artwork and
 inspection controls; the battle log and reference information open separately.
@@ -132,6 +140,7 @@ npm run test:ui
 npm run test:custom-ui
 npm run test:motion-ui
 npm run test:preview-ui
+npm run test:ambush-hover-ui
 node scripts/sync-card-catalog.cjs --check
 ```
 

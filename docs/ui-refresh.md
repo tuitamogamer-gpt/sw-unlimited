@@ -107,3 +107,22 @@ motion keeps the same reading duration without travel/countdown animation.
 queued three-second previews, verifies blocked controls and image fallback,
 and checks refresh during presentation and both mobile orientations. Reports
 and screenshots go to `/tmp/swu-opponent-preview`.
+
+Ambush now names its source unit and offers **Use Ambush / Skip Ambush**. The
+source unit is also clickable while this choice is pending. Both the prompt and
+target selection explain the exhausted attack; legal exhausted targets retain
+their action label above the red status token. Native rules are unchanged; see
+[Ambush](ambush.md).
+
+Desktop pointer hover and keyboard focus show a compact card-art preview after
+250 ms. Public card surfaces share one preview, including hand and arena cards,
+leaders, bases, deck lists, imported decks, attachments, and the card library.
+Previews stay inside the viewport, dismiss on interaction, and do not intercept
+clicks. Touch devices, hidden cards, blocked actions, and the opponent spotlight
+do not open hover previews. Reduced-motion preferences remove the entrance effect.
+
+`npm run test:ambush-hover-ui` verifies a real Ambush attack, mobile source-card
+activation, exhausted target labels, desktop previews and dismissal, touch
+suppression, and portrait/landscape bounds. Reports and screenshots go to
+`/tmp/swu-ambush-hover`. Engine regressions also cover Sentinel restrictions,
+skipping, no eligible enemy, bot handling, and the HTTP prompt metadata.

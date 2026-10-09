@@ -308,6 +308,21 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
     game.on('onCardPlayed', event => recordPublicPlay('play', event));
     game.on('onLeaderDeployed', event => recordPublicPlay('deploy', event));
 
+    function promptSourceCard(source, viewer) {
+        if (!source?.uuid) return undefined;
+        const card = game.findAnyCardInAnyList(source.uuid);
+        if (!card) return undefined;
+        const summary = summarizeCard(card, viewer);
+        // A prompt may outlive its source moving to a hidden zone. Never turn
+        // ability metadata into a way to inspect that private card.
+        return summary.hidden ? undefined : summary;
+    }
+
+    function abilityLabel(text) {
+        return typeof text === 'string' ? text.replace(/\{keyword:([a-z]+)\}/gi,
+            (_match, keyword) => keyword[0].toUpperCase() + keyword.slice(1)) : text;
+    }
+
     function legalActionsFor(viewer, state) {
         const openPrompt = game.getCurrentOpenPrompt();
         if (game.isEnded || !state.promptUuid || !openPrompt?.activeCondition(viewer)) return [];
@@ -342,7 +357,9 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
         }
         for (const button of state.buttons || []) {
             if (button.disabled || button.command === 'statefulPromptResults') continue;
-            actions.push({ type: 'button', arg: String(button.arg), method: button.method || 'menuButton', promptId, label: button.text, sourceCard: button.sourceCard, hasLegalEffects: button.hasLegalEffects });
+            actions.push({ type: 'button', arg: String(button.arg), method: button.method || 'menuButton', promptId,
+                label: button.text, abilityLabel: abilityLabel(button.label),
+                sourceCard: promptSourceCard(button.sourceCard, viewer), hasLegalEffects: button.hasLegalEffects });
         }
         for (const display of state.displayCards || []) {
             if (!['selectable', 'selected'].includes(display.selectionState)) continue;
@@ -447,17 +464,36 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
             : state.promptType === 'initiative' ? 'initiative'
             : /mulligan/i.test(state.menuTitle) ? 'mulligan'
             : viewer.selectableCards.length > 0 ? 'target' : 'choice';
+        const optionalTrigger = state.promptType === 'optionalTrigger'
+            ? state.buttons.find((button) => button.arg === 'trigger') : null;
+        // These are native ability flags, not guesses from printed card text:
+        // a unit can gain/lose Ambush, and other effects can also attack while
+        // exhausted. Expose enough context to explain the legal attack in UI.
+        const attackContext = active && openPrompt?.context?.ability?.isAttackAction?.()
+            ? openPrompt.context : null;
+        const attacker = viewer.promptState.attackTargetingHighlightAttacker || attackContext?.source;
+        const ambushTargeting = attackContext?.ability?.attackProperties?.isAmbush === true;
+        const ability = optionalTrigger ? {
+            label: abilityLabel(optionalTrigger.label || optionalTrigger.text),
+            sourceCard: promptSourceCard(optionalTrigger.sourceCard, viewer), optional: true,
+        } : ambushTargeting ? {
+            label: 'Ambush', sourceCard: promptSourceCard(attacker, viewer), optional: false,
+        } : undefined;
         const prompt = {
             id: promptId, title: state.menuTitle, subtitle: state.promptTitle, type: state.promptType || 'select',
             stage, resourceSelection,
             selectMode: state.selectCardMode, selectOrder: state.selectOrder,
             selectedCardIds: viewer.selectedCards.map((card) => card.uuid),
             selectableCardIds: state.distributeAmongTargets ? viewer.selectableCards.map((card) => card.uuid) : [...legalIds],
-            buttons: state.buttons.map(({ text, arg, command, disabled, method }) => ({ text, arg: String(arg), command, disabled, method })), displayCards,
+            buttons: state.buttons.map(({ text, arg, command, disabled, method, label, sourceCard, hasLegalEffects }) => ({
+                text, arg: String(arg), command, disabled, method, label: abilityLabel(label),
+                sourceCard: promptSourceCard(sourceCard, viewer), hasLegalEffects,
+            })), displayCards,
+            ability,
             perCardButtons: state.perCardButtons.map(({ text, arg, command, disabled, method }) => ({ text, arg: String(arg), command, disabled, method })),
             number: state.selectNumber || null, dropdown: state.dropdownListOptions || [],
             distribution: state.distributeAmongTargets || null,
-            attackerId: viewer.promptState.attackTargetingHighlightAttacker?.uuid || null,
+            attackerId: attacker?.uuid || null,
             active,
         };
         return translateIds(JSON.parse(JSON.stringify({

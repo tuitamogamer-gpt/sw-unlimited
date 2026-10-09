@@ -4,6 +4,7 @@ import type { Card, GameAction } from '../types';
 import { t } from '../i18n';
 import { activeCardFace, CardArtwork, cardType, isLandscapeCard } from './CardArtwork';
 import type { CardFace } from './CardArtwork';
+import { useCardHover } from './CardHoverPreview';
 import './inspectors.css';
 
 export interface CardInspectorProps {
@@ -33,10 +34,11 @@ function RulesCopy({ text }: { text: string }) {
 }
 
 function AttachedCards({ title, cards, onInspect }: { title: string; cards: Card[]; onInspect: (card: Card) => void }) {
+  const { bindCardHover } = useCardHover();
   if (!cards.length) return null;
   return <section className="ci-attached" aria-label={t(title)}>
     <div className="ci-section-heading"><h3>{t(title)}</h3><span>{cards.length}</span></div>
-    <div className="ci-attached-list">{cards.map((card, index) => <button type="button" key={card.uuid || card.id || index} className="ci-attached-card" disabled={card.hidden} onClick={() => onInspect(card)} aria-label={card.hidden ? t('Hidden card') : t('Inspect {name}', { name: card.name || '' })}>
+    <div className="ci-attached-list">{cards.map((card, index) => <button {...bindCardHover(card)} type="button" key={card.uuid || card.id || index} className="ci-attached-card" disabled={card.hidden} onClick={() => onInspect(card)} aria-label={card.hidden ? t('Hidden card') : t('Inspect {name}', { name: card.name || '' })}>
       <span className="ci-attached-art"><CardArtwork card={card} decorative /></span>
       <span><strong>{card.hidden ? t('Hidden card') : card.name || t('Card')}</strong>{!card.hidden && card.subtitle && <small>{card.subtitle}</small>}</span>
       {!card.hidden && <ChevronRight size={15} />}
@@ -60,7 +62,7 @@ export function CardInspector({ card, onInspect, action, onAction, busy = false,
   const epicText = face === 'front' && card.epicAction ? card.epicAction.replace(/^Epic Action:\s*/i, '').trim() : '';
   const health = card.remainingHp ?? (card.hp != null ? card.hp - (card.damage || 0) : undefined);
   const keywordNames = useMemo(() => (card.keywords || []).map(keyword => typeof keyword === 'string' ? keyword : `${keyword.name}${keyword.value != null ? ` ${keyword.value}` : ''}${keyword.cost != null ? ` (${keyword.cost})` : ''}`), [card.keywords]);
-  const actionLabel = action?.intent === 'resource' ? card.selected ? 'Unselect resource' : 'Make a resource' : action?.intent === 'play' ? 'Play this card' : action?.intent === 'attack' ? 'Attack with this unit' : action?.intent === 'deploy' ? 'Deploy this leader' : action?.intent === 'ability' ? 'Use this ability' : 'Select this card';
+  const actionLabel = action?.abilityLabel === 'Ambush' ? 'Use Ambush' : action?.intent === 'resource' ? card.selected ? 'Unselect resource' : 'Make a resource' : action?.intent === 'play' ? 'Play this card' : action?.intent === 'attack' ? 'Attack with this unit' : action?.intent === 'deploy' ? 'Deploy this leader' : action?.intent === 'ability' ? 'Use this ability' : 'Select this card';
 
   useEffect(() => { setFace(activeFace); setZoomed(false); }, [card.uuid, card.id, card.image, activeFace]);
   useEffect(() => { artViewport.current?.scrollTo({ left: 0, top: 0 }); }, [face, zoomed]);

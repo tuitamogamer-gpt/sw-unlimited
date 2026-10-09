@@ -4,6 +4,7 @@ import type { Card } from '../types';
 import { api } from '../game-client';
 import { t } from '../i18n';
 import { CardArtwork, isLandscapeCard } from './CardArtwork';
+import { useCardHover } from './CardHoverPreview';
 import './card-catalog.css';
 
 type CatalogCard = Card & { engineSupported: boolean; engineStatus: string; preview?: boolean; releaseStatus?: string };
@@ -14,6 +15,7 @@ type CatalogResponse = {
 const PAGE_SIZE = 48;
 
 export function CardCatalog({ onInspect }: { onInspect: (card: Card) => void }) {
+  const { bindCardHover } = useCardHover();
   const [search, setSearch] = useState('');
   const [set, setSet] = useState('all');
   const [type, setType] = useState('all');
@@ -53,7 +55,7 @@ export function CardCatalog({ onInspect }: { onInspect: (card: Card) => void }) 
     <div className="catalog-results-heading" aria-live="polite"><span>{busy ? t('Searching cards…') : t('{count} matching printings', { count: data?.total || 0 })}</span>{busy && <LoaderCircle size={16} className="spin" />}</div>
     {error ? <div className="catalog-empty" role="alert"><p>{t(error)}</p><button className="secondary-button" onClick={() => setRetry(value => value + 1)}>{t('Try again')}</button></div>
       : data && !data.cards.length && !busy ? <div className="catalog-empty"><Search size={28} /><p>{t('No cards match these filters.')}</p><button className="secondary-button" onClick={() => { setSearch(''); setSet('all'); setType('all'); setStatus('all'); setOffset(0); }}>{t('Clear filters')}</button></div>
-        : <div className="catalog-grid" aria-busy={busy}>{data?.cards.map(card => <button className={`catalog-card ${card.engineSupported ? '' : 'catalog-card-pending'}`} key={card.code} onClick={() => onInspect(card)} aria-label={t('Inspect {card}', { card: `${card.name}${card.subtitle ? ` · ${card.subtitle}` : ''} (${card.code})` })}>
+        : <div className="catalog-grid" aria-busy={busy}>{data?.cards.map(card => <button {...bindCardHover(card)} className={`catalog-card ${card.engineSupported ? '' : 'catalog-card-pending'}`} key={card.code} onClick={() => onInspect(card)} aria-label={t('Inspect {card}', { card: `${card.name}${card.subtitle ? ` · ${card.subtitle}` : ''} (${card.code})` })}>
           <div className={`catalog-art ${isLandscapeCard(card) ? 'landscape' : ''}`}><CardArtwork card={card} decorative /></div>
           <div className="catalog-card-copy"><span className="catalog-code">{card.code}{preview(card) && <em>{t('Preview')}</em>}</span><strong>{card.name}</strong>{card.subtitle && <small>{card.subtitle}</small>}<span className={`catalog-support ${card.engineSupported ? 'ready' : ''}`}>{card.engineSupported ? t('Ready to play') : card.engineStatus === 'missing-script' ? t('Needs a card script') : t('No engine definition')}</span></div>
         </button>)}</div>}

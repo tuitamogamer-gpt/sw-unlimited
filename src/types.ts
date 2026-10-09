@@ -25,15 +25,17 @@ export interface Player {
 export interface GameAction {
   type: 'card' | 'button' | 'perCard' | 'stateful'; version?: number; cardId?: string; promptId?: string; arg?: string;
   method?: string; label?: string; displayLabel?: string;
+  abilityLabel?: string; sourceCard?: Card;
   intent?: 'resource' | 'play' | 'attack' | 'deploy' | 'ability' | 'select';
   abilities?: { title: string; type: string; cost?: number | null }[]; disabled?: boolean;
   result?: { type: string; valueDistribution: { uuid: string; amount: number }[] };
 }
-export interface PromptButton { text: string; arg: string; command?: string; disabled?: boolean }
+export interface PromptButton { text: string; arg: string; command?: string; disabled?: boolean; label?: string; sourceCard?: Card; hasLegalEffects?: boolean }
 export interface Prompt {
   id: string; title: string; subtitle?: string; type?: string; selectMode?: string; selectOrder?: boolean;
   stage?: 'resource' | 'action' | 'mulligan' | 'initiative' | 'target' | 'choice' | 'waiting' | 'finished';
   resourceSelection?: { min: number; max: number; selected: number; canSkip: boolean } | null;
+  ability?: { label: string; sourceCard?: Card | null; optional: boolean } | null;
   selectedCardIds: string[]; selectableCardIds: string[]; buttons: PromptButton[];
   displayCards: (Card & { cardUuid?: string; selectionState?: string; displayText?: string; selectionOrder?: number })[];
   number?: { min: number; max: number } | null; dropdown?: string[];
