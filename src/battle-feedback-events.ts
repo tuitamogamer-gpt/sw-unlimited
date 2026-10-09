@@ -33,6 +33,7 @@ export type BattleSnapshot = {
   discardIds: ReadonlySet<string>;
   deckCount: number;
   messages: readonly string[];
+  nativeDamage: boolean;
 };
 export type BattleFeedback = {
   added: ReadonlySet<string>;
@@ -79,7 +80,8 @@ export function captureBattleSnapshot(view: GameView): BattleSnapshot {
   const viewer = view.players[view.viewerId as keyof GameView['players']];
   return { id: view.id, version: view.version, viewerId: view.viewerId, cards, hand, discardIds,
     deckCount: viewer?.deckCount ?? 0,
-    messages: view.log.map(entry => typeof entry === 'string' ? entry : entry.text || entry.message || '') };
+    messages: view.log.map(entry => typeof entry === 'string' ? entry : entry.text || entry.message || ''),
+    nativeDamage: Array.isArray(view.publicDamageEvents) };
 }
 
 /** These are observed state deltas, not a replacement for the rules event log. */
@@ -103,12 +105,14 @@ export function diffBattleSnapshots(before: BattleSnapshot | null, after: Battle
     if (!prior || prior.zone === 'attachment' || (prior.zone === 'base') !== (card.zone === 'base')) {
       // One HTTP result can include entry and an immediate opposing response.
       // The new arena card's actual damage counter is still observable.
-      if (enteredArena && card.damage > 0) add('damage', card, { amount: card.damage });
+      if (enteredArena && card.damage > 0 && !after.nativeDamage) add('damage', card, { amount: card.damage });
       continue;
     }
     // Max-HP buffs, upgrade removal and other stat changes are not damage.
     const delta = card.damage - prior.damage;
-    if (delta > 0) add('damage', card, { amount: delta });
+    // Native hits have already been shown individually with their sources.
+    // Do not show their combined total as another apparent hit afterwards.
+    if (delta > 0 && !after.nativeDamage) add('damage', card, { amount: delta });
     if (delta < 0) add('heal', card, { amount: -delta });
   }
   for (const card of before.cards.values()) {

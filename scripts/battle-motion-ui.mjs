@@ -35,16 +35,37 @@ async function newPage(reducedMotion = 'no-preference') {
   const context = await browser.newContext({ viewport: { width: 375, height: 667 }, reducedMotion });
   contexts.push(context);
   const page = await context.newPage();
-  page.setDefaultTimeout(20_000);
+  page.setDefaultTimeout(45_000);
   page.on('pageerror', error => report.pageErrors.push(error.message));
   await page.addInitScript(() => {
     window.__battleAnimations = [];
+    window.__battleDamage = [];
+    let previousDamage;
+    const observeDamage = () => {
+      const element = document.querySelector('[data-damage-presentation]');
+      const key = element?.getAttribute('data-damage-event-ids');
+      if (previousDamage?.key === key) return;
+      if (previousDamage) previousDamage.endedAt = performance.now();
+      previousDamage = null;
+      if (!element) return;
+      const item = { key, ids: key.split(','), startedAt: performance.now(), endedAt: null,
+        summary: element.querySelector('.sr-only')?.textContent || element.textContent,
+        amounts: [...element.querySelectorAll('[data-damage-amount]')].map(token => ({
+          ids: token.getAttribute('data-damage-event-ids').split(','),
+          targetId: token.getAttribute('data-damage-target-id'), amount: Number(token.getAttribute('data-damage-amount')),
+          text: token.textContent.trim(),
+        })) };
+      window.__battleDamage.push(item);
+      previousDamage = item;
+    };
+    document.addEventListener('DOMContentLoaded', () => new MutationObserver(observeDamage).observe(document.body, { childList: true, subtree: true, attributes: true }));
     document.addEventListener('animationstart', event => {
       const target = event.target;
       if (!(target instanceof Element)) return;
       const fx = target.closest('[data-fx-id]');
       const card = target.closest('.game-card');
-      window.__battleAnimations.push({ name: event.animationName, fxId: fx?.getAttribute('data-fx-id'), kind: fx?.getAttribute('data-fx-kind'),
+      const damage = target.closest('[data-damage-presentation]');
+      window.__battleAnimations.push({ name: event.animationName, damageIds: damage?.getAttribute('data-damage-event-ids')?.split(',') || [], fxId: fx?.getAttribute('data-fx-id'), kind: fx?.getAttribute('data-fx-kind'),
         cardId: fx?.getAttribute('data-fx-card-id') || card?.querySelector('[data-card-id]')?.getAttribute('data-card-id'), time: performance.now() });
     });
   });
@@ -61,7 +82,7 @@ async function resume(page, checkpoint) {
   view = await response.json();
   await page.locator('.game-shell').waitFor();
   await page.waitForTimeout(50);
-  assert.equal(await page.locator('.card-fx').count(), 0, 'Resuming must not replay old movement or damage effects.');
+  assert.equal(await page.locator('.card-fx,[data-damage-presentation]').count(), 0, 'Resuming must not replay old movement or damage effects.');
   return view;
 }
 async function clearSession() {
@@ -109,17 +130,36 @@ async function clickAction(page, action) {
   }
   assert.fail(`Unexpected action: ${action.type}`);
 }
-async function act(page, action) {
+async function act(page, action, onDamage) {
+  const before = view;
   const pending = page.waitForResponse(response => response.url().endsWith(`/api/games/${view.id}/actions`) && response.request().method() === 'POST');
   pending.catch(() => {});
   await clickAction(page, action);
   const response = await pending;
   assert.equal(response.status(), 200, await response.text());
   view = await response.json();
+  const sequence = Math.max(0, ...(before.publicDamageEvents || []).map(event => event.sequence));
+  const nativeHits = (view.publicDamageEvents || []).filter(event => event.sequence > sequence);
+  // Observe damage while input is locked: it deliberately finishes before the
+  // authoritative table returns. Snapshot deltas are no longer damage events.
+  for (const event of nativeHits) {
+    await page.waitForFunction(id => window.__battleDamage.some(frame => frame.ids.includes(id)), event.id);
+    const frame = await page.evaluate(id => window.__battleDamage.find(candidate => candidate.ids.includes(id)), event.id);
+    assert.ok(frame.summary.includes(event.targetCard.name), 'Each hit names the actual public target.');
+    for (const source of event.sourceCards || (event.sourceCard ? [event.sourceCard] : [])) assert.ok(frame.summary.includes(source.name), 'Each hit names its native public source.');
+    const amount = frame.amounts.find(token => token.ids.includes(event.id));
+    assert.ok(amount, `Native damage ${event.id} must have a visible amount.`);
+    const expectedAmount = nativeHits.filter(hit => amount.ids.includes(hit.id)).reduce((total, hit) => total + hit.amount, 0);
+    assert.equal(amount.targetId, event.targetCard.uuid);
+    assert.equal(amount.amount, expectedAmount, 'The displayed amount must match its native event(s), not the response-wide damage delta.');
+    assert.ok(amount.text.includes(String(expectedAmount)), 'Damage must be readable on screen.');
+    if (onDamage) await onDamage(event, page.locator(`[data-damage-presentation][data-damage-event-ids*="${event.id}"]`));
+  }
   await page.locator('.prompt-panel[aria-busy="false"]').waitFor();
+  assert.equal(await page.locator('[data-damage-presentation],.card-fx[data-fx-kind="damage"]').count(), 0, 'Resolved native hits expire without a duplicate aggregate damage effect.');
   assert.deepEqual(view.warnings, []);
   report.actions++;
-  return view;
+  return nativeHits;
 }
 async function showArena(page, card) {
   if (!/Arena$/.test(card.zone || '')) return;
@@ -163,11 +203,11 @@ async function effect(page, kind, card, amount) {
   }
   return { locator, id };
 }
-async function captureFrame(page, locator, name) {
-  await locator.evaluate(element => {
+async function captureFrame(page, locator, name, frameTime = 110) {
+  await locator.evaluate((element, frameTime) => {
     const root = element.closest('.game-card,.base-panel,.leader-mini') || element;
-    for (const animation of root.getAnimations({ subtree: true })) { animation.pause(); animation.currentTime = 110; }
-  });
+    for (const animation of root.getAnimations({ subtree: true })) { animation.pause(); animation.currentTime = frameTime; }
+  }, frameTime);
   await page.screenshot({ path: `${output}/${name}.png` });
   await locator.evaluate(element => {
     const root = element.closest('.game-card,.base-panel,.leader-mini') || element;
@@ -214,7 +254,12 @@ try {
     const old = new Map(board(before).map(card => [card.uuid, card]));
     const decision = chooseAction(before, { difficulty: 'normal', memory });
     assert.ok(decision?.action, `No legal choice at ${before.prompt.title}`);
-    await act(activePage, decision.action);
+    const nativeHits = await act(activePage, decision.action, async (event, locator) => {
+      if (!damageCheckpoint && event.targetCard.zone !== 'base') {
+        damageCheckpoint = { id: before.id, token: before.sessionToken, action: decision.action, cardId: event.targetCard.uuid, amount: event.amount, eventId: event.id };
+        await captureFrame(activePage, locator, 'damage-portrait-frame', 500);
+      }
+    });
     const entered = units(view).filter(card => !old.has(card.uuid));
     if (!report.entry && entered.length) {
       const card = entered.find(candidate => candidate.zone === 'groundArena') || entered[0];
@@ -233,33 +278,28 @@ try {
       report.artwork.push({ label: 'stable exhausted portrait', cards: await waitForVisibleArtwork(activePage) });
       await activePage.screenshot({ path: `${output}/exhausted-portrait-stable.png` });
     }
-    let expireAfterFrame;
+    for (const hit of nativeHits) {
+      const card = hit.targetCard;
+      const previous = hits.get(card.uuid);
+      if (previous && !report.repeatedHit) {
+        assert.notEqual(hit.id, previous.id, 'A second hit must mount a fresh keyed exchange.');
+        report.repeatedHit = { name: card.name, firstId: previous.id, nextId: hit.id, firstAmount: previous.amount, nextAmount: hit.amount };
+      }
+      if (previous && card.zone !== 'base' && !report.repeatedUnitHit) {
+        const animations = await activePage.evaluate(id => window.__battleAnimations.filter(event => event.damageIds.includes(id)), hit.id);
+        assert.ok(animations.some(event => event.name === 'swu-damage-number'), 'A later hit must restart its native damage number animation.');
+        assert.notEqual(hit.id, previous.id);
+        report.repeatedUnitHit = { name: card.name, firstId: previous.id, nextId: hit.id, amount: hit.amount, animation: 'swu-damage-number' };
+      }
+      hits.set(card.uuid, { id: hit.id, amount: hit.amount });
+      report.damage.push({ name: card.name, source: hit.sourceCard?.name, amount: hit.amount, zone: card.zone, id: hit.id });
+      const frame = await activePage.evaluate(id => window.__battleDamage.find(candidate => candidate.ids.includes(id)), hit.id);
+      assert.ok(frame.endedAt > frame.startedAt, 'Damage presentation must expire and unlock the next action.');
+      report.expiry = true;
+    }
     for (const card of board(view)) {
       const prior = old.get(card.uuid);
       if (!prior) continue;
-      const amount = (card.damage || 0) - (prior.damage || 0);
-      if (amount > 0) {
-        const hit = await effect(activePage, 'damage', card, amount);
-        const previous = hits.get(card.uuid);
-        if (previous && !report.repeatedHit) {
-          assert.notEqual(hit.id, previous.id, 'A second hit must mount a fresh keyed effect.');
-          report.repeatedHit = { name: card.name, firstId: previous.id, nextId: hit.id, firstAmount: previous.amount, nextAmount: amount };
-        }
-        if (previous && card.zone !== 'base' && !report.repeatedUnitHit) {
-          await showArena(activePage, card);
-          await activePage.waitForFunction(id => window.__battleAnimations.some(event => event.fxId === id && event.name === 'swu-token-rise'), hit.id, { timeout: 1000 });
-          assert.notEqual(hit.id, previous.id);
-          report.repeatedUnitHit = { name: card.name, firstId: previous.id, nextId: hit.id, amount, animation: 'swu-token-rise' };
-        }
-        hits.set(card.uuid, { id: hit.id, amount });
-        report.damage.push({ name: card.name, amount, zone: card.zone, id: hit.id });
-        if (!damageCheckpoint && card.zone !== 'base') {
-          damageCheckpoint = { id: before.id, token: before.sessionToken, action: decision.action, cardId: card.uuid, amount };
-          await showArena(activePage, card);
-          await captureFrame(activePage, hit.locator, 'damage-portrait-frame');
-          expireAfterFrame = hit.id;
-        }
-      }
       const lostShield = (prior.upgrades || []).find(upgrade => shield(upgrade) && !(card.upgrades || []).some(next => next.uuid === upgrade.uuid));
       if (lostShield && !report.shieldBreak) {
         const broken = await effect(activePage, 'shieldBreak', card);
@@ -267,10 +307,6 @@ try {
         report.shieldBreak = { name: card.name, id: broken.id, shieldId: lostShield.uuid };
         await captureFrame(activePage, broken.locator, 'shield-break-portrait-frame');
       }
-    }
-    if (expireAfterFrame) {
-      await activePage.waitForFunction(id => !document.querySelector(`[data-fx-id="${id}"]`), expireAfterFrame, { timeout: 3500 });
-      report.expiry = true;
     }
     if (!report.exhaustion) {
       const exhausted = units(view).find(card => card.exhausted);
@@ -301,17 +337,30 @@ try {
     await resume(page, checkpoint);
     const before = view;
     const action = { ...checkpoint.action, promptId: view.prompt.id, version: view.version };
-    await act(page, action);
-    const card = board(view).find(card => card.uuid === checkpoint.cardId);
-    assert.ok(card, 'The repeated real engine action must reach the same visible card.');
-    const feedback = await effect(page, kind, card, checkpoint.amount);
-    await showArena(page, card);
-    const animationState = await feedback.locator.evaluate(element => {
+    let animationState;
+    const inspectReducedMotion = async locator => locator.evaluate(element => {
       const root = element.closest('.game-card,.base-panel,.leader-mini') || element;
       return { media: matchMedia('(prefers-reduced-motion: reduce)').matches,
         moving: root.getAnimations({ subtree: true }).filter(animation => animation.playState === 'running' && Number(animation.effect?.getTiming().duration) > 1 && animation.effect?.getKeyframes().some(frame => ['transform', 'translate', 'rotate', 'scale', 'left', 'top'].some(key => frame[key] != null && !['none', '0px', '0deg', '1'].includes(String(frame[key]))))).map(animation => animation.animationName || 'transition'),
         readable: element.textContent.trim(), display: getComputedStyle(element).display, visibility: getComputedStyle(element).visibility };
     });
+    await act(page, action, kind === 'damage' ? async (event, locator) => {
+      if (event.id !== checkpoint.eventId) return;
+      assert.equal(event.amount, checkpoint.amount);
+      animationState = await inspectReducedMotion(locator);
+      await checkViewport(page, 'reduced motion damage');
+      await page.screenshot({ path: `${output}/reduced-damage.png` });
+    } : undefined);
+    if (kind === 'enter') {
+      const card = board(view).find(card => card.uuid === checkpoint.cardId);
+      assert.ok(card, 'The repeated real engine action must reach the same visible card.');
+      const feedback = await effect(page, kind, card);
+      await showArena(page, card);
+      animationState = await inspectReducedMotion(feedback.locator);
+      await checkViewport(page, 'reduced motion enter');
+      await page.screenshot({ path: `${output}/reduced-enter.png` });
+    }
+    assert.ok(animationState, `The actual ${kind} presentation must be observed.`);
     assert.ok(animationState.media);
     assert.deepEqual(animationState.moving, [], `Reduced motion must disable moving effects: ${JSON.stringify(animationState)}`);
     assert.notEqual(animationState.display, 'none');
@@ -319,8 +368,6 @@ try {
     if (kind === 'damage') assert.match(animationState.readable, new RegExp(String(checkpoint.amount)));
     assert.ok(view.version > before.version);
     report.reducedMotion[kind] = animationState;
-    await checkViewport(page, `reduced motion ${kind}`);
-    await page.screenshot({ path: `${output}/reduced-${kind}.png` });
   }
   assert.deepEqual(report.pageErrors, []);
   report.passed = true;

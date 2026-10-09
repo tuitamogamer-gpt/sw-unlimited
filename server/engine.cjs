@@ -5,6 +5,7 @@
 const path = require('node:path');
 const fs = require('node:fs');
 const { randomUUID, createHash } = require('node:crypto');
+const { publicPresentationCard } = require('./public-presentation.cjs');
 const ROOT = path.resolve(__dirname, '../vendor/forceteki');
 const CARD_IMAGES = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/card-images.json'), 'utf8'));
 const CARD_BACK_IMAGES = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/card-back-images.json'), 'utf8'));
@@ -286,7 +287,11 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
     // or control changes). Keep printed snapshots so later moves into hidden
     // zones cannot add private state to an earlier, already public reveal.
     const publicPlayEvents = [];
+    const publicDamageEvents = [];
     let publicPlaySequence = 0;
+    let publicDamageSequence = 0;
+    let presentationOrder = 0;
+    const publicAttackIds = new Map();
     function recordPublicPlay(kind, event) {
         const playerId = event.player?.id || event.context?.player?.id;
         if (!event.isResolved || !event.card?.cardData || !['human', 'bot'].includes(playerId)) return;
@@ -295,7 +300,7 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
         const deployed = kind === 'deploy';
         const sequence = ++publicPlaySequence;
         publicPlayEvents.push({
-            id: `${id}:public-play:${sequence}`, sequence, playerId, kind,
+            id: `${id}:public-play:${sequence}`, sequence, order: ++presentationOrder, playerId, kind,
             card: JSON.parse(JSON.stringify({
                 ...printed, uuid: event.card.uuid, hidden: false, zone: event.card.zoneName,
                 frontImage: printed.image, frontText: data.text || '', deployed,
@@ -307,6 +312,56 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
     }
     game.on('onCardPlayed', event => recordPublicPlay('play', event));
     game.on('onLeaderDeployed', event => recordPublicPlay('deploy', event));
+
+    function publicDamageCard(card) {
+        return publicPresentationCard(card, game.getPlayers(), catalogCard);
+    }
+
+    function publicDamageAttack(attack) {
+        if (!attack || !Number.isSafeInteger(attack.id)) return undefined;
+        const attacker = publicDamageCard(attack.attacker);
+        const nativeDefenders = attack.getAllTargets();
+        const defenders = nativeDefenders.map(publicDamageCard);
+        // Unknown combatants cannot be reconstructed from hidden card state.
+        if (!attacker || defenders.some(card => !card)) return undefined;
+        if (!publicAttackIds.has(attack.id)) publicAttackIds.set(attack.id, `${id}:public-attack:${publicAttackIds.size + 1}`);
+        return { id: publicAttackIds.get(attack.id), attacker,
+            ...(defenders.length === 1 ? { defender: defenders[0] } : {}), defenders };
+    }
+
+    function recordPublicDamage(event) {
+        if (!event.isResolved || !Number.isFinite(event.damageDealt) || event.damageDealt <= 0) return;
+        const targetCard = publicDamageCard(event.card);
+        if (!targetCard) return;
+        const source = event.damageSource;
+        const combat = source?.type === 'attack';
+        const nativeSources = combat ? source.damageDealtBy || [] : source?.card ? [source.card] : [];
+        const visibleSources = nativeSources.map(publicDamageCard);
+        const allSourcesPublic = visibleSources.every(card => !!card);
+        const sourceCard = nativeSources.length === 1 && allSourcesPublic ? visibleSources[0] : undefined;
+        // The native attack context's player is the attacker for both directions.
+        // Retaliation belongs to its actual defender(s), not to that player.
+        const playerId = combat
+            ? nativeSources[0]?.controller?.id || source?.player?.id
+            : source?.controller?.id || source?.player?.id || event.context?.player?.id;
+        if (!['human', 'bot'].includes(playerId)) return;
+        const attack = source?.attack || event.context?.event?.attack || game.currentAttack;
+        const sequence = ++publicDamageSequence;
+        publicDamageEvents.push(JSON.parse(JSON.stringify({
+            id: `${id}:public-damage:${sequence}`, sequence, order: ++presentationOrder,
+            playerId, kind: 'damage',
+            damageType: ['combat', 'ability', 'overwhelm', 'excess'].includes(event.type) ? event.type : 'other',
+            amount: event.damageDealt,
+            ...(event.isIndirect !== undefined ? { isIndirect: !!event.isIndirect } : {}),
+            sourceCard,
+            ...(nativeSources.length > 1 && allSourcesPublic ? { sourceCards: visibleSources } : {}),
+            targetCard, attack: publicDamageAttack(attack),
+        })));
+        if (publicDamageEvents.length > 200) publicDamageEvents.shift();
+    }
+    // The native engine emits this after damage and mitigation resolve, before
+    // defeated cards leave play. Zero damage / Shield prevention is not a hit.
+    game.on('onDamageDealt', recordPublicDamage);
 
     function promptSourceCard(source, viewer) {
         if (!source?.uuid) return undefined;
@@ -501,7 +556,7 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
             initiativePlayerId: game.initiativePlayer?.id || null, initiativeClaimed: game.isInitiativeClaimed,
             winnerIds: game.getPlayers().filter((player) => game.winnerNames.includes(player.name)).map((player) => player.id),
             ended: game.isEnded, viewerId: playerId, players, prompt, legalActions,
-            publicPlayEvents,
+            publicPlayEvents, publicDamageEvents,
             log: game.gameChat.messages.map((entry, index) => ({ id: index, at: entry.date, text: plainMessage(entry.message) })),
         })), publicCardIds, true);
     }

@@ -262,3 +262,14 @@ test('each newly attached card is tracked separately from a host entering play',
   assert.equal(attached.playerId, 'human');
   assert.deepEqual([...summarizeBattleEvents(events).added], ['weapon']);
 });
+
+test('native damage presentation does not repeat an aggregate hit after its individual exchanges', () => {
+  const before = game(1, { publicDamageEvents: [] });
+  before.players.human.ground = [card('guard')];
+  const after = game(2, { publicDamageEvents: [{ id: 'actual-hit-1' }, { id: 'actual-hit-2' }] });
+  after.players.human.ground = [card('guard', { damage: 5 })];
+  after.players.bot.base.damage = 3;
+  assert.deepEqual(diff(before, after), [], 'A resolved native timeline already explained these hits.');
+  after.players.bot.ground = [card('new-unit', { damage: 2 })];
+  assert.deepEqual(kinds(diff(before, after)), ['enter'], 'Entry feedback survives without replaying damage.');
+});

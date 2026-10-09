@@ -67,20 +67,20 @@ inspection, and mobile modal bounds.
 Exhausted units keep upright grayscale artwork and a 12 px red token in a
 reserved footer below the card face. Only the art is desaturated; action labels,
 stats, and damage counters retain their colors. New units settle into the arena;
-damage uses a brief impact pulse and rising red number, healing uses green, and
+damage has a separate source-to-target presentation, healing uses green, and
 lost shields use blue. Defeated units leave a short note in the arena divider.
 The [physical reference notes](battle-visual-reference.md) document the sources
 behind the compact token treatment.
 
-Feedback derives from successive public board snapshots and the viewer's own
-hand. Damage uses changes to damage counters, so changing maximum HP does not
-produce a false hit. Each effect expires independently; repeated hits receive
-new animation identities. Resume and connection recovery suppress old effects.
-This is visual feedback for observed state changes, not a chronological replay
-of every intermediate rules event in a combined AI response.
+Entry, healing, shield loss, and defeat feedback derive from successive public
+board snapshots and the viewer's own hand. Damage instead uses native resolved
+damage events, including the real source, target, and post-prevention amount.
+Changing maximum HP does not produce a false hit. Each effect expires
+independently; repeated hits receive new animation identities. Resume and
+connection recovery suppress old effects.
 
 Run `npm run test:motion-ui` after the build for real HTTP gameplay through card
-entry, repeated unit damage, base damage, and shield loss. The check verifies
+entry, repeated native damage, base damage, and shield loss. The check verifies
 that the exhausted token stays below the artwork, effects expire, and reduced
 motion keeps readable damage numbers without moving animations. It also checks
 375 × 667 and 844 × 390 bounds. Reports and frames go to
@@ -126,3 +126,25 @@ activation, exhausted target labels, desktop previews and dismissal, touch
 suppression, and portrait/landscape bounds. Reports and screenshots go to
 `/tmp/swu-ambush-hover`. Engine regressions also cover Sentinel restrictions,
 skipping, no eligible enemy, bot handling, and the HTTP prompt metadata.
+
+Damage now has an ordered, 1.6-second presentation with source and target
+artwork, directional bolts, impact flashes, and exact damage numbers. Both
+combat directions share one exchange; the defender's return damage is labeled
+explicitly. Ability, Overwhelm, and excess damage remain separate. Exchanges
+with more than four hits use consecutive panels so no damage event is omitted.
+Native plays and damage share an ordering counter, preserving the three-second
+opponent spotlight in its proper place among damage effects.
+
+The bounded public damage feed records actual damage after prevention. A
+Shield-blocked hit does not show a false damage number. Public snapshots retain
+cards that are subsequently defeated, including deployed leader artwork;
+hidden sources remain anonymous. IDs and order survive checkpoint replay.
+Input stays blocked during the queue, and refreshing skips past effects. The
+board still uses public snapshots rather than reconstructing every intermediate
+HP or zone change; the overlay explains each actual damage event. Aggregate
+board damage is suppressed after the timeline to avoid showing the same hit twice.
+
+`npm run test:damage-ui` verifies source attribution for ready and exhausted
+2-power defenders while Vader is present, the 1.6-second timing, mobile bounds,
+reduced motion, input locking, and refresh behavior. Reports and screenshots go
+to `/tmp/swu-damage-presentation`.

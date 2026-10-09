@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { GameView, PublicPlayEvent } from './types';
-import { newOpponentPlays, OPPONENT_PREVIEW_MS, withUnrevealedPlaysHidden } from './opponent-presentation';
+import type { GameView, PublicPlayEvent, PublicDamageEvent } from './types';
+import { newOpponentPlays, newBattlePresentations, DAMAGE_PRESENTATION_MS, OPPONENT_PREVIEW_MS, withUnrevealedPlaysHidden } from './opponent-presentation';
 
 export function useOpponentPresentation() {
   const [preview, setPreview] = useState<PublicPlayEvent | null>(null);
+  const [damagePreview, setDamagePreview] = useState<PublicDamageEvent[] | null>(null);
   const current = useRef<{ id: string; timer?: ReturnType<typeof setTimeout>; resolve: (shown: boolean) => void } | null>(null);
   const mounted = useRef(true);
   useEffect(() => {
@@ -28,20 +29,39 @@ export function useOpponentPresentation() {
   }, []);
   const present = async (before: GameView, after: GameView, restored: boolean, showFrame: (view: GameView, revealed: PublicPlayEvent) => void) => {
     const plays = newOpponentPlays(before, after, restored);
+    const steps = newBattlePresentations(before, after, restored);
     const revealedIds = new Set<string>();
-    for (let index = 0; index < plays.length; index++) {
+    let revealedPlays = 0;
+    for (const step of steps) {
       if (!mounted.current) return false;
       const shown = await new Promise<boolean>(resolve => {
-        current.current = { id: plays[index].id, resolve };
-        setPreview(plays[index]);
+        if (step.kind === 'play') {
+          current.current = { id: step.event.id, resolve };
+          setDamagePreview(null);
+          setPreview(step.event);
+        } else {
+          const item = { id: step.events[0].id, resolve, timer: undefined as ReturnType<typeof setTimeout> | undefined };
+          current.current = item;
+          setPreview(null);
+          setDamagePreview(step.events);
+          item.timer = setTimeout(() => {
+            if (current.current !== item) return;
+            current.current = null;
+            resolve(true);
+          }, DAMAGE_PRESENTATION_MS);
+        }
       });
       if (!shown || !mounted.current) return false;
-      revealedIds.add(plays[index].card.uuid);
-      showFrame(withUnrevealedPlaysHidden(after, plays.slice(index + 1), revealedIds, before), plays[index]);
+      if (step.kind === 'play') {
+        revealedIds.add(step.event.card.uuid);
+        revealedPlays++;
+        showFrame(withUnrevealedPlaysHidden(after, plays.slice(revealedPlays), revealedIds, before), step.event);
+      }
     }
     if (!mounted.current) return false;
     setPreview(null);
+    setDamagePreview(null);
     return true;
   };
-  return { preview, present, onPreviewReady };
+  return { preview, damagePreview, present, onPreviewReady };
 }

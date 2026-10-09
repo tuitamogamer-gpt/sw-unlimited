@@ -74,6 +74,11 @@ counters follow the [physical tabletop references](docs/battle-visual-reference.
 Reduced-motion preferences keep the numbers without movement. Crowded rows
 show when more cards are available by scrolling.
 
+Damage resolves visually in 1.6-second exchanges with the source and target
+cards, directional bolts, and exact damage numbers. Combat shows both directions
+together and identifies the defender's return damage. Card abilities appear as
+separate **Ability damage** effects, so they cannot be confused with combat.
+
 Each opponent play first appears as a large, full-color card for three seconds,
 then its card appears on the table. Consecutive plays are shown in order, with
 actions paused until the sequence finishes. On phones, the destination arena
@@ -141,6 +146,7 @@ npm run test:custom-ui
 npm run test:motion-ui
 npm run test:preview-ui
 npm run test:ambush-hover-ui
+npm run test:damage-ui
 node scripts/sync-card-catalog.cjs --check
 ```
 
