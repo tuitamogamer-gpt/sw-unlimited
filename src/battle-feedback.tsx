@@ -8,12 +8,15 @@ const empty: BattleFeedback = summarizeBattleEvents([]);
 export const BattleFeedbackContext = createContext<BattleFeedback>(empty);
 
 /** Feedback compares only the already redacted, visible boards. */
-export function useBattleFeedback(game: GameView, { resetKey }: { resetKey?: unknown } = {}): BattleFeedback {
+export function useBattleFeedback(game: GameView, { resetKey, presentationRevision }: { resetKey?: unknown; presentationRevision?: number } = {}): BattleFeedback {
   const previous = useRef<{ snapshot: BattleSnapshot; resetKey: unknown } | null>(null);
   const [feedback, setFeedback] = useState<BattleFeedback>(empty);
   useEffect(() => {
     const prior = previous.current;
     const after = captureBattleSnapshot(game);
+    // A response may reveal several opponent plays one at a time. Keep visual
+    // frames independent of the authoritative version used to submit actions.
+    if (presentationRevision !== undefined) after.version = presentationRevision;
     previous.current = { snapshot: after, resetKey };
     if (!prior || prior.resetKey !== resetKey || prior.snapshot.id !== after.id
       || prior.snapshot.viewerId !== after.viewerId || prior.snapshot.version > after.version) {
@@ -24,7 +27,7 @@ export function useBattleFeedback(game: GameView, { resetKey }: { resetKey?: unk
     const events = diffBattleSnapshots(prior.snapshot, after, now);
     const message = latestBattleMessage(prior.snapshot, after);
     setFeedback(current => summarizeBattleEvents(mergeBattleEvents(current.events, events, now), message || current.message));
-  }, [game.id, game.version, game.viewerId, resetKey]);
+  }, [game.id, game.version, game.viewerId, resetKey, presentationRevision]);
   // One timer for the earliest individual expiry. A later response reschedules
   // the remaining duration; it never extends or clears unrelated events.
   useEffect(() => {

@@ -50,7 +50,7 @@ an action response after the HTTP server accepts it, verifies read-only
 recovery, and checks that exactly one mutation was sent. Reports and
 screenshots go to `/tmp/swu-ui-regression`, or `SWU_SCREENSHOTS` if set.
 
-`npm test` covers 143 engine, bot, metadata, privacy, legality, checkpoint, and
+`npm test` covers engine, bot, metadata, privacy, legality, checkpoint, and
 browser-client cases, including four focused human-flow regressions. The
 Droid Deployment regression checks that its name does not cause its Play
 action to be misclassified as leader deployment. `scripts/browser-smoke.mjs`
@@ -85,3 +85,25 @@ that the exhausted token stays below the artwork, effects expire, and reduced
 motion keeps readable damage numbers without moving animations. It also checks
 375 × 667 and 844 × 390 bounds. Reports and frames go to
 `/tmp/swu-battle-motion`, or `SWU_MOTION_REPORT` if set.
+
+Opponent plays and leader deployments now have a full-color spotlight before
+placement. The engine emits an ordered, bounded public play history with
+immutable printed card snapshots. Native resolved play events distinguish
+actual plays from resources, discards, tokens, and control changes; events and
+cards that already left play still have the correct public artwork.
+
+Each spotlight stays for three seconds after its artwork or readable fallback
+is ready. Image loading is bounded to 1.5 seconds. Multiple plays queue in order,
+including replaying the same physical card. The underlying interface is inert
+and action submission remains locked until the queue finishes. Each card is
+revealed after its own preview; arena cards then receive normal entry feedback,
+and mobile tabs follow their destination. The projection masks unshown cards
+from the final server view; it is not a replay of intermediate rules states.
+
+The authoritative checkpoint is saved before presentation starts. Refresh or
+recovery shows the latest saved board without replaying old previews. Reduced
+motion keeps the same reading duration without travel/countdown animation.
+`npm run test:preview-ui` exercises real HTTP engine actions, measures single and
+queued three-second previews, verifies blocked controls and image fallback,
+and checks refresh during presentation and both mobile orientations. Reports
+and screenshots go to `/tmp/swu-opponent-preview`.

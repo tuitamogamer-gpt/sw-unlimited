@@ -42,12 +42,16 @@ export interface Prompt {
 }
 export interface LogEntry { id?: string | number; message?: string; text?: string; round?: number; type?: string; player?: string }
 export interface BotThinking { action?: string; reason?: string; score?: number; alternatives?: { label?: string; score?: number }[] }
+export interface PublicPlayEvent {
+  id: string; sequence: number; playerId: string; kind: 'play' | 'deploy'; card: Card;
+}
 export interface GameView {
   id: string; sessionToken?: string; version: number; phase: string; round: number; initiativePlayerId?: string; initiativeClaimed?: boolean;
   winnerIds: string[]; viewerId: string; players: { human: Player; bot: Player }; prompt: Prompt;
   legalActions: GameAction[]; log: (LogEntry | string)[]; botReason?: string; botThinking?: BotThinking;
   ai?: { reason?: string; lastDecision?: BotThinking; decisions?: BotThinking[] }; difficulty?: string;
   botHistory?: BotThinking[]; warnings?: string[];
+  publicPlayEvents?: PublicPlayEvent[];
 }
 
 export interface CustomDeckRecipe {

@@ -281,6 +281,33 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
         return result;
     }
 
+    // Presentation history must come from successful public plays, not changes
+    // to a hidden hand or arena (which can also be resources, captures, tokens,
+    // or control changes). Keep printed snapshots so later moves into hidden
+    // zones cannot add private state to an earlier, already public reveal.
+    const publicPlayEvents = [];
+    let publicPlaySequence = 0;
+    function recordPublicPlay(kind, event) {
+        const playerId = event.player?.id || event.context?.player?.id;
+        if (!event.isResolved || !event.card?.cardData || !['human', 'bot'].includes(playerId)) return;
+        const data = event.card.cardData;
+        const printed = catalogCard(data);
+        const deployed = kind === 'deploy';
+        const sequence = ++publicPlaySequence;
+        publicPlayEvents.push({
+            id: `${id}:public-play:${sequence}`, sequence, playerId, kind,
+            card: JSON.parse(JSON.stringify({
+                ...printed, uuid: event.card.uuid, hidden: false, zone: event.card.zoneName,
+                frontImage: printed.image, frontText: data.text || '', deployed,
+                image: deployed && printed.backImage ? printed.backImage : printed.image,
+                text: deployed ? data.deployBox || data.text || '' : data.text || '',
+            })),
+        });
+        if (publicPlayEvents.length > 200) publicPlayEvents.shift();
+    }
+    game.on('onCardPlayed', event => recordPublicPlay('play', event));
+    game.on('onLeaderDeployed', event => recordPublicPlay('deploy', event));
+
     function legalActionsFor(viewer, state) {
         const openPrompt = game.getCurrentOpenPrompt();
         if (game.isEnded || !state.promptUuid || !openPrompt?.activeCondition(viewer)) return [];
@@ -438,6 +465,7 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
             initiativePlayerId: game.initiativePlayer?.id || null, initiativeClaimed: game.isInitiativeClaimed,
             winnerIds: game.getPlayers().filter((player) => game.winnerNames.includes(player.name)).map((player) => player.id),
             ended: game.isEnded, viewerId: playerId, players, prompt, legalActions,
+            publicPlayEvents,
             log: game.gameChat.messages.map((entry, index) => ({ id: index, at: entry.date, text: plainMessage(entry.message) })),
         })), publicCardIds, true);
     }

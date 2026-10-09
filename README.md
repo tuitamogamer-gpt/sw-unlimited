@@ -66,6 +66,11 @@ counters follow the [physical tabletop references](docs/battle-visual-reference.
 Reduced-motion preferences keep the numbers without movement. Crowded rows
 show when more cards are available by scrolling.
 
+Each opponent play first appears as a large, full-color card for three seconds,
+then its card appears on the table. Consecutive plays are shown in order, with
+actions paused until the sequence finishes. On phones, the destination arena
+opens automatically. Events, upgrades, and leader deployment also get a preview.
+
 Inspect a card to read its rules, zoom its artwork, view attachments, and use
 its currently legal action. Deck details include a searchable card list,
 type filters, and a cost curve. Starting another game asks before replacing an
@@ -126,6 +131,7 @@ npm run build
 npm run test:ui
 npm run test:custom-ui
 npm run test:motion-ui
+npm run test:preview-ui
 node scripts/sync-card-catalog.cjs --check
 ```
 
@@ -139,6 +145,8 @@ restoration after a lost action response.
 The motion check follows real engine actions through entry, repeated damage,
 and shield loss. It verifies exhaustion tokens, image-only grayscale, effect
 expiry, reduced motion, and portrait/landscape bounds.
+The opponent preview check measures the three-second hold, queued plays,
+blocked actions, image fallback, arena placement, and refresh during a preview.
 
 Tests exercise real games, manual human play from setup through regroup,
 information privacy, illegal action rejection, and restoration of encrypted

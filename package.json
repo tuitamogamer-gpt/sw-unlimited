@@ -15,6 +15,7 @@
     "test:ui": "node scripts/ui-regression.mjs",
     "test:custom-ui": "node scripts/custom-decks-ui.mjs",
     "test:motion-ui": "node scripts/battle-motion-ui.mjs",
+    "test:preview-ui": "node scripts/opponent-preview-ui.mjs",
     "test:smoke": "node scripts/smoke.cjs",
     "cards:check": "node scripts/report-coverage.cjs",
     "cards:catalog-check": "node scripts/sync-card-catalog.cjs --check",
