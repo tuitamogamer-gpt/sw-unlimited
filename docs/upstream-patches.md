@@ -25,3 +25,19 @@ Regression coverage:
 Verification: the complete upstream `Advantage.spec.ts` and `TriggeredAbilityWindow.spec.ts` suites pass together: **18 specs, 0 failures**, including the new regression. Reproduce with `npm run jasmine -- build/test/server/cards/08_ASH/tokens/Advantage.spec.js build/test/server/core/gameSteps/abilityWindow/TriggeredAbilityWindow.spec.js` from the built vendor directory.
 
 The source change is preserved in the vendored tree and in `docs/patches/forceteki-grouped-trigger-completion.patch`. A normal engine build applies it because the patched source is compiled directly.
+
+## Deselect one menu choice without clearing later selections
+
+File: `vendor/forceteki/server/game/core/gameSteps/prompts/HandlerMenuMultipleSelectionPrompt.js`.
+
+The original multi-selection handler used `splice(index)` when toggling an already selected option. That removes the chosen option and every option selected after it. For Yoda, Old Master's When Defeated ability, selecting **You**, selecting **Opponent**, then deselecting **You** consequently made neither player draw after **Done**. Only the opponent should draw.
+
+The handler now uses `splice(index, 1)`. Other selections and their order remain intact. Native prompt buttons continue to expose `selected: true` or `false` for the current choices; a new prompt starts with no selections.
+
+Regression: `test/server/cards/01_SOR/units/YodaOldMaster.spec.ts`, `preserves the opponent selection when the first selected player is deselected`. It defeats Yoda in real combat, performs the three menu choices, and checks that only the opponent draws and priority returns normally. The remaining Yoda cases exercise selecting either player, both players, neither player, and changing control before defeat.
+
+This correction changes the result of replaying old actions that used the defective deselection sequence. The app records a rules revision for each saved action: missing or `0` identifies the historical behavior, and `1` identifies the corrected behavior. During trusted replay, the adapter preserves the historical result for old actions after validating their legality; new actions use the corrected native handler. A resumed game can therefore contain both revisions without changing its earlier outcome. The native engine itself always uses the corrected handler.
+
+Verification: the new regression fails against the original handler (the five existing Yoda specs pass), then the complete Yoda suite passes with the fix: **6 specs, 0 failures**. Reproduce with `npm run jasmine -- build/test/server/cards/01_SOR/units/YodaOldMaster.spec.js` from a freshly built vendor test directory.
+
+The native source and regression are preserved in [forceteki-multiselect-deselection.patch](patches/forceteki-multiselect-deselection.patch). A normal engine build compiles the patched source directly.

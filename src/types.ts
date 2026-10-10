@@ -6,7 +6,7 @@ export interface Card {
   playOptions?: { title: string; cost: number; legal: boolean; reasonCode: string | null; reason: string | null }[];
   exhausted?: boolean; zone?: string; controllerId?: string; ownerId?: string;
   aspects?: string[]; keywords?: (string | { name: string; value?: number; cost?: number })[]; traits?: string[]; text?: string; type?: string; upgrades?: Card[];
-  captured?: Card[]; selectable?: boolean; selected?: boolean; hidden?: boolean;
+  captured?: Card[]; selectable?: boolean; selected?: boolean; selectionOrder?: number | null; hidden?: boolean;
   unimplemented?: boolean; frontImage?: string; backImage?: string; deployed?: boolean; frontText?: string; deployText?: string; epicAction?: string;
 }
 export interface Deck {
@@ -30,7 +30,7 @@ export interface GameAction {
   abilities?: { title: string; type: string; cost?: number | null }[]; disabled?: boolean;
   result?: { type: string; valueDistribution: { uuid: string; amount: number }[] };
 }
-export interface PromptButton { text: string; arg: string; command?: string; disabled?: boolean; label?: string; sourceCard?: Card; hasLegalEffects?: boolean }
+export interface PromptButton { text: string; arg: string; command?: string; disabled?: boolean; selected?: boolean; label?: string; sourceCard?: Card; hasLegalEffects?: boolean }
 export interface Prompt {
   id: string; title: string; subtitle?: string; type?: string; selectMode?: string; selectOrder?: boolean;
   stage?: 'resource' | 'action' | 'mulligan' | 'initiative' | 'target' | 'choice' | 'waiting' | 'finished';

@@ -18,6 +18,7 @@
     "test:preview-ui": "node scripts/opponent-preview-ui.mjs",
     "test:ambush-hover-ui": "node scripts/ambush-hover-ui.mjs",
     "test:damage-ui": "node scripts/damage-presentation-ui.mjs",
+    "test:menu-ui": "node scripts/menu-selections-ui.mjs",
     "test:smoke": "node scripts/smoke.cjs",
     "cards:check": "node scripts/report-coverage.cjs",
     "cards:catalog-check": "node scripts/sync-card-catalog.cjs --check",

@@ -24,3 +24,4 @@ jobs:
       - run: npm run test:preview-ui
       - run: npm run test:ambush-hover-ui
       - run: npm run test:damage-ui
+      - run: npm run test:menu-ui

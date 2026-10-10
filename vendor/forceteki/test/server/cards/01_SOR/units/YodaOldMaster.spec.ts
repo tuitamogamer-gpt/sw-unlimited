@@ -17,6 +17,25 @@ describe('Yoda, Old Master', function() {
                 });
             });
 
+            it('preserves the opponent selection when the first selected player is deselected', function () {
+                const { context } = contextRef;
+
+                context.player1.clickCard(context.yoda);
+                context.player1.clickCard(context.rogueSquadronSkirmisher);
+                expect(context.yoda).toBeInZone('discard');
+                expect(context.player1).toHaveEnabledPromptButtons(['You', 'Opponent', 'Done']);
+
+                context.player1.clickPrompt('You');
+                context.player1.clickPrompt('Opponent');
+                context.player1.clickPrompt('You');
+                context.player1.clickDone();
+
+                expect(context.player1.hand.length).toBe(1);
+                expect(context.player2.hand.length).toBe(1);
+                expect(context.player2).toBeActivePlayer();
+                expect(context.getChatLogs(3)).toContain('player1 uses Yoda to make player2 draw a card');
+            });
+
             it('should draw a card for each selected player', function () {
                 const { context } = contextRef;
 

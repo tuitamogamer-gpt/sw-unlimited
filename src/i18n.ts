@@ -895,6 +895,7 @@ const inspectorCopy: Array<[string, string, ...string[]]> = [
   ['Scroll or drag to explore the artwork.', 'Pomeraj sliku da pregledaš detalje.'], ['Tap artwork to zoom', 'Dodirni sliku da je uvećaš'],
   ['In play: {side}', 'U igri: {side}'], ['Aspects', 'Aspekti'],
   ['Deploy threshold', 'Prag za raspoređivanje'], ['Printed: {cost}', 'Odštampano: {cost}'],
+  ['Selection {number}', 'Izbor {number}'],
   ['Power', 'Snaga'], ['Health', 'Život'], ['{count} damage', '{count} štete'],
   ['Combat damage', 'Borbena šteta'], ['Ability damage', 'Šteta od sposobnosti'],
   ['Excess damage', 'Višak štete'], ['Damage', 'Šteta'], ['Game effect', 'Efekat igre'],

@@ -12,6 +12,7 @@ const { compactRecipe, isStoredCustomRecipe } = require('./custom-decks.cjs');
 
 const FORMAT = 1;
 const ENGINE_VERSION = '1f0e9783c4743acdc67df0c4ab3f3610a349c32a';
+const RULES_REVISION = 1;
 const SESSION_TTL = 6 * 60 * 60 * 1000;
 const MAX_ACTIONS = 4000;
 const MAX_TOKEN_BYTES = 700 * 1024;
@@ -59,6 +60,7 @@ function validateRecord(record, expectedId) {
     for (const item of record.actions) {
         const action = item?.action;
         if (!['human', 'bot'].includes(item?.playerId) || !action || typeof action !== 'object' || Array.isArray(action)
+            || item.rulesRevision !== undefined && item.rulesRevision !== 0 && item.rulesRevision !== RULES_REVISION
             || !['card', 'button', 'perCard', 'stateful'].includes(action.type)
             || action.cardId !== undefined && (typeof action.cardId !== 'string' || !/^swucard_[a-f0-9]{24}$/.test(action.cardId))
             || action.arg !== undefined && (typeof action.arg !== 'string' || action.arg.length > 1000)) {
@@ -94,7 +96,9 @@ function applyAction(record, game, action, playerId = 'human') {
     if (action.arg !== undefined) saved.arg = String(action.arg);
     if (action.result !== undefined) saved.result = structuredClone(action.result);
     const view = game.submit(action, playerId);
-    record.actions.push({ playerId, action: saved });
+    // Revision belongs to each saved action, not the record: a resumed game
+    // retains its historical prefix while all new decisions use current rules.
+    record.actions.push({ playerId, action: saved, rulesRevision: RULES_REVISION });
     return view;
 }
 
@@ -138,9 +142,9 @@ async function restoreRecord(token, { decks, id } = {}) {
     if (!playerDeck || !botDeck) throw sessionError('Špil spremljene partije više nije dostupan.', 'SESSION_EXPIRED', 410);
     const game = await createGame({ id: record.id, playerDeck, botDeck, difficulty: record.difficulty, seed: record.seed });
     try {
-        for (const { playerId, action } of record.actions) {
+        for (const { playerId, action, rulesRevision = 0 } of record.actions) {
             const current = game.view(playerId);
-            game.submit({ ...action, promptId: current.prompt.id, version: current.version }, playerId);
+            game.submit({ ...action, promptId: current.prompt.id, version: current.version }, playerId, { rulesRevision });
         }
     } catch (error) {
         game.close();

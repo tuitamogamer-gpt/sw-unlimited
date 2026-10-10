@@ -18,7 +18,7 @@ class HandlerMenuMultipleSelectionPrompt extends HandlerMenuPrompt {
         const selectedOptions = [];
         properties.handlers = properties.choices.map((choice) => () => {
             if (selectedOptions.includes(choice)) {
-                selectedOptions.splice(selectedOptions.indexOf(choice));
+                selectedOptions.splice(selectedOptions.indexOf(choice), 1);
             } else {
                 selectedOptions.push(choice);
             }

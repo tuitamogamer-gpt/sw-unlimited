@@ -136,6 +136,9 @@ in [rules and sources](docs/rules-and-sources.md). See
 
 ## Validation
 
+See the [10 October 2026 interaction audit](docs/interaction-audit-2026-10-10.md)
+for verified behavior, fixes, and remaining upstream coverage gaps.
+
 ```sh
 npm test
 npm run test:smoke
@@ -147,6 +150,7 @@ npm run test:motion-ui
 npm run test:preview-ui
 npm run test:ambush-hover-ui
 npm run test:damage-ui
+npm run test:menu-ui
 node scripts/sync-card-catalog.cjs --check
 ```
 
@@ -162,6 +166,8 @@ and shield loss. It verifies exhaustion tokens, image-only grayscale, effect
 expiry, reduced motion, and portrait/landscape bounds.
 The opponent preview check measures the three-second hold, queued plays,
 blocked actions, image fallback, arena placement, and refresh during a preview.
+The menu check exercises Yoda's player-selection toggles and U-Wing's numbered
+selection order through real native actions and the mobile/desktop interface.
 
 Tests exercise real games, manual human play from setup through regroup,
 information privacy, illegal action rejection, and restoration of encrypted

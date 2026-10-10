@@ -26,6 +26,7 @@ async function runtime() {
         const { LocalFolderCardDataGetter } = require('../vendor/forceteki/build/server/utils/cardData/LocalFolderCardDataGetter.js');
         const { getUserWithDefaultsSet } = require('../vendor/forceteki/build/server/Settings.js');
         const { Card } = require('../vendor/forceteki/build/server/game/core/card/Card.js');
+        const HandlerMenuMultipleSelectionPrompt = require('../vendor/forceteki/build/server/game/core/gameSteps/prompts/HandlerMenuMultipleSelectionPrompt.js');
         const { cards, overrideNotImplementedCards } = require('../vendor/forceteki/build/server/game/cards/Index.js');
         const getter = await LocalFolderCardDataGetter.createAsync(path.join(ROOT, 'test/json'));
         // Card definitions are immutable input. Cache the JSON, returning a fresh
@@ -37,7 +38,7 @@ async function runtime() {
             }
             return structuredClone(cardDefinitions.get(relativePath));
         };
-        return { Game, Deck, getter, getUserWithDefaultsSet, Card, cards, overrideNotImplementedCards };
+        return { Game, Deck, getter, getUserWithDefaultsSet, Card, cards, overrideNotImplementedCards, HandlerMenuMultipleSelectionPrompt };
     })();
     return runtimePromise;
 }
@@ -164,7 +165,7 @@ async function normalizeDeckRecipe(deck, { allowUnsupported = false } = {}) {
 }
 
 async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficulty = 'tactical', allowUnsupported = false, id = randomUUID() }) {
-    const { Game, Deck, getter, getUserWithDefaultsSet } = await runtime();
+    const { Game, Deck, getter, getUserWithDefaultsSet, HandlerMenuMultipleSelectionPrompt } = await runtime();
     const scheduler = new SessionScheduler();
     let version = 0;
     let closed = false;
@@ -540,8 +541,8 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
             selectMode: state.selectCardMode, selectOrder: state.selectOrder,
             selectedCardIds: viewer.selectedCards.map((card) => card.uuid),
             selectableCardIds: state.distributeAmongTargets ? viewer.selectableCards.map((card) => card.uuid) : [...legalIds],
-            buttons: state.buttons.map(({ text, arg, command, disabled, method, label, sourceCard, hasLegalEffects }) => ({
-                text, arg: String(arg), command, disabled, method, label: abilityLabel(label),
+            buttons: state.buttons.map(({ text, arg, command, disabled, selected, method, label, sourceCard, hasLegalEffects }) => ({
+                text, arg: String(arg), command, disabled, selected, method, label: abilityLabel(label),
                 sourceCard: promptSourceCard(sourceCard, viewer), hasLegalEffects,
             })), displayCards,
             ability,
@@ -580,8 +581,11 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
         if (spec.maxTargets && count > spec.maxTargets) throw new ActionError('Too many targets selected.');
     }
 
-    function submit(action, playerId = 'human') {
+    // Only the authenticated replay reader supplies this third argument. Never
+    // read rulesRevision from an action received through the public API.
+    function submit(action, playerId = 'human', { rulesRevision = 1 } = {}) {
         const player = checkSession(playerId);
+        if (rulesRevision !== 0 && rulesRevision !== 1) throw new ActionError('Unsupported replay rules revision.');
         if (!action || typeof action !== 'object') throw new ActionError('An action is required.');
         if (game.isEnded) throw new ActionError('This game has ended.', 'GAME_ENDED');
         const state = player.promptState.getState();
@@ -601,6 +605,17 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
                 // HandlerMenuPrompt uses numeric indices; dropdown/number prompts use strings.
                 // Preserve the engine's typed value after comparing the public string token.
                 const native = state.buttons.find((button) => String(button.arg) === match.arg);
+                if (rulesRevision === 0 && Number.isInteger(native?.arg)) {
+                    const prompt = game.getCurrentOpenPrompt();
+                    if (prompt instanceof HandlerMenuMultipleSelectionPrompt) {
+                        const selected = prompt.getCurrentSelection();
+                        const index = selected.indexOf(prompt.properties.choices[native.arg]);
+                        // Historical deselection removed the selected suffix. Trim
+                        // its tail after legality checks, then let the corrected
+                        // native handler remove the clicked choice and continue.
+                        if (index >= 0) selected.splice(index + 1);
+                    }
+                }
                 game.menuButton(playerId, native ? native.arg : match.arg, action.promptId, match.method);
                 break;
             }

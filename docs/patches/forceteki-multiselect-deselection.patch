@@ -1,0 +1,50 @@
+diff --git a/server/game/core/gameSteps/prompts/HandlerMenuMultipleSelectionPrompt.js b/server/game/core/gameSteps/prompts/HandlerMenuMultipleSelectionPrompt.js
+index eec89c6..5d76ea0 100644
+--- a/server/game/core/gameSteps/prompts/HandlerMenuMultipleSelectionPrompt.js
++++ b/server/game/core/gameSteps/prompts/HandlerMenuMultipleSelectionPrompt.js
+@@ -18,7 +18,7 @@ class HandlerMenuMultipleSelectionPrompt extends HandlerMenuPrompt {
+         const selectedOptions = [];
+         properties.handlers = properties.choices.map((choice) => () => {
+             if (selectedOptions.includes(choice)) {
+-                selectedOptions.splice(selectedOptions.indexOf(choice));
++                selectedOptions.splice(selectedOptions.indexOf(choice), 1);
+             } else {
+                 selectedOptions.push(choice);
+             }
+diff --git a/test/server/cards/01_SOR/units/YodaOldMaster.spec.ts b/test/server/cards/01_SOR/units/YodaOldMaster.spec.ts
+index 826962b..c98b6e9 100644
+--- a/test/server/cards/01_SOR/units/YodaOldMaster.spec.ts
++++ b/test/server/cards/01_SOR/units/YodaOldMaster.spec.ts
+@@ -17,6 +17,25 @@ describe('Yoda, Old Master', function() {
+                 });
+             });
+ 
++            it('preserves the opponent selection when the first selected player is deselected', function () {
++                const { context } = contextRef;
++
++                context.player1.clickCard(context.yoda);
++                context.player1.clickCard(context.rogueSquadronSkirmisher);
++                expect(context.yoda).toBeInZone('discard');
++                expect(context.player1).toHaveEnabledPromptButtons(['You', 'Opponent', 'Done']);
++
++                context.player1.clickPrompt('You');
++                context.player1.clickPrompt('Opponent');
++                context.player1.clickPrompt('You');
++                context.player1.clickDone();
++
++                expect(context.player1.hand.length).toBe(1);
++                expect(context.player2.hand.length).toBe(1);
++                expect(context.player2).toBeActivePlayer();
++                expect(context.getChatLogs(3)).toContain('player1 uses Yoda to make player2 draw a card');
++            });
++
+             it('should draw a card for each selected player', function () {
+                 const { context } = contextRef;
+ 
+@@ -108,4 +127,4 @@ describe('Yoda, Old Master', function() {
+             context.player1.passAction();
+         });
+     });
+-});
+\ No newline at end of file
++});
