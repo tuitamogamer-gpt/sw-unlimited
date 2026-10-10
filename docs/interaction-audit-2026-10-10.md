@@ -59,6 +59,12 @@ historical behavior. See [adapter details](engine-adapter.md) and
   leader deployment, ten AI plays, and refresh/resume. This baseline run used
   the pre-patch production build; targeted selection checks used the patched
   build.
+- The patched production build also passed a fresh **19-choice** browser smoke
+  with four manual plays and three AI plays. R2-D2's attack into Superlaser
+  Technician resolved one outgoing damage and two return damage; the test
+  observed the damage presentation and blocked controls during it. Language
+  persistence, exact-version resume, and both mobile sizes passed with no
+  browser errors. The owned test game was then deleted successfully.
 - Deck and catalog checks passed: **18 supported preconstructed decks**, **2,600
   normal card printings**, **2,579 complete playable entries**, and **21
   incomplete entries blocked from play**. This audit did not expand the card

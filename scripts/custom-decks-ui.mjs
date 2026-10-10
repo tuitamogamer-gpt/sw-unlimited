@@ -32,7 +32,8 @@ const textFixture = [
   ...botFixture.deck.map(row => `${row.count} ${row.id}`), 'Sideboard',
 ].join('\n');
 const report = { passed: false, invalidCounts: [], jsonUpload: false, textImport: false, savedDecksPersist: false,
-  bothCustomSeats: false, playedUnit: null, checkpointIndependentOfCollection: false, catalog: {}, actions: 0, modalViewports: [], pageErrors: [] };
+  bothCustomSeats: false, playedUnit: null, checkpointIndependentOfCollection: false, dismissedPendingChoices: false,
+  catalog: {}, actions: 0, modalViewports: [], pageErrors: [] };
 await initialize();
 const server = app.listen(0, '127.0.0.1');
 await once(server, 'listening');
@@ -81,6 +82,39 @@ async function settledCatalog() { await page.locator('.catalog-grid[aria-busy="f
 async function closeInspector() {
   await page.keyboard.press('Escape');
   await page.waitForFunction(() => !document.querySelector('.ci-root'));
+}
+async function settledGame() {
+  // A response may precede the opponent-card/damage presentation and React's
+  // final prompt. Wait for the exact accepted checkpoint, not just any idle DOM.
+  await page.waitForFunction(({ id, token }) =>
+    localStorage.getItem(`swu-command-state:${id}`) === token
+      && document.querySelector('.prompt-panel')?.getAttribute('aria-busy') === 'false'
+      && !document.querySelector('[data-game-content]')?.hasAttribute('inert'),
+  { id: view.id, token: view.sessionToken });
+  if (view.prompt.number || view.prompt.dropdown?.length || view.prompt.displayCards?.length || view.prompt.distribution) {
+    await page.locator('.prompt-choice-body').waitFor();
+  }
+}
+async function returnToCommand() {
+  await settledGame();
+  const choices = page.locator('.prompt-choice-body');
+  // A unit can enter an arena before its When Played choice is resolved. That
+  // legitimate modal must be dismissed by its UI, not clicked through. Open the
+  // same chooser on simpler draws when available. An exhausted board with only
+  // Pass legal has no additional chooser to open or dismiss.
+  if (!await choices.count() && await page.locator('.prompt-more-button').count()) {
+    await page.locator('.prompt-more-button').click();
+    await choices.waitFor();
+  }
+  if (await choices.count()) {
+    await choices.getByRole('button', { name: 'Back to battlefield', exact: true }).click();
+    await choices.waitFor({ state: 'detached' });
+    report.dismissedPendingChoices = true;
+  }
+  await page.getByRole('button', { name: 'Back to command', exact: true }).click();
+  await page.locator('.lobby').waitFor();
+  assert.equal(await page.evaluate(id => localStorage.getItem(`swu-command-state:${id}`), view.id), view.sessionToken,
+    'Closing the choice dialog and leaving the battlefield must not resolve a pending engine action');
 }
 async function clickEngineButton(arg) {
   const prompt = view.prompt;
@@ -141,7 +175,7 @@ async function playAction(action) {
   const response = await pending;
   assert.equal(response.status(), 200, await response.text());
   view = await response.json();
-  await page.locator('.prompt-panel[aria-busy="false"]').waitFor();
+  await settledGame();
   assert.deepEqual(view.warnings, [], 'Custom cards must resolve without a stuck AI turn');
   report.actions++;
 }
@@ -248,6 +282,7 @@ try {
   assert.equal(started.status(), 201, await started.text());
   view = await started.json();
   await page.locator('.game-shell').waitFor();
+  await settledGame();
   const openingRecord = decodeRecord(view.sessionToken);
   assert.equal(openingRecord.playerDeck.id, human.data.deck.id);
   assert.equal(openingRecord.opponentDeck.id, bot.data.deck.id);
@@ -272,7 +307,7 @@ try {
   assert.ok(report.playedUnit, 'A custom-deck human must be able to play a unit through the UI');
   await screenshot('custom-vs-custom-battle-mobile');
   const id = view.id, version = view.version, checkpoint = view.sessionToken;
-  await page.getByRole('button', { name: 'Back to command', exact: true }).click();
+  await returnToCommand();
   for (const deck of [human.data.deck, bot.data.deck]) {
     await page.locator(`[data-custom-deck-id="${deck.id}"] [data-custom-action="remove"]`).click();
     const confirmation = page.getByRole('dialog', { name: 'Remove custom deck?', exact: true });
@@ -294,6 +329,7 @@ try {
   const restored = await resumeResponse.json();
   assert.equal(restored.id, id);
   assert.equal(restored.version, version);
+  assert.deepEqual(restored.prompt, view.prompt, 'Resume preserves the pending engine choice after its dialog was dismissed');
   assert.deepEqual(restored.players.human.ground.map(card => card.uuid), view.players.human.ground.map(card => card.uuid));
   assert.deepEqual(restored.players.human.space.map(card => card.uuid), view.players.human.space.map(card => card.uuid));
   await page.locator('.game-shell').waitFor();
