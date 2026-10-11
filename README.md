@@ -182,6 +182,10 @@ the match after removing the saved deck lists.
 
 ## Saved games and hosting
 
+Optional [Google sign-in](docs/google-sign-in.md) separates each account's local
+decks, preferences, and game checkpoint. Guest play remains available. Saves
+stay in this browser; sign-in does not add cloud sync or extend game expiry.
+
 Games are stored as encrypted browser checkpoints for six hours from creation.
 The host can restore a game after its server instance changes without exposing
 hidden cards. Use one browser tab per game. For local persistence across server

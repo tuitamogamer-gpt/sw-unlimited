@@ -6,10 +6,12 @@ const { chooseAction } = require('./bot.cjs');
 const { createRecord, applyAction, sealRecord, decodeRecord, restoreRecord } = require('./replay.cjs');
 const { importCustomDeck } = require('./custom-decks.cjs');
 const { searchCards } = require('./card-catalog.cjs');
+const { authRouter } = require('./auth.cjs');
 
 const root = path.resolve(__dirname, '..');
 const app = express();
 app.disable('x-powered-by');
+app.use(authRouter);
 app.use(express.json({ limit: '1mb' }));
 app.use('/api', (_req, res, next) => { res.set('Cache-Control', 'no-store'); next(); });
 const sessions = new Map();

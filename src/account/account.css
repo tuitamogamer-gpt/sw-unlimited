@@ -1,0 +1,61 @@
+.account-trigger{position:relative;display:inline-flex;flex:0 0 auto;align-items:center;justify-content:center;gap:8px;min-width:34px;max-width:154px;min-height:34px;padding:4px 10px 4px 5px;border:1px solid #3b5265;border-radius:6px;background:#122231;color:#dce5ed;font-size:11px;font-weight:600}
+.account-trigger:hover:not(:disabled){border-color:#b2935c;background:#1b2c3b;color:#f2f0e7}
+.account-trigger.is-signed-in{border-color:#52787a}
+.account-trigger-label{min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.account-avatar{display:inline-flex;flex:0 0 auto;align-items:center;justify-content:center;overflow:hidden;width:25px;height:25px;border-radius:50%;background:#203c4c;color:#bfdde3;border:1px solid #88bfc12e;font-size:10px;line-height:1;font-weight:600}
+.account-avatar>img{width:100%;height:100%;object-fit:cover}
+.account-trigger-notice{width:6px;height:6px;border-radius:50%;background:var(--gold);position:absolute;top:2px;right:2px;border:1px solid #0a1621}
+.account-trigger-compact{padding:3px;width:31px;min-width:31px;height:31px;min-height:31px;max-width:31px;border-radius:5px}
+.account-trigger-compact .account-trigger-label{display:none}
+.account-trigger-compact .account-avatar{height:23px;width:23px;font-size:9px}
+.account-panel{padding:25px 28px 24px;color:#dce5ed}
+.account-profile{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:24px}
+.account-avatar-large{height:64px;width:64px;font-size:23px;background:linear-gradient(140deg,#264857,#172c3d);border-color:#63878b;margin-bottom:14px;box-shadow:0 5px 24px #030b1460}
+.account-profile>.eyebrow{color:#a6bbc8;font-size:9px;letter-spacing:1.8px}
+.account-profile>h3{font-size:32px;font-weight:500;line-height:1.1;margin:6px 0 8px;overflow-wrap:anywhere;max-width:100%}
+.account-email{color:#a4b4c3;font-size:12px;line-height:1.5;margin:0 0 12px;overflow-wrap:anywhere;max-width:100%}
+.account-session-status{display:inline-flex;align-items:center;gap:6px;border:1px solid #507b695c;background:#345e411f;border-radius:20px;padding:5px 10px;color:#add3b9;font-size:11px}
+.account-intro{font-size:13px;line-height:1.65;color:#b0bdc9;max-width:365px;margin:5px 0 0;text-wrap:pretty}
+.account-device-note{display:flex;gap:12px;background:#152333;border:1px solid #354b5b;border-radius:8px;padding:15px}
+.account-device-note>svg{flex-shrink:0;color:#93bbc9;margin-top:2px}
+.account-device-note strong{font-size:12px;color:#dce7ed;font-weight:600}
+.account-device-note p{font-size:11px;line-height:1.65;color:#a8b9c7;margin:5px 0 0;text-wrap:pretty}
+.account-device-note p+p{margin-top:8px;color:#91a6b8}
+.account-loading{display:flex;align-items:center;justify-content:center;gap:9px;padding:17px 0 0;color:#a9bbcb;font-size:12px}
+.account-unavailable,.account-error{display:flex;gap:10px;padding:13px 14px;border-radius:7px;margin-top:15px;font-size:12px;line-height:1.6}
+.account-unavailable{background:#392c161f;border:1px solid #7c61333d;color:#d1bd95}
+.account-error{background:#582c301f;border:1px solid #874c5059;color:#e0b4b1}
+.account-unavailable>svg,.account-error>svg{flex-shrink:0;margin-top:2px}
+.account-unavailable p,.account-error p{margin:0}
+.account-error .text-button{margin-top:9px;color:#e4c491;font-size:11px;min-height:26px}
+.account-wait{display:flex;align-items:flex-start;gap:8px;color:#c4b28f;font-size:11px;line-height:1.6;margin:15px 0 0}
+.account-wait svg{flex-shrink:0;margin-top:2px}
+.account-actions{display:flex;flex-direction:column;align-items:stretch;gap:11px;margin-top:22px}
+.account-google-button{display:flex;align-items:center;justify-content:center;gap:12px;min-height:44px;border-radius:5px;background:#f6f7f8;color:#30343a;border:1px solid #dadce0;font-size:13px;font-weight:600;padding:10px 18px}
+.account-google-button:hover:not(:disabled){background:#fff;box-shadow:0 2px 9px #ffffff14}
+.account-google-button:disabled{opacity:.56}
+.account-signout{border-radius:5px}
+.account-guest-button{display:flex;align-items:center;justify-content:center;gap:8px;min-height:37px;background:none;color:#b5c4d1;font-size:12px;padding:6px 12px}
+.account-guest-button:hover:not(:disabled){color:var(--gold)}
+@media(max-width:720px){.header-right .account-trigger{width:33px;min-width:33px;height:33px;max-width:33px;padding:3px}.header-right .account-trigger-label{display:none}.account-panel{padding:21px 18px}.account-profile{margin-bottom:20px}.account-profile>h3{font-size:28px}.account-intro{font-size:12px}.account-device-note{padding:13px;gap:10px}.account-device-note p{font-size:11px}.account-unavailable,.account-error{padding:11px 12px;font-size:11px}.account-actions{margin-top:18px}.game-tools .account-trigger{width:29px;min-width:29px;height:29px;min-height:29px;max-width:29px;padding:2px}.game-tools .account-avatar{height:22px;width:22px}.game-tools .account-trigger-label{display:none}}
+@media(max-width:360px){.account-panel{padding:17px 14px}.account-profile>h3{font-size:25px}.account-intro{font-size:11px}.account-device-note{padding:11px}.account-device-note>svg{width:17px;height:17px}.account-device-note strong{font-size:11px}.account-device-note p{font-size:10px}.account-google-button{font-size:12px}}
+/* Keep the existing navigation and account controls visible in a narrow header. */
+@media(max-width:720px){
+  .site-header:has(.account-trigger){padding-left:12px;padding-right:12px;gap:10px}
+  .site-header:has(.account-trigger) .brand{gap:8px}
+  .site-header:has(.account-trigger) .brand-emblem{width:30px;height:30px}
+  .site-header:has(.account-trigger) .brand-emblem svg{width:23px;height:23px}
+  .site-header:has(.account-trigger) .brand-wordmark>span{font-size:14px}
+  .site-header:has(.account-trigger) .brand-wordmark strong{font-size:8px;letter-spacing:2px}
+  .site-header:has(.account-trigger) nav{gap:10px}
+  .site-header:has(.account-trigger) .header-right{gap:4px;margin-left:0;flex-shrink:0}
+  .site-header:has(.account-trigger) .header-right .icon-button{width:30px;height:33px}
+}
+@media(max-width:360px){
+  .site-header:has(.account-trigger){padding-left:8px;padding-right:8px;gap:6px}
+  .site-header:has(.account-trigger) nav{gap:7px}
+  .site-header:has(.account-trigger) .header-right{gap:3px}
+  .site-header:has(.account-trigger) .account-trigger{width:29px;min-width:29px;max-width:29px}
+  .site-header:has(.account-trigger) .language-select{max-width:42px;padding-left:4px;padding-right:4px}
+  .site-header:has(.account-trigger) .header-right .icon-button{width:29px}
+}

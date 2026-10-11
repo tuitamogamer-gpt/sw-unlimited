@@ -1,9 +1,12 @@
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
-const { app, initialize } = require('../server/index.cjs');
+const { authApp, isAuthRequest } = require('../server/auth.cjs');
 
 export default async function handler(req, res) {
+  // Sign-in and account reads do not depend on the rules engine or card catalog.
+  if (isAuthRequest(req.url)) return authApp(req, res);
   try {
+    const { app, initialize } = require('../server/index.cjs');
     await initialize();
     return app(req, res);
   } catch (error) {

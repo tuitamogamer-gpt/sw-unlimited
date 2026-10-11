@@ -29,9 +29,9 @@ export function isImportedDeck(value: unknown): value is ImportedDeck {
     && Array.isArray(recipe.sideboard) && recipe.sideboard.length <= 100 && recipe.sideboard.every(entry);
 }
 
-export function readCustomDecks(): SavedCustomDeck[] {
+export function readCustomDecks(storage?: Pick<Storage, 'getItem'>): SavedCustomDeck[] {
   try {
-    const stored: unknown = JSON.parse(localStorage.getItem(CUSTOM_DECKS_KEY) || 'null');
+    const stored: unknown = JSON.parse((storage ?? localStorage).getItem(CUSTOM_DECKS_KEY) || 'null');
     if (!object(stored) || stored.version !== SCHEMA_VERSION || !Array.isArray(stored.decks)) return [];
     const unique = new Map<string, SavedCustomDeck>();
     for (const candidate of stored.decks) {
@@ -43,8 +43,8 @@ export function readCustomDecks(): SavedCustomDeck[] {
   } catch { return []; }
 }
 
-export function persistCustomDecks(decks: SavedCustomDeck[]): void {
-  try { localStorage.setItem(CUSTOM_DECKS_KEY, JSON.stringify({ version: SCHEMA_VERSION, decks })); }
+export function persistCustomDecks(decks: SavedCustomDeck[], storage?: Pick<Storage, 'setItem'>): void {
+  try { (storage ?? localStorage).setItem(CUSTOM_DECKS_KEY, JSON.stringify({ version: SCHEMA_VERSION, decks })); }
   catch (error) {
     if (error && typeof error === 'object' && 'name' in error && /quota/i.test(String(error.name))) throw new Error('Your browser storage is full. Export or remove a saved deck, then try again.');
     throw new Error('Browser storage is unavailable. This deck has not been saved. You can export its JSON instead.');

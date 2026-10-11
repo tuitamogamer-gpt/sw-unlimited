@@ -1,4 +1,6 @@
 import { spawn } from 'node:child_process';
+import { existsSync } from 'node:fs';
+if (existsSync('.env')) process.loadEnvFile('.env');
 const processes = [
   spawn(process.execPath, ['server/index.cjs'], { stdio: 'inherit', env: { ...process.env, PORT: process.env.PORT || '3001' } }),
   spawn(process.execPath, ['node_modules/vite/bin/vite.js', '--host', '0.0.0.0'], { stdio: 'inherit' }),

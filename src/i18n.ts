@@ -1037,8 +1037,30 @@ const customDeckCopy: Array<[string, string, ...string[]]> = [
   ['leader', 'vođa'], ['base', 'baza'], ['deck', 'glavni špil'], ['sideboard', 'rezerva'],
 ];
 
+
+const accountCopy: Array<[string, string, ...string[]]> = [
+  ['Your sign-in session expired. Your account saves are still on this device. Sign in again or continue as a guest.', 'Tvoja prijava je istekla. Sačuvani podaci naloga i dalje su na ovom uređaju. Prijavi se ponovo ili nastavi kao gost.'],
+  ['Account', 'Nalog'], ['Open account', 'Otvori nalog'], ['Sign in', 'Prijavi se'], ['Sign in or play as a guest', 'Prijavi se ili igraj kao gost'],
+  ['YOUR ACCOUNT', 'TVOJ NALOG'], ['GUEST PLAY', 'IGRA KAO GOST'], ['Guest', 'Gost'], ['Play your way.', 'Igraj na svoj način.'],
+  ['Signed in with Google', 'Prijavljen preko Google-a'],
+  ['Play as a guest, or sign in with Google to keep a separate collection on this device.', 'Igraj kao gost ili se prijavi preko Google-a da imaš zasebnu kolekciju na ovom uređaju.'],
+  ['Saved on this device', 'Sačuvano na ovom uređaju'],
+  ['Your saved games and decks stay in this browser. They are not synced across devices.', 'Sačuvane partije i špilovi ostaju u ovom pregledaču. Ne sinhronizuju se između uređaja.'],
+  ['Guest play and each signed-in account keep separate saves. Switching accounts keeps the other saves on this device.', 'Gost i svaki prijavljeni nalog imaju zasebno sačuvane podatke. Promena naloga zadržava ostale podatke na ovom uređaju.'],
+  ['Checking your account…', 'Provera naloga…'], ['Check again', 'Proveri ponovo'],
+  ['Wait for the current game action to finish before changing accounts.', 'Sačekaj da se trenutna akcija u igri završi pre promene naloga.'],
+  ['Signing out…', 'Odjava…'], ['Sign out', 'Odjavi se'], ['Opening Google…', 'Otvaranje Google-a…'], ['Continue with Google', 'Nastavi preko Google-a'],
+  ['Back to game', 'Nazad u igru'], ['Continue as a guest', 'Nastavi kao gost'],
+  ['Google sign-in is not configured. You can continue as a guest.', 'Google prijava nije podešena. Možeš nastaviti kao gost.'],
+  ['Your account could not be checked. Guest play is still available. Try again when your connection is ready.', 'Nije moguće proveriti nalog. Igra kao gost je i dalje dostupna. Pokušaj ponovo kada veza bude spremna.'],
+  ['Google sign-in could not be started. Please try again.', 'Google prijava nije mogla da se pokrene. Pokušaj ponovo.'],
+  ['Sign-out could not be confirmed. Please try again.', 'Nije moguće potvrditi odjavu. Pokušaj ponovo.'],
+  ['The account request timed out. Please try again.', 'Zahtev za nalog je prekoračio vreme čekanja. Pokušaj ponovo.'],
+  ['Google sign-in was cancelled or could not be completed. Try again or continue as a guest.', 'Google prijava je otkazana ili nije mogla da se završi. Pokušaj ponovo ili nastavi kao gost.'],
+];
+
 const translations = new Map<string, { en: string; sr: string }>();
-for (const [en, sr, ...aliases] of [...copy, ...inspectorCopy, ...catalogCopy, ...customDeckCopy, ...serverCopy]) for (const key of [en, ...aliases]) translations.set(key, { en, sr });
+for (const [en, sr, ...aliases] of [...copy, ...inspectorCopy, ...catalogCopy, ...customDeckCopy, ...accountCopy, ...serverCopy]) for (const key of [en, ...aliases]) translations.set(key, { en, sr });
 
 // Anchored templates cover variable prompts and legacy checkpoints without
 // replacing fragments of official card names or ability text.
