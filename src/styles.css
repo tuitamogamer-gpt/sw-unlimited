@@ -196,7 +196,8 @@ body:has(.app.in-game){overflow:hidden;overscroll-behavior:none}
 .modal{scroll-padding-top:100px}
 .modal-header h2{font-size:28px}
 .modal-header .icon-button{border-radius:5px}
-.modal-scrim{overscroll-behavior:contain}
+@keyframes modal-fade{from{opacity:0}to{opacity:1}}
+.modal-scrim{overscroll-behavior:contain;animation:modal-fade .15s}
 .modal .command-sidebar{padding:20px 24px;border:0;max-height:70dvh;min-height:300px}
 .modal .game-log{overflow:auto}
 .modal .game-log .log-entry p{font-size:12px}

@@ -8,6 +8,7 @@ const Module = require('node:module');
 const ts = require('typescript');
 const filename = path.resolve(__dirname, '../src/account/auth-client.ts');
 const compiled = new Module(filename, module);
+compiled.paths = Module._nodeModulePaths(path.dirname(filename));
 compiled._compile(ts.transpileModule(fs.readFileSync(filename, 'utf8'), {
   compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.CommonJS },
 }).outputText, filename);
@@ -118,4 +119,136 @@ test('a timed-out account request cannot hang or navigate from a late response',
   assert.equal(signal.aborted, true);
   release(response({ csrfToken: 'late' }));
   await new Promise(resolve => setTimeout(resolve, 0));
+});
+
+function supabaseFixture() {
+  const id = '11111111-2222-4333-8444-555555555555';
+  const config = { enabled: true, provider: 'supabase', user: null, googleEnabled: true,
+    clientConfig: { url: 'https://accounts.example.supabase.co', publicKey: 'sb_publishable_local_fixture_key' } };
+  const state = { session: null, confirmation: true, error: null, oauthUrl: `${config.clientConfig.url}/auth/v1/authorize?provider=google`, callback: null, signupCalls: [], signInCalls: [], calls: [] };
+  const freshSession = (access_token = 'verified-access-token') => ({ access_token, expires_at: Math.floor(Date.now() / 1000) + 3600, user: { id } });
+  const sdk = { auth: {
+    getSession: async () => ({ data: { session: state.session }, error: null }),
+    signInWithPassword: async input => { state.signInCalls.push(input); if (!state.error) state.session = freshSession(); return { data: { session: state.session }, error: state.error }; },
+    signUp: async input => { state.signupCalls.push(input); if (!state.error && !state.confirmation) state.session = freshSession(); return { data: { user: { id }, session: state.session }, error: state.error }; },
+    signInWithOAuth: async input => { state.oauthInput = input; return { data: { url: state.oauthUrl }, error: state.error }; },
+    signOut: async input => { state.signOutInput = input; if (!state.error) state.session = null; return { error: state.error }; },
+    onAuthStateChange: callback => { state.callback = callback; return { data: { subscription: { unsubscribe: () => { state.callback = null; } } } }; },
+  } };
+  const navigations = [];
+  const client = createAuthClient({ origin: 'http://127.0.0.1:4173', navigate: url => navigations.push(url),
+    supabaseFactory: (url, key) => { assert.equal(url, config.clientConfig.url); assert.equal(key, config.clientConfig.publicKey); return sdk; },
+    fetch: async (url, init) => {
+      state.calls.push({ url, init }); assert.equal(url, '/api/account');
+      const authorization = init.headers?.Authorization;
+      if (authorization) state.onVerify?.(authorization);
+      return response({ ...config, ...(authorization ? { user: { id: `supabase_${id}`, name: 'Verified Pilot' }, expires: new Date(Date.now() + 3600_000).toISOString() } : {}) });
+    } });
+  return { client, state, config, freshSession, navigations, id };
+}
+
+test('Supabase browser sessions are verified by the server before they select an account scope', async () => {
+  const f = supabaseFixture();
+  assert.equal((await f.client.account()).user, null);
+  f.state.session = f.freshSession();
+  f.state.session.user.id = 'untrusted-browser-owner';
+  const info = await f.client.account();
+  assert.equal(info.user.id, `supabase_${f.id}`);
+  assert.notEqual(info.user.id, f.state.session.user.id);
+  await assert.rejects(f.client.getAccessToken(), error => error.status === 401);
+  f.state.session.user.id = f.id;
+  assert.equal(await f.client.getAccessToken(), 'verified-access-token');
+  assert.equal(f.state.calls.at(-1).init.headers.Authorization, 'Bearer verified-access-token');
+  assert.equal(f.state.calls.at(-1).init.credentials, 'same-origin');
+});
+
+test('a new SDK account cannot upload the old account scope before server reverification', async () => {
+  const f = supabaseFixture(); await f.client.account(); f.state.session = f.freshSession();
+  await f.client.account();
+  f.state.session = { ...f.freshSession('different-account-token'), user: { id: 'aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee' } };
+  await assert.rejects(f.client.getAccessToken(), error => error.status === 401);
+});
+
+test('Supabase missing or expired session expiry never retains a signed-in account', async () => {
+  const f = supabaseFixture(); await f.client.account();
+  for (const expires_at of [undefined, 1, NaN]) {
+    f.state.session = { ...f.freshSession(), expires_at };
+    await assert.rejects(f.client.account(), error => error.status === 401 && error.message === ACCOUNT_MESSAGES.expired
+      && error.account?.provider === 'supabase' && error.account.user === null && error.account.enabled,
+    'An invalid stored session still exposes safe provider configuration so the player can sign in again.');
+  }
+});
+
+test('a session changed during verification is reverified before returning the new owner', async () => {
+  const f = supabaseFixture(); await f.client.account();
+  f.state.session = f.freshSession('before-change');
+  let reads = 0;
+  // The injected browser session changes at the independent network boundary.
+  f.state.onVerify = authorization => { if (authorization === 'Bearer before-change') { reads++; f.state.session = f.freshSession('after-change'); } };
+  const info = await f.client.account();
+  assert.equal(info.user.id, `supabase_${f.id}`); assert.equal(reads, 1);
+  assert.equal(f.state.calls.at(-1).init.headers.Authorization, 'Bearer after-change');
+});
+
+test('email signup reports confirmation truthfully and password inputs only go to the auth SDK', async () => {
+  const f = supabaseFixture(); await f.client.account();
+  assert.deepEqual(await f.client.signUpWithEmail(' pilot@example.test ', 'private-password'), { confirmationRequired: true });
+  assert.equal((await f.client.account()).user, null);
+  assert.deepEqual(f.state.signupCalls[0], { email: 'pilot@example.test', password: 'private-password', options: { emailRedirectTo: 'http://127.0.0.1:4173/' } });
+  assert.doesNotMatch(JSON.stringify(f.state.calls), /private-password/);
+  f.state.confirmation = false;
+  assert.deepEqual(await f.client.signUpWithEmail('pilot@example.test', 'another-password'), { confirmationRequired: false });
+  assert.equal((await f.client.account()).user.id, `supabase_${f.id}`);
+});
+
+test('email sign-in errors are private and Supabase sign-out clears the local account session', async () => {
+  const f = supabaseFixture(); await f.client.account();
+  f.state.error = new Error('Account exists; internal provider details');
+  await assert.rejects(f.client.signInWithEmail('pilot@example.test', 'private-password'), error => error.message === ACCOUNT_MESSAGES.emailSignin);
+  await assert.rejects(f.client.signUpWithEmail('pilot@example.test', 'private-password'), error => error.message === ACCOUNT_MESSAGES.emailSignup);
+  f.state.error = null;
+  await f.client.signInWithEmail('pilot@example.test', 'older6');
+  assert.equal(f.state.signInCalls.at(-1).password, 'older6', 'Existing Supabase accounts may have a shorter password than this app permits for new accounts.');
+  await assert.rejects(f.client.signUpWithEmail('pilot@example.test', 'older6'), error => error.message === ACCOUNT_MESSAGES.invalidCredentials);
+  assert.ok((await f.client.account()).user);
+  await f.client.signOut();
+  assert.deepEqual(f.state.signOutInput, { scope: 'local' });
+  assert.equal((await f.client.account()).user, null);
+});
+
+test('Supabase Google redirects use the configured provider and a canonical app callback', async () => {
+  const f = supabaseFixture(); await f.client.account(); await f.client.signIn();
+  assert.deepEqual(f.state.oauthInput, { provider: 'google', options: { redirectTo: 'http://127.0.0.1:4173/', skipBrowserRedirect: true } });
+  assert.deepEqual(f.navigations, [f.state.oauthUrl]);
+  for (const url of ['https://evil.example/auth/v1/authorize', 'http://accounts.example.supabase.co/auth/v1/authorize', `${f.config.clientConfig.url}/not-authorize`]) {
+    f.state.oauthUrl = url;
+    await assert.rejects(f.client.signIn(), error => error.message === ACCOUNT_MESSAGES.signin);
+  }
+  assert.equal(f.navigations.length, 1);
+});
+
+test('Supabase auth events defer account refresh beyond the SDK auth lock', async () => {
+  const f = supabaseFixture(); let notified = 0;
+  const unsubscribe = f.client.subscribe(() => { notified++; });
+  await f.client.account();
+  f.state.callback('SIGNED_IN', f.freshSession());
+  assert.equal(notified, 0);
+  await new Promise(resolve => setTimeout(resolve, 1));
+  assert.equal(notified, 1);
+  unsubscribe(); assert.equal(f.state.callback, null);
+});
+
+test('real Supabase SDK provider requests have a deadline and abort before a late sign-in can succeed', async () => {
+  let providerSignal;
+  const client = createAuthClient({ timeoutMs: 5, origin: 'http://127.0.0.1:4173', fetch: async (url, init) => {
+    if (url === '/api/account') return response({ enabled: true, provider: 'supabase', user: null, googleEnabled: false,
+      clientConfig: { url: 'https://deadline-test.supabase.co', publicKey: 'sb_publishable_local_fixture_key' } });
+    assert.equal(url, 'https://deadline-test.supabase.co/auth/v1/token?grant_type=password');
+    assert.equal(init.credentials, 'omit'); providerSignal = init.signal;
+    return new Promise((_resolve, reject) => init.signal.addEventListener('abort', () => reject(new Error('Transport aborted')), { once: true }));
+  } });
+  await client.account();
+  await assert.rejects(client.signInWithEmail('pilot@example.test', 'private-password'), error => error.message === ACCOUNT_MESSAGES.emailSignin);
+  assert.equal(providerSignal.aborted, true);
+  assert.equal(await client.getAccessToken(), null);
 });

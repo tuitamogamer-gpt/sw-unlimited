@@ -37,6 +37,18 @@
 .account-signout{border-radius:5px}
 .account-guest-button{display:flex;align-items:center;justify-content:center;gap:8px;min-height:37px;background:none;color:#b5c4d1;font-size:12px;padding:6px 12px}
 .account-guest-button:hover:not(:disabled){color:var(--gold)}
+.account-notice{display:flex;align-items:flex-start;gap:9px;margin-top:14px;padding:12px 14px;border:1px solid #507b695c;background:#345e411f;color:#add3b9;border-radius:7px;font-size:12px;line-height:1.6}
+.account-notice svg{flex-shrink:0;margin-top:2px}.account-notice p{margin:0}
+.account-email-form{display:flex;flex-direction:column;gap:8px}
+.account-email-tabs{display:flex;padding:3px;border:1px solid #354b5b;border-radius:6px;background:#0d1925;margin-bottom:5px}
+.account-email-tabs button{flex:1;min-height:34px;border-radius:4px;background:transparent;color:#a8b9c7;font-size:12px}
+.account-email-tabs button[aria-pressed="true"]{background:#26384a;color:#f2f0e7}
+.account-email-form label{font-size:11px;color:#b9c9d5;margin-top:3px}
+.account-email-form input{width:100%;min-height:42px;border:1px solid #405469;border-radius:5px;background:#0b1722;color:#f2f0e7;font-size:15px;padding:8px 11px}
+.account-email-form input:disabled{opacity:.6}
+.account-email-submit{display:flex;align-items:center;justify-content:center;gap:8px;min-height:42px;border-radius:5px;margin-top:7px}
+.account-form-help{margin:2px 0 0;color:#a8b9c7;font-size:11px;line-height:1.55}
+.account-method-divider{display:block;text-align:center;color:#91a6b8;font-size:11px}
 @media(max-width:720px){.header-right .account-trigger{width:33px;min-width:33px;height:33px;max-width:33px;padding:3px}.header-right .account-trigger-label{display:none}.account-panel{padding:21px 18px}.account-profile{margin-bottom:20px}.account-profile>h3{font-size:28px}.account-intro{font-size:12px}.account-device-note{padding:13px;gap:10px}.account-device-note p{font-size:11px}.account-unavailable,.account-error{padding:11px 12px;font-size:11px}.account-actions{margin-top:18px}.game-tools .account-trigger{width:29px;min-width:29px;height:29px;min-height:29px;max-width:29px;padding:2px}.game-tools .account-avatar{height:22px;width:22px}.game-tools .account-trigger-label{display:none}}
 @media(max-width:360px){.account-panel{padding:17px 14px}.account-profile>h3{font-size:25px}.account-intro{font-size:11px}.account-device-note{padding:11px}.account-device-note>svg{width:17px;height:17px}.account-device-note strong{font-size:11px}.account-device-note p{font-size:10px}.account-google-button{font-size:12px}}
 /* Keep the existing navigation and account controls visible in a narrow header. */

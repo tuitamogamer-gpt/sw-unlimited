@@ -1,5 +1,10 @@
 # Google sign-in
 
+This page describes the retained Auth.js Google setup. With a configured
+Supabase public key, the app uses Supabase email/Google accounts and the provider
+callback instead. See [account saves and Supabase](account-cloud.md) for that
+setup, the private database migration and cross-device saves.
+
 The header offers **Sign in → Continue with Google**. First-time and returning
 players use the same Google flow. Guest play remains available without a Google
 account. The profile shows the verified Google name, email, and avatar, with a
@@ -58,16 +63,18 @@ by Git.
 
 ## Saves and account changes
 
-This login release stores decks, preferences, and the latest game **in this
-browser**, separated by the server-verified Google account ID. It does not
-provide cloud sync or a database. Guest saves retain their original keys.
+Local decks, preferences and the latest game are separated by the
+server-verified account ID. When the Supabase cloud store is configured, account
+saves also sync across devices; local-only installations keep browser storage.
+Guest saves retain their original keys.
 Signing in does not automatically copy guest decks into an account; export and
 import a deck to copy it explicitly. Signing out returns to the guest collection
 without deleting either collection. Google email/name changes do not change the
 account's storage ID.
 
-Games still expire six hours after creation. Signing in does not extend their
-lifetime. These are local convenience profiles on a shared browser, not an
+Guest games expire six hours after creation. Saved account games can be renewed
+within the cloud retention period; see [recovery details](account-cloud.md).
+Local copies are convenience profiles on a shared browser, not an
 encrypted local vault: someone with access to browser storage can access its
 saved data. Use separate browser profiles on shared devices.
 

@@ -1,0 +1,20 @@
+.cloud-save-status{margin-top:15px;padding:14px;border:1px solid #375769;border-radius:8px;background:#15283345;color:#c8dce6}
+.cloud-save-heading{display:flex;align-items:flex-start;gap:10px}
+.cloud-save-heading>svg{flex-shrink:0;margin-top:2px;color:#91c2d3}
+.cloud-save-heading>div{min-width:0;flex:1}
+.cloud-save-heading strong{font-size:12px;font-weight:600}
+.cloud-save-status p{font-size:11px;line-height:1.6;margin:5px 0 0;overflow-wrap:anywhere}
+.cloud-save-synced{border-color:#4d775b;background:#25473325;color:#badac4}
+.cloud-save-synced .cloud-save-heading>svg{color:#a7d7b8}
+.cloud-save-offline,.cloud-save-unavailable,.cloud-save-conflict{border-color:#80633b;background:#4b3a1725;color:#e2cca4}
+.cloud-save-offline .cloud-save-heading>svg,.cloud-save-unavailable .cloud-save-heading>svg,.cloud-save-conflict .cloud-save-heading>svg{color:#d4b376}
+.cloud-save-retry{display:inline-flex;align-items:center;gap:7px;min-height:34px;margin-top:8px;padding:5px 0;background:none;color:#e7c58b;font-size:11px}
+.cloud-save-conflicts{margin-top:12px;border-top:1px solid #7c654747;padding-top:7px}
+.cloud-save-conflict{margin-top:12px;padding:12px;border:1px solid #80633b70;border-radius:5px;background:#0c18247a}
+.cloud-save-conflict h4{margin:0;color:#f2e2c6;font-size:12px;font-weight:600;overflow-wrap:anywhere}
+.cloud-save-conflict-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.cloud-save-conflict-actions button{flex:1;min-width:140px;min-height:39px;padding:8px;border:1px solid #776044;border-radius:4px;background:#223140;color:#f1dfbe;font-size:11px;line-height:1.3}
+.cloud-save-conflict-actions button:hover:not(:disabled){border-color:#e7b95d;background:#304151}
+.cloud-save-status button:disabled{opacity:.55}
+.cloud-save-error{color:#e0b4b1}
+@media(max-width:420px){.cloud-save-status{padding:12px}.cloud-save-conflict{padding:10px}.cloud-save-conflict-actions{flex-direction:column}.cloud-save-conflict-actions button{width:100%;min-width:0;flex:auto}}
