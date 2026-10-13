@@ -19,7 +19,7 @@ function browserModule(relativePath) {
 
 const { createAccountStorage } = browserModule('src/account/storage.ts');
 const { createGameClient, SESSION_KEY, CLIENT_MESSAGES } = browserModule('src/game-client.ts');
-const { readCustomDecks, persistCustomDecks, CUSTOM_DECKS_KEY } = browserModule('src/custom-decks.ts');
+const { readCustomDecks, persistCustomDecks, upsertCustomDeck, removeStoredCustomDeck, CUSTOM_DECKS_KEY } = browserModule('src/custom-decks.ts');
 
 const GAME_ID = '00000000-0000-4000-8000-000000000019';
 const CHECKPOINT_KEY = `swu-command-checkpoint:${GAME_ID}`;
@@ -212,6 +212,55 @@ test('corrupt A deck storage does not hide or overwrite B and guest collections'
   assert.deepEqual(readCustomDecks(guest.scoped), [savedDeck('guest')]);
   persistCustomDecks([], a.scoped);
   assert.deepEqual(readCustomDecks(a.scoped), []);
+  assert.deepEqual(otherScopes(disk, 'account_A'), others);
+});
+
+test('deck saves from two tabs preserve imports made since their collection was loaded', () => {
+  const disk = storage();
+  const firstTab = createAccountStorage('account_A', disk);
+  const secondTab = createAccountStorage('account_A', disk);
+  assert.deepEqual(readCustomDecks(firstTab), []);
+  assert.deepEqual(readCustomDecks(secondTab), []);
+  const firstDeck = savedDeck('first');
+  const secondDeck = savedDeck('second');
+  assert.deepEqual(upsertCustomDeck(firstDeck, firstTab), [firstDeck]);
+  assert.deepEqual(upsertCustomDeck(secondDeck, secondTab), [secondDeck, firstDeck]);
+  assert.deepEqual(readCustomDecks(firstTab), [secondDeck, firstDeck]);
+});
+
+test('removing and updating decks from a stale tab preserve newer imports without resurrecting removed decks', () => {
+  const disk = storage();
+  const firstTab = createAccountStorage('account_A', disk);
+  const secondTab = createAccountStorage('account_A', disk);
+  const original = savedDeck('original');
+  const other = savedDeck('other');
+  persistCustomDecks([original, other], firstTab);
+  assert.deepEqual(readCustomDecks(secondTab), [original, other]);
+  const imported = savedDeck('imported');
+  upsertCustomDeck(imported, firstTab);
+  assert.deepEqual(removeStoredCustomDeck(original.id, secondTab), [imported, other]);
+  const updated = { ...other, name: 'Updated collection', recipe: { ...other.recipe, name: 'Updated collection' } };
+  assert.deepEqual(upsertCustomDeck(updated, firstTab), [updated, imported]);
+  assert.deepEqual(readCustomDecks(secondTab), [updated, imported]);
+});
+
+test('collection operations stay in their account scope and failed saves preserve the durable collection', () => {
+  const disk = storage();
+  seedOwner(disk, null, 1);
+  seedOwner(disk, 'account_B', 1);
+  const scoped = createAccountStorage('account_A', disk);
+  const others = otherScopes(disk, 'account_A');
+  const existing = savedDeck('existing');
+  upsertCustomDeck(existing, scoped);
+  const broken = {
+    getItem: scoped.getItem,
+    setItem() { throw Object.assign(new Error('Quota exceeded'), { name: 'QuotaExceededError' }); },
+  };
+  assert.throws(() => upsertCustomDeck(savedDeck('unsaved'), broken), /browser storage is full/);
+  assert.throws(() => removeStoredCustomDeck(existing.id, broken), /browser storage is full/);
+  assert.deepEqual(readCustomDecks(scoped), [existing]);
+  removeStoredCustomDeck(existing.id, scoped);
+  assert.deepEqual(readCustomDecks(scoped), []);
   assert.deepEqual(otherScopes(disk, 'account_A'), others);
 });
 

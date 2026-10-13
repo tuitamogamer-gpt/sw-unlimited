@@ -220,6 +220,32 @@ test('a failed resume-pointer write warns even when the checkpoint itself was sa
   assert.equal(c.checkpointNotice(id), CLIENT_MESSAGES.storage);
 });
 
+test('a failed resume-pointer write cannot switch this tab back to its previously saved game', async () => {
+  const disk = storage();
+  const previous = { ...game(), id: '00000000-0000-4000-8000-000000000002' };
+  let writesFail = false;
+  const durableSet = disk.setItem.bind(disk);
+  disk.setItem = (key, value) => {
+    if (writesFail && key === SESSION_KEY) throw new Error('Pointer quota failure');
+    durableSet(key, value);
+  };
+  const c = client({ storage: disk, fetch: async (url, init) => {
+    assert.equal(url, `/api/games/${id}/state`, 'Reconnect must read the latest game rather than the old durable pointer.');
+    assert.equal(JSON.parse(init.body).sessionToken, game(1).sessionToken);
+    return response(game(2));
+  } });
+  assert.equal(c.rememberGame(previous), true);
+  writesFail = true;
+  assert.equal(c.rememberGame(game(1)), false);
+  assert.equal(disk.getItem(SESSION_KEY), previous.id);
+  assert.equal(c.storedValue(SESSION_KEY), id);
+  assert.equal(c.checkpointNotice(id), CLIENT_MESSAGES.storage);
+  writesFail = false;
+  assert.equal((await c.resumeGame(c.storedValue(SESSION_KEY))).version, 2);
+  assert.equal(disk.getItem(SESSION_KEY), id);
+  assert.equal(c.checkpointNotice(id), undefined);
+});
+
 test('a failed legacy-token write does not prevent durable resumption with the atomic checkpoint', async () => {
   const disk = storage();
   const durableSet = disk.setItem.bind(disk);

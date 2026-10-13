@@ -5,6 +5,7 @@ import { t } from '../i18n';
 import { activeCardFace, CardArtwork, cardType, isLandscapeCard } from './CardArtwork';
 import type { CardFace } from './CardArtwork';
 import { useCardHover } from './CardHoverPreview';
+import { CardRulesHelp } from './CardRulesHelp';
 import './inspectors.css';
 
 export interface CardInspectorProps {
@@ -106,6 +107,7 @@ export function CardInspector({ card, onInspect, action, onAction, busy = false,
           {text.trim() ? <RulesCopy text={text} /> : <p className="ci-no-text">{t('No additional rules text.')}</p>}
           {epicText && !text.includes(card.epicAction || '') && <div className="ci-epic"><div><Crosshair size={14} /><strong>{t('Epic Action')}</strong></div><RulesCopy text={epicText} /></div>}
         </section>
+        <CardRulesHelp keywords={inGame && face === activeFace ? card.keywords : undefined} text={face === activeFace ? text : (face === 'front' ? card.frontText : card.deployText) || ''} leader={isLeader} />
         {card.pilotText && <section className="ci-piloting" aria-label={t('Pilot ability')}><div className="ci-section-heading"><h3>{t(type === 'upgrade' ? 'Pilot bonuses' : 'As a pilot')}</h3></div>{(card.upgradePower != null || card.upgradeHp != null) && <div className="ci-pilot-bonuses">{card.upgradePower != null && <span><Swords size={13} />{card.upgradePower >= 0 ? '+' : ''}{card.upgradePower} {t('Power')}</span>}{card.upgradeHp != null && <span><Shield size={13} />{card.upgradeHp >= 0 ? '+' : ''}{card.upgradeHp} {t('Health')}</span>}</div>}{card.pilotText.trim() !== text.trim() && <RulesCopy text={card.pilotText} />}</section>}
         {card.traits?.length ? <div className="ci-traits"><Layers3 size={13} /><span>{card.traits.map(trait => trait.replace(/\b\w/g, letter => letter.toUpperCase())).join(' · ')}</span></div> : null}
         {!!card.playOptions?.length && (card.playOptions.length > 1 || hasAdjustedCost) && <section className="ci-play-options"><div className="ci-section-heading"><h3>{t('Play options')}</h3></div>{card.playOptions.map((option, index) => <div className={option.legal ? 'ci-option-legal' : ''} key={`${option.title}-${index}`}><span>{option.legal ? <Check size={13} /> : <X size={13} />}<strong>{t(option.title)}</strong>{!option.legal && option.reason && <small>{t(option.reason)}</small>}</span><span><Zap size={13} />{option.cost}</span></div>)}</section>}

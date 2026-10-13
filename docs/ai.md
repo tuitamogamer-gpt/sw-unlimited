@@ -35,12 +35,26 @@ tokena koju adapter ponovno validira.
 
 | Vrijednost | Prikaz | Ponašanje |
 | --- | --- | --- |
-| `easy` | Kadet | Veća razlika pri izboru sličnih poteza; slabije obrambene procjene. |
-| `normal` | Vitez | Dosljedna taktička procjena ploče i krivulje. |
-| `hard` | Majstor | Planira korištenje ostatka resursa kao problem ruksaka i procjenjuje vidljivu protivničku odmazdu. |
+| `easy` | Cadet / Kadet | Procjenjuje pojedinačne napade i razmjene. U borbi i zaštiti Sentinelom ne zbraja više napada u završnu sekvencu ili obranu baze i ne vrednuje otvaranje arene za ostale napadače. Više varira prioritete među akcijama. |
+| `normal` | Commander / Zapovjednik | Uspoređuje razvoj ploče i taktičke razmjene; procjenjuje zajednički pritisak spremnih jedinica i uklanjanje prijetnje koja prekida završni napad. |
+| `hard` | Grand Admiral / Veliki admiral | Dodaje približnu procjenu korištenja ostatka resursa i mogućeg odgovora jedne spremne protivničke jedinice. |
+
+Kadet i dalje prepoznaje izravan završni napad, uklanja jedinicu koja sama može
+odmah poraziti njegovu bazu te može odigrati Sentinel protiv takve prijetnje.
+Mulligan, resursiranje, odabir prijateljskih ili protivničkih meta i obvezne
+raspodjele koriste zajedničku logiku. Razlika u njegovim prioritetima određena je
+javnim opažanjem i legalnim opcijama: jednako opažanje i jednaka memorija daju
+jednaku odluku, uključujući nakon spremanja i učitavanja memorije. Veća varijacija
+primjenjuje se na izbor akcije, a ne na pripadnost meta ili obvezne raspodjele.
+
+`chooseAction()` koristi vrijednosti `easy`, `normal` i `hard`; prihvaća i
+engleske nazive iz tablice te zadržava ranije nazive `apprentice`, `knight`,
+`master` i `expert`.
 
 Težine imaju ista pravila i iste informacije. Ovo je heuristički bot, nije
 model treniran na partijama niti potpuno pretraživanje budućeg stabla igre.
+Jednostavnija procjena Kadeta ne jamči pobjedu igrača ili određeni postotak
+pobjeda; rezultat ovisi i o špilovima, izvlačenju karata i igračevim odlukama.
 Procjena budućeg napada približna je: konačnu zakonitost meta, tekst karata,
 okidače i sve iznimke uvijek određuje engine. Ne obećava optimalan potez za
 svaku kombinaciju svih objavljenih karata. Semantiku neuobičajenih izbornih
@@ -56,7 +70,10 @@ bilo kojeg igrača. Nema pristup seedu generatora slučajnih brojeva. Memorija
 sadrži samo vlastite prethodne odluke i javno dopuštene ID-jeve.
 
 `tests/bot.test.cjs` provjerava završni napad, zaštitu baze, Sentinel/Saboteur,
-mulligan, resurse, složene upite i legalnost raspodjele. Test privatnosti postavlja
+mulligan, resurse, složene upite i legalnost raspodjele. Primjeri zajedničkog
+napada i obrane provjeravaju razliku Kadeta od viših težina; zaseban test
+provjerava ponovljivost nakon spremanja memorije. Test privatnosti postavlja
 gettere koji bacaju iznimku na svako čitanje zabranjenih polja; drugi test mijenja
-skrivene karte i potvrđuje da se odluka ne mijenja. Dodatne testove cijelih
-partija pokreće `npm run test:smoke`.
+skrivene karte i potvrđuje da se odluka ne mijenja. Završni napad, izravna obrana,
+privatnost i obvezne raspodjele provjeravaju se na sve tri težine. Dodatne testove
+cijelih partija pokreće `npm run test:smoke`.

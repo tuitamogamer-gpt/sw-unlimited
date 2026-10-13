@@ -59,6 +59,9 @@ export function createGameClient(options: ClientOptions = {}) {
     try { return options.storage === undefined ? globalThis.localStorage : options.storage; } catch { return null; }
   }
   function storedValue(key: string): string {
+    // A failed pointer write can leave a different game's ID on disk. Keep
+    // this tab on its latest game until its checkpoint and pointer are saved.
+    if (key === SESSION_KEY && memorySession && storageFailed.has(memorySession)) return memorySession;
     try { return storage()?.getItem(key) || (key === SESSION_KEY ? memorySession : ''); } catch { return key === SESSION_KEY ? memorySession : ''; }
   }
   function savedCheckpoint(id: string): Checkpoint | undefined {

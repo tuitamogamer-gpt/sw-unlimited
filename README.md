@@ -50,6 +50,11 @@ mulligan your hand and select exactly two cards to become resources. During the
 action phase, play cards by paying their cost, attack with ready units, or use a
 leader or card ability. Actions alternate between you and the AI.
 
+Use **Swap decks** to try the matchup from the other side. Each difficulty has
+a short explanation, and mixed base health is shown before starting a match.
+Cadet uses simpler individual decisions with more varied priorities; Commander
+and Grand Admiral retain their coordinated tactical play.
+
 The interface distinguishes resource selection from playing cards. Hand cards
 show their effective play cost and action status. A card that cannot currently
 be played explains why. Claiming initiative ends your actions for the round and
@@ -59,6 +64,9 @@ optional; you can keep your entire hand.
 When Ambush is available, choose **Use Ambush** (or click the marked unit), then
 choose a highlighted enemy unit. **Skip Ambush** declines this attack. The unit
 can attack while exhausted; Ambush does not ready it. See [Ambush](docs/ambush.md).
+When several abilities trigger together, each choice shows its source card and
+ability name. **No effect now** explains an available choice that currently has
+no legal effect; it can still be resolved in the chosen order.
 
 On desktop, hover over a visible card for a compact artwork preview without
 clicking. This works in your hand, on the battlefield, and in deck lists and the
@@ -85,7 +93,8 @@ actions paused until the sequence finishes. On phones, the destination arena
 opens automatically. Events, upgrades, and leader deployment also get a preview.
 
 Inspect a card to read its rules, zoom its artwork, view attachments, and use
-its currently legal action. Deck details include a searchable card list,
+its currently legal action. Expand **Rules help** for its keywords and leader
+deployment rules. Deck details include a searchable card list,
 type filters, and a cost curve. Starting another game asks before replacing an
 unfinished match.
 
@@ -151,6 +160,9 @@ npm run test:preview-ui
 npm run test:ambush-hover-ui
 npm run test:damage-ui
 npm run test:menu-ui
+npm run test:account-ui
+npm run test:guidance-ui
+npm run test:storage-ui
 node scripts/sync-card-catalog.cjs --check
 ```
 
@@ -168,6 +180,9 @@ The opponent preview check measures the three-second hold, queued plays,
 blocked actions, image fallback, arena placement, and refresh during a preview.
 The menu check exercises Yoda's player-selection toggles and U-Wing's numbered
 selection order through real native actions and the mobile/desktop interface.
+The guidance check resolves simultaneous space Ambush and When Played abilities,
+including a choice with no current effect. The storage check covers invalid
+preferences and custom-deck changes shared between browser tabs.
 
 Tests exercise real games, manual human play from setup through regroup,
 information privacy, illegal action rejection, and restoration of encrypted

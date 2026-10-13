@@ -376,7 +376,8 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
 
     function abilityLabel(text) {
         return typeof text === 'string' ? text.replace(/\{keyword:([a-z]+)\}/gi,
-            (_match, keyword) => keyword[0].toUpperCase() + keyword.slice(1)) : text;
+            (_match, keyword) => keyword[0].toUpperCase() + keyword.slice(1))
+            .replace(/\{resource:(\d+)\}/g, (_match, amount) => `${amount} resource${Number(amount) === 1 ? '' : 's'}`) : text;
     }
 
     function legalActionsFor(viewer, state) {
@@ -413,8 +414,10 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
         }
         for (const button of state.buttons || []) {
             if (button.disabled || button.command === 'statefulPromptResults') continue;
+            // Native resolution-order choices put the ability name in text.
+            // Keep the command text intact and expose its readable display label.
             actions.push({ type: 'button', arg: String(button.arg), method: button.method || 'menuButton', promptId,
-                label: button.text, abilityLabel: abilityLabel(button.label),
+                label: button.text, abilityLabel: abilityLabel(button.label || (state.promptType === 'triggerWindow' ? button.text : undefined)),
                 sourceCard: promptSourceCard(button.sourceCard, viewer), hasLegalEffects: button.hasLegalEffects });
         }
         for (const display of state.displayCards || []) {
@@ -542,7 +545,8 @@ async function makeSession({ playerDeck, botDeck, seed = randomUUID(), difficult
             selectedCardIds: viewer.selectedCards.map((card) => card.uuid),
             selectableCardIds: state.distributeAmongTargets ? viewer.selectableCards.map((card) => card.uuid) : [...legalIds],
             buttons: state.buttons.map(({ text, arg, command, disabled, selected, method, label, sourceCard, hasLegalEffects }) => ({
-                text, arg: String(arg), command, disabled, selected, method, label: abilityLabel(label),
+                text, arg: String(arg), command, disabled, selected, method,
+                label: abilityLabel(label || (state.promptType === 'triggerWindow' ? text : undefined)),
                 sourceCard: promptSourceCard(sourceCard, viewer), hasLegalEffects,
             })), displayCards,
             ability,

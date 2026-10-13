@@ -1,0 +1,14 @@
+.ci-rules-help{margin-top:17px;border:1px solid #3c5264;border-radius:6px;background:#142636;overflow:hidden}
+.ci-rules-help>summary{display:flex;align-items:center;gap:8px;min-height:44px;padding:10px 12px;color:#b9d1df;font-size:12px;font-weight:500;cursor:pointer;list-style:none}
+.ci-rules-help>summary::-webkit-details-marker{display:none}
+.ci-rules-help>summary::after{content:'+';margin-left:auto;color:#aec3d2;font-size:19px;font-weight:400;line-height:1}
+.ci-rules-help[open]>summary::after{content:'−'}
+.ci-rules-help>summary:hover{background:#203749;color:#e0ebf0}
+.ci-rules-help>summary:focus-visible{outline:2px solid var(--gold,#d4b477);outline-offset:-3px;border-radius:5px}
+.ci-rules-help>summary>svg{flex-shrink:0;color:#aebd97}
+.ci-rules-help-content{padding:0 12px 13px}
+.ci-rules-help-content>p{margin:0 0 13px;color:#9bafbe;font-size:11px;line-height:1.65}
+.ci-rules-help-content>dl{margin:0}
+.ci-rules-help-content>dl>div+div{border-top:1px solid #304659;padding-top:11px;margin-top:11px}
+.ci-rules-help-content dt{font-size:12px;font-weight:600;color:#d5dfdf;margin-bottom:4px}
+.ci-rules-help-content dd{font-size:12px;line-height:1.7;color:#bbcbd7;margin:0;overflow-wrap:anywhere}

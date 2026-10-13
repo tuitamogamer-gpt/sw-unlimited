@@ -20,6 +20,8 @@
     "test:damage-ui": "node scripts/damage-presentation-ui.mjs",
     "test:menu-ui": "node scripts/menu-selections-ui.mjs",
     "test:account-ui": "node scripts/account-ui.mjs",
+    "test:guidance-ui": "node scripts/play-guidance-ui.mjs",
+    "test:storage-ui": "node scripts/storage-recovery-ui.mjs",
     "test:smoke": "node scripts/smoke.cjs",
     "cards:check": "node scripts/report-coverage.cjs",
     "cards:catalog-check": "node scripts/sync-card-catalog.cjs --check",

@@ -51,6 +51,19 @@ export function persistCustomDecks(decks: SavedCustomDeck[], storage?: Pick<Stor
   }
 }
 
+/** Refresh the saved collection before writing so a stale tab cannot replace it. */
+export function upsertCustomDeck(deck: SavedCustomDeck, storage?: Pick<Storage, 'getItem' | 'setItem'>): SavedCustomDeck[] {
+  const next = [deck, ...readCustomDecks(storage).filter(existing => existing.id !== deck.id)];
+  persistCustomDecks(next, storage);
+  return next;
+}
+
+export function removeStoredCustomDeck(id: string, storage?: Pick<Storage, 'getItem' | 'setItem'>): SavedCustomDeck[] {
+  const next = readCustomDecks(storage).filter(deck => deck.id !== id);
+  persistCustomDecks(next, storage);
+  return next;
+}
+
 export function exportCustomDeck(deck: ImportedDeck): void {
   const data = JSON.stringify(deck.recipe, null, 2);
   const url = URL.createObjectURL(new Blob([data], { type: 'application/json;charset=utf-8' }));

@@ -6,9 +6,9 @@
  * This module deliberately never imports the engine or receives a live Game object.
  */
 const DIFFICULTIES = Object.freeze({
-    easy: { name: 'Cadet', tactics: 0.65, planning: false, variance: 7 },
-    normal: { name: 'Knight', tactics: 1, planning: false, variance: 0.5 },
-    hard: { name: 'Master', tactics: 1.25, planning: true, variance: 0 }
+    easy: { name: 'Cadet', tactics: 0.65, planning: false, coordination: false, variance: 12 },
+    normal: { name: 'Commander', tactics: 1, planning: false, coordination: true, variance: 0.5 },
+    hard: { name: 'Grand Admiral', tactics: 1.25, planning: true, coordination: true, variance: 0 }
 });
 
 const CARD_FIELDS = ['uuid', 'id', 'code', 'name', 'subtitle', 'cost', 'power', 'hp', 'damage',
@@ -163,8 +163,10 @@ function evaluateAttack(attacker, target, state, config) {
     const ownHp = remaining(state.me.base);
     if (isBase(target)) {
         if (attackPower >= remaining(target)) return { score: 100000 + attackPower, reason: 'Finishing the game with a base attack.' };
-        const race = potentialDamage(ownUnits, enemyUnits) >= enemyHp;
-        const inDanger = potentialDamage(enemyUnits, ownUnits) >= ownHp;
+        // Cadet evaluates the current attack, without coordinating several attackers.
+        // Direct finishing attacks and immediately lethal enemy units remain priorities.
+        const race = config.coordination !== false && potentialDamage(ownUnits, enemyUnits) >= enemyHp;
+        const inDanger = config.coordination !== false && potentialDamage(enemyUnits, ownUnits) >= ownHp;
         return {
             score: attackPower * (enemyHp <= 10 ? 5 : 3.2) + (race ? 22 : 0) - (inDanger && !race ? 12 : 0),
             reason: race ? 'Starting a sequence of attacks that can defeat the base.' : 'Putting pressure on the enemy base.'
@@ -178,14 +180,19 @@ function evaluateAttack(attacker, target, state, config) {
     const die = received >= remaining(attacker);
     const overrun = keyword(attacker, 'overwhelm') ? Math.max(0, dealt - remaining(target)) : 0;
     if (overrun >= enemyHp && enemyHp > 0) return { score: 100000, reason: 'Finishing the game with Overwhelm damage.' };
-    const futureDamage = potentialDamage(enemyUnits, ownUnits);
     const immediateLethal = !target.exhausted && canHitBase(target, ownUnits) && damageValue(target) >= ownHp;
-    const stopsLethal = kill && !target.exhausted && futureDamage >= ownHp && futureDamage - damageValue(target) < ownHp;
+    const futureDamage = config.coordination !== false ? potentialDamage(enemyUnits, ownUnits) : 0;
+    const stopsLethal = config.coordination !== false && kill && !target.exhausted
+        && futureDamage >= ownHp && futureDamage - damageValue(target) < ownHp;
     let score = (kill ? unitValue(target) * 1.4 : Math.min(dealt, remaining(target)) * 1.3)
         - (die ? unitValue(attacker) * 1.08 : Math.min(received, remaining(attacker)) * 0.85)
         + (targetShield ? 2.5 : 0) + overrun * 3.2;
     if (kill && !target.exhausted) score += damageValue(target) * 1.2;
-    if (kill && keyword(target, 'sentinel')) score += 4 + potentialDamage(ownUnits.filter((card) => card.uuid !== attacker.uuid), enemyUnits.filter((card) => card.uuid !== target.uuid)) * 0.7;
+    if (kill && keyword(target, 'sentinel')) {
+        const laneOpening = config.coordination !== false
+            ? potentialDamage(ownUnits.filter((card) => card.uuid !== attacker.uuid), enemyUnits.filter((card) => card.uuid !== target.uuid)) * 0.7 : 0;
+        score += 4 + laneOpening;
+    }
     if (stopsLethal) score += 60 * config.tactics;
     if (immediateLethal && kill) score += 1000;
     if (config.planning && !die) {
@@ -288,7 +295,10 @@ function playValue(card, ability, state, config) {
             reason = 'Playing an Ambush unit for an immediate attack.';
         }
         if (keyword(card, 'sentinel') || /\bsentinel\b/.test(text)) {
-            const danger = potentialDamage(enemyUnits, ownUnits) >= remaining(state.me.base);
+            const danger = config.coordination !== false
+                ? potentialDamage(enemyUnits, ownUnits) >= remaining(state.me.base)
+                : enemyUnits.some((unit) => !unit.exhausted && canHitBase(unit, ownUnits)
+                    && damageValue(unit) >= remaining(state.me.base));
             if (danger) { score += 70; reason = 'Playing a Sentinel to protect the base.'; }
         }
     } else if (/upgrade/i.test(card.type)) {
@@ -517,7 +527,8 @@ function chooseAction(view, options = {}) {
     const state = observe(view);
     const memory = options.memory || {};
     const requested = lower(options.difficulty || 'normal');
-    const difficulty = ({ cadet: 'easy', apprentice: 'easy', knight: 'normal', master: 'hard', expert: 'hard' })[requested] || requested;
+    const difficulty = ({ cadet: 'easy', apprentice: 'easy', commander: 'normal', knight: 'normal',
+        'grand admiral': 'hard', master: 'hard', expert: 'hard' })[requested] || requested;
     const config = DIFFICULTIES[difficulty] || DIFFICULTIES.normal;
     const actions = state.legalActions;
     if (!actions.length) return { action: null, reason: 'Waiting for the opponent to act.', difficulty, memory };
@@ -563,7 +574,9 @@ function chooseAction(view, options = {}) {
             result.score -= attempts * 2000;
             if (state.prompt.type === 'actionWindow') result.score -= (memory.boardAttempts?.[actionKey(action)] || 0) * 2000;
             // Difficulty affects tactical evaluation, not hidden information or rules.
-            if (result.score < 1000) result.score += noise(`${state.round}|${state.prompt.title}|${action.label}|${card?.code || card?.name || ''}|${index}`) * config.variance;
+            // Cadet varies action priorities, not effect ownership or required resolutions.
+            const variance = config.coordination === false && state.prompt.type !== 'actionWindow' ? 0 : config.variance;
+            if (result.score < 1000) result.score += noise(`${state.round}|${state.prompt.title}|${action.label}|${card?.code || card?.name || ''}|${index}`) * variance;
             return { ...result, action };
         }).sort((a, b) => b.score - a.score);
         choice = ranked[0];
