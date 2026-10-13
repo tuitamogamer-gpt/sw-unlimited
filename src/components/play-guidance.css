@@ -1,0 +1,51 @@
+.mission-content .swap-decks{flex:0 0 36px;width:36px;height:36px;padding:0;justify-content:center;border:1px solid #71829466;border-radius:50%;background:#172331;color:#b7c9d7}
+.mission-content .swap-decks:hover{border-color:var(--gold);color:var(--gold);background:#25303a}
+.mission-guidance{padding:12px 23px 15px;border-top:1px solid #ffffff12;display:grid;gap:7px}
+.mission-guidance p{margin:0;display:flex;align-items:flex-start;gap:8px;font-size:12px;line-height:1.5;color:#aebdcb}
+.mission-guidance strong{color:var(--ivory);font-weight:600;flex-shrink:0}
+.mission-guidance svg{flex-shrink:0;margin-top:2px;color:var(--cyan)}
+.mission-guidance .base-health-note,.mission-guidance .base-health-note svg{color:#e9c482}
+.prompt-buttons .ability-choice-button,.prompt-modal-actions .ability-choice-button{height:auto;min-height:44px;padding:7px 12px;text-align:left;white-space:normal}
+.ability-choice-button>span{display:flex;flex-direction:column;gap:3px;min-width:0}
+.ability-choice-button strong{font-weight:600;line-height:1.3}
+.ability-choice-button .ability-source-name{display:block;color:#b4c8d8;font-size:10px;line-height:1.3}
+.ability-choice-button .ability-no-effect{display:block;color:#e5c083;font-size:10px;line-height:1.3}
+.rules-ambush-note{padding:16px 18px;margin:22px 0;border:1px solid #62929d66;border-radius:7px;background:#172c3680}
+.rules-ambush-note h3{font-size:23px;color:var(--ivory);margin:0 0 7px}
+.rules-ambush-note p{font-size:13px;line-height:1.65;color:#becdd8;margin:0}
+@media(min-width:721px){
+  .game-card .card-inspect,.leader-mini>.icon-button{width:28px;height:28px}
+}
+@media(max-width:720px){
+  .hero{padding-top:25px;padding-bottom:20px}
+  .hero .hero-eyebrow{margin-bottom:16px}
+  .hero h1{font-size:42px;margin-bottom:15px}
+  .hero-copy>p{margin-bottom:14px}
+  .hero-tags{gap:12px}
+  .hero-art{height:140px;max-width:350px;margin-top:16px}
+  .hero-card{height:93px;width:58%;max-width:210px}
+  .hero-card-front{top:31px;left:7%}
+  .hero-card-back{top:3px;right:5%;width:58%}
+  .hero-art-label{bottom:0}
+  .mission-content{gap:8px}
+  .mission-content .swap-decks{flex-basis:32px;width:32px;height:32px}
+  .mission-guidance{padding:11px 13px;gap:8px}
+  .mission-guidance p{font-size:11px}
+  .mission-guidance #difficulty-detail{display:block}
+  .mission-guidance #difficulty-detail strong{margin-right:7px}
+  .prompt-buttons .ability-choice-button{flex:1;min-width:0;padding:6px 8px}
+  .ability-choice-button .ability-source-name,.ability-choice-button .ability-no-effect{font-size:9px}
+  .rules-content .rules-grid article>p,.rules-content .rules-tips p,.rules-content .rules-intro p{font-size:12px;line-height:1.6}
+  .rules-ambush-note{padding:14px;margin:18px 0}
+  .rules-ambush-note h3{font-size:22px}
+  .rules-ambush-note p{font-size:12px}
+}
+@media(max-width:360px){
+  .site-header:has(.account-trigger) .brand-emblem{display:none}
+  .hero-art{height:90px;margin-top:10px}
+  .hero-card{height:67px;width:48%}
+  .hero-card-front{top:14px;left:11%}
+  .hero-card-back{top:0;right:9%;width:48%}
+  .hero-art-label{display:none}
+  .mission-content .combatant-portrait{display:none}
+}

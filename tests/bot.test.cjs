@@ -1,7 +1,8 @@
 'use strict';
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { chooseAction, observe } = require('../server/bot.cjs');
+const { chooseAction, observe, DIFFICULTIES } = require('../server/bot.cjs');
+const difficulties = ['easy', 'normal', 'hard'];
 
 function card(uuid, controllerId = 'bot', props = {}) {
     return { uuid, id: uuid, name: uuid, controllerId, ownerId: controllerId, type: 'basicUnit',
@@ -30,10 +31,12 @@ test('takes available lethal before playing another card', () => {
     v.players.bot.hand = [card('unit', 'bot', { zone: 'hand', cost: 4, power: 7 })];
     v.players.human.base.remainingHp = 4;
     v.legalActions = [action('unit', 'play'), action('attacker'), button('claimInitiative')];
-    const decision = decide(v);
-    assert.equal(decision.action.cardId, 'attacker');
-    assert.equal(decision.memory.plan.targetId, 'human-base');
-    assert.match(decision.reason, /Finishing/);
+    for (const difficulty of difficulties) {
+        const decision = chooseAction(v, { difficulty });
+        assert.equal(decision.action.cardId, 'attacker', difficulty);
+        assert.equal(decision.memory.plan.targetId, 'human-base', difficulty);
+        assert.match(decision.reason, /Finishing/);
+    }
 });
 
 test('removes an immediate lethal attacker ahead of base pressure', () => {
@@ -43,7 +46,92 @@ test('removes an immediate lethal attacker ahead of base pressure', () => {
     v.players.human.ground = [card('threat', 'human', { power: 3, remainingHp: 4 })];
     v.prompt = { ...v.prompt, type: 'select', title: 'Choose attack target', attackerId: 'defender' };
     v.legalActions = [action('human-base'), action('threat')];
-    assert.equal(decide(v).action.cardId, 'threat');
+    for (const difficulty of difficulties) assert.equal(chooseAction(v, { difficulty }).action.cardId, 'threat', difficulty);
+});
+
+test('Cadet develops its board rather than recognizing a coordinated finishing sequence', () => {
+    const v = view();
+    v.players.bot.ground = [card('first', 'bot', { power: 4 }), card('second', 'bot', { power: 4 })];
+    v.players.bot.hand = [card('reinforcement', 'bot', { zone: 'hand', cost: 4, power: 7, hp: 6, remainingHp: 6 })];
+    v.players.human.base.remainingHp = 8;
+    v.legalActions = [action('reinforcement', 'play'), action('first'), action('second')];
+    const cadet = chooseAction(v, { difficulty: 'easy' });
+    assert.equal(cadet.action.cardId, 'reinforcement');
+    assert.match(cadet.reason, /Building board/);
+    for (const difficulty of ['normal', 'hard']) {
+        const decision = chooseAction(v, { difficulty });
+        assert.ok(['first', 'second'].includes(decision.action.cardId), difficulty);
+        assert.equal(decision.memory.plan.targetId, 'human-base', difficulty);
+        assert.match(decision.reason, /sequence of attacks/);
+    }
+});
+
+test('Cadet evaluates trades individually instead of coordinating defense against several attackers', () => {
+    const v = view();
+    v.players.bot.base.remainingHp = 6;
+    v.players.bot.ground = [card('defender', 'bot', { power: 4, hp: 8, remainingHp: 8 })];
+    v.players.bot.hand = [card('reinforcement', 'bot', { zone: 'hand', cost: 4, power: 7, hp: 6, remainingHp: 6 })];
+    v.players.human.ground = [card('first-threat', 'human'), card('second-threat', 'human')];
+    v.legalActions = [action('reinforcement', 'play'), action('defender')];
+    assert.equal(chooseAction(v, { difficulty: 'easy' }).action.cardId, 'reinforcement');
+    for (const difficulty of ['normal', 'hard']) {
+        const decision = chooseAction(v, { difficulty });
+        assert.equal(decision.action.cardId, 'defender', difficulty);
+        assert.match(decision.reason, /stop a lethal attack/);
+    }
+});
+
+test('Cadet still plays a Sentinel to block a visible immediate lethal attacker', () => {
+    const v = view();
+    v.players.bot.base.remainingHp = 3;
+    v.players.human.ground = [card('threat', 'human', { power: 3 })];
+    v.players.bot.hand = [card('sentinel', 'bot', { zone: 'hand', keywords: [{ name: 'sentinel' }] }),
+        card('reinforcement', 'bot', { zone: 'hand', cost: 4, power: 7, hp: 6, remainingHp: 6 })];
+    v.legalActions = [action('reinforcement', 'play'), action('sentinel', 'play'), button('claimInitiative')];
+    assert.equal(chooseAction(v, { difficulty: 'easy' }).action.cardId, 'sentinel');
+});
+
+test('Cadet sometimes selects a weaker productive play while Commander keeps the stronger one', () => {
+    const v = view();
+    v.players.bot.hand = [card('stronger', 'bot', { zone: 'hand', power: 4 }), card('adequate', 'bot', { zone: 'hand', power: 3 })];
+    v.legalActions = [action('stronger', 'play'), action('adequate', 'play'), button('pass')];
+    const cadetChoices = new Set();
+    for (let round = 1; round <= 20; round++) {
+        v.round = round;
+        const decision = chooseAction(v, { difficulty: 'easy' });
+        assert.ok(['stronger', 'adequate'].includes(decision.action.cardId));
+        cadetChoices.add(decision.action.cardId);
+        assert.equal(chooseAction(v, { difficulty: 'normal' }).action.cardId, 'stronger');
+    }
+    assert.deepEqual(cadetChoices, new Set(['stronger', 'adequate']));
+});
+
+test('Cadet decisions reproduce after serializing memory and the public observation', () => {
+    const v = view();
+    v.players.bot.ground = [card('attacker')];
+    v.players.bot.hand = [card('reinforcement', 'bot', { zone: 'hand' })];
+    v.legalActions = [action('attacker'), action('reinforcement', 'play'), button('claimInitiative')];
+    const memory = {};
+    for (let step = 0; step < 6; step++) {
+        const restoredMemory = JSON.parse(JSON.stringify(memory));
+        const restoredView = JSON.parse(JSON.stringify(v));
+        const expected = chooseAction(v, { difficulty: 'easy', memory });
+        const replayed = chooseAction(restoredView, { difficulty: 'easy', memory: restoredMemory });
+        assert.deepEqual(JSON.parse(JSON.stringify(replayed)), JSON.parse(JSON.stringify(expected)));
+        assert.ok(v.legalActions.some((candidate) => candidate.type === expected.action.type
+            && candidate.cardId === expected.action.cardId && candidate.arg === expected.action.arg));
+        if (step % 2) v.round++;
+    }
+});
+
+test('difficulty names match the UI and legacy aliases remain supported', () => {
+    const v = view();
+    v.legalActions = [button('pass')];
+    for (const [alias, difficulty, name] of [['Cadet', 'easy', 'Cadet'], ['Commander', 'normal', 'Commander'],
+        ['Grand Admiral', 'hard', 'Grand Admiral'], ['knight', 'normal', 'Commander'], ['master', 'hard', 'Grand Admiral']]) {
+        assert.equal(chooseAction(v, { difficulty: alias }).difficulty, difficulty);
+        assert.equal(DIFFICULTIES[difficulty].name, name);
+    }
 });
 
 test('sentinel blocks planned base lethal and is removed first', () => {
@@ -105,9 +193,11 @@ test('indirect damage uses only legal targets, respects unit HP and protects let
     v.prompt = { ...v.prompt, type: 'distributeAmongTargets', selectableCardIds: ['bot-base', 'unit'],
         distribution: { type: 'distributeIndirectDamage', amount: 3, isIndirectDamage: true } };
     v.legalActions = [{ type: 'stateful', promptId: 'prompt', label: 'Distribute' }];
-    const allocations = decide(v).action.result.valueDistribution;
-    assert.equal(allocations.reduce((a, x) => a + x.amount, 0), 3);
-    assert.ok(allocations.every((x) => x.uuid === 'bot-base' ? x.amount < 2 : x.uuid === 'unit' && x.amount <= 3));
+    for (const difficulty of difficulties) {
+        const allocations = chooseAction(v, { difficulty }).action.result.valueDistribution;
+        assert.equal(allocations.reduce((a, x) => a + x.amount, 0), 3);
+        assert.ok(allocations.every((x) => x.uuid === 'bot-base' ? x.amount < 2 : x.uuid === 'unit' && x.amount <= 3), difficulty);
+    }
 });
 
 test('damage distribution concentrates lethal on a base and respects maxTargets', () => {
@@ -117,7 +207,9 @@ test('damage distribution concentrates lethal on a base and respects maxTargets'
     v.prompt = { ...v.prompt, type: 'distributeAmongTargets', selectableCardIds: ['human-base', 'unit'],
         distribution: { type: 'distributeDamage', amount: 3, maxTargets: 1 } };
     v.legalActions = [{ type: 'stateful', promptId: 'prompt' }];
-    assert.deepEqual(decide(v).action.result.valueDistribution, [{ uuid: 'human-base', amount: 3 }]);
+    for (const difficulty of difficulties) {
+        assert.deepEqual(chooseAction(v, { difficulty }).action.result.valueDistribution, [{ uuid: 'human-base', amount: 3 }], difficulty);
+    }
 });
 
 test('healing fills exact mandatory amount even above damage', () => {
@@ -126,7 +218,9 @@ test('healing fills exact mandatory amount even above damage', () => {
     v.prompt = { ...v.prompt, type: 'distributeAmongTargets', selectableCardIds: ['bot-base'],
         distribution: { type: 'distributeHealing', amount: 3 } };
     v.legalActions = [{ type: 'stateful', promptId: 'prompt' }];
-    assert.deepEqual(decide(v).action.result.valueDistribution, [{ uuid: 'bot-base', amount: 3 }]);
+    for (const difficulty of difficulties) {
+        assert.deepEqual(chooseAction(v, { difficulty }).action.result.valueDistribution, [{ uuid: 'bot-base', amount: 3 }], difficulty);
+    }
 });
 
 test('continues useful multiple selection and then confirms without toggling', () => {
@@ -167,7 +261,7 @@ test('never reads opponent hand/resources/deck or own hidden deck', () => {
     const forbid = (target, property) => Object.defineProperty(target, property, { get() { throw new Error(`Private ${property} was accessed`); } });
     for (const field of ['hand', 'resources', 'deck', 'drawDeck']) forbid(v.players.human, field);
     for (const field of ['deck', 'drawDeck']) forbid(v.players.bot, field);
-    assert.doesNotThrow(() => decide(v));
+    for (const difficulty of difficulties) assert.doesNotThrow(() => chooseAction(v, { difficulty }));
     const safe = observe(v);
     assert.equal('hand' in safe.enemy, false);
     assert.equal('resources' in safe.enemy, false);
@@ -178,14 +272,16 @@ test('different opponent hidden identities and deck order cannot change a decisi
     const v = view();
     v.players.bot.ground = [card('attacker')];
     v.legalActions = [action('attacker'), button('claimInitiative')];
-    const before = decide(v);
+    const before = difficulties.map((difficulty) => chooseAction(v, { difficulty }));
     v.players.human.hand = [card('secret-removal', 'human', { power: 1000 })];
     v.players.human.deck = [card('secret-top', 'human')];
     v.players.bot.deck = [card('unknown-top', 'bot')];
-    const after = decide(v);
-    assert.deepEqual(before.action, after.action);
-    assert.equal(before.reason, after.reason);
-    assert.equal(before.score, after.score);
+    for (const [index, difficulty] of difficulties.entries()) {
+        const after = chooseAction(v, { difficulty });
+        assert.deepEqual(before[index].action, after.action, difficulty);
+        assert.equal(before[index].reason, after.reason, difficulty);
+        assert.equal(before[index].score, after.score, difficulty);
+    }
 });
 
 test('works from either player seat and yields when no legal prompt is present', () => {
@@ -240,7 +336,9 @@ test('infers generic target prompt intent from the public source card', () => {
     v.players.bot.discard = [card('event', 'bot', { zone: 'discard', type: 'event', name: 'Open Fire', text: 'Deal 4 damage to a unit.' })];
     v.prompt = { ...v.prompt, type: 'select', title: 'Choose a unit', subtitle: 'Open Fire' };
     v.legalActions = [action('friendly'), action('enemy')];
-    assert.equal(decide(v, { plan: { cardId: 'event', ability: { type: 'play', title: 'Play Open Fire' } } }).action.cardId, 'enemy');
+    for (const difficulty of difficulties) {
+        assert.equal(chooseAction(v, { difficulty, memory: { plan: { cardId: 'event', ability: { type: 'play', title: 'Play Open Fire' } } } }).action.cardId, 'enemy', difficulty);
+    }
 });
 
 test('mandatory sacrifice minimizes friendly unit value', () => {
@@ -257,6 +355,8 @@ test('gives Advantage to a friendly unit even after previous attack context', ()
     v.players.human.ground = [card('enemy-sentinel', 'human', { keywords: [{ name: 'sentinel' }] })];
     v.prompt = { ...v.prompt, type: 'select', title: 'Give an Advantage token to a unit', subtitle: 'Regroup Phase' };
     v.legalActions = [action('attacker'), action('enemy-sentinel')];
-    const memory = { plan: { cardId: 'attacker', ability: { type: 'attack', title: 'Attack' } } };
-    assert.equal(decide(v, memory).action.cardId, 'attacker');
+    for (const difficulty of difficulties) {
+        const memory = { plan: { cardId: 'attacker', ability: { type: 'attack', title: 'Attack' } } };
+        assert.equal(chooseAction(v, { difficulty, memory }).action.cardId, 'attacker', difficulty);
+    }
 });

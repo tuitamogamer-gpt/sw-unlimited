@@ -266,7 +266,9 @@ try {
       entryCheckpoint = { id: before.id, token: before.sessionToken, action: decision.action, cardId: card.uuid };
       const entry = await effect(activePage, 'enter', card);
       await showArena(activePage, card);
-      await activePage.waitForFunction(({ id, cardId }) => window.__battleAnimations.some(event => event.fxId === id || event.cardId === cardId), { id: entry.id, cardId: card.uuid }, { timeout: 1000 });
+      // A card's earlier draw/entry animation can satisfy a broad card-id wait
+      // before the newly mounted effect dispatches its own animationstart.
+      await activePage.waitForFunction(id => window.__battleAnimations.some(event => event.fxId === id && event.name === 'swu-entry-rim'), entry.id, { timeout: 1000 });
       const animations = await activePage.evaluate(cardId => window.__battleAnimations.filter(event => event.cardId === cardId), card.uuid);
       const rim = animations.find(animation => animation.fxId === entry.id && animation.name === 'swu-entry-rim');
       assert.ok(rim, 'Entry must mount its keyed visual pulse.');

@@ -30,7 +30,7 @@ export interface GameAction {
   abilities?: { title: string; type: string; cost?: number | null }[]; disabled?: boolean;
   result?: { type: string; valueDistribution: { uuid: string; amount: number }[] };
 }
-export interface PromptButton { text: string; arg: string; command?: string; disabled?: boolean; selected?: boolean; label?: string; sourceCard?: Card; hasLegalEffects?: boolean }
+export interface PromptButton { text: string; arg: string; command?: string; disabled?: boolean; selected?: boolean; label?: string; sourceCard?: Card; hasLegalEffects?: boolean | null }
 export interface Prompt {
   id: string; title: string; subtitle?: string; type?: string; selectMode?: string; selectOrder?: boolean;
   stage?: 'resource' | 'action' | 'mulligan' | 'initiative' | 'target' | 'choice' | 'waiting' | 'finished';
