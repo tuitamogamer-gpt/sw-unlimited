@@ -14,11 +14,14 @@ const FORMAT = 1;
 const ENGINE_VERSION = '1f0e9783c4743acdc67df0c4ab3f3610a349c32a';
 const RULES_REVISION = 1;
 const SESSION_TTL = 6 * 60 * 60 * 1000;
+const ACCOUNT_RETENTION = 30 * 24 * 60 * 60 * 1000;
 const MAX_ACTIONS = 4000;
 const MAX_TOKEN_BYTES = 700 * 1024;
 const MAX_RECORD_BYTES = 2 * 1024 * 1024;
 const AAD = Buffer.from('sw-unlimited:private-session:v1');
 const localSecret = randomBytes(32);
+const ACCOUNT_OWNER = /^(?:google_[a-f0-9]{64}|supabase_[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})$/;
+const PUBLIC_CARD_ID = /^swucard_[a-f0-9]{24}$/;
 
 function sessionError(message, code = 'INVALID_SESSION', status = 401) {
     const error = new Error(message); error.code = code; error.status = status; return error;
@@ -35,7 +38,21 @@ function encryptionKey() {
     return localSecret;
 }
 
-function validateRecord(record, expectedId) {
+function validateTraining(training, actionCount) {
+    if (!training || typeof training !== 'object' || Array.isArray(training)
+        || !['resources', 'space-ambush', 'leader-deploy'].includes(training.lessonId)
+        || !Number.isSafeInteger(training.setupActions) || training.setupActions < 0 || training.setupActions > actionCount) return false;
+    const keys = training.lessonId === 'resources' ? ['lessonId', 'setupActions']
+        : training.lessonId === 'space-ambush' ? ['lessonId', 'setupActions', 'sourceId', 'targetId']
+            : ['lessonId', 'setupActions', 'sourceId'];
+    if (Object.keys(training).some(key => !keys.includes(key))) return false;
+    if (training.lessonId !== 'resources' && (typeof training.sourceId !== 'string' || !PUBLIC_CARD_ID.test(training.sourceId))) return false;
+    if (training.lessonId === 'space-ambush' && (typeof training.targetId !== 'string' || !PUBLIC_CARD_ID.test(training.targetId)
+        || training.targetId === training.sourceId)) return false;
+    return true;
+}
+
+function validateRecord(record, expectedId, { allowExpired = false } = {}) {
     if (!record || typeof record !== 'object' || Array.isArray(record)
         || record.format !== FORMAT || record.engineVersion !== ENGINE_VERSION
         || typeof record.id !== 'string' || !/^[a-f0-9-]{36}$/i.test(record.id)
@@ -48,7 +65,11 @@ function validateRecord(record, expectedId) {
         || record.expiresAt - record.createdAt > SESSION_TTL
         || !Array.isArray(record.actions) || record.actions.length > MAX_ACTIONS
         || !record.memory || typeof record.memory !== 'object' || Array.isArray(record.memory)
-        || !Array.isArray(record.botHistory) || record.botHistory.length > 100) {
+        || !Array.isArray(record.botHistory) || record.botHistory.length > 100
+        || record.accountOwnerId !== undefined && (typeof record.accountOwnerId !== 'string' || !ACCOUNT_OWNER.test(record.accountOwnerId))
+        || record.originalCreatedAt !== undefined && (!Number.isSafeInteger(record.originalCreatedAt)
+            || record.originalCreatedAt < 0 || record.originalCreatedAt > record.createdAt)
+        || record.training !== undefined && !validateTraining(record.training, record.actions?.length)) {
         throw sessionError('Nevažeća spremljena partija. Pokreni novu partiju.');
     }
     for (const [field, deckId] of [['playerDeck', record.deckId], ['opponentDeck', record.opponentDeckId]]) {
@@ -56,7 +77,7 @@ function validateRecord(record, expectedId) {
             throw sessionError('Invalid saved custom deck. Start a new game.');
         }
     }
-    if (record.expiresAt <= Date.now()) throw sessionError('Spremljena partija je istekla. Pokreni novu partiju.', 'SESSION_EXPIRED', 410);
+    if (!allowExpired && record.expiresAt <= Date.now()) throw sessionError('Spremljena partija je istekla. Pokreni novu partiju.', 'SESSION_EXPIRED', 410);
     for (const item of record.actions) {
         const action = item?.action;
         if (!['human', 'bot'].includes(item?.playerId) || !action || typeof action !== 'object' || Array.isArray(action)
@@ -115,7 +136,9 @@ function sealRecord(record) {
     return token;
 }
 
-function decodeRecord(token, { id } = {}) {
+// Expiration relaxation is confined to this private decoder. HTTP callers of
+// decodeRecord and restoreRecord cannot opt into account checkpoint renewal.
+function decodeEnvelope(token, { id, allowExpired = false } = {}) {
     if (typeof token !== 'string' || token.length > MAX_TOKEN_BYTES || !/^swu1\.[A-Za-z0-9_-]{40,}$/.test(token)) {
         throw sessionError('Nevažeća spremljena partija. Pokreni novu partiju.');
     }
@@ -132,11 +155,12 @@ function decodeRecord(token, { id } = {}) {
     } catch {
         throw sessionError('Nevažeća spremljena partija. Pokreni novu partiju.');
     }
-    return validateRecord(record, id);
+    return validateRecord(record, id, { allowExpired });
 }
 
-async function restoreRecord(token, { decks, id } = {}) {
-    const record = decodeRecord(token, { id });
+function decodeRecord(token, { id } = {}) { return decodeEnvelope(token, { id }); }
+
+async function replayRecord(record, decks) {
     const playerDeck = record.playerDeck || decks?.find((deck) => deck.id === record.deckId);
     const botDeck = record.opponentDeck || decks?.find((deck) => deck.id === record.opponentDeckId);
     if (!playerDeck || !botDeck) throw sessionError('Špil spremljene partije više nije dostupan.', 'SESSION_EXPIRED', 410);
@@ -156,7 +180,53 @@ async function restoreRecord(token, { decks, id } = {}) {
     return { record, game };
 }
 
+async function restoreRecord(token, { decks, id } = {}) {
+    return replayRecord(decodeRecord(token, { id }), decks);
+}
+
+function requireAccountOwner(ownerId) {
+    if (typeof ownerId !== 'string' || !ACCOUNT_OWNER.test(ownerId)) {
+        throw sessionError('Sign in to resume your cloud save.', 'ACCOUNT_REQUIRED', 401);
+    }
+}
+
+function requireMatchingOwner(record, ownerId) {
+    if (record.accountOwnerId !== ownerId) {
+        throw sessionError('This cloud save belongs to a different account.', 'ACCOUNT_CHECKPOINT_OWNER', 403);
+    }
+}
+
+/** Called only with an identity resolved by the server's account auth layer. */
+function bindAccountCheckpoint(token, { id, ownerId } = {}) {
+    requireAccountOwner(ownerId);
+    const record = decodeRecord(token, { id });
+    if (record.accountOwnerId !== undefined) requireMatchingOwner(record, ownerId);
+    record.accountOwnerId = ownerId;
+    record.originalCreatedAt ??= record.createdAt;
+    return { gameId: record.id, sessionToken: sealRecord(record), deckId: record.deckId,
+        opponentDeckId: record.opponentDeckId, difficulty: record.difficulty,
+        createdAt: record.createdAt, expiresAt: record.expiresAt,
+        actionCount: record.actions.length, version: record.actions.length };
+}
+
+/** Only account storage may select this path; a browser token cannot claim an owner. */
+async function restoreAccountRecord(token, { decks, id, ownerId } = {}) {
+    requireAccountOwner(ownerId);
+    const record = decodeEnvelope(token, { id, allowExpired: true });
+    requireMatchingOwner(record, ownerId);
+    if (record.expiresAt <= Date.now() - ACCOUNT_RETENTION) {
+        throw sessionError('This cloud save has expired after 30 days without a renewed checkpoint.', 'ACCOUNT_CHECKPOINT_EXPIRED', 410);
+    }
+    const restored = await replayRecord(record, decks);
+    // Renew only after the same native board was reconstructed successfully.
+    // Historical inputs, shuffle, bot memory and lesson/review state stay exact.
+    record.originalCreatedAt ??= record.createdAt;
+    record.createdAt = Date.now();
+    record.expiresAt = record.createdAt + SESSION_TTL;
+    return restored;
+}
+
 module.exports = {
-    createRecord, applyAction, sealRecord, decodeRecord, restoreRecord,
-    SESSION_TTL, MAX_ACTIONS, MAX_TOKEN_BYTES, MAX_RECORD_BYTES, ENGINE_VERSION,
+    createRecord, applyAction, sealRecord, decodeRecord, restoreRecord, bindAccountCheckpoint, restoreAccountRecord,
+    SESSION_TTL, ACCOUNT_RETENTION, MAX_ACTIONS, MAX_TOKEN_BYTES, MAX_RECORD_BYTES, ENGINE_VERSION,
 };

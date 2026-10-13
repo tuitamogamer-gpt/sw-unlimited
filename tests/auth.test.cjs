@@ -16,11 +16,16 @@ async function fixture({ disabled = false, secure = false } = {}) {
   const messages = [];
   const mock = createMockGoogle({ origin: () => origin });
   const app = express();
-  app.use(createAuthRouter({
-    config: () => disabled ? {} : { url: origin, secret: 'test-auth-secret-independent-of-game-checkpoints',
+  const authRouter = createAuthRouter({
+    config: () => disabled ? {} : { url: origin, supabaseUrl: 'https://storage.example.supabase.co', secret: 'test-auth-secret-independent-of-game-checkpoints',
       googleId: 'test-google-client', googleSecret: 'test-google-secret' },
     oauthFetch: mock.oauthFetch, logger: { error: (...args) => messages.push(args.join(' ')), warn: () => {} },
-  }));
+  });
+  app.use(authRouter);
+  app.get('/api/trusted-account', async (req, res) => {
+    try { res.json(await authRouter.resolveAccount(req)); }
+    catch (error) { res.status(error.status || 503).json({ code: error.code || 'UNAVAILABLE' }); }
+  });
   app.get('/mock/google', mock.authorize);
   app.get('/api/guest-probe', (_req, res) => res.json({ guest: true }));
   const server = app.listen(0, '127.0.0.1');
@@ -134,6 +139,10 @@ test('real Google OIDC code flow yields a stable verified identity and secure pr
     assert.ok(f.cookies.some(cookie => cookie.startsWith('__Host-authjs.csrf-token=')));
     const nativeSession = await (await f.request('/api/auth/session')).json();
     assert.equal(nativeSession.user.id, account.user.id);
+    assert.deepEqual((await (await f.request('/api/trusted-account')).json()).user, account.user,
+      'Cloud routes can resolve the native cookie without trusting forwarded headers or browser identity.');
+    const ambiguous = await f.request('/api/trusted-account', undefined, { Authorization: 'Bearer forged-token' });
+    assert.equal(ambiguous.status, 401, 'An invalid explicit bearer cannot fall back to the Google account cookie.');
     assert.doesNotMatch(JSON.stringify({ account, nativeSession, cookies: f.cookies }), /mock-google-(?:access|refresh)-secret|id_token|access_token|refresh_token/);
     assert.ok(f.mock.counts.discovery >= 2);
     assert.equal(f.mock.counts.token, 1);

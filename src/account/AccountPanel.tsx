@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import type { FormEvent, ReactNode } from 'react';
 import { ArrowRight, CircleAlert, CircleCheck, HardDrive, LoaderCircle, LogOut, RefreshCw, ShieldCheck, UserRound } from 'lucide-react';
 import { t } from '../i18n';
 import type { AccountController, AccountUser } from './use-account';
@@ -36,28 +37,55 @@ export function AccountButton({ account, onClick, disabled = false, compact = fa
 }
 
 /** Content only: the parent supplies its existing accessible modal. */
-export function AccountPanel({ account, busy = false, onClose }: {
+export function AccountPanel({ account, busy = false, onClose, children }: {
   account: AccountController;
   busy?: boolean;
   onClose: () => void;
+  children?: ReactNode;
 }) {
+  const [mode, setMode] = useState<'signin' | 'signup'>('signin');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  useEffect(() => { setPassword(''); }, [account.user?.id]);
   const disabled = busy || account.authBusy || account.loading;
   const configured = account.account?.enabled === true;
+  const supabase = account.account?.provider === 'supabase';
+  const google = !supabase || account.account?.googleEnabled === true;
+  const submitEmail = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (disabled) return;
+    const success = mode === 'signup' ? await account.signUpWithEmail(email, password) : await account.signInWithEmail(email, password);
+    if (success) { setPassword(''); if (typeof success === 'object' && success.confirmationRequired) setMode('signin'); }
+  };
   return <div className="account-panel" data-account-panel aria-busy={account.loading || account.authBusy}>
     <div className="account-profile"><Avatar user={account.user} large /><span className="eyebrow">{t(account.user ? 'YOUR ACCOUNT' : 'GUEST PLAY')}</span>
       <h3>{account.user?.name || t('Play your way.')}</h3>
       {account.user?.email && <p className="account-email">{account.user.email}</p>}
-      {account.user ? <span className="account-session-status"><CircleCheck size={14} />{t('Signed in with Google')}</span>
-        : <p className="account-intro">{t('Play as a guest, or sign in with Google to keep a separate collection on this device.')}</p>}
+      {account.user ? <span className="account-session-status"><CircleCheck size={14} />{t(supabase ? 'Signed in' : 'Signed in with Google')}</span>
+        : <p className="account-intro">{t(supabase ? 'Play as a guest, or sign in for your own collection and training progress.' : 'Play as a guest, or sign in with Google to keep a separate collection on this device.')}</p>}
     </div>
-    <div className="account-device-note"><HardDrive size={20} /><div><strong>{t('Saved on this device')}</strong><p>{t('Your saved games and decks stay in this browser. They are not synced across devices.')}</p><p>{t('Guest play and each signed-in account keep separate saves. Switching accounts keeps the other saves on this device.')}</p></div></div>
+    <div className="account-device-note"><HardDrive size={20} /><div><strong>{t('Saved on this device')}</strong><p>{t(supabase || children ? 'A local copy stays in this browser. Account saves can sync across devices when cloud saves are configured.' : 'Your saved games and decks stay in this browser. They are not synced across devices.')}</p><p>{t('Guest play and each signed-in account keep separate saves. Switching accounts keeps the other saves on this device.')}</p></div></div>
+    {children}
     {account.loading && <div className="account-loading" role="status"><LoaderCircle size={17} className="spin" />{t('Checking your account…')}</div>}
     {!account.loading && account.account && !configured && <div className="account-unavailable" role="status"><CircleAlert size={17} /><p>{t(ACCOUNT_MESSAGES.unavailable)}</p></div>}
     {account.error && <div className="account-error" role="alert"><CircleAlert size={17} /><div><p>{t(account.error)}</p><button type="button" className="text-button" data-account-action="retry" onClick={() => void account.refresh()} disabled={disabled}><RefreshCw size={13} />{t('Check again')}</button></div></div>}
+    {account.notice && <div className="account-notice" role="status"><CircleCheck size={17} /><p>{t(account.notice)}</p></div>}
     {busy && <p className="account-wait" role="status"><ShieldCheck size={14} />{t('Wait for the current game action to finish before changing accounts.')}</p>}
     <div className="account-actions">
       {account.user ? <button type="button" className="secondary-button account-signout" data-account-action="signout" onClick={() => void account.signOut()} disabled={disabled}>{account.authBusy ? <LoaderCircle size={17} className="spin" /> : <LogOut size={17} />}{t(account.authBusy ? 'Signing out…' : 'Sign out')}</button>
-        : <button type="button" className="account-google-button" data-account-action="signin" onClick={() => void account.signIn()} disabled={disabled || !configured}>{account.authBusy ? <LoaderCircle size={19} className="spin" /> : <GoogleMark />}{t(account.authBusy ? 'Opening Google…' : 'Continue with Google')}</button>}
+        : <>
+          {supabase && <form className="account-email-form" onSubmit={event => void submitEmail(event)}>
+            <div className="account-email-tabs" role="group" aria-label={t('Account access')}>
+              <button type="button" aria-pressed={mode === 'signin'} onClick={() => setMode('signin')} disabled={disabled}>{t('Sign in')}</button>
+              <button type="button" data-account-action="create-account" aria-pressed={mode === 'signup'} onClick={() => setMode('signup')} disabled={disabled}>{t('Create account')}</button>
+            </div>
+            <label htmlFor="account-email">{t('Email address')}</label><input id="account-email" type="email" name="email" autoComplete="email" required maxLength={320} value={email} onChange={event => setEmail(event.target.value)} disabled={disabled} />
+            <label htmlFor="account-password">{t('Password')}</label><input id="account-password" type="password" name="password" autoComplete={mode === 'signup' ? 'new-password' : 'current-password'} required minLength={mode === 'signup' ? 8 : 1} maxLength={256} aria-describedby={mode === 'signup' ? 'account-password-help' : undefined} value={password} onChange={event => setPassword(event.target.value)} disabled={disabled} />
+            {mode === 'signup' && <p id="account-password-help" className="account-form-help">{t('Use at least 8 characters. You may need to confirm your email before signing in.')}</p>}
+            <button type="submit" className="primary-button account-email-submit" data-account-action={mode === 'signup' ? 'email-signup' : 'email-signin'} disabled={disabled || !configured}>{account.authBusy && <LoaderCircle size={17} className="spin" />}{t(account.authBusy ? 'Please wait…' : mode === 'signup' ? 'Create account' : 'Sign in with email')}</button>
+          </form>}
+          {google && <>{supabase && <span className="account-method-divider">{t('or')}</span>}<button type="button" className="account-google-button" data-account-action="signin" onClick={() => void account.signIn()} disabled={disabled || !configured}>{account.authBusy ? <LoaderCircle size={19} className="spin" /> : <GoogleMark />}{t(account.authBusy ? 'Opening Google…' : 'Continue with Google')}</button></>}
+        </>}
       <button type="button" className="account-guest-button" data-account-action="guest" onClick={onClose} disabled={account.authBusy}>{t(account.user ? 'Back to game' : 'Continue as a guest')}<ArrowRight size={15} /></button>
     </div>
   </div>;

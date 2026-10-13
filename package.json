@@ -22,6 +22,9 @@
     "test:account-ui": "node scripts/account-ui.mjs",
     "test:guidance-ui": "node scripts/play-guidance-ui.mjs",
     "test:storage-ui": "node scripts/storage-recovery-ui.mjs",
+    "test:training-ui": "node scripts/training-ui.mjs",
+    "test:review-ui": "node scripts/match-review-ui.mjs",
+    "test:cloud-ui": "node scripts/account-cloud-ui.mjs",
     "test:smoke": "node scripts/smoke.cjs",
     "cards:check": "node scripts/report-coverage.cjs",
     "cards:catalog-check": "node scripts/sync-card-catalog.cjs --check",
@@ -30,6 +33,7 @@
   },
   "dependencies": {
     "@auth/express": "^0.12.3",
+    "@supabase/supabase-js": "^2.117.3",
     "express": "^4.21.2",
     "lucide-react": "^0.468.0",
     "react": "^19.1.0",

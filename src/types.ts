@@ -1,3 +1,6 @@
+import type { TrainingProgress } from './components/Training';
+import type { MatchReviewData } from './components/MatchReview';
+
 export interface Card {
   uuid: string; id?: string; code?: string; name?: string; subtitle?: string; image?: string;
   cost?: number; power?: number; hp?: number; damage?: number; remainingHp?: number;
@@ -61,6 +64,10 @@ export interface GameView {
   botHistory?: BotThinking[]; warnings?: string[];
   publicPlayEvents?: PublicPlayEvent[];
   publicDamageEvents?: PublicDamageEvent[];
+  training?: TrainingProgress;
+  review?: MatchReviewData | null;
+  startedAt?: number;
+  finishedAt?: number;
 }
 
 export interface CustomDeckRecipe {

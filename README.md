@@ -98,6 +98,18 @@ deployment rules. Deck details include a searchable card list,
 type filters, and a cost curve. Starting another game asks before replacing an
 unfinished match.
 
+**Training missions** teach resource selection, space Ambush, and leader
+deployment through actual engine positions. Follow the highlighted legal
+choices and complete each lesson; progress is kept in your current player scope.
+Finished matches show a **Battle review** with recorded choices, public damage
+and up to three key moments. The lobby keeps a history of finished reviews.
+
+With [Supabase accounts and cloud saves](docs/account-cloud.md) configured,
+email sign-in and optional Google sign-in carry decks, settings, the current
+game, reviews and verified training progress between devices. Local copies and
+queued changes remain available during a sync outage. Conflicting changes ask
+which version to keep. Guest play works without this configuration.
+
 The AI uses the same legal action system as the human. It evaluates lethal
 attacks, base defense, unit trades, Sentinel, shields, its resource curve,
 leader deployment, and initiative. It sees its own hand and public information,
@@ -163,6 +175,9 @@ npm run test:menu-ui
 npm run test:account-ui
 npm run test:guidance-ui
 npm run test:storage-ui
+npm run test:training-ui
+npm run test:review-ui
+npm run test:cloud-ui
 node scripts/sync-card-catalog.cjs --check
 ```
 

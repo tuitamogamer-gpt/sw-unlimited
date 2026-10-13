@@ -1,0 +1,39 @@
+.battle-history{margin:24px 0;padding:22px;border:1px solid #2c4052;border-radius:9px;background:#101c28}
+.battle-history-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:15px}
+.battle-history-heading h2{font-size:23px;margin:5px 0 0}
+.battle-history-rows{display:grid;gap:8px}
+.battle-history-rows article{display:flex;align-items:center;min-width:0;gap:7px;border:1px solid #2b4052;background:#142230;border-radius:6px;padding:6px}
+.history-review-button{display:flex;align-items:center;gap:13px;flex:1;min-width:0;padding:10px;background:transparent;color:#dce5ed;text-align:left}
+.history-review-button>span:nth-child(2){display:flex;flex-direction:column;flex:1;min-width:0;gap:5px}
+.history-review-button strong{font-size:13px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.history-review-button small{font-size:11px;color:#9bafbf}
+.history-review-button>svg{flex-shrink:0;color:#9bc7d1}
+.history-result{font-size:11px;min-width:48px;color:#ccd6df}
+.history-win{color:#a7d7b5}.history-loss{color:#e4a9a1}
+.battle-history-rows .icon-button{flex-shrink:0;width:36px;height:36px}
+.training-inline-step{margin-left:8px;color:#afd3df;font-size:10px;letter-spacing:0;text-transform:none}
+.training-active-guidance .context-banner{font-size:12px;line-height:1.45;color:#cbe0e9}
+.command-dock>.training-guidance{margin:0;padding:12px 15px;gap:10px}
+.command-dock .training-guidance h2{font-size:18px}
+.command-dock .training-guidance p{font-size:12px;line-height:1.4}
+.command-dock .training-guidance-actions{gap:6px}
+.command-dock .training-next,.command-dock .training-exit{min-height:36px;padding:7px 10px}
+.command-dock>.match-review-summary{margin:6px 0 0;width:100%}
+.victory-content>.match-review-summary{margin:15px auto;max-width:360px;text-align:left}
+.account-save-loading .loading-state{min-height:60dvh}
+@media(max-width:720px){
+  .battle-history{padding:15px;margin:18px 0}
+  .battle-history-heading{align-items:flex-start}
+  .battle-history-heading h2{font-size:21px}
+  .battle-history-heading>.secondary-button{font-size:11px;padding:8px;min-height:36px}
+  .history-review-button{gap:8px;padding:7px}
+  .history-review-button strong{font-size:12px}
+  .history-review-button small{font-size:10px}
+  .history-result{min-width:42px;font-size:10px}
+  .training-inline-step{font-size:8px;margin-left:7px}
+  .training-active-guidance .context-banner{font-size:10px;line-height:1.4}
+  .command-dock>.training-guidance{padding:10px 12px;gap:7px}
+  .command-dock .training-guidance h2{font-size:17px;margin:5px 0}
+  .command-dock .training-guidance p{font-size:10px;line-height:1.4}
+  .command-dock .training-guidance-actions{width:100%;justify-content:flex-end}
+}

@@ -3,15 +3,29 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { listDeckStatus } = require('./engine.cjs');
 const { chooseAction } = require('./bot.cjs');
-const { createRecord, applyAction, sealRecord, decodeRecord, restoreRecord } = require('./replay.cjs');
+const { createRecord, applyAction, sealRecord, decodeRecord, restoreRecord, bindAccountCheckpoint, restoreAccountRecord } = require('./replay.cjs');
 const { importCustomDeck } = require('./custom-decks.cjs');
 const { searchCards } = require('./card-catalog.cjs');
-const { authRouter } = require('./auth.cjs');
+const { authRouter, resolveAccount } = require('./auth.cjs');
+const { createAccountStore, createSupabaseAccountAdapter, storeError } = require('./account-store.cjs');
+const { createAccountSyncRouter } = require('./account-sync.cjs');
+const { trainingCatalog, createTraining, trainingView, trainingGameView, assertTrainingAction, advanceTraining } = require('./training.cjs');
+const { captureReviewDecision, commitReviewDecision, publicReview } = require('./match-review.cjs');
+
+function environmentAccountStore() {
+  if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) return null;
+  try { return createAccountStore({ adapter: createSupabaseAccountAdapter() }); }
+  catch { return null; }
+}
+
+function createApplication({ auth = authRouter, authenticate = resolveAccount, accountStore = environmentAccountStore(),
+  accountOrigin = () => process.env.AUTH_URL || 'https://sw-unlimited-mu.vercel.app' } = {}) {
 
 const root = path.resolve(__dirname, '..');
 const app = express();
 app.disable('x-powered-by');
-app.use(authRouter);
+app.use(auth);
+app.use('/api/account/saves', express.json({ limit: '2mb' }));
 app.use(express.json({ limit: '1mb' }));
 app.use('/api', (_req, res, next) => { res.set('Cache-Control', 'no-store'); next(); });
 const sessions = new Map();
@@ -47,6 +61,9 @@ async function getSession(req, { allowStale = false } = {}) {
   const record = decodeRecord(token, { id: req.params.id });
   if (record.id !== req.params.id) fail(404, 'The saved game does not match the requested game.');
   let entry = sessions.get(record.id);
+  if (entry?.record.accountOwnerId && record.accountOwnerId && entry.record.accountOwnerId !== record.accountOwnerId) {
+    fail(403, 'This saved game belongs to another account.');
+  }
   if (entry?.busy || restoring.has(record.id)) fail(409, 'The previous action is still being processed.');
   if (entry && record.actions.length < entry.record.actions.length) {
     if (!allowStale) fail(409, 'The game state has changed. Refresh the game before your next action.');
@@ -61,18 +78,34 @@ async function getSession(req, { allowStale = false } = {}) {
       cacheSession(entry);
     } finally { restoring.delete(record.id); }
   }
+  // An account-bound envelope may contain the same engine decisions as an
+  // already cached guest board. Keep its verified ownership and renewed clock
+  // without replaying or replacing that board's newer decisions.
+  if (record.accountOwnerId) {
+    entry.record.accountOwnerId = record.accountOwnerId;
+    if (record.originalCreatedAt && !entry.record.originalCreatedAt) entry.record.originalCreatedAt = record.originalCreatedAt;
+    if (record.createdAt > entry.record.createdAt) {
+      entry.record.createdAt = record.createdAt;
+      entry.record.expiresAt = record.expiresAt;
+    }
+  }
   entry.lastAccess = Date.now();
   return entry;
 }
 function humanView(entry) {
   const view = entry.game.view('human');
   const record = entry.record;
-  return { ...view, sessionToken: sealRecord(record), difficulty: record.difficulty, botReason: record.botHistory.at(-1)?.reason,
+  if (view.winnerIds?.length && !record.finishedAt) record.finishedAt = Date.now();
+  const decorated = trainingGameView(record, entry.game, view);
+  return { ...decorated, review: record.training ? null : publicReview(record, entry.game),
+    startedAt: record.originalCreatedAt || record.createdAt, finishedAt: record.finishedAt,
+    sessionToken: sealRecord(record), difficulty: record.difficulty, botReason: record.botHistory.at(-1)?.reason,
     botThinking: record.botHistory.at(-1), botHistory: record.botHistory.slice(-12),
     warnings: [...(view.warnings || []), ...(record.warning ? [record.warning] : [])] };
 }
 async function playBot(entry) {
   const record = entry.record;
+  if (record.training) { advanceTraining(record, entry.game); return; }
   record.warning = null;
   for (let step = 0; step < 120; step++) {
     const observation = entry.game.botView();
@@ -109,6 +142,97 @@ async function playBot(entry) {
   }
   record.warning = 'The AI reached its decision limit for this turn. Continue the AI turn.';
 }
+
+// Account data is read only after the native session has established its owner.
+// Proofs are encrypted game records. Browser-supplied summaries are never saved.
+function checkedProof(value, ownerId, expectedId) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)
+    || Object.keys(value).some(key => !['gameId', 'sessionToken'].includes(key))
+    || typeof value.gameId !== 'string' || typeof value.sessionToken !== 'string'
+    || expectedId && expectedId !== value.gameId) {
+    throw storeError(400, 'ACCOUNT_INPUT', 'A saved game needs its encrypted checkpoint.');
+  }
+  return bindAccountCheckpoint(value.sessionToken, { id: value.gameId, ownerId });
+}
+async function nativeProof(value, ownerId, expectedId) {
+  await initialize();
+  let proof;
+  try { proof = checkedProof(value, ownerId, expectedId); }
+  catch (error) {
+    if (error.code !== 'SESSION_EXPIRED') throw error;
+    // Offline account changes can arrive after the guest checkpoint clock.
+    // Only a signed, matching account owner can renew this proof; the native
+    // replay still verifies every action and enforces the 30-day retention.
+    return restoreAccountRecord(value.sessionToken, { decks: deckRecipes, id: value.gameId, ownerId });
+  }
+  return restoreRecord(proof.sessionToken, { decks: deckRecipes, id: proof.gameId });
+}
+app.use(createAccountSyncRouter({ store: accountStore, authenticate, origin: accountOrigin,
+  validateCheckpoint: async (value, { ownerId }) => {
+    try { return checkedProof(value, ownerId); }
+    catch (error) {
+      if (error.code !== 'SESSION_EXPIRED') throw error;
+      const restored = await nativeProof(value, ownerId);
+      try { return bindAccountCheckpoint(sealRecord(restored.record), { id: value.gameId, ownerId }); }
+      finally { restored.game.close(); }
+    }
+  },
+  restoreCheckpoint: async (saved, { ownerId }) => {
+    await initialize();
+    const restored = await restoreAccountRecord(saved.sessionToken, { decks: deckRecipes, id: saved.gameId, ownerId });
+    const current = sessions.get(saved.gameId);
+    if (current?.busy || restoring.has(saved.gameId)) {
+      restored.game.close(); fail(409, 'The previous action is still being processed.');
+    }
+    if (current?.record.accountOwnerId && current.record.accountOwnerId !== ownerId) {
+      restored.game.close();
+      throw storeError(403, 'ACCOUNT_SCOPE', 'This saved game belongs to another account.');
+    }
+    // A second device may have a newer active board on this same worker.
+    // Never replace it with an older stored account checkpoint.
+    if (current && current.record.actions.length > restored.record.actions.length) {
+      restored.game.close();
+      current.record.accountOwnerId = ownerId;
+      current.record.originalCreatedAt ||= current.record.createdAt;
+      current.record.createdAt = restored.record.createdAt;
+      current.record.expiresAt = restored.record.expiresAt;
+      return humanView(current);
+    }
+    current?.game.close();
+    const entry = { ...restored, lastAccess: Date.now(), busy: false };
+    cacheSession(entry);
+    return humanView(entry);
+  },
+  validateMatch: async (value, { ownerId, gameId }) => {
+    const restored = await nativeProof(value, ownerId, gameId);
+    try {
+      const review = publicReview(restored.record, restored.game);
+      if (!review || restored.record.training) throw storeError(422, 'ACCOUNT_MATCH_UNFINISHED', 'Finish this game before saving its review.');
+      const view = restored.game.view('human');
+      return { gameId: restored.record.id, review, playerLeader: view.players.human.leader.name,
+        opponentLeader: view.players.bot.leader.name, difficulty: restored.record.difficulty,
+        startedAt: restored.record.originalCreatedAt || restored.record.createdAt,
+        completedAt: restored.record.finishedAt || Date.now() };
+    } finally { restored.game.close(); }
+  },
+  validateTraining: async (value, { ownerId }) => {
+    const restored = await nativeProof(value, ownerId);
+    try {
+      const lesson = trainingView(restored.record, restored.game);
+      if (lesson?.status !== 'complete') throw storeError(422, 'ACCOUNT_TRAINING_UNFINISHED', 'Complete this lesson before saving its progress.');
+      return { completedLessonIds: [lesson.lessonId] };
+    } finally { restored.game.close(); }
+  },
+}));
+app.get('/api/training', (_req, res) => res.json({ lessons: trainingCatalog }));
+app.post('/api/training/:lessonId', asyncRoute(async (req, res) => {
+  await initialize();
+  if (!req.body || typeof req.body !== 'object' || Array.isArray(req.body) || Object.keys(req.body).length) fail(400, 'Choose an available training lesson.');
+  const created = await createTraining(req.params.lessonId, { decks: deckRecipes });
+  const entry = { ...created, lastAccess: Date.now(), busy: false };
+  cacheSession(entry);
+  res.status(201).json(humanView(entry));
+}));
 
 app.get('/api/health', (_req, res) => res.json({ ok: true, engine: 'Forceteki', ready: Boolean(deckCatalog), sessions: sessions.size }));
 app.get('/api/cards', asyncRoute(async (req, res) => res.json(await searchCards(req.query))));
@@ -173,7 +297,10 @@ app.post('/api/games/:id/actions', asyncRoute(async (req, res) => {
   entry.busy = true;
   try {
     const { sessionToken: _token, ...action } = req.body;
+    assertTrainingAction(entry.record, entry.game, action);
+    const captured = entry.record.training ? null : captureReviewDecision(entry.record, entry.game, action);
     await applyAction(entry.record, entry.game, action, 'human');
+    commitReviewDecision(entry.record, captured, entry.game);
     await playBot(entry);
     res.json(humanView(entry));
   } catch (error) { entry.game.close?.(); sessions.delete(req.params.id); throw error; }
@@ -224,5 +351,9 @@ async function start() {
   });
   return server;
 }
+return { app, start, initialize };
+}
+
+const { app, start, initialize } = createApplication();
 if (require.main === module) start().catch(error => { console.error(error); process.exit(1); });
-module.exports = { app, start, initialize };
+module.exports = { app, start, initialize, createApplication };
