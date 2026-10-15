@@ -237,6 +237,21 @@ try {
   await fits('Signed-in profile 320×667');
   await page.screenshot({ path: `${output}/account-a-320.png`, animations: 'disabled' });
   await closeAccount();
+  // A full document starts without a resolved account, then remounts the lobby
+  // under the verified owner. Both scopes must share the public catalog load.
+  let signedInBootCatalogRequests = 0;
+  const countCatalogRequest = request => {
+    if (request.method() === 'GET' && request.url() === `${origin}/api/decks`) signedInBootCatalogRequests++;
+  };
+  page.on('request', countCatalogRequest);
+  try {
+    await page.reload({ waitUntil: 'networkidle' });
+    await page.locator('[data-account-trigger][aria-label="Open account"]:visible').waitFor();
+    await page.waitForFunction(() => document.querySelectorAll('.deck-tile').length === 18);
+    assert.equal((await account()).user?.id, userA.id);
+    assert.equal(signedInBootCatalogRequests, 1, 'A signed-in document boot must fetch the public deck catalog only once across the guest-to-owner remount.');
+    report.signedInBootCatalogRequests = signedInBootCatalogRequests;
+  } finally { page.off('request', countCatalogRequest); }
   await page.locator('.site-header .language-select').selectOption('sr');
   await openAccount();
   assert.match(await action('signout').innerText(), /Odjav/i);

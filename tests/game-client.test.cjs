@@ -34,6 +34,63 @@ function response(data, status = 200) { return { ok: status >= 200 && status < 3
 function deferred() { let resolve; const promise = new Promise(done => { resolve = done; }); return { promise, resolve }; }
 function client(options = {}) { return createGameClient({ storage: storage(), locks: null, timeoutMs: 100, recoveryTimeoutMs: 100, recoveryDelayMs: 0, ...options }); }
 
+test('a game removed through working storage cannot be resumed from stale memory', async () => {
+  const disk = storage();
+  let sent;
+  const c = client({ storage: disk, fetch: async (_url, init) => {
+    sent = JSON.parse(init.body);
+    return response({ error: 'No saved game was found.' }, 404);
+  } });
+  c.rememberGame(game(2));
+  for (const key of [checkpointKey, tokenKey, SESSION_KEY]) disk.removeItem(key);
+  assert.equal(c.storedValue(SESSION_KEY), '');
+  await assert.rejects(c.resumeGame(id), error => error.status === 404);
+  assert.equal(sent.sessionToken, '', 'A removed cloud or cross-tab checkpoint must not be resurrected from memory.');
+  assert.equal(disk.getItem(SESSION_KEY), null);
+  disk.getItem = () => { throw new Error('Storage later became unavailable'); };
+  assert.equal(c.storedValue(SESSION_KEY), '', 'A confirmed removal also clears the memory resume pointer.');
+});
+
+test('a storage read failure keeps a previously durable game available in this tab', async () => {
+  const disk = storage();
+  const c = client({ storage: disk, fetch: async (_url, init) => {
+    assert.equal(JSON.parse(init.body).sessionToken, game(2).sessionToken);
+    return response(game(3));
+  } });
+  c.rememberGame(game(2));
+  disk.getItem = () => { throw new Error('Storage denied'); };
+  assert.equal(c.storedValue(SESSION_KEY), id);
+  assert.equal((await c.resumeGame(id)).version, 3);
+});
+
+test('a confirmed deletion overrides an earlier resume-pointer write failure', async () => {
+  const disk = storage();
+  const write = disk.setItem.bind(disk);
+  disk.setItem = (key, value) => { if (key === SESSION_KEY) throw new Error('Temporary pointer failure'); write(key, value); };
+  let sent;
+  const c = client({ storage: disk, fetch: async (_url, init) => { sent = JSON.parse(init.body); return response({ error: 'Removed game' }, 404); } });
+  assert.equal(c.rememberGame(game(2)), false);
+  assert.equal(c.storedValue(SESSION_KEY), id, 'The durable checkpoint still permits memory recovery after a failed pointer write.');
+  disk.setItem = write;
+  for (const key of [checkpointKey, tokenKey, SESSION_KEY]) disk.removeItem(key);
+  assert.equal(c.storedValue(SESSION_KEY), '');
+  await assert.rejects(c.resumeGame(id), error => error.status === 404);
+  assert.equal(sent.sessionToken, '');
+});
+
+test('training creation validates its response before replacing an existing checkpoint', async () => {
+  const disk = storage();
+  let result = { id, version: 8, sessionToken: 'swu1.incomplete-training' };
+  const c = client({ storage: disk, fetch: async () => response(result, 201) });
+  c.rememberGame(game(2));
+  const before = disk.getItem(checkpointKey);
+  await assert.rejects(c.api('/api/training/resources', {}), error => error.code === 'BAD_RESPONSE');
+  assert.equal(disk.getItem(checkpointKey), before);
+  result = { ...game(3), training: { lessonId: 'resources', status: 'active' } };
+  assert.equal((await c.api('/api/training/resources', {})).version, 3);
+  assert.equal(JSON.parse(disk.getItem(checkpointKey)).version, 3);
+});
+
 test('deck validation errors retain their structured preview without changing game checkpoints', async () => {
   const disk = storage();
   const details = { error: 'Deck validation failed.', deck: { name: 'My fleet', supported: false }, errors: ['Missing a leader.'], warnings: [] };

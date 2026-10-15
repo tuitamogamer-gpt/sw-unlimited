@@ -1,13 +1,14 @@
 import { CUSTOM_DECKS_KEY, isImportedDeck, readCustomDecks } from '../custom-decks';
 import type { AccountStorage } from './storage';
 import type { GameView, ImportedDeck } from '../types';
+import { createCloudJournal } from './cloud-journal';
+import type { JournalIntent } from './cloud-journal';
 
 export const CLOUD_PREFERENCES_KEY = 'swu-command-preferences';
 export const CLOUD_MATCHES_KEY = 'swu-command-match-history';
 export const CLOUD_TRAINING_KEY = 'swu-command-training-progress';
 export const MATCH_HISTORY_KEY = CLOUD_MATCHES_KEY;
 export const TRAINING_PROGRESS_KEY = CLOUD_TRAINING_KEY;
-const JOURNAL_KEY = 'swu-command-cloud-sync:v1';
 const SESSION_KEY = 'swu-command-session';
 const CHECKPOINT_PREFIX = 'swu-command-checkpoint:';
 const TOKEN_PREFIX = 'swu-command-state:';
@@ -25,7 +26,11 @@ export interface CloudSaveSnapshot {
   matches: CloudItem[];
   training: CloudRecord;
 }
-export type CloudConflict = { key: string; kind: CloudSaveKind; id?: string; localValue: unknown; cloudValue: unknown; canKeepLocal: boolean };
+export type CloudConflict = {
+  key: string; kind: CloudSaveKind; id?: string; localValue: unknown; cloudValue: unknown; canKeepLocal: boolean;
+  localUpdatedAt?: number; cloudUpdatedAt?: number;
+  localGameVersion?: number; cloudGameVersion?: number;
+};
 export type CloudSaveStatus = {
   state: 'loading' | 'synced' | 'pending' | 'offline' | 'conflict' | 'unavailable';
   pendingCount: number;
@@ -33,8 +38,7 @@ export type CloudSaveStatus = {
   message?: string;
 };
 type Operation = { kind: CloudSaveKind; id?: string; expectedVersion: number; value: unknown };
-type Pending = Operation & { key: string; serial: number; conflicted?: boolean; checkpointVersion?: number; trainingQueue?: unknown[] };
-type Journal = { schema: 1; ownerId: string; snapshot: CloudSaveSnapshot | null; pending: Pending[]; serial: number };
+type Pending = Operation & { key: string; conflicted?: boolean; checkpointVersion?: number; intents: JournalIntent[]; branches?: JournalIntent[] };
 type Options = {
   ownerId: string;
   storage: AccountStorage;
@@ -53,7 +57,6 @@ export class CloudSaveError extends Error {
 }
 const object = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object' && !Array.isArray(value);
 const version = (value: unknown): value is number => Number.isSafeInteger(value) && Number(value) >= 0;
-const kinds: CloudSaveKind[] = ['deck', 'preferences', 'currentGame', 'match', 'training'];
 const keyFor = (kind: CloudSaveKind, id?: string) => id ? `${kind}:${id}` : kind;
 const same = (a: unknown, b: unknown) => JSON.stringify(a) === JSON.stringify(b);
 function validRecord(value: unknown): value is CloudRecord { return object(value) && version(value.version) && 'value' in value; }
@@ -98,16 +101,19 @@ export function createCloudSaveClient(options: Options) {
   let disposed = false;
   let loaded = false;
   let snapshot: CloudSaveSnapshot | null = null;
-  let serial = 0;
   let timer: ReturnType<typeof setTimeout> | undefined;
   let flushPromise: Promise<void> | null = null;
   let loadPromise: Promise<void> | null = null;
   let state: CloudSaveStatus['state'] = 'loading';
   let message: string | undefined;
+  let persistenceWarning: string | undefined;
   const pending = new Map<string, Pending>();
   const controllers = new Set<AbortController>();
   const records = new Map<string, CloudRecord>();
   const checkpointVersions = new Map<string, number>();
+  const blocked = new Set<string>();
+  const journal = createCloudJournal({ ownerId: options.ownerId, storage: base, validateSnapshot: validSnapshot,
+    onWarning: warning => { persistenceWarning = warning; } });
 
   function read(key: string): string | null { try { return base.getItem(key); } catch { return null; } }
   function assertActive() { if (disposed) throw new CloudSaveError('Cloud saving was cancelled.', 'CANCELLED'); }
@@ -118,37 +124,28 @@ export function createCloudSaveClient(options: Options) {
     next.matches.forEach(item => records.set(keyFor('match', item.id), item));
     for (const kind of ['preferences', 'currentGame', 'training'] as const) records.set(kind, next[kind]);
   }
-  const saved = parse(read(JOURNAL_KEY));
-  if (object(saved) && saved.schema === 1 && saved.ownerId === options.ownerId) {
-    if (validSnapshot(saved.snapshot)) installRecords(saved.snapshot);
-    if (version(saved.serial)) serial = saved.serial;
-    if (Array.isArray(saved.pending) && saved.pending.length <= 2000) {
-      for (const item of saved.pending) {
-        if (!object(item) || !kinds.includes(item.kind as CloudSaveKind) || typeof item.key !== 'string'
-          || !version(item.expectedVersion) || !version(item.serial) || !('value' in item)) continue;
-        const kind = item.kind as CloudSaveKind;
-        const id = typeof item.id === 'string' ? item.id : undefined;
-        if ((kind === 'deck' || kind === 'match') !== !!id || item.key !== keyFor(kind, id)) continue;
-        pending.set(item.key, item as Pending);
-        serial = Math.max(serial, item.serial);
-        if (kind === 'currentGame' && object(item.value) && typeof item.value.gameId === 'string' && version(item.checkpointVersion)) {
-          checkpointVersions.set(item.value.gameId, item.checkpointVersion);
-        }
-      }
-    }
-  }
+  const saved = journal.savedSnapshot();
+  if (validSnapshot(saved)) installRecords(saved);
   function persist() {
     if (disposed) return;
-    const journal: Journal = { schema: 1, ownerId: options.ownerId, snapshot, pending: [...pending.values()], serial };
-    try { base.setItem(JOURNAL_KEY, JSON.stringify(journal)); }
-    catch { message = 'Cloud saving is queued in this tab. Keep it open until the connection returns.'; }
+    journal.saveSnapshot(snapshot);
   }
   function getStatus(): CloudSaveStatus {
-    const conflicts = [...pending.values()].filter(item => item.conflicted).map(item => ({
-      key: item.key, kind: item.kind, ...(item.id ? { id: item.id } : {}), localValue: item.value,
-      cloudValue: records.get(item.key)?.value ?? null, canKeepLocal: !olderCurrentTurn(item),
+    const conflicts = [...pending.values()].filter(item => item.conflicted).flatMap(item => (item.branches || [item]).map(branch => {
+      const remote = records.get(item.key);
+      const cloudVersion = object(remote?.value) ? remote.value.version : undefined;
+      return {
+        key: 'operationId' in branch ? `${item.key}::${branch.operationId}` : item.key,
+        kind: item.kind, ...(item.id ? { id: item.id } : {}), localValue: branch.value,
+        cloudValue: remote?.value ?? null, canKeepLocal: !olderCurrentTurn({ ...item, ...branch }),
+        localUpdatedAt: 'createdAt' in branch ? branch.createdAt : item.intents[0]?.createdAt,
+        cloudUpdatedAt: typeof remote?.updatedAt === 'number' ? remote.updatedAt : Date.parse(String(remote?.updatedAt || '')) || undefined,
+        localGameVersion: item.kind === 'currentGame' && version(branch.checkpointVersion) ? branch.checkpointVersion : undefined,
+        cloudGameVersion: item.kind === 'currentGame' && version(cloudVersion) ? cloudVersion : undefined,
+      };
     }));
-    return { state: conflicts.length ? 'conflict' : state, pendingCount: pending.size, conflicts, ...(message ? { message } : {}) };
+    const notice = persistenceWarning || message;
+    return { state: conflicts.length ? 'conflict' : state, pendingCount: pending.size, conflicts, ...(notice ? { message: notice } : {}) };
   }
   function notify(next?: CloudSaveStatus['state'], notice?: string) {
     if (disposed) return;
@@ -169,21 +166,18 @@ export function createCloudSaveClient(options: Options) {
   }
   function enqueue(kind: CloudSaveKind, value: unknown, id?: string, checkpointVersion?: number) {
     if (disposed) return;
+    reconcile();
     const key = keyFor(kind, id);
     const canonical = operationValue(kind, value);
     const existing = pending.get(key);
-    if (kind === 'training' && existing) {
-      if (same(existing.value, canonical) || existing.trainingQueue?.some(proof => same(proof, canonical))) return;
-      existing.trainingQueue = [...(existing.trainingQueue || []), canonical];
-      existing.serial = ++serial; persist(); notifyQueued(); schedule(); return;
-    }
-    if (existing && same(existing.value, canonical)) return;
+    if (kind === 'training' && existing?.intents.some(intent => same(intent.value, canonical))) return;
+    if (existing && !existing.branches && same(existing.value, canonical)) return;
     // Never infer that a newer remote change is ours. An unresolved conflict
     // stays visible even when the player continues editing its local copy.
     if (!existing && same(operationValue(kind, records.get(key)?.value ?? null), canonical)) return;
-    pending.set(key, { key, kind, ...(id ? { id } : {}), expectedVersion: existing?.expectedVersion ?? records.get(key)?.version ?? 0,
-      value: canonical, serial: ++serial, ...(existing?.conflicted ? { conflicted: true } : {}),
-      ...(checkpointVersion !== undefined ? { checkpointVersion } : {}) });
+    journal.write({ key, kind, ...(id ? { id } : {}), expectedVersion: existing?.expectedVersion ?? records.get(key)?.version ?? 0,
+      value: canonical, ...(checkpointVersion !== undefined ? { checkpointVersion } : {}) }, kind === 'training' ? [] : existing?.intents || []);
+    reconcile();
     persist(); notifyQueued(); schedule();
   }
   function currentCheckpoint(): { gameId: string; sessionToken: string; version?: number } | null {
@@ -297,9 +291,14 @@ export function createCloudSaveClient(options: Options) {
     for (const deck of readCustomDecks(base)) if (!records.has(keyFor('deck', deck.id)) && !pending.has(keyFor('deck', deck.id))) enqueue('deck', deck.recipe, deck.id);
     const preferences = parse(read(CLOUD_PREFERENCES_KEY));
     if (!records.get('preferences')?.version && object(preferences) && !pending.has('preferences')) enqueue('preferences', preferences);
-    if (!records.get('currentGame')?.version && !pending.has('currentGame')) {
+    if (!pending.has('currentGame')) {
       const checkpoint = currentCheckpoint();
-      if (checkpoint) enqueue('currentGame', checkpoint, undefined, checkpoint.version);
+      const remote = records.get('currentGame');
+      // A checkpoint/pointer write can survive while its larger journal write
+      // fails. Never replace a demonstrably newer turn with an older cloud turn.
+      const newerLocal = checkpoint && object(remote?.value) && checkpoint.gameId === remote.value.gameId
+        && version(checkpoint.version) && version(remote.value.version) && checkpoint.version > remote.value.version;
+      if (checkpoint && (!remote?.version || newerLocal)) enqueue('currentGame', checkpoint, undefined, checkpoint.version);
     }
   }
   async function request(path: string, method = 'GET', body?: unknown): Promise<unknown> {
@@ -358,12 +357,29 @@ export function createCloudSaveClient(options: Options) {
       && version(item.checkpointVersion) && version(remote.version) && item.checkpointVersion < remote.version;
   }
   function reconcile() {
-    for (const item of pending.values()) {
+    const groups = new Map<string, JournalIntent[]>();
+    for (const intent of journal.readIntents()) groups.set(intent.key, [...(groups.get(intent.key) || []), intent]);
+    pending.clear();
+    for (const [key, intents] of groups) {
+      const selected = intents[0];
+      let branches: JournalIntent[] | undefined;
+      if (selected.kind !== 'training' && intents.length > 1) {
+        const equivalent = intents.every(intent => same(intent.value, selected.value));
+        // Counts do not establish lineage between opaque signed checkpoints.
+        // Only explicit causal supersession or identical values can coalesce.
+        if (!equivalent) branches = intents;
+      }
+      const item: Pending = { key, kind: selected.kind, ...(selected.id ? { id: selected.id } : {}), expectedVersion: selected.expectedVersion,
+        value: selected.value, intents, ...(selected.checkpointVersion !== undefined ? { checkpointVersion: selected.checkpointVersion } : {}),
+        ...(branches ? { branches, conflicted: true } : {}) };
+      pending.set(key, item);
       const remote = records.get(item.key);
       const remoteVersion = remote?.version ?? 0;
+      if (intents.some(intent => blocked.has(intent.operationId))) item.conflicted = true;
+      if (branches) continue;
       if (olderCurrentTurn(item)) { item.conflicted = true; continue; }
       if (remoteVersion === item.expectedVersion) continue;
-      if (same(operationValue(item.kind, remote?.value ?? null), item.value)) { pending.delete(item.key); continue; }
+      if (same(operationValue(item.kind, remote?.value ?? null), item.value)) { journal.acknowledge(intents); pending.delete(item.key); continue; }
       // Native lesson proofs can only add verified completions; rebasing does
       // not overwrite progress from another device.
       if (item.kind === 'training') item.expectedVersion = remoteVersion;
@@ -402,6 +418,7 @@ export function createCloudSaveClient(options: Options) {
       if (!loaded) await load();
       if (!loaded || disposed) return;
       for (let attempt = 0; attempt < 4 && !disposed; attempt++) {
+        reconcile();
         const batch = [...pending.values()].filter(item => !item.conflicted).slice(0, MAX_BATCH).map(item => ({ ...item }));
         if (!batch.length) { notify(pending.size ? 'pending' : 'synced'); return; }
         notify('pending');
@@ -410,15 +427,18 @@ export function createCloudSaveClient(options: Options) {
           const data = await request('/api/account/saves', 'PATCH', { operations });
           if (!validSnapshot(data)) throw new CloudSaveError('Cloud saves could not be confirmed. Local changes have been kept.', 'BAD_RESPONSE');
           installRecords(data);
+          const remaining = journal.readIntents();
           for (const sent of batch) {
-            const latest = pending.get(sent.key);
-            if (!latest) continue;
-            if (sent.kind === 'training' && same(latest.value, sent.value)) {
-              const nextProof = latest.trainingQueue?.shift();
-              if (nextProof === undefined) pending.delete(sent.key);
-              else { latest.value = nextProof; latest.expectedVersion = records.get(sent.key)?.version ?? sent.expectedVersion; latest.serial = ++serial; }
-            } else if (latest.serial === sent.serial) pending.delete(sent.key);
-            else { latest.expectedVersion = records.get(sent.key)?.version ?? sent.expectedVersion; latest.conflicted = false; }
+            const confirmed = sent.kind === 'training' ? sent.intents.filter(intent => same(intent.value, sent.value)) : sent.intents;
+            journal.acknowledge(confirmed);
+            if (sent.kind === 'training') continue;
+            const ids = new Set(confirmed.map(intent => intent.operationId));
+            for (const newer of remaining) {
+              if (newer.key !== sent.key || ids.has(newer.operationId) || !newer.supersedes.some(id => ids.has(id))) continue;
+              journal.write({ key: newer.key, kind: newer.kind, ...(newer.id ? { id: newer.id } : {}), value: newer.value,
+                expectedVersion: records.get(sent.key)?.version ?? sent.expectedVersion,
+                ...(newer.checkpointVersion !== undefined ? { checkpointVersion: newer.checkpointVersion } : {}) }, [newer]);
+            }
           }
           reconcile(); accept(data);
         } catch (error) {
@@ -428,7 +448,8 @@ export function createCloudSaveClient(options: Options) {
               && !batch.some(item => pending.get(item.key)?.conflicted)) {
               // A same-version rejection may be a native monotonic-turn guard.
               // Keep the failed batch reviewable instead of retrying forever.
-              for (const item of batch) { const latest = pending.get(item.key); if (latest) latest.conflicted = true; }
+              for (const item of batch) for (const intent of item.intents) blocked.add(intent.operationId);
+              reconcile();
               persist();
             }
             continue;
@@ -444,13 +465,24 @@ export function createCloudSaveClient(options: Options) {
   async function retry() { await load(); await flush(); }
   async function resolveConflict(key: string, choice: 'local' | 'cloud') {
     assertActive();
-    const item = pending.get(key);
+    reconcile();
+    const separator = key.lastIndexOf('::');
+    const logicalKey = separator === -1 ? key : key.slice(0, separator);
+    const branchId = separator === -1 ? undefined : key.slice(separator + 2);
+    const item = pending.get(logicalKey);
     if (!item?.conflicted) return;
+    const branch = branchId ? item.intents.find(intent => intent.operationId === branchId) : undefined;
+    if (branchId && !branch) return;
     if (choice === 'local') {
-      if (olderCurrentTurn(item)) throw new CloudSaveError('Your account has a newer turn of this game. Use the account version to continue.', 'OLDER_TURN');
-      item.expectedVersion = records.get(key)?.version ?? 0; item.conflicted = false; item.serial = ++serial;
+      const selected = branch ? { ...item, ...branch } : item;
+      if (olderCurrentTurn(selected)) throw new CloudSaveError('Your account has a newer turn of this game. Use the account version to continue.', 'OLDER_TURN');
+      journal.write({ key: logicalKey, kind: selected.kind, ...(selected.id ? { id: selected.id } : {}), value: selected.value,
+        expectedVersion: records.get(logicalKey)?.version ?? 0,
+        ...(selected.checkpointVersion !== undefined ? { checkpointVersion: selected.checkpointVersion } : {}) }, item.intents);
     }
-    else { pending.delete(key); hydrate(); }
+    else journal.acknowledge(item.intents);
+    reconcile();
+    if (choice === 'cloud') hydrate();
     persist(); notify(pending.size ? 'pending' : 'synced');
     if (choice === 'local') await flush();
   }

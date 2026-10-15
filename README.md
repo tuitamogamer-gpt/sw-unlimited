@@ -98,9 +98,15 @@ deployment rules. Deck details include a searchable card list,
 type filters, and a cost curve. Starting another game asks before replacing an
 unfinished match.
 
+Optional ability prompts identify the source card and its exact effect before
+offering **Use ability / Skip ability**. The bot also cancels the engine's
+explicit no-effect warning instead of paying for an ability with no effect.
+
 **Training missions** teach resource selection, space Ambush, and leader
 deployment through actual engine positions. Follow the highlighted legal
 choices and complete each lesson; progress is kept in your current player scope.
+If the mission list cannot be loaded, retry it directly without reloading the
+app or blocking ordinary battles.
 Finished matches show a **Battle review** with recorded choices, public damage
 and up to three key moments. The lobby keeps a history of finished reviews.
 

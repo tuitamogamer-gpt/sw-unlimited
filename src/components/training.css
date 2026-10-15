@@ -4,6 +4,9 @@
 .training-heading h2{margin:0;color:var(--ivory,#f2f0e7);font-size:20px;font-weight:600}
 .training-heading p{margin:6px 0 0;color:#a1b3c1;font-size:13px;line-height:1.6}
 .training-lessons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.training-catalog-status{display:flex;align-items:center;gap:10px;min-height:60px;color:#aabfcd;font-size:13px;line-height:1.6}
+.training-catalog-status>svg{flex-shrink:0}.training-catalog-status p{margin:0}
+.training-catalog-error{align-items:flex-start;flex-direction:column}.training-catalog-error button{display:inline-flex;align-items:center;gap:8px;min-height:40px}
 .training-lesson{display:flex;flex-direction:column;min-width:0;padding:17px;border:1px solid #304557;border-radius:7px;background:#101d2a}
 .training-lesson-top{display:flex;align-items:center;gap:7px;color:#95cbd3;font-size:11px}
 .training-lesson-top svg{flex-shrink:0}

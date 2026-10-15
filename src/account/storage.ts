@@ -1,4 +1,4 @@
-export type AccountStorage = Pick<Storage, 'getItem' | 'setItem' | 'removeItem'>;
+export type AccountStorage = Pick<Storage, 'getItem' | 'setItem' | 'removeItem'> & { keys?: () => string[] };
 
 /** Local saves are separated by the server-verified account, never an email.
  * Each client keeps its own immutable scope so a late response after sign-out
@@ -12,5 +12,11 @@ export function createAccountStorage(ownerId: string | null, target?: AccountSto
     getItem: key => storage().getItem(prefix + key),
     setItem: (key, value) => storage().setItem(prefix + key, value),
     removeItem: key => storage().removeItem(prefix + key),
+    keys: () => {
+      const target = storage() as AccountStorage & Partial<Pick<Storage, 'key' | 'length'>>;
+      const names = typeof target.keys === 'function' ? target.keys() : typeof target.key === 'function' && typeof target.length === 'number'
+        ? Array.from({ length: target.length }, (_, index) => target.key!(index)).filter((key): key is string => key !== null) : [];
+      return names.filter(key => key.startsWith(prefix)).map(key => key.slice(prefix.length));
+    },
   };
 }
