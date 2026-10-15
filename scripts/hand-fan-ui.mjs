@@ -320,7 +320,7 @@ async function landscapeBasics() {
 async function trainingCompletionFlow(label, touch) {
   assert.equal(await page.locator('.game-shell').getAttribute('data-hand-view'), 'fan');
   const previousId = view.id;
-  await page.getByRole('button', { name: 'Back to command', exact: true }).click();
+  await page.locator('.game-topbar').getByRole('button', { name: 'Back to command', exact: true }).click();
   await page.locator('.training-selector').waitFor();
   const pending = page.waitForResponse(response => response.url().endsWith('/api/training/resources')
     && response.request().method() === 'POST');

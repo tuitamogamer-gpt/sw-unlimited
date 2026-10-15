@@ -20,7 +20,7 @@ export function HandTray({ mode, onModeChange, gameId, stage, required, cards, m
   openLog: () => void;
   renderCard: (card: Card, index: number, close: () => void) => ReactNode;
 }) {
-  const [open, setOpen] = useState(required);
+  const [open, setOpen] = useState(mode === 'fan' && required);
   const [position, setPosition] = useState<CSSProperties>({ visibility: 'hidden' });
   const section = useRef<HTMLElement>(null);
   const toggle = useRef<HTMLButtonElement>(null);
@@ -36,9 +36,12 @@ export function HandTray({ mode, onModeChange, gameId, stage, required, cards, m
     requestAnimationFrame(() => panel.current?.querySelector<HTMLButtonElement>('.game-card-click:not(:disabled)')?.focus({ preventScroll: true }));
   }, []);
 
-  useEffect(() => { setOpen(required); }, [gameId]);
+  useEffect(() => { setOpen(mode === 'fan' && required); }, [gameId]);
   // Selection updates can change prompt IDs. Reopen only on entering a hand choice.
-  useEffect(() => { if (required) setOpen(true); }, [required, mode]);
+  useEffect(() => {
+    if (mode === 'fan' && required) setOpen(true);
+    else close();
+  }, [required, mode, close]);
   useEffect(() => { if (!required && stage !== 'action') close(); }, [required, stage, close]);
   useEffect(() => {
     if (mode !== 'fan') return;
