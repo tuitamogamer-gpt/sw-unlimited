@@ -6,8 +6,10 @@ export default async function handler(req, res) {
   // Sign-in and account reads do not depend on the rules engine or card catalog.
   if (isAuthRequest(req.url)) return authApp(req, res);
   try {
-    const { app, initialize } = require('../server/index.cjs');
-    await initialize();
+    // Engine-dependent routes initialize themselves. Public card/training
+    // metadata and account collections can respond without booting the rules
+    // engine or constructing every starter matchup on a cold worker.
+    const { app } = require('../server/index.cjs');
     return app(req, res);
   } catch (error) {
     console.error('SWU initialization failed:', error.message);

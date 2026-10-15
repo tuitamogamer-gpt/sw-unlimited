@@ -12,6 +12,10 @@
 .cloud-save-conflicts{margin-top:12px;border-top:1px solid #7c654747;padding-top:7px}
 .cloud-save-conflict{margin-top:12px;padding:12px;border:1px solid #80633b70;border-radius:5px;background:#0c18247a}
 .cloud-save-conflict h4{margin:0;color:#f2e2c6;font-size:12px;font-weight:600;overflow-wrap:anywhere}
+.cloud-save-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
+.cloud-save-comparison>div{display:flex;flex-direction:column;gap:5px;min-width:0;padding:10px;border:1px solid #53627265;border-radius:4px;background:#122130}
+.cloud-save-comparison strong{font-size:11px;color:#e3d8c4}.cloud-save-comparison span,.cloud-save-comparison time{font-size:10px;line-height:1.5;overflow-wrap:anywhere}
+.cloud-save-comparison time{color:#9fb0bd;margin-top:3px}
 .cloud-save-conflict-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .cloud-save-conflict-actions button{flex:1;min-width:140px;min-height:39px;padding:8px;border:1px solid #776044;border-radius:4px;background:#223140;color:#f1dfbe;font-size:11px;line-height:1.3}
 .cloud-save-conflict-actions button:hover:not(:disabled){border-color:#e7b95d;background:#304151}

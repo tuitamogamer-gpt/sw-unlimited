@@ -543,7 +543,13 @@ function chooseAction(view, options = {}) {
     const selected = new Set(state.prompt.selectedCardIds);
     for (const card of state.prompt.displayCards) if (card.selectionState === 'selected') selected.add(card.uuid || card.cardUuid);
     let choice = null;
-    if (/mulligan/.test(title) && actions.some((action) => /mulligan|keep/i.test(action.arg))) choice = mulliganChoice(state, actions);
+    // Only the native action resolver's explicit no-effect confirmation is
+    // declined here. Optional effects and ordinary confirmations keep their policy.
+    const noEffectWarning = /^The ability "[\s\S]+" will have no effect\. Are you sure you want to use it\?$/.test(str(state.prompt.title));
+    const cancelNoEffect = noEffectWarning && actions.some((action) => action.type === 'button' && action.label === 'Use it anyway')
+        ? actions.find((action) => action.type === 'button' && action.label === 'Cancel') : null;
+    if (cancelNoEffect) choice = { action: cancelNoEffect, score: 0, reason: 'Canceling an ability that would have no effect.' };
+    else if (/mulligan/.test(title) && actions.some((action) => /mulligan|keep/i.test(action.arg))) choice = mulliganChoice(state, actions);
     else if (state.prompt.type === 'resource' || /resource step/.test(title)) choice = resourceChoice(state, actions, cards);
     else if (state.prompt.distribution) choice = distributionChoice(actions.find((action) => action.type === 'stateful') || actions[0], state, cards);
     else if (state.prompt.number) {

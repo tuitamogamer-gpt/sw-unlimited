@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('node:fs');
 const path = require('node:path');
+const { createHash } = require('node:crypto');
 const { listDeckStatus } = require('./engine.cjs');
 const { chooseAction } = require('./bot.cjs');
 const { createRecord, applyAction, sealRecord, decodeRecord, restoreRecord, bindAccountCheckpoint, restoreAccountRecord } = require('./replay.cjs');
@@ -39,12 +40,28 @@ let initializePromise;
 
 const asyncRoute = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next);
 function fail(status, message) { const error = new Error(message); error.status = status; error.publicMessage = message; throw error; }
+function publicMetadata(res, value) {
+  // Serialize before changing the default no-store policy. A failed metadata
+  // request must never inherit a successful response's shared-cache headers.
+  const body = JSON.stringify(value);
+  const etag = `"${createHash('sha256').update(body).digest('base64url')}"`;
+  return res.type('json').set({
+    'Cache-Control': 'public, max-age=0, must-revalidate',
+    'Vercel-CDN-Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+    ETag: etag,
+  }).send(body);
+}
 async function initialize() {
   if (!initializePromise) initializePromise = (async () => {
     const raw = JSON.parse(fs.readFileSync(path.join(root, 'data/decks.json'), 'utf8'));
     deckRecipes = Array.isArray(raw) ? raw : raw.decks;
     deckCatalog = await listDeckStatus(deckRecipes);
-  })().catch(error => { initializePromise = undefined; throw error; });
+  })().catch(error => {
+    initializePromise = undefined;
+    const failure = new Error('The game server is currently unavailable. Try again.', { cause: error });
+    failure.status = 503; failure.code = 'ENGINE_INITIALIZATION'; failure.publicMessage = failure.message;
+    throw failure;
+  });
   return initializePromise;
 }
 function cacheSession(entry) {
@@ -224,7 +241,7 @@ app.use(createAccountSyncRouter({ store: accountStore, authenticate, origin: acc
     } finally { restored.game.close(); }
   },
 }));
-app.get('/api/training', (_req, res) => res.json({ lessons: trainingCatalog }));
+app.get('/api/training', (_req, res) => publicMetadata(res, { lessons: trainingCatalog }));
 app.post('/api/training/:lessonId', asyncRoute(async (req, res) => {
   await initialize();
   if (!req.body || typeof req.body !== 'object' || Array.isArray(req.body) || Object.keys(req.body).length) fail(400, 'Choose an available training lesson.');
@@ -235,7 +252,7 @@ app.post('/api/training/:lessonId', asyncRoute(async (req, res) => {
 }));
 
 app.get('/api/health', (_req, res) => res.json({ ok: true, engine: 'Forceteki', ready: Boolean(deckCatalog), sessions: sessions.size }));
-app.get('/api/cards', asyncRoute(async (req, res) => res.json(await searchCards(req.query))));
+app.get('/api/cards', asyncRoute(async (req, res) => publicMetadata(res, await searchCards(req.query))));
 app.post('/api/decks/import', asyncRoute(async (req, res) => {
   const { input, name } = req.body || {};
   const { status, ...result } = await importCustomDeck(input, { name });
@@ -243,7 +260,7 @@ app.post('/api/decks/import', asyncRoute(async (req, res) => {
 }));
 app.get('/api/decks', asyncRoute(async (_req, res) => {
   await initialize();
-  res.json({ decks: deckCatalog, engineVersion: '1f0e9783c4743acdc67df0c4ab3f3610a349c32a',
+  publicMetadata(res, { decks: deckCatalog, engineVersion: '1f0e9783c4743acdc67df0c4ab3f3610a349c32a',
     rulesVersion: 'Forceteki pinned snapshot; official rules reference v9.0 (dated 2026-10-09)',
     sources: [
       { title: 'Official rules and errata', url: 'https://starwarsunlimited.com/how-to-play?chapter=rules', description: 'Fantasy Flight Games · primary source' },
@@ -327,6 +344,10 @@ app.get('*', (_req, res) => {
   res.sendFile(file);
 });
 app.use((error, _req, res, _next) => {
+  // Body parsing can fail before the API middleware runs. Errors must never
+  // retain public metadata caching, including malformed or oversized requests.
+  res.set('Cache-Control', 'no-store');
+  res.removeHeader('Vercel-CDN-Cache-Control');
   const status = error.status || (error.type === 'entity.parse.failed' ? 400 : error.type === 'entity.too.large' ? 413 : 500);
   const messages = { STALE_PROMPT: 'The available choice has changed. Refresh the game.', STALE_STATE: 'The game state has changed. Refresh the game.',
     ILLEGAL_ACTION: 'That action is not available in the current game state.', GAME_ENDED: 'The game has ended.',

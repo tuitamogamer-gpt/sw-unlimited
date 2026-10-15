@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, GraduationCap, Rocket, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowRight, CheckCircle2, GraduationCap, LoaderCircle, RefreshCw, Rocket, ShieldCheck, Zap } from 'lucide-react';
 import type { GameAction } from '../types';
 import { t } from '../i18n';
 import './training.css';
@@ -26,18 +26,24 @@ interface TrainingSelectorProps {
   onStart: (lessonId: string) => void;
   busy?: boolean;
   completedLessonIds?: string[];
+  loading?: boolean;
+  error?: boolean;
+  onRetry?: () => void;
 }
 
 const lessonIcons = { resources: Zap, 'space-ambush': Rocket, 'leader-deploy': ShieldCheck };
 
-export function TrainingSelector({ lessons, onStart, busy = false, completedLessonIds = [] }: TrainingSelectorProps) {
+export function TrainingSelector({ lessons, onStart, busy = false, completedLessonIds = [], loading = false, error = false, onRetry }: TrainingSelectorProps) {
   return <section className="training-selector" aria-labelledby="training-title">
     <div className="training-heading">
       <GraduationCap size={21} aria-hidden="true" />
       <div><h2 id="training-title">{t('Training missions')}</h2>
         <p>{t('Learn one rule at a time on a real battlefield. Follow the highlighted choices.')}</p></div>
     </div>
-    <div className="training-lessons">
+    {loading ? <div className="training-catalog-status" role="status"><LoaderCircle size={17} className="spin" aria-hidden="true" /><span>{t('Loading training missions…')}</span></div>
+      : error || !lessons.length ? <div className="training-catalog-status training-catalog-error" role="alert"><p>{t(error ? 'Training missions could not be loaded. Try again.' : 'No training missions are available right now.')}</p>
+        {onRetry && <button type="button" className="secondary-button" onClick={onRetry} disabled={busy}><RefreshCw size={15} aria-hidden="true" />{t('Retry training missions')}</button>}</div>
+      : <div className="training-lessons">
       {lessons.map((lesson, index) => {
         const Icon = lessonIcons[lesson.id as keyof typeof lessonIcons] || GraduationCap;
         return <article className="training-lesson" key={lesson.id}>
@@ -54,7 +60,7 @@ export function TrainingSelector({ lessons, onStart, busy = false, completedLess
           </button>
         </article>;
       })}
-    </div>
+    </div>}
   </section>;
 }
 

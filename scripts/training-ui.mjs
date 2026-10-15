@@ -16,7 +16,7 @@ const server = app.listen(0, '127.0.0.1');
 await once(server, 'listening');
 const origin = `http://127.0.0.1:${server.address().port}`;
 const browser = await chromium.launch({ headless: true });
-const report = { passed: false, exercises: [], restores: [], viewports: [], pageErrors: [] };
+const report = { passed: false, exercises: [], restores: [], viewports: [], catalogRecovery: [], pageErrors: [] };
 let page; let view;
 const guidanceSelector = '.training-active-guidance, .training-guidance.complete';
 
@@ -185,8 +185,30 @@ try {
     page.setDefaultTimeout(25_000);
     page.on('pageerror', error => report.pageErrors.push(error.message));
     await page.addInitScript(selected => localStorage.setItem('swu-language', selected), language);
-    await page.goto(origin, { waitUntil: 'networkidle' });
+    let releaseFailure;
+    const failureGate = new Promise(resolve => { releaseFailure = resolve; });
+    const catalogRoute = `${origin}/api/training`;
+    await page.route(catalogRoute, async route => {
+      await failureGate;
+      await route.fulfill({ status: language === 'en' ? 503 : 200, contentType: 'application/json', headers: { 'Cache-Control': 'no-store' },
+        body: JSON.stringify(language === 'en' ? { error: 'Temporary metadata outage' } : { lessons: [{ id: 'resources' }] }) });
+    });
+    await page.goto(origin, { waitUntil: 'domcontentloaded' });
     await page.locator('.training-selector').waitFor();
+    await page.locator('.training-catalog-status[role="status"]').waitFor();
+    assert.equal(await page.locator('.launch-button').isEnabled(), true, 'A training metadata outage must not block ordinary battles.');
+    releaseFailure();
+    await page.locator('.training-catalog-error[role="alert"]').waitFor();
+    assert.equal(await page.locator('.training-start').count(), 0);
+    const retry = page.locator('.training-catalog-error button');
+    assert.ok((await retry.innerText()).trim());
+    if (language === 'sr') assert.notEqual(await retry.innerText(), 'Retry training missions');
+    await page.unroute(catalogRoute);
+    const retried = page.waitForResponse(response => response.url() === catalogRoute);
+    await retry.click();
+    assert.equal((await retried).status(), 200);
+    await page.locator('.training-start').first().waitFor();
+    report.catalogRecovery.push({ language, failure: language === 'en' ? '503' : 'malformed', loadingVisible: true, retried: true });
     assert.equal(await page.locator('.training-start').count(), 3);
     assert.equal(await page.locator('.training-start').evaluateAll(buttons => buttons.every(button => !!button.getAttribute('aria-label'))), true);
     if (language === 'sr') assert.notEqual(await page.locator('.training-selector h2').innerText(), 'Training missions');

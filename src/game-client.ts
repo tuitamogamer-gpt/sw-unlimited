@@ -51,6 +51,7 @@ export type GameUpdate = { view: GameView; restored: boolean; notice?: string };
 export function createGameClient(options: ClientOptions = {}) {
   const memory = new Map<string, Checkpoint>();
   const storageFailed = new Set<string>();
+  const durableCheckpoints = new Set<string>();
   const needsRefresh = new Set<string>();
   const pending = new Set<string>();
   let memorySession = '';
@@ -61,19 +62,48 @@ export function createGameClient(options: ClientOptions = {}) {
   function storedValue(key: string): string {
     // A failed pointer write can leave a different game's ID on disk. Keep
     // this tab on its latest game until its checkpoint and pointer are saved.
-    if (key === SESSION_KEY && memorySession && storageFailed.has(memorySession)) return memorySession;
-    try { return storage()?.getItem(key) || (key === SESSION_KEY ? memorySession : ''); } catch { return key === SESSION_KEY ? memorySession : ''; }
+    try {
+      const target = storage();
+      if (!target) return key === SESSION_KEY ? memorySession : '';
+      const value = target.getItem(key);
+      if (key === SESSION_KEY && memorySession && storageFailed.has(memorySession)) {
+        const removed = durableCheckpoints.has(memorySession)
+          && target.getItem(`${CHECKPOINT_PREFIX}${memorySession}`) === null && target.getItem(`${TOKEN_PREFIX}${memorySession}`) === null;
+        if (!removed) return memorySession;
+        memory.delete(memorySession); needsRefresh.delete(memorySession);
+        storageFailed.delete(memorySession); durableCheckpoints.delete(memorySession);
+        memorySession = '';
+      }
+      if (key === SESSION_KEY && value === null) memorySession = '';
+      return value || '';
+    } catch { return key === SESSION_KEY ? memorySession : ''; }
   }
   function savedCheckpoint(id: string): Checkpoint | undefined {
     let saved: Checkpoint | undefined;
+    let raw: string | null = null;
+    let legacyToken: string | null = null;
+    let readSucceeded = false;
     try {
-      const value = JSON.parse(storedValue(`${CHECKPOINT_PREFIX}${id}`) || 'null');
+      const target = storage();
+      if (target) {
+        raw = target.getItem(`${CHECKPOINT_PREFIX}${id}`);
+        legacyToken = target.getItem(`${TOKEN_PREFIX}${id}`);
+        readSucceeded = true;
+      }
+    } catch { /* Keep the last known checkpoint when storage cannot be read. */ }
+    if (readSucceeded && raw === null && legacyToken === null && (!storageFailed.has(id) || durableCheckpoints.has(id))) {
+      memory.delete(id); needsRefresh.delete(id); storageFailed.delete(id); durableCheckpoints.delete(id);
+      if (memorySession === id) memorySession = '';
+      return undefined;
+    }
+    try {
+      const value = JSON.parse(raw || 'null');
       if (value?.id === id && Number.isSafeInteger(value.version) && value.version >= 0 && typeof value.sessionToken === 'string' && value.sessionToken.startsWith('swu1.')) saved = value;
     } catch { /* An incomplete old browser write cannot replace the in-memory checkpoint. */ }
+    if (saved || legacyToken) durableCheckpoints.add(id);
     const current = memory.get(id);
     if (current && (!saved || current.version > saved.version || storageFailed.has(id) && current.version === saved.version)) return current;
     if (saved) return saved;
-    const legacyToken = storedValue(`${TOKEN_PREFIX}${id}`);
     return legacyToken ? { id, version: -1, sessionToken: legacyToken } : undefined;
   }
   function rememberGame(view: GameView): boolean {
@@ -89,6 +119,7 @@ export function createGameClient(options: ClientOptions = {}) {
       // One write commits the token and its version together. The pointer and
       // old token key are compatibility aids, never the authoritative pair.
       target.setItem(`${CHECKPOINT_PREFIX}${view.id}`, JSON.stringify(checkpoint));
+      durableCheckpoints.add(view.id);
       target.setItem(SESSION_KEY, view.id);
       storageFailed.delete(view.id);
       try { target.setItem(`${TOKEN_PREFIX}${view.id}`, view.sessionToken); } catch { /* The atomic checkpoint and resume pointer are already durable. */ }
@@ -96,7 +127,7 @@ export function createGameClient(options: ClientOptions = {}) {
     } catch { storageFailed.add(view.id); return false; }
   }
   function forgetGame(id: string) {
-    memory.delete(id); needsRefresh.delete(id); storageFailed.delete(id);
+    memory.delete(id); needsRefresh.delete(id); storageFailed.delete(id); durableCheckpoints.delete(id);
     if (memorySession === id) memorySession = '';
     try {
       const target = storage();
@@ -162,7 +193,7 @@ export function createGameClient(options: ClientOptions = {}) {
         }
         return data;
       })()]);
-      if (method !== 'DELETE' && (gameId || path === '/api/games' && method === 'POST')) {
+      if (method !== 'DELETE' && (gameId || method === 'POST' && (path === '/api/games' || /^\/api\/training\/[^/]+$/.test(path)))) {
         validateGame(data, gameId);
         rememberGame(data);
       }

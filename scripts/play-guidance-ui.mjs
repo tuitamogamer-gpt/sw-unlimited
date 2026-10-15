@@ -21,7 +21,7 @@ const origin = `http://127.0.0.1:${server.address().port}`;
 const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
 page.setDefaultTimeout(20_000);
-const report = { passed: false, asset: null, rulesHelp: null, orders: [], noEffect: null, pageErrors: [] };
+const report = { passed: false, asset: null, rulesHelp: null, orders: [], noEffect: null, optionalAbilities: [], pageErrors: [] };
 page.on('pageerror', error => report.pageErrors.push(error.message));
 let mutations = 0, view;
 page.on('request', request => {
@@ -186,6 +186,66 @@ async function finishAbility(kind, saved) {
   }
 }
 
+async function verifyOptionalAbility(saved, language, decision) {
+  assert.equal(view.prompt.type, 'optionalTrigger');
+  assert.equal(view.prompt.ability.sourceCard.uuid, saved.sourceId);
+  const effect = 'Pay 1 resource to give this unit +1/+1 for this phase';
+  assert.equal(view.prompt.ability.label, effect);
+  assert.deepEqual(view.prompt.buttons.map(button => ({ text: button.text, arg: button.arg })), [
+    { text: 'Trigger', arg: 'trigger' }, { text: 'Pass', arg: 'pass' },
+  ], 'Readable interface labels must preserve the native replay commands.');
+
+  if (language === 'sr') await page.locator('.game-tools .language-select').selectOption('sr');
+  const title = `${language === 'sr' ? 'Sposobnost' : 'Ability'} · ${shipName}`;
+  await page.getByRole('heading', { name: title, exact: true }).waitFor();
+  assert.equal(await page.locator('.prompt-panel .context-banner').innerText(), effect,
+    'The exact native effect and its resource payment must be visible before deciding.');
+  const use = page.getByRole('button', { name: language === 'sr' ? 'Upotrebi sposobnost' : 'Use ability', exact: true });
+  const skip = page.getByRole('button', { name: language === 'sr' ? 'Preskoči sposobnost' : 'Skip ability', exact: true });
+  assert.equal(await use.getAttribute('data-action-arg'), 'trigger');
+  assert.equal(await skip.getAttribute('data-action-arg'), 'pass');
+  assert.equal(await use.isEnabled(), true);
+  assert.equal(await skip.isEnabled(), true);
+
+  const mutationsBeforeInspect = mutations;
+  const versionBeforeInspect = view.version;
+  await page.getByRole('button', { name: `${language === 'sr' ? 'Pregledaj' : 'Inspect'} ${shipName}`, exact: true }).click();
+  await page.locator('.ci-root').waitFor();
+  assert.match(await page.locator('.ci-root').innerText(), /Smuggler's YT-2400/);
+  await page.keyboard.press('Escape');
+  await page.locator('.ci-root').waitFor({ state: 'detached' });
+  assert.equal(mutations, mutationsBeforeInspect, 'Inspecting the source must not use or skip its optional ability.');
+  assert.equal(view.version, versionBeforeInspect);
+  await page.getByRole('heading', { name: title, exact: true }).waitFor();
+  const layout = await page.locator('.prompt-panel').evaluate(panel => {
+    const box = panel.getBoundingClientRect();
+    const cue = panel.querySelector('.context-banner');
+    return { width: innerWidth, scrollWidth: document.documentElement.scrollWidth, height: innerHeight,
+      left: box.left, right: box.right, top: box.top, bottom: box.bottom,
+      instructionClipped: cue.scrollHeight > cue.clientHeight + 1 };
+  });
+  assert.ok(layout.scrollWidth <= layout.width + 1 && layout.left >= -1 && layout.right <= layout.width + 1
+    && layout.top >= -1 && layout.bottom <= layout.height + 1, `The optional ability prompt must fit: ${JSON.stringify(layout)}`);
+  assert.equal(layout.instructionClipped, false);
+  await page.screenshot({ path: `${output}/optional-ability-${language}-${decision}.png` });
+
+  const before = view.players.human.space.find(card => card.uuid === saved.sourceId);
+  const readyResources = view.players.human.readyResources;
+  await act(() => (decision === 'use' ? use : skip).click());
+  const after = view.players.human.space.find(card => card.uuid === saved.sourceId);
+  assert.equal(view.players.human.readyResources, readyResources - (decision === 'use' ? 1 : 0),
+    'Only accepting the native paid ability spends its resource.');
+  assert.equal(after.power, before.power + (decision === 'use' ? 1 : 0));
+  assert.equal(after.hp, before.hp + (decision === 'use' ? 1 : 0));
+  assert.equal(after.exhausted, true);
+  assert.equal(view.prompt.ability.label, 'Ambush', 'The remaining native ability must still resolve.');
+  assert.equal(await promptButton('trigger').innerText(), language === 'sr' ? 'Koristi Ambush' : 'Use Ambush');
+  assert.equal(await promptButton('pass').innerText(), language === 'sr' ? 'Preskoči Ambush' : 'Skip Ambush');
+  await finishAbility('ambush', saved);
+  report.optionalAbilities.push({ language, decision, sourceAndEffectVisible: true, nativeCommandsPreserved: true,
+    resourceCost: decision === 'use' ? 1 : 0, inspectionDoesNotAct: true, remainingAmbushResolved: true, layout });
+}
+
 try {
   for (const [index, first] of ['ambush', 'whenPlayed'].entries()) {
     await clearSession();
@@ -226,6 +286,16 @@ try {
   assert.equal(view.players.bot.base.damage, 0);
   assert.ok(view.players.bot.ground.some(card => card.name === 'Cell Block Guard' && card.damage === 0));
   report.noEffect = { explicitLabel: true, choiceUsable: true, remainingAbilityResolved: true, noCrossArenaOrBaseAttack: true };
+
+  for (const language of ['en', 'sr']) for (const decision of ['use', 'skip']) {
+    await clearSession();
+    await page.setViewportSize(language === 'sr' ? { width: 375, height: 812 } : { width: 1440, height: 1000 });
+    const saved = await checkpoint('TIE/ln Fighter');
+    await resume(saved);
+    const choices = await verifyMenu(saved, true);
+    await act(() => promptButton(choices.whenPlayed.arg).click());
+    await verifyOptionalAbility(saved, language, decision);
+  }
   assert.deepEqual(report.pageErrors, []);
   report.passed = true;
   await writeFile(`${output}/report.json`, JSON.stringify(report, null, 2));

@@ -230,6 +230,23 @@ try {
   await waitSnapshot('a', saved => saved.preferences.value?.difficulty === 'normal', 'competing device preference');
   await second.context.setOffline(false); await panel(second.page).getByRole('button', { name: 'Retry sync', exact: true }).click();
   await second.page.locator('[data-cloud-save-status="conflict"]').waitFor();
+  const settingsConflict = second.page.locator('.cloud-save-conflict').filter({ has: second.page.getByRole('heading', { name: 'Settings', exact: true }) });
+  await settingsConflict.locator('[data-save-version="local"]').getByText('Cadet', { exact: true }).waitFor();
+  await settingsConflict.locator('[data-save-version="account"]').getByText('Commander', { exact: true }).waitFor();
+  for (const version of ['local', 'account']) {
+    const changedAt = await settingsConflict.locator(`[data-save-version="${version}"] time`).getAttribute('datetime');
+    assert.ok(changedAt && Number.isFinite(Date.parse(changedAt)), `The ${version} choice shows a real change timestamp.`);
+  }
+  assert.doesNotMatch(await panel(second.page).innerText(), /swu1\./, 'Conflict choices must not expose encrypted game checkpoints.');
+  const conflictLayout = await panel(second.page).evaluate(element => {
+    const bounds = element.closest('[role="dialog"]').getBoundingClientRect();
+    return { left: bounds.left, top: bounds.top, right: bounds.right, bottom: bounds.bottom,
+      width: innerWidth, height: innerHeight, scrollWidth: document.documentElement.scrollWidth };
+  });
+  assert.equal(conflictLayout.width, 390);
+  assert.ok(conflictLayout.left >= -1 && conflictLayout.top >= -1 && conflictLayout.right <= conflictLayout.width + 1
+    && conflictLayout.bottom <= conflictLayout.height + 1 && conflictLayout.scrollWidth <= conflictLayout.width + 1,
+  'Reviewable conflict choices fit the 390px mobile account dialog.');
   await screenshot(second.page, '02-explicit-preference-conflict');
   await second.page.getByRole('button', { name: 'Use account version', exact: true }).click();
   await second.page.locator('.lobby').waitFor(); assert.equal(await second.page.locator('#difficulty').inputValue(), 'normal');
@@ -315,6 +332,54 @@ try {
   }
   await screenshot(second.page, '04-deleted-review-stays-deleted');
   pass('a deleted finished review stays deleted after reload and resume on both devices');
+
+  // Leave the custom deck unused so its deletion and the other tab's settings
+  // edit affect independent cloud keys. Both tabs share the real SDK session
+  // and localStorage, then lose only their cloud-save network connection.
+  await first.page.locator('.deck-tile-main').first().click(); await settled(first.page);
+  const beforeTabs = await store.read(owner('a'));
+  assert.notEqual(beforeTabs.preferences.value.deckId, deckA.id);
+  assert.ok(beforeTabs.decks.some(item => item.id === deckA.id && item.value !== null));
+  const tabB = await first.context.newPage(); tabB.setDefaultTimeout(25_000);
+  tabB.on('pageerror', error => report.pageErrors.push(error.message));
+  await tabB.goto(origin); await tabB.locator('[data-account-trigger][aria-label="Open account"]:visible').first().waitFor();
+  await tabB.locator('.lobby').waitFor(); await settled(tabB);
+  await tabB.locator(`[data-custom-deck-id="${deckA.id}"]`).waitFor();
+  const queuedDifficulty = beforeTabs.preferences.value.difficulty === 'easy' ? 'normal' : 'easy';
+  const abortedTabSaveRequests = [0, 0];
+  for (const [index, tab] of [first.page, tabB].entries()) await tab.route(`${origin}/api/account/saves**`, route => {
+    abortedTabSaveRequests[index]++; return route.abort('internetdisconnected');
+  });
+  await first.page.locator(`[data-custom-deck-id="${deckA.id}"] [data-custom-action="remove"]`).click();
+  await first.page.getByRole('button', { name: 'Remove deck', exact: true }).click();
+  await first.page.locator(`[data-custom-deck-id="${deckA.id}"]`).waitFor({ state: 'detached' });
+  await openAccount(first.page); await first.page.locator('[data-cloud-save-status="offline"]').waitFor();
+  await tabB.locator(`[data-custom-deck-id="${deckA.id}"]`).waitFor({ state: 'detached' });
+  await tabB.locator('#difficulty').selectOption(queuedDifficulty);
+  await tabB.waitForFunction(({ ownerId, difficulty }) => {
+    try { return JSON.parse(localStorage.getItem(`swu-command-account:${ownerId}:swu-command-preferences`))?.difficulty === difficulty; }
+    catch { return false; }
+  }, { ownerId: owner('a'), difficulty: queuedDifficulty });
+  await openAccount(tabB); await tabB.locator('[data-cloud-save-status="offline"]').waitFor();
+  const disconnected = await store.read(owner('a'));
+  assert.ok(disconnected.decks.some(item => item.id === deckA.id && item.value !== null), 'The disconnected deletion has not reached the server yet.');
+  assert.equal(disconnected.preferences.value.difficulty, beforeTabs.preferences.value.difficulty, 'The disconnected settings edit has not reached the server yet.');
+  assert.ok(abortedTabSaveRequests.every(count => count > 0), 'Both tabs reached the real cloud-save network boundary.');
+  await first.page.close(); await tabB.close();
+  const reopened = await first.context.newPage(); reopened.setDefaultTimeout(25_000);
+  reopened.on('pageerror', error => report.pageErrors.push(error.message));
+  await reopened.goto(origin); await reopened.locator('[data-account-trigger][aria-label="Open account"]:visible').first().waitFor();
+  await reopened.locator('.lobby').waitFor();
+  await waitSnapshot('a', saved => saved.decks.some(item => item.id === deckA.id && item.value === null && item.deleted)
+    && saved.preferences.value?.difficulty === queuedDifficulty, 'both tabs durable offline changes after every writer closes');
+  await settled(reopened);
+  assert.equal(await reopened.locator(`[data-custom-deck-id="${deckA.id}"]`).count(), 0, 'The older tab must not resurrect the deleted custom deck.');
+  assert.equal(await reopened.locator('#difficulty').inputValue(), queuedDifficulty);
+  await reopened.reload(); await reopened.locator('.lobby').waitFor(); await settled(reopened);
+  assert.equal(await reopened.locator(`[data-custom-deck-id="${deckA.id}"]`).count(), 0);
+  assert.equal(await reopened.locator('#difficulty').inputValue(), queuedDifficulty);
+  await screenshot(reopened, '05-two-tab-offline-queue-recovered');
+  pass('two tabs keep independent offline changes after both writers close and a new tab syncs them', { abortedSaveRequests: abortedTabSaveRequests });
 
   assert.deepEqual(report.pageErrors, []); report.passed = true;
 } catch (error) {

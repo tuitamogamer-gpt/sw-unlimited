@@ -9,7 +9,8 @@ const ts = require('typescript');
 function browserModule(relativePath) {
   const filename = path.resolve(__dirname, '..', relativePath);
   const compiled = new Module(filename, module);
-  compiled.require = requested => requested === '../custom-decks' ? browserModule('src/custom-decks.ts') : require(requested);
+  compiled.require = requested => requested === '../custom-decks' ? browserModule('src/custom-decks.ts')
+    : requested === './cloud-journal' ? browserModule('src/account/cloud-journal.ts') : require(requested);
   compiled._compile(ts.transpileModule(fs.readFileSync(filename, 'utf8'), {
     compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.CommonJS },
   }).outputText, filename);
@@ -19,13 +20,14 @@ const { createCloudSaveClient, MATCH_HISTORY_KEY, TRAINING_PROGRESS_KEY } = brow
 const { createAccountStorage } = browserModule('src/account/storage.ts');
 const { readCustomDecks, upsertCustomDeck, removeStoredCustomDeck, CUSTOM_DECKS_KEY } = browserModule('src/custom-decks.ts');
 const SESSION = 'swu-command-session', PREFS = 'swu-command-preferences';
+const OP_PREFIX = 'swu-command-cloud-operation:v1:';
 const checkpointKey = id => `swu-command-checkpoint:${id}`;
 const tokenKey = id => `swu-command-state:${id}`;
 const copy = value => structuredClone(value);
 const response = (data, status = 200) => ({ ok: status >= 200 && status < 300, status, json: async () => copy(data) });
 function disk() {
   const values = new Map();
-  return { values, getItem: key => values.get(key) ?? null, setItem: (key, value) => values.set(key, value), removeItem: key => values.delete(key) };
+  return { values, keys: () => [...values.keys()], getItem: key => values.get(key) ?? null, setItem: (key, value) => values.set(key, value), removeItem: key => values.delete(key) };
 }
 function deck(id, name = id) {
   const leader = { id: 'SOR_005', name: 'Luke Skywalker' }, base = { id: 'SOR_029', name: 'Capital City' };
@@ -341,4 +343,185 @@ test('local writes keep unavailable and offline cloud notices truthful until a s
   assert.equal(service.state().preferences.value.difficulty, 'hard');
   assert.deepEqual(service.state().training.value.completedLessonIds, ['ambush', 'sentinel']);
   a.client.dispose();
+});
+
+test('offline deletion and edits in two tabs survive either closing order without resurrecting deleted decks', async () => {
+  for (const closeOrder of ['AB', 'BA']) {
+    const service = server(), shared = disk(), initial = device(service, shared);
+    await initial.client.load(); upsertCustomDeck(deck('a'), initial.client.storage); upsertCustomDeck(deck('b'), initial.client.storage);
+    await initial.client.flush(); initial.client.dispose();
+    const a = device(service, shared), b = device(service, shared);
+    await a.client.load(); await b.client.load(); service.offline(true);
+    removeStoredCustomDeck('custom-a', a.client.storage);
+    upsertCustomDeck(deck('b', 'Edited in the other tab'), b.client.storage);
+    const tabs = { A: a, B: b };
+    for (const name of closeOrder) tabs[name].client.dispose();
+    service.offline(false);
+    const reloaded = device(service, shared); await reloaded.client.load(); await reloaded.client.flush();
+    assert.deepEqual(readCustomDecks(reloaded.storage).map(item => item.id), ['custom-b']);
+    assert.equal(service.state().decks.find(item => item.id === 'custom-a').deleted, true);
+    assert.equal(service.state().decks.find(item => item.id === 'custom-b').value.name, 'Edited in the other tab');
+    assert.equal(reloaded.client.getStatus().pendingCount, 0); reloaded.client.dispose();
+  }
+});
+
+test('acknowledging an in-flight intent cannot erase a newer causal intent written by another tab', async () => {
+  const service = server(), nativeFetch = service.fetch, shared = disk();
+  let release, entered;
+  const waiting = new Promise(resolve => { entered = resolve; });
+  service.fetch = async (url, init) => {
+    if (init.method === 'PATCH' && !release) { entered(); await new Promise(resolve => { release = resolve; }); }
+    return nativeFetch(url, init);
+  };
+  const a = device(service, shared), b = device(service, shared);
+  await a.client.load(); await b.client.load();
+  a.client.storage.setItem(PREFS, JSON.stringify({ difficulty: 'easy' }));
+  const saving = a.client.flush(); await waiting;
+  b.client.storage.setItem(PREFS, JSON.stringify({ difficulty: 'hard' }));
+  release(); await saving; await b.client.retry();
+  assert.equal(service.state().preferences.value.difficulty, 'hard');
+  assert.equal(b.client.getStatus().pendingCount, 0);
+  a.client.dispose(); b.client.dispose();
+});
+
+test('truly concurrent differing local edits remain separate reviewable branches until one is chosen', async () => {
+  const service = server(), shared = disk(), initial = device(service, shared);
+  await initial.client.load(); upsertCustomDeck(deck('fleet'), initial.client.storage); await initial.client.flush(); initial.client.dispose();
+  const b = device(service, shared); await b.client.load();
+  const scope = createAccountStorage('owner_A', shared);
+  let interleave = false;
+  const a = createCloudSaveClient({ ownerId: 'owner_A', getAccessToken: async () => 'account-token', fetch: service.fetch, debounceMs: 100_000,
+    storage: { ...scope, setItem(key, value) {
+      if (interleave && key.startsWith(OP_PREFIX)) { interleave = false; upsertCustomDeck(deck('fleet', 'Draft B'), b.client.storage); }
+      scope.setItem(key, value);
+    } },
+  });
+  await a.load(); interleave = true;
+  upsertCustomDeck(deck('fleet', 'Draft A'), a.storage);
+  await b.client.flush();
+  const conflicts = b.client.getStatus().conflicts;
+  assert.deepEqual(conflicts.map(item => item.localValue.name).sort(), ['Draft A', 'Draft B']);
+  assert.equal(service.state().decks[0].value.name, 'fleet', 'Neither conflicting local branch silently overwrites the account version.');
+  await b.client.resolveConflict(conflicts.find(item => item.localValue.name === 'Draft A').key, 'local');
+  assert.equal(service.state().decks[0].value.name, 'Draft A');
+  assert.equal(b.client.getStatus().pendingCount, 0); a.dispose(); b.client.dispose();
+});
+
+test('a failed journal cache write keeps its warning and a newer durable game survives reload', async () => {
+  const service = server(), shared = disk(), initial = device(service, shared);
+  await initial.client.load(); checkpoint(initial.client.storage, 'game_A', 1); await initial.client.flush(); initial.client.dispose();
+  const scope = createAccountStorage('owner_A', shared);
+  const denied = { ...scope, setItem(key, value) { if (key === 'swu-command-cloud-cache:v2') throw new Error('QuotaExceeded'); scope.setItem(key, value); } };
+  const a = createCloudSaveClient({ ownerId: 'owner_A', storage: denied, fetch: service.fetch, getAccessToken: async () => 'account-token', debounceMs: 100_000 });
+  await a.load(); service.offline(true); checkpoint(a.storage, 'game_A', 2);
+  assert.match(a.getStatus().message, /Keep it open/);
+  a.dispose(); service.offline(false);
+  const reloaded = device(service, shared); await reloaded.client.load();
+  assert.equal(JSON.parse(reloaded.storage.getItem(checkpointKey('game_A'))).version, 2);
+  await reloaded.client.flush(); assert.equal(service.state().currentGame.value.version, 2); reloaded.client.dispose();
+});
+
+test('if an intent itself cannot be persisted, hydration recovers a demonstrably newer local checkpoint before applying cloud state', async () => {
+  const service = server(), shared = disk(), initial = device(service, shared);
+  await initial.client.load(); checkpoint(initial.client.storage, 'game_A', 1); await initial.client.flush(); initial.client.dispose();
+  const scope = createAccountStorage('owner_A', shared);
+  const denied = { ...scope, setItem(key, value) { if (key.startsWith(OP_PREFIX)) throw new Error('QuotaExceeded'); scope.setItem(key, value); } };
+  const a = createCloudSaveClient({ ownerId: 'owner_A', storage: denied, fetch: service.fetch, getAccessToken: async () => 'account-token', debounceMs: 100_000 });
+  await a.load(); checkpoint(a.storage, 'game_A', 2);
+  assert.match(a.getStatus().message, /Keep it open/); a.dispose();
+  const reloaded = device(service, shared); await reloaded.client.load();
+  assert.equal(JSON.parse(reloaded.storage.getItem(checkpointKey('game_A'))).version, 2);
+  await reloaded.client.flush(); assert.equal(service.state().currentGame.value.version, 2); reloaded.client.dispose();
+});
+
+test('legacy pending deletions and multiple native lesson proofs migrate without being lost or replayed from an old journal copy', async () => {
+  const service = server(), shared = disk(), scope = createAccountStorage('owner_A', shared), remote = snapshot();
+  remote.revision = 1; remote.decks = [{ id: 'custom-old', version: 1, value: deck('old') }]; service.replace(remote);
+  const legacy = { schema: 1, ownerId: 'owner_A', snapshot: remote, serial: 3, pending: [
+    { key: 'deck:custom-old', kind: 'deck', id: 'custom-old', expectedVersion: 1, value: null, serial: 1 },
+    { key: 'training', kind: 'training', expectedVersion: 0, value: { gameId: 'resources', sessionToken: 'swu1.resources' }, trainingQueue: [{ gameId: 'ambush', sessionToken: 'swu1.ambush' }], serial: 3 },
+  ] };
+  scope.setItem('swu-command-cloud-sync:v1', JSON.stringify(legacy));
+  const a = device(service, shared); await a.client.load(); await a.client.flush(); a.client.dispose();
+  assert.equal(service.state().decks[0].deleted, true);
+  assert.deepEqual(service.state().training.value.completedLessonIds.sort(), ['ambush', 'resources']);
+  const count = patchCalls(service).length;
+  scope.setItem('swu-command-cloud-sync:v1', JSON.stringify(legacy));
+  const reloaded = device(service, shared); await reloaded.client.load(); await reloaded.client.flush();
+  assert.equal(patchCalls(service).length, count, 'Exact legacy acknowledgements prevent a stale tab from replaying its old journal.');
+  reloaded.client.dispose();
+});
+
+test('owner-scoped enumeration and immutable records never import another account’s operations', async () => {
+  const service = server(), shared = disk(), a = device(service, shared, 'owner_A');
+  upsertCustomDeck(deck('private'), a.client.storage);
+  const scopeB = createAccountStorage('owner_B', shared);
+  const opKey = a.storage.keys().find(key => key.startsWith(OP_PREFIX));
+  assert.ok(opKey);
+  assert.deepEqual(scopeB.keys(), []);
+  scopeB.setItem(opKey, a.storage.getItem(opKey));
+  const b = device(service, shared, 'owner_B'); await b.client.load(); await b.client.flush();
+  assert.deepEqual(service.state().decks, []);
+  assert.equal(b.client.getStatus().pendingCount, 0); a.client.dispose(); b.client.dispose();
+});
+
+test('temporarily unreadable intent keys retain the known pending change and its persistence warning', async () => {
+  const service = server(), shared = disk(), scope = createAccountStorage('owner_A', shared);
+  let denied = false;
+  const storage = { ...scope, getItem(key) { if (denied && key.startsWith(OP_PREFIX)) throw new Error('Storage access denied'); return scope.getItem(key); } };
+  const a = createCloudSaveClient({ ownerId: 'owner_A', storage, fetch: service.fetch, getAccessToken: async () => 'account-token', debounceMs: 100_000 });
+  await a.load(); a.storage.setItem(PREFS, JSON.stringify({ difficulty: 'easy' }));
+  denied = true; await a.load();
+  assert.equal(a.getStatus().pendingCount, 1);
+  assert.match(a.getStatus().message, /Keep it open/);
+  assert.equal(JSON.parse(scope.getItem(PREFS)).difficulty, 'easy');
+  denied = false; await a.retry();
+  assert.equal(service.state().preferences.value.difficulty, 'easy');
+  assert.equal(a.getStatus().pendingCount, 0);
+  assert.equal(a.getStatus().message, undefined); a.dispose();
+});
+
+test('concurrent signed checkpoints need a choice even when one has a greater turn count', async () => {
+  const service = server(), shared = disk(), initial = device(service, shared);
+  await initial.client.load(); checkpoint(initial.client.storage, 'game_A', 1); await initial.client.flush(); initial.client.dispose();
+  const b = device(service, shared); await b.client.load();
+  const scope = createAccountStorage('owner_A', shared);
+  let interleave = false;
+  const a = createCloudSaveClient({ ownerId: 'owner_A', getAccessToken: async () => 'account-token', fetch: service.fetch, debounceMs: 100_000,
+    storage: { ...scope, setItem(key, value) {
+      if (interleave && key.startsWith(OP_PREFIX)) { interleave = false; checkpoint(b.client.storage, 'game_A', 4, 'swu1.fork-B-4'); }
+      scope.setItem(key, value);
+    } },
+  });
+  await a.load(); interleave = true; checkpoint(a.storage, 'game_A', 3, 'swu1.fork-A-3');
+  await b.client.flush();
+  assert.deepEqual(b.client.getStatus().conflicts.map(item => item.localValue.sessionToken).sort(), ['swu1.fork-A-3', 'swu1.fork-B-4']);
+  assert.equal(service.state().currentGame.value.version, 1, 'A higher counter cannot silently discard another non-causal signed history.');
+  a.dispose(); b.client.dispose();
+});
+
+test('migrating while a live v1 tab appends a deletion never overwrites that tab’s legacy journal', async () => {
+  const service = server(), shared = disk(), scope = createAccountStorage('owner_A', shared), remote = snapshot();
+  remote.revision = 1; remote.decks = ['a', 'b'].map(id => ({ id: `custom-${id}`, version: 1, value: deck(id) })); service.replace(remote);
+  const deletion = id => ({ key: `deck:custom-${id}`, kind: 'deck', id: `custom-${id}`, expectedVersion: 1, value: null, serial: 1 });
+  const legacy = { schema: 1, ownerId: 'owner_A', snapshot: remote, serial: 1, pending: [deletion('a')] };
+  scope.setItem('swu-command-cloud-sync:v1', JSON.stringify(legacy));
+  let interleave = true;
+  const storage = { ...scope, setItem(key, value) {
+    if (interleave && key === 'swu-command-cloud-cache:v2') {
+      interleave = false;
+      scope.setItem('swu-command-cloud-sync:v1', JSON.stringify({ ...legacy, serial: 2, pending: [deletion('a'), deletion('b')] }));
+    }
+    scope.setItem(key, value);
+  } };
+  const a = createCloudSaveClient({ ownerId: 'owner_A', storage, fetch: service.fetch, getAccessToken: async () => 'account-token', debounceMs: 100_000 });
+  await a.load(); a.dispose();
+  assert.equal(JSON.parse(scope.getItem('swu-command-cloud-sync:v1')).pending.length, 2, 'The v2 client never replaces a journal still owned by live v1 code.');
+  const reloaded = device(service, shared); await reloaded.client.load(); await reloaded.client.flush();
+  assert.ok(service.state().decks.every(item => item.deleted));
+  assert.deepEqual(readCustomDecks(reloaded.storage), []);
+  const count = patchCalls(service).length;
+  reloaded.client.dispose();
+  const again = device(service, shared); await again.client.load(); await again.client.flush();
+  assert.equal(patchCalls(service).length, count, 'Retained legacy source is not replayed after exact migration acknowledgements.'); again.client.dispose();
 });

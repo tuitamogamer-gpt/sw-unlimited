@@ -55,7 +55,15 @@ replace a newer account turn. Deleted records retain tombstones so an old device
 cannot silently restore them.
 
 Updates first write the local copy and a persistent pending journal. Network
-failure retains that journal for retry. Requests include an expected account
+failure retains that journal for retry. Each intent has its own immutable local
+key, so one tab cannot overwrite another tab's queued deletion or edit. Exact
+acknowledgements remove only confirmed operations. Concurrent versions remain
+explicit conflicts; settings comparisons show their actual values and timestamps.
+Legacy journals migrate before their pending data is replaced. If the journal
+cannot be persisted, the warning stays visible and a newer durable game checkpoint
+is recovered before loading an older cloud turn.
+
+Requests include an expected account
 precondition in addition to native authentication, so a request from a previous
 account cannot modify the next account after a login change.
 

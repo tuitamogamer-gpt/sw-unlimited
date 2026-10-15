@@ -20,7 +20,16 @@ the pinned engine version. Limits are 4,000 accepted atomic actions, 700 KiB for
 the encoded token, and 2 MiB for decompressed JSON. Malformed, modified, expired,
 wrong-game, and differently signed tokens are rejected before replay. The API
 uses POST bodies to carry checkpoints, avoiding HTTP header-size limits, and
-sends `Cache-Control: no-store` on API responses.
+sends `Cache-Control: no-store` on game, account, health, import and error responses.
+Only successful public metadata from `/api/decks`, `/api/cards` and `/api/training`
+uses content ETags, browser revalidation and a one-hour Vercel CDN cache with
+24-hour stale revalidation. Card filters and pagination have distinct representations.
+The browser shares deck and training catalog requests across account changes for
+five minutes; this cache never contains account data or game checkpoints.
+
+Public card/training metadata and account collections do not construct starter
+matches on a cold worker. Routes needing the native engine initialize it on
+demand; an initialization failure is an uncached, retryable 503.
 
 ## Replay and hidden information
 

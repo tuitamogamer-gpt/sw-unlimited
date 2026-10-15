@@ -53,7 +53,7 @@ test('HTTP card library serves bounded public records without starting a game', 
     try {
         const response = await fetch(`http://127.0.0.1:${server.address().port}/api/cards?set=SOR&type=base&limit=3`);
         assert.equal(response.status, 200);
-        assert.equal(response.headers.get('cache-control'), 'no-store');
+        assert.equal(response.headers.get('cache-control'), 'public, max-age=0, must-revalidate');
         const result = await response.json();
         assert.equal(result.cards.length, 3);
         assert.ok(result.cards.every(card => card.types.includes('base') && card.image && card.uuid));
