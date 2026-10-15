@@ -69,7 +69,7 @@ function validSnapshot(value: unknown): value is CloudSaveSnapshot {
 function parse(value: string | null): unknown { try { return JSON.parse(value || 'null'); } catch { return null; } }
 function preferenceValue(value: unknown): Record<string, unknown> | null {
   if (!object(value)) return null;
-  const allowed = ['deckId', 'opponentDeckId', 'difficulty', 'compact', 'showLog', 'language'];
+  const allowed = ['deckId', 'opponentDeckId', 'difficulty', 'compact', 'showLog', 'language', 'handView'];
   return Object.fromEntries(allowed.filter(key => key in value).map(key => [key, value[key]]));
 }
 function operationValue(kind: CloudSaveKind, value: unknown): unknown {

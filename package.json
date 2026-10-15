@@ -21,6 +21,7 @@
     "test:menu-ui": "node scripts/menu-selections-ui.mjs",
     "test:account-ui": "node scripts/account-ui.mjs",
     "test:guidance-ui": "node scripts/play-guidance-ui.mjs",
+    "test:hand-ui": "node scripts/hand-fan-ui.mjs",
     "test:storage-ui": "node scripts/storage-recovery-ui.mjs",
     "test:training-ui": "node scripts/training-ui.mjs",
     "test:review-ui": "node scripts/match-review-ui.mjs",

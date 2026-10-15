@@ -30,6 +30,17 @@ const subscribe = (listener: () => void) => { subscribers.add(listener); return 
 // Each row is [English, Serbian Latin, optional legacy interface wording].
 // Unknown strings (including official card titles and rules text) remain intact.
 const copy: Array<[string, string, ...string[]]> = [
+  ['Switch to fan hand', 'Prebaci ruku u lepezu'],
+  ['Switch to classic hand', 'Prebaci na klasičnu ruku'],
+  ['Fan view', 'Lepeza'],
+  ['Classic view', 'Klasični prikaz'],
+  ['Show hand', 'Otvori ruku'],
+  ['Hide hand', 'Sakrij ruku'],
+  ['Hide', 'Sakrij'],
+  ['Choose cards from your hand', 'Izaberi karte iz ruke'],
+  ['Open when you need it', 'Otvori kada ti zatreba'],
+  ['Inspect a card for its full text', 'Pregledaj kartu za ceo tekst'],
+  ['Scroll through your hand', 'Listaj karte u ruci'],
   ['Ability · {name}', 'Sposobnost · {name}'],
   ['Optional ability', 'Neobavezna sposobnost'],
   ['Skip ability', 'Preskoči sposobnost'],

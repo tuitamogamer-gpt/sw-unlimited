@@ -27,6 +27,7 @@ jobs:
       - run: npm run test:menu-ui
       - run: npm run test:account-ui
       - run: npm run test:guidance-ui
+      - run: npm run test:hand-ui
       - run: npm run test:storage-ui
       - run: npm run test:training-ui
       - run: npm run test:review-ui

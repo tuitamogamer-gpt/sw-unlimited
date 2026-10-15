@@ -674,7 +674,7 @@ body:has(.app.in-game){overflow:hidden;overscroll-behavior:none}
 }
 
 /* In phone landscape, hand and commands use a side column instead of crushing arenas. */
-@media(min-width:721px) and (max-height:520px) and (max-width:1280px){
+@media(min-width:600px) and (max-height:520px) and (max-width:1280px){
   :root{--battle-card-height:clamp(54px,18.5dvh,76px);--hand-card-height:clamp(94px,31dvh,138px)}
   .game-shell{padding-left:8px;padding-right:8px}
   .game-topbar{height:34px;min-height:34px;flex-basis:34px}
@@ -741,6 +741,16 @@ body:has(.app.in-game){overflow:hidden;overscroll-behavior:none}
   .token-controls .eyebrow{font-size:6px}
   .token-button{font-size:8px;padding:4px 6px}
   .card-notice{font-size:8px;padding:4px 5px}
+}
+@media(min-width:600px) and (max-width:720px) and (max-height:520px){
+  .game-shell .arena-tabs{display:none}
+  .game-shell .arenas{display:grid;grid-template-columns:1fr 1fr}
+  .game-shell .arenas>.arena{display:flex;min-width:0}
+  .game-shell .arena-label{display:flex}
+  .commander-row .player-panel{min-width:170px;max-width:230px}
+  .commander-row .commander-meta{gap:6px}
+  .commander-row .initiative{display:none}
+  .commander-row .resource-mini{min-width:42px}
 }
 @media(prefers-reduced-motion:reduce){
   .game-card.is-new,.game-card.is-damaged,.base-panel.has-damage-change{animation:none}
