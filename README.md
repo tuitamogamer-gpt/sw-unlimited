@@ -61,6 +61,13 @@ be played explains why. Claiming initiative ends your actions for the round and
 gives you the first action next round. At regroup, adding one resource is
 optional; you can keep your entire hand.
 
+Choose **Fan view** beside your hand to try a separate hand tray. In that mode,
+**Hand** or **H** opens and hides your cards; **Esc** closes the tray. Resource
+selection opens it automatically, and playing a card hides it before targeting.
+Desktop cards fan out and lift on hover or keyboard focus; touch screens use a
+scrollable spread with accessible inspection buttons. **Classic view** restores
+the always-visible row. The selected view is saved with your preferences.
+
 When Ambush is available, choose **Use Ambush** (or click the marked unit), then
 choose a highlighted enemy unit. **Skip Ambush** declines this attack. The unit
 can attack while exhausted; Ambush does not ready it. See [Ambush](docs/ambush.md).
@@ -69,11 +76,11 @@ ability name. **No effect now** explains an available choice that currently has
 no legal effect; it can still be resolved in the chosen order.
 
 On desktop, hover over a visible card for a compact artwork preview without
-clicking. This works in your hand, on the battlefield, and in deck lists and the
+clicking. This works in the classic hand, on the battlefield, and in deck lists and the
 card library. Clicking retains the card's normal action or inspection behavior.
 
 On a phone, Ground and Space are tabs within a single-screen battlefield. Your
-hand and current decision stay visible. Base and leader cards have artwork and
+classic hand and current decision stay visible. Base and leader cards have artwork and
 inspection controls; the battle log and reference information open separately.
 Landscape phones use a side panel for the hand and commands. Exhausted units
 keep grayscale artwork with a small red token beneath it. Cards settle into

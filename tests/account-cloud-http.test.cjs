@@ -36,15 +36,21 @@ test('cloud HTTP authenticates owner server-side and isolates account reads desp
   const first = await worker({ store }); const second = await worker({ store, ownerId: other });
   try {
     assert.equal((await first.request(undefined, { signedIn: false, headers: { 'x-account-id': owner } })).status, 401);
-    const saved = await first.request(undefined, mutation({ difficulty: 'easy' }));
+    const saved = await first.request(undefined, mutation({ difficulty: 'easy', handView: 'fan' }));
     assert.equal(saved.status, 200); assert.equal(saved.data.preferences.version, 1);
     assert.equal(saved.headers.get('cache-control'), 'private, no-store'); assert.equal(saved.headers.get('vary'), 'Cookie');
     assert.equal((await second.request(`/api/account/saves?ownerId=${owner}`, { headers: { 'x-account-id': owner } })).data.preferences.value, null);
     assert.equal((await first.request(undefined, { ...mutation({ difficulty: 'hard' }, 1), body: { ...mutation({}).body, ownerId: other } })).status, 400);
     assert.equal((await first.request()).data.preferences.value.difficulty, 'easy');
+    assert.equal((await first.request()).data.preferences.value.handView, 'fan');
     const stale = await first.request(undefined, mutation({ difficulty: 'hard' }));
     assert.equal(stale.status, 409); assert.equal(stale.data.code, 'ACCOUNT_CONFLICT');
     assert.equal(stale.data.snapshot.preferences.value.difficulty, 'easy');
+    assert.equal(stale.data.snapshot.preferences.value.handView, 'fan');
+    const classic = await first.request(undefined, mutation({ difficulty: 'easy', handView: 'classic' }, 1));
+    assert.equal(classic.status, 200);
+    assert.equal(classic.data.preferences.value.handView, 'classic');
+    assert.equal((await second.request()).data.preferences.value, null, 'Hand layout preferences remain scoped to the verified account.');
   } finally { await Promise.all([first.close(), second.close()]); }
 });
 
@@ -57,7 +63,7 @@ test('cloud mutations reject missing CSRF, foreign origins, non-JSON and invalid
       { ...mutation({ compact: true }), headers: { 'sec-fetch-site': 'cross-site' } },
     ]) assert.equal((await instance.request(undefined, options)).status, 403);
     assert.equal((await instance.request(undefined, { ...mutation({ compact: true }), headers: { 'Content-Type': 'text/plain' } })).status, 415);
-    for (const value of [{ difficulty: 'cheater' }, { compact: 1 }, { deckId: '../sensitive' }, { ownerId: other }, { language: 'xx' }]) {
+    for (const value of [{ difficulty: 'cheater' }, { compact: 1 }, { deckId: '../sensitive' }, { ownerId: other }, { language: 'xx' }, { handView: 'carousel' }, { handView: null }, { handView: 1 }]) {
       assert.equal((await instance.request(undefined, mutation(value))).status, 400);
     }
     assert.equal((await instance.request()).data.revision, 0);

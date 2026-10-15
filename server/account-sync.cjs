@@ -13,11 +13,12 @@ const inputError = message => storeError(400, 'ACCOUNT_INPUT', message || 'Inval
 
 function preferences(value) {
   if (value === null) return null;
-  if (!hasOnly(value, ['deckId', 'opponentDeckId', 'difficulty', 'compact', 'showLog', 'language'])
+  if (!hasOnly(value, ['deckId', 'opponentDeckId', 'difficulty', 'compact', 'showLog', 'language', 'handView'])
     || ['deckId', 'opponentDeckId'].some(key => value[key] !== undefined && (typeof value[key] !== 'string' || !/^[a-zA-Z0-9_-]{1,128}$/.test(value[key])))
     || value.difficulty !== undefined && !['easy', 'normal', 'hard'].includes(value.difficulty)
     || ['compact', 'showLog'].some(key => value[key] !== undefined && typeof value[key] !== 'boolean')
-    || value.language !== undefined && !['en', 'sr'].includes(value.language)) throw inputError('Invalid saved preferences.');
+    || value.language !== undefined && !['en', 'sr'].includes(value.language)
+    || value.handView !== undefined && !['classic', 'fan'].includes(value.handView)) throw inputError('Invalid saved preferences.');
   return { ...value };
 }
 function training(value, lessonIds) {

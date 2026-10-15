@@ -93,7 +93,7 @@ test('a second device loads its account decks, settings and signed checkpoint be
   const service = server(), first = device(service);
   await first.client.load();
   upsertCustomDeck(deck('fleet', 'Rebel Fleet'), first.client.storage);
-  first.client.storage.setItem(PREFS, JSON.stringify({ deckId: 'custom-fleet', difficulty: 'easy', compact: true }));
+  first.client.storage.setItem(PREFS, JSON.stringify({ deckId: 'custom-fleet', difficulty: 'easy', compact: true, handView: 'fan' }));
   checkpoint(first.client.storage, 'game_A', 7);
   await first.client.flush();
   const writes = patchCalls(service).length;
@@ -101,10 +101,15 @@ test('a second device loads its account decks, settings and signed checkpoint be
   await second.client.load();
   assert.equal(readCustomDecks(second.client.storage)[0].name, 'Rebel Fleet');
   assert.equal(JSON.parse(second.storage.getItem(PREFS)).difficulty, 'easy');
+  assert.equal(JSON.parse(second.storage.getItem(PREFS)).handView, 'fan');
   assert.deepEqual(JSON.parse(second.storage.getItem(checkpointKey('game_A'))), { id: 'game_A', version: 7, sessionToken: 'swu1.game_A-turn-7' });
   await second.client.flush();
   assert.equal(patchCalls(service).length, writes, 'Hydrating an account never replaces cloud settings with mount defaults.');
   assert.equal(second.client.getStatus().state, 'synced');
+  second.client.storage.setItem(PREFS, JSON.stringify({ ...JSON.parse(second.storage.getItem(PREFS)), handView: 'classic' }));
+  await second.client.flush(); await first.client.load();
+  assert.equal(JSON.parse(first.storage.getItem(PREFS)).handView, 'classic');
+  assert.equal(JSON.parse(first.storage.getItem(PREFS)).difficulty, 'easy');
   first.client.dispose(); second.client.dispose();
 });
 
