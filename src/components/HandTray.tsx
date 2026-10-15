@@ -67,7 +67,7 @@ export function HandTray({ mode, onModeChange, gameId, stage, required, cards, m
     const dock = field?.querySelector('.command-dock');
     const update = () => {
       const anchor = node.getBoundingClientRect();
-      const landscape = innerWidth >= 721 && innerWidth <= 1280 && innerHeight <= 520;
+      const landscape = innerWidth >= 600 && innerWidth <= 1280 && innerHeight <= 520;
       const bounds = (landscape ? arenas : field)?.getBoundingClientRect() || anchor;
       const bottom = landscape ? 10 : Math.max(8, innerHeight - anchor.top + 6);
       const width = Math.min(980, bounds.width, innerWidth - 16);

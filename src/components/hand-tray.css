@@ -84,7 +84,7 @@
   .hand-fan-cards .card-action-label{min-height:24px;font-size:9px;padding:4px}
   .hand-fan-cards .card-cost{height:23px;min-width:23px;font-size:12px}
 }
-@media(min-width:721px) and (max-height:520px) and (max-width:1280px){
+@media(min-width:600px) and (max-height:520px) and (max-width:1280px){
   .hand-view-classic .hand-heading{min-height:36px;flex-basis:36px;flex-wrap:nowrap}
   .hand-view-classic .hand-heading>.play-hand-cue,.hand-view-classic .hand-heading>.resource-hand-cue{display:none}
   .hand-view-classic .hand-heading>.battle-update{max-width:36%}

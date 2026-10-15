@@ -17,7 +17,7 @@ const server = app.listen(0, '127.0.0.1');
 await once(server, 'listening');
 const origin = `http://127.0.0.1:${server.address().port}`;
 const browser = await chromium.launch({ headless: true });
-const report = { passed: false, assets: [], viewports: [], resourceChoices: [], cardPlays: [], shortcuts: [], pageErrors: [] };
+const report = { passed: false, assets: [], viewports: [], resourceChoices: [], cardPlays: [], shortcuts: [], trainingCompletion: [], pageErrors: [] };
 const decks = readDecks();
 const luke = decks.find(deck => deck.id === 'sor-luke-skywalker');
 const vader = decks.find(deck => deck.id === 'sor-darth-vader');
@@ -74,6 +74,9 @@ async function waitHand(open) {
   assert.equal(await handToggle().getAttribute('aria-expanded'), String(open));
   assert.equal(await handToggle().getAttribute('aria-controls'), open ? 'hand-fan-panel' : null);
   if (open) {
+    await handPanel().evaluate(async panel => {
+      await Promise.all(panel.getAnimations().map(animation => animation.finished.catch(() => {})));
+    });
     assert.equal(await handPanel().getAttribute('role'), 'region');
     assert.equal(await handPanel().getAttribute('aria-label'), 'Your hand');
     assert.equal(await handPanel().locator('.hand-fan-slot').count(), view.players.human.handCount,
@@ -106,7 +109,8 @@ async function restore(saved) {
   ownedGames.set(view.id, view);
   assertPrivateView(view);
   assert.equal(view.version, saved.version);
-  await page.locator('.prompt-panel[aria-busy="false"]').waitFor();
+  if (view.training?.status === 'complete') await page.locator('.training-guidance.complete').waitFor();
+  else await page.locator('.prompt-panel[aria-busy="false"]').waitFor();
   const asset = await page.locator('script[type="module"][src]').getAttribute('src');
   if (!report.assets.includes(asset)) report.assets.push(asset);
 }
@@ -124,7 +128,8 @@ async function act(operation) {
   assertPrivateView(view);
   assert.ok(view.version > version, 'A resource choice or card play must advance the native engine.');
   assert.deepEqual(view.warnings, []);
-  await page.locator('.prompt-panel[aria-busy="false"]').waitFor();
+  if (view.training?.status === 'complete') await page.locator('.training-guidance.complete').waitFor();
+  else await page.locator('.prompt-panel[aria-busy="false"]').waitFor();
 }
 
 async function clickFanCard(cardId, touch) {
@@ -134,7 +139,7 @@ async function clickFanCard(cardId, touch) {
   // exposed part of this button rather than forcing a click through another.
   const point = await button.evaluate(element => {
     const box = element.getBoundingClientRect();
-    for (const fy of [0.25, 0.5, 0.75, 0.1, 0.9]) for (let fx = 0.05; fx < 1; fx += 0.05) {
+    for (const fy of [0.5, 0.3, 0.7, 0.15, 0.85]) for (const fx of [0.5, 0.3, 0.7, 0.15, 0.85, 0.05, 0.95]) {
       const x = box.left + box.width * fx; const y = box.top + box.height * fy;
       if (x < 1 || x >= innerWidth - 1 || y < 1 || y >= innerHeight - 1) continue;
       const target = document.elementFromPoint(x, y);
@@ -156,11 +161,11 @@ async function layout(label) {
       scrollHeight: document.documentElement.scrollHeight, handHeight: hand.height, arenaHeight: arena.height,
       fan: fan ? { left: fan.left, right: fan.right, top: fan.top, bottom: fan.bottom } : null };
   });
+  report.viewports.push({ label, ...facts });
   assert.ok(facts.scrollWidth <= facts.width + 1 && facts.scrollHeight <= facts.height + 1,
     `${label}: the battlefield must fit the viewport: ${JSON.stringify(facts)}`);
   if (facts.fan) assert.ok(facts.fan.left >= -1 && facts.fan.right <= facts.width + 1
-    && facts.fan.top >= -1 && facts.fan.bottom <= facts.height + 1, `${label}: the fan panel must fit.`);
-  report.viewports.push({ label, ...facts });
+    && facts.fan.top >= -1 && facts.fan.bottom <= facts.height + 1, `${label}: the fan panel must fit: ${JSON.stringify(facts)}`);
   return facts;
 }
 
@@ -246,7 +251,10 @@ async function shortcutAndPlayFlow(label, touch) {
   await waitHand(true);
   await noGameAction(() => page.keyboard.press('Escape'));
   await waitHand(false);
-  await page.locator('.game-tools .language-select').focus();
+  const languageSelect = page.locator('.language-select:visible').first();
+  await languageSelect.focus();
+  assert.equal(await languageSelect.evaluate(element => document.activeElement === element), true,
+    'The editable-control shortcut check must focus the actually visible language select.');
   await noGameAction(() => page.keyboard.press('h'));
   await waitHand(false);
   await page.locator('.round-label').click();
@@ -292,7 +300,8 @@ async function landscapeBasics() {
   for (const viewport of [{ width: 844, height: 390 }, { width: 667, height: 375 }]) {
     await page.setViewportSize(viewport);
     await toggleMode('classic');
-    await layout(`landscape-${viewport.width}-classic`);
+    const classic = await layout(`landscape-${viewport.width}-classic`);
+    assert.ok(classic.arenaHeight >= 100, 'Short landscape classic mode must retain a usable battlefield.');
     await page.screenshot({ path: `${output}/landscape-${viewport.width}-classic.png`, animations: 'disabled' });
     // This real pointer click also checks that the mode button is not covered
     // by the classic card lane in a short landscape viewport.
@@ -300,11 +309,51 @@ async function landscapeBasics() {
     await waitHand(false);
     await noGameAction(() => handToggle().click());
     await waitHand(true);
-    await layout(`landscape-${viewport.width}-fan`);
+    const fan = await layout(`landscape-${viewport.width}-fan`);
+    assert.ok(fan.arenaHeight >= 100, 'Short landscape fan mode must retain a usable battlefield.');
     await page.screenshot({ path: `${output}/landscape-${viewport.width}-fan.png`, animations: 'disabled' });
     await noGameAction(() => page.keyboard.press('Escape'));
     await waitHand(false);
   }
+}
+
+async function trainingCompletionFlow(label, touch) {
+  assert.equal(await page.locator('.game-shell').getAttribute('data-hand-view'), 'fan');
+  const previousId = view.id;
+  await page.getByRole('button', { name: 'Back to command', exact: true }).click();
+  await page.locator('.training-selector').waitFor();
+  const pending = page.waitForResponse(response => response.url().endsWith('/api/training/resources')
+    && response.request().method() === 'POST');
+  pending.catch(() => {});
+  await page.getByRole('button', { name: 'Start lesson: Choose your resources', exact: true }).click();
+  await page.getByRole('dialog', { name: 'Start a new game?', exact: true })
+    .getByRole('button', { name: 'Start new game', exact: true }).click();
+  const response = await pending;
+  assert.equal(response.status(), 201, await response.text());
+  view = await response.json();
+  ownedGames.delete(previousId); // The real start-lesson flow deletes its replaced synthetic match.
+  ownedGames.set(view.id, view);
+  assertPrivateView(view);
+  assert.equal(view.training.lessonId, 'resources');
+  assert.equal(view.training.status, 'active');
+  await page.locator('.prompt-panel[aria-busy="false"]').waitFor();
+  assert.equal(await page.locator('.game-shell').getAttribute('data-hand-view'), 'fan', 'Starting a lesson retains the chosen hand mode.');
+  await waitHand(true);
+  for (let index = 0; index < 2; index++) {
+    const action = view.legalActions.find(action => action.type === 'card' && !view.prompt.selectedCardIds.includes(action.cardId));
+    assert.ok(action);
+    await act(() => clickFanCard(action.cardId, touch));
+    await waitHand(true);
+  }
+  await act(() => page.locator('.prompt-panel button[data-action-arg="done"]').click());
+  assert.equal(view.training.status, 'complete');
+  assert.equal(view.players.human.resourceCount, 2);
+  await waitHand(false);
+  await page.locator('.training-guidance.complete').waitFor();
+  await layout(`${label}-training-complete`);
+  await page.screenshot({ path: `${output}/${label}-training-complete.png`, animations: 'disabled' });
+  report.trainingCompletion.push({ label, fanModeRetained: true, autoOpenedForResources: true, resources: 2,
+    closedOnCompletion: true, nativePromptStage: view.prompt.stage });
 }
 
 try {
@@ -322,6 +371,8 @@ try {
     await resourceFlow(label, touch);
     await shortcutAndPlayFlow(label, touch);
     if (!touch) await landscapeBasics();
+    if (!touch) await page.setViewportSize(viewport);
+    await trainingCompletionFlow(label, touch);
     await context.close();
   }
   assert.deepEqual(report.pageErrors, []);
