@@ -17,7 +17,8 @@ const server = app.listen(0, '127.0.0.1');
 await once(server, 'listening');
 const origin = `http://127.0.0.1:${server.address().port}`;
 const browser = await chromium.launch({ headless: true });
-const report = { passed: false, assets: [], viewports: [], resourceChoices: [], cardPlays: [], shortcuts: [], trainingCompletion: [], pageErrors: [] };
+const report = { passed: false, assets: [], viewports: [], handStatuses: [], handNavigation: [], resizeNavigation: [], keyboardBrowsing: [],
+  resourceChoices: [], cardPlays: [], shortcuts: [], trainingCompletion: [], pageErrors: [] };
 const decks = readDecks();
 const luke = decks.find(deck => deck.id === 'sor-luke-skywalker');
 const vader = decks.find(deck => deck.id === 'sor-darth-vader');
@@ -68,6 +69,7 @@ async function checkpoint(kind) {
 
 function handPanel() { return page.locator('#hand-fan-panel'); }
 function handToggle() { return page.locator('.hand-toggle'); }
+function handLane() { return handPanel().locator('.hand-fan-cards'); }
 
 async function waitHand(open) {
   await handPanel().waitFor({ state: open ? 'visible' : 'detached' });
@@ -90,6 +92,160 @@ async function noGameAction(operation) {
   await operation();
   assert.equal(mutations, before, 'Changing the hand presentation must not submit a game action.');
   assert.equal(view.version, version);
+}
+
+async function handStatus(label) {
+  const human = view.players.human;
+  const resources = handPanel().locator('.hand-resource-status');
+  await resources.waitFor({ state: 'visible' });
+  const resourceText = (await resources.locator('.hand-resource-value').innerText()).replace(/\s/g, '');
+  assert.equal(resourceText, `${human.readyResources}/${human.resourceCount}`,
+    'The hand header must show ready and total resources from the current native state.');
+  const handIds = new Set(human.hand.map(card => card.uuid));
+  const legalPlays = new Set(view.legalActions.filter(action => action.intent === 'play' && handIds.has(action.cardId))
+    .map(action => action.cardId)).size;
+  const facts = { label, stage: view.prompt.stage, readyResources: human.readyResources, totalResources: human.resourceCount, legalPlays };
+  if (view.prompt.stage === 'resource') {
+    const selection = view.prompt.resourceSelection;
+    assert.ok(selection, 'The selection status must come from the native resource prompt.');
+    assert.equal(selection.selected, view.prompt.selectedCardIds.length);
+    const status = handPanel().locator('.hand-selection-status');
+    await status.waitFor({ state: 'visible' });
+    assert.equal((await status.innerText()).replace(/\s+/g, ' ').trim(), `${selection.selected}/${selection.max} selected`);
+    assert.equal(await handPanel().locator('.hand-playable-status').count(), 0,
+      'Resource choices must display selection progress rather than a playable-card claim.');
+    Object.assign(facts, { selected: selection.selected, max: selection.max });
+  } else {
+    const status = handPanel().locator('.hand-playable-status');
+    await status.waitFor({ state: 'visible' });
+    const copy = (await status.innerText()).replace(/\s+/g, ' ').trim();
+    assert.equal(copy, view.prompt.stage === 'action' ? `${legalPlays} playable` : 'Review your cards',
+      'Hand availability must follow legal play actions for this prompt, regardless of printed costs.');
+    assert.equal(await status.getAttribute('data-available'), String(legalPlays > 0));
+    Object.assign(facts, { status: copy });
+  }
+  report.handStatuses.push(facts);
+}
+
+async function settleHandLane() {
+  await handPanel().evaluate(async panel => {
+    await Promise.all(panel.getAnimations({ subtree: true }).map(animation => animation.finished.catch(() => {})));
+  });
+  return handLane().evaluate(async lane => {
+    let previous = lane.scrollLeft; let stable = 0;
+    const start = performance.now();
+    while (performance.now() - start < 3000) {
+      await new Promise(resolve => requestAnimationFrame(resolve));
+      const current = lane.scrollLeft;
+      stable = Math.abs(current - previous) < 0.25 ? stable + 1 : 0;
+      previous = current;
+      if (stable >= 4 && performance.now() - start >= 120) return {
+        scrollLeft: lane.scrollLeft, scrollWidth: lane.scrollWidth, clientWidth: lane.clientWidth,
+      };
+    }
+    throw new Error('The hand lane must finish scrolling before checking card reachability.');
+  });
+}
+
+async function exposedHandCards() {
+  return handLane().evaluate(lane => {
+    const bounds = lane.getBoundingClientRect();
+    return [...lane.querySelectorAll('.game-card-click')].filter(button => {
+      const box = button.getBoundingClientRect();
+      for (const fy of [0.5, 0.3, 0.7]) for (const fx of [0.5, 0.2, 0.8, 0.05, 0.95]) {
+        const x = box.left + box.width * fx; const y = box.top + box.height * fy;
+        if (x <= Math.max(0, bounds.left) || x >= Math.min(innerWidth, bounds.right)
+          || y <= Math.max(0, bounds.top) || y >= Math.min(innerHeight, bounds.bottom)) continue;
+        const target = document.elementFromPoint(x, y);
+        if (target && button.contains(target)) return true;
+      }
+      return false;
+    }).map(button => button.getAttribute('data-card-id'));
+  });
+}
+
+async function handNavigation(label, touch) {
+  await noGameAction(async () => {
+    const initial = await settleHandLane();
+    const overflowing = initial.scrollWidth > initial.clientWidth + 1;
+    const navigation = handPanel().locator('.hand-fan-navigation');
+    const facts = { label, touch, handCount: view.players.human.handCount, ...initial, overflowing,
+      navigationVisible: await navigation.isVisible(), nextClicks: 0, previousClicks: 0 };
+    report.handNavigation.push(facts);
+    assert.equal(overflowing, touch, touch
+      ? 'The crowded touch hand must use a scrollable lane with separate card targets.'
+      : 'Eight desktop cards should fit through adaptive overlap.');
+    const reached = new Set(await exposedHandCards());
+    if (overflowing) {
+      await navigation.waitFor({ state: 'visible' });
+      const previous = navigation.getByRole('button', { name: 'Previous cards', exact: true });
+      const next = navigation.getByRole('button', { name: 'Next cards', exact: true });
+      assert.equal(await previous.isDisabled(), true, 'The first hand page must not offer backward scrolling.');
+      for (let step = 0; step < view.players.human.handCount + 2 && await next.isEnabled(); step++) {
+        const before = (await settleHandLane()).scrollLeft;
+        await next.click();
+        const after = await settleHandLane();
+        assert.ok(after.scrollLeft > before + 1, 'Next cards must move the hand lane forward.');
+        facts.nextClicks++;
+        for (const id of await exposedHandCards()) reached.add(id);
+      }
+      assert.equal(await next.isDisabled(), true, 'Repeated Next cards must reach the end of the hand.');
+      const lastId = view.players.human.hand.at(-1).uuid;
+      assert.ok((await exposedHandCards()).includes(lastId), 'The last real card must have a reachable exposed target at the end.');
+      facts.lastCardReachable = true;
+      facts.endScrollLeft = (await settleHandLane()).scrollLeft;
+      await page.screenshot({ path: `${output}/${label}-hand-last-card.png`, animations: 'disabled' });
+      for (let step = 0; step < view.players.human.handCount + 2 && await previous.isEnabled(); step++) {
+        const before = (await settleHandLane()).scrollLeft;
+        await previous.click();
+        const after = await settleHandLane();
+        assert.ok(after.scrollLeft < before - 1, 'Previous cards must move the hand lane backward.');
+        facts.previousClicks++;
+      }
+      assert.equal(await previous.isDisabled(), true, 'Repeated Previous cards must restore the start of the hand.');
+      assert.ok((await exposedHandCards()).includes(view.players.human.hand[0].uuid));
+      assert.ok((await settleHandLane()).scrollLeft <= 1);
+      facts.firstCardRestored = true;
+    } else assert.equal(await navigation.isVisible(), false, 'A hand that fits must not display overflow navigation.');
+    facts.reachedCardCount = reached.size;
+    assert.deepEqual([...reached].sort(), view.players.human.hand.map(card => card.uuid).sort(),
+      'Every real card must be reachable, including cards beyond the initial touch viewport.');
+  });
+}
+
+async function keyboardBrowse(label) {
+  const cards = handLane().locator('.game-card-click');
+  const ids = await cards.evaluateAll(buttons => buttons.map(button => button.getAttribute('data-card-id')));
+  assert.ok(ids.length >= 2);
+  await noGameAction(async () => {
+    await cards.first().focus();
+    for (const [key, index] of [['End', ids.length - 1], ['ArrowLeft', ids.length - 2], ['Home', 0], ['ArrowRight', 1], ['Home', 0]]) {
+      await page.keyboard.press(key);
+      await page.waitForFunction(cardId => document.activeElement?.matches('.hand-fan-cards .game-card-click')
+        && document.activeElement.getAttribute('data-card-id') === cardId, ids[index]);
+      await settleHandLane();
+      assert.ok((await exposedHandCards()).includes(ids[index]), `${key} must bring the focused card into view.`);
+    }
+  });
+  report.keyboardBrowsing.push({ label, cardCount: ids.length, end: true, left: true, home: true, right: true, neverPlayed: true });
+}
+
+async function resizeHandNavigation(label) {
+  const original = page.viewportSize();
+  await noGameAction(async () => {
+    for (const [name, viewport, expectedOverflow] of [
+      ['narrow', { width: 375, height: 812 }, true], ['restored', original, false],
+    ]) {
+      await page.setViewportSize(viewport);
+      await waitHand(true);
+      const metrics = await settleHandLane();
+      const overflowing = metrics.scrollWidth > metrics.clientWidth + 1;
+      const navigationVisible = await handPanel().locator('.hand-fan-navigation').isVisible();
+      report.resizeNavigation.push({ label: `${label}-${name}`, ...viewport, ...metrics, overflowing, navigationVisible });
+      assert.equal(overflowing, expectedOverflow, 'The resize fixture must change whether the hand fits.');
+      assert.equal(navigationVisible, overflowing, 'Hand navigation must follow the new lane geometry after a resize.');
+    }
+  });
 }
 
 async function restore(saved) {
@@ -189,10 +345,13 @@ async function resourceFlow(label, touch) {
   const fan = await layout(`${label}-fan-resources`);
   assert.ok(fan.handHeight <= classic.handHeight - 35, 'The fan presentation must reclaim the classic hand’s permanent vertical space.');
   assert.ok(fan.arenaHeight > classic.arenaHeight, 'Reclaimed hand space should enlarge the battlefield.');
+  await handStatus(`${label}-resources-none-selected`);
+  await page.screenshot({ path: `${output}/${label}-resources-none-selected.png`, animations: 'disabled' });
   const first = view.legalActions.find(action => action.type === 'card');
   await act(() => clickFanCard(first.cardId, touch));
   assert.deepEqual(view.prompt.selectedCardIds, [first.cardId]);
   await waitHand(true);
+  await handStatus(`${label}-resources-one-selected`);
   await noGameAction(() => page.keyboard.press('Escape'));
   await waitHand(false);
 
@@ -214,16 +373,25 @@ async function resourceFlow(label, touch) {
   await noGameAction(() => handToggle().click());
   await waitHand(true);
   assert.equal(await handPanel().locator('.game-card.is-selected').count(), 2);
+  await handStatus(`${label}-resources-two-selected`);
+  await page.screenshot({ path: `${output}/${label}-resources-two-selected.png`, animations: 'disabled' });
   await act(() => clickFanCard(first.cardId, touch));
   assert.equal(view.prompt.selectedCardIds.length, 1, 'The fan supports native resource deselection.');
+  await handStatus(`${label}-resources-deselected`);
   await act(() => clickFanCard(first.cardId, touch));
   assert.equal(view.prompt.selectedCardIds.length, 2);
+  await handStatus(`${label}-resources-reselected`);
   await noGameAction(() => page.keyboard.press('Escape'));
   await waitHand(false);
   await act(() => page.locator('.prompt-panel button[data-action-arg="done"]').click());
   assert.equal(view.players.human.resourceCount, 2);
   assert.equal(view.players.human.handCount, 4);
   assert.equal(view.phase, 'action');
+  await waitHand(false);
+  await noGameAction(() => handToggle().click());
+  await waitHand(true);
+  await handStatus(`${label}-resources-committed`);
+  await noGameAction(() => page.keyboard.press('Escape'));
   await waitHand(false);
   await toggleMode('classic');
   await page.locator('.hand-cards .game-card-click').first().waitFor();
@@ -260,6 +428,10 @@ async function shortcutAndPlayFlow(label, touch) {
   await page.locator('.round-label').click();
   await noGameAction(() => handToggle().click());
   await waitHand(true);
+  await handStatus(`${label}-action-ready`);
+  await handNavigation(label, touch);
+  if (!touch) await resizeHandNavigation(label);
+  await keyboardBrowse(label);
 
   const beforeInspect = mutations;
   await handPanel().getByRole('button', { name: `Inspect ${gunship}`, exact: true }).focus();
@@ -282,6 +454,14 @@ async function shortcutAndPlayFlow(label, touch) {
   await waitHand(false);
   assert.equal(view.prompt.ability?.label, 'Ambush');
   assert.equal(view.players.human.hand.some(card => card.uuid === play.cardId), false);
+  // Printed costs do not make another play legal during a pending ability.
+  // The header must follow the native prompt and the resources just paid.
+  await noGameAction(() => handToggle().click());
+  await waitHand(true);
+  await handStatus(`${label}-ambush-pending`);
+  assert.equal(view.legalActions.some(action => action.intent === 'play'), false);
+  await noGameAction(() => page.keyboard.press('Escape'));
+  await waitHand(false);
   await act(() => page.locator('.prompt-panel button[data-action-arg="trigger"]').click());
   await waitHand(false);
   assert.equal(view.prompt.attackerId, play.cardId);
@@ -339,11 +519,13 @@ async function trainingCompletionFlow(label, touch) {
   await page.locator('.prompt-panel[aria-busy="false"]').waitFor();
   assert.equal(await page.locator('.game-shell').getAttribute('data-hand-view'), 'fan', 'Starting a lesson retains the chosen hand mode.');
   await waitHand(true);
+  await handStatus(`${label}-training-resources-none-selected`);
   for (let index = 0; index < 2; index++) {
     const action = view.legalActions.find(action => action.type === 'card' && !view.prompt.selectedCardIds.includes(action.cardId));
     assert.ok(action);
     await act(() => clickFanCard(action.cardId, touch));
     await waitHand(true);
+    await handStatus(`${label}-training-resources-${index + 1}-selected`);
   }
   await act(() => page.locator('.prompt-panel button[data-action-arg="done"]').click());
   assert.equal(view.training.status, 'complete');

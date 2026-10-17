@@ -1,0 +1,84 @@
+/* Battlefield surfaces only. Geometry, card states and motion stay with the
+   existing battle, hand and feedback styles at every viewport size. */
+.game-shell{
+  --battle-ink:#e0eaf0;
+  --battle-muted:#9db1c0;
+  --battle-friendly:#8bd1dc;
+  --battle-opponent:#c99093;
+  --battle-edge:#304757;
+}
+.game-shell .game-topbar{background:#0b1721;border-bottom-color:#2a3c4b}
+.game-shell .round-label>span{color:#a3b7c5}
+.game-shell .game-tools .icon-button{background:#142431;border-color:#344c5d;color:#b7c9d5}
+.game-shell .game-tools .icon-button:hover:not(:disabled){background:#203647;border-color:#6b8b9d;color:#e4eff4}
+
+.game-shell .opponent-row .player-name{color:var(--battle-opponent)}
+.game-shell .friendly-row .player-name{color:var(--battle-friendly)}
+.game-shell .player-name small{color:#b7dce2}
+.game-shell .opponent-row .player-name small{color:#deb4b6}
+.game-shell .base-name{color:#e1e9ee}
+.game-shell .base-health>span{color:#bfd0db}
+.game-shell .resource-mini{background:#122331;border-radius:5px;box-shadow:inset 0 0 0 1px #57768930}
+.game-shell .resource-mini>strong{color:#f1cc7a}
+.game-shell .resource-mini>span{color:#b1c5d2}
+.game-shell .resource-mini strong>small{color:#a4bac8}
+.game-shell .friendly-resources:hover{background:#1c3442;box-shadow:inset 0 0 0 1px #73b8c269}
+.game-shell .friendly-resources:hover>strong{color:#ffe2a2}
+.game-shell .resource-pips>i{background:#344a58}
+.game-shell .resource-pips>i.ready{background:#e3bd67}
+.game-shell .pile-stat>strong{color:#dfeaf0}
+.game-shell .pile-stat>span,.game-shell .opponent-hand>span{color:var(--battle-muted)}
+.game-shell .pile-stat>svg{color:#a7bfcd}
+.game-shell .opponent-hand .card-back{background:#162533;border-color:#6c6047}
+
+.game-shell .arena{border-color:var(--battle-edge);background-color:#0b1924;box-shadow:inset 0 1px 0 #adc7da0b}
+.game-shell .arena-space{border-color:#3b465c}
+.game-shell .arena-label{background:#10212e;color:#d2e0e8;border-bottom-color:#2c4251}
+.game-shell .arena-label>svg{color:#95c7c7}
+.game-shell .arena-space .arena-label>svg{color:#b0b9df}
+.game-shell .arena-label small{color:#a3b7c6}
+.game-shell .enemy-arena{background-color:#452a3438}
+.game-shell .friendly-arena{background-color:#1642513b}
+.game-shell .arena-midline>span{color:#94afbf}
+.game-shell .arena-midline>i{background:#54708066}
+.game-shell .arena-empty{opacity:1}
+.game-shell .enemy-arena .arena-empty{color:#b49096}
+.game-shell .friendly-arena .arena-empty{color:#82b4c1}
+.game-shell .enemy-arena .arena-empty>span{background:#a4777e66}
+.game-shell .friendly-arena .arena-empty>span{background:#75b0bf66}
+.game-shell .arena-tabs>button{background:#10212e;border-color:#304b5c;color:#a7bfce}
+.game-shell .arena-tabs>button.active{background:#1b3947;border-color:#6595a5;color:#e0f1f5}
+.game-shell .arena-tabs>button>strong{color:#d6eef3}
+.game-shell .arena-tabs>button>strong>small{color:#dfb0b2}
+.game-shell .arena-count-friendly{color:#b4e4ed}
+.game-shell .arena-count-enemy{color:#e2adb2}
+
+.game-shell .prompt-panel{background:#10212f;border-color:#405c6d}
+.game-shell .prompt-panel.prompt-active{background:#152b38;border-color:#b59a63;box-shadow:inset 3px 0 0 #e1bb6c}
+.game-shell .prompt-panel.prompt-busy{background:#132633;border-color:#557384;box-shadow:inset 3px 0 0 #799aaa}
+.game-shell .prompt-symbol{background:#dac17c15;color:#edca80}
+.game-shell .prompt-copy>.eyebrow{color:#e0c68d}
+.game-shell .prompt-copy>h3{color:#f2f3ed}
+.game-shell .prompt-copy>p,.game-shell .prompt-copy>small{color:#bfd0da}
+.game-shell .context-banner strong{color:#eee0ba}
+.game-shell .prompt-buttons .secondary-button{background:#112837;border-color:#4d6b7e;color:#e0ebf2}
+.game-shell .prompt-buttons .secondary-button:hover:not(:disabled){background:#203b4d;border-color:#91aebb}
+.game-shell .prompt-buttons .primary-button{background:#e8c575;border-color:#edce8c;color:#15232a}
+.game-shell .prompt-buttons .primary-button:hover:not(:disabled){background:#f3d48c;border-color:#f3d48c}
+.game-shell .prompt-buttons .initiative-button{background:#343224;border-color:#817047;color:#f0d28c}
+.game-shell .prompt-buttons .initiative-button small{color:#ddc898;opacity:1}
+.game-shell .token-controls{background:#10212e;border-color:#304b5b}
+
+.game-shell .command-sidebar{background:#0a1520;border-left-color:#304454}
+.game-shell .command-sidebar .sidebar-title .eyebrow{color:#a1b6c6}
+.game-shell .command-sidebar .ai-status .eyebrow{color:#c99b9e}
+.game-shell .command-sidebar .ai-icon{background:#372730;border-color:#77545c;color:#d59b9e}
+.game-shell .command-sidebar .ai-reason{background:#102330;border-color:#344f61}
+.game-shell .command-sidebar .ai-reason .eyebrow{color:#a0bacb}
+.game-shell .command-sidebar .ai-reason p{color:#bdced8}
+.game-shell .command-sidebar .log-heading{border-bottom-color:#304553}
+.game-shell .command-sidebar .log-heading h3{color:#e0eaf0}
+.game-shell .command-sidebar .log-entry{border-bottom-color:#263b4a}
+.game-shell .command-sidebar .log-entry p{color:#aec2d0}
+.game-shell .command-sidebar .log-entry.latest p{color:#e1ebf1}
+.game-shell .command-sidebar .sidebar-footer{border-top-color:#304553;color:#a3b8c7}

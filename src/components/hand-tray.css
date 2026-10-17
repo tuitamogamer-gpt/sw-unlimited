@@ -7,8 +7,10 @@
 .hand-fan-toolbar{display:flex;align-items:center;justify-content:center;gap:12px;min-height:46px}
 .hand-toggle{display:flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:6px 17px;color:#e5e5d9;background:linear-gradient(135deg,#283a45,#182832);border:1px solid #b4996380;border-radius:9px;box-shadow:0 3px 12px #0003;font-size:13px}
 .hand-toggle:hover,.hand-toggle.is-open{border-color:#d8bf86;background:linear-gradient(135deg,#354955,#213441)}
-.hand-toggle>span:nth-child(2){display:flex;align-items:center;gap:7px;font-weight:600}
-.hand-toggle b{font-size:10px;min-width:20px;border-radius:5px;padding:3px 5px;background:#07131b77;color:#d4e0e5}
+.hand-toggle-copy{display:flex;flex-direction:column;align-items:flex-start;gap:3px;font-weight:600;text-align:left}
+.hand-toggle-copy>span{display:flex;align-items:center;gap:7px}
+.hand-toggle-copy>small{font-size:10px;font-weight:400;color:#adc4cc;line-height:1}
+.hand-toggle b{font-size:10px;min-width:20px;border-radius:5px;padding:2px 5px;background:#07131b77;color:#d4e0e5;text-align:center}
 .hand-toggle kbd,.hand-fan-close kbd{font:10px monospace;border:1px solid #81909b66;border-radius:3px;padding:2px 4px;color:#bdccd4;background:#0b182450}
 .held-card-icon{position:relative;width:27px;height:26px;margin-right:2px}
 .held-card-icon i{position:absolute;left:6px;top:3px;width:16px;height:23px;border:1px solid #b9a471;border-radius:3px;background:repeating-linear-gradient(45deg,#324654,#324654 3px,#263844 3px,#263844 5px);transform-origin:50% 105%;box-shadow:0 0 0 1px #15222d}
@@ -17,18 +19,33 @@
 .hand-fan-hint{font-size:10px;color:#8da5b4}
 .hand-fan-hint.needs-hand{color:#e0be75}
 .hand-fan-toolbar .hand-view-switch{margin-left:auto}
+.hand-view-fan .hand-view-switch{background:transparent;border-color:transparent;color:#92aeba}
+.hand-view-fan .hand-view-switch:hover{border-color:#48617080;background:#152634;color:#e1f5fa}
 .hand-fan-toolbar .hand-toggle{margin-left:auto}
-.hand-fan-panel{position:fixed;z-index:260;max-width:980px;display:flex;flex-direction:column;border:1px solid #66808b99;border-radius:16px;background:radial-gradient(ellipse at 50% 100%,#294651e8,#111f2bf5 75%);box-shadow:0 -18px 70px #02081080,0 8px 25px #0008;backdrop-filter:blur(18px);overflow:hidden;animation:hand-tray-enter .2s ease-out;color:#d3e2e8;isolation:isolate}
-.hand-fan-heading{display:flex;justify-content:space-between;align-items:center;padding:12px 17px 0;gap:12px;flex:0 0 auto}
-.hand-fan-heading>div{display:flex;align-items:center;gap:16px;min-width:0}
+.hand-fan-panel{position:fixed;z-index:260;max-width:980px;display:flex;flex-direction:column;border:1px solid #66808b99;border-radius:16px;background:linear-gradient(180deg,#152735f7,#0b1722f5);box-shadow:0 -12px 50px #02081070,0 8px 25px #0008;backdrop-filter:blur(18px);overflow:hidden;animation:hand-tray-enter .2s ease-out;color:#d3e2e8;isolation:isolate}
+.hand-fan-heading{display:flex;justify-content:space-between;align-items:center;padding:12px 17px 9px;gap:12px;flex:0 0 auto;border-bottom:1px solid #8faab31c}
+.hand-fan-summary{display:flex;align-items:center;gap:20px;min-width:0}
+.hand-fan-status{display:flex;align-items:center;gap:10px;font-size:11px;line-height:1.2;white-space:nowrap}
+.hand-resource-status{display:flex;align-items:center;gap:5px;color:#c9d8df}
+.hand-resource-status>svg{color:#e6c17a;flex-shrink:0}
+.hand-resource-value{font-size:14px;color:#efd59d;font-variant-numeric:tabular-nums}
+.hand-resource-value small{font-size:11px;font-weight:400;color:#95aeba}
+.hand-playable-status,.hand-selection-status{border-left:1px solid #667f8c66;padding-left:10px;color:#9bb0bc;font-variant-numeric:tabular-nums}
+.hand-playable-status[data-available="true"]{color:#9de0da}
+.hand-selection-status{color:#f0d494}
+.hand-fan-controls,.hand-fan-navigation{display:flex;align-items:center;gap:5px;flex-shrink:0}
+.hand-fan-navigation button{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid #536d7a;border-radius:6px;color:#d5e6ed;background:#1b3040}
+.hand-fan-navigation button:hover:not(:disabled){background:#2d495b;border-color:#96c4cd}
+.hand-fan-navigation button:disabled{opacity:.35;cursor:default}
+.hand-fan-panel button:focus-visible,.hand-toggle:focus-visible,.hand-view-switch:focus-visible{outline:2px solid #f0d494;outline-offset:3px}
 .hand-fan-heading .eyebrow{font-size:10px;white-space:nowrap;display:flex;gap:6px;align-items:center}
 .hand-fan-heading .eyebrow b{color:#e0c085;font-size:11px}
 .hand-fan-instruction{font-size:9px;display:flex;align-items:center;gap:5px;color:#9dc5d3}
 .hand-fan-close{display:flex;align-items:center;gap:7px;min-height:36px;padding:5px 6px 5px 10px;border-radius:6px;color:#c3d6df;background:#0c182444;font-size:11px}
 .hand-fan-close:hover{background:#314b5b}
-.hand-fan-cards{--fan-card-height:min(clamp(180px,29dvh,260px),var(--fan-room,260px));display:flex;flex:0 1 auto;min-height:0;align-items:flex-start;justify-content:safe center;overflow-x:auto;overflow-y:hidden;overscroll-behavior:contain;touch-action:pan-x;scrollbar-width:thin;scrollbar-color:#728d96 #11212a;padding:34px 34px 28px;scroll-padding-inline:34px}
-.hand-fan-slot{position:relative;flex:0 0 auto;width:calc(var(--fan-card-height) * .715);height:var(--fan-card-height);z-index:var(--fan-order);transform:translateY(var(--fan-drop)) rotate(var(--fan-angle));transform-origin:50% 110%;transition:transform .18s ease,margin .18s ease;scroll-margin-inline:35px}
-.hand-fan-slot+.hand-fan-slot{margin-left:calc(var(--fan-card-height) * -.20)}
+.hand-fan-cards{--fan-card-height:min(clamp(180px,29dvh,250px),var(--fan-room,250px));display:flex;flex:0 1 auto;min-height:0;align-items:flex-start;justify-content:safe center;overflow-x:auto;overflow-y:hidden;overscroll-behavior:contain;touch-action:pan-x;scrollbar-width:thin;scrollbar-color:#728d96 #11212a;padding:30px 34px 24px;scroll-padding-inline:34px}
+.hand-fan-slot{position:relative;flex:0 0 auto;width:calc(var(--fan-card-height) * .715);height:var(--fan-card-height);z-index:var(--fan-order);transform:translateY(var(--fan-drop)) rotate(var(--fan-angle));transform-origin:50% 110%;transition:transform .18s ease;scroll-margin-inline:35px}
+.hand-fan-slot+.hand-fan-slot{margin-left:calc(-1 * var(--fan-overlap,32px))}
 .hand-fan-slot:hover,.hand-fan-slot:focus-within{z-index:100;transform:translateY(-15px) rotate(0deg)}
 .hand-fan-slot:has(.is-selected){z-index:90;transform:translateY(-10px) rotate(0deg)}
 .hand-fan-cards .hand-card,.compact .hand-fan-cards .hand-card{height:100%;width:100%;max-height:none;border-radius:9px;box-shadow:0 7px 16px #0008!important}
@@ -42,6 +59,7 @@
 .hand-fan-cards .empty-hand{height:var(--fan-card-height);display:flex;align-items:center;gap:9px}
 .hand-fan-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 17px 12px;color:#8ea8b5;font-size:9px;flex:0 0 auto}
 .hand-fan-footer>span{display:flex;gap:5px;align-items:center}
+.hand-fan-footer .hand-swipe-hint{display:none}
 @keyframes hand-tray-enter{from{opacity:0;translate:0 14px}to{opacity:1;translate:0 0}}
 @media(max-width:720px){
   .hand-view-switch{min-height:36px;font-size:9px;padding:5px 7px}
@@ -53,15 +71,22 @@
   .hand-toggle kbd,.hand-fan-hint{display:none}
   .hand-fan-toolbar .hand-toggle{margin-left:0;flex:1}
   .hand-fan-toolbar .hand-view-switch{margin-left:0;min-height:44px}
+  .hand-fan-toolbar .hand-view-switch span{display:none}
+  .hand-fan-toolbar .hand-view-switch{min-width:44px}
   .hand-fan-panel{border-radius:12px}
-  .hand-fan-heading{padding:9px 10px 0;gap:5px}
-  .hand-fan-heading>div{flex-direction:column;align-items:flex-start;gap:5px}
+  .hand-fan-heading{padding:9px 10px;gap:5px}
+  .hand-fan-summary{flex-direction:column;align-items:flex-start;gap:7px}
+  .hand-fan-status{font-size:10px;gap:7px}
+  .hand-resource-value{font-size:12px}
+  .hand-resource-status{gap:3px}
+  .hand-resource-status>span{display:none}
+  .hand-playable-status,.hand-selection-status{padding-left:7px}
   .hand-fan-heading .eyebrow{font-size:9px}
   .hand-fan-instruction{font-size:8px}
-  .hand-fan-close{min-height:40px;padding:4px 7px}
-  .hand-fan-close kbd{display:none}
+  .hand-fan-close{min-height:40px;min-width:36px;justify-content:center;padding:4px 7px}
+  .hand-fan-close kbd,.hand-fan-close>span{display:none}
+  .hand-fan-navigation button{width:36px;height:40px}
   .hand-fan-cards{--fan-card-height:min(clamp(155px,27dvh,220px),var(--fan-room,220px));justify-content:flex-start;padding:24px 22px 26px;scroll-padding-inline:22px}
-  .hand-fan-slot+.hand-fan-slot{margin-left:calc(var(--fan-card-height) * -.13)}
   .hand-fan-slot{scroll-margin-inline:22px}
   .hand-fan-slot:hover{transform:translateY(var(--fan-drop)) rotate(var(--fan-angle))}
   .hand-fan-slot:focus-within,.hand-fan-slot:has(.is-selected){transform:translateY(-8px) rotate(0deg);z-index:100}
@@ -69,12 +94,20 @@
   .hand-fan-cards .card-inspect{height:36px;width:36px;right:3px;top:3px}
   .hand-fan-cards .card-action-label{min-height:32px;font-size:10px}
   .hand-fan-footer{font-size:8px;padding:8px 10px 11px}
-  .hand-fan-footer>span:first-child{display:none}
-  .hand-fan-footer>span:last-child{margin:auto}
+  .hand-fan-footer{justify-content:center}
+  .hand-fan-footer .hand-keyboard-hint{display:none}
+  .hand-fan-footer .hand-swipe-hint{display:flex}
+  .hand-fan-footer:has(.hand-swipe-hint)>span:first-child{display:none}
 }
 @media(max-height:520px){
   .hand-fan-cards{--fan-card-height:min(clamp(100px,39dvh,165px),var(--fan-room,165px));padding-top:21px;padding-bottom:18px}
-  .hand-fan-heading{padding-top:6px}
+  .hand-fan-heading{padding-top:6px;padding-bottom:6px}
+  .hand-fan-summary{flex-direction:column;align-items:flex-start;gap:4px}
+  .hand-fan-status{font-size:9px;gap:6px}
+  .hand-resource-value{font-size:11px}
+  .hand-resource-status>span{display:none}
+  .hand-fan-navigation button{width:32px;height:32px}
+  .hand-fan-close>span,.hand-fan-close kbd{display:none}
   .hand-fan-heading .eyebrow{font-size:8px}
   .hand-fan-instruction{font-size:8px}
   .hand-fan-close{min-height:30px}
@@ -102,4 +135,8 @@
 @media(hover:none),(pointer:coarse){
   .hand-fan-slot+.hand-fan-slot{margin-left:8px}
   .hand-fan-slot{--fan-angle:0deg!important;--fan-drop:0px!important}
+  .hand-fan-cards{scroll-snap-type:x proximity}
+  .hand-fan-slot{scroll-snap-align:center}
+  .hand-fan-footer .hand-keyboard-hint{display:none}
+  .hand-fan-footer .hand-swipe-hint{display:flex}
 }
