@@ -64,9 +64,14 @@ optional; you can keep your entire hand.
 Choose **Fan view** beside your hand to try a separate hand tray. In that mode,
 **Hand** or **H** opens and hides your cards; **Esc** closes the tray. Resource
 selection opens it automatically, and playing a card hides it before targeting.
-Desktop cards fan out and lift on hover or keyboard focus; touch screens use a
-scrollable spread with accessible inspection buttons. **Classic view** restores
-the always-visible row. The selected view is saved with your preferences.
+Desktop cards fan out to fit the available width and lift on hover or keyboard
+focus; touch screens use a scrollable spread with accessible inspection buttons.
+The tray shows ready resources, the number of cards with a legal play, and
+selection progress when choosing resources. Use the previous/next buttons for
+larger hands, or focus the hand and use **← / →**, **Home**, and **End** to browse
+without playing a card. **Enter** chooses the focused card.
+**Classic view** (the list icon on a phone) restores the always-visible row. The
+selected view is saved with your preferences.
 
 When Ambush is available, choose **Use Ambush** (or click the marked unit), then
 choose a highlighted enemy unit. **Skip Ambush** declines this attack. The unit

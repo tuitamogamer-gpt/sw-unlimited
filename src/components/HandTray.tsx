@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import type { CSSProperties, ReactNode } from 'react';
+import type { CSSProperties, KeyboardEvent as ReactKeyboardEvent, ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { ArrowLeft, ArrowRight, ChevronDown, ChevronUp, Eye, Layers3, LayoutList, Radio, X, Zap } from 'lucide-react';
 import { t } from '../i18n';
@@ -9,13 +9,18 @@ import './hand-tray.css';
 
 export type HandView = 'classic' | 'fan';
 
-export function HandTray({ mode, onModeChange, gameId, stage, required, cards, message, openLog, renderCard }: {
+export function HandTray({ mode, onModeChange, gameId, stage, required, cards, readyResources, totalResources, playableCount, resourceSelection, busy, message, openLog, renderCard }: {
   mode: HandView;
   onModeChange: (mode: HandView) => void;
   gameId: string;
   stage: string;
   required: boolean;
   cards: Card[];
+  readyResources: number;
+  totalResources: number;
+  playableCount: number;
+  resourceSelection?: { selected: number; max: number } | null;
+  busy: boolean;
   message?: string;
   openLog: () => void;
   renderCard: (card: Card, index: number, close: () => void) => ReactNode;
@@ -88,6 +93,46 @@ export function HandTray({ mode, onModeChange, gameId, stage, required, cards, m
     return () => { observer.disconnect(); window.removeEventListener('resize', update); window.visualViewport?.removeEventListener('resize', update); };
   }, [mode, open]);
 
+  // Fit a normal hand on the table while leaving at least half of every card
+  // exposed. Larger hands scroll; touch devices keep separate tap targets.
+  useLayoutEffect(() => {
+    const lane = overflow.ref.current;
+    if (mode !== 'fan' || !open || !lane) return;
+    const update = () => {
+      const card = lane.querySelector<HTMLElement>('.hand-fan-slot');
+      if (!card) return;
+      const style = getComputedStyle(lane);
+      const room = lane.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+      const width = card.offsetWidth;
+      const needed = (cards.length * width - room) / Math.max(1, cards.length - 1);
+      lane.style.setProperty('--fan-overlap', `${Math.max(width * .18, Math.min(width * .46, needed))}px`);
+    };
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(lane);
+    const first = lane.firstElementChild;
+    if (first) observer.observe(first);
+    return () => observer.disconnect();
+  }, [mode, open, cards.length, overflow.ref]);
+
+  const scrollHand = (direction: number) => {
+    const lane = overflow.ref.current;
+    lane?.scrollBy({ left: direction * lane.clientWidth * .7,
+      behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  };
+  const navigateHand = (event: ReactKeyboardEvent<HTMLDivElement>) => {
+    if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey
+      || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+    const buttons = Array.from(event.currentTarget.querySelectorAll<HTMLButtonElement>('.game-card-click:not(:disabled)'));
+    if (!buttons.length) return;
+    event.preventDefault();
+    const current = buttons.indexOf(document.activeElement as HTMLButtonElement);
+    const index = event.key === 'Home' ? 0 : event.key === 'End' ? buttons.length - 1
+      : Math.max(0, Math.min(buttons.length - 1, current + (event.key === 'ArrowRight' ? 1 : -1)));
+    buttons[index].focus({ preventScroll: true });
+    buttons[index].scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  };
+
   const modeButton = <button className="hand-view-switch" type="button"
     aria-label={t(mode === 'classic' ? 'Switch to fan hand' : 'Switch to classic hand')}
     title={t(mode === 'classic' ? 'Switch to fan hand' : 'Switch to classic hand')}
@@ -99,6 +144,14 @@ export function HandTray({ mode, onModeChange, gameId, stage, required, cards, m
     : stage === 'action' ? <><Zap size={12} />{t(cards.some(card => card.playable) ? 'TAP A PLAY BUTTON' : 'NO PLAYABLE CARDS')}</>
     : <><Eye size={12} />{t('TAP TO INSPECT')}</>;
   const empty = <div className="empty-hand"><Layers3 size={20} />{t('Your hand is empty.')}</div>;
+  const selection = stage === 'resource' ? resourceSelection : null;
+  const availability = busy ? t('Processing…') : selection
+    ? t('{selected}/{max} selected', selection)
+    : stage === 'action' ? t('{count} playable', { count: playableCount }) : t('Review your cards');
+  const navigation = overflow.overflowing && <div className="hand-fan-navigation" aria-label={t('Browse hand')}>
+    <button type="button" aria-label={t('Previous cards')} disabled={!overflow.className.includes('can-scroll-left')} onClick={() => scrollHand(-1)}><ArrowLeft size={16} /></button>
+    <button type="button" aria-label={t('Next cards')} disabled={!overflow.className.includes('can-scroll-right')} onClick={() => scrollHand(1)}><ArrowRight size={16} /></button>
+  </div>;
 
   return <section ref={section} className={`hand-section hand-view-${mode}`} aria-label={t('Your hand')}>
     {mode === 'classic' ? <>
@@ -115,25 +168,31 @@ export function HandTray({ mode, onModeChange, gameId, stage, required, cards, m
         aria-label={t(open ? 'Hide hand' : 'Show hand')} aria-expanded={open} aria-controls={open ? 'hand-fan-panel' : undefined}
         aria-keyshortcuts="H" onClick={() => open ? close() : openHand()}>
         <span className="held-card-icon" aria-hidden="true"><i /><i /><i /></span>
-        <span>{t('Hand')} <b>{cards.length}</b></span><kbd>H</kbd>{open ? <ChevronDown size={15} /> : <ChevronUp size={15} />}
+        <span className="hand-toggle-copy"><span>{t('Hand')} <b>{cards.length}</b></span><small>{availability}</small></span><kbd>H</kbd>{open ? <ChevronDown size={15} /> : <ChevronUp size={15} />}
       </button>
-      <span className={`hand-fan-hint ${required ? 'needs-hand' : ''}`}>{required ? t('Choose cards from your hand') : t('Open when you need it')}</span>
+      <span className={`hand-fan-hint ${required ? 'needs-hand' : ''}`}>{required ? t('Choose cards from your hand') : t('H to open · Esc to close')}</span>
       {modeButton}
     </div>}
     <span className="sr-only" role="status" aria-live="polite">{message ? t(message) : ''}</span>
     {mode === 'fan' && open && createPortal(<div ref={panel} id="hand-fan-panel" className="hand-fan-panel" role="region" aria-label={t('Your hand')} style={position}>
-      <div className="hand-fan-heading"><div><span className="eyebrow">{t('YOUR HAND')} <b>{cards.length}</b></span><span className="hand-fan-instruction">{cue}</span></div>
+      <div className="hand-fan-heading"><div className="hand-fan-summary"><span className="eyebrow">{t('YOUR HAND')} <b>{cards.length}</b></span>
+        <div className="hand-fan-status">
+          <span className="hand-resource-status" title={t('Ready resources')}><Zap size={13} /><strong className="hand-resource-value">{readyResources}<small>/{totalResources}</small></strong><span>{t('ready')}</span></span>
+          <span className={selection ? 'hand-selection-status' : 'hand-playable-status'} data-available={!busy && playableCount > 0 || !!selection}>{availability}</span>
+        </div></div>
+        <div className="hand-fan-controls">{navigation}
         <button className="hand-fan-close" type="button" aria-label={t('Hide hand')} onClick={() => { close(); toggle.current?.focus(); }}><span>{t('Hide')}</span><kbd>Esc</kbd><X size={17} /></button>
+        </div>
       </div>
-      <div ref={overflow.ref} className={`hand-fan-cards ${overflow.className}`} tabIndex={0} aria-label={t('Your hand')}>
+      <div ref={overflow.ref} className={`hand-fan-cards ${overflow.className}`} tabIndex={0} aria-label={t('Your hand')} onKeyDown={navigateHand}>
         {cards.map((card, i) => {
           const offset = (i - (cards.length - 1) / 2) / Math.max(1, (cards.length - 1) / 2);
-          return <div className="hand-fan-slot" key={card.uuid || i} style={{ '--fan-angle': `${offset * 8}deg`, '--fan-drop': `${Math.abs(offset) ** 2 * 18}px`, '--fan-order': i } as CSSProperties}>
+          return <div className="hand-fan-slot" key={card.uuid || i} style={{ '--fan-angle': `${offset * 6}deg`, '--fan-drop': `${Math.abs(offset) ** 2 * 14}px`, '--fan-order': i } as CSSProperties}>
             {renderCard(card, i, close)}
           </div>;
         })}{!cards.length && empty}
       </div>
-      <div className="hand-fan-footer"><span><Eye size={12} />{t('Inspect a card for its full text')}</span><span><ArrowLeft size={12} />{t('Scroll through your hand')}<ArrowRight size={12} /></span></div>
+      <div className="hand-fan-footer"><span><Eye size={12} />{t('Inspect a card for its full text')}</span><span className="hand-keyboard-hint"><ArrowLeft size={12} /><ArrowRight size={12} />{t('Browse cards')}<span>·</span>{t('Enter to choose')}</span>{overflow.overflowing && <span className="hand-swipe-hint">{t('Swipe or use the arrows')}</span>}</div>
     </div>, document.querySelector('[data-game-content]') || document.body)}
   </section>;
 }
