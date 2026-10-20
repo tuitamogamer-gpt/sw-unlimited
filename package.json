@@ -30,7 +30,8 @@
     "cards:check": "node scripts/report-coverage.cjs",
     "cards:catalog-check": "node scripts/sync-card-catalog.cjs --check",
     "cards:sync": "node scripts/sync-card-catalog.cjs",
-    "cards:refresh": "node scripts/sync-card-catalog.cjs --refresh"
+    "cards:refresh": "node scripts/sync-card-catalog.cjs --refresh",
+    "test:online-ui": "node scripts/online-play-ui.mjs"
   },
   "dependencies": {
     "@auth/express": "^0.12.3",

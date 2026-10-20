@@ -57,6 +57,7 @@ export interface PublicDamageEvent {
   attack?: { id: string; attacker: Card; defender?: Card; defenders: Card[] };
 }
 export interface GameView {
+  multiplayer?: { roomId: string; seat: 'host' | 'guest'; endedBy: 'concede' | 'cancel' | null };
   id: string; sessionToken?: string; version: number; phase: string; round: number; initiativePlayerId?: string; initiativeClaimed?: boolean;
   winnerIds: string[]; viewerId: string; players: { human: Player; bot: Player }; prompt: Prompt;
   legalActions: GameAction[]; log: (LogEntry | string)[]; botReason?: string; botThinking?: BotThinking;
