@@ -1,0 +1,42 @@
+.online-wordmark,.online-room-title,.online-buttons,.online-turn,.online-unavailable { display:flex;align-items:center;gap:14px; }
+.online-wordmark { color:var(--gold);font-size:12px;letter-spacing:.15em;font-weight:700; }
+.online-lobby { max-width:1040px;margin:auto;padding:58px 28px 90px; }
+.online-heading { max-width:650px;margin-bottom:36px; }
+.online-heading h1 { font-size:clamp(34px,5.5vw,58px);line-height:1.07;letter-spacing:-.035em;margin:18px 0; }
+.online-heading h1 span { color:var(--gold); }
+.online-heading p,.online-invitation p,.online-room .muted,.online-unavailable p { color:var(--muted);font-size:14px;line-height:1.7; }
+.online-setup { display:grid;grid-template-columns:1fr 1.25fr;border:1px solid var(--line);background:var(--panel);border-radius:14px;overflow:hidden; }
+.online-deck-choice,.online-invitation { padding:30px;min-width:0; }
+.online-deck-choice { border-right:1px solid var(--line);background:linear-gradient(140deg,rgba(73,170,171,.06),transparent); }
+.online-deck-art { width:240px;max-width:100%;margin:24px auto;aspect-ratio:1.4; }
+.online-deck-art img { width:100%;height:100%;object-fit:contain; }
+.online-lobby label { display:block;font-size:12px;font-weight:600;margin-bottom:9px; }
+.online-lobby select,.online-lobby input { width:100%;min-width:0;min-height:45px;border:1px solid var(--line);background:#0c1118;color:var(--ivory);border-radius:6px;padding:12px;font:inherit;font-size:13px; }
+.online-lobby select:focus,.online-lobby input:focus { outline:2px solid var(--gold);outline-offset:3px; }
+.online-deck-choice .muted { font-size:12px;line-height:1.7; }
+.online-invitation h2 { margin:28px 0 12px;font-size:28px; }
+.online-invitation>button { margin-top:16px;min-height:46px;width:100%;justify-content:center; }
+.online-or { display:flex;align-items:center;gap:14px;margin:28px 0;color:var(--muted);font-size:12px; }
+.online-or:before,.online-or:after { content:'';height:1px;flex:1;background:var(--line); }
+.online-room,.online-unavailable { padding:28px;border:1px solid var(--line);border-radius:12px;background:var(--panel); }
+.online-room h2,.online-unavailable h2 { margin:6px 0;font-size:23px; }
+.online-room-title svg { color:var(--gold); }
+.online-deck-pair { font-size:14px;color:var(--muted);margin:24px 0; }
+.online-invite-copy { display:flex;gap:10px; }
+.online-invite-copy input { flex:1;font-family:monospace; }
+.online-invite-copy button { white-space:nowrap; }
+.online-buttons { flex-wrap:wrap;margin-top:22px; }
+.online-turn { padding:12px 24px;border-bottom:1px solid var(--line);color:var(--gold);font-size:13px; }
+.online-turn .text-button { margin-left:auto; }
+.online-input-error { color:#f4a894!important;font-size:12px!important; }
+.online-launch { margin-top:18px; }
+@media(max-width:640px) {
+  .online-lobby { padding:32px 16px 60px; }
+  .online-setup { grid-template-columns:1fr; }
+  .online-deck-choice { border-right:0;border-bottom:1px solid var(--line); }
+  .online-deck-choice,.online-invitation,.online-room,.online-unavailable { padding:22px; }
+  .online-deck-art { width:190px;margin:18px auto; }
+  .online-invite-copy { flex-direction:column; }
+  .online-turn { padding:12px 16px;font-size:12px; }
+  .online-wordmark { font-size:10px;letter-spacing:.06em; }
+}

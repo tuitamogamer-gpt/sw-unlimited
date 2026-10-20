@@ -12,6 +12,8 @@ const { createAccountStore, createSupabaseAccountAdapter, storeError } = require
 const { createAccountSyncRouter } = require('./account-sync.cjs');
 const { trainingCatalog, createTraining, trainingView, trainingGameView, assertTrainingAction, advanceTraining } = require('./training.cjs');
 const { captureReviewDecision, commitReviewDecision, publicReview } = require('./match-review.cjs');
+const { createMultiplayerRouter } = require('./multiplayer.cjs');
+const { environmentRoomAdapter } = require('./room-store.cjs');
 
 function environmentAccountStore() {
   if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) return null;
@@ -19,7 +21,7 @@ function environmentAccountStore() {
   catch { return null; }
 }
 
-function createApplication({ auth = authRouter, authenticate = resolveAccount, accountStore = environmentAccountStore(),
+function createApplication({ auth = authRouter, authenticate = resolveAccount, accountStore = environmentAccountStore(), roomAdapter = environmentRoomAdapter(),
   accountOrigin = () => process.env.AUTH_URL || 'https://sw-unlimited-mu.vercel.app' } = {}) {
 
 const root = path.resolve(__dirname, '..');
@@ -239,6 +241,20 @@ app.use(createAccountSyncRouter({ store: accountStore, authenticate, origin: acc
       if (lesson?.status !== 'complete') throw storeError(422, 'ACCOUNT_TRAINING_UNFINISHED', 'Complete this lesson before saving its progress.');
       return { completedLessonIds: [lesson.lessonId] };
     } finally { restored.game.close(); }
+  },
+}));
+app.use(createMultiplayerRouter({ adapter: roomAdapter,
+  getDecks: async () => { await initialize(); return deckRecipes; },
+  resolveDeck: async body => {
+    await initialize();
+    if (body.playerDeck !== undefined) {
+      const validated = await importCustomDeck(body.playerDeck, { allowUrl: false });
+      if (validated.errors.length) fail(422, validated.errors[0]);
+      return validated.deck.recipe;
+    }
+    const deck = deckRecipes.find(item => item.id === body.deckId);
+    if (!deck || deckCatalog.find(item => item.id === deck.id)?.supported === false) fail(400, 'Choose an available deck.');
+    return deck;
   },
 }));
 app.get('/api/training', (_req, res) => publicMetadata(res, { lessons: trainingCatalog }));
