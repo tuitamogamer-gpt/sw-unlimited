@@ -67,11 +67,13 @@ selection opens it automatically, and playing a card hides it before targeting.
 Desktop cards fan out to fit the available width and lift on hover or keyboard
 focus; touch screens use a scrollable spread with accessible inspection buttons.
 The tray shows ready resources, the number of cards with a legal play, and
-selection progress when choosing resources. Use the previous/next buttons for
-larger hands, or focus the hand and use **← / →**, **Home**, and **End** to browse
-without playing a card. **Enter** chooses the focused card.
+selection progress when choosing resources.
 **Classic view** (the list icon on a phone) restores the always-visible row. The
-selected view is saved with your preferences.
+selected view is saved with your preferences. Both views offer previous/next
+buttons when cards overflow. Focus the hand and use **← / →**, **Home**, and
+**End** to browse without playing a card. Press **I** on a focused card to
+inspect it; **Enter** chooses it. Reopening the fan returns to the last focused
+card while it remains in your hand.
 
 When Ambush is available, choose **Use Ambush** (or click the marked unit), then
 choose a highlighted enemy unit. **Skip Ambush** declines this attack. The unit

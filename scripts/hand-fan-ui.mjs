@@ -127,11 +127,11 @@ async function handStatus(label) {
   report.handStatuses.push(facts);
 }
 
-async function settleHandLane() {
-  await handPanel().evaluate(async panel => {
-    await Promise.all(panel.getAnimations({ subtree: true }).map(animation => animation.finished.catch(() => {})));
+async function settleHandLane(lane = handLane()) {
+  await lane.evaluate(async element => {
+    await Promise.all(element.getAnimations({ subtree: true }).map(animation => animation.finished.catch(() => {})));
   });
-  return handLane().evaluate(async lane => {
+  return lane.evaluate(async lane => {
     let previous = lane.scrollLeft; let stable = 0;
     const start = performance.now();
     while (performance.now() - start < 3000) {
@@ -147,8 +147,8 @@ async function settleHandLane() {
   });
 }
 
-async function exposedHandCards() {
-  return handLane().evaluate(lane => {
+async function exposedHandCards(lane = handLane()) {
+  return lane.evaluate(lane => {
     const bounds = lane.getBoundingClientRect();
     return [...lane.querySelectorAll('.game-card-click')].filter(button => {
       const box = button.getBoundingClientRect();
@@ -168,7 +168,7 @@ async function handNavigation(label, touch) {
   await noGameAction(async () => {
     const initial = await settleHandLane();
     const overflowing = initial.scrollWidth > initial.clientWidth + 1;
-    const navigation = handPanel().locator('.hand-fan-navigation');
+    const navigation = handPanel().locator('.hand-navigation');
     const facts = { label, touch, handCount: view.players.human.handCount, ...initial, overflowing,
       navigationVisible: await navigation.isVisible(), nextClicks: 0, previousClicks: 0 };
     report.handNavigation.push(facts);
@@ -213,21 +213,82 @@ async function handNavigation(label, touch) {
   });
 }
 
-async function keyboardBrowse(label) {
-  const cards = handLane().locator('.game-card-click');
+async function keyboardBrowse(label, lane = handLane()) {
+  const cards = lane.locator('.game-card-click');
   const ids = await cards.evaluateAll(buttons => buttons.map(button => button.getAttribute('data-card-id')));
   assert.ok(ids.length >= 2);
   await noGameAction(async () => {
     await cards.first().focus();
     for (const [key, index] of [['End', ids.length - 1], ['ArrowLeft', ids.length - 2], ['Home', 0], ['ArrowRight', 1], ['Home', 0]]) {
       await page.keyboard.press(key);
-      await page.waitForFunction(cardId => document.activeElement?.matches('.hand-fan-cards .game-card-click')
+      await page.waitForFunction(cardId => document.activeElement?.matches('.game-card-click')
         && document.activeElement.getAttribute('data-card-id') === cardId, ids[index]);
-      await settleHandLane();
-      assert.ok((await exposedHandCards()).includes(ids[index]), `${key} must bring the focused card into view.`);
+      await settleHandLane(lane);
+      assert.ok((await exposedHandCards(lane)).includes(ids[index]), `${key} must bring the focused card into view.`);
     }
+    // Navigation from an inspection button must continue from that card.
+    await lane.locator('.card-inspect').nth(1).focus();
+    await page.keyboard.press('ArrowRight');
+    assert.equal(await cards.nth(2).evaluate(button => document.activeElement === button), true);
+    await page.keyboard.press('i');
+    await page.locator('.ci-root').waitFor();
+    assert.equal(await page.locator('.ci-identity h2').innerText(), view.players.human.hand[2].name);
+    await page.keyboard.press('Escape');
+    await page.locator('.ci-root').waitFor({ state: 'detached' });
+    assert.equal(await cards.nth(2).evaluate(button => document.activeElement === button), true,
+      'Closing keyboard inspection returns to the same card without playing it.');
+    await page.keyboard.press('Home');
   });
-  report.keyboardBrowsing.push({ label, cardCount: ids.length, end: true, left: true, home: true, right: true, neverPlayed: true });
+  report.keyboardBrowsing.push({ label, cardCount: ids.length, end: true, left: true, home: true, right: true, inspect: true, neverPlayed: true });
+}
+
+async function classicBrowsing(label) {
+  const lane = page.locator('.hand-cards');
+  await noGameAction(async () => {
+    const metrics = await settleHandLane(lane);
+    const navigation = page.locator('.hand-view-classic .hand-navigation');
+    assert.equal(await navigation.isVisible(), metrics.scrollWidth > metrics.clientWidth + 3);
+    const reached = new Set(await exposedHandCards(lane));
+    if (await navigation.isVisible()) {
+      const next = navigation.getByRole('button', { name: 'Next cards', exact: true });
+      const previous = navigation.getByRole('button', { name: 'Previous cards', exact: true });
+      assert.equal(await previous.isDisabled(), true);
+      for (let step = 0; step < view.players.human.handCount + 2 && await next.isEnabled(); step++) {
+        const before = (await settleHandLane(lane)).scrollLeft;
+        await next.click();
+        assert.ok((await settleHandLane(lane)).scrollLeft > before + 1);
+        for (const id of await exposedHandCards(lane)) reached.add(id);
+      }
+      assert.equal(await next.isDisabled(), true);
+      for (let step = 0; step < view.players.human.handCount + 2 && await previous.isEnabled(); step++) {
+        await previous.click();
+        await settleHandLane(lane);
+      }
+      assert.equal(await previous.isDisabled(), true);
+    }
+    assert.deepEqual([...reached].sort(), view.players.human.hand.map(card => card.uuid).sort());
+    await keyboardBrowse(`${label}-classic`, lane);
+    await layout(`${label}-classic-browsing`);
+    await page.screenshot({ path: `${output}/${label}-classic-browsing.png`, animations: 'disabled' });
+  });
+}
+
+async function rememberedFanCard(label) {
+  await noGameAction(async () => {
+    const last = handLane().locator('.game-card-click').last();
+    await last.focus();
+    await page.keyboard.press('End');
+    await settleHandLane();
+    const id = await last.getAttribute('data-card-id');
+    await page.keyboard.press('Escape');
+    await waitHand(false);
+    await page.keyboard.press('h');
+    await waitHand(true);
+    await page.waitForFunction(id => document.activeElement?.getAttribute('data-card-id') === id, id);
+    assert.ok((await exposedHandCards()).includes(id), 'Reopening a crowded hand must reveal the remembered card.');
+    await page.keyboard.press('Home');
+  });
+  report.shortcuts.push({ label, rememberedFanCard: true });
 }
 
 async function resizeHandNavigation(label) {
@@ -240,7 +301,7 @@ async function resizeHandNavigation(label) {
       await waitHand(true);
       const metrics = await settleHandLane();
       const overflowing = metrics.scrollWidth > metrics.clientWidth + 1;
-      const navigationVisible = await handPanel().locator('.hand-fan-navigation').isVisible();
+      const navigationVisible = await handPanel().locator('.hand-navigation').isVisible();
       report.resizeNavigation.push({ label: `${label}-${name}`, ...viewport, ...metrics, overflowing, navigationVisible });
       assert.equal(overflowing, expectedOverflow, 'The resize fixture must change whether the hand fits.');
       assert.equal(navigationVisible, overflowing, 'Hand navigation must follow the new lane geometry after a resize.');
@@ -406,6 +467,7 @@ async function shortcutAndPlayFlow(label, touch) {
   assert.equal(await page.locator('.game-shell').getAttribute('data-hand-view'), 'classic', 'The selected classic mode must survive a full reload.');
   const initialHandCount = view.players.human.handCount;
   const classic = await layout(`${label}-classic-action`);
+  await classicBrowsing(label);
   await toggleMode('fan');
   await waitHand(false);
   const collapsed = await layout(`${label}-collapsed-action`);
@@ -432,6 +494,7 @@ async function shortcutAndPlayFlow(label, touch) {
   await handNavigation(label, touch);
   if (!touch) await resizeHandNavigation(label);
   await keyboardBrowse(label);
+  await rememberedFanCard(label);
 
   const beforeInspect = mutations;
   await handPanel().getByRole('button', { name: `Inspect ${gunship}`, exact: true }).focus();
@@ -459,6 +522,12 @@ async function shortcutAndPlayFlow(label, touch) {
   await noGameAction(() => handToggle().click());
   await waitHand(true);
   await handStatus(`${label}-ambush-pending`);
+  await page.waitForFunction(() => {
+    const first = document.querySelector('.hand-fan-cards .game-card-click');
+    return first && document.activeElement === first;
+  });
+  assert.equal(await handPanel().locator(`.game-card-click[data-card-id="${play.cardId}"]`).count(), 0,
+    'If the remembered card was played, reopening focuses a remaining card.');
   assert.equal(view.legalActions.some(action => action.intent === 'play'), false);
   await noGameAction(() => page.keyboard.press('Escape'));
   await waitHand(false);
@@ -480,6 +549,7 @@ async function landscapeBasics() {
   for (const viewport of [{ width: 844, height: 390 }, { width: 667, height: 375 }]) {
     await page.setViewportSize(viewport);
     await toggleMode('classic');
+    await classicBrowsing(`landscape-${viewport.width}`);
     const classic = await layout(`landscape-${viewport.width}-classic`);
     assert.ok(classic.arenaHeight >= 100, 'Short landscape classic mode must retain a usable battlefield.');
     await page.screenshot({ path: `${output}/landscape-${viewport.width}-classic.png`, animations: 'disabled' });

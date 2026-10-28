@@ -52,6 +52,8 @@ const copy: Array<[string, string, ...string[]]> = [
   ['ready', 'spremno'],
   ['Browse cards', 'Listaj karte'],
   ['Enter to choose', 'Enter za izbor'],
+  ['I to inspect', 'I za pregled'],
+  ['Use Left and Right to browse cards, Home and End to jump, I to inspect, and Enter to choose.', 'Koristi strelice levo i desno za listanje, Home i End za početak i kraj, I za pregled i Enter za izbor.'],
   ['Swipe or use the arrows', 'Prevuci ili koristi strelice'],
   ['Your units: {count}', 'Tvoje jedinice: {count}'],
   ['Opponent units: {count}', 'Protivničke jedinice: {count}'],

@@ -33,10 +33,10 @@
 .hand-playable-status,.hand-selection-status{border-left:1px solid #667f8c66;padding-left:10px;color:#9bb0bc;font-variant-numeric:tabular-nums}
 .hand-playable-status[data-available="true"]{color:#9de0da}
 .hand-selection-status{color:#f0d494}
-.hand-fan-controls,.hand-fan-navigation{display:flex;align-items:center;gap:5px;flex-shrink:0}
-.hand-fan-navigation button{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid #536d7a;border-radius:6px;color:#d5e6ed;background:#1b3040}
-.hand-fan-navigation button:hover:not(:disabled){background:#2d495b;border-color:#96c4cd}
-.hand-fan-navigation button:disabled{opacity:.35;cursor:default}
+.hand-fan-controls,.hand-navigation{display:flex;align-items:center;gap:5px;flex-shrink:0}
+.hand-navigation button{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid #536d7a;border-radius:6px;color:#d5e6ed;background:#1b3040}
+.hand-navigation button:hover:not(:disabled){background:#2d495b;border-color:#96c4cd}
+.hand-navigation button:disabled{opacity:.35;cursor:default}
 .hand-fan-panel button:focus-visible,.hand-toggle:focus-visible,.hand-view-switch:focus-visible{outline:2px solid #f0d494;outline-offset:3px}
 .hand-fan-heading .eyebrow{font-size:10px;white-space:nowrap;display:flex;gap:6px;align-items:center}
 .hand-fan-heading .eyebrow b{color:#e0c085;font-size:11px}
@@ -85,7 +85,7 @@
   .hand-fan-instruction{font-size:8px}
   .hand-fan-close{min-height:40px;min-width:36px;justify-content:center;padding:4px 7px}
   .hand-fan-close kbd,.hand-fan-close>span{display:none}
-  .hand-fan-navigation button{width:36px;height:40px}
+  .hand-navigation button{width:36px;height:40px}
   .hand-fan-cards{--fan-card-height:min(clamp(155px,27dvh,220px),var(--fan-room,220px));justify-content:flex-start;padding:24px 22px 26px;scroll-padding-inline:22px}
   .hand-fan-slot{scroll-margin-inline:22px}
   .hand-fan-slot:hover{transform:translateY(var(--fan-drop)) rotate(var(--fan-angle))}
@@ -106,7 +106,7 @@
   .hand-fan-status{font-size:9px;gap:6px}
   .hand-resource-value{font-size:11px}
   .hand-resource-status>span{display:none}
-  .hand-fan-navigation button{width:32px;height:32px}
+  .hand-navigation button{width:32px;height:32px}
   .hand-fan-close>span,.hand-fan-close kbd{display:none}
   .hand-fan-heading .eyebrow{font-size:8px}
   .hand-fan-instruction{font-size:8px}
@@ -139,4 +139,19 @@
   .hand-fan-slot{scroll-snap-align:center}
   .hand-fan-footer .hand-keyboard-hint{display:none}
   .hand-fan-footer .hand-swipe-hint{display:flex}
+}
+
+/* Both hand views expose the same browsing controls without enlarging the dock. */
+.hand-view-classic .hand-heading>.eyebrow{flex-shrink:0}
+.hand-view-classic .hand-heading>.battle-update{min-width:0;flex:1}
+.hand-view-classic .hand-heading>.hand-navigation{margin-left:auto}
+.hand-view-classic .hand-navigation button{width:32px;height:32px}
+.hand-view-classic .hand-navigation button:focus-visible{outline:2px solid #f0d494;outline-offset:2px}
+@media(max-width:720px){
+  .hand-view-classic .hand-heading{gap:5px}
+  .hand-view-classic .hand-navigation button{height:36px}
+}
+@media(min-width:600px) and (max-height:520px) and (max-width:1280px){
+  .hand-view-classic .hand-heading:has(.hand-navigation)>.battle-update{display:none}
+  .hand-view-classic .hand-heading:has(.hand-navigation)>.hand-view-switch{margin-left:0}
 }
