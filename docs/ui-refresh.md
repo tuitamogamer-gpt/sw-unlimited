@@ -1,5 +1,14 @@
 # Gameplay and mobile interface verification
 
+Both classic and fan hands provide previous/next controls when cards overflow.
+Arrow keys, Home and End move focus without submitting a game action, including
+when starting from a card's inspect button. I opens that card's details and
+closing the inspector restores focus. Reopening the fan returns to the last
+focused card, or the first remaining card if it has left the hand.
+`npm run test:hand-ui` checks these interactions with real engine checkpoints,
+resource selection, Ambush, and training completion on desktop and mobile,
+including 667 × 375 and 844 × 390 landscape layouts.
+
 The human flow is covered explicitly, without using the bot to choose human
 actions: keep the starting hand, resource two expensive cards, confirm, play a
 cost-one unit, receive the bot's response, claim initiative, optionally add one
