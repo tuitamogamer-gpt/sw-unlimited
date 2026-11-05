@@ -32,3 +32,4 @@ jobs:
       - run: npm run test:training-ui
       - run: npm run test:review-ui
       - run: npm run test:cloud-ui
+      - run: npm run test:online-ui
