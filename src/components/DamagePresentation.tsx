@@ -85,8 +85,10 @@ function ImpactEffects({ slash }: { slash: boolean }) {
 /** Power and health as printed on the table; a hit shows the real change. */
 function ActorStats({ card, hits }: { card?: Card; hits: PublicDamageEvent[] }) {
   const change = healthChange(hits);
-  const health = change ? change.after : remainingHealth(card);
-  const power = card && !card.hidden && typeof card.power === 'number' && cardType(card) !== 'base' ? card.power : undefined;
+  // A leader that has not deployed is not a unit yet: its unit-side numbers are not in play.
+  const onTable = !!card && (cardType(card) !== 'leader' || !!card.deployed);
+  const health = change ? change.after : onTable ? remainingHealth(card) : undefined;
+  const power = onTable && card && !card.hidden && typeof card.power === 'number' && cardType(card) !== 'base' ? card.power : undefined;
   return <span className="damage-presentation-stats">
     {power !== undefined && <span className="damage-presentation-stat is-power"><Swords size={11} />{power}</span>}
     {health !== undefined && <span className={`damage-presentation-stat is-health${change ? ' is-hit' : ''}${change?.after === 0 ? ' is-lethal' : ''}`}>
