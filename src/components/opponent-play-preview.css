@@ -49,14 +49,14 @@
   width: min(360px, calc(100dvw - 54px), calc((100dvh - 204px) * .7142857));
   aspect-ratio: 5 / 7;
   min-height: 0;
-  border-radius: 13px;
+  border-radius: 5.3% / 3.8%;
   background: #142535;
   box-shadow: 0 20px 70px #000b, 0 0 0 1px #bfd9df69, 0 0 38px #98c6d51a;
   transform: none;
   filter: none;
 }
 .opponent-play-art > img { display: block; width: 100%; height: 100%; max-width: none; object-fit: contain; border-radius: inherit; filter: none; user-select: none; }
-.opponent-play-art-rim { position: absolute; inset: -5px; border: 1px solid #d8b37c85; border-radius: 17px; pointer-events: none; box-shadow: inset 0 0 12px #ddbf7020; }
+.opponent-play-art-rim { position: absolute; inset: -5px; border: 1px solid #d8b37c85; border-radius: 6.4% / 4.7%; pointer-events: none; box-shadow: inset 0 0 12px #ddbf7020; }
 .opponent-play-art-rim::before, .opponent-play-art-rim::after { content: ''; position: absolute; width: 26px; height: 2px; left: calc(50% - 13px); background: #dec795; box-shadow: 0 0 12px #c7a95f55; }
 .opponent-play-art-rim::before { top: -1px; }
 .opponent-play-art-rim::after { bottom: -1px; }
@@ -76,7 +76,7 @@
 .opponent-play-art-fallback > strong { font-family: var(--condensed, 'Arial Narrow', sans-serif); font-size: 27px; font-weight: 500; line-height: 1.1; color: #f1efe4; }
 .opponent-play-art-fallback > span:not(.opponent-play-fallback-type) { font-size: 11px; line-height: 1.3; color: #b1c3d0; }
 .opponent-play-art-fallback > p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 14; overflow: hidden; margin: 5px 0 0; font-size: 11px; line-height: 1.6; color: #d4e1e6; white-space: pre-line; text-align: left; }
-.opponent-play-preview.is-landscape-card .opponent-play-art { width: min(510px, calc(100dvw - 54px), calc((100dvh - 204px) * 1.4)); aspect-ratio: 7 / 5; }
+.opponent-play-preview.is-landscape-card .opponent-play-art { width: min(510px, calc(100dvw - 54px), calc((100dvh - 204px) * 1.4)); aspect-ratio: 7 / 5; border-radius: 3.8% / 5.3%; }
 
 @keyframes opponent-preview-arrive { from { opacity: 0; transform: translateY(-10px) scale(.975); } to { opacity: 1; transform: translateY(0) scale(1); } }
 @keyframes opponent-preview-countdown { from { transform: scaleX(1); } to { transform: scaleX(0); } }
@@ -110,3 +110,4 @@
   .opponent-play-sheet { animation: none; }
   .opponent-play-preview.is-ready .opponent-play-progress > i { animation: none; transform: none; }
 }
+.opponent-play-preview.is-landscape-card .opponent-play-art-rim { border-radius: 4.7% / 6.4%; }

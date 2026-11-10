@@ -49,8 +49,8 @@ arena as a unit.
 The user's explicit direction takes priority over physical card rotation:
 **keep the exhausted card upright, grayscale its artwork, and display a small
 red “Exhausted” token.** Apply grayscale to the artwork image only, so the token
-stays red. The implemented token is 12 px high in a reserved 14 px lower-edge
-gutter, below the illustration. Retain a text label/accessibility
+stays red. The implemented token is 12 to 18 px high, scaling with the card, in
+a reserved lower-edge gutter below the illustration. Retain a text label/accessibility
 name; color alone should not carry this state. Avoid faded artwork plus a large
 banner obscuring the card.
 

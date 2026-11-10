@@ -52,7 +52,7 @@
 .cdi-name input{width:100%;border:1px solid #36526a;background:#0b1927;color:#d7e3eb;border-radius:5px;padding:10px 12px;font-size:12px}
 .cdi-name input::placeholder{color:#557185}
 .cdi-drop-area{border:1px solid #36546a;background:#0a1725;border-radius:7px;overflow:hidden;transition:border-color .2s,box-shadow .2s}
-.cdi-drop-area.is-dragging{border-color:var(--gold);box-shadow:0 0 0 3px #e7b95d22}
+.cdi-drop-area.is-dragging,.cdi-drop-area:focus-within{border-color:var(--gold);box-shadow:0 0 0 3px #e7b95d22}
 .cdi-input-heading{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:11px 13px;border-bottom:1px solid #294255;background:#122434}
 .cdi-input-heading>label{font-size:11px;color:#adbfce}
 .cdi-input-heading>span{display:flex;align-items:center;gap:5px;font-size:10px;color:#637f94;letter-spacing:.6px}

@@ -52,6 +52,9 @@ leader or card ability. Actions alternate between you and the AI.
 
 Use **Swap decks** to try the matchup from the other side. Each difficulty has
 a short explanation, and mixed base health is shown before starting a match.
+Select **Your deck** or **AI opponent** in the mission panel to jump to the deck
+archive with that seat active. While you browse the archive, a launch bar keeps
+the current matchup and **Start battle** within reach.
 Cadet uses simpler individual decisions with more varied priorities; Commander
 and Grand Admiral retain their coordinated tactical play.
 
@@ -95,6 +98,13 @@ play; damage, healing, and lost shields have distinct brief effects. Red damage
 counters follow the [physical tabletop references](docs/battle-visual-reference.md).
 Reduced-motion preferences keep the numbers without movement. Crowded rows
 show when more cards are available by scrolling.
+
+The battle table has one top bar on every screen size: back to Command, the
+round and phase, account, battle log, rules help, language, settings, and a new
+game. Units take their size from their arena lane, so they fill large displays,
+shrink as a lane fills up, and scroll only when a lane is truly crowded.
+**Compact cards** in Settings keeps units and hand cards smaller. Viewing your
+resources shows which are ready and which are exhausted.
 
 Damage resolves visually in 1.6-second exchanges with the source and target
 cards, directional bolts, and exact damage numbers. Combat shows both directions

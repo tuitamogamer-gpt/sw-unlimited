@@ -566,7 +566,7 @@ select option{background:#101925;color:var(--ivory)}
 :root{--battle-header:0px;--battle-card-height:clamp(78px,12.6dvh,128px);--hand-card-height:clamp(102px,16.4dvh,196px)}
 body:has(.app.in-game){overflow:hidden;overscroll-behavior:none}
 .app.in-game{height:100dvh;min-height:0;overflow:hidden;background:radial-gradient(ellipse at 50% 28%,#162f4260,transparent 55%),#080e17}
-.language-select{border:1px solid #344859;background:#101d2b;color:#d5e1e8;font-size:12px;font-weight:600;min-height:34px;padding:0 8px;border-radius:var(--radius-control);max-width:112px;cursor:pointer}
+.language-select{border:1px solid #344859;background:#101d2b;color:#d5e1e8;font-size:12px;font-weight:600;min-height:34px;padding:0 8px;border-radius:var(--radius-control);flex-shrink:0;min-width:54px;max-width:112px;cursor:pointer}
 .language-select:hover{border-color:#5d7689}
 .game-shell{--hand-height:calc(var(--hand-card-height) * var(--card-scale,1));height:calc(100dvh - var(--battle-header));max-width:2200px;min-height:0;margin:0 auto;padding:0 20px 12px;display:flex;flex-direction:column;gap:0}
 .game-topbar{height:48px;min-height:48px;flex:0 0 48px;border-bottom:1px solid #2637478c;gap:12px}
@@ -782,7 +782,7 @@ body:has(.app.in-game){overflow:hidden;overscroll-behavior:none}
   .game-tools{gap:4px}
   .game-tools .icon-button{width:29px;height:29px;background:#11233280;border-color:#37506470}
   .game-tools .icon-button>svg{width:15px;height:15px}
-  .game-tools .language-select{height:29px;min-height:29px;font-size:10px;padding:0 4px;max-width:52px;border-color:#37506470}
+  .game-tools .language-select{height:29px;min-height:29px;font-size:10px;padding:0 4px;min-width:0;max-width:52px;border-color:#37506470}
   .desktop-log-button{display:none!important}
   .mobile-log-button{display:inline-flex!important}
   .battle-layout,.without-log .battle-layout{display:flex;flex-direction:column;gap:0;min-height:0;flex:1}
@@ -1100,8 +1100,11 @@ body:has(.app.in-game){overflow:hidden;overscroll-behavior:none}
 .card-notice>button{flex:0 0 auto;background:none;color:#c1d8e7;display:flex;align-items:center;padding:3px}
 .claim-confirmation{padding:22px 24px}
 .claim-confirmation>p{font-size:14px;line-height:1.65;color:#b8cbd8}
-.claim-confirmation>.prompt-buttons{max-width:none;justify-content:stretch;gap:9px;width:100%}
-.claim-confirmation button{min-height:42px;border-radius:5px}
+.claim-confirmation>svg{color:var(--gold)}
+.claim-confirmation>p{margin-top:14px}
+/* Confirmation dialogs: two equal choices, the safe one first. */
+.claim-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.claim-actions>button{flex:1 1 150px}
 .prompt-choice-body{padding:14px 6px}
 .prompt-choice-body>.target-action-list{border:0}
 .prompt-choice-body .target-action-list>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
@@ -1110,8 +1113,6 @@ body:has(.app.in-game){overflow:hidden;overscroll-behavior:none}
   .card-notice{padding:6px 8px;font-size:10px;line-height:1.3}
   .claim-confirmation{padding:18px}
   .claim-confirmation>p{font-size:13px}
-  .claim-confirmation>.prompt-buttons{flex-direction:column}
-  .claim-confirmation>.prompt-buttons>button{width:100%;flex:none}
   .prompt-choice-body{padding:10px 0}
 }
 @media(max-width:720px){

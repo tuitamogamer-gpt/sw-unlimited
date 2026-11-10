@@ -8,6 +8,7 @@
 .ci-art-viewport{overflow:auto;overscroll-behavior:contain;max-height:min(57dvh,550px);scrollbar-width:thin;scrollbar-color:#7993a4 #102031;touch-action:pan-x pan-y}
 .ci-art-button{display:block;background:none;border:0;padding:0;margin:0 auto;max-width:100%;cursor:zoom-in;border-radius:8px}
 .ci-art-button img{width:auto;max-width:100%;height:auto;max-height:min(53dvh,515px);border-radius:8px;box-shadow:0 5px 17px #0007;display:block;margin:auto}
+.ci-portrait .ci-art-button img{border-radius:5.3%/3.8%}.ci-landscape .ci-art-button img{border-radius:3.8%/5.3%}
 .ci-art-button>.inspector-art-fallback{aspect-ratio:5/7;border-radius:8px}.ci-landscape .ci-art-button>.inspector-art-fallback{aspect-ratio:7/5}
 .ci-art-stage.is-zoomed .ci-art-button{width:200%;max-width:none;cursor:zoom-out;margin:0}.ci-art-stage.is-zoomed .ci-art-button img{width:100%;max-width:none;max-height:none;height:auto}
 .ci-zoom-toggle{position:absolute;bottom:20px;right:20px;width:34px;height:34px;display:grid;place-items:center;color:#e3f2f7;background:#0d1a28e8;border:1px solid #668299;border-radius:7px;box-shadow:0 4px 10px #0006}.ci-zoom-toggle:hover{background:#284052;color:var(--gold)}

@@ -18,9 +18,10 @@
   width: 100%;
   aspect-ratio: var(--hover-card-ratio, .7142857);
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 5.3% / 3.8%;
   background: #152a39;
 }
+.card-hover-preview.is-landscape .card-hover-art { border-radius: 3.8% / 5.3%; }
 .card-hover-art > img {
   display: block;
   width: 100%;

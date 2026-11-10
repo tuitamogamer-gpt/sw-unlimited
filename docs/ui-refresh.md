@@ -73,8 +73,8 @@ play, and resuming after removing both local deck lists and evicting the
 server's in-memory session. It also checks card-library search, filtering,
 inspection, and mobile modal bounds.
 
-Exhausted units keep upright grayscale artwork and a 12 px red token in a
-reserved footer below the card face. Only the art is desaturated; action labels,
+Exhausted units keep upright grayscale artwork and a compact red token (12 to
+18 px, scaling with the card) in a reserved footer below the card face. Only the art is desaturated; action labels,
 stats, and damage counters retain their colors. New units settle into the arena;
 damage has a separate source-to-target presentation, healing uses green, and
 lost shields use blue. Defeated units leave a short note in the arena divider.
@@ -157,3 +157,50 @@ board damage is suppressed after the timeline to avoid showing the same hit twic
 2-power defenders while Vader is present, the 1.6-second timing, mobile bounds,
 reduced motion, input locking, and refresh behavior. Reports and screenshots go
 to `/tmp/swu-damage-presentation`.
+
+## Interface polish
+
+The lobby has its own fluid stylesheet (`src/lobby.css`). Type sizes and spacing
+use `clamp()` instead of per-breakpoint pixel overrides, so labels no longer
+shrink to 5–8 px on phones. Deck tiles, mission portraits, collection rows, the
+deck inspector and battle leader tiles zoom into the illustration half of the
+landscape leader card rather than showing a cropped card with unreadable rules
+text; the hero shows both leader cards whole. Card images share one component
+with a quiet placeholder while loading and a short fade when a late image
+arrives.
+
+Selecting a seat in the mission panel scrolls to the deck archive. Once the
+mission panel has scrolled out of view, a launch bar shows the matchup and a
+**Start battle** button (labelled *Start battle with the selected decks* for
+assistive technology, so the main button keeps a unique name). The header
+status light reports the deck catalog: connecting, online, or offline. Notices
+stack in one corner instead of overlapping, and collection confirmations clear
+themselves after six seconds; connection and recovery notices stay until
+dismissed.
+
+In battle the lobby header is no longer repeated above the table. One top bar
+carries back, round and phase, account, log, help, language, settings and new
+game on every screen size. Arena lanes are size containers: a unit is as tall
+as its lane allows (up to 236 px), narrows when two to eight units share the
+lane, and never exceeds the lane, which removes the clipping seen at 1024 × 768.
+Names, stats, cost, damage counters and the Exhausted token scale with the card.
+Browsers without container units keep the previous fixed sizes. Small labels
+follow a stepped type scale (`--type-micro`, `--type-label`, `--type-chip`,
+`--type-note`) defined in `battle-polish.css`. **Compact cards** scales hand
+cards to 84 % and caps units at 128 px.
+
+Leader tiles show a portrait with the leader's name and state (Leader,
+Exhausted, Deployed); narrow tiles overlay the name on the portrait. A selected
+card is marked in the middle of its artwork, clear of the cost and inspect
+corners. Resource and discard piles no longer reuse hand labels: resources show
+Ready or Exhausted, and discarded cards have no action label.
+
+Dialogs share one shell with a short rise animation, consistent corner radii,
+pill switches, a single-column rules layout on phones and a full-width latest
+decision in the battle log. Inspector, import, catalog and account text was
+raised to at least 9–10 px, and confirmation dialogs lay out two equal choices.
+Text fields use 16 px on touch devices so iOS does not zoom the page on focus.
+The app ships a favicon, a touch icon and social metadata.
+
+Reproduce with the same suites listed above; `npm run test:ui` additionally
+covers the 1024 × 600 and 1440 × 900 single-bar layouts.

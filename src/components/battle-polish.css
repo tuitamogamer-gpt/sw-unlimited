@@ -97,10 +97,20 @@
   .game-shell .initiative{flex:0 0 34px;width:34px;min-width:34px}
   .game-shell :is(.initiative>span,.initiative>small){font-size:7px;letter-spacing:.03em}
 }
+/* The side column of a landscape phone is narrow: the initiative button keeps
+   its name, and the confirmation dialog carries the explanation. */
+@media(min-width:600px) and (max-height:520px) and (max-width:1280px){
+  .game-shell .prompt-buttons .initiative-button small{display:none}
+}
 .game-shell .base-name{font-size:calc(var(--type-label) + 1px)}
 .game-shell .arena-label{font-size:calc(var(--type-label) + 1px)}
 .game-shell .arena-label small{font-size:var(--type-label)}
 .game-shell .sidebar-footer{font-size:calc(var(--type-note) - 1px)}
+
+/* The log dialog is for reading: it keeps a comfortable size on every screen. */
+.game-shell .modal :is(.log-entry p,.ai-reason p){font-size:13px;line-height:1.5}
+.game-shell .modal :is(.ai-status .eyebrow,.ai-reason .eyebrow,.log-entry div>span){font-size:10px}
+.game-shell .modal .sidebar-footer{font-size:12px}
 
 /* Large displays: the table has room, so the instruments step up with it. */
 @media(min-width:1600px) and (min-height:950px){
