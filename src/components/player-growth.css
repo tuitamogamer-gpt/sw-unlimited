@@ -1,4 +1,4 @@
-.battle-history{margin:24px 0;padding:22px;border:1px solid #2c4052;border-radius:9px;background:#101c28}
+.battle-history{margin:24px 0;padding:22px;border:1px solid #2c4052;border-radius:var(--radius-panel);background:#101c28}
 .battle-history-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:15px}
 .battle-history-heading h2{font-size:23px;margin:5px 0 0}
 .battle-history-rows{display:grid;gap:8px}
@@ -30,7 +30,7 @@
   .history-review-button strong{font-size:12px}
   .history-review-button small{font-size:10px}
   .history-result{min-width:42px;font-size:10px}
-  .training-inline-step{font-size:8px;margin-left:7px}
+  .training-inline-step{font-size:10px;margin-left:7px}
   .training-active-guidance .context-banner{font-size:10px;line-height:1.4}
   .command-dock>.training-guidance{padding:10px 12px;gap:7px}
   .command-dock .training-guidance h2{font-size:17px;margin:5px 0}

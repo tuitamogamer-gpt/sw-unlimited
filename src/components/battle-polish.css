@@ -82,3 +82,41 @@
 .game-shell .command-sidebar .log-entry p{color:#aec2d0}
 .game-shell .command-sidebar .log-entry.latest p{color:#e1ebf1}
 .game-shell .command-sidebar .sidebar-footer{border-top-color:#304553;color:#a3b8c7}
+
+/* Type scale. Small labels share a few sizes that step with the screen, so
+   nothing on the table drops below a readable size. */
+.game-shell{--type-micro:9.5px;--type-label:10px;--type-chip:10px;--type-note:12px}
+@media(max-width:720px){.game-shell{--type-micro:8px;--type-label:8px;--type-chip:9px;--type-note:10.5px}}
+@media(min-width:600px) and (max-height:520px) and (max-width:1280px){.game-shell{--type-micro:7.5px;--type-label:8px;--type-chip:8.5px;--type-note:9.5px}}
+@media(min-width:1600px) and (min-height:950px){.game-shell{--type-micro:11px;--type-label:11.5px;--type-chip:11px;--type-note:13.5px}}
+.game-shell :is(.player-name,.player-name small,.opponent-hand>span,.arena-empty>small,.hand-heading>.eyebrow,.hand-heading>.play-hand-cue,.hand-heading>.resource-hand-cue,.prompt-copy>.eyebrow,.initiative-button small,.token-controls .eyebrow,.sidebar-title .eyebrow,.ai-status .eyebrow,.ai-reason .eyebrow,.log-entry div>span){font-size:var(--type-label)}
+.game-shell :is(.resource-mini>span,.pile-stat>span,.initiative>span,.initiative>small,.arena-midline>span){font-family:var(--condensed);font-size:var(--type-micro);font-weight:600;letter-spacing:.07em}
+.game-shell :is(.card-action-label,.leader-action-hint,.base-target-label){font-size:var(--type-chip)}
+.game-shell :is(.context-banner,.prompt-copy>p,.ai-reason p,.log-entry p,.battle-update,.sidebar-footer){font-size:var(--type-note)}
+@media(max-width:720px){
+  .game-shell .initiative{flex:0 0 34px;width:34px;min-width:34px}
+  .game-shell :is(.initiative>span,.initiative>small){font-size:7px;letter-spacing:.03em}
+}
+.game-shell .base-name{font-size:calc(var(--type-label) + 1px)}
+.game-shell .arena-label{font-size:calc(var(--type-label) + 1px)}
+.game-shell .arena-label small{font-size:var(--type-label)}
+.game-shell .sidebar-footer{font-size:calc(var(--type-note) - 1px)}
+
+/* Large displays: the table has room, so the instruments step up with it. */
+@media(min-width:1600px) and (min-height:950px){
+  .game-shell .game-topbar{height:54px;min-height:54px;flex-basis:54px}
+  .game-shell .round-label>strong{font-size:30px}
+  .game-shell .battle-layout{grid-template-columns:minmax(0,1fr) 310px;gap:24px}
+  .game-shell.without-log .battle-layout{grid-template-columns:minmax(0,1fr)}
+  .game-shell .player-panel{max-width:420px}
+  .game-shell .base-panel strong{font-size:33px}
+  .game-shell .resource-mini>strong{font-size:31px}
+  .game-shell .pile-stat>strong{font-size:24px}
+  .game-shell .prompt-copy>h3{font-size:25px}
+  .game-shell .prompt-buttons button{min-height:42px;padding:0 17px;font-size:14px}
+  .game-shell .ai-status h3{font-size:24px}
+  .game-shell .log-heading h3{font-size:14px}
+  .game-shell .hand-card .game-card-name{font-size:16px}
+  .game-shell .hand-card .card-cost{height:28px;min-width:28px;font-size:15px}
+  .game-shell .hand-card .card-action-label{min-height:23px}
+}

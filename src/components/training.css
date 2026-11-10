@@ -1,4 +1,4 @@
-.training-selector{margin:24px 0;padding:22px;border:1px solid var(--line,#25303d);border-radius:9px;background:linear-gradient(140deg,#122333,#0e1824)}
+.training-selector{margin:24px 0;padding:22px;border:1px solid var(--line,#25303d);border-radius:var(--radius-panel);background:linear-gradient(140deg,#122333,#0e1824)}
 .training-heading{display:flex;align-items:flex-start;gap:11px;margin-bottom:18px}
 .training-heading>svg{flex-shrink:0;margin-top:2px;color:var(--cyan,#71c9d4)}
 .training-heading h2{margin:0;color:var(--ivory,#f2f0e7);font-size:20px;font-weight:600}
@@ -32,4 +32,18 @@
 .training-guidance.complete .training-progress-label{color:#a7d7b5}
 .training-start:focus-visible,.training-next:focus-visible,.training-exit:focus-visible{outline:2px solid var(--gold,#e7b95d);outline-offset:3px}
 @media(max-width:900px){.training-guidance{align-items:flex-start;flex-wrap:wrap}.training-guidance-actions{margin-left:auto}}
-@media(max-width:640px){.training-selector{padding:15px;margin:18px 0}.training-heading{gap:9px;margin-bottom:14px}.training-heading h2{font-size:18px}.training-heading p{font-size:12px}.training-lessons{grid-template-columns:1fr;gap:10px}.training-lesson{padding:14px}.training-lesson h3{font-size:16px;margin-top:10px}.training-lesson>p{margin-bottom:12px}.training-guidance{padding:13px 14px;gap:12px;margin-bottom:12px}.training-guidance h2{font-size:17px}.training-guidance p{font-size:12px;line-height:1.65}.training-guidance-actions{width:100%;justify-content:flex-end;flex-wrap:wrap}.training-progress-label{flex-wrap:wrap;font-size:9px}}
+@media(max-width:640px){
+  .training-selector{padding:15px;margin:18px 0}
+  .training-heading{gap:9px;margin-bottom:14px}
+  .training-heading h2{font-size:18px}
+  .training-heading p{font-size:12px}
+  .training-lessons{grid-template-columns:1fr;gap:10px}
+  .training-lesson{padding:14px}
+  .training-lesson h3{font-size:16px;margin-top:10px}
+  .training-lesson>p{margin-bottom:12px}
+  .training-guidance{padding:13px 14px;gap:12px;margin-bottom:12px}
+  .training-guidance h2{font-size:17px}
+  .training-guidance p{font-size:12px;line-height:1.65}
+  .training-guidance-actions{width:100%;justify-content:flex-end;flex-wrap:wrap}
+  .training-progress-label{flex-wrap:wrap;font-size:10px}
+}

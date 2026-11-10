@@ -133,3 +133,19 @@
 /* Native menu choices remain visibly selected until the player confirms. */
 .prompt-buttons > button[aria-pressed="true"], .prompt-modal-actions > button[aria-pressed="true"]{border-color:#e7b95d;background:#4d4129;color:#ffe8b5;box-shadow:inset 0 0 0 1px #e7b95d44}
 .card-selected-badge[data-selection-order]{font-size:13px;font-weight:700;line-height:1}
+
+/* Units grow and shrink with their lane; labels, stats and tokens follow the
+   card so a large card is not captioned in tiny type. */
+@supports (height:1cqh){
+  .game-card.has-status-pocket{container-type:size;--status-pocket-height:clamp(14px,11.5cqh,21px);--unit-stat-height:clamp(18px,16.5cqh,31px)}
+  .game-card.has-status-pocket.has-card-action{--status-pocket-height:clamp(27px,22cqh,40px)}
+  .game-card.has-status-pocket .card-face>.game-card-name{bottom:calc(var(--unit-stat-height) + 2px);font-size:clamp(10px,9.8cqh,18px);left:clamp(4px,4.5cqw,8px);right:clamp(3px,4cqw,7px)}
+  .game-card.has-status-pocket .card-face>.unit-stats{padding:0 clamp(4px,4.8cqw,9px);font-size:clamp(11px,10.8cqh,20px)}
+  .game-card.has-status-pocket .unit-stats svg{width:clamp(9px,9cqh,16px);height:clamp(9px,9cqh,16px)}
+  .game-card.has-status-pocket .card-cost{height:clamp(18px,16cqh,30px);min-width:clamp(18px,16cqh,30px);font-size:clamp(10px,9.4cqh,17px)}
+  .game-card.has-status-pocket .card-exhausted-token{height:calc(var(--status-pocket-height) - 2px);padding:0 clamp(4px,4.5cqw,9px);font-size:clamp(8px,7.6cqh,13px)}
+  .game-card.has-status-pocket .card-exhausted-token>svg{width:clamp(7px,6.6cqh,11px);height:clamp(7px,6.6cqh,11px)}
+  .game-card.has-status-pocket .card-status-pocket>.card-action-label{height:clamp(12px,10cqh,18px);font-size:clamp(8px,7.6cqh,13px)}
+  .game-card.has-status-pocket .card-status-pocket>.card-action-label>svg{width:clamp(8px,6.6cqh,11px);height:clamp(8px,6.6cqh,11px)}
+  .game-card.has-status-pocket .stat-damage.damage-counter{min-width:clamp(13px,12.5cqh,22px);height:clamp(13px,12.5cqh,22px);font-size:clamp(9px,8.6cqh,15px)}
+}

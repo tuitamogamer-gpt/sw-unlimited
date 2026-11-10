@@ -40,7 +40,6 @@
 .hand-fan-panel button:focus-visible,.hand-toggle:focus-visible,.hand-view-switch:focus-visible{outline:2px solid #f0d494;outline-offset:3px}
 .hand-fan-heading .eyebrow{font-size:10px;white-space:nowrap;display:flex;gap:6px;align-items:center}
 .hand-fan-heading .eyebrow b{color:#e0c085;font-size:11px}
-.hand-fan-instruction{font-size:9px;display:flex;align-items:center;gap:5px;color:#9dc5d3}
 .hand-fan-close{display:flex;align-items:center;gap:7px;min-height:36px;padding:5px 6px 5px 10px;border-radius:6px;color:#c3d6df;background:#0c182444;font-size:11px}
 .hand-fan-close:hover{background:#314b5b}
 .hand-fan-cards{--fan-card-height:min(clamp(180px,29dvh,250px),var(--fan-room,250px));display:flex;flex:0 1 auto;min-height:0;align-items:flex-start;justify-content:safe center;overflow-x:auto;overflow-y:hidden;overscroll-behavior:contain;touch-action:pan-x;scrollbar-width:thin;scrollbar-color:#728d96 #11212a;padding:30px 34px 24px;scroll-padding-inline:34px}
@@ -57,12 +56,12 @@
 .hand-fan-cards .card-inspect{opacity:1;right:6px;top:6px;height:32px;width:32px;border-radius:5px}
 .hand-fan-cards .game-card.is-legal:hover,.hand-fan-cards .hand-card:hover,.hand-fan-cards .hand-card.is-selected{transform:none}
 .hand-fan-cards .empty-hand{height:var(--fan-card-height);display:flex;align-items:center;gap:9px}
-.hand-fan-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 17px 12px;color:#8ea8b5;font-size:9px;flex:0 0 auto}
+.hand-fan-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 17px 12px;color:#8ea8b5;font-size:10px;flex:0 0 auto}
 .hand-fan-footer>span{display:flex;gap:5px;align-items:center}
 .hand-fan-footer .hand-swipe-hint{display:none}
 @keyframes hand-tray-enter{from{opacity:0;translate:0 14px}to{opacity:1;translate:0 0}}
 @media(max-width:720px){
-  .hand-view-switch{min-height:36px;font-size:9px;padding:5px 7px}
+  .hand-view-switch{min-height:36px;font-size:10px;padding:5px 7px}
   .hand-view-classic .hand-heading{min-height:36px}
   .hand-view-classic .hand-heading>.battle-update{max-width:38%}
   .hand-view-classic .hand-heading>.play-hand-cue,.hand-view-classic .hand-heading>.resource-hand-cue{display:none}
@@ -81,8 +80,7 @@
   .hand-resource-status{gap:3px}
   .hand-resource-status>span{display:none}
   .hand-playable-status,.hand-selection-status{padding-left:7px}
-  .hand-fan-heading .eyebrow{font-size:9px}
-  .hand-fan-instruction{font-size:8px}
+  .hand-fan-heading .eyebrow{font-size:10px}
   .hand-fan-close{min-height:40px;min-width:36px;justify-content:center;padding:4px 7px}
   .hand-fan-close kbd,.hand-fan-close>span{display:none}
   .hand-navigation button{width:36px;height:40px}
@@ -93,7 +91,7 @@
   .hand-fan-cards .hand-card .game-card-name{font-size:16px}
   .hand-fan-cards .card-inspect{height:36px;width:36px;right:3px;top:3px}
   .hand-fan-cards .card-action-label{min-height:32px;font-size:10px}
-  .hand-fan-footer{font-size:8px;padding:8px 10px 11px}
+  .hand-fan-footer{font-size:10px;padding:8px 10px 11px}
   .hand-fan-footer{justify-content:center}
   .hand-fan-footer .hand-keyboard-hint{display:none}
   .hand-fan-footer .hand-swipe-hint{display:flex}
@@ -103,18 +101,17 @@
   .hand-fan-cards{--fan-card-height:min(clamp(100px,39dvh,165px),var(--fan-room,165px));padding-top:21px;padding-bottom:18px}
   .hand-fan-heading{padding-top:6px;padding-bottom:6px}
   .hand-fan-summary{flex-direction:column;align-items:flex-start;gap:4px}
-  .hand-fan-status{font-size:9px;gap:6px}
+  .hand-fan-status{font-size:10px;gap:6px}
   .hand-resource-value{font-size:11px}
   .hand-resource-status>span{display:none}
   .hand-navigation button{width:32px;height:32px}
   .hand-fan-close>span,.hand-fan-close kbd{display:none}
-  .hand-fan-heading .eyebrow{font-size:8px}
-  .hand-fan-instruction{font-size:8px}
+  .hand-fan-heading .eyebrow{font-size:10px}
   .hand-fan-close{min-height:30px}
   .hand-fan-footer{display:none}
   .hand-fan-cards .hand-card .game-card-name{font-size:13px;bottom:7px}
   .hand-fan-cards .hand-card:has(.card-action-label) .game-card-name{bottom:30px}
-  .hand-fan-cards .card-action-label{min-height:24px;font-size:9px;padding:4px}
+  .hand-fan-cards .card-action-label{min-height:24px;font-size:10px;padding:4px}
   .hand-fan-cards .card-cost{height:23px;min-width:23px;font-size:12px}
 }
 @media(min-width:600px) and (max-height:520px) and (max-width:1280px){

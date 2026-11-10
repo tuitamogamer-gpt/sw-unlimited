@@ -7,7 +7,7 @@
 .ci-rules-help>summary:focus-visible{outline:2px solid var(--gold,#d4b477);outline-offset:-3px;border-radius:5px}
 .ci-rules-help>summary>svg{flex-shrink:0;color:#aebd97}
 .ci-rules-help-content{padding:0 12px 13px}
-.ci-rules-help-content>p{margin:0 0 13px;color:#9bafbe;font-size:11px;line-height:1.65}
+.ci-rules-help-content>p{margin:0 0 13px;color:#9bafbe;font-size:12px;line-height:1.65}
 .ci-rules-help-content>dl{margin:0}
 .ci-rules-help-content>dl>div+div{border-top:1px solid #304659;padding-top:11px;margin-top:11px}
 .ci-rules-help-content dt{font-size:12px;font-weight:600;color:#d5dfdf;margin-bottom:4px}
