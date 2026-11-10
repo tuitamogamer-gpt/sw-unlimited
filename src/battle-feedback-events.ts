@@ -132,6 +132,31 @@ export function diffBattleSnapshots(before: BattleSnapshot | null, after: Battle
   return events;
 }
 
+export type DefeatedUnit = { id: string; card: Card; playerId: string; zone: 'ground' | 'space'; index: number };
+
+/** Units that stood in an arena in the earlier view and now lie in a public
+ * discard pile. The last public card face and its place in the lane are kept
+ * only so the table can show the unit leaving; nothing here is inferred from
+ * a hidden zone, and a unit that merely moved or changed sides is not listed. */
+export function defeatedUnits(before: GameView | null, after: GameView): DefeatedUnit[] {
+  if (!before || before === after || before.id !== after.id || before.viewerId !== after.viewerId || before.version > after.version) return [];
+  const standing = new Set<string>(), discarded = new Set<string>();
+  for (const player of Object.values(after.players)) {
+    for (const card of [...player.ground, ...player.space]) if (card?.uuid) standing.add(card.uuid);
+    for (const card of player.discard) if (card && !card.hidden && card.uuid) discarded.add(card.uuid);
+  }
+  const result: DefeatedUnit[] = [];
+  for (const [playerId, player] of Object.entries(before.players)) {
+    for (const zone of ['ground', 'space'] as const) {
+      player[zone].forEach((card, index) => {
+        if (!card || card.hidden || !card.uuid || standing.has(card.uuid) || !discarded.has(card.uuid)) return;
+        result.push({ id: `${after.id}:${after.version}:left:${card.uuid}`, card, playerId, zone, index });
+      });
+    }
+  }
+  return result;
+}
+
 /** A fresh response must not erase another card's still-running feedback. */
 export function mergeBattleEvents(current: readonly BattleEvent[], incoming: readonly BattleEvent[], now: number): BattleEvent[] {
   const active = new Map<string, BattleEvent>();

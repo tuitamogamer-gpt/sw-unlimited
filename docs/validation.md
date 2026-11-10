@@ -46,4 +46,5 @@ node scripts/browser-smoke.mjs
 ```
 
 Slike: [zapovjedništvo](screenshots/command.png),
-[bojište](screenshots/battle.png), [mobilni prikaz](screenshots/battle-mobile.png).
+[bojište](screenshots/battle.png), [mobilni prikaz](screenshots/battle-mobile.png),
+[razmjena štete](screenshots/combat.png).

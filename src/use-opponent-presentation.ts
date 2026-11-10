@@ -5,6 +5,11 @@ import { newOpponentPlays, newBattlePresentations, DAMAGE_PRESENTATION_MS, OPPON
 export function useOpponentPresentation() {
   const [preview, setPreview] = useState<PublicPlayEvent | null>(null);
   const [damagePreview, setDamagePreview] = useState<PublicDamageEvent[] | null>(null);
+  // Units still in an arena after the whole response. The duel uses it to tell
+  // a unit that really left play from one that only reached zero health.
+  const [survivorIds, setSurvivorIds] = useState<ReadonlySet<string>>(() => new Set());
+  // True while the exchange on screen is the last of its run of hits.
+  const [damageClosing, setDamageClosing] = useState(false);
   const current = useRef<{ id: string; timer?: ReturnType<typeof setTimeout>; resolve: (shown: boolean) => void } | null>(null);
   const mounted = useRef(true);
   useEffect(() => {
@@ -30,9 +35,12 @@ export function useOpponentPresentation() {
   const present = async (before: GameView, after: GameView, restored: boolean, showFrame: (view: GameView, revealed: PublicPlayEvent) => void) => {
     const plays = newOpponentPlays(before, after, restored);
     const steps = newBattlePresentations(before, after, restored);
+    if (steps.some(step => step.kind === 'damage')) {
+      setSurvivorIds(new Set(Object.values(after.players).flatMap(player => [...player.ground, ...player.space]).map(card => card.uuid)));
+    }
     const revealedIds = new Set<string>();
     let revealedPlays = 0;
-    for (const step of steps) {
+    for (const [index, step] of steps.entries()) {
       if (!mounted.current) return false;
       const shown = await new Promise<boolean>(resolve => {
         if (step.kind === 'play') {
@@ -43,6 +51,7 @@ export function useOpponentPresentation() {
           const item = { id: step.events[0].id, resolve, timer: undefined as ReturnType<typeof setTimeout> | undefined };
           current.current = item;
           setPreview(null);
+          setDamageClosing(steps[index + 1]?.kind !== 'damage');
           setDamagePreview(step.events);
           item.timer = setTimeout(() => {
             if (current.current !== item) return;
@@ -63,5 +72,5 @@ export function useOpponentPresentation() {
     setDamagePreview(null);
     return true;
   };
-  return { preview, damagePreview, present, onPreviewReady };
+  return { preview, damagePreview, damageClosing, survivorIds, present, onPreviewReady };
 }

@@ -58,9 +58,9 @@
 .card-fx-draw{--fx-color:#e9c982;--fx-wash:#e1bc6b30}
 .card-fx-draw>.card-fx-ring{animation:swu-entry-rim .46s ease-out}
 
-.battlefield .game-card{--entry-distance:8px;--entry-tilt:2deg;transform-origin:center 72%}
-.battlefield .game-card.enemy-card{--entry-distance:-8px;--entry-tilt:-2deg}
-.battlefield .game-card.is-new{animation:swu-card-enter .52s cubic-bezier(.18,.68,.22,1) both;z-index:4}
+.battlefield .game-card{--entry-distance:16px;--entry-tilt:3deg;transform-origin:center 72%}
+.battlefield .game-card.enemy-card{--entry-distance:-16px;--entry-tilt:-3deg}
+.battlefield .game-card.is-new{animation:swu-card-enter .56s cubic-bezier(.18,.68,.22,1) both;z-index:4}
 .battlefield .game-card.is-damaged:not(.is-new){animation:swu-card-hit .44s ease-out;z-index:4}
 .battlefield .game-card.is-healed:not(.is-new):not(.is-damaged){animation:swu-card-heal .68s ease-out}
 .battlefield .game-card.is-shield-hit:not(.is-new):not(.is-damaged){animation:swu-card-shield .62s ease-out}
@@ -72,12 +72,42 @@
 .card-fx-attach>.card-fx-icon{color:#eadfff;border-color:#c8b0fc8a;background:#382749df}
 .battlefield .base-panel:is(.is-damaged,.is-healed) .health-track>i{transition:width .42s cubic-bezier(.22,.8,.24,1)}
 
+/* While an exchange plays above the table, its real participants are ringed
+   where they stand: gold for the card that strikes, red for the one that is
+   hit. The ring is keyed per exchange and never moves the card under it. */
+.card-duel{--duel-ring:#ffd98a;--duel-glow:#ffc965e6;--duel-wash:#ffd58a66;position:absolute;inset:0;z-index:9;border:2px solid var(--duel-ring);border-radius:inherit;box-shadow:0 0 18px var(--duel-glow),inset 0 0 16px var(--duel-wash);opacity:0;pointer-events:none!important;animation:swu-duel-mark 1600ms ease-out both}
+.card-duel-hit{--duel-ring:#ffa08f;--duel-glow:#ff6b55e6;--duel-wash:#ff7a6680;animation-name:swu-duel-mark-hit}
+.card-duel-clash{animation-name:swu-duel-mark-clash}
+.game-card.has-status-pocket>.card-duel{border-radius:4px}
+/* Outlines of legal choices belong to a decision that was already made; while
+   its result plays out only the two participants stay marked. */
+.is-dueling .game-card.is-legal,.is-dueling .base-panel.is-legal,.is-dueling .leader-mini.is-legal{border-color:#3a4f61!important;box-shadow:none!important}
+.is-dueling .game-card .card-action-label,.is-dueling .base-target-label,.is-dueling .leader-action-hint{opacity:.4}
+
+/* When the table catches up with an exchange, the damage counter lands on the
+   card like a token being put down and the health value shows that it changed.
+   No second hit is played: the exchange above the table already showed it. */
+.game-card .stat-damage.damage-counter.is-raised{animation:swu-counter-land .62s cubic-bezier(.2,.8,.3,1) both}
+.game-card .stat-health.is-lowered{animation:swu-health-drop .9s ease-out both}
+.battlefield .base-health.is-lowered>strong{display:inline-block;transform-origin:0 70%;animation:swu-base-health-drop .9s ease-out both}
+
+/* A defeated unit is drawn once more where it stood, then lets its lane close. */
+.defeat-ghost{display:none}
+@supports (height:1cqh){
+  .arena-side>.defeat-ghost{--unit-height:min(100cqh,var(--unit-max,236px),max(var(--unit-min,84px),calc((100cqw - (var(--lane-units,1) - 1) * 9px) / var(--lane-units,1) / .715)));--ghost-width:calc(var(--unit-height) * .715);--ghost-drop:10px;--ghost-tilt:5deg;display:block;position:relative;flex:0 0 auto;height:var(--unit-height);width:var(--ghost-width);pointer-events:none!important;animation:swu-ghost-lane .76s cubic-bezier(.5,0,.3,1) both}
+  .arena-side>.defeat-ghost.enemy-ghost{--ghost-drop:-10px;--ghost-tilt:-5deg}
+}
+.defeat-ghost-face{position:absolute;inset:0 0 calc(clamp(12px,calc(var(--unit-height) * .1),18px) + 2px);overflow:hidden;border:1px solid #e08a7a;border-radius:6px;background:#101c27;box-shadow:0 0 14px #ff6b5566;transform-origin:50% 80%;animation:swu-ghost-fall .76s cubic-bezier(.3,0,.6,1) both}
+.defeat-ghost-face>img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 34%}
+.defeat-ghost-flash{position:absolute;inset:0 0 calc(clamp(12px,calc(var(--unit-height) * .1),18px) + 2px);border-radius:6px;background:radial-gradient(circle at 50% 40%,#fff3e0e6,#ff8a6a99 45%,transparent 80%);mix-blend-mode:screen;opacity:0;animation:swu-ghost-flash .76s ease-out both}
+.defeat-ghost-mark{position:absolute;inset:0;margin:auto;color:#ffb3a6;filter:drop-shadow(0 2px 4px #000);opacity:0;animation:swu-ghost-mark .76s ease-out both}
+
 .arena-midline{position:relative;overflow:visible}
 .arena-defeat-token{position:absolute;top:50%;left:50%;max-width:calc(100% - 18px);display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:4px 9px;border:1px solid #bc727885;border-radius:12px;background:#491f2ae8;box-shadow:0 3px 12px #0008;color:#ffdddb;font-size:9px;line-height:1.15;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transform:translate(-50%,-50%);pointer-events:none;z-index:8;animation:swu-defeat-note 1.85s ease-out both}
 .arena-defeat-token>svg{height:11px;width:11px;flex:0 0 auto}
 .arena-defeat-token>span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
-@keyframes swu-card-enter{0%{transform:translateY(var(--entry-distance)) rotate(var(--entry-tilt)) scale(.9);opacity:.3;box-shadow:0 8px 20px #0008}45%{transform:translateY(-1px) rotate(-.5deg) scale(1.015);opacity:1;box-shadow:0 9px 17px #0007}75%{transform:translateY(1px) rotate(0) scale(.996)}100%{transform:translateY(0) rotate(0) scale(1);opacity:1;box-shadow:0 3px 10px #0004}}
+@keyframes swu-card-enter{0%{transform:translateY(var(--entry-distance)) rotate(var(--entry-tilt)) scale(.84);opacity:0;box-shadow:0 12px 24px #0009;filter:brightness(1.5)}42%{transform:translateY(-1px) rotate(-.5deg) scale(1.025);opacity:1;box-shadow:0 10px 18px #0008;filter:brightness(1.18)}72%{transform:translateY(1px) rotate(0) scale(.994);filter:none}100%{transform:translateY(0) rotate(0) scale(1);opacity:1;box-shadow:0 3px 10px #0004;filter:none}}
 @keyframes swu-card-draw{0%{transform:translate(9px,7px) rotate(3deg) scale(.9);opacity:.25}65%{transform:translate(0,-1px) rotate(-.4deg) scale(1.01);opacity:1}100%{transform:translate(0,0) rotate(0) scale(1);opacity:1}}
 @keyframes swu-card-hit{0%,100%{transform:translateX(0) rotate(0)}15%{transform:translateX(-2px) rotate(-1deg)}32%{transform:translateX(2px) rotate(.8deg)}52%{transform:translateX(-1px) rotate(-.4deg)}72%{transform:translateX(.5px) rotate(.2deg)}}
 @keyframes swu-base-hit{0%,100%{transform:translateX(0)}20%{transform:translateX(-2px)}40%{transform:translateX(2px)}65%{transform:translateX(-1px)}}
@@ -92,6 +122,16 @@
 @keyframes swu-shield-spark{0%{opacity:0;transform:scale(.75) rotate(0)}24%{opacity:1}100%{opacity:0;transform:scale(1.45) rotate(18deg)}}
 @keyframes swu-entry-rim{0%{opacity:0;transform:scale(.92)}35%{opacity:.85;transform:scale(1)}100%{opacity:0;transform:scale(1.035)}}
 @keyframes swu-card-sheen{0%{opacity:0;transform:translateX(-30%)}30%{opacity:.75}100%{opacity:0;transform:translateX(30%)}}
+@keyframes swu-duel-mark{0%{opacity:0;transform:scale(1.1)}9%{opacity:1;transform:scale(1)}20%{opacity:1;transform:scale(1)}27%{opacity:1;transform:scale(1.06)}40%{opacity:.85;transform:scale(1)}86%{opacity:.85}100%{opacity:0}}
+@keyframes swu-duel-mark-hit{0%{opacity:0}9%,26%{opacity:.55;transform:scale(1)}28.5%{opacity:1;transform:scale(1.08)}42%{opacity:.9;transform:scale(1)}86%{opacity:.9}100%{opacity:0}}
+@keyframes swu-duel-mark-clash{0%{opacity:0;transform:scale(1.1)}9%,26%{opacity:1;transform:scale(1);border-color:#ffd98a;box-shadow:0 0 18px #ffc965e6,inset 0 0 16px #ffd58a66}28.5%{opacity:1;transform:scale(1.08);border-color:#ffa08f;box-shadow:0 0 18px #ff6b55e6,inset 0 0 16px #ff7a6680}42%{opacity:.9;transform:scale(1);border-color:#ffa08f;box-shadow:0 0 18px #ff6b55e6,inset 0 0 16px #ff7a6680}86%{opacity:.9;border-color:#ffa08f;box-shadow:0 0 18px #ff6b55e6,inset 0 0 16px #ff7a6680}100%{opacity:0;border-color:#ffa08f;box-shadow:0 0 18px #ff6b55e6,inset 0 0 16px #ff7a6680}}
+@keyframes swu-counter-land{0%{opacity:0;transform:translateY(-70%) scale(2.2)}34%{opacity:1;transform:translateY(0) scale(.86);box-shadow:inset 0 1px 0 #ffc4ac26,0 0 0 4px #ff8a7359,0 1px 2px #0009}58%{transform:scale(1.14)}100%{opacity:1;transform:none}}
+@keyframes swu-health-drop{0%,45%{color:#ffa596;text-shadow:0 0 8px #ff6b55}100%{text-shadow:none}}
+@keyframes swu-base-health-drop{0%{transform:scale(1.22);color:#ffb3a6;text-shadow:0 0 10px #ff6b55}40%{transform:scale(.97);color:#ffb3a6}100%{transform:none;text-shadow:none}}
+@keyframes swu-ghost-lane{0%,58%{width:var(--ghost-width);margin-inline:0}100%{width:0;margin-inline:-4px}}
+@keyframes swu-ghost-fall{0%{opacity:1;transform:none;filter:none}12%{transform:translateX(-3px) rotate(-2deg)}22%{transform:translateX(3px) rotate(1.5deg);filter:saturate(.6) brightness(1.12)}32%{opacity:1;transform:none;filter:grayscale(.85) brightness(.78)}64%,100%{opacity:0;transform:translateY(var(--ghost-drop)) rotate(var(--ghost-tilt)) scale(.86);filter:grayscale(1) brightness(.5)}}
+@keyframes swu-ghost-flash{0%{opacity:.9}26%,100%{opacity:0}}
+@keyframes swu-ghost-mark{0%{opacity:0;transform:scale(1.8)}14%{opacity:1;transform:scale(1)}40%{opacity:1;transform:scale(1)}60%,100%{opacity:0;transform:scale(.9)}}
 @keyframes swu-defeat-note{0%{opacity:0;transform:translate(-50%,-40%) scale(.94)}16%,76%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-68%) scale(.98)}}
 
 @media(max-width:720px){
@@ -127,6 +167,9 @@
   .card-fx-value,.card-fx-icon{opacity:1;transform:translate(-50%,-50%)}
   .card-fx-label{opacity:1;transform:none}
   .arena-defeat-token{opacity:1;transform:translate(-50%,-50%)}
+  .card-duel{animation:none!important;opacity:.9}
+  .game-card .stat-damage.damage-counter.is-raised,.game-card .stat-health.is-lowered,.battlefield .base-health.is-lowered>strong{animation:none!important}
+  .defeat-ghost,.arena-side>.defeat-ghost{display:none!important}
   .game-card .game-card-click img,.battlefield .leader-mini img,.battlefield .base-panel:is(.is-damaged,.is-healed) .health-track>i{transition:none}
 }
 

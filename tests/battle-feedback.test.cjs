@@ -15,6 +15,7 @@ compiled._compile(ts.transpileModule(fs.readFileSync(filename, 'utf8'), {
 }).outputText, filename);
 const {
   captureBattleSnapshot,
+  defeatedUnits,
   diffBattleSnapshots,
   mergeBattleEvents,
   summarizeBattleEvents,
@@ -272,4 +273,42 @@ test('native damage presentation does not repeat an aggregate hit after its indi
   assert.deepEqual(diff(before, after), [], 'A resolved native timeline already explained these hits.');
   after.players.bot.ground = [card('new-unit', { damage: 2 })];
   assert.deepEqual(kinds(diff(before, after)), ['enter'], 'Entry feedback survives without replaying damage.');
+});
+
+test('a defeated unit keeps its last public face and lane position only when it reached a public discard', () => {
+  const before = game(80);
+  before.players.human.ground = [card('survivor'), card('destroyed', { damage: 2 }), card('bounced'), card('moved')];
+  before.players.bot.space = [card('enemy-wing'), card('enemy-destroyed')];
+  const after = game(81);
+  after.players.human.ground = [card('survivor')];
+  after.players.human.space = [card('moved')];
+  after.players.human.hand = [card('bounced')];
+  after.players.human.discard = [card('destroyed', { zone: 'discard' })];
+  after.players.bot.space = [card('enemy-wing')];
+  after.players.bot.discard = [card('enemy-destroyed', { zone: 'discard' })];
+  const units = defeatedUnits(before, after);
+  assert.deepEqual(units.map(unit => [unit.card.uuid, unit.playerId, unit.zone, unit.index]), [
+    ['destroyed', 'human', 'ground', 1], ['enemy-destroyed', 'bot', 'space', 1],
+  ]);
+  assert.equal(units[0].card.damage, 2, 'The face shown leaving is the one that stood on the table.');
+  assert.equal(new Set(units.map(unit => unit.id)).size, 2);
+});
+
+test('nothing is shown leaving on load, in another game, on a rewind, or from a hidden discard', () => {
+  const before = game(90);
+  before.players.human.ground = [card('destroyed')];
+  const after = game(91);
+  after.players.human.discard = [card('destroyed', { zone: 'discard' })];
+  assert.equal(defeatedUnits(before, after).length, 1);
+  assert.deepEqual(defeatedUnits(null, after), []);
+  assert.deepEqual(defeatedUnits(after, after), []);
+  assert.deepEqual(defeatedUnits(before, { ...after, id: 'game-b' }), []);
+  assert.deepEqual(defeatedUnits(before, { ...after, viewerId: 'bot' }), []);
+  assert.deepEqual(defeatedUnits(before, { ...after, version: 89 }), []);
+  const concealed = game(91);
+  concealed.players.human.discard = [card('destroyed', { hidden: true })];
+  assert.deepEqual(defeatedUnits(before, concealed), []);
+  const frame = game(90);
+  frame.players.human.discard = [card('destroyed', { zone: 'discard' })];
+  assert.equal(defeatedUnits(before, frame).length, 1, 'A later presentation frame of the same response still shows the unit leaving.');
 });

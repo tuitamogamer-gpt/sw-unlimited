@@ -106,10 +106,17 @@ shrink as a lane fills up, and scroll only when a lane is truly crowded.
 **Compact cards** in Settings keeps units and hand cards smaller. Viewing your
 resources shows which are ready and which are exhausted.
 
-Damage resolves visually in 1.6-second exchanges with the source and target
-cards, directional bolts, and exact damage numbers. Combat shows both directions
-together and identifies the defender's return damage. Card abilities appear as
-separate **Ability damage** effects, so they cannot be confused with combat.
+Damage resolves in 1.6-second exchanges staged above the dimmed table. In
+combat the attacker winds up and strikes; when the defender deals damage back,
+the two cards meet in the middle. A struck card flashes, recoils, and shows the
+exact damage, and its health changes from the earlier value to the new one. A
+unit that leaves play is stamped **Defeated**, a base at zero **Destroyed**, and
+a dot beside each role shows whose card it is. Card abilities are separate
+**Ability damage** exchanges that fire a projectile instead of striking, so they
+cannot be confused with combat. On the table the real participants are ringed
+while the exchange plays; when it ends, damage counters land on their cards, base
+health counts down, and a defeated unit is shown leaving its lane. With reduced
+motion the same result appears at once, without movement.
 
 Each opponent play first appears as a large, full-color card for three seconds,
 then its card appears on the table. Consecutive plays are shown in order, with

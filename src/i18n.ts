@@ -454,7 +454,7 @@ const copy: Array<[string, string, ...string[]]> = [
   ['Ambush is only available when this unit enters play with a legal target. It does not make the unit ready.', 'Ambush je dostupan samo pri ulasku ove jedinice u igru uz dozvoljenu metu. Ne čini jedinicu spremnom.'],
   ['Ambush is active. Choose a highlighted enemy unit to attack.', 'Ambush je aktivan. Izaberi označenu protivničku jedinicu za napad.'],
   ['Joining the battlefield', 'Ulazi na bojište'], ['Resolving card', 'Razrešavanje karte'],
-  ['Shield lost', 'Štit je izgubljen'], ['Defeated', 'Poraženo'], ['{card} defeated', 'Poražena karta: {card}'],
+  ['Shield lost', 'Štit je izgubljen'], ['Defeated', 'Poraženo'], ['Destroyed', 'Uništeno'], ['{card} defeated', 'Poražena karta: {card}'],
   ['captured', 'zarobljeno', 'zarobljeno'],
   ['Orders', 'Naredbe', 'Naredbe'],
   ['GAME OVER', 'KRAJ PARTIJE', 'KRAJ PARTIJE'],

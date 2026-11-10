@@ -137,10 +137,11 @@ suppression, and portrait/landscape bounds. Reports and screenshots go to
 skipping, no eligible enemy, bot handling, and the HTTP prompt metadata.
 
 Damage now has an ordered, 1.6-second presentation with source and target
-artwork, directional bolts, impact flashes, and exact damage numbers. Both
-combat directions share one exchange; the defender's return damage is labeled
-explicitly. Ability, Overwhelm, and excess damage remain separate. Exchanges
-with more than four hits use consecutive panels so no damage event is omitted.
+artwork, impact flashes, and exact damage numbers; see *Combat animation* below
+for how each exchange is staged. Both combat directions share one exchange; the
+defender's return damage is labeled explicitly. Ability, Overwhelm, and excess
+damage remain separate. Exchanges with more than four hits use consecutive
+panels so no damage event is omitted.
 Native plays and damage share an ordering counter, preserving the three-second
 opponent spotlight in its proper place among damage effects.
 
@@ -204,3 +205,45 @@ The app ships a favicon, a touch icon and social metadata.
 
 Reproduce with the same suites listed above; `npm run test:ui` additionally
 covers the 1024 × 600 and 1440 × 900 single-bar layouts.
+
+## Combat animation
+
+Each damage exchange is a short duel on a stage above the dimmed table
+(`src/components/DamagePresentation.tsx`, `damage-presentation.css`). The two
+cards face each other across a gap of known width, so motion is exact at every
+size: the attacker winds up for about 140 ms, crosses the gap in about 120 ms
+and returns; a card that is only hit recoils; and when both cards deal combat
+damage they meet in the middle. Impact, at about 430 ms, brings a flash, a ring,
+sparks, a slash for combat, a short shake of the stage, and the damage number.
+Ability, Overwhelm and other non-combat damage keep their source in place and
+send a projectile across the gap instead. Several sources or targets use one
+row per real hit, and the rows land one after another.
+
+Everything shown is read from the native damage events. Each event's card
+snapshot is taken after its own hit and before a defeated card leaves play, so
+the health line shows the earlier value struck through beside the real value
+that follows it, with no estimation. A unit at zero health is stamped
+**Defeated** only if it is also absent from both arenas once the whole response
+has resolved; a base at zero is stamped **Destroyed**. The dot beside each role
+uses the same colours as the two command labels on the table. The dimming stays
+in place for a run of consecutive hits and lifts with the last one.
+
+On the table (`battle-motion.css`, `src/battle-duel.ts`) the real participants
+are ringed while their exchange plays: gold for a card that strikes, red for a
+card that is hit, gold turning red for a card that does both. Outlines of legal
+choices are muted meanwhile, because that choice has already been made. When
+the table catches up, a damage counter lands on its card like a token being put
+down, the health value shows that it changed, base health counts down, and a
+defeated unit keeps its place for about three quarters of a second while it is
+shown leaving, after which the lane closes up. No second hit is played on the
+table and no aggregate damage number returns.
+
+Every element rests in its final, readable state and the keyframes only describe
+how it gets there. With `prefers-reduced-motion` nothing moves: the exchange
+shows its result at once, the rings are static, and a defeated unit simply
+leaves. The 1.6-second timing, the event order and the input lock are unchanged.
+
+`tests/battle-duel.test.cjs` covers which cards are marked, and
+`tests/battle-feedback.test.cjs` covers which units are shown leaving. The
+`test:damage-ui` and `test:motion-ui` suites above run against the new
+presentation without changes.

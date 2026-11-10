@@ -1,11 +1,55 @@
 import { createContext, useEffect, useRef, useState } from 'react';
 import type { GameView } from './types';
-import { captureBattleSnapshot, diffBattleSnapshots, latestBattleMessage, mergeBattleEvents, summarizeBattleEvents } from './battle-feedback-events';
-import type { BattleFeedback, BattleSnapshot } from './battle-feedback-events';
+import { captureBattleSnapshot, defeatedUnits, diffBattleSnapshots, latestBattleMessage, mergeBattleEvents, summarizeBattleEvents } from './battle-feedback-events';
+import type { BattleFeedback, BattleSnapshot, DefeatedUnit } from './battle-feedback-events';
+import type { Duel } from './battle-duel';
 export type { BattleEvent, BattleFeedback } from './battle-feedback-events';
 
 const empty: BattleFeedback = summarizeBattleEvents([]);
 export const BattleFeedbackContext = createContext<BattleFeedback>(empty);
+/** The exchange currently shown above the table, if any. */
+export const DuelContext = createContext<Duel | null>(null);
+
+export const DEFEAT_GHOST_MS = 760;
+export type DefeatGhost = DefeatedUnit & { expiresAt: number };
+
+/** Keeps a defeated unit's last public face for a moment after the table
+ * updates, so it can be shown leaving its lane. State is derived while
+ * rendering: the lane never paints one frame without the unit and the next
+ * with it. A new game, a resume or a rewind starts clean. */
+export function useDefeatGhosts(game: GameView, resetKey?: unknown): readonly DefeatGhost[] {
+  const [state, setState] = useState<{ game: GameView; resetKey: unknown; ghosts: DefeatGhost[] }>(() => ({ game, resetKey, ghosts: [] }));
+  let current = state;
+  if (state.game !== game || state.resetKey !== resetKey) {
+    const continuous = state.resetKey === resetKey && state.game.id === game.id;
+    const now = Date.now();
+    const kept = continuous ? state.ghosts.filter(ghost => ghost.expiresAt > now) : [];
+    const fresh = continuous ? defeatedUnits(state.game, game).filter(unit => !kept.some(ghost => ghost.card.uuid === unit.card.uuid)) : [];
+    current = { game, resetKey, ghosts: [...kept, ...fresh.map(unit => ({ ...unit, expiresAt: now + DEFEAT_GHOST_MS }))] };
+    setState(current);
+  }
+  const ghosts = current.ghosts;
+  useEffect(() => {
+    if (!ghosts.length) return;
+    const expiresAt = Math.min(...ghosts.map(ghost => ghost.expiresAt));
+    const timer = setTimeout(() => setState(old => ({ ...old, ghosts: old.ghosts.filter(ghost => ghost.expiresAt > Date.now()) })), Math.max(0, expiresAt - Date.now()) + 16);
+    return () => clearTimeout(timer);
+  }, [ghosts]);
+  return ghosts;
+}
+
+/** Counts increases after the first render. A token keyed by this number
+ * restarts its own short animation when its value grows, and stays still on
+ * load, on resume and when an arena tab is switched. */
+export function useRise(value: number): number {
+  const previous = useRef(value);
+  const [rises, setRises] = useState(0);
+  useEffect(() => {
+    if (value > previous.current) setRises(count => count + 1);
+    previous.current = value;
+  }, [value]);
+  return rises;
+}
 
 /** Feedback compares only the already redacted, visible boards. */
 export function useBattleFeedback(game: GameView, { resetKey, presentationRevision }: { resetKey?: unknown; presentationRevision?: number } = {}): BattleFeedback {

@@ -1,7 +1,9 @@
 import { useContext } from 'react';
 import { ArrowUpRight, Shield, X } from 'lucide-react';
-import { BattleFeedbackContext } from '../battle-feedback';
+import { BattleFeedbackContext, DuelContext } from '../battle-feedback';
+import type { Card } from '../types';
 import { t } from '../i18n';
+import { cardImage } from './CardArtwork';
 
 /** Stable cards keep focus; only the brief visual effects remount on each hit. */
 export function CardEffects({ cardId }: { cardId: string }) {
@@ -30,4 +32,24 @@ export function ArenaDefeats({ kind }: { kind: 'ground' | 'space' }) {
     title={t('{card} defeated', { card: latest.cardName || t('Unit') })}>
     <X size={11} /><span>{t('Defeated')} · {latest.cardName || t('Unit')}{defeats.length > 1 ? ` +${defeats.length - 1}` : ''}</span>
   </span>;
+}
+
+/** Rings a card that takes part in the exchange shown above the table. The
+ * ring is keyed per exchange, so a card hit twice in a row is marked twice,
+ * and it never moves or resizes the card it sits on. */
+export function DuelMark({ cardId }: { cardId?: string }) {
+  const duel = useContext(DuelContext);
+  const role = cardId ? duel?.roles[cardId] : undefined;
+  if (!duel || !role) return null;
+  return <i key={duel.key} className={`card-duel card-duel-${role}`} data-duel-role={role} aria-hidden="true" />;
+}
+
+/** The last public face of a unit that was just defeated, drawn where it stood. */
+export function DefeatGhost({ card, enemy = false }: { card: Card; enemy?: boolean }) {
+  const image = cardImage(card);
+  return <div className={`defeat-ghost${enemy ? ' enemy-ghost' : ''}`} aria-hidden="true">
+    <span className="defeat-ghost-face">{image && <img src={image} alt="" loading="eager" decoding="sync" draggable={false} />}</span>
+    <i className="defeat-ghost-flash" />
+    <X className="defeat-ghost-mark" size={30} strokeWidth={2.4} />
+  </div>;
 }

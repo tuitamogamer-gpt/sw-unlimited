@@ -1284,12 +1284,12 @@ body:has(.app.in-game){overflow:hidden;overscroll-behavior:none}
    the fallback for browsers without container units. */
 @supports (height:1cqh){
   .arena-side{container-type:size}
-  .arena-side:has(>.game-card:nth-child(2)){--lane-units:2}
-  .arena-side:has(>.game-card:nth-child(3)){--lane-units:3}
-  .arena-side:has(>.game-card:nth-child(4)){--lane-units:4}
-  .arena-side:has(>.game-card:nth-child(5)){--lane-units:5}
-  .arena-side:has(>.game-card:nth-child(6)){--lane-units:6}
-  .arena-side:has(>.game-card:nth-child(7)){--lane-units:7}
-  .arena-side:has(>.game-card:nth-child(8)){--lane-units:8}
+  .arena-side:has(>:is(.game-card,.defeat-ghost):nth-child(2)){--lane-units:2}
+  .arena-side:has(>:is(.game-card,.defeat-ghost):nth-child(3)){--lane-units:3}
+  .arena-side:has(>:is(.game-card,.defeat-ghost):nth-child(4)){--lane-units:4}
+  .arena-side:has(>:is(.game-card,.defeat-ghost):nth-child(5)){--lane-units:5}
+  .arena-side:has(>:is(.game-card,.defeat-ghost):nth-child(6)){--lane-units:6}
+  .arena-side:has(>:is(.game-card,.defeat-ghost):nth-child(7)){--lane-units:7}
+  .arena-side:has(>:is(.game-card,.defeat-ghost):nth-child(8)){--lane-units:8}
   .arena-side>.unit-card{--unit-height:min(100cqh,var(--unit-max,236px),max(var(--unit-min,84px),calc((100cqw - (var(--lane-units,1) - 1) * 9px) / var(--lane-units,1) / .715)));height:var(--unit-height);width:calc(var(--unit-height) * .715);max-height:none}
 }

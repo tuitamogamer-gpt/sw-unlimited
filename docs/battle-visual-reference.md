@@ -78,10 +78,13 @@ avoid constant glow on every card. Damage numbers and the Exhausted label must
 remain distinguishable despite sharing red.
 
 Animate confirmed game-state changes, keeping controls and targeting hitboxes
-stable. Selection can lift 3 px over 120–180 ms; an attack can lunge 10–18 px
-toward its actual target over 180–240 ms, followed by a brief impact ring and
-damage update. Fade defeated cards in 150–220 ms; flip a deploying leader in
-220–300 ms. Exhaustion can desaturate over 200 ms while the small token appears.
-Queue effects so multiple bot actions remain understandable. With
-`prefers-reduced-motion`, remove travel, shaking and 3D flips and use instant
-updates or short opacity fades.
+stable. Selection can lift 3 px over 120–180 ms. Cards on the table are not
+moved to show an attack: the strike is played on the exchange stage above the
+table, where the attacker winds up for about 140 ms, crosses the gap to its
+actual target in about 120 ms, and an impact ring, sparks and the damage number
+follow. On the table itself the participants are only ringed, a damage counter
+lands like a token being put down, and a defeated unit leaves its lane over
+about 0.75 s. Flip a deploying leader in 220–300 ms. Exhaustion can desaturate
+over 200 ms while the small token appears. Queue effects so multiple bot
+actions remain understandable. With `prefers-reduced-motion`, remove travel,
+shaking and 3D flips and show the result at once.
