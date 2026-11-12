@@ -118,6 +118,13 @@ while the exchange plays; when it ends, damage counters land on their cards, bas
 health counts down, and a defeated unit is shown leaving its lane. With reduced
 motion the same result appears at once, without movement.
 
+Hits of five damage or more, and hits that remove a card, land harder, and a hit
+on your own base flashes the edges of the screen. Each round opens with a short
+banner across the arenas while the round number ticks over in the top bar. The
+initiative token rings when it changes hands, resource pips fade between spent
+and ready, a deployed leader arrives in gold, and the end of a match has its own
+entrance. None of these takes input or delays a decision.
+
 Each opponent play first appears as a large, full-color card for three seconds,
 then its card appears on the table. Consecutive plays are shown in order, with
 actions paused until the sequence finishes. On phones, the destination arena

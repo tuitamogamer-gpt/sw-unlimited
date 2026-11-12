@@ -238,12 +238,28 @@ defeated unit keeps its place for about three quarters of a second while it is
 shown leaving, after which the lane closes up. No second hit is played on the
 table and no aggregate damage number returns.
 
+Impact scales with the hit. Five damage or more, or a hit that removes a card,
+shakes the stage further, brings the number in larger and echoes the ring. When
+the viewer's own base is the target, a red vignette pulses at the edges of the
+screen at the moment of impact.
+
+Around the exchanges the table marks its own rhythm. When an action phase
+begins, a band with the round number sweeps open across the arenas for a second
+and a half and the round number in the top bar ticks over; it is decoration
+over that label, takes no input and is hidden from assistive technology. The
+initiative token rings when it changes hands, resource pips fade between spent
+and ready, and a deployed leader enters with a gold rim. The end-of-game dialog
+lands its emblem first and then its words, with slow rays around a win. None of
+these runs when a game is loaded or resumed (`useRoundCue` and `useRise` in
+`src/battle-feedback.tsx` only react to a change they have seen happen).
+
 Every element rests in its final, readable state and the keyframes only describe
 how it gets there. With `prefers-reduced-motion` nothing moves: the exchange
 shows its result at once, the rings are static, and a defeated unit simply
 leaves. The 1.6-second timing, the event order and the input lock are unchanged.
 
 `tests/battle-duel.test.cjs` covers which cards are marked, and
-`tests/battle-feedback.test.cjs` covers which units are shown leaving. The
+`tests/battle-feedback.test.cjs` covers which units are shown leaving and when
+a round is announced. The
 `test:damage-ui` and `test:motion-ui` suites above run against the new
 presentation without changes.

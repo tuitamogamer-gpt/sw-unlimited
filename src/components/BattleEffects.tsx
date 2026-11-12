@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { ArrowUpRight, Shield, X } from 'lucide-react';
 import { BattleFeedbackContext, DuelContext } from '../battle-feedback';
 import type { Card } from '../types';
-import { t } from '../i18n';
+import { phaseName, t } from '../i18n';
 import { cardImage } from './CardArtwork';
 
 /** Stable cards keep focus; only the brief visual effects remount on each hit. */
@@ -51,5 +51,14 @@ export function DefeatGhost({ card, enemy = false }: { card: Card; enemy?: boole
     <span className="defeat-ghost-face">{image && <img src={image} alt="" loading="eager" decoding="sync" draggable={false} />}</span>
     <i className="defeat-ghost-flash" />
     <X className="defeat-ghost-mark" size={30} strokeWidth={2.4} />
+  </div>;
+}
+
+/** Announces a new round across the arenas. It is decoration over the round
+ * label in the top bar, so it takes no input and is hidden from assistive
+ * technology. */
+export function RoundBanner({ round }: { round: number }) {
+  return <div className="round-banner" data-round-banner={round} aria-hidden="true">
+    <span className="round-banner-copy"><small>{t('ROUND')}</small><strong>{String(round).padStart(2, '0')}</strong><i /><em>{phaseName('action')}</em></span>
   </div>;
 }

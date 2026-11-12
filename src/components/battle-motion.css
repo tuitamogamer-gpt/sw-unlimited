@@ -102,6 +102,30 @@
 .defeat-ghost-flash{position:absolute;inset:0 0 calc(clamp(12px,calc(var(--unit-height) * .1),18px) + 2px);border-radius:6px;background:radial-gradient(circle at 50% 40%,#fff3e0e6,#ff8a6a99 45%,transparent 80%);mix-blend-mode:screen;opacity:0;animation:swu-ghost-flash .76s ease-out both}
 .defeat-ghost-mark{position:absolute;inset:0;margin:auto;color:#ffb3a6;filter:drop-shadow(0 2px 4px #000);opacity:0;animation:swu-ghost-mark .76s ease-out both}
 
+/* A new round is announced where the units stand. The band sweeps open from
+   the middle, holds its line and fades; it never takes input, and the round
+   label in the top bar remains the real source. */
+.arenas{position:relative}
+.round-banner{position:absolute;left:0;right:0;top:50%;z-index:12;display:flex;align-items:center;justify-content:center;height:clamp(44px,15%,72px);translate:0 -50%;background:linear-gradient(90deg,transparent,#08111cf2 16%,#0b1622f5 50%,#08111cf2 84%,transparent);box-shadow:0 0 34px #02060d99;opacity:0;pointer-events:none!important;user-select:none;animation:swu-round-banner 1500ms cubic-bezier(.2,.7,.2,1) both}
+.round-banner:before,.round-banner:after{content:'';position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#e7b95d 22%,#fff0c4 50%,#e7b95d 78%,transparent)}
+.round-banner:before{top:0}
+.round-banner:after{bottom:0}
+.round-banner-copy{display:flex;align-items:center;gap:clamp(8px,1.6vw,16px);color:#f3e3bb;white-space:nowrap;animation:swu-round-copy 1500ms cubic-bezier(.2,.7,.2,1) both}
+.round-banner-copy>small{font-size:clamp(10px,1.3vw,13px);font-weight:600;letter-spacing:.34em;color:#c9b27e}
+.round-banner-copy>strong{font-family:var(--condensed,'Arial Narrow',sans-serif);font-size:clamp(30px,5.2vw,48px);font-weight:600;line-height:1;color:var(--gold,#e7b95d);text-shadow:0 0 18px #e7b95d59}
+.round-banner-copy>i{width:1px;height:clamp(18px,3vw,26px);background:#e7b95d80}
+.round-banner-copy>em{font-size:clamp(10px,1.3vw,13px);font-style:normal;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#d9e4ec}
+.round-label>strong.is-raised{display:inline-block;animation:swu-round-tick .7s cubic-bezier(.2,.8,.3,1) both}
+
+/* Small answers on the table: the initiative token rings when it changes
+   hands, resource pips fade between spent and ready, and a deployed leader
+   arrives in gold. None of them runs when a game is loaded. */
+.initiative>div.is-gained{animation:swu-initiative-gain .8s cubic-bezier(.2,.8,.3,1) both}
+.game-shell .resource-pips>i{transition:background-color .28s ease-out,box-shadow .28s ease-out}
+.battlefield .game-card.is-leader-unit.is-new{animation-duration:.72s}
+.game-card.is-leader-unit .card-fx-enter{--fx-color:#ffe0a0;--fx-wash:#e7b95d73}
+.game-card.is-leader-unit .card-fx-enter>.card-fx-ring{border-width:3px;animation-duration:.86s}
+
 .arena-midline{position:relative;overflow:visible}
 .arena-defeat-token{position:absolute;top:50%;left:50%;max-width:calc(100% - 18px);display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:4px 9px;border:1px solid #bc727885;border-radius:12px;background:#491f2ae8;box-shadow:0 3px 12px #0008;color:#ffdddb;font-size:9px;line-height:1.15;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transform:translate(-50%,-50%);pointer-events:none;z-index:8;animation:swu-defeat-note 1.85s ease-out both}
 .arena-defeat-token>svg{height:11px;width:11px;flex:0 0 auto}
@@ -132,6 +156,10 @@
 @keyframes swu-ghost-fall{0%{opacity:1;transform:none;filter:none}12%{transform:translateX(-3px) rotate(-2deg)}22%{transform:translateX(3px) rotate(1.5deg);filter:saturate(.6) brightness(1.12)}32%{opacity:1;transform:none;filter:grayscale(.85) brightness(.78)}64%,100%{opacity:0;transform:translateY(var(--ghost-drop)) rotate(var(--ghost-tilt)) scale(.86);filter:grayscale(1) brightness(.5)}}
 @keyframes swu-ghost-flash{0%{opacity:.9}26%,100%{opacity:0}}
 @keyframes swu-ghost-mark{0%{opacity:0;transform:scale(1.8)}14%{opacity:1;transform:scale(1)}40%{opacity:1;transform:scale(1)}60%,100%{opacity:0;transform:scale(.9)}}
+@keyframes swu-round-banner{0%{opacity:0;clip-path:inset(0 50% 0 50%)}16%{opacity:1;clip-path:inset(0 0 0 0)}78%{opacity:1;clip-path:inset(0 0 0 0)}100%{opacity:0;clip-path:inset(0 0 0 0)}}
+@keyframes swu-round-copy{0%,6%{opacity:0;transform:scale(1.14)}26%{opacity:1;transform:none}78%{opacity:1;transform:none}100%{opacity:0;transform:scale(.98)}}
+@keyframes swu-round-tick{0%{transform:translateY(-55%) scale(1.5);opacity:0;text-shadow:0 0 16px #e7b95d}45%{transform:translateY(0) scale(.94);opacity:1}100%{transform:none;opacity:1;text-shadow:none}}
+@keyframes swu-initiative-gain{0%{transform:rotate(45deg) scale(1.55);box-shadow:0 0 0 0 #e7b95dcc,0 0 26px #e7b95d99}55%{transform:rotate(45deg) scale(.94);box-shadow:0 0 0 9px #e7b95d00,0 0 20px #e7b95d44}100%{transform:rotate(45deg) scale(1);box-shadow:0 0 20px #e7b95d11}}
 @keyframes swu-defeat-note{0%{opacity:0;transform:translate(-50%,-40%) scale(.94)}16%,76%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-68%) scale(.98)}}
 
 @media(max-width:720px){
@@ -168,6 +196,9 @@
   .card-fx-label{opacity:1;transform:none}
   .arena-defeat-token{opacity:1;transform:translate(-50%,-50%)}
   .card-duel{animation:none!important;opacity:.9}
+  .round-banner{animation:none!important;opacity:1}
+  .round-banner-copy,.round-label>strong.is-raised,.initiative>div.is-gained{animation:none!important}
+  .game-shell .resource-pips>i{transition:none}
   .game-card .stat-damage.damage-counter.is-raised,.game-card .stat-health.is-lowered,.battlefield .base-health.is-lowered>strong{animation:none!important}
   .defeat-ghost,.arena-side>.defeat-ghost{display:none!important}
   .game-card .game-card-click img,.battlefield .leader-mini img,.battlefield .base-panel:is(.is-damaged,.is-healed) .health-track>i{transition:none}

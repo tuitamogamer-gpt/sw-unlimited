@@ -167,10 +167,14 @@ function DamageExchange({ events, survivorIds, viewerId }: DamagePresentationPro
   const hasReturnDamage = events.some(retaliates);
   // A real attack is a physical strike; every other source acts from where it is.
   const strikes = isCombat && !!attack;
+  // Five damage or more, or a hit that removes a card, lands harder.
+  const heavy = !useRows && (events.some(event => event.amount >= 5)
+    || leavesPlay(target, healthChange(targetHits), survivorIds) || leavesPlay(source, healthChange(sourceHits), survivorIds));
+  const ownBaseHit = !!viewerId && events.some(event => cardType(event.targetCard) === 'base' && event.targetCard.controllerId === viewerId);
   const summary = events.map(event => t('{source} deals {amount} damage to {target}.', { source: sourceName(event), amount: event.amount, target: visibleName(event.targetCard) })).join(' ');
 
   return <div
-    className={`damage-presentation${isCombat ? ' is-combat' : ''}${useRows ? ' has-damage-rows' : ''}${strikes && hasReturnDamage ? ' is-clash' : ''}`}
+    className={`damage-presentation${isCombat ? ' is-combat' : ''}${useRows ? ' has-damage-rows' : ''}${strikes && hasReturnDamage ? ' is-clash' : ''}${heavy ? ' is-heavy' : ''}`}
     data-damage-presentation=""
     data-damage-type={type}
     data-damage-event-ids={events.map(event => event.id).join(',')}
@@ -179,6 +183,7 @@ function DamageExchange({ events, survivorIds, viewerId }: DamagePresentationPro
     aria-live="polite"
     aria-atomic="true"
   >
+    {ownBaseHit && <i className="damage-presentation-vignette" aria-hidden="true" />}
     <span className="sr-only">{summary}{hasReturnDamage ? ` ${t('Defender deals damage back')}.` : ''}</span>
     <div className="damage-presentation-sheet" aria-hidden="true">
       <div className="damage-presentation-heading">{isCombat ? <Swords size={14} /> : <Zap size={14} />}<span>{t(DAMAGE_LABELS[type])}</span><i /></div>

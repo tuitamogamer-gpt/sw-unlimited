@@ -1,7 +1,7 @@
 import { createContext, useEffect, useRef, useState } from 'react';
 import type { GameView } from './types';
-import { captureBattleSnapshot, defeatedUnits, diffBattleSnapshots, latestBattleMessage, mergeBattleEvents, summarizeBattleEvents } from './battle-feedback-events';
-import type { BattleFeedback, BattleSnapshot, DefeatedUnit } from './battle-feedback-events';
+import { captureBattleSnapshot, defeatedUnits, diffBattleSnapshots, latestBattleMessage, mergeBattleEvents, roundCue, summarizeBattleEvents } from './battle-feedback-events';
+import type { BattleFeedback, BattleSnapshot, DefeatedUnit, RoundCue } from './battle-feedback-events';
 import type { Duel } from './battle-duel';
 export type { BattleEvent, BattleFeedback } from './battle-feedback-events';
 
@@ -36,6 +36,30 @@ export function useDefeatGhosts(game: GameView, resetKey?: unknown): readonly De
     return () => clearTimeout(timer);
   }, [ghosts]);
   return ghosts;
+}
+
+export const ROUND_CUE_MS = 1500;
+
+/** Announces a round for a moment when its action phase begins. Derived while
+ * rendering, like the defeated units above, and silent on load and resume. */
+export function useRoundCue(game: GameView, resetKey?: unknown): RoundCue | null {
+  const [state, setState] = useState<{ game: GameView; resetKey: unknown; cue: (RoundCue & { expiresAt: number }) | null }>(() => ({ game, resetKey, cue: null }));
+  let current = state;
+  if (state.game !== game || state.resetKey !== resetKey) {
+    const continuous = state.resetKey === resetKey && state.game.id === game.id;
+    const now = Date.now();
+    const fresh = continuous ? roundCue(state.game, game) : null;
+    const kept = continuous && state.cue && state.cue.expiresAt > now ? state.cue : null;
+    current = { game, resetKey, cue: fresh ? { ...fresh, expiresAt: now + ROUND_CUE_MS } : kept };
+    setState(current);
+  }
+  const cue = current.cue;
+  useEffect(() => {
+    if (!cue) return;
+    const timer = setTimeout(() => setState(old => old.cue && old.cue.expiresAt <= Date.now() + 8 ? { ...old, cue: null } : old), Math.max(0, cue.expiresAt - Date.now()) + 16);
+    return () => clearTimeout(timer);
+  }, [cue]);
+  return cue;
 }
 
 /** Counts increases after the first render. A token keyed by this number

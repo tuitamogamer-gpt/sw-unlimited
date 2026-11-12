@@ -18,6 +18,7 @@ const {
   defeatedUnits,
   diffBattleSnapshots,
   mergeBattleEvents,
+  roundCue,
   summarizeBattleEvents,
 } = compiled.exports;
 
@@ -311,4 +312,29 @@ test('nothing is shown leaving on load, in another game, on a rewind, or from a 
   const frame = game(90);
   frame.players.human.discard = [card('destroyed', { zone: 'discard' })];
   assert.equal(defeatedUnits(before, frame).length, 1, 'A later presentation frame of the same response still shows the unit leaving.');
+});
+
+test('a round is announced when its action phase begins, once', () => {
+  const setup = game(3, { phase: 'setup', round: 1 });
+  const first = game(4, { phase: 'action', round: 1 });
+  assert.deepEqual(roundCue(setup, first), { id: 'game-a:round:1', round: 1 }, 'The first action phase opens round one.');
+  assert.equal(roundCue(first, game(5, { phase: 'action', round: 1 })), null, 'A later response in the same action phase is silent.');
+  const regroup = game(6, { phase: 'regroup', round: 1 });
+  assert.equal(roundCue(first, regroup), null, 'Regrouping is not a new round.');
+  assert.deepEqual(roundCue(regroup, game(7, { phase: 'action', round: 2 })), { id: 'game-a:round:2', round: 2 });
+  assert.deepEqual(roundCue(first, game(8, { phase: 'action', round: 2 })), { id: 'game-a:round:2', round: 2 },
+    'One response can carry the whole regroup and still open the next round.');
+  assert.deepEqual(roundCue(regroup, game(9, { phase: 'actionPhase', round: 2 })), { id: 'game-a:round:2', round: 2 });
+});
+
+test('loading, another game, a rewind and a finished game announce no round', () => {
+  const regroup = game(10, { phase: 'regroup', round: 2 });
+  const action = game(11, { phase: 'action', round: 3 });
+  assert.ok(roundCue(regroup, action));
+  assert.equal(roundCue(null, action), null);
+  assert.equal(roundCue(action, action), null);
+  assert.equal(roundCue(regroup, { ...action, id: 'game-b' }), null);
+  assert.equal(roundCue(regroup, { ...action, viewerId: 'bot' }), null);
+  assert.equal(roundCue(regroup, { ...action, version: 9 }), null);
+  assert.equal(roundCue(regroup, { ...action, winnerIds: ['human'] }), null);
 });

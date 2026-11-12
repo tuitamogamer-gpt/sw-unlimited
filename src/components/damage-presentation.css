@@ -104,7 +104,7 @@
 
 /* Impact layers. All of them rest invisible. */
 .damage-presentation-flash { position: absolute; inset: 0; z-index: 2; border-radius: inherit; background: radial-gradient(circle at 50% 42%, #fffbe8f2, #ffc98699 30%, #ff8a4a33 62%, transparent 80%); mix-blend-mode: screen; opacity: 0; animation: swu-damage-flash 1600ms ease-out both; }
-.damage-presentation-burst { position: absolute; inset: 0; z-index: 3; border: 3px solid #ffd29f; border-radius: inherit; box-shadow: 0 0 18px #ff9f55cc, inset 0 0 16px #ffba7366; opacity: 0; animation: swu-damage-burst 1600ms ease-out both; }
+.damage-presentation-burst { position: absolute; inset: 0; z-index: 3; color: #ffd29f; border: 3px solid #ffd29f; border-radius: inherit; box-shadow: 0 0 18px #ff9f55cc, inset 0 0 16px #ffba7366; opacity: 0; animation: swu-damage-burst 1600ms ease-out both; }
 .damage-presentation-slash { position: absolute; left: -16%; right: -16%; top: calc(48% - 2px); z-index: 4; height: 4px; border-radius: 4px; background: linear-gradient(90deg, transparent, #fff6d8 16%, #fff 50%, #ffd9a0 84%, transparent); box-shadow: 0 0 10px #ffe9b8, 0 0 22px #ff9a52; opacity: 0; rotate: -36deg; transform-origin: 0 50%; animation: swu-duel-slash 1600ms ease-out both; }
 .damage-presentation-sparks { position: absolute; left: 50%; top: 46%; z-index: 4; width: 0; height: 0; }
 .damage-presentation-sparks > i { position: absolute; left: 0; top: -1.5px; width: calc(var(--duel-card-w) * .17); height: 3px; border-radius: 3px; background: linear-gradient(90deg, #fff, #ffcf87 55%, transparent); opacity: 0; transform-origin: 0 50%; rotate: calc(var(--spark) * 45deg + 16deg); animation: swu-duel-spark 1600ms ease-out both; }
@@ -113,7 +113,7 @@
 /* Damage the attacker takes arrives from the defender's side, in the cooler return colour. */
 .damage-presentation-actor.is-source .damage-presentation-card.is-landscape .damage-presentation-slash { rotate: 24deg; }
 .damage-presentation-actor.is-source .damage-presentation-slash { rotate: 36deg; transform-origin: 100% 50%; background: linear-gradient(90deg, transparent, #c9f1ff 16%, #fff 50%, #e2f8ff 84%, transparent); box-shadow: 0 0 10px #c8f2ff, 0 0 22px #58b7e6; }
-.damage-presentation-actor.is-source .damage-presentation-burst { border-color: #b6e9fb; box-shadow: 0 0 18px #62bfe6cc, inset 0 0 16px #8fd6f366; }
+.damage-presentation-actor.is-source .damage-presentation-burst { color: #b6e9fb; border-color: #b6e9fb; box-shadow: 0 0 18px #62bfe6cc, inset 0 0 16px #8fd6f366; }
 .damage-presentation-actor.is-source .damage-presentation-flash { background: radial-gradient(circle at 50% 42%, #f1fbfff2, #9fdcf599 30%, #4aa9dc33 62%, transparent 80%); }
 .damage-presentation-actor.is-source .damage-presentation-sparks > i { background: linear-gradient(90deg, #fff, #a8e2f8 55%, transparent); }
 
@@ -122,6 +122,16 @@
 .damage-presentation-amount > small { font-size: clamp(7px, calc(var(--duel-num) * .25), 11px); line-height: 1.15; font-weight: 600; letter-spacing: .5px; text-transform: uppercase; }
 .damage-presentation-stamp { position: absolute; left: 50%; bottom: 7%; z-index: 6; translate: -50% 0; rotate: -7deg; padding: 2px 8px 1px; border: 2px solid #ff9c8a; border-radius: 5px; background: #3d0f16eb; box-shadow: 0 3px 12px #000a; color: #ffd6cc; font-family: var(--condensed, 'Arial Narrow', sans-serif); font-size: clamp(10px, calc(var(--duel-card-w) * .105), 15px); font-style: normal; font-weight: 700; line-height: 1.25; letter-spacing: 1.6px; text-transform: uppercase; white-space: nowrap; animation: swu-duel-stamp 1600ms ease-out both; }
 .damage-presentation-actor.is-defeated .damage-presentation-art { filter: grayscale(1) brightness(.5) contrast(1.08); rotate: calc(var(--toward) * -4deg); animation: swu-duel-defeat 1600ms ease-out both; }
+
+/* A heavy hit, five damage or more or one that removes a card, lands harder:
+   the stage shakes further, the number arrives larger and the ring echoes. */
+.damage-presentation.is-heavy .damage-presentation-exchange { animation-name: swu-duel-shake-heavy; }
+.damage-presentation.is-heavy .damage-presentation-amount { --pop: 1.72; }
+.damage-presentation.is-heavy .damage-presentation-burst { border-width: 4px; }
+.damage-presentation.is-heavy .damage-presentation-burst::after { content: ''; position: absolute; inset: -5px; border: 2px solid currentColor; border-radius: inherit; opacity: 0; animation: swu-damage-burst-echo 1600ms ease-out both; }
+.damage-presentation.is-heavy .damage-presentation-sparks > i { width: calc(var(--duel-card-w) * .25); }
+/* The viewer's own base being hit is felt at the edges of the screen. */
+.damage-presentation-vignette { position: fixed; inset: 0; z-index: -1; background: radial-gradient(ellipse 78% 68% at 50% 50%, transparent 56%, #c8262f61 100%); opacity: 0; animation: swu-duel-vignette 1600ms ease-out both; }
 
 /* How each card moves: an attacker strikes, a struck card recoils, and two
    cards that damage each other meet in the middle. Abilities act from afar. */
@@ -178,6 +188,9 @@
 @keyframes swu-damage-exchange { 0% { opacity: 0; transform: scale(.96) translateY(6px); } 7%, 87% { opacity: 1; transform: none; } 100% { opacity: 0; transform: scale(.985) translateY(-4px); } }
 @keyframes swu-duel-enter { 0% { opacity: 0; transform: translateX(calc(var(--toward) * -26px)) scale(.9); } 9%, 100% { opacity: 1; transform: none; } }
 @keyframes swu-duel-shake { 0%, 26.5% { transform: none; } 28% { transform: translate(-3px, 1px); } 29.5% { transform: translate(3px, -1px); } 31% { transform: translate(-2px, 1px); } 32.5% { transform: translate(1px, 0); } 34%, 100% { transform: none; } }
+@keyframes swu-duel-shake-heavy { 0%, 26.5% { transform: none; } 28% { transform: translate(-7px, 2px) rotate(-.4deg); } 29.5% { transform: translate(6px, -2px) rotate(.4deg); } 31% { transform: translate(-5px, 2px) rotate(-.3deg); } 32.5% { transform: translate(4px, -1px); } 34% { transform: translate(-2px, 1px); } 36%, 100% { transform: none; } }
+@keyframes swu-damage-burst-echo { 0%, 30% { opacity: 0; transform: scale(.96); } 34% { opacity: .8; transform: scale(1.04); } 56%, 100% { opacity: 0; transform: scale(1.2); } }
+@keyframes swu-duel-vignette { 0%, 26% { opacity: 0; } 29% { opacity: 1; } 44% { opacity: .45; } 72%, 100% { opacity: 0; } }
 @keyframes swu-duel-strike {
   0%, 10% { transform: none; animation-timing-function: cubic-bezier(.3, 0, .4, 1); }
   19% { transform: translateX(calc(var(--toward) * -10px)) rotate(calc(var(--toward) * -4deg)) scale(1.04); animation-timing-function: cubic-bezier(.7, 0, .9, .5); }
@@ -210,7 +223,7 @@
 @keyframes swu-duel-slash { 0%, 25% { opacity: 0; transform: scaleX(0); } 28.5% { opacity: 1; transform: scaleX(1); } 36% { opacity: .7; transform: scaleX(1); } 45%, 100% { opacity: 0; transform: scaleX(1); } }
 @keyframes swu-duel-spark { 0%, 26.5% { opacity: 0; transform: translateX(calc(var(--duel-card-w) * .1)) scaleX(.3); } 29.5% { opacity: 1; transform: translateX(calc(var(--duel-card-w) * .42)) scaleX(1.25); } 41%, 100% { opacity: 0; transform: translateX(calc(var(--duel-card-w) * .8)) scaleX(.35); } }
 @keyframes swu-duel-clash-star { 0%, 25.5% { opacity: 0; transform: scale(.2) rotate(0); } 28% { opacity: 1; transform: scale(1.15) rotate(18deg); } 33% { opacity: .85; transform: scale(1.5) rotate(36deg); } 40%, 100% { opacity: 0; transform: scale(1.9) rotate(60deg); } }
-@keyframes swu-damage-number { 0%, 26% { opacity: 0; transform: scale(.3) rotate(-8deg); } 30% { opacity: 1; transform: scale(1.42) rotate(3deg); } 35% { opacity: 1; transform: scale(.93) rotate(-1deg); } 40% { opacity: 1; transform: scale(1.05); } 45%, 100% { opacity: 1; transform: none; } }
+@keyframes swu-damage-number { 0%, 26% { opacity: 0; transform: scale(.3) rotate(-8deg); } 30% { opacity: 1; transform: scale(var(--pop, 1.42)) rotate(3deg); } 35% { opacity: 1; transform: scale(.93) rotate(-1deg); } 40% { opacity: 1; transform: scale(1.05); } 45%, 100% { opacity: 1; transform: none; } }
 @keyframes swu-duel-beam { 0%, 26% { transform: none; filter: none; } 30% { transform: scale(1.14); filter: brightness(1.35); } 40%, 100% { transform: none; filter: none; } }
 @keyframes swu-duel-stat { 0%, 26.5% { opacity: 0; max-width: 0; transform: scale(.6); } 27% { opacity: 0; max-width: 4em; transform: scale(.6); } 31.5% { opacity: 1; max-width: 4em; transform: scale(1.32); } 38%, 100% { opacity: 1; max-width: 4em; transform: none; } }
 @keyframes swu-duel-stat-was { 0%, 27% { color: #dfe8ee; text-decoration-color: transparent; } 32%, 100% { color: #9db0be; text-decoration-color: #ff9c8ae6; } }
@@ -269,6 +282,7 @@
   .damage-presentation-row-mark,
   .damage-presentation-progress > i { animation: none !important; }
   .damage-presentation-bolt,
+  .damage-presentation-vignette,
   .damage-presentation-burst,
   .damage-presentation-flash,
   .damage-presentation-slash,

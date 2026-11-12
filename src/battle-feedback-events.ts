@@ -157,6 +157,20 @@ export function defeatedUnits(before: GameView | null, after: GameView): Defeate
   return result;
 }
 
+export type RoundCue = { id: string; round: number };
+
+/** The start of an action phase is the start of a round on the table. Loading
+ * or resuming a game, another game, a rewind and a finished game announce
+ * nothing, and neither does a later response within the same action phase. */
+export function roundCue(before: GameView | null, after: GameView): RoundCue | null {
+  if (!before || before === after || before.id !== after.id || before.viewerId !== after.viewerId || before.version > after.version) return null;
+  const inAction = (phase?: string) => phase === 'action' || phase === 'actionPhase';
+  if (!inAction(after.phase) || after.winnerIds?.length) return null;
+  const round = after.round || 1;
+  if (inAction(before.phase) && (before.round || 1) >= round) return null;
+  return { id: `${after.id}:round:${round}`, round };
+}
+
 /** A fresh response must not erase another card's still-running feedback. */
 export function mergeBattleEvents(current: readonly BattleEvent[], incoming: readonly BattleEvent[], now: number): BattleEvent[] {
   const active = new Map<string, BattleEvent>();
