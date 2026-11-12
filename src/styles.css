@@ -348,7 +348,7 @@ select option{background:#101925;color:var(--ivory)}
 .victory-content>.text-button{margin-top:16px}
 /* The end of a match arrives in sequence: the emblem lands, then the words.
    A win is ringed with slow rays; every element rests in its final state. */
-.victory-symbol{position:relative;animation:victory-emblem .75s cubic-bezier(.2,.8,.3,1.15) both}
+.victory-symbol{position:relative;isolation:isolate;animation:victory-emblem .75s cubic-bezier(.2,.8,.3,1.15) both}
 .victory-symbol.won:before{content:'';position:absolute;inset:-30px;z-index:-1;border-radius:50%;background:repeating-conic-gradient(from 0deg,#e7b95d3d 0 7deg,transparent 7deg 20deg);-webkit-mask:radial-gradient(circle,transparent 61%,#000 63%,transparent 100%);mask:radial-gradient(circle,transparent 61%,#000 63%,transparent 100%);animation:victory-rays-in .9s ease-out both,victory-rays 20s linear infinite}
 .victory-symbol:after{content:'';position:absolute;inset:-2px;border:1px solid currentColor;border-radius:50%;opacity:0;animation:victory-ring 1.3s ease-out .3s both}
 .victory-content>.eyebrow{animation:victory-rise .5s ease-out .2s both}
