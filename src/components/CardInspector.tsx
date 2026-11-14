@@ -53,6 +53,9 @@ export function CardInspector({ card, onInspect, action, onAction, busy = false,
   const [zoomed, setZoomed] = useState(false);
   const artViewport = useRef<HTMLDivElement>(null);
   const type = cardType(card);
+  // An upgrade's printed numbers are what it adds to its unit, not a unit's own stats.
+  const isUpgrade = type === 'upgrade';
+  const signed = (value: number) => `${value < 0 ? '−' : '+'}${Math.abs(value)}`;
   const isLeader = type === 'leader' || !!card.backImage;
   const landscape = isLandscapeCard(card, face);
   const inGame = !!card.zone;
@@ -97,8 +100,9 @@ export function CardInspector({ card, onInspect, action, onAction, busy = false,
         {card.aspects?.length ? <div className="ci-aspects" aria-label={t('Aspects')}>{card.aspects.map((aspect, index) => <span key={`${aspect}-${index}`}><i className={`aspect aspect-${aspect.toLowerCase()}`} />{t(aspect.charAt(0).toUpperCase() + aspect.slice(1))}</span>)}</div> : null}
         <div className="ci-stats">
           {effectiveCost != null && <div className="ci-stat"><Zap size={17} /><strong>{isLeader ? card.cost ?? effectiveCost : effectiveCost}</strong><span>{t(isLeader && face === 'front' ? 'Deploy threshold' : 'Resource cost')}</span>{hasAdjustedCost && !isLeader && <small>{t('Printed: {cost}', { cost: card.cost! })}</small>}</div>}
-          {card.power != null && <div className="ci-stat"><Swords size={17} /><strong>{card.power}</strong><span>{t('Power')}</span></div>}
-          {card.hp != null && <div className={`ci-stat ${(card.damage || 0) > 0 ? 'ci-stat-damaged' : ''}`}><Shield size={17} /><strong>{health}<small> / {card.hp}</small></strong><span>{t('Health')}</span>{(card.damage || 0) > 0 && <small>{t('{count} damage', { count: card.damage! })}</small>}</div>}
+          {card.power != null && <div className="ci-stat"><Swords size={17} /><strong>{isUpgrade ? signed(card.power) : card.power}</strong><span>{t(isUpgrade ? 'Power bonus' : 'Power')}</span></div>}
+          {card.hp != null && isUpgrade && <div className="ci-stat"><Shield size={17} /><strong>{signed(card.hp)}</strong><span>{t('Health bonus')}</span></div>}
+          {card.hp != null && !isUpgrade && <div className={`ci-stat ${(card.damage || 0) > 0 ? 'ci-stat-damaged' : ''}`}><Shield size={17} /><strong>{health}<small> / {card.hp}</small></strong><span>{t('Health')}</span>{(card.damage || 0) > 0 && <small>{t('{count} damage', { count: card.damage! })}</small>}</div>}
         </div>
         {inGame && <div className="ci-state" aria-label={t('Current state')}><span>{t(ZONES[card.zone || ''] || card.zone || '')}</span>{card.controllerId && <span>{t(card.controllerId === 'human' ? 'Your card' : 'Opponent card')}</span>}{card.exhausted != null && <span className={card.exhausted ? 'ci-exhausted' : 'ci-ready'}>{card.exhausted ? <RotateCcw size={12} /> : <Check size={12} />}{t(card.exhausted ? 'Exhausted' : 'Ready')}</span>}</div>}
         <section className="ci-abilities" aria-label={t('Card abilities')}>
