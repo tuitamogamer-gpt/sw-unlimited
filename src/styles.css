@@ -1306,3 +1306,35 @@ body:has(.app.in-game){overflow:hidden;overscroll-behavior:none}
   .arena-side:has(>:is(.game-card,.defeat-ghost):nth-child(8)){--lane-units:8}
   .arena-side>.unit-card{--unit-height:min(100cqh,var(--unit-max,236px),max(var(--unit-min,84px),calc((100cqw - (var(--lane-units,1) - 1) * 9px) / var(--lane-units,1) / .715)));height:var(--unit-height);width:calc(var(--unit-height) * .715);max-height:none}
 }
+
+/* Option dialog: what is asking, and a number control that works by tapping. */
+.prompt-choice-source{display:flex;align-items:center;gap:10px;margin:0 14px 12px;padding-bottom:12px;border-bottom:1px solid #ffffff12;font-size:13px}
+.prompt-choice-source>span{color:#8fa2b3;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.prompt-choice-source>strong,.prompt-choice-source>.text-button{color:var(--ivory);font-family:var(--condensed);font-size:20px;font-weight:500;line-height:1.1}
+.prompt-choice-source>.text-button>svg{color:#9bb0c0}
+.prompt-choice-source>.text-button:hover,.prompt-choice-source>.text-button:hover>svg{color:var(--gold)}
+.number-choice{display:flex;flex-direction:column;align-items:center;gap:16px;padding:14px 20px 22px}
+.number-choice>label{color:#b6c4cf;font-size:12px;letter-spacing:.04em}
+.number-stepper{display:flex;align-items:center;gap:12px}
+.number-stepper>.icon-button{width:46px;height:46px;border-radius:50%}
+.number-stepper>input{width:112px;height:72px;padding:0;border:1px solid #3b5369;border-radius:var(--radius-card);background:#0a1520;color:var(--ivory);font-family:var(--condensed);font-size:46px!important;font-weight:600;line-height:1;text-align:center;font-variant-numeric:tabular-nums;appearance:textfield;-moz-appearance:textfield}
+.number-stepper>input::-webkit-outer-spin-button,.number-stepper>input::-webkit-inner-spin-button{appearance:none;-webkit-appearance:none;margin:0}
+.number-chips{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;width:min(100%,420px)}
+.number-chips>button{min-height:38px;padding:0;border:1px solid #33495c;border-radius:var(--radius-control);background:#12202d;color:#c4d2dc;font-family:var(--condensed);font-size:17px;font-weight:500;font-variant-numeric:tabular-nums}
+.number-chips>button:hover:not(:disabled){border-color:#7e98aa;color:var(--ivory)}
+.number-chips>button[aria-pressed='true']{border-color:var(--gold);background:#3a3118;color:#ffe8b5;box-shadow:inset 0 0 0 1px #e7b95d44}
+.number-choice .number-prompt{padding:0;width:min(100%,420px)}
+.number-choice .number-prompt>.primary-button{width:100%;min-height:44px;font-size:14px}
+.prompt-copy>.eyebrow.has-source{flex-wrap:nowrap}
+.prompt-source{flex:0 1 auto;min-width:0;overflow:hidden;padding:1px 7px;border:1px solid #9bb7c94d;border-radius:999px;color:#d4e3ec;font-size:1.1em;font-style:normal;font-weight:600;letter-spacing:.04em;text-overflow:ellipsis;text-transform:none;white-space:nowrap}
+/* Cards shown for a choice sit in the middle of the dialog and wrap, so a
+   long search result is read top to bottom instead of scrolled sideways. */
+.modal .display-card-prompt{flex-wrap:wrap;justify-content:center;gap:16px;overflow-x:visible}
+.modal .display-card-prompt .game-card{height:196px;width:140px}
+.modal .display-card-prompt>div>.small-button{width:100%;max-width:none}
+@media(max-width:720px){
+  .modal .display-card-prompt{gap:12px}
+  .modal .display-card-prompt .game-card{height:154px;width:110px}
+  .number-stepper>input{width:96px;height:64px;font-size:40px!important}
+  .number-chips>button{min-height:40px}
+}

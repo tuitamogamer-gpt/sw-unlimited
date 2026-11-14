@@ -263,3 +263,43 @@ leaves. The 1.6-second timing, the event order and the input lock are unchanged.
 a round is announced. The
 `test:damage-ui` and `test:motion-ui` suites above run against the new
 presentation without changes.
+
+## Premium layer
+
+`src/premium.css` is imported last and changes only how surfaces are painted.
+Sizes, spacing and structure stay with the stylesheets before it, so every
+layout rule the UI suites measure is untouched. It adds one material system:
+
+- **Atmosphere.** The lobby sits in deep space: film grain, three sparse star
+  fields with unequal periods so no pattern repeats in view, and faint light
+  from the edges. The battle table is calmer, with grain and a pool of light
+  under the arenas.
+- **Depth.** Panels use a top-lit gradient, a one-pixel inner highlight and one
+  of three elevation shadows. The mission console, training panel, hand tray
+  and dialogs have a rim that catches gold at one corner and cyan at the other.
+- **Gold as a material.** Primary buttons have a lit top edge, a darker foot
+  and a sheen that crosses on hover. Headline accents, the round number and the
+  selected deck use the same gradient.
+- **Sides read by colour.** The opponent's half of each arena takes a little red
+  from its far edge and yours a little teal, and commander tiles are rimmed the
+  same way. Cards that can be used now have a clearer ring than before.
+- **Motion.** The two leader cards in the hero drift a few pixels and catch a
+  sheen, the hero text arrives in order, deck tiles lift and bloom on hover, and
+  the table fades in when a battle opens. Entrance animations fill backwards
+  only, so they leave no layer behind. With reduced motion none of them run.
+
+Gradient lettering falls back to plain text when colours are forced. Small
+per-card controls do not use backdrop blur, which keeps a crowded table cheap to
+paint.
+
+The page shows a small emblem and a loading line from the first byte until the
+app has mounted (`index.html`), so it is never blank on a slow connection.
+
+Three details were corrected in the same pass. The option dialog now names what
+is asking, taken from the prompt's own subtitle, and opens that card when
+exactly one visible printing carries the name. Choosing a number has a stepper
+and direct picks for ranges of up to 21 values; `#prompt-number` and the single
+button inside `.number-prompt` are unchanged for the suites that drive them.
+An upgrade in the card inspector shows the power and health it adds instead of
+a unit's power and remaining health, and the deck inspector's base tile shows
+the illustration rather than the card's title bar.

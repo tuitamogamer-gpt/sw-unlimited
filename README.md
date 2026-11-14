@@ -58,6 +58,12 @@ the current matchup and **Start battle** within reach.
 Cadet uses simpler individual decisions with more varied priorities; Commander
 and Grand Admiral retain their coordinated tactical play.
 
+When a card asks for a choice, the decision bar names it beside **Your turn**
+and the option dialog shows it as the **Source**, which opens the card when it
+can be identified. Choosing a number uses a stepper with direct picks for short
+ranges, and cards shown for a choice sit in the middle of the dialog. In the
+card inspector an upgrade's numbers are shown as the power and health it adds.
+
 The interface distinguishes resource selection from playing cards. Hand cards
 show their effective play cost and action status. A card that cannot currently
 be played explains why. Claiming initiative ends your actions for the round and

@@ -1095,6 +1095,7 @@ const inspectorCopy: Array<[string, string, ...string[]]> = [
   ['Selection {number}', 'Izbor {number}'],
   ['Power', 'Snaga'], ['Health', 'Život'], ['{count} damage', '{count} štete'],
   ['Power bonus', 'Bonus snage'], ['Health bonus', 'Bonus života'],
+  ['Decrease', 'Smanji'], ['Increase', 'Povećaj'],
   ['Combat damage', 'Borbena šteta'], ['Ability damage', 'Šteta od sposobnosti'],
   ['Excess damage', 'Višak štete'], ['Damage', 'Šteta'], ['Game effect', 'Efekat igre'],
   ['Multiple sources', 'Više izvora'], ['Defender deals damage back', 'Branilac uzvraća štetu'],

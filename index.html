@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#080e17" />
+    <meta name="theme-color" content="#050a11" />
     <meta name="color-scheme" content="dark" />
     <meta name="description" content="Play Star Wars: Unlimited against a tactical AI. Choose from 18 starter decks, command both arenas, and play with automated rules. English and Serbian interfaces." />
     <title>Star Wars Unlimited · Command</title>
@@ -12,13 +12,26 @@
     <meta property="og:description" content="Play Star Wars: Unlimited against a tactical AI with automated rules. An unofficial fan project." />
     <meta name="twitter:card" content="summary" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <!-- Shown until the app has loaded: the page is never blank or white. -->
+    <style>
+      html,body{margin:0;background:#050a11}
+      .boot{position:fixed;inset:0;display:grid;place-items:center;background:radial-gradient(900px 600px at 50% 40%,#14304666,transparent 70%),#050a11}
+      .boot-mark{position:relative;width:84px;height:84px}
+      .boot-mark svg{display:block;width:100%;height:100%;overflow:visible}
+      .boot-orbit{transform-origin:32px 32px;animation:boot-spin 2.6s linear infinite}
+      .boot-bar{position:absolute;left:50%;top:calc(100% + 26px);width:128px;height:2px;margin-left:-64px;overflow:hidden;border-radius:2px;background:#e7b95d26}
+      .boot-bar:after{content:'';position:absolute;inset:0;width:42%;background:linear-gradient(90deg,transparent,#f3d48c,transparent);animation:boot-slide 1.15s ease-in-out infinite}
+      @keyframes boot-spin{to{transform:rotate(360deg)}}
+      @keyframes boot-slide{from{transform:translateX(-110%)}to{transform:translateX(250%)}}
+      @media(prefers-reduced-motion:reduce){.boot-orbit,.boot-bar:after{animation:none}}
+    </style>
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><div class="boot" role="status" aria-label="Loading"><div class="boot-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="24" fill="none" stroke="#e7b95d" stroke-opacity=".34" stroke-width="1.6"/><g class="boot-orbit"><ellipse cx="32" cy="32" rx="19" ry="8" fill="none" stroke="#e7b95d" stroke-width="2.2" transform="rotate(-28 32 32)"/><circle cx="48.4" cy="23" r="3" fill="#f2f0e7"/></g><circle cx="32" cy="32" r="6" fill="#e7b95d"/></svg><div class="boot-bar"></div></div></div></div>
     <noscript>Star Wars Unlimited · Command needs JavaScript to run the game.</noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
